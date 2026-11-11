@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d1117">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Phoenix HTML Test — Operation Phoenix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <h1 class="app-title">Phoenix HTML Test</h1>
+      <p class="app-subtitle">Operation Phoenix · Hosting Proof of Concept</p>
+    </div>
+  </header>
+
+  <nav class="main-nav" role="navigation" aria-label="Primary">
+    <button class="nav-btn active" data-section="overview" aria-pressed="true">Overview</button>
+    <button class="nav-btn" data-section="checklist" aria-pressed="false">Checklist</button>
+    <button class="nav-btn" data-section="about" aria-pressed="false">About</button>
+  </nav>
+
+  <main class="content">
+    <!-- Section 1: Overview -->
+    <section id="overview" class="section active" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Overview</h2>
+      <p class="lead">This standalone HTML5 application verifies the new website delivery workflow for Operation Phoenix.</p>
+
+      <div class="card">
+        <button class="accordion-toggle" aria-expanded="false" aria-controls="panel-1">
+          <span>Mission Objectives</span>
+          <span class="chevron" aria-hidden="true">▼</span>
+        </button>
+        <div id="panel-1" class="accordion-panel" hidden>
+          <ul>
+            <li>Responsive navigation between demonstration sections</li>
+            <li>Expandable / collapsible content panels</li>
+            <li>Interactive checklist with persistent localStorage</li>
+            <li>Functional reset control with confirmation</li>
+            <li>Dark-mode interface optimized for iPhone Safari</li>
+            <li>Relative asset paths compatible with GitHub Pages</li>
+            <li>Zero external dependencies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="accordion-toggle" aria-expanded="false" aria-controls="panel-2">
+          <span>Technical Constraints</span>
+          <span class="chevron" aria-hidden="true">▼</span>
+        </button>
+        <div id="panel-2" class="accordion-panel" hidden>
+          <ul>
+            <li>No external JavaScript libraries</li>
+            <li>No analytics or tracking</li>
+            <li>No secrets or credentials in source</li>
+            <li>Pure static files only (HTML / CSS / JS)</li>
+            <li>Mobile-first responsive design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="accordion-toggle" aria-expanded="false" aria-controls="panel-3">
+          <span>Delivery Model</span>
+          <span class="chevron" aria-hidden="true">▼</span>
+        </button>
+        <div id="panel-3" class="accordion-panel" hidden>
+          <p>Local build → versioned ZIP → Cmdr review → manual publish via GitHub web interface → GitHub Pages.</p>
+          <p>This proof-of-concept confirms the end-to-end path without requiring automated write access from the Grok connector.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Checklist -->
+    <section id="checklist" class="section" aria-labelledby="checklist-heading" hidden>
+      <h2 id="checklist-heading">Interactive Checklist</h2>
+      <p class="lead">State is stored in <code>localStorage</code> and survives page reloads.</p>
+
+      <ul class="checklist" id="checklist-items" role="list">
+        <!-- Populated by app.js -->
+      </ul>
+
+      <div class="checklist-actions">
+        <button id="reset-btn" class="btn btn-danger">Reset Checklist</button>
+        <p class="status-text" id="checklist-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Section 3: About -->
+    <section id="about" class="section" aria-labelledby="about-heading" hidden>
+      <h2 id="about-heading">About This Build</h2>
+      <div class="card static-card">
+        <dl class="meta-list">
+          <dt>Project</dt>
+          <dd>Operation Phoenix — HTML Hosting Proof of Concept</dd>
+          <dt>Officer</dt>
+          <dd>LT / Grok</dd>
+          <dt>Authority</dt>
+          <dd>CaptDrunk · Standing Engineering Authorization</dd>
+          <dt>Repository</dt>
+          <dd>jlimbaugh/Witcher-3-Test-Repository</dd>
+          <dt>Version</dt>
+          <dd>1.0.2-poc</dd>
+          <dt>Built</dt>
+          <dd id="build-date"></dd>
+        </dl>
+      </div>
+
+      <div class="card static-card">
+        <h3>Compatibility Notes</h3>
+        <ul>
+          <li>Target platform: iPhone Safari — device verification pending.</li>
+          <li>Works in modern desktop browsers</li>
+          <li>Relative paths only — safe for GitHub Pages project sites</li>
+          <li>No service workers or offline caching in this PoC</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Operation Phoenix · Zero external dependencies · Dark mode only</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
