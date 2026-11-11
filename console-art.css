@@ -1,0 +1,8 @@
+/* Phoenix Console R1: presentation only. Canonical layout rules remain untouched. */
+#home{position:relative;isolation:isolate}
+#home::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0 0 auto;height:620px;background:linear-gradient(90deg,#111916 0%,#111916ed 30%,#11191670 68%,#11191638),linear-gradient(0deg,#111916 0%,#11191600 70%),url("cdpr-witcher3-keyart.png") 78% top/auto 620px no-repeat}
+#home>.brand,#home>.eyebrow,#home>h1,#home>.lead,#home>.nav-bar{text-shadow:0 2px 10px #000}
+#home .landing-card{background:#1b2722f2}
+#home .landing-card:hover{background:var(--panel2)}
+@media(max-width:600px){#home::before{height:480px;background:linear-gradient(90deg,#111916f5 0%,#111916cc 44%,#11191680),linear-gradient(0deg,#111916 0%,#11191600 75%),url("cdpr-witcher3-keyart.png") 73% top/auto 480px no-repeat}}
+@media print{#home::before{display:none}}
