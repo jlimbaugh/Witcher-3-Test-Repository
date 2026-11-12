@@ -182,6 +182,10 @@
     if(lastWalk){const stage=state.stageByView[lastWalk.view]||lastWalk.stages[0].id;cont.href='#'+lastWalk.view+'/'+stage;cont.textContent='Continue · '+lastWalk.name+', stage '+(lastWalk.stages.findIndex(s=>s.id===stage)+1)+' of '+lastWalk.stages.length+' →';}
     else if(state.lastContent){cont.href='#'+state.lastContent.view;cont.textContent='Continue '+tasks[state.lastContent.task].name+' →';}
     else {cont.href=treeLink(state.selectedHub);cont.textContent='Jump to my hub →';}
+    const consoleContinue=document.querySelector('[data-console-continue]');
+    consoleContinue.href=cont.getAttribute('href');
+    document.querySelector('[data-console-title]').textContent=lastWalk?lastWalk.name:state.lastContent?tasks[state.lastContent.task].name:hubById(state.selectedHub).name;
+    document.querySelector('[data-console-meta]').textContent=lastWalk?'Resume your last walkthrough':state.lastContent?'Return to your last guide page':'Open your selected quest hub';
     document.querySelectorAll('[data-selected-hub]').forEach(a=>{a.href=treeLink(state.selectedHub);});
     const unfinished=document.querySelector('[data-unfinished]');unfinished.replaceChildren();
     Object.keys(tasks).filter(id=>!tasks[id].mapOnly&&!state.completed[id]&&progressEngine.availability(id,state.progress)==='available').forEach(id=>unfinished.append(taskAnchor(id,true)));
