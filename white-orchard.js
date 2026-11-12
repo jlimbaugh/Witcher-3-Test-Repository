@@ -37,7 +37,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": null,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-missing": {
       "name": "Missing in Action",
@@ -70,7 +71,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": null,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-pan": {
       "name": "A Frying Pan, Spick and Span",
@@ -103,7 +105,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": null,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-cargo": {
       "name": "Precious Cargo",
@@ -137,7 +140,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": null,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-death": {
       "name": "On Death’s Bed",
@@ -171,7 +175,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 2,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-devil": {
       "name": "Contract: Devil by the Well",
@@ -215,7 +220,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 2,
-      "map": true
+      "map": true,
+      "category": "contract"
     },
     "q-beast": {
       "name": "The Beast of White Orchard",
@@ -259,7 +265,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 3,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "q-viper": {
       "name": "Scavenger Hunt: Viper School Gear",
@@ -292,7 +299,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 6,
-      "map": true
+      "map": true,
+      "category": "gear"
     },
     "q-temerian": {
       "name": "Temerian Valuables",
@@ -324,7 +332,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 4,
-      "map": true
+      "map": true,
+      "category": "exploration"
     },
     "q-deserter": {
       "name": "Deserter Gold",
@@ -356,7 +365,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 3,
-      "map": true
+      "map": true,
+      "category": "exploration"
     },
     "q-dirty": {
       "name": "Dirty Funds",
@@ -388,7 +398,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 2,
-      "map": true
+      "map": true,
+      "category": "exploration"
     },
     "q-firestarter": {
       "name": "Twisted Firestarter",
@@ -426,7 +437,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": null,
-      "map": true
+      "map": true,
+      "category": "side"
     },
     "loc-forge": {
       "name": "Willis’s forge",
@@ -458,7 +470,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://www.gamebanshee.com/thewitcher3/walkthrough/location-whiteorchard.php"
       ],
-      "map": true
+      "map": true,
+      "category": "gear",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "gwent-start": {
       "name": "Play the scholar and check inn cards",
@@ -490,7 +504,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://www.gamebanshee.com/thewitcher3/walkthrough/collectemall.php"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-cemetery": {
       "name": "Cemetery Place of Power",
@@ -522,7 +538,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://witcher3.mmorpg-life.com/white-orchard-places-of-power/guides/"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-north": {
       "name": "Northern woods Place of Power",
@@ -554,7 +572,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://witcher3.mmorpg-life.com/white-orchard-places-of-power/guides/"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-cackler": {
       "name": "Cackler Bridge Place of Power",
@@ -586,7 +606,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-sawmill": {
       "name": "Sawmill Place of Power",
@@ -618,7 +640,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-bear": {
       "name": "Southern bear-guarded Place of Power",
@@ -650,7 +674,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://witcher3.mmorpg-life.com/white-orchard-places-of-power/guides/"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "pop-bridge": {
       "name": "Broken Bridge Place of Power",
@@ -682,7 +708,9 @@ window.PHOENIX_ROUTE = {
       "sources": [
         "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations"
       ],
-      "map": true
+      "map": true,
+      "category": "exploration",
+      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
     },
     "departure-review": {
       "name": "Review before leaving White Orchard",
@@ -715,7 +743,8 @@ window.PHOENIX_ROUTE = {
         "https://witcher3.th.gl/checklist/missables",
         "https://www.neoseeker.com/the-witcher-3-wild-hunt/White_Orchard_Secondary_Quests"
       ],
-      "map": true
+      "map": true,
+      "category": "preparation"
     },
     "q-incident": {
       "name": "The Incident at White Orchard",
@@ -744,7 +773,8 @@ window.PHOENIX_ROUTE = {
         }
       ],
       "level": 2,
-      "map": true
+      "map": true,
+      "category": "side"
     }
   },
   "hubs": [

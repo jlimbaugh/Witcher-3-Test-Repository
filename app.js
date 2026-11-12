@@ -12,8 +12,9 @@
   Object.entries(tasks).forEach(([id,task])=>{
     const section=document.createElement('section');section.className='view scene'+(task.stages?' walkthrough-scene':'');section.id=task.view;section.hidden=true;section.setAttribute('aria-labelledby',task.view+'-title');
     const meta='<details class="route-context"><summary>Why this stop belongs here</summary>'+para(task.why)+'<h3>Availability & preparation</h3>'+para(task.requirements)+(task.level?para('Suggested quest level '+task.level+'. Opportunities are hand-curated; story access and encounter readiness still apply.'):'')+'<h3>Useful reward</h3>'+para(task.reward)+'</details>';
-    const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map">Regional map</a></div>';
-    const stageHTML=task.stages?'<div class="stage-tools">'+links+'<label>Stage <select data-stage-select aria-label="Choose walkthrough stage">'+task.stages.map(st=>'<option value="'+esc(st.id)+'">'+esc(st.title)+'</option>').join('')+'</select></label></div><div class="stage-nav" aria-label="Walkthrough stages"><button type="button" data-stage-prev>← Previous</button><span data-stage-count aria-live="polite"></span><button type="button" data-stage-next>Next →</button></div><div class="stage-panel" id="'+task.view+'-panel">'+task.stages.map((st,i)=>'<section class="walk-stage" data-stage="'+esc(st.id)+'" hidden><div class="stage-content"><span class="step-number" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div><h2>'+esc(st.title)+'</h2>'+(st.warning?'<p class="risk-note"><strong>Before this step:</strong> '+esc(st.warning)+'</p>':'')+para(st.text)+(st.spoiler?'<details><summary>Story outcome & choices · Spoilers</summary>'+para(st.spoiler)+'</details>':'')+'</div></div></section>').join('')+'</div>':links+task.sections.map(([title,text])=>'<h2>'+esc(title)+'</h2>'+para(text)).join('');
+    const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map'+(task.locationMap?'/'+esc(id):'')+'">Regional map</a></div>';
+    const locationLink=task.locationMap?'<a class="map-location-link" href="'+esc(task.locationMap)+'" target="_blank" rel="noopener noreferrer">Open White Orchard location map →</a><p class="map-caption">External map; use the Location directions below to find this stop.</p>':'';
+    const stageHTML=task.stages?'<div class="stage-tools">'+links+'<label>Stage <select data-stage-select aria-label="Choose walkthrough stage">'+task.stages.map(st=>'<option value="'+esc(st.id)+'">'+esc(st.title)+'</option>').join('')+'</select></label></div><div class="stage-nav" aria-label="Walkthrough stages"><button type="button" data-stage-prev>← Previous</button><span data-stage-count aria-live="polite"></span><button type="button" data-stage-next>Next →</button></div><div class="stage-panel" id="'+task.view+'-panel">'+task.stages.map((st,i)=>'<section class="walk-stage" data-stage="'+esc(st.id)+'" hidden><div class="stage-content"><span class="step-number" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div><h2>'+esc(st.title)+'</h2>'+(st.warning?'<p class="risk-note"><strong>Before this step:</strong> '+esc(st.warning)+'</p>':'')+para(st.text)+(st.spoiler?'<details><summary>Story outcome & choices · Spoilers</summary>'+para(st.spoiler)+'</details>':'')+'</div></div></section>').join('')+'</div>':links+locationLink+task.sections.map(([title,text])=>'<h2>'+esc(title)+'</h2>'+para(text)).join('');
     section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p></div><article class="reading-panel">'+meta+stageHTML+'<details class="sources"><summary>Sources & route notes</summary>'+task.sources.map(url=>'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Read source reference ↗</a></p>').join('')+'<p>Route grouping is editorial guidance. Encounter levels, availability and rewards still need Xbox field acceptance. This page records neither game state nor automatic completion.</p></details><a class="back-link" href="#whiteorchard-tree" data-return-hub>← Return to exact hub</a><p class="save-message" data-save-message aria-live="polite"></p></article></div>';
     const prior=document.getElementById(task.view);if(prior)prior.replaceWith(section);else document.querySelector('main').append(section);
   });
@@ -103,8 +104,14 @@
     const arrow=document.createElement('span');arrow.className='hub-arrow';arrow.textContent='+';arrow.setAttribute('aria-hidden','true');
     button.append(label,name,arrow);
     const panel=document.createElement('div');panel.id=hub.id+'-activities';panel.className='hub-activities';panel.setAttribute('role','region');panel.setAttribute('aria-labelledby',button.id);panel.hidden=true;
-    const list=document.createElement('ol');list.className='activity-list';
-    hub.items.forEach(id=>{
+    const groupsForHub=[['walkthrough','Quest walkthrough'],['side','Side quests'],['contract','Contracts'],['exploration','POIs & exploration'],['gear','Gear & services']];
+    const categoryFor=id=>(tasks[id].home===hub.id&&tasks[id].stages)||tasks[id].category==='preparation'?'walkthrough':tasks[id].category;
+    groupsForHub.forEach(([category,title])=>{
+      const ids=hub.items.filter(id=>categoryFor(id)===category);if(!ids.length)return;
+      const grouping=document.createElement('section');grouping.className='activity-group';
+      const heading=document.createElement('h3');heading.id=hub.id+'-'+category+'-heading';heading.textContent=title;grouping.setAttribute('aria-labelledby',heading.id);
+      const list=document.createElement('ol');list.className='activity-list';
+      ids.forEach(id=>{
       const row=document.createElement('li');row.className='activity-row';row.id=hub.id+'-'+id;
       const own=tasks[id].home===hub.id;
       if (own) {
@@ -115,8 +122,10 @@
         const mark=document.createElement('span');mark.className='task-mark';mark.dataset.taskMark=id;mark.setAttribute('role','img');row.classList.add('reference-row');row.append(mark);
       }
       const link=taskAnchor(id,!own);link.id=row.id+'-link';row.append(link);if(!own){const arrow=document.createElement('span');arrow.className='reference-arrow';arrow.textContent='→';arrow.setAttribute('aria-hidden','true');row.append(arrow);}list.append(row);
+      });
+      grouping.append(heading,list);panel.append(grouping);
     });
-    panel.append(list);block.append(button,panel);lanes[hub.group][hub.side?'branches':'main'].append(block);
+    block.append(button,panel);lanes[hub.group][hub.side?'branches':'main'].append(block);
     button.addEventListener('click',()=>{
       stashTree();state.selectedHub=hub.id;state.expandedHub=state.expandedHub===hub.id?null:hub.id;
       history.replaceState({...history.state},'',treeLink(hub.id));
@@ -247,6 +256,15 @@
       if(!state.treeReturn || state.treeReturn.expandedHub!==tasks[contentTask].home){state.treeReturn=ownerSnapshot(contentTask);state.selectedHub=tasks[contentTask].home;}
     }
     const staged=activeQuest();if(staged)renderStage(staged,suffix);
+    const locationCard=document.querySelector('[data-location-card]');locationCard.hidden=true;
+    if(currentRoot==='whiteorchard-map'&&validTask(suffix)&&tasks[suffix].locationMap){
+      const item=tasks[suffix];locationCard.hidden=false;
+      locationCard.querySelector('[data-location-title]').textContent=item.name;
+      locationCard.querySelector('[data-location-description]').textContent=item.sections.find(s=>s[0]==='Location')?.[1]||item.requirements;
+      locationCard.querySelector('[data-location-external]').href=item.locationMap;
+      locationCard.querySelector('[data-location-reference]').href=item.sources[0];
+      locationCard.querySelector('[data-location-return]').href='#'+item.view;
+    }
     let restore;
     let jump;
     if(currentRoot==='whiteorchard-tree') {
