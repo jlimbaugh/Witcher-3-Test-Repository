@@ -23,3 +23,6 @@ The same official CDPR assets remain unchanged. The active build now includes a 
 ## Native White Orchard map (R5)
 
 The local in-game terrain raster and original game marker PNGs are documented in MAP-SOURCES.md, including extraction credits, source commits, coordinate transformation, CC BY-NC-SA coordinate attribution and the separate Leaflet BSD licence. Map navigation no longer points to an external map site.
+
+## R10 review assets
+r10-haunted-scroll-concept.png is an original generated decorative concept made for this review. It depicts generic haunted scroll ornament and is not official CDPR art, geography, or a verified noonwraith depiction. The scene and map assets above remain unchanged. r10-*.svg are original code-drawn material/object studies, not game emblems. Quest-specific official banners and per-plaque art remain pending. The earlier 'no generated imagery' statement describes the historical baseline, not this explicitly labeled test branch.

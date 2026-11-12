@@ -21,7 +21,7 @@
   const para=text=>'<p>'+esc(text)+'</p>';
   // Content and navigation share one registry, avoiding hand-synced routing lists.
   Object.entries(tasks).forEach(([id,task])=>{
-    const section=document.createElement('section');section.className='view scene'+(task.stages?' walkthrough-scene':'');section.id=task.view;section.hidden=true;section.setAttribute('aria-labelledby',task.view+'-title');
+    const section=document.createElement('section');section.className='view scene'+(task.stages?' walkthrough-scene':'');section.id=task.view;section.hidden=true;section.dataset.task=id;section.setAttribute('aria-labelledby',task.view+'-title');
     const meta='<details class="route-context"><summary>Why this stop belongs here</summary>'+para(task.why)+'<h3>Availability & preparation</h3>'+para(task.requirements)+(task.level?para('Suggested quest level '+task.level+'. Opportunities are hand-curated; story access and encounter readiness still apply.'):'')+'<h3>Useful reward</h3>'+para(task.reward)+'</details>';
     const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map'+('/'+esc(id))+'">Regional map</a></div>';
     const locationLink=task.locationMap?'<a class="map-location-link" href="#whiteorchard-map/'+esc(id)+'">Show location on our map →</a>':'';
@@ -124,7 +124,7 @@
     const label=document.createElement('span');label.className='eyebrow';label.textContent=hub.label;
     const name=document.createElement('span');name.className='hub-name';name.textContent=hub.name;
     const arrow=document.createElement('span');arrow.className='hub-arrow';arrow.textContent='+';arrow.setAttribute('aria-hidden','true');
-    button.append(label,name,arrow);
+    const art=document.createElement('img');art.src='r10-'+(hub.side?'contract':'map')+'.svg';art.alt='';art.className='plaque-art';button.append(art,label,name,arrow);
     const panel=document.createElement('div');panel.id=hub.id+'-activities';panel.className='hub-activities';panel.setAttribute('role','region');panel.setAttribute('aria-labelledby',button.id);panel.hidden=true;
     const clusterMap=document.createElement('a');clusterMap.href='#whiteorchard-map/cluster/'+hub.id;clusterMap.className='cluster-map-link';clusterMap.textContent='Open this cluster on the map →';panel.append(clusterMap);
     const progressSlot=document.createElement('div');progressSlot.dataset.progressHub=hub.id;panel.append(progressSlot);
@@ -223,7 +223,7 @@
     if(task.stages.some(s=>s.id===id))state.stageByView[task.view]=id;
     const stage=state.stageByView[task.view]||task.stages[0].id;state.stageByView[task.view]=stage;
     const index=task.stages.findIndex(s=>s.id===stage);
-    section.querySelectorAll('[data-stage]').forEach(el=>{el.hidden=el.dataset.stage!==stage;});
+    section.dataset.currentStage=stage;section.querySelectorAll('[data-stage-index]').forEach(a=>{if(a.dataset.stageIndex===stage)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});section.querySelectorAll('[data-stage]').forEach(el=>{el.hidden=el.dataset.stage!==stage;});
     section.querySelector('[data-stage-select]').value=stage;
     section.querySelector('[data-stage-prev]').disabled=index===0;section.querySelector('[data-stage-next]').disabled=index===task.stages.length-1;
     section.querySelector('[data-stage-count]').textContent=(index+1)+' of '+task.stages.length;
@@ -261,7 +261,9 @@
     if(href.startsWith('#whiteorchard-map/')&&!href.includes('/cluster/')&&contentRoot('#'+currentRoot)&&history.state?.mapReturn)href='#whiteorchard-map/restore';
     navigate(href);
   });
+  let renderSerial=0;
   function render({mode='initial'}={}) {
+    const generation=++renderSerial;
     const incomingMap=history.state?.map;
     const before=currentRoot;
     const [requested,suffix,taskSuffix]=parseHash();
@@ -298,7 +300,7 @@
     lastRenderedURL=location.href;
     document.title=target.querySelector('h1').innerText.replace(/\s+/g,' ').trim()+' · Witcher Field Guide';
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      if(currentRoot!==target.id)return;
+      if(currentRoot!==target.id||generation!==renderSerial)return;
       if(currentRoot==='whiteorchard-tree'){
         if(jump){const el=document.getElementById(jump);const grouping=el.closest('details.activity-group');if(grouping){grouping.open=true;state.groupOpen[grouping.dataset.groupHub+':'+grouping.dataset.activityGroup]=true;}el.focus({preventScroll:true});el.scrollIntoView({block:'center',inline:'center',behavior:'auto'});arrivalCue(el);}
         else if(restore){
