@@ -4,7 +4,7 @@
   // This hand-curated sample proves navigation; it is not a level/access eligibility engine.
   const tasks = {
     'q-lilac': {name:'Lilac and Gooseberries', home:'hub-arrival', view:'quest-lilac', type:'quest'},
-    'q-firestarter': {name:'Twisted Firestarter', home:'hub-firestarter', view:'quest-firestarter', type:'quest'},
+    'q-firestarter': {name:'Twisted Firestarter', home:'hub-firestarter', view:'walkthrough-firestarter', type:'quest'},
     'loc-forge': {name:'Willis’s forge', home:'hub-firestarter', view:'location-forge', type:'service'},
     'q-beast': {name:'The Beast of White Orchard', home:'hub-hunt', view:'quest-beast', type:'quest'},
     'pop-cemetery': {name:'Cemetery Place of Power', home:'hub-hunt', view:'discovery-cemetery', type:'discovery'},
@@ -38,7 +38,7 @@
         Object.keys(tasks).forEach(id => {state.completed[id] = saved.completed?.[id] === true;});
         if (validHub(saved.selectedHub)) state.selectedHub = saved.selectedHub;
         if (saved.expandedHub === null || validHub(saved.expandedHub)) state.expandedHub = saved.expandedHub;
-        if (Number.isInteger(saved.windowStart)) state.windowStart = Math.max(0,Math.min(groups.length-1,saved.windowStart));
+        if (Number.isInteger(saved.windowStart)) state.windowStart = Math.max(0,Math.min(Math.max(0,groups.length-2),saved.windowStart));
         if (stages.includes(saved.lastStage)) state.lastStage = saved.lastStage;
         state.lastWalkthrough = saved.lastWalkthrough === true;
         if (validTask(saved.lastContent?.task) && ['quest-firestarter','walkthrough-firestarter','location-forge','quest-lilac','quest-beast','discovery-cemetery','departure-check'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
@@ -66,6 +66,26 @@
   }
   // Build once: a task's DOM identity and home never move when completion changes.
   const tree=document.querySelector('[data-story-tree]');
+  const wires=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  wires.classList.add('tree-wires');wires.setAttribute('aria-hidden','true');tree.append(wires);
+  function drawConnections(){
+    if(tree.closest('[hidden]'))return;
+    const box=tree.getBoundingClientRect();wires.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);wires.replaceChildren();
+    const edges=[['hub-arrival','hub-firestarter'],['hub-arrival','hub-hunt'],['hub-hunt','hub-departure']];
+    edges.forEach(([from,to])=>{
+      const a=document.getElementById(from),b=document.getElementById(to);if(a.hidden||b.hidden)return;
+      const ar=a.querySelector('button').getBoundingClientRect(),br=b.querySelector('button').getBoundingClientRect();
+      const side=b.classList.contains('side-branch');
+      const narrow=box.width<560;
+      const x1=side&&!narrow?ar.right-box.left:ar.left+18-box.left,y1=side&&!narrow?ar.top+ar.height/2-box.top:ar.bottom-box.top;
+      const x2=side?br.left-box.left:br.left+18-box.left,y2=side?br.top+br.height/2-box.top:br.top-box.top;
+      const path=document.createElementNS(wires.namespaceURI,'path');
+      path.setAttribute('d',side?`M ${x1} ${y1} H ${(x1+x2)/2} V ${y2} H ${x2}`:`M ${x1} ${y1} V ${y2}`);wires.append(path);
+    });
+  }
+  new ResizeObserver(drawConnections).observe(tree);
+  function arrivalCue(el){const row=el.closest('.activity-row')||el;row.classList.add('arrived');setTimeout(()=>row.classList.remove('arrived'),2400);}
+
   hubs.forEach(hub=>{
     const block=document.createElement('article');
     block.className='hub-block'+(hub.side?' side-branch':'');block.id=hub.id;block.dataset.group=hub.group;
@@ -84,9 +104,9 @@
         const check=document.createElement('input');check.type='checkbox';check.dataset.complete=id;check.setAttribute('aria-label','Mark '+tasks[id].name+' completed');
         control.append(check);row.append(control);
       } else {
-        const mark=document.createElement('span');mark.className='task-mark';mark.dataset.taskMark=id;row.append(mark);
+        const mark=document.createElement('span');mark.className='task-mark';mark.dataset.taskMark=id;mark.setAttribute('role','img');row.classList.add('reference-row');row.append(mark);
       }
-      const link=taskAnchor(id,!own);link.id=row.id+'-link';row.append(link);list.append(row);
+      const link=taskAnchor(id,!own);link.id=row.id+'-link';row.append(link);if(!own){const arrow=document.createElement('span');arrow.className='reference-arrow';arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');row.append(arrow);}list.append(row);
     });
     panel.append(list);block.append(button,panel);tree.append(block);
     button.addEventListener('click',()=>{
@@ -96,6 +116,7 @@
     });
   });
   function updateTree() {
+    state.windowStart=Math.min(state.windowStart,Math.max(0,groups.length-2));
     hubs.forEach(h=>{
       const block=document.getElementById(h.id),button=document.getElementById(h.id+'-toggle');
       block.hidden=h.group<state.windowStart || h.group>state.windowStart+1;
@@ -105,8 +126,8 @@
       button.classList.toggle('selected-hub',state.selectedHub===h.id);
     });
     document.querySelector('[data-earlier]').disabled=state.windowStart===0;
-    document.querySelector('[data-later]').disabled=state.windowStart===groups.length-1;
-    document.querySelector('[data-window-label]').textContent='Story groups '+(state.windowStart+1)+'–'+Math.min(groups.length,state.windowStart+2)+' of '+groups.length;
+    document.querySelector('[data-later]').disabled=state.windowStart===Math.max(0,groups.length-2);
+    document.querySelector('[data-window-label]').textContent=groups.slice(state.windowStart,state.windowStart+2).join(' → ');
   }
   function renderMapLinks() {
     const list=document.querySelector('[data-map-links]');list.replaceChildren();
@@ -128,7 +149,7 @@
     const count=Object.keys(tasks).filter(id=>state.completed[id]).length;
     document.querySelector('[data-pilot-progress]').textContent=count+' of '+Object.keys(tasks).length+' pilot activities completed';
     const cont=document.querySelector('[data-continue]');
-    if(state.lastWalkthrough){cont.href='#walkthrough-firestarter/'+state.lastStage;cont.textContent='Continue Twisted Firestarter →';}
+    if(state.lastWalkthrough){cont.href='#walkthrough-firestarter/'+state.lastStage;cont.textContent='Continue · Twisted Firestarter, stage '+(stages.indexOf(state.lastStage)+1)+' of '+stages.length+' →';}
     else if(state.lastContent){cont.href='#'+state.lastContent.view+(state.lastContent.view==='walkthrough-firestarter'?'/'+state.lastStage:'');cont.textContent='Continue '+tasks[state.lastContent.task].name+' →';}
     else {cont.href=treeLink(state.selectedHub);cont.textContent='Open selected hub →';}
     document.querySelectorAll('[data-selected-hub]').forEach(a=>{a.href=treeLink(state.selectedHub);});
@@ -152,7 +173,7 @@
   });
   document.querySelector('[data-earlier]').addEventListener('click',()=>browseWindow(-1));
   document.querySelector('[data-later]').addEventListener('click',()=>browseWindow(1));
-  function browseWindow(delta) {stashTree();state.windowStart=Math.max(0,Math.min(groups.length-1,state.windowStart+delta));history.replaceState({...history.state},'','#whiteorchard-tree');updateTree();stashTree();persist();}
+  function browseWindow(delta) {stashTree();state.windowStart=Math.max(0,Math.min(Math.max(0,groups.length-2),state.windowStart+delta));history.replaceState({...history.state},'','#whiteorchard-tree');updateTree();stashTree();persist();}
   document.querySelector('[data-jump-selected]').addEventListener('click',()=>navigate(treeLink(state.selectedHub)));
   const type=document.querySelector('[data-map-type]'),search=document.querySelector('[data-map-search]'),show=document.querySelector('[data-map-completed]');
   type.value=state.map.type;search.value=state.map.search;show.checked=state.map.showCompleted;
@@ -200,7 +221,7 @@
     const target=views.find(v=>v.id===requested)||document.getElementById('not-found');
     views.forEach(v=>{v.hidden=v!==target;});currentRoot=target.id;
     document.querySelectorAll('.guide-bar nav a').forEach(a=>{
-      const on=currentRoot==='home'?a.hash==='#home':a.hash==='#regions';
+      const on=a.hash===(currentRoot==='home'?'#home':currentRoot==='whiteorchard-tree'||currentRoot.startsWith('quest-')||currentRoot.startsWith('walkthrough-')?'#whiteorchard-tree':'#regions');
       if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
     const contentTask=currentRoot==='walkthrough-firestarter'?'q-firestarter':Object.keys(tasks).find(id=>tasks[id].view===currentRoot);
@@ -219,23 +240,23 @@
         restore=history.state?.tree||state.treeReturn;
         if(restore){
           state.expandedHub=validHub(restore.expandedHub)?restore.expandedHub:null;
-          state.windowStart=Math.max(0,Math.min(groups.length-1,Number(restore.windowStart)||0));
+          state.windowStart=Math.max(0,Math.min(Math.max(0,groups.length-2),Number(restore.windowStart)||0));
         }
       }
       updateTree();
     }
-    reflect();persist();
+    reflect();persist();requestAnimationFrame(drawConnections);
     lastRenderedURL=location.href;
     document.title=target.querySelector('h1').innerText.replace(/\s+/g,' ').trim()+' · Witcher Field Guide';
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       if(currentRoot!==target.id)return;
       if(currentRoot==='whiteorchard-tree'){
-        if(jump){const el=document.getElementById(jump);el.focus({preventScroll:true});el.scrollIntoView({block:'center',behavior:'auto'});}
+        if(jump){const el=document.getElementById(jump);el.focus({preventScroll:true});el.scrollIntoView({block:'center',behavior:'auto'});arrivalCue(el);}
         else if(restore){
           const y=Math.max(0,Number(restore.scrollY)||0);
           const focus=document.getElementById(restore.focusId);
           if(focus&&!focus.closest('[hidden]'))focus.focus({preventScroll:true});
-          if(restore.jump&&focus)focus.scrollIntoView({block:'center',behavior:'auto'});else window.scrollTo(0,y);
+          if(restore.jump&&focus){focus.scrollIntoView({block:'center',behavior:'auto'});arrivalCue(focus);}else window.scrollTo(0,y);
         } else window.scrollTo(0,0);
         stashTree();persist();
       } else if(currentRoot==='walkthrough-firestarter'&&before===currentRoot){
