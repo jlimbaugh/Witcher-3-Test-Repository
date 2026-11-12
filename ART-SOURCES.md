@@ -15,3 +15,7 @@ Pilot routes: Regions → White Orchard → Map / Quests / Points of Interest �
 Quest references: https://www.gamebanshee.com/thewitcher3/walkthrough/twistedfirestarter.php and https://witcher.fandom.com/wiki/Twisted_Firestarter
 
 Content and presentation require Capt acceptance before this becomes a regional template. No independent Xbox field test claimed.
+
+## Interaction pilot R1
+
+The same official CDPR assets remain unchanged. The active build now includes a four-block story tree, fixed activity homes, six pilot activities, stage navigation and resume, hub-only completion, exact-return state, and labelled map-routing tests. See INTERACTION-PILOT-R1.md for identities, sources, behavior and limits. No geographic map, game icon set, authentic font or complete regional route is claimed.
