@@ -18,6 +18,11 @@
     section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p></div><article class="reading-panel">'+meta+stageHTML+'<details class="sources"><summary>Sources & route notes</summary>'+task.sources.map(url=>'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Read source reference ↗</a></p>').join('')+'<p>Route grouping is editorial guidance. Encounter levels, availability and rewards still need Xbox field acceptance. This page records neither game state nor automatic completion.</p></details><a class="back-link" href="#whiteorchard-tree" data-return-hub>← Return to exact hub</a><p class="save-message" data-save-message aria-live="polite"></p></article></div>';
     const prior=document.getElementById(task.view);if(prior)prior.replaceWith(section);else document.querySelector('main').append(section);
   });
+  const placeIndex=document.querySelector('#whiteorchard-pois .reading-panel');
+  placeIndex.innerHTML='<label>Find a discovery or service<input type="search" data-place-search placeholder="Name or quest hub…"></label><div data-place-list></div>';
+  const placeRows=Object.entries(tasks).filter(([id,t])=>!t.stages&&window.PHOENIX_MAP.markers.some(p=>p.task===id));
+  function drawPlaces(query=''){const list=placeIndex.querySelector('[data-place-list]');list.innerHTML=placeRows.filter(([id,t])=>(t.name+' '+hubs.find(h=>h.id===t.home).name).toLowerCase().includes(query.toLowerCase())).map(([id,t])=>'<p><a href="#whiteorchard-tree/'+esc(t.home)+'/'+esc(id)+'">'+esc(t.name)+'</a></p>').join('')||'<p>No matching places.</p>';}
+  placeIndex.querySelector('[data-place-search]').addEventListener('input',e=>drawPlaces(e.target.value));drawPlaces();
   const key = 'phoenix.whiteorchard.interaction.v1';
   const legacyKey = 'phoenix.whiteorchard.pilot.v1';
   const views = [...document.querySelectorAll('.view')];
@@ -48,7 +53,7 @@
         else if(state.lastWalkthrough)state.lastWalkthroughView='walkthrough-firestarter';
         if (validTask(saved.lastContent?.task) && [...Object.values(tasks).map(t=>t.view),'quest-firestarter'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
         if (validHub(saved.treeReturn?.expandedHub) || saved.treeReturn?.expandedHub === null) state.treeReturn = saved.treeReturn;
-        if (saved.map) state.map = {type:['all','pop','diagram','service','gwent','notice'].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true,view:saved.map.view};
+        if (saved.map) state.map = {type:["all", "pop", "diagram", "service", "gwent", "notice", "abandoned", "buff", "camp", "entrance", "guarded", "hidden", "nest", "poi", "signpost", "cache", "quest", "contract"].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true,view:saved.map.view};
       }
     } else {
       // Read, but never overwrite or delete, the old pilot save.

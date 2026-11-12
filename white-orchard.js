@@ -775,6 +775,1264 @@ window.PHOENIX_ROUTE = {
       "level": 2,
       "map": true,
       "category": "side"
+    },
+    "abandoned-1": {
+      "name": "Abandoned shrine · southeast road",
+      "home": "hub-devil",
+      "view": "activity-abandoned-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Abandoned shrine · southeast road is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "Inspect the hostiles before engaging. Do not confuse this event with the permanently ruined Abandoned Village.",
+      "reward": "A restored settlement and service access.",
+      "sections": [
+        [
+          "Location",
+          "South of Ford. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Inspect the hostiles before engaging. Do not confuse this event with the permanently ruined Abandoned Village."
+        ],
+        [
+          "Action",
+          "Remove the immediate threats and let the residents return. Recheck the restored area for services before marking it complete."
+        ],
+        [
+          "Reward",
+          "A restored settlement and service access."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/abandoned-1"
+    },
+    "abandoned-2": {
+      "name": "Abandoned site · west of Sawmill",
+      "home": "hub-cargo",
+      "view": "activity-abandoned-2",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Abandoned site · west of Sawmill is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Precious Cargo. Check the approach and your supplies before committing.",
+      "requirements": "Inspect the hostiles before engaging. Do not confuse this event with the permanently ruined Abandoned Village.",
+      "reward": "A restored settlement and service access.",
+      "sections": [
+        [
+          "Location",
+          "West of Sawmill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Inspect the hostiles before engaging. Do not confuse this event with the permanently ruined Abandoned Village."
+        ],
+        [
+          "Action",
+          "Remove the immediate threats and let the residents return. Recheck the restored area for services before marking it complete."
+        ],
+        [
+          "Reward",
+          "A restored settlement and service access."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/abandoned-2"
+    },
+    "armourerstable-1": {
+      "name": "Armorer’s table · Near Nilfgaardian Garrison",
+      "home": "hub-hunt",
+      "view": "activity-armourerstable-1",
+      "type": "service",
+      "category": "gear",
+      "intro": "Armorer’s table · Near Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following The Beast of White Orchard. Check the approach and your supplies before committing.",
+      "requirements": "Touch the table before a planned fight.",
+      "reward": "Temporary armor improvement.",
+      "sections": [
+        [
+          "Location",
+          "Near Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Touch the table before a planned fight."
+        ],
+        [
+          "Action",
+          "Use the table and check the temporary armor buff. Revisit when the buff expires."
+        ],
+        [
+          "Reward",
+          "Temporary armor improvement."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/armourerstable-1"
+    },
+    "banditcamp-1": {
+      "name": "Bandit camp · Southwest of Broken Bridge",
+      "home": "hub-devil",
+      "view": "activity-banditcamp-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Bandit camp · Southwest of Broken Bridge is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness.",
+      "reward": "Saleable loot; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "Southwest of Broken Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness."
+        ],
+        [
+          "Action",
+          "Approach from the edge, avoid being surrounded, then search the tents and marked containers. Mark complete after collecting the loot."
+        ],
+        [
+          "Reward",
+          "Saleable loot; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/banditcamp-1"
+    },
+    "banditcamp-2": {
+      "name": "Bandit camp · South of Ford",
+      "home": "hub-devil",
+      "view": "activity-banditcamp-2",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Bandit camp · South of Ford is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness.",
+      "reward": "Saleable loot; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "South of Ford. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness."
+        ],
+        [
+          "Action",
+          "Approach from the edge, avoid being surrounded, then search the tents and marked containers. Mark complete after collecting the loot."
+        ],
+        [
+          "Reward",
+          "Saleable loot; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/banditcamp-2"
+    },
+    "banditcamp-3": {
+      "name": "Bandit camp · Northwest of Sawmill",
+      "home": "hub-cargo",
+      "view": "activity-banditcamp-3",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Bandit camp · Northwest of Sawmill is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Precious Cargo. Check the approach and your supplies before committing.",
+      "requirements": "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness.",
+      "reward": "Saleable loot; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "Northwest of Sawmill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness."
+        ],
+        [
+          "Action",
+          "Approach from the edge, avoid being surrounded, then search the tents and marked containers. Mark complete after collecting the loot."
+        ],
+        [
+          "Reward",
+          "Saleable loot; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/banditcamp-3"
+    },
+    "banditcamp-6": {
+      "name": "Bandit camp · Southwest of Crossroads",
+      "home": "hub-missing",
+      "view": "activity-banditcamp-6",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Bandit camp · Southwest of Crossroads is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Missing in Action. Check the approach and your supplies before committing.",
+      "requirements": "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness.",
+      "reward": "Saleable loot; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "Southwest of Crossroads. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Repair your steel sword and inspect enemy levels. Retreat if this is beyond your current readiness."
+        ],
+        [
+          "Action",
+          "Approach from the edge, avoid being surrounded, then search the tents and marked containers. Mark complete after collecting the loot."
+        ],
+        [
+          "Reward",
+          "Saleable loot; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/banditcamp-6"
+    },
+    "blacksmith-1": {
+      "name": "Garrison blacksmith · Near Nilfgaardian Garrison",
+      "home": "hub-hunt",
+      "view": "activity-blacksmith-1",
+      "type": "service",
+      "category": "gear",
+      "intro": "Garrison blacksmith · Near Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following The Beast of White Orchard. Check the approach and your supplies before committing.",
+      "requirements": "Check diagrams, materials and crown cost before commissioning a weapon.",
+      "reward": "Weapon services; costs are shown in the trade menu.",
+      "sections": [
+        [
+          "Location",
+          "Near Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Check diagrams, materials and crown cost before commissioning a weapon."
+        ],
+        [
+          "Action",
+          "Speak to the craftsman to repair, craft or dismantle. Finding a diagram does not give you the finished sword."
+        ],
+        [
+          "Reward",
+          "Weapon services; costs are shown in the trade menu."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/blacksmith-1"
+    },
+    "grindstone-village": {
+      "name": "Grindstone · West of Woesong Bridge",
+      "home": "hub-firestarter",
+      "view": "activity-grindstone-village",
+      "type": "service",
+      "category": "gear",
+      "intro": "Grindstone · West of Woesong Bridge is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Twisted Firestarter. Check the approach and your supplies before committing.",
+      "requirements": "Use while preparing equipment for a nearby fight.",
+      "reward": "Temporary weapon damage improvement.",
+      "sections": [
+        [
+          "Location",
+          "West of Woesong Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Use while preparing equipment for a nearby fight."
+        ],
+        [
+          "Action",
+          "Sharpen the blade and check the temporary weapon buff. This is a reusable service, not a cleared encounter."
+        ],
+        [
+          "Reward",
+          "Temporary weapon damage improvement."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/grindstone-village"
+    },
+    "grindstone-3": {
+      "name": "Grindstone · West of Sawmill",
+      "home": "hub-cargo",
+      "view": "activity-grindstone-3",
+      "type": "service",
+      "category": "gear",
+      "intro": "Grindstone · West of Sawmill is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Precious Cargo. Check the approach and your supplies before committing.",
+      "requirements": "Use while preparing equipment for a nearby fight.",
+      "reward": "Temporary weapon damage improvement.",
+      "sections": [
+        [
+          "Location",
+          "West of Sawmill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Use while preparing equipment for a nearby fight."
+        ],
+        [
+          "Action",
+          "Sharpen the blade and check the temporary weapon buff. This is a reusable service, not a cleared encounter."
+        ],
+        [
+          "Reward",
+          "Temporary weapon damage improvement."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/grindstone-3"
+    },
+    "grindstone-4": {
+      "name": "Grindstone · Near Nilfgaardian Garrison",
+      "home": "hub-hunt",
+      "view": "activity-grindstone-4",
+      "type": "service",
+      "category": "gear",
+      "intro": "Grindstone · Near Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following The Beast of White Orchard. Check the approach and your supplies before committing.",
+      "requirements": "Use while preparing equipment for a nearby fight.",
+      "reward": "Temporary weapon damage improvement.",
+      "sections": [
+        [
+          "Location",
+          "Near Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Use while preparing equipment for a nearby fight."
+        ],
+        [
+          "Action",
+          "Sharpen the blade and check the temporary weapon buff. This is a reusable service, not a cleared encounter."
+        ],
+        [
+          "Reward",
+          "Temporary weapon damage improvement."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/grindstone-4"
+    },
+    "guarded-1": {
+      "name": "Guarded treasure · Southeast of Woesong Bridge",
+      "home": "hub-devil",
+      "view": "activity-guarded-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Guarded treasure · Southeast of Woesong Bridge is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "Look for the guardian and check its level before approaching the cache.",
+      "reward": "Cached loot; no fixed item quality is promised.",
+      "sections": [
+        [
+          "Location",
+          "Southeast of Woesong Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Look for the guardian and check its level before approaching the cache."
+        ],
+        [
+          "Action",
+          "Clear the immediate threat or return later. Search all containers at the marker before marking the stop complete."
+        ],
+        [
+          "Reward",
+          "Cached loot; no fixed item quality is promised."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/guarded-1"
+    },
+    "guarded-2": {
+      "name": "Guarded treasure · Southwest of Nilfgaardian Garrison",
+      "home": "hub-cargo",
+      "view": "activity-guarded-2",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Guarded treasure · Southwest of Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Precious Cargo. Check the approach and your supplies before committing.",
+      "requirements": "Look for the guardian and check its level before approaching the cache.",
+      "reward": "Cached loot; no fixed item quality is promised.",
+      "sections": [
+        [
+          "Location",
+          "Southwest of Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Look for the guardian and check its level before approaching the cache."
+        ],
+        [
+          "Action",
+          "Clear the immediate threat or return later. Search all containers at the marker before marking the stop complete."
+        ],
+        [
+          "Reward",
+          "Cached loot; no fixed item quality is promised."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/guarded-2"
+    },
+    "guarded-3": {
+      "name": "Guarded treasure · North of Mill",
+      "home": "hub-viper",
+      "view": "activity-guarded-3",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Guarded treasure · North of Mill is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Scavenger Hunt: Viper School Gear. Check the approach and your supplies before committing.",
+      "requirements": "Look for the guardian and check its level before approaching the cache.",
+      "reward": "Cached loot; no fixed item quality is promised.",
+      "sections": [
+        [
+          "Location",
+          "North of Mill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Look for the guardian and check its level before approaching the cache."
+        ],
+        [
+          "Action",
+          "Clear the immediate threat or return later. Search all containers at the marker before marking the stop complete."
+        ],
+        [
+          "Reward",
+          "Cached loot; no fixed item quality is promised."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/guarded-3"
+    },
+    "guarded-4": {
+      "name": "Guarded treasure · Southeast of Nilfgaardian Garrison",
+      "home": "hub-hunt",
+      "view": "activity-guarded-4",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Guarded treasure · Southeast of Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following The Beast of White Orchard. Check the approach and your supplies before committing.",
+      "requirements": "Look for the guardian and check its level before approaching the cache.",
+      "reward": "Cached loot; no fixed item quality is promised.",
+      "sections": [
+        [
+          "Location",
+          "Southeast of Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Look for the guardian and check its level before approaching the cache."
+        ],
+        [
+          "Action",
+          "Clear the immediate threat or return later. Search all containers at the marker before marking the stop complete."
+        ],
+        [
+          "Reward",
+          "Cached loot; no fixed item quality is promised."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/guarded-4"
+    },
+    "guarded-5": {
+      "name": "Guarded treasure · South of Ransacked Village",
+      "home": "hub-missing",
+      "view": "activity-guarded-5",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Guarded treasure · South of Ransacked Village is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Missing in Action. Check the approach and your supplies before committing.",
+      "requirements": "Look for the guardian and check its level before approaching the cache.",
+      "reward": "Cached loot; no fixed item quality is promised.",
+      "sections": [
+        [
+          "Location",
+          "South of Ransacked Village. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Look for the guardian and check its level before approaching the cache."
+        ],
+        [
+          "Action",
+          "Clear the immediate threat or return later. Search all containers at the marker before marking the stop complete."
+        ],
+        [
+          "Reward",
+          "Cached loot; no fixed item quality is promised."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/guarded-5"
+    },
+    "herbalist-2": {
+      "name": "Shrine herbalist · Southwest of Ford",
+      "home": "hub-devil",
+      "view": "activity-herbalist-2",
+      "type": "service",
+      "category": "gear",
+      "intro": "Shrine herbalist · Southwest of Ford is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "This service requires the surrounding abandoned site to be restored.",
+      "reward": "Alchemy supplies; availability and prices depend on stock.",
+      "sections": [
+        [
+          "Location",
+          "Southwest of Ford. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "This service requires the surrounding abandoned site to be restored."
+        ],
+        [
+          "Action",
+          "After residents return, speak to the herbalist for ingredients and available formulas. Check stock before buying."
+        ],
+        [
+          "Reward",
+          "Alchemy supplies; availability and prices depend on stock."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/herbalist-2"
+    },
+    "monsternest-1": {
+      "name": "Ghoul nest · north of the cemetery",
+      "home": "hub-viper",
+      "view": "activity-monsternest-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Ghoul nest · north of the cemetery is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Scavenger Hunt: Viper School Gear. Check the approach and your supplies before committing.",
+      "requirements": "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star.",
+      "reward": "Nest loot and a cleared infestation.",
+      "sections": [
+        [
+          "Location",
+          "North of Mill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star."
+        ],
+        [
+          "Action",
+          "Clear the ghouls, interact with the nest to plant a bomb, then loot after the explosion. Be ready for another enemy."
+        ],
+        [
+          "Reward",
+          "Nest loot and a cleared infestation."
+        ]
+      ],
+      "sources": [
+        "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/monsternest-1"
+    },
+    "monsternest-2": {
+      "name": "Ghoul nest · Cackler Bridge",
+      "home": "hub-missing",
+      "view": "activity-monsternest-2",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Ghoul nest · Cackler Bridge is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Missing in Action. Check the approach and your supplies before committing.",
+      "requirements": "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star.",
+      "reward": "Nest loot and a cleared infestation.",
+      "sections": [
+        [
+          "Location",
+          "East of Cackler Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star."
+        ],
+        [
+          "Action",
+          "Clear the ghouls, interact with the nest to plant a bomb, then loot after the explosion. Be ready for another enemy."
+        ],
+        [
+          "Reward",
+          "Nest loot and a cleared infestation."
+        ]
+      ],
+      "sources": [
+        "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/monsternest-2"
+    },
+    "monsternest-3": {
+      "name": "Ghoul nest · east of Crossroads",
+      "home": "hub-missing",
+      "view": "activity-monsternest-3",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Ghoul nest · east of Crossroads is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Missing in Action. Check the approach and your supplies before committing.",
+      "requirements": "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star.",
+      "reward": "Nest loot and a cleared infestation.",
+      "sections": [
+        [
+          "Location",
+          "East of Crossroads. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Carry a nest-destroying bomb such as Samum, Grapeshot or Dancing Star."
+        ],
+        [
+          "Action",
+          "Clear the ghouls, interact with the nest to plant a bomb, then loot after the explosion. Be ready for another enemy."
+        ],
+        [
+          "Reward",
+          "Nest loot and a cleared infestation."
+        ]
+      ],
+      "sources": [
+        "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/monsternest-3"
+    },
+    "poi-1": {
+      "name": "Battlefield search · north of Ransacked Village",
+      "home": "hub-missing",
+      "view": "activity-poi-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Battlefield search · north of Ransacked Village is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Missing in Action. Check the approach and your supplies before committing.",
+      "requirements": "Expect battlefield scavengers. Keep space for useful loot.",
+      "reward": "Loot and documents along the battlefield route.",
+      "sections": [
+        [
+          "Location",
+          "East of Cackler Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Expect battlefield scavengers. Keep space for useful loot."
+        ],
+        [
+          "Action",
+          "Search bodies and containers along Dune’s outing. Collect documents you find; finish the marked brother-search objectives separately."
+        ],
+        [
+          "Reward",
+          "Loot and documents along the battlefield route."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/poi-1"
+    },
+    "poi-4": {
+      "name": "Yennefer’s crystal skull",
+      "home": "hub-arrival",
+      "view": "activity-poi-4",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Yennefer’s crystal skull is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Lilac and Gooseberries. Check the approach and your supplies before committing.",
+      "requirements": "Check the opening campsite before riding on.",
+      "reward": "An optional personal item.",
+      "sections": [
+        [
+          "Location",
+          "Near Crossroads. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Check the opening campsite before riding on."
+        ],
+        [
+          "Action",
+          "Use Witcher Senses near the opening camp and collect the crystal skull. This is an optional keepsake, not an equipment upgrade."
+        ],
+        [
+          "Reward",
+          "An optional personal item."
+        ]
+      ],
+      "sources": [
+        "https://www.gamebanshee.com/thewitcher3/walkthrough/lilacandgooseberries.php"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/poi-4"
+    },
+    "shopkeeper-1": {
+      "name": "Bram · cards and riding supplies",
+      "home": "hub-arrival",
+      "view": "activity-shopkeeper-1",
+      "type": "service",
+      "category": "gear",
+      "intro": "Bram · cards and riding supplies is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Lilac and Gooseberries. Check the approach and your supplies before committing.",
+      "requirements": "Review current needs and prices before spending.",
+      "reward": "Trade access; purchases cost crowns.",
+      "sections": [
+        [
+          "Location",
+          "Near Woesong Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Review current needs and prices before spending."
+        ],
+        [
+          "Action",
+          "Inspect Gwent cards, crafting goods and riding equipment. Compare available capacity upgrades before buying; sell or keep loot according to your needs."
+        ],
+        [
+          "Reward",
+          "Trade access; purchases cost crowns."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/shopkeeper-1"
+    },
+    "shopkeeper-2": {
+      "name": "Sawmill merchant",
+      "home": "hub-cargo",
+      "view": "activity-shopkeeper-2",
+      "type": "service",
+      "category": "gear",
+      "intro": "Sawmill merchant is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Precious Cargo. Check the approach and your supplies before committing.",
+      "requirements": "This merchant appears after the nearby abandoned site is restored.",
+      "reward": "Trade access; purchases cost crowns.",
+      "sections": [
+        [
+          "Location",
+          "West of Sawmill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "This merchant appears after the nearby abandoned site is restored."
+        ],
+        [
+          "Action",
+          "Inspect the merchant’s goods, sell unwanted items where appropriate, and keep the materials you still need."
+        ],
+        [
+          "Reward",
+          "Trade access; purchases cost crowns."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/shopkeeper-2"
+    },
+    "signpost-1": {
+      "name": "Abandoned Village signpost",
+      "home": "hub-devil",
+      "view": "activity-signpost-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Abandoned Village signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Contract: Devil by the Well. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Abandoned Village. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-1"
+    },
+    "signpost-2": {
+      "name": "Broken Bridge signpost",
+      "home": "hub-devil",
+      "view": "activity-signpost-2",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Broken Bridge signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Contract: Devil by the Well. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Broken Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-2"
+    },
+    "signpost-3": {
+      "name": "Woesong Bridge signpost",
+      "home": "hub-arrival",
+      "view": "activity-signpost-3",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Woesong Bridge signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Lilac and Gooseberries. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Woesong Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-3"
+    },
+    "signpost-4": {
+      "name": "Sawmill signpost",
+      "home": "hub-cargo",
+      "view": "activity-signpost-4",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Sawmill signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Precious Cargo. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Sawmill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-4"
+    },
+    "signpost-5": {
+      "name": "Mill signpost",
+      "home": "hub-temerian",
+      "view": "activity-signpost-5",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Mill signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Temerian Valuables. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Mill. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-5"
+    },
+    "signpost-6": {
+      "name": "Nilfgaardian Garrison signpost",
+      "home": "hub-hunt",
+      "view": "activity-signpost-6",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Nilfgaardian Garrison signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for The Beast of White Orchard. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-6"
+    },
+    "signpost-7": {
+      "name": "Cackler Bridge signpost",
+      "home": "hub-missing",
+      "view": "activity-signpost-7",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Cackler Bridge signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Missing in Action. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Cackler Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-7"
+    },
+    "signpost-8": {
+      "name": "Crossroads signpost",
+      "home": "hub-missing",
+      "view": "activity-signpost-8",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Crossroads signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Missing in Action. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Crossroads. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-8"
+    },
+    "signpost-9": {
+      "name": "Ford signpost",
+      "home": "hub-missing",
+      "view": "activity-signpost-9",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Ford signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Missing in Action. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Ford. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-9"
+    },
+    "signpost-10": {
+      "name": "Ransacked Village signpost",
+      "home": "hub-missing",
+      "view": "activity-signpost-10",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Ransacked Village signpost is one of the stops along this part of the Path.",
+      "why": "A travel anchor for Missing in Action. It helps you return without retracing the entire road.",
+      "requirements": "Reach the signpost safely; it is an orientation stop, not a combat reward.",
+      "reward": "A reusable travel reference.",
+      "sections": [
+        [
+          "Location",
+          "Near Ransacked Village. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Reach the signpost safely; it is an orientation stop, not a combat reward."
+        ],
+        [
+          "Action",
+          "Approach the signpost to discover it in-game. Use discovered signposts for fast travel when you need to return along this route. Mark this guide entry once visited."
+        ],
+        [
+          "Reward",
+          "A reusable travel reference."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/signpost-10"
+    },
+    "smugglers-1": {
+      "name": "Smugglers’ cache · South of Ford",
+      "home": "hub-devil",
+      "view": "activity-smugglers-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Smugglers’ cache · South of Ford is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Contract: Devil by the Well. Check the approach and your supplies before committing.",
+      "requirements": "Check shore access and threats; if diving, watch your breath and leave a clear return route.",
+      "reward": "Recovered goods; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "South of Ford. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Check shore access and threats; if diving, watch your breath and leave a clear return route."
+        ],
+        [
+          "Action",
+          "Use Witcher Senses to locate the marked containers. Collect the goods and return to safe ground before sorting equipment."
+        ],
+        [
+          "Reward",
+          "Recovered goods; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/smugglers-1"
+    },
+    "spoils-1": {
+      "name": "Spoils of war · East of Nilfgaardian Garrison",
+      "home": "hub-hunt",
+      "view": "activity-spoils-1",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Spoils of war · East of Nilfgaardian Garrison is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following The Beast of White Orchard. Check the approach and your supplies before committing.",
+      "requirements": "Check shore access and threats; if diving, watch your breath and leave a clear return route.",
+      "reward": "Recovered goods; contents vary.",
+      "sections": [
+        [
+          "Location",
+          "East of Nilfgaardian Garrison. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "Check shore access and threats; if diving, watch your breath and leave a clear return route."
+        ],
+        [
+          "Action",
+          "Use Witcher Senses to locate the marked containers. Collect the goods and return to safe ground before sorting equipment."
+        ],
+        [
+          "Reward",
+          "Recovered goods; contents vary."
+        ]
+      ],
+      "sources": [
+        "https://github.com/witcher3map/witcher3map/blob/437241a978a13a1ca9114301d9ef887fadf4f260/assets/scripts/custom/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/spoils-1"
+    },
+    "cow-pasture-warning": {
+      "name": "Cow pasture · farming warning",
+      "home": "hub-arrival",
+      "view": "activity-cow-pasture-warning",
+      "type": "discovery",
+      "category": "exploration",
+      "intro": "Cow pasture · farming warning is one of the stops along this part of the Path.",
+      "why": "A suggested detour while following Lilac and Gooseberries. Check the approach and your supplies before committing.",
+      "requirements": "This is a caution, not a recommended early combat encounter.",
+      "reward": "Avoid an unnecessary high-risk fight.",
+      "sections": [
+        [
+          "Location",
+          "Near Woesong Bridge. Open the local map for the recorded position; follow terrain and roads when approaching."
+        ],
+        [
+          "Preparation",
+          "This is a caution, not a recommended early combat encounter."
+        ],
+        [
+          "Action",
+          "Do not repeatedly farm the village cows for income. That can trigger an overlevelled defensive monster; leave the area rather than treating it as part of this route."
+        ],
+        [
+          "Reward",
+          "Avoid an unnecessary high-risk fight."
+        ]
+      ],
+      "sources": [
+        "https://github.com/root-BB/witcher3map/blob/b023eb7e882915308dfd4e20cb75249005902d5a/files/scripts/mapdata-white_orchard.js"
+      ],
+      "map": true,
+      "locationMap": "#whiteorchard-map/cow-pasture-warning"
     }
   },
   "hubs": [
@@ -789,7 +2047,11 @@ window.PHOENIX_ROUTE = {
         "q-firestarter",
         "q-missing",
         "q-pan",
-        "q-cargo"
+        "q-cargo",
+        "poi-4",
+        "shopkeeper-1",
+        "signpost-3",
+        "cow-pasture-warning"
       ]
     },
     {
@@ -800,7 +2062,8 @@ window.PHOENIX_ROUTE = {
       "side": true,
       "items": [
         "loc-forge",
-        "q-firestarter"
+        "q-firestarter",
+        "grindstone-village"
       ]
     },
     {
@@ -811,7 +2074,16 @@ window.PHOENIX_ROUTE = {
       "side": true,
       "items": [
         "q-missing",
-        "pop-cackler"
+        "poi-1",
+        "monsternest-3",
+        "pop-cackler",
+        "monsternest-2",
+        "banditcamp-6",
+        "guarded-5",
+        "signpost-7",
+        "signpost-8",
+        "signpost-9",
+        "signpost-10"
       ]
     },
     {
@@ -833,7 +2105,13 @@ window.PHOENIX_ROUTE = {
       "side": true,
       "items": [
         "q-cargo",
-        "pop-sawmill"
+        "pop-sawmill",
+        "abandoned-2",
+        "banditcamp-3",
+        "grindstone-3",
+        "guarded-2",
+        "shopkeeper-2",
+        "signpost-4"
       ]
     },
     {
@@ -848,7 +2126,13 @@ window.PHOENIX_ROUTE = {
         "q-beast",
         "q-dirty",
         "pop-cemetery",
-        "q-temerian"
+        "q-temerian",
+        "armourerstable-1",
+        "blacksmith-1",
+        "grindstone-4",
+        "guarded-4",
+        "signpost-6",
+        "spoils-1"
       ]
     },
     {
@@ -870,7 +2154,15 @@ window.PHOENIX_ROUTE = {
       "items": [
         "q-devil",
         "pop-bear",
-        "pop-bridge"
+        "pop-bridge",
+        "abandoned-1",
+        "banditcamp-1",
+        "banditcamp-2",
+        "guarded-1",
+        "herbalist-2",
+        "signpost-1",
+        "signpost-2",
+        "smugglers-1"
       ]
     },
     {
@@ -882,7 +2174,9 @@ window.PHOENIX_ROUTE = {
       "items": [
         "pop-cemetery",
         "q-viper",
-        "pop-north"
+        "pop-north",
+        "monsternest-1",
+        "guarded-3"
       ]
     },
     {
@@ -893,7 +2187,8 @@ window.PHOENIX_ROUTE = {
       "side": true,
       "items": [
         "q-temerian",
-        "q-deserter"
+        "q-deserter",
+        "signpost-5"
       ]
     },
     {
@@ -930,7 +2225,8 @@ window.PHOENIX_ROUTE = {
         "q-death",
         "departure-review",
         "q-incident"
-      ]
+      ],
+      "mapAnchor": "gwent-start"
     }
   ],
   "groups": [

@@ -1,0 +1,536 @@
+{
+  "sourceEntries": 57,
+  "renderedMarkers": 64,
+  "coreReconciliation": [
+    {
+      "source": "abandoned-1",
+      "coordinate": [
+        -77.786,
+        -48.604
+      ],
+      "marker": "abandoned-1",
+      "resolution": "added"
+    },
+    {
+      "source": "abandoned-2",
+      "coordinate": [
+        -65.293,
+        -152.842
+      ],
+      "marker": "abandoned-2",
+      "resolution": "added"
+    },
+    {
+      "source": "armourer-1",
+      "coordinate": [
+        -69.069,
+        -88.945
+      ],
+      "marker": "forge",
+      "resolution": "existing"
+    },
+    {
+      "source": "armourerstable-1",
+      "coordinate": [
+        -25.362,
+        -152.539
+      ],
+      "marker": "armourerstable-1",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-1",
+      "coordinate": [
+        -81.596,
+        -122.168
+      ],
+      "marker": "banditcamp-1",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-2",
+      "coordinate": [
+        -73.8,
+        -43.418
+      ],
+      "marker": "banditcamp-2",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-3",
+      "coordinate": [
+        -53.678,
+        -157.72
+      ],
+      "marker": "banditcamp-3",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-4",
+      "coordinate": [
+        -34.307,
+        -25.537
+      ],
+      "marker": "banditcamp-4",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-5",
+      "coordinate": [
+        -72.462,
+        -16.699
+      ],
+      "marker": "banditcamp-5",
+      "resolution": "added"
+    },
+    {
+      "source": "banditcamp-6",
+      "coordinate": [
+        -66,
+        -19.688
+      ],
+      "marker": "banditcamp-6",
+      "resolution": "added"
+    },
+    {
+      "source": "blacksmith-1",
+      "coordinate": [
+        -26.981,
+        -151.348
+      ],
+      "marker": "blacksmith-1",
+      "resolution": "added"
+    },
+    {
+      "source": "entrance-1",
+      "coordinate": [
+        -79.592,
+        -84.199
+      ],
+      "marker": "entrance-1",
+      "resolution": "added"
+    },
+    {
+      "source": "entrance-2",
+      "coordinate": [
+        -77.897,
+        -75.586
+      ],
+      "marker": "entrance-2",
+      "resolution": "added"
+    },
+    {
+      "source": "grindstone-1",
+      "coordinate": [
+        -68.948,
+        -88.006
+      ],
+      "marker": "grindstone-2",
+      "resolution": "normalized to the village grindstone retained by the credited extension"
+    },
+    {
+      "source": "grindstone-2",
+      "coordinate": [
+        -68.648,
+        -88.206
+      ],
+      "marker": "grindstone-2",
+      "resolution": "added"
+    },
+    {
+      "source": "grindstone-3",
+      "coordinate": [
+        -64.624,
+        -155.215
+      ],
+      "marker": "grindstone-3",
+      "resolution": "added"
+    },
+    {
+      "source": "grindstone-4",
+      "coordinate": [
+        -26.902,
+        -149.941
+      ],
+      "marker": "grindstone-4",
+      "resolution": "added"
+    },
+    {
+      "source": "guarded-1",
+      "coordinate": [
+        -74.914,
+        -59.766
+      ],
+      "marker": "guarded-1",
+      "resolution": "added"
+    },
+    {
+      "source": "guarded-2",
+      "coordinate": [
+        -48.517,
+        -167.695
+      ],
+      "marker": "guarded-2",
+      "resolution": "added"
+    },
+    {
+      "source": "guarded-3",
+      "coordinate": [
+        -29.645,
+        -96.943
+      ],
+      "marker": "guarded-3",
+      "resolution": "added"
+    },
+    {
+      "source": "guarded-4",
+      "coordinate": [
+        -27.333,
+        -134.077
+      ],
+      "marker": "guarded-4",
+      "resolution": "added"
+    },
+    {
+      "source": "guarded-5",
+      "coordinate": [
+        -74.776,
+        0.352
+      ],
+      "marker": "guarded-5",
+      "resolution": "added"
+    },
+    {
+      "source": "gwent-1",
+      "coordinate": [
+        -65.946,
+        -81.387
+      ],
+      "marker": "inn",
+      "resolution": "existing"
+    },
+    {
+      "source": "herbalist-1",
+      "coordinate": [
+        -66.267,
+        -132.627
+      ],
+      "marker": "tomira",
+      "resolution": "existing"
+    },
+    {
+      "source": "herbalist-2",
+      "coordinate": [
+        -77.542,
+        -49.043
+      ],
+      "marker": "herbalist-2",
+      "resolution": "added"
+    },
+    {
+      "source": "hidden-1",
+      "coordinate": [
+        -47.22,
+        -111.006
+      ],
+      "marker": "hidden-1",
+      "resolution": "added"
+    },
+    {
+      "source": "hidden-2",
+      "coordinate": [
+        -39.028,
+        -56.865
+      ],
+      "marker": "hidden-2",
+      "resolution": "added"
+    },
+    {
+      "source": "hidden-3",
+      "coordinate": [
+        -28.613,
+        -42.188
+      ],
+      "marker": "hidden-3",
+      "resolution": "added"
+    },
+    {
+      "source": "innkeep-1",
+      "coordinate": [
+        -65.731,
+        -80.068
+      ],
+      "marker": "innkeep-1",
+      "resolution": "added"
+    },
+    {
+      "source": "monsternest-1",
+      "coordinate": [
+        -14.264,
+        -95.625
+      ],
+      "marker": "monsternest-1",
+      "resolution": "added"
+    },
+    {
+      "source": "monsternest-2",
+      "coordinate": [
+        -45.027,
+        -0.308
+      ],
+      "marker": "monsternest-2",
+      "resolution": "added"
+    },
+    {
+      "source": "monsternest-3",
+      "coordinate": [
+        -64.206,
+        9.712
+      ],
+      "marker": "monsternest-3",
+      "resolution": "added"
+    },
+    {
+      "source": "notice-1",
+      "coordinate": [
+        -67.643,
+        -89.385
+      ],
+      "marker": "notice",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-1",
+      "coordinate": [
+        -81.492,
+        -106.699
+      ],
+      "marker": "bridge",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-2",
+      "coordinate": [
+        -79.703,
+        -52.822
+      ],
+      "marker": "bear",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-3",
+      "coordinate": [
+        -51.536,
+        -130.386
+      ],
+      "marker": "sawmill",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-4",
+      "coordinate": [
+        -34.235,
+        -94.043
+      ],
+      "marker": "cemetery",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-5",
+      "coordinate": [
+        -13.325,
+        -97.559
+      ],
+      "marker": "north",
+      "resolution": "existing"
+    },
+    {
+      "source": "pop-6",
+      "coordinate": [
+        -43.771,
+        0.308
+      ],
+      "marker": "cackler",
+      "resolution": "existing"
+    },
+    {
+      "source": "poi-1",
+      "coordinate": [
+        -49.611,
+        7.998
+      ],
+      "marker": "poi-1",
+      "resolution": "added"
+    },
+    {
+      "source": "poi-2",
+      "coordinate": [
+        -72.5,
+        -17
+      ],
+      "marker": "viper-steel",
+      "resolution": "existing"
+    },
+    {
+      "source": "poi-3",
+      "coordinate": [
+        -32.953,
+        -95.142
+      ],
+      "marker": "viper-silver",
+      "resolution": "existing"
+    },
+    {
+      "source": "poi-4",
+      "coordinate": [
+        -60,
+        2
+      ],
+      "marker": "poi-4",
+      "resolution": "added"
+    },
+    {
+      "source": "shopkeeper-1",
+      "coordinate": [
+        -66.32,
+        -75.674
+      ],
+      "marker": "shopkeeper-1",
+      "resolution": "added"
+    },
+    {
+      "source": "shopkeeper-2",
+      "coordinate": [
+        -66.338,
+        -155.654
+      ],
+      "marker": "shopkeeper-2",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-1",
+      "coordinate": [
+        -78.955,
+        -85.869
+      ],
+      "marker": "signpost-1",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-2",
+      "coordinate": [
+        -77.916,
+        -109.819
+      ],
+      "marker": "signpost-2",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-3",
+      "coordinate": [
+        -67.136,
+        -72.202
+      ],
+      "marker": "signpost-3",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-4",
+      "coordinate": [
+        -65.44,
+        -141.855
+      ],
+      "marker": "signpost-4",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-5",
+      "coordinate": [
+        -47.339,
+        -89.912
+      ],
+      "marker": "signpost-5",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-6",
+      "coordinate": [
+        -20.468,
+        -153.281
+      ],
+      "marker": "signpost-6",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-7",
+      "coordinate": [
+        -46.073,
+        -13.271
+      ],
+      "marker": "signpost-7",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-8",
+      "coordinate": [
+        -63.015,
+        -4.482
+      ],
+      "marker": "signpost-8",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-9",
+      "coordinate": [
+        -68.106,
+        -37.266
+      ],
+      "marker": "signpost-9",
+      "resolution": "added"
+    },
+    {
+      "source": "signpost-10",
+      "coordinate": [
+        -71.413,
+        1.23
+      ],
+      "marker": "signpost-10",
+      "resolution": "added"
+    },
+    {
+      "source": "smugglers-1",
+      "coordinate": [
+        -76.72,
+        -31.201
+      ],
+      "marker": "smugglers-1",
+      "resolution": "added"
+    },
+    {
+      "source": "spoils-1",
+      "coordinate": [
+        -12.726,
+        -128.452
+      ],
+      "marker": "spoils-1",
+      "resolution": "added"
+    }
+  ],
+  "extraSource": "https://github.com/root-BB/witcher3map/blob/b023eb7e882915308dfd4e20cb75249005902d5a/files/scripts/mapdata-white_orchard.js",
+  "extraPins": [
+    "quest-start-fry",
+    "quest-start-twist",
+    "quest-start-missing",
+    "quest-start-precious",
+    "devil-contract",
+    "crypt-entrance",
+    "yellowed-diary",
+    "cow-pasture-warning"
+  ],
+  "excludedLayers": [
+    "epilogue-only events and Faithful Friend",
+    "repeatable honeycombs",
+    "unmarked hollow-tree loot",
+    "unmarked loose treasure containers"
+  ]
+}

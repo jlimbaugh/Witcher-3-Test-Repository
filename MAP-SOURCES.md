@@ -33,3 +33,11 @@ Initial pins: six Places of Power; Viper steel and silver diagrams; Willis’s f
 This is a sourced first map, not a complete inventory of all regional markers and not a claim of independent Xbox coordinate verification. Quests without a sourced pin have no invented NPC marker. Selected-quest-area controls use mapped stops assigned to that hub; if none exist, the UI says so and shows the region.
 
 Completed pins are hidden by default, with a show-completed filter. A guide-to-map deep link deliberately reveals and highlights its target even when filters would otherwise hide it. Changing filters or choosing Whole region clears that focus exception.
+
+## R6 coverage extension
+
+The core 57-entry inventory is reconciled in MAP-COVERAGE-R6.json. Two village grindstone records are treated as one enhancement point, giving 56 distinct core pins. Eight additional pins give 64 rendered markers. Death by Fire already had its source position in R5.
+
+Additional coordinates and icons: https://github.com/root-BB/witcher3map, commit b023eb7e882915308dfd4e20cb75249005902d5a, files/scripts/mapdata-white_orchard.js. Credits: untamed0, BaHTsIzBEdEvi (root-BB), mcarver, Gerignak and contributors. Adaptation under the same CC BY-NC-SA 4.0 terms. The extension adds quest starts, contract notice, crypt entrance, well diary and cow-pasture warning. Original icon types now include camps, nests, treasure, services, enhancements, entrances, signposts and quests. Game assets remain CDPR property.
+
+R5 initial-subset descriptions above are historical. R6 expands the map to the bounded core inventory; it does not claim every loot container or independent in-game verification. Repeatable honeycombs, hollow-tree loot, loose containers and epilogue-only events are excluded. New compact pages give location, preparation, action and reward; general encounter advice does not certify enemy levels. Departure uses the inn as an orientation anchor rather than inventing a quest-start NPC pin.

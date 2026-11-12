@@ -10,9 +10,9 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist}) {
   const labels=L.layerGroup().addTo(map);
   data.labels.forEach(label=>L.marker(label.point,{icon:L.divIcon({className:'native-map-label',html:'<span>'+label.name+'</span>',iconSize:[140,20],iconAnchor:[70,-12]}),interactive:false,keyboard:false}).addTo(labels));
   const layer=L.layerGroup().addTo(map);
-  const types={pop:['Places of Power','pop'],diagram:['Diagrams','poi'],service:['Services','armourer'],gwent:['Gwent','gwent'],notice:['Notice boards','notice']};
+  const types={"pop": ["Places of Power", "pop"], "diagram": ["Diagrams", "poi"], "service": ["Services", "armourer"], "gwent": ["Gwent", "gwent"], "notice": ["Notice boards", "notice"], "abandoned": ["Abandoned sites", "abandoned"], "buff": ["Equipment enhancements", "grindstone"], "camp": ["Bandit camps", "banditcamp"], "entrance": ["Entrances", "entrance"], "guarded": ["Guarded treasure", "guarded"], "hidden": ["Hidden treasure", "hidden"], "nest": ["Monster nests", "monsternest"], "poi": ["Discoveries", "poi"], "signpost": ["Signposts", "fasttravel"], "cache": ["Water caches", "smugglers"], "quest": ["Quest starts", "sidequests"], "contract": ["Contracts", "tempcontract"]};
   let focusedTask=null,focusedHub=null,first=true,saveTimer;
-  function iconFor(pin){return pin.id==='tomira'?'herbalist':types[pin.type][1];}
+  function iconFor(pin){return pin.icon||(pin.id==='tomira'?'herbalist':types[pin.type][1]);}
   function matches(pin){return (state.map.type==='all'||state.map.type===pin.type)&&(state.map.showCompleted||!state.completed[pin.task])&& (pin.name+' '+tasks[pin.task].name+' '+(hubs.find(h=>h.id===tasks[pin.task].home)?.name||'')).toLocaleLowerCase().includes(state.map.search.trim().toLocaleLowerCase());}
   function visiblePins(){return data.markers.filter(p=>p.task===focusedTask||tasks[p.task].home===focusedHub||matches(p));}
   function refresh(){
@@ -36,7 +36,9 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist}) {
     return false;
   }
   function focusHub(home=state.selectedHub){
-    focusedTask=null;focusedHub=home;const pins=data.markers.filter(p=>tasks[p.task].home===home);
+    focusedTask=null;focusedHub=home;let pins=data.markers.filter(p=>tasks[p.task].home===home);
+    const anchor=hubs.find(h=>h.id===home)?.mapAnchor;
+    if(!pins.length&&anchor){pins=data.markers.filter(p=>p.task===anchor);focusedTask=anchor;focusedHub=null;}
     if(pins.length){map.fitBounds(L.latLngBounds(pins.map(p=>p.point)).pad(.3),{maxZoom:-.25,padding:[65,65],animate:false});status.textContent='Mapped stops for your selected quest.';}
     else {focusedHub=null;fit();status.textContent='This quest has no verified pin yet. Showing the regional map.';}
     refresh();
