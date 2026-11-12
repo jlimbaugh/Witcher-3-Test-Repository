@@ -3,3 +3,6 @@
 @media(max-width:600px){body{font-size:17px}.shell{padding:22px 18px 38px}.brand{margin-bottom:24px;letter-spacing:.05em}.home .lead{font-size:16px;margin-bottom:25px}.landing-grid{grid-template-columns:1fr;gap:10px}.landing-card{padding:19px}.landing-card h3{font-size:27px}.landing-card p{margin-bottom:16px;max-width:none}.home:before{height:480px;background:linear-gradient(90deg,#111916f5 0%,#111916cc 44%,#11191680),linear-gradient(0deg,#111916 0%,#11191600 75%),url("cdpr-witcher3-keyart.png") 73% top/auto 480px no-repeat}.wordmark{font-size:17px}.guide-bar{padding:10px 14px}.bar-line{gap:8px}.guide-bar nav{gap:2px}.guide-bar nav a{padding:7px;font-size:13px}.lead{font-size:19px}.region-hero h1{font-size:70px}.page-heading h1{font-size:56px}.region-feature h2{font-size:37px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 @media print{.guide-bar,.site-footer,.crumbs,.completion{display:none}.scene:before,.home:before{display:none}body,.scene,.reading-panel{background:white;color:black;box-shadow:none}.scene-inner{padding:0}.reading-panel{max-width:none;border:0}.view:not([hidden]){display:block}.reading-panel *{color:black!important}details{break-inside:avoid}}
+
+/* Route focus announces the heading without drawing a decorative frame. */
+.view h1:focus{outline:none}
