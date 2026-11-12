@@ -12,8 +12,8 @@
   Object.entries(tasks).forEach(([id,task])=>{
     const section=document.createElement('section');section.className='view scene'+(task.stages?' walkthrough-scene':'');section.id=task.view;section.hidden=true;section.setAttribute('aria-labelledby',task.view+'-title');
     const meta='<details class="route-context"><summary>Why this stop belongs here</summary>'+para(task.why)+'<h3>Availability & preparation</h3>'+para(task.requirements)+(task.level?para('Suggested quest level '+task.level+'. Opportunities are hand-curated; story access and encounter readiness still apply.'):'')+'<h3>Useful reward</h3>'+para(task.reward)+'</details>';
-    const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map'+(task.locationMap?'/'+esc(id):'')+'">Regional map</a></div>';
-    const locationLink=task.locationMap?'<a class="map-location-link" href="'+esc(task.locationMap)+'" target="_blank" rel="noopener noreferrer">Open White Orchard location map →</a><p class="map-caption">External map; use the Location directions below to find this stop.</p>':'';
+    const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map'+('/'+esc(id))+'">Regional map</a></div>';
+    const locationLink=task.locationMap?'<a class="map-location-link" href="#whiteorchard-map/'+esc(id)+'">Show location on our map →</a>':'';
     const stageHTML=task.stages?'<div class="stage-tools">'+links+'<label>Stage <select data-stage-select aria-label="Choose walkthrough stage">'+task.stages.map(st=>'<option value="'+esc(st.id)+'">'+esc(st.title)+'</option>').join('')+'</select></label></div><div class="stage-nav" aria-label="Walkthrough stages"><button type="button" data-stage-prev>← Previous</button><span data-stage-count aria-live="polite"></span><button type="button" data-stage-next>Next →</button></div><div class="stage-panel" id="'+task.view+'-panel">'+task.stages.map((st,i)=>'<section class="walk-stage" data-stage="'+esc(st.id)+'" hidden><div class="stage-content"><span class="step-number" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div><h2>'+esc(st.title)+'</h2>'+(st.warning?'<p class="risk-note"><strong>Before this step:</strong> '+esc(st.warning)+'</p>':'')+para(st.text)+(st.spoiler?'<details><summary>Story outcome & choices · Spoilers</summary>'+para(st.spoiler)+'</details>':'')+'</div></div></section>').join('')+'</div>':links+locationLink+task.sections.map(([title,text])=>'<h2>'+esc(title)+'</h2>'+para(text)).join('');
     section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p></div><article class="reading-panel">'+meta+stageHTML+'<details class="sources"><summary>Sources & route notes</summary>'+task.sources.map(url=>'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Read source reference ↗</a></p>').join('')+'<p>Route grouping is editorial guidance. Encounter levels, availability and rewards still need Xbox field acceptance. This page records neither game state nor automatic completion.</p></details><a class="back-link" href="#whiteorchard-tree" data-return-hub>← Return to exact hub</a><p class="save-message" data-save-message aria-live="polite"></p></article></div>';
     const prior=document.getElementById(task.view);if(prior)prior.replaceWith(section);else document.querySelector('main').append(section);
@@ -29,6 +29,7 @@
   let lastRenderedURL = '';
   let saveAvailable = true;
   let scrollTimer;
+  let nativeMap;
   const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,lastWalkthroughView:null,stageByView:{},map:{type:'all',search:'',showCompleted:false}};
   try {
     const raw = localStorage.getItem(key);
@@ -47,7 +48,7 @@
         else if(state.lastWalkthrough)state.lastWalkthroughView='walkthrough-firestarter';
         if (validTask(saved.lastContent?.task) && [...Object.values(tasks).map(t=>t.view),'quest-firestarter'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
         if (validHub(saved.treeReturn?.expandedHub) || saved.treeReturn?.expandedHub === null) state.treeReturn = saved.treeReturn;
-        if (saved.map) state.map = {type:['all','quest','service','discovery'].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true};
+        if (saved.map) state.map = {type:['all','pop','diagram','service','gwent','notice'].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true,view:saved.map.view};
       }
     } else {
       // Read, but never overwrite or delete, the old pilot save.
@@ -147,17 +148,7 @@
     document.querySelector('[data-later]').disabled=state.windowStart===Math.max(0,groups.length-2);
     document.querySelector('[data-window-label]').textContent=groups.slice(state.windowStart,state.windowStart+2).join(' → ');
   }
-  function renderMapLinks() {
-    const list=document.querySelector('[data-map-links]');list.replaceChildren();
-    const ids=Object.keys(tasks).filter(id=>tasks[id].map);
-    ids.filter(id=>(state.map.type==='all'||tasks[id].type===state.map.type)&&(state.map.showCompleted||!state.completed[id])&&tasks[id].name.toLocaleLowerCase().includes(state.map.search.toLocaleLowerCase().trim())).forEach(id=>{
-      const row=document.createElement('div');row.className='map-test-row';
-      const a=taskAnchor(id,true);row.append(a);
-      if(state.completed[id]){const mark=document.createElement('span');mark.textContent='Completed';row.append(mark);}
-      list.append(row);
-    });
-    document.querySelector('[data-map-empty]').hidden=list.children.length>0;
-  }
+  function renderMapLinks(){if(nativeMap)nativeMap.refresh();}
   function reflect() {
     document.querySelectorAll('[data-complete]').forEach(el=>{el.checked=state.completed[el.dataset.complete]===true;});
     document.querySelectorAll('[data-task-mark]').forEach(el=>{const done=state.completed[el.dataset.taskMark]===true;el.textContent=done?'✓':'○';el.setAttribute('aria-label',done?'Completed':'Not completed');});
@@ -194,11 +185,6 @@
   document.querySelector('[data-later]').addEventListener('click',()=>browseWindow(1));
   function browseWindow(delta) {stashTree();state.windowStart=Math.max(0,Math.min(Math.max(0,groups.length-2),state.windowStart+delta));history.replaceState({...history.state},'','#whiteorchard-tree');updateTree();stashTree();persist();}
   document.querySelector('[data-jump-selected]').addEventListener('click',()=>navigate(treeLink(state.selectedHub)));
-  const type=document.querySelector('[data-map-type]'),search=document.querySelector('[data-map-search]'),show=document.querySelector('[data-map-completed]');
-  type.value=state.map.type;search.value=state.map.search;show.checked=state.map.showCompleted;
-  type.addEventListener('change',()=>{state.map.type=type.value;renderMapLinks();persist();});
-  search.addEventListener('input',()=>{state.map.search=search.value.slice(0,100);renderMapLinks();persist();});
-  show.addEventListener('change',()=>{state.map.showCompleted=show.checked;renderMapLinks();persist();});
   const activeQuest=()=>Object.values(tasks).find(t=>t.view===currentRoot&&t.stages);
   function goStage(index){const task=activeQuest();if(task)navigate('#'+task.view+'/'+task.stages[Math.max(0,Math.min(task.stages.length-1,index))].id);}
   document.addEventListener('click',event=>{
@@ -256,15 +242,6 @@
       if(!state.treeReturn || state.treeReturn.expandedHub!==tasks[contentTask].home){state.treeReturn=ownerSnapshot(contentTask);state.selectedHub=tasks[contentTask].home;}
     }
     const staged=activeQuest();if(staged)renderStage(staged,suffix);
-    const locationCard=document.querySelector('[data-location-card]');locationCard.hidden=true;
-    if(currentRoot==='whiteorchard-map'&&validTask(suffix)&&tasks[suffix].locationMap){
-      const item=tasks[suffix];locationCard.hidden=false;
-      locationCard.querySelector('[data-location-title]').textContent=item.name;
-      locationCard.querySelector('[data-location-description]').textContent=item.sections.find(s=>s[0]==='Location')?.[1]||item.requirements;
-      locationCard.querySelector('[data-location-external]').href=item.locationMap;
-      locationCard.querySelector('[data-location-reference]').href=item.sources[0];
-      locationCard.querySelector('[data-location-return]').href='#'+item.view;
-    }
     let restore;
     let jump;
     if(currentRoot==='whiteorchard-tree') {
@@ -298,6 +275,7 @@
         const heading=target.querySelector('[data-stage="'+state.stageByView[staged.view]+'"] h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
         target.querySelector('.stage-panel').scrollIntoView({block:'start',behavior:'auto'});
       } else {
+        if(currentRoot==='whiteorchard-map'){if(!nativeMap)nativeMap=window.createPhoenixMap({tasks,hubs,state,onPin:id=>navigate(treeLink(tasks[id].home,id)),persist});nativeMap.show(suffix);}
         window.scrollTo(0,0);const heading=target.querySelector('h1');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
       }
     }));

@@ -19,3 +19,7 @@ Content and presentation require Capt acceptance before this becomes a regional 
 ## Interaction pilot R1
 
 The same official CDPR assets remain unchanged. The active build now includes a four-block story tree, fixed activity homes, six pilot activities, stage navigation and resume, hub-only completion, exact-return state, and labelled map-routing tests. See INTERACTION-PILOT-R1.md for identities, sources, behavior and limits. No geographic map, game icon set, authentic font or complete regional route is claimed.
+
+## Native White Orchard map (R5)
+
+The local in-game terrain raster and original game marker PNGs are documented in MAP-SOURCES.md, including extraction credits, source commits, coordinate transformation, CC BY-NC-SA coordinate attribution and the separate Leaflet BSD licence. Map navigation no longer points to an external map site.

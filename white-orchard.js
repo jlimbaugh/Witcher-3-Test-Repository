@@ -472,7 +472,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "gear",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/loc-forge"
     },
     "gwent-start": {
       "name": "Play the scholar and check inn cards",
@@ -506,7 +506,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/gwent-start"
     },
     "pop-cemetery": {
       "name": "Cemetery Place of Power",
@@ -540,7 +540,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-cemetery"
     },
     "pop-north": {
       "name": "Northern woods Place of Power",
@@ -574,7 +574,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-north"
     },
     "pop-cackler": {
       "name": "Cackler Bridge Place of Power",
@@ -608,7 +608,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-cackler"
     },
     "pop-sawmill": {
       "name": "Sawmill Place of Power",
@@ -642,7 +642,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-sawmill"
     },
     "pop-bear": {
       "name": "Southern bear-guarded Place of Power",
@@ -676,7 +676,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-bear"
     },
     "pop-bridge": {
       "name": "Broken Bridge Place of Power",
@@ -710,7 +710,7 @@ window.PHOENIX_ROUTE = {
       ],
       "map": true,
       "category": "exploration",
-      "locationMap": "https://www.gamerguides.com/the-witcher-3-wild-hunt/maps/white-orchard-1"
+      "locationMap": "#whiteorchard-map/pop-bridge"
     },
     "departure-review": {
       "name": "Review before leaving White Orchard",
