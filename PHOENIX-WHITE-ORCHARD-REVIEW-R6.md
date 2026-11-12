@@ -32,6 +32,10 @@ The native map is complete against the bounded, credited core inventory and inte
 
 The phone-width iframe is a layout check, not Safari, VoiceOver or real touch testing. Prior R5 checks of map pan/zoom, deep-link focus exceptions, saved filters and keyboard navigation remain supporting evidence, not a substitute for this release's device acceptance.
 
+## Release verification correction
+
+The first live check showed updated markup with cached R5 scripts (12 pins). Asset URL versions were advanced to native-map-r6 to prevent the old scripts from being reused. This was caught during deployment verification.
+
 ## Consolidated improvement list
 
 | Priority | Finding and evidence | Next action |
