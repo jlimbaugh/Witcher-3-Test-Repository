@@ -12,6 +12,7 @@
   add('hub-viper',['q-temerian','q-deserter']);
   add('hub-missing',['q-viper']);
   tasks['departure-review'].sections=tasks['departure-review'].sections.map(([heading,text])=>[heading,heading==='Action'?'Finish the departure-sensitive quests you want before the inn transition. The risk checklist above reflects your recorded progress. Other discoveries are not departure warnings.':text]);
+  Object.entries(window.PHOENIX_PROGRESS_DATA.quests).forEach(([id,q])=>{if(!Number.isFinite(tasks[id].level)&&Number.isFinite(q.level))tasks[id].level=q.level;});
   const progressEngine=window.createPhoenixProgress(window.PHOENIX_PROGRESS_DATA,tasks,hubs);
   const legacyViews={'q-lilac':'quest-lilac','q-beast':'quest-beast','loc-forge':'location-forge','pop-cemetery':'discovery-cemetery','departure-review':'departure-check'};
   Object.entries(legacyViews).forEach(([id,view])=>tasks[id].view=view);
@@ -74,7 +75,7 @@
     }
   } catch { saveAvailable = false; }
   state.progress=progressEngine.init((()=>{try{return JSON.parse(localStorage.getItem(key)||'{}').progress||{};}catch{return {};}})(),state.completed);
-  try{const old=JSON.parse(localStorage.getItem(key)||'{}');state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.lastMapTask=old.lastMapTask||null;}catch{}
+  try{const old=JSON.parse(localStorage.getItem(key)||'{}');state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.noticeRead=Array.isArray(old.noticeRead)?old.noticeRead:[];}catch{}
   state.groupOpen ||= {};state.routeUpdates ||= [];
   if ('scrollRestoration'  in history) history.scrollRestoration = 'manual';
   function persist() {
@@ -183,8 +184,8 @@
     else {cont.href=treeLink(state.selectedHub);cont.textContent='Jump to my hub →';}
     document.querySelectorAll('[data-selected-hub]').forEach(a=>{a.href=treeLink(state.selectedHub);});
     const unfinished=document.querySelector('[data-unfinished]');unfinished.replaceChildren();
-    Object.keys(tasks).filter(id=>!tasks[id].mapOnly&&!state.completed[id]&&progressEngine.visible(id,state.progress)).forEach(id=>unfinished.append(taskAnchor(id,true)));
-    if(!unfinished.children.length)unfinished.textContent='All listed guide activities are marked completed.';
+    Object.keys(tasks).filter(id=>!tasks[id].mapOnly&&!state.completed[id]&&progressEngine.availability(id,state.progress)==='available').forEach(id=>unfinished.append(taskAnchor(id,true)));
+    if(!unfinished.children.length)unfinished.textContent=!progressEngine.facts(state.progress).arrival?'Confirm your story progress to reveal unfinished opportunities.':Object.keys(tasks).some(id=>!tasks[id].mapOnly&&!state.completed[id])?'No unfinished activities are currently available for this recorded progress.':'All listed guide activities are marked completed.';
     document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
     if(progressUI)progressUI.reflect();
     renderMapLinks();
@@ -235,10 +236,15 @@
     if(parts[0]==='main')parts[0]=currentRoot||'home';
     return parts;
   }
+  const contentRoot=hash=>{const root=hash.replace(/^#/,'').split('/')[0];return Object.values(tasks).some(t=>t.view===root)||root==='economy-merchants';};
   function navigate(hash) {
-    stashTree();if(currentRoot==='whiteorchard-map'&&nativeMap)nativeMap.capture();clearTimeout(scrollTimer);persist();
+    stashTree();const entry=history.state||{},mapSnapshot=currentRoot==='whiteorchard-map'&&nativeMap?nativeMap.capture():null;clearTimeout(scrollTimer);persist();
     if(hash===location.hash){render({mode:'same'});return;}
-    history.pushState({},'',hash);render({mode:'push'});
+    const next={};
+    if(mapSnapshot&&contentRoot(hash))next.mapReturn=mapSnapshot;
+    else if(contentRoot(hash)&&hash.replace(/^#/,'').split('/')[0]===currentRoot&&entry.mapReturn)next.mapReturn=entry.mapReturn;
+    if(hash==='#whiteorchard-map/restore'&&entry.mapReturn)next.map=entry.mapReturn;
+    history.pushState(next,'',hash);render({mode:'push'});
   }
   document.addEventListener('click',event=>{
     const a=event.target.closest('a[href^="#"]');
@@ -248,10 +254,11 @@
     if(a.dataset.originHub)state.selectedHub=a.dataset.originHub;
     if(a.hasAttribute('data-return-map')){event.preventDefault();navigate('#whiteorchard-map/restore');return;}
     let href=a.getAttribute('href');
-    if(href.startsWith('#whiteorchard-map/')&&!href.includes('/cluster/')&&tasks[state.lastContent?.task]?.view===currentRoot&&state.lastMapTask===state.lastContent?.task&&state.mapContext)href='#whiteorchard-map/restore';
+    if(href.startsWith('#whiteorchard-map/')&&!href.includes('/cluster/')&&contentRoot('#'+currentRoot)&&history.state?.mapReturn)href='#whiteorchard-map/restore';
     navigate(href);
   });
   function render({mode='initial'}={}) {
+    const incomingMap=history.state?.map;
     const before=currentRoot;
     const [requested,suffix,taskSuffix]=parseHash();
     const target=views.find(v=>v.id===requested)||document.getElementById('not-found');
@@ -301,7 +308,7 @@
         const heading=target.querySelector('[data-stage="'+state.stageByView[staged.view]+'"] h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
         target.querySelector('.stage-panel').scrollIntoView({block:'start',behavior:'auto'});
       } else {
-        if(currentRoot==='whiteorchard-map'){if(!nativeMap)nativeMap=window.createPhoenixMap({tasks,hubs,state,onPin:id=>{state.lastMapTask=id;navigate('#'+tasks[id].view);},persist,eligible:hub=>progressEngine.eligible(hub,state.progress)});nativeMap.show(mode==='pop'&&before!=='whiteorchard-map'&&state.mapContext?'restore':suffix,taskSuffix);}
+        if(currentRoot==='whiteorchard-map'){if(!nativeMap)nativeMap=window.createPhoenixMap({tasks,hubs,state,onPin:id=>navigate('#'+tasks[id].view),onCapture:context=>{if(currentRoot==='whiteorchard-map')history.replaceState({...history.state,map:context},'',location.href);},persist,eligible:hub=>progressEngine.eligible(hub,state.progress)});const entryMap=incomingMap;nativeMap.show(entryMap&&(mode==='pop'||mode==='initial'||suffix==='restore')?'restore':suffix,taskSuffix,entryMap);nativeMap.capture();}
         window.scrollTo(0,0);const heading=target.querySelector('h1');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
       }
     }));

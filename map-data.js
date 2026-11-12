@@ -1013,3 +1013,10 @@ window.PHOENIX_MAP = {
     }
   ]
 };
+// R8: explicit merchant facts; icon shape never implies an offering.
+window.PHOENIX_MAP.merchantFlags={
+ forge:[{label:'Quest connection: Twisted Firestarter',source:'https://www.gamebanshee.com/thewitcher3/walkthrough/twistedfirestarter.php'}],
+ tomira:[{label:'Quest connection: On Death’s Bed',source:'https://www.gamebanshee.com/thewitcher3/walkthrough/ondeathsbed.php'}],
+ 'innkeep-1':[{label:'Gwent cards · before departure; unsold cards remain obtainable from Bram',source:'https://primagames.com/eguides/the-witcher-3-wild-hunt-the-complete-edition-eguide/gwent/the-gwentlefolk-of-the-northern-realms/the-gwentlefolk-of-white-orchard'}],
+ 'shopkeeper-1':[{label:'Gwent cards · shared stock with Elsa',source:'https://witcher-games.fandom.com/wiki/Elsa'}]
+};

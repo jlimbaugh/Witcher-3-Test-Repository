@@ -1,6 +1,6 @@
 'use strict';
 // Original console integration; coordinate adaptation credits are in MAP-SOURCES.md.
-window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible}) {
+window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCapture}) {
   const data=window.PHOENIX_MAP,canvas=document.getElementById('orchard-map');
   const status=document.querySelector('[data-map-status]');
   if(!window.L){status.textContent='The map could not load. Reload the page to try again.';return {show(){},refresh(){},capture(){}};}
@@ -40,7 +40,7 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible}) {
   function openPin(pin){capture();if(!isUtility(pin)){panel.hidden=true;onPin(pin.task);return;}
     panel.replaceChildren();panel.hidden=false;const title=document.createElement('h2');title.textContent=pin.name;panel.append(title);
     const task=tasks[pin.task],description=document.createElement('p');description.textContent=pin.type==='signpost'?'Fast travel signpost. Discover it in the game to use it.':pin.type==='buff'?'Temporary equipment enhancement. Use the station before heading out.':pin.type==='notice'?'Read local notices to discover contracts and other leads.':task.requirements||'Regional service';panel.append(description);
-    const flags=document.createElement('p');const knownFlags=[];if(pin.id==='forge')knownFlags.push('Quest connection: Twisted Firestarter');if(pin.task==='shopkeeper-1'||pin.icon==='tavern')knownFlags.push('Gwent cards');if(pin.id==='tomira')knownFlags.push('Quest connection: On Death’s Bed');flags.textContent=knownFlags.join(' · ');if(knownFlags.length)panel.append(flags);
+    const knownFlags=data.merchantFlags?.[pin.id]||[];if(knownFlags.length){const flags=document.createElement('p');flags.textContent=knownFlags.map(flag=>flag.label).join(' · ');panel.append(flags);const sources=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Flag references';sources.append(summary);knownFlags.forEach(flag=>{const a=document.createElement('a');a.href=flag.source;a.textContent=flag.label+' — source';a.target='_blank';a.rel='noopener noreferrer';sources.append(a);});panel.append(sources);}
     if(pin.type==='service'){const link=document.createElement('a');link.href='#economy-merchants/'+pin.id;link.textContent='Economy → Merchant details';panel.append(link);}
     const hubLink=document.createElement('a');hubLink.href='#whiteorchard-tree/'+task.home;hubLink.textContent='Related quest hub →';panel.append(hubLink);
     const close=document.createElement('button');close.type='button';close.textContent='Close location panel';close.addEventListener('click',()=>panel.hidden=true);panel.append(close);panel.scrollIntoView({block:'nearest'});title.setAttribute('tabindex','-1');title.focus({preventScroll:true});
@@ -50,10 +50,17 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible}) {
     if(pins.length)map.fitBounds(L.latLngBounds(pins.map(p=>p.point)).pad(.3),{maxZoom:-.25,padding:[65,65],animate:false});else fit();
     status.textContent=pins.length?'Cluster map: '+hub.name+'. Only this group’s available activities are shown.':'No confirmed mapped activities for this cluster. Update progress or show all markers.';refresh();
   }
-  function capture(){const center=map.getCenter();state.mapContext={scope,focusedTask,type:state.map.type,search:state.map.search,showCompleted:state.map.showCompleted,view:{center:[center.lat,center.lng],zoom:map.getZoom()}};persist();}
-  function show(task,hubId){
+  function capture(){const center=map.getCenter(),context={scope,focusedTask,type:state.map.type,search:state.map.search,showCompleted:state.map.showCompleted,expanded:document.querySelector('.native-map-shell').classList.contains('map-expanded'),view:{center:[center.lat,center.lng],zoom:map.getZoom()}};state.mapContext=context;onCapture?.(context);persist();return context;}
+  function show(task,hubId,entryContext){
     panel.hidden=true;map.invalidateSize({pan:false});
-    if(task==='restore'&&state.mapContext){const context=state.mapContext;scope=context.scope;focusedTask=context.focusedTask;focusedHub=null;state.map.type=context.type;state.map.search=context.search;state.map.showCompleted=context.showCompleted;type.value=state.map.type;search.value=state.map.search;completed.checked=state.map.showCompleted;map.setView(context.view.center,context.view.zoom,{animate:false});refresh();status.textContent='Your map position, zoom and filters restored.';first=false;return;}
+    const context=entryContext||state.mapContext;
+    if(task==='restore'&&context&&Array.isArray(context.view?.center)&&context.view.center.length===2&&context.view.center.every(Number.isFinite)&&Number.isFinite(context.view.zoom)){
+      scope=hubs.some(h=>h.id===context.scope)?context.scope:null;focusedTask=tasks[context.focusedTask]?context.focusedTask:null;focusedHub=null;
+      state.map.type=Object.hasOwn(types,context.type)?context.type:'all';state.map.search=typeof context.search==='string'?context.search:'';state.map.showCompleted=context.showCompleted===true;
+      type.value=state.map.type;search.value=state.map.search;completed.checked=state.map.showCompleted;
+      document.querySelector('.native-map-shell').classList.toggle('map-expanded',context.expanded===true);const expand=document.querySelector('[data-map-expand]');expand.textContent=context.expanded?'Close expanded map':'Expand map';expand.setAttribute('aria-expanded',String(context.expanded===true));map.invalidateSize({pan:false});
+      map.setView(context.view.center,Math.max(-4,Math.min(1,context.view.zoom)),{animate:false});refresh();status.textContent='Your map position, zoom and filters restored.';first=false;return;
+    }
     if(first){first=false;const saved=state.map.view;if(saved&&Array.isArray(saved.center)&&saved.center.length===2&&saved.center.every(Number.isFinite)&&Number.isFinite(saved.zoom))map.setView(saved.center,Math.max(-4,Math.min(1,saved.zoom)),{animate:false});else fit();}
     if(task==='cluster'&&hubs.some(h=>h.id===hubId)){state.map.type='all';state.map.search='';type.value='all';search.value='';focusHub(hubId);}
     else if(task&&tasks[task]){scope=null;focusedHub=null;if(!focusTask(task))focusHub(tasks[task].home);}
@@ -61,14 +68,14 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible}) {
   }
   const type=document.querySelector('[data-map-type]'),search=document.querySelector('[data-map-search]'),completed=document.querySelector('[data-map-completed]');
   type.value=state.map.type;search.value=state.map.search;completed.checked=state.map.showCompleted;
-  function filter(){focusedTask=null;focusedHub=null;state.map.type=type.value;state.map.search=search.value.slice(0,100);state.map.showCompleted=completed.checked;refresh();persist();status.textContent='Filters updated. Tap a quest or discovery icon to open its guide.';}
+  function filter(){focusedTask=null;focusedHub=null;state.map.type=type.value;state.map.search=search.value.slice(0,100);state.map.showCompleted=completed.checked;refresh();capture();status.textContent='Filters updated. Tap a quest or discovery icon to open its guide.';}
   type.addEventListener('change',filter);search.addEventListener('input',filter);completed.addEventListener('change',filter);
   document.querySelector('[data-map-all]').addEventListener('click',()=>{scope=null;focusedTask=null;focusedHub=null;state.map.type='all';state.map.search='';type.value='all';search.value='';refresh();fit();status.textContent='All regional marker types. Completed activities follow your visibility setting.';capture();});
-  document.querySelector('[data-map-fit]').addEventListener('click',()=>{focusedTask=null;focusedHub=null;fit();refresh();status.textContent='Showing all of White Orchard. Your filters still apply.';});
+  document.querySelector('[data-map-fit]').addEventListener('click',()=>{focusedTask=null;focusedHub=null;fit();refresh();status.textContent='Showing all of White Orchard. Your filters still apply.';capture();});
   document.querySelector('[data-map-quest]').addEventListener('click',()=>focusHub());
   document.querySelector('[data-map-expand]').addEventListener('click',event=>{const shell=document.querySelector('.native-map-shell');const expanded=shell.classList.toggle('map-expanded');event.currentTarget.textContent=expanded?'Close expanded map':'Expand map';event.currentTarget.setAttribute('aria-expanded',String(expanded));map.invalidateSize({pan:false});});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.querySelector('.map-expanded'))document.querySelector('[data-map-expand]').click();});
-  map.on('moveend zoomend',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>{const center=map.getCenter();state.map.view={center:[center.lat,center.lng],zoom:map.getZoom()};persist();},150);});
+  map.on('moveend zoomend',()=>{if(canvas.closest('[hidden]'))return;const center=map.getCenter();state.map.view={center:[center.lat,center.lng],zoom:map.getZoom()};capture();});
   new ResizeObserver(()=>map.invalidateSize({pan:false})).observe(canvas);
   return {show,refresh,capture};
 };

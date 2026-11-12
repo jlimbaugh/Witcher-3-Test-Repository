@@ -2,7 +2,8 @@
 // Authored concise journal-objective labels; source wording/order require Xbox acceptance.
 window.PHOENIX_PROGRESS_DATA=(()=>{
  const quests={},objectiveIndex={};
- function quest(id,slug,rows){quests[id]={source:'https://www.witcher.tools/quests/'+slug,objectives:rows.map(([key,label,chapter,requires=[],extra={}])=>({id:id+':'+key,label,chapter,requires:requires.map(r=>r.includes(':')?r:id+':'+r),...extra}))};}
+ const sourcedLevels={'q-lilac':1,'q-firestarter':1,'q-missing':1,'q-pan':1,'q-cargo':1,'q-beast':3,'q-death':2,'q-devil':2,'q-viper':6,'q-temerian':4,'q-deserter':3,'q-dirty':2,'q-incident':2};
+ function quest(id,slug,rows){quests[id]={level:sourcedLevels[id],source:'https://www.witcher.tools/quests/'+slug,objectives:rows.map(([key,label,chapter,requires=[],extra={}])=>({id:id+':'+key,label,chapter,requires:requires.map(r=>r.includes(':')?r:id+':'+r),...extra}))};}
  quest('q-lilac','lilac-and-gooseberries',[
  ['ghouls','Kill the ghouls.','Arrival',[],{grants:'arrival'}],['ride','Follow Vesemir.','Arrival',['ghouls']],['inn','Reach the White Orchard tavern.','The lead',['ride']],['ask','Ask travelers about Yennefer.','The lead',['inn']],['garrison','Question the Nilfgaardians about Yennefer.','The lead',['ask'],{grants:'garrison'}],['contract','Finish the griffin contract.','Departure',['garrison','q-beast:reward']],['ready','Prepare to depart with Vesemir.','Departure',['contract'],{risk:true}],['leave','Leave White Orchard.','Departure',['ready','q-incident:bandits'],{grants:'departed',risk:true}]]);
  quest('q-beast','the-beast-of-white-orchard',[
@@ -28,7 +29,7 @@ window.PHOENIX_PROGRESS_DATA=(()=>{
  quest('q-dirty','dirty-funds',[
  ['notes','Read the recovered letter.','The lead'],['treasure','Find the bandits’ treasure.','The camp',['notes']]]);
  quest('q-incident','the-incident-at-white-orchard',[
- ['bandits','Kill the bandits.','The inn',['q-beast:reward'],{risk:true,grants:'departed'}]]);
+ ['bandits','Kill the bandits.','The inn',['q-beast:reward'],{risk:true}]]);
  Object.entries(quests).forEach(([qid,q])=>q.objectives.forEach(o=>{if(qid!=='q-lilac'&&!o.requires.length)o.requires=['q-lilac:ghouls'];o.quest=qid;objectiveIndex[o.id]=o;}));
  const choices={arson:{label:'How did you resolve the confrontation?',options:[['bribe','Accepted the bribe'],['axii','Used Axii and escorted him'],['fight','Fought him and escorted him']],outcome:'The bribe conceals the culprit. Bringing him to Willis leads to the soldiers taking him away.'},cargo:{label:'How did the merchant encounter end?',options:[['hand-over','Handed over the box'],['turn-in','Caught him and turned him in'],['release','Caught him and let him keep the medicine'],['keep','Caught him and kept the medicine'],['escaped','Pursued him, but he escaped']],outcome:'The first path ends without a pursuit. A successful pursuit allows a decision about the man and medicine; escape fails the quest.'},shelter:{label:'What did Dune decide?',options:[['both','Sheltered both men'],['brother','Took only his brother']],outcome:'This records which shelter outcome you chose; it does not predict an unverified later reward.'}};
  const milestones={arrival:'Arrived in White Orchard',garrison:'Accepted the griffin contract',griffin:'Reported the griffin contract',departed:'Left White Orchard for Vizima'};

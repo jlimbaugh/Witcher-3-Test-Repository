@@ -11,45 +11,56 @@ window.createPhoenixProgress = function(data,tasks,hubs){
  // A failed cargo pursuit must never fail unrelated quests.
  function questDone(q,p){if(q==='q-cargo'&&p.choices.cargo==='escaped')return false;return done(q,p);}
  function facts(p){const f={};for(const [k,v] of Object.entries(p.manual))if(v)f[k]=true;const valid=(id,seen=new Set())=>{if(seen.has(id))return false;seen.add(id);return p.objectives[id]==='done'&&deps(idx[id],p).every(r=>valid(r,new Set(seen)));};Object.values(idx).forEach(o=>{if(o.grants&&valid(o.id))f[o.grants]=true;});if(f.departed){f.griffin=true;f.garrison=true;f.arrival=true;}if(f.griffin){f.garrison=true;f.arrival=true;}if(f.garrison)f.arrival=true;return f;}
- function status(q,p){if(p.failed[q]||q==='q-cargo'&&p.choices.cargo==='escaped')return 'failed';if(questDone(q,p))return 'complete';if(facts(p).departed&&riskQuests.includes(q))return Object.keys(p.objectives).some(id=>idx[id]?.quest===q)?'failed':'unavailable';return Object.keys(p.objectives).some(id=>idx[id]?.quest===q)?'active':'not started';}
+ function status(q,p){if(p.failed[q]||q==='q-cargo'&&p.choices.cargo==='escaped')return 'failed';if(questDone(q,p))return 'complete';if(facts(p).departed&&riskQuests.includes(q))return Object.keys(p.objectives).some(id=>idx[id]?.quest===q&&['done','skipped'].includes(p.objectives[id]))?'failed':'unavailable';return Object.keys(p.objectives).some(id=>idx[id]?.quest===q&&['done','skipped'].includes(p.objectives[id]))?'active':'not started';}
  function utility(id){return tasks[id].mapOnly===true;}
  function availability(id,p){const f=facts(p);if(quests[id]&&['complete','failed','unavailable'].includes(status(id,p)))return status(id,p);if(!f.arrival)return 'unknown';if(id==='q-beast'&&!f.garrison)return 'blocked';if(id==='q-incident'&&!f.griffin)return 'blocked';if(id==='q-death'&&!p.objectives['q-beast:herbalist']&&!Object.keys(p.objectives).some(k=>idx[k]?.quest===id))return 'unknown';return 'available';}
  function visible(id,p){return ['available','complete','failed','unavailable'].includes(availability(id,p));}
- function eligible(h,p){const primary=h.items.find(id=>tasks[id].home===h.id&&quests[id]),ceiling=(tasks[primary]?.level||1)+5;return h.items.filter(id=>!utility(id)&&visible(id,p)&&(!tasks[id].level||tasks[id].level<=ceiling));}
+ function levelCeiling(h){const primary=h.items.find(id=>tasks[id].home===h.id&&quests[id]),level=tasks[primary]?.level;return Number.isFinite(level)&&level>0?level+5:null;}
+ function eligible(h,p){const ceiling=levelCeiling(h);return h.items.filter(id=>!utility(id)&&visible(id,p)&&(!Number.isFinite(tasks[id].level)||(ceiling!==null&&tasks[id].level<=ceiling)));}
+ function pruneUpdates(updates,p,completed,read=[]){const seen=new Set(read);return updates.map(u=>({...u,id:u.id||'legacy:'+u.hub+':'+u.activities.join(',')})).filter(u=>!seen.has(u.id)).map(u=>{const h=hubs.find(h=>h.id===u.hub);return {...u,activities:h?u.activities.filter(id=>tasks[id]&&!(tasks[id].home===h.id&&quests[id])&&eligible(h,p).includes(id)&&!completed[id]&&availability(id,p)==='available'):[]};}).filter(u=>u.activities.length);}
+
  function counts(q,p){const r=required(q,p),opt=quests[q].objectives.filter(o=>o.optional&&!closed(o,p)&&p.objectives[o.id]!=='skipped');return {done:r.filter(o=>p.objectives[o.id]==='done').length,total:r.length,optionalDone:opt.filter(o=>p.objectives[o.id]==='done').length,optionalTotal:opt.length};}
  function ancestors(id,p,out=new Set()){const o=idx[id];if(!o||closed(o,p))return out;for(const r of deps(o,p)){const ro=idx[r];if(ro&&!ro.optional&&!closed(ro,p)){ancestors(r,p,out);out.add(r);}}return out;}
  function reconcile(p){}
  function plan(progress,completed,action,options={}){
-  const p=clone(progress),c=clone(completed);Object.assign(p.choices,options.choices||{});let targets=[],catchup=[],affected=[];for(const o of Object.values(idx))if(closed(o,p)&&p.objectives[o.id]){affected.push(o.id);delete p.objectives[o.id];}
+  const p=init(progress,completed),c=clone(completed);for(const [key,value] of Object.entries(options.choices||{})){if(!choices[key])throw Error('Unknown choice');if(value==='')delete p.choices[key];else if(choices[key].options.some(o=>o[0]===value))p.choices[key]=value;else throw Error('Unknown choice value');}let targets=[],catchup=[],affected=[];for(const o of Object.values(idx))if(closed(o,p)&&p.objectives[o.id]){affected.push(o.id);delete p.objectives[o.id];}
   if(action.kind==='story-set'){
    const order=Object.keys(milestones),n=order.indexOf(action.id),remove=new Set(Object.values(idx).filter(o=>o.grants&&order.indexOf(o.grants)>n).map(o=>o.id));
    let changed=true;while(changed){changed=false;for(const [id,v] of Object.entries(p.objectives))if(v==='done'&&deps(idx[id],p).some(r=>remove.has(r))&&!remove.has(id)){remove.add(id);changed=true;}}
-   affected=[...remove].filter(id=>p.objectives[id]);remove.forEach(id=>{delete p.objectives[id];delete p.legacy[idx[id].quest];});p.manual={};order.slice(0,n+1).forEach(k=>p.manual[k]=true);
+   affected=[...remove].filter(id=>p.objectives[id]);remove.forEach(id=>{delete p.objectives[id];});p.manual={};order.slice(0,n+1).forEach(k=>p.manual[k]=true);
   }
   else if(action.kind==='milestone'){const order=Object.keys(milestones),n=order.indexOf(action.id);if(n<0)throw Error('Unknown milestone');order.slice(0,n+1).forEach(k=>p.manual[k]=true);}
-  else if(action.kind==='quest-failed'){p.failed[action.quest]=action.value;delete p.legacy[action.quest];}
+  else if(action.kind==='quest-failed'){if(!quests[action.quest])throw Error('Unknown quest');if(action.value)p.failed[action.quest]=true;else delete p.failed[action.quest];}
+  else if(action.kind==='reconcile-legacy'){if(!quests[action.quest])throw Error('Unknown quest');delete p.legacy[action.quest];}
   else if(action.kind==='activity'){c[action.id]=action.value;}
   else {
    if(action.kind==='quest'){if(!quests[action.quest])throw Error('Unknown quest');targets=required(action.quest,p).map(o=>o.id);catchup=targets.filter(id=>p.objectives[id]!=='done');}
-   else {if(!idx[action.id])throw Error('Unknown objective');targets=[action.id];}
+   else {if(!idx[action.id])throw Error('Unknown objective');if(action.kind==='skip'&&!idx[action.id].optional)throw Error('Only optional objectives may be skipped');targets=[action.id];}
    if(action.value===false){const remove=new Set(targets);let changed=true;while(changed){changed=false;for(const [id,v] of Object.entries(p.objectives))if(v==='done'&&deps(idx[id],p).some(r=>remove.has(r))&&!remove.has(id)){remove.add(id);changed=true;}}
-    affected=[...remove].filter(id=>p.objectives[id]);remove.forEach(id=>{delete p.objectives[id];delete p.legacy[idx[id].quest];delete p.failed[idx[id].quest];if(idx[id].choice)delete p.choices[idx[id].choice];});
-    const order=Object.keys(milestones);for(const id of remove){const grant=idx[id].grants;if(grant)order.slice(order.indexOf(grant)).forEach(k=>delete p.manual[k]);}
-   }else if(action.kind==='skip'){p.objectives[action.id]=action.skip?'skipped':undefined;}
+    affected=[...remove].filter(id=>p.objectives[id]);remove.forEach(id=>{delete p.objectives[id];if(idx[id].choice)delete p.choices[idx[id].choice];});
+    if(action.kind==='quest')delete p.legacy[action.quest];
+    const order=Object.keys(milestones);for(const id of affected){const grant=idx[id].grants;if(grant)order.slice(order.indexOf(grant)).forEach(k=>delete p.manual[k]);}
+   }else if(action.kind==='skip'){if(!idx[action.id].optional)throw Error('Only optional objectives may be skipped');if(action.skip)p.objectives[action.id]='skipped';else delete p.objectives[action.id];}
    else {
     const extra=new Set();targets.forEach(id=>ancestors(id,p,extra));catchup=[...new Set([...catchup,...[...extra].filter(id=>p.objectives[id]!=='done'&&!targets.includes(id))])];
     if(options.catchup!==false)targets=[...extra,...targets];
-    targets.forEach(id=>{if(!closed(idx[id],p)){p.objectives[id]='done';delete p.legacy[idx[id].quest];delete p.failed[idx[id].quest];}});
+    targets.forEach(id=>{if(!closed(idx[id],p)){p.objectives[id]='done';}});
    }
   }
   const missingChoices=[...new Set(Object.keys(p.objectives).filter(id=>p.objectives[id]==='done'&&idx[id]?.choice&&!p.choices[idx[id].choice]).map(id=>idx[id].choice))];
+  if(action.kind==='quest'&&action.value!==false&&!missingChoices.length&&required(action.quest,p).every(o=>p.objectives[o.id]==='done'))delete p.legacy[action.quest];
+  const departureSuggestion=targets.includes('q-incident:bandits')&&action.value!==false&&!facts(progress).departed&&!facts(p).departed;
+  if(options.confirmDeparture===true&&departureSuggestion)p.manual.departed=true;
   reconcile(p);for(const q of Object.keys(quests))c[q]=questDone(q,p);
   const before=facts(progress),after=facts(p),newMilestones=Object.keys(milestones).filter(k=>after[k]&&!before[k]);
   const removedMilestones=Object.keys(milestones).filter(k=>before[k]&&!after[k]);
   const failures=Object.keys(quests).filter(q=>status(q,p)==='failed'&&status(q,progress)!=='failed');
   const closing=Object.keys(quests).filter(q=>status(q,p)==='unavailable'&&status(q,progress)!=='unavailable');
-  const updates=hubs.map(h=>({hub:h.id,activities:eligible(h,p).filter(id=>!eligible(h,progress).includes(id)&&!c[id])})).filter(u=>u.activities.length);
-  return {progress:p,completed:c,catchup,affected,missingChoices,newMilestones,removedMilestones,failures,closing,updates};
+  const completionLosses=Object.keys(quests).filter(q=>(completed[q]===true||questDone(q,progress))&&!c[q]);
+  const failureCleared=Object.keys(quests).filter(q=>status(q,progress)==='failed'&&status(q,p)!=='failed');
+  const initialArrival=!before.arrival&&after.arrival;
+  const updates=initialArrival?[]:hubs.map(h=>({hub:h.id,activities:eligible(h,p).filter(id=>!(tasks[id].home===h.id&&quests[id])&&!eligible(h,progress).includes(id)&&!c[id]&&availability(id,p)==='available')})).filter(u=>u.activities.length);
+  return {progress:p,completed:c,catchup,affected,missingChoices,newMilestones,removedMilestones,failures,closing,updates,completionLosses,failureCleared,departureSuggestion};
  }
- return {init,branch,closed,required,done:questDone,facts,status,availability,visible,eligible,counts,ancestors,plan};
+ return {init,branch,closed,required,done:questDone,facts,status,availability,visible,eligible,counts,ancestors,plan,levelCeiling,pruneUpdates};
 };

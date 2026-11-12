@@ -41,3 +41,14 @@ The core 57-entry inventory is reconciled in MAP-COVERAGE-R6.json. Two village g
 Additional coordinates and icons: https://github.com/root-BB/witcher3map, commit b023eb7e882915308dfd4e20cb75249005902d5a, files/scripts/mapdata-white_orchard.js. Credits: untamed0, BaHTsIzBEdEvi (root-BB), mcarver, Gerignak and contributors. Adaptation under the same CC BY-NC-SA 4.0 terms. The extension adds quest starts, contract notice, crypt entrance, well diary and cow-pasture warning. Original icon types now include camps, nests, treasure, services, enhancements, entrances, signposts and quests. Game assets remain CDPR property.
 
 R5 initial-subset descriptions above are historical. R6 expands the map to the bounded core inventory; it does not claim every loot container or independent in-game verification. Repeatable honeycombs, hollow-tree loot, loose containers and epilogue-only events are excluded. New compact pages give location, preparation, action and reward; general encounter advice does not certify enemy levels. Departure uses the inn as an orientation anchor rather than inventing a quest-start NPC pin.
+
+## R8 merchant flags
+
+Flags now live in `map-data.js` under explicit pin IDs, each with a source URL shown in the panel. Tavern icons do not imply cards. No unique-item or quest-item flag is invented when the source has not been checked.
+
+- forge: Willis / Twisted Firestarter — https://www.gamebanshee.com/thewitcher3/walkthrough/twistedfirestarter.php
+- tomira: On Death's Bed — https://www.gamebanshee.com/thewitcher3/walkthrough/ondeathsbed.php
+- innkeep-1: Elsa sells cards before departure; unsold cards can be obtained from Bram later — https://primagames.com/eguides/the-witcher-3-wild-hunt-the-complete-edition-eguide/gwent/the-gwentlefolk-of-the-northern-realms/the-gwentlefolk-of-white-orchard
+- shopkeeper-1: Bram and Elsa's shared card stock since patch 1.04 — https://witcher-games.fandom.com/wiki/Elsa
+
+These are compact flags and conditions, not a full inventory or a claim that an already-purchased card remains in stock. The card facts were also cross-checked against https://www.gamerguides.com/the-witcher-3-wild-hunt/database/gwent/special-cards-2 and https://www.gamebanshee.com/thewitcher3/walkthrough/collectemall.php.
