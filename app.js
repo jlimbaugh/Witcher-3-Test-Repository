@@ -2,22 +2,21 @@
 (() => {
   // One immutable home per activity. Recommendations elsewhere are links to that home.
   // This hand-curated sample proves navigation; it is not a level/access eligibility engine.
-  const tasks = {
-    'q-lilac': {name:'Lilac and Gooseberries', home:'hub-arrival', view:'quest-lilac', type:'quest'},
-    'q-firestarter': {name:'Twisted Firestarter', home:'hub-firestarter', view:'walkthrough-firestarter', type:'quest'},
-    'loc-forge': {name:'Willis’s forge', home:'hub-firestarter', view:'location-forge', type:'service'},
-    'q-beast': {name:'The Beast of White Orchard', home:'hub-hunt', view:'quest-beast', type:'quest'},
-    'pop-cemetery': {name:'Cemetery Place of Power', home:'hub-hunt', view:'discovery-cemetery', type:'discovery'},
-    'departure-review': {name:'Review before leaving White Orchard', home:'hub-departure', view:'departure-check', type:'quest'}
-  };
-  const hubs = [
-    {id:'hub-arrival', name:'Lilac and Gooseberries', label:'MAIN STORY / ARRIVAL', group:0, items:['q-lilac','loc-forge']},
-    {id:'hub-firestarter', name:'Twisted Firestarter', label:'VILLAGE BRANCH', group:0, side:true, items:['loc-forge','q-firestarter']},
-    {id:'hub-hunt', name:'The Beast of White Orchard', label:'MAIN STORY / GRIFFIN HUNT', group:1, items:['q-beast','pop-cemetery']},
-    {id:'hub-departure', name:'Before leaving White Orchard', label:'MAIN STORY / STOPPING POINT', group:2, items:['pop-cemetery','departure-review']}
-  ];
-  const groups = ['Arrival in White Orchard','The griffin hunt','Before the road'];
-  const stages = ['forge','trail','suspect','return'];
+  const {tasks,hubs,groups}=window.PHOENIX_ROUTE;
+  const legacyViews={'q-lilac':'quest-lilac','q-beast':'quest-beast','loc-forge':'location-forge','pop-cemetery':'discovery-cemetery','departure-review':'departure-check'};
+  Object.entries(legacyViews).forEach(([id,view])=>tasks[id].view=view);
+  const stages=tasks['q-firestarter'].stages.map(s=>s.id);
+  const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const para=text=>'<p>'+esc(text)+'</p>';
+  // Content and navigation share one registry, avoiding hand-synced routing lists.
+  Object.entries(tasks).forEach(([id,task])=>{
+    const section=document.createElement('section');section.className='view scene'+(task.stages?' walkthrough-scene':'');section.id=task.view;section.hidden=true;section.setAttribute('aria-labelledby',task.view+'-title');
+    const meta='<details class="route-context"><summary>Why this stop belongs here</summary>'+para(task.why)+'<h3>Availability & preparation</h3>'+para(task.requirements)+(task.level?para('Suggested quest level '+task.level+'. Opportunities are hand-curated; story access and encounter readiness still apply.'):'')+'<h3>Useful reward</h3>'+para(task.reward)+'</details>';
+    const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map">Regional map</a></div>';
+    const stageHTML=task.stages?'<div class="stage-tools">'+links+'<label>Stage <select data-stage-select aria-label="Choose walkthrough stage">'+task.stages.map(st=>'<option value="'+esc(st.id)+'">'+esc(st.title)+'</option>').join('')+'</select></label></div><div class="stage-nav" aria-label="Walkthrough stages"><button type="button" data-stage-prev>← Previous</button><span data-stage-count aria-live="polite"></span><button type="button" data-stage-next>Next →</button></div><div class="stage-panel" id="'+task.view+'-panel">'+task.stages.map((st,i)=>'<section class="walk-stage" data-stage="'+esc(st.id)+'" hidden><div class="stage-content"><span class="step-number" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div><h2>'+esc(st.title)+'</h2>'+(st.warning?'<p class="risk-note"><strong>Before this step:</strong> '+esc(st.warning)+'</p>':'')+para(st.text)+(st.spoiler?'<details><summary>Story outcome & choices · Spoilers</summary>'+para(st.spoiler)+'</details>':'')+'</div></div></section>').join('')+'</div>':links+task.sections.map(([title,text])=>'<h2>'+esc(title)+'</h2>'+para(text)).join('');
+    section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p></div><article class="reading-panel">'+meta+stageHTML+'<details class="sources"><summary>Sources & route notes</summary>'+task.sources.map(url=>'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Read source reference ↗</a></p>').join('')+'<p>Route grouping is editorial guidance. Encounter levels, availability and rewards still need Xbox field acceptance. This page records neither game state nor automatic completion.</p></details><a class="back-link" href="#whiteorchard-tree" data-return-hub>← Return to exact hub</a><p class="save-message" data-save-message aria-live="polite"></p></article></div>';
+    const prior=document.getElementById(task.view);if(prior)prior.replaceWith(section);else document.querySelector('main').append(section);
+  });
   const key = 'phoenix.whiteorchard.interaction.v1';
   const legacyKey = 'phoenix.whiteorchard.pilot.v1';
   const views = [...document.querySelectorAll('.view')];
@@ -29,7 +28,7 @@
   let lastRenderedURL = '';
   let saveAvailable = true;
   let scrollTimer;
-  const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,map:{type:'all',search:'',showCompleted:false}};
+  const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,lastWalkthroughView:null,stageByView:{},map:{type:'all',search:'',showCompleted:false}};
   try {
     const raw = localStorage.getItem(key);
     if (raw) {
@@ -41,7 +40,11 @@
         if (Number.isInteger(saved.windowStart)) state.windowStart = Math.max(0,Math.min(Math.max(0,groups.length-2),saved.windowStart));
         if (stages.includes(saved.lastStage)) state.lastStage = saved.lastStage;
         state.lastWalkthrough = saved.lastWalkthrough === true;
-        if (validTask(saved.lastContent?.task) && ['quest-firestarter','walkthrough-firestarter','location-forge','quest-lilac','quest-beast','discovery-cemetery','departure-check'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
+        Object.values(tasks).filter(t=>t.stages).forEach(t=>{const st=saved.stageByView?.[t.view];if(t.stages.some(x=>x.id===st))state.stageByView[t.view]=st;});
+        if(!state.stageByView['walkthrough-firestarter'])state.stageByView['walkthrough-firestarter']=state.lastStage;
+        if(Object.values(tasks).some(t=>t.stages&&t.view===saved.lastWalkthroughView))state.lastWalkthroughView=saved.lastWalkthroughView;
+        else if(state.lastWalkthrough)state.lastWalkthroughView='walkthrough-firestarter';
+        if (validTask(saved.lastContent?.task) && [...Object.values(tasks).map(t=>t.view),'quest-firestarter'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
         if (validHub(saved.treeReturn?.expandedHub) || saved.treeReturn?.expandedHub === null) state.treeReturn = saved.treeReturn;
         if (saved.map) state.map = {type:['all','quest','service','discovery'].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true};
       }
@@ -71,21 +74,26 @@
   function drawConnections(){
     if(tree.closest('[hidden]'))return;
     const box=tree.getBoundingClientRect();wires.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);wires.replaceChildren();
-    const edges=[['hub-arrival','hub-firestarter'],['hub-arrival','hub-hunt'],['hub-hunt','hub-departure']];
+    const mains=hubs.filter(h=>!h.side);
+    const edges=[...mains.slice(1).map((h,i)=>[mains[i].id,h.id]),...hubs.filter(h=>h.side).map(h=>[mains.find(m=>m.group===h.group).id,h.id])];
     edges.forEach(([from,to])=>{
       const a=document.getElementById(from),b=document.getElementById(to);if(a.hidden||b.hidden)return;
       const ar=a.querySelector('button').getBoundingClientRect(),br=b.querySelector('button').getBoundingClientRect();
       const side=b.classList.contains('side-branch');
-      const narrow=box.width<560;
-      const x1=side&&!narrow?ar.right-box.left:ar.left+18-box.left,y1=side&&!narrow?ar.top+ar.height/2-box.top:ar.bottom-box.top;
-      const x2=side?br.left-box.left:br.left+18-box.left,y2=side?br.top+br.height/2-box.top:br.top-box.top;
+      const narrow=true;
+      const x1=side?ar.left+8-box.left:ar.right-box.left,y1=side?ar.bottom-box.top:ar.top+ar.height/2-box.top;
+      const x2=br.left-box.left,y2=br.top+br.height/2-box.top;
       const path=document.createElementNS(wires.namespaceURI,'path');
-      path.setAttribute('d',side?`M ${x1} ${y1} H ${(x1+x2)/2} V ${y2} H ${x2}`:`M ${x1} ${y1} V ${y2}`);wires.append(path);
+      path.setAttribute('d',side?(narrow?`M ${ar.left-box.left+8} ${ar.bottom-box.top} V ${y2} H ${x2}`:`M ${x1} ${y1} H ${(x1+x2)/2} V ${y2} H ${x2}`):`M ${x1} ${y1} H ${(x1+x2)/2} V ${y2} H ${x2}`);wires.append(path);
     });
   }
   new ResizeObserver(drawConnections).observe(tree);
   function arrivalCue(el){const row=el.closest('.activity-row')||el;row.classList.add('arrived');setTimeout(()=>row.classList.remove('arrived'),2400);}
 
+  const lanes=groups.map((name,index)=>{
+    const group=document.createElement('section');group.className='story-group';group.dataset.storyGroup=index;group.setAttribute('aria-label',name);
+    const main=document.createElement('div');main.className='main-lane';const branches=document.createElement('div');branches.className='branch-lane';const heading=document.createElement('p');heading.className='bracket-round';heading.textContent=name;group.append(heading,main,branches);tree.append(group);return {group,main,branches};
+  });
   hubs.forEach(hub=>{
     const block=document.createElement('article');
     block.className='hub-block'+(hub.side?' side-branch':'');block.id=hub.id;block.dataset.group=hub.group;
@@ -106,9 +114,9 @@
       } else {
         const mark=document.createElement('span');mark.className='task-mark';mark.dataset.taskMark=id;mark.setAttribute('role','img');row.classList.add('reference-row');row.append(mark);
       }
-      const link=taskAnchor(id,!own);link.id=row.id+'-link';row.append(link);if(!own){const arrow=document.createElement('span');arrow.className='reference-arrow';arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');row.append(arrow);}list.append(row);
+      const link=taskAnchor(id,!own);link.id=row.id+'-link';row.append(link);if(!own){const arrow=document.createElement('span');arrow.className='reference-arrow';arrow.textContent='→';arrow.setAttribute('aria-hidden','true');row.append(arrow);}list.append(row);
     });
-    panel.append(list);block.append(button,panel);tree.append(block);
+    panel.append(list);block.append(button,panel);lanes[hub.group][hub.side?'branches':'main'].append(block);
     button.addEventListener('click',()=>{
       stashTree();state.selectedHub=hub.id;state.expandedHub=state.expandedHub===hub.id?null:hub.id;
       history.replaceState({...history.state},'',treeLink(hub.id));
@@ -117,6 +125,7 @@
   });
   function updateTree() {
     state.windowStart=Math.min(state.windowStart,Math.max(0,groups.length-2));
+    lanes.forEach((lane,i)=>{lane.group.hidden=i<state.windowStart||i>state.windowStart+1;});
     hubs.forEach(h=>{
       const block=document.getElementById(h.id),button=document.getElementById(h.id+'-toggle');
       block.hidden=h.group<state.windowStart || h.group>state.windowStart+1;
@@ -131,7 +140,7 @@
   }
   function renderMapLinks() {
     const list=document.querySelector('[data-map-links]');list.replaceChildren();
-    const ids=['loc-forge','q-firestarter','pop-cemetery'];
+    const ids=Object.keys(tasks).filter(id=>tasks[id].map);
     ids.filter(id=>(state.map.type==='all'||tasks[id].type===state.map.type)&&(state.map.showCompleted||!state.completed[id])&&tasks[id].name.toLocaleLowerCase().includes(state.map.search.toLocaleLowerCase().trim())).forEach(id=>{
       const row=document.createElement('div');row.className='map-test-row';
       const a=taskAnchor(id,true);row.append(a);
@@ -147,20 +156,21 @@
     document.querySelector('[data-current-hub]').textContent=hubById(state.selectedHub).name;
     document.querySelector('[data-region-warning]').hidden=state.selectedHub!=='hub-departure';
     const count=Object.keys(tasks).filter(id=>state.completed[id]).length;
-    document.querySelector('[data-pilot-progress]').textContent=count+' of '+Object.keys(tasks).length+' pilot activities completed';
+    document.querySelector('[data-pilot-progress]').textContent=count+' of '+Object.keys(tasks).length+' guide activities completed';
     const cont=document.querySelector('[data-continue]');
-    if(state.lastWalkthrough){cont.href='#walkthrough-firestarter/'+state.lastStage;cont.textContent='Continue · Twisted Firestarter, stage '+(stages.indexOf(state.lastStage)+1)+' of '+stages.length+' →';}
-    else if(state.lastContent){cont.href='#'+state.lastContent.view+(state.lastContent.view==='walkthrough-firestarter'?'/'+state.lastStage:'');cont.textContent='Continue '+tasks[state.lastContent.task].name+' →';}
-    else {cont.href=treeLink(state.selectedHub);cont.textContent='Open selected hub →';}
+    const lastWalk=Object.values(tasks).find(t=>t.stages&&t.view===state.lastWalkthroughView);
+    if(lastWalk){const stage=state.stageByView[lastWalk.view]||lastWalk.stages[0].id;cont.href='#'+lastWalk.view+'/'+stage;cont.textContent='Continue · '+lastWalk.name+', stage '+(lastWalk.stages.findIndex(s=>s.id===stage)+1)+' of '+lastWalk.stages.length+' →';}
+    else if(state.lastContent){cont.href='#'+state.lastContent.view;cont.textContent='Continue '+tasks[state.lastContent.task].name+' →';}
+    else {cont.href=treeLink(state.selectedHub);cont.textContent='Jump to my hub →';}
     document.querySelectorAll('[data-selected-hub]').forEach(a=>{a.href=treeLink(state.selectedHub);});
     const unfinished=document.querySelector('[data-unfinished]');unfinished.replaceChildren();
     Object.keys(tasks).filter(id=>!state.completed[id]).forEach(id=>unfinished.append(taskAnchor(id,true)));
-    if(!unfinished.children.length)unfinished.textContent='All pilot activities are marked completed.';
+    if(!unfinished.children.length)unfinished.textContent='All listed guide activities are marked completed.';
     document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
     renderMapLinks();
   }
   function treeSnapshot() {
-    return {expandedHub:state.expandedHub,windowStart:state.windowStart,scrollY:window.scrollY,focusId:document.activeElement?.id||''};
+    return {expandedHub:state.expandedHub,windowStart:state.windowStart,scrollY:window.scrollY,scrollX:document.querySelector('.tree-viewport').scrollLeft,focusId:document.activeElement?.id||''};
   }
   function stashTree() {
     if(currentRoot!=='whiteorchard-tree')return;
@@ -180,18 +190,25 @@
   type.addEventListener('change',()=>{state.map.type=type.value;renderMapLinks();persist();});
   search.addEventListener('input',()=>{state.map.search=search.value.slice(0,100);renderMapLinks();persist();});
   show.addEventListener('change',()=>{state.map.showCompleted=show.checked;renderMapLinks();persist();});
-  function goStage(index){navigate('#walkthrough-firestarter/'+stages[Math.max(0,Math.min(stages.length-1,index))]);}
-  document.querySelector('[data-stage-prev]').addEventListener('click',()=>goStage(stages.indexOf(state.lastStage)-1));
-  document.querySelector('[data-stage-next]').addEventListener('click',()=>goStage(stages.indexOf(state.lastStage)+1));
-  document.querySelector('[data-stage-select]').addEventListener('change',event=>navigate('#walkthrough-firestarter/'+event.target.value));
-  function renderStage(id) {
-    if(stages.includes(id))state.lastStage=id;
-    const index=stages.indexOf(state.lastStage);
-    document.querySelectorAll('[data-stage]').forEach(stage=>{stage.hidden=stage.dataset.stage!==state.lastStage;});
-    document.querySelector('[data-stage-select]').value=state.lastStage;
-    document.querySelector('[data-stage-prev]').disabled=index===0;
-    document.querySelector('[data-stage-next]').disabled=index===stages.length-1;
-    document.querySelector('[data-stage-count]').textContent='Stage '+(index+1)+' of '+stages.length;
+  const activeQuest=()=>Object.values(tasks).find(t=>t.view===currentRoot&&t.stages);
+  function goStage(index){const task=activeQuest();if(task)navigate('#'+task.view+'/'+task.stages[Math.max(0,Math.min(task.stages.length-1,index))].id);}
+  document.addEventListener('click',event=>{
+    const control=event.target.closest('[data-stage-prev],[data-stage-next]');if(!control)return;
+    const task=activeQuest();if(!task)return;
+    goStage(task.stages.findIndex(s=>s.id===state.stageByView[task.view])+(control.hasAttribute('data-stage-next')?1:-1));
+  });
+  document.addEventListener('change',event=>{if(event.target.matches('[data-stage-select]')){const task=activeQuest();navigate('#'+task.view+'/'+event.target.value);}});
+  function renderStage(task,id) {
+    const section=document.getElementById(task.view);
+    if(task.stages.some(s=>s.id===id))state.stageByView[task.view]=id;
+    const stage=state.stageByView[task.view]||task.stages[0].id;state.stageByView[task.view]=stage;
+    const index=task.stages.findIndex(s=>s.id===stage);
+    section.querySelectorAll('[data-stage]').forEach(el=>{el.hidden=el.dataset.stage!==stage;});
+    section.querySelector('[data-stage-select]').value=stage;
+    section.querySelector('[data-stage-prev]').disabled=index===0;section.querySelector('[data-stage-next]').disabled=index===task.stages.length-1;
+    section.querySelector('[data-stage-count]').textContent=(index+1)+' of '+task.stages.length;
+    state.lastWalkthrough=true;state.lastWalkthroughView=task.view;
+    if(task.view==='walkthrough-firestarter')state.lastStage=stage;
   }
   function ownerSnapshot(task) {return {expandedHub:tasks[task].home,windowStart:hubById(tasks[task].home).group,scrollY:0,focusId:tasks[task].home+'-'+task+'-link',jump:true};}
   function parseHash() {
@@ -229,7 +246,7 @@
       state.lastContent={task:contentTask,view:currentRoot};
       if(!state.treeReturn || state.treeReturn.expandedHub!==tasks[contentTask].home){state.treeReturn=ownerSnapshot(contentTask);state.selectedHub=tasks[contentTask].home;}
     }
-    if(currentRoot==='walkthrough-firestarter'){state.lastWalkthrough=true;renderStage(suffix);}
+    const staged=activeQuest();if(staged)renderStage(staged,suffix);
     let restore;
     let jump;
     if(currentRoot==='whiteorchard-tree') {
@@ -251,17 +268,17 @@
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       if(currentRoot!==target.id)return;
       if(currentRoot==='whiteorchard-tree'){
-        if(jump){const el=document.getElementById(jump);el.focus({preventScroll:true});el.scrollIntoView({block:'center',behavior:'auto'});arrivalCue(el);}
+        if(jump){const el=document.getElementById(jump);el.focus({preventScroll:true});el.scrollIntoView({block:'center',inline:'center',behavior:'auto'});arrivalCue(el);}
         else if(restore){
           const y=Math.max(0,Number(restore.scrollY)||0);
           const focus=document.getElementById(restore.focusId);
           if(focus&&!focus.closest('[hidden]'))focus.focus({preventScroll:true});
-          if(restore.jump&&focus){focus.scrollIntoView({block:'center',behavior:'auto'});arrivalCue(focus);}else window.scrollTo(0,y);
+          if(restore.jump&&focus){focus.scrollIntoView({block:'center',inline:'center',behavior:'auto'});arrivalCue(focus);}else {document.querySelector('.tree-viewport').scrollLeft=Math.max(0,Number(restore.scrollX)||0);window.scrollTo(0,y);}
         } else window.scrollTo(0,0);
         stashTree();persist();
-      } else if(currentRoot==='walkthrough-firestarter'&&before===currentRoot){
-        const heading=document.querySelector('[data-stage="'+state.lastStage+'"] h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
-        document.getElementById('stage-panel').scrollIntoView({block:'start',behavior:'auto'});
+      } else if(staged&&before===currentRoot){
+        const heading=target.querySelector('[data-stage="'+state.stageByView[staged.view]+'"] h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
+        target.querySelector('.stage-panel').scrollIntoView({block:'start',behavior:'auto'});
       } else {
         window.scrollTo(0,0);const heading=target.querySelector('h1');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
       }
@@ -271,9 +288,15 @@
     if(currentRoot!=='whiteorchard-tree')return;
     clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{stashTree();persist();},120);
   },{passive:true});
+  document.querySelector('.tree-viewport').addEventListener('scroll',()=>{if(currentRoot==='whiteorchard-tree'){clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{stashTree();persist();},120);}},{passive:true});
   addEventListener('pagehide',()=>{stashTree();persist();});
   addEventListener('popstate',()=>{clearTimeout(scrollTimer);render({mode:'pop'});});
   // Normal internal links use pushState. This handles pasted/manual fragment changes.
   addEventListener('hashchange',()=>{if(location.href!==lastRenderedURL)render({mode:'hash'});});
+  const jumpList=document.querySelector('[data-quest-jump]');
+  hubs.forEach(h=>{const option=document.createElement('option');option.value=h.id;option.textContent=h.name;jumpList.append(option);});
+  jumpList.addEventListener('change',()=>{if(validHub(jumpList.value))navigate(treeLink(jumpList.value));jumpList.value='';});
+  // Fail loudly during development instead of silently shipping disconnected content.
+  Object.entries(tasks).forEach(([id,t])=>{if(!validHub(t.home)||!hubById(t.home).items.includes(id)||!document.getElementById(t.view))throw Error('Invalid activity home/view: '+id);});
   updateTree();render();
 })();
