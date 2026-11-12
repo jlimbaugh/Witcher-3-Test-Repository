@@ -38,7 +38,7 @@ window.createPhoenixProgressUI=function({state,tasks,hubs,engine,persist,reflect
   const list=ids=>'<ul>'+ids.map(id=>'<li>'+esc(tasks[id].name)+'</li>').join('')+'</ul>';
   dialog.querySelector('[data-review-impact]').innerHTML=
    (plan.catchup.length?'<details><summary>'+plan.catchup.length+' earlier required objectives</summary><ul>'+plan.catchup.map(id=>'<li>'+esc(tasks[data.objectiveIndex[id].quest].name+' — '+data.objectiveIndex[id].label)+'</li>').join('')+'</ul></details>':'')+
-   '<p id="catchup-help">'+(pending.kind==='quest'?'Confirming whole-quest completion requires its required objectives. Cancel to record individual objectives instead.':'Leave catch-up unchecked to record only the selected objective; missing prerequisites will remain unconfirmed.')+'</p>'+
+   (plan.catchup.length?'<p id="catchup-help">'+(pending.kind==='quest'?'Confirming whole-quest completion requires its required objectives. Cancel to record individual objectives instead.':'Leave catch-up unchecked to record only the selected objective; missing prerequisites will remain unconfirmed.')+'</p>':'')+
    (plan.newMilestones.length?'<div class="risk-note"><strong>Confirm story milestones</strong><ul>'+plan.newMilestones.map(k=>'<li>'+esc(data.milestones[k])+'</li>').join('')+'</ul></div>':'')+
    (plan.removedMilestones.length?'<p class="risk-note">Story milestones will be removed: '+plan.removedMilestones.map(k=>esc(data.milestones[k])).join(', ')+'.</p>':'')+
    (plan.affected.length?'<details open><summary>'+plan.affected.length+' objective marks will be removed</summary><ul>'+plan.affected.map(id=>'<li>'+esc(tasks[data.objectiveIndex[id].quest].name+' — '+data.objectiveIndex[id].label)+'</li>').join('')+'</ul></details>':'')+
