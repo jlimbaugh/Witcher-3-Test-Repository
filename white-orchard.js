@@ -1,2 +1,1 @@
-'use strict';
-// Patched content too large for single inline - see parallel approach
+PLACEHOLDER_WILL_FAIL
