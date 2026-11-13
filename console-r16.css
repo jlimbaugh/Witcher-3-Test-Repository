@@ -30,3 +30,15 @@ body:has(#home:not([hidden])) .guide-bar{position:static;background:#1c2529 url(
 body:has(#home:not([hidden])) .wordmark{font:1.5rem/1 Cinzel,Georgia,serif;letter-spacing:.18em;color:#f1ebdf;text-shadow:0 2px 3px #000}
 @media(min-width:800px){#home.console-r16 .scroll-r16{border-left-width:42px;border-right-width:42px}}
 @media(max-width:600px){body:has(#home:not([hidden])) .bar-line{gap:8px;display:grid;grid-template-columns:1fr auto;padding:12px}body:has(#home:not([hidden])) .guide-bar nav{grid-column:1/-1;grid-row:2;display:flex;justify-content:space-between;gap:8px;flex-wrap:nowrap}body:has(#home:not([hidden])) .guide-bar nav a{font-size:.85rem;min-height:44px;padding:6px 0}body:has(#home:not([hidden])) .guide-appearance{grid-column:2;grid-row:1}body:has(#home:not([hidden])) .guide-appearance select{max-width:88px;padding-inline:3px}body:has(#home:not([hidden])) .guide-appearance button{min-width:44px;padding:6px}}
+/* R17: complete titles and explicit actions; no clipped card captions. */
+.desk-card.gwent-guide-card{background-size:cover;background-position:center;appearance:none;cursor:pointer;letter-spacing:normal;text-transform:none}
+.gwent-guide-card .quest-card-art{background:transparent}
+.desk-card.gwent-guide-card strong{overflow:visible;overflow-wrap:normal;word-break:normal;max-height:none;height:auto}
+.console-r16 .gwent-guide-card strong{font-size:1.16rem;line-height:1.12;padding:8px 5px;min-height:64px}
+.console-r16 .gwent-guide-card small{bottom:88px}
+.desk-carousel .orbit-controls button{min-height:48px;touch-action:manipulation}
+.console-r16 .console-continue small{letter-spacing:normal;font-size:1.02rem;margin-bottom:5px}
+@media(max-width:400px){.console-r16 .selected-scroll h2{font-size:1.65rem;line-height:1.2}.console-r16 .console-continue strong{font-size:1.13rem;line-height:1.24}.console-r16 .console-tile span{font-size:1rem;line-height:1.2}.console-r16 .gwent-guide-card strong{font-size:1.1rem}}
+#home .orbit-controls button,#whiteorchard-tree .orbit-controls button{min-height:48px}
+@media(max-width:600px){body:has(#home:not([hidden])) .guide-bar{padding:0}body:has(#home:not([hidden])) .bar-line{grid-template-columns:minmax(0,1fr) auto}body:has(#home:not([hidden])) .wordmark{min-width:0}}
+@media(max-width:400px){body:has(#home:not([hidden])) .wordmark{font-size:1.2rem;letter-spacing:.1em}}

@@ -195,7 +195,7 @@
     renderMapLinks();
   }
   function treeSnapshot() {
-    return {groupOpen:{...state.groupOpen},expandedHub:state.expandedHub,windowStart:state.windowStart,scrollY:window.scrollY,scrollX:document.querySelector('.tree-viewport').scrollLeft,focusId:document.activeElement?.id||''};
+    return {selectedHub:state.selectedHub,groupOpen:{...state.groupOpen},expandedHub:state.expandedHub,windowStart:state.windowStart,scrollY:window.scrollY,scrollX:document.querySelector('.tree-viewport').scrollLeft,focusId:document.activeElement?.id||''};
   }
   function stashTree() {
     if(currentRoot!=='whiteorchard-tree')return;
@@ -230,7 +230,7 @@
     state.lastWalkthrough=true;state.lastWalkthroughView=task.view;
     if(task.view==='walkthrough-firestarter')state.lastStage=stage;
   }
-  function ownerSnapshot(task) {return {expandedHub:tasks[task].home,windowStart:hubById(tasks[task].home).group,scrollY:0,focusId:tasks[task].home+'-'+task+'-link',jump:true};}
+  function ownerSnapshot(task) {return {selectedHub:tasks[task].home,expandedHub:tasks[task].home,windowStart:hubById(tasks[task].home).group,scrollY:0,focusId:tasks[task].home+'-'+task+'-link',jump:true};}
   function parseHash() {
     let parts;
     try{parts=decodeURIComponent(location.hash.slice(1)).split('/');}catch{return ['not-found'];}
@@ -245,6 +245,7 @@
     stashTree();const entry=history.state||{},mapSnapshot=currentRoot==='whiteorchard-map'&&nativeMap?nativeMap.capture():null;clearTimeout(scrollTimer);persist();
     if(hash===location.hash){render({mode:'same'});return;}
     const next={};if(options.tree)next.tree=options.tree;
+    if(contentRoot(hash))next.treeReturn=hash.replace(/^#/,'').split('/')[0]===currentRoot?(entry.treeReturn||state.treeReturn):state.treeReturn;
     if(mapSnapshot&&contentRoot(hash))next.mapReturn=mapSnapshot;
     else if(contentRoot(hash)&&hash.replace(/^#/,'').split('/')[0]===currentRoot&&entry.mapReturn)next.mapReturn=entry.mapReturn;
     if(hash==='#whiteorchard-map/restore'&&entry.mapReturn)next.map=entry.mapReturn;
@@ -277,6 +278,8 @@
     });
     const contentTask=currentRoot==='walkthrough-firestarter'?'q-firestarter':Object.keys(tasks).find(id=>tasks[id].view===currentRoot);
     if(contentTask) {
+      const origin=history.state?.treeReturn;
+      if(origin&&hubById(origin.expandedHub)?.items.includes(contentTask)){state.treeReturn=origin;state.selectedHub=validHub(origin.selectedHub)?origin.selectedHub:origin.expandedHub;}
       state.lastContent={task:contentTask,view:currentRoot};
       if(!state.treeReturn || !hubById(state.treeReturn.expandedHub)?.items.includes(contentTask)){state.treeReturn=ownerSnapshot(contentTask);state.selectedHub=tasks[contentTask].home;}
     }
@@ -291,6 +294,7 @@
       } else {
         restore=history.state?.tree||state.treeReturn;
         if(restore){
+          state.selectedHub=validHub(restore.selectedHub)?restore.selectedHub:validHub(restore.expandedHub)?restore.expandedHub:state.selectedHub;
           if(restore.groupOpen)state.groupOpen={...restore.groupOpen};
           state.expandedHub=validHub(restore.expandedHub)?restore.expandedHub:null;
           state.windowStart=Math.max(0,Math.min(Math.max(0,groups.length-2),Number(restore.windowStart)||0));
