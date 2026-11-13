@@ -1,0 +1,120 @@
+{
+  "retrieved": "2026-11-12",
+  "note": "Official Gwent card imagery used decoratively for guide navigation. Original printed card values are not guide levels or completion data. Originals retained in source-assets; WebP resize only.",
+  "assets": [
+    {
+      "file": "ivo.webp",
+      "name": "Ivo of Belhaven",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/72efb72c68caa3aa94109dec668d926515929b18.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Quests console selector",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 59142,
+      "sha256": "4abf793c6a5693a2a9b1b6496f3525d0515583821c4571e23dc7fccb3cc05d74"
+    },
+    {
+      "file": "cavalry.webp",
+      "name": "Lyrian Cavalry",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/0c4cdba87574651be1d6e2a9e43a6e7051d4f060.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Regions console selector",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 32154,
+      "sha256": "d35b8a2ab4a552e00a9e57f7c4183b4646df6e2faa41f2bfd90ae75a5872a395"
+    },
+    {
+      "file": "vysogota.webp",
+      "name": "Vysogota of Corvo",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/2abc56ca60492a87c937fc4fdf5b2f9b2b32e087.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Map console selector",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 34160,
+      "sha256": "25a16d44c98190c4043321b9efa3f058d5e4b007e3a23cc6ee6207ea852e006b"
+    },
+    {
+      "file": "isbel.webp",
+      "name": "Isbel of Hagge",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/f94d6a6259ff7fc814a5a53bf04a9be3ac3bc0dc.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Constellation console selector",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 42488,
+      "sha256": "cd4ad14eb557f40c3cc890aff7d5ac343bf955d45feb77bc806a172159ed22a3"
+    },
+    {
+      "file": "gabor.webp",
+      "name": "Gabor Zigrin",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/23e402010e801f93624fe80880dc8b3be08a9f49.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Merchant illustration",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 22480,
+      "sha256": "8c906799776463ecdc6417860712c5ab443d11849d7a5e2be39885439c8931a1"
+    },
+    {
+      "file": "woodland.webp",
+      "name": "Woodland Spirit",
+      "source": "https://www.playgwent.com/uploads/media/card_mobile/0001/16/14b0b364d4ed90830dab1541dbfa7b5d1a8ae6bb.jpeg",
+      "page": "https://www.playgwent.com/en/card-reveals",
+      "copyright": "CD PROJEKT RED",
+      "use": "Discovery index illustration",
+      "interim": true,
+      "sourceDimensions": [
+        425,
+        640
+      ],
+      "dimensions": [
+        425,
+        640
+      ],
+      "bytes": 61420,
+      "sha256": "84a82e5c894bef4cf1bd5f681fe1e4911930a36b168c92ba65fb361316a2e15a"
+    }
+  ]
+}
