@@ -1,0 +1,39 @@
+/* R19: White Orchard is the shared template; Velen supplies only its world art. */
+body{background:#151c1e url(r10-stone.svg)}
+.iron-header{background:#1c2529 url(r10-stone.svg);border-bottom:5px double #b4bdb3;box-shadow:0 6px 16px #0009}
+.brand{font:1.5rem/1 Cinzel,Georgia,serif;letter-spacing:.18em;color:#f1ebdf;text-shadow:0 2px 3px #000}
+.iron-header nav a{font-family:Fell,Georgia,serif;font-size:1rem}
+main.console-r16{max-width:1100px;background:linear-gradient(#10202b45,#10202b66),url(velen-landscape-r18.webp) center/cover fixed}
+.console-r16 #screen.cover{margin:0;width:100%;max-width:none;background:transparent;overflow:hidden;padding:0 12px;gap:22px}
+.console-r16 .scene-banner{width:calc(100% + 24px);margin:0 -12px;border:0;border-bottom:5px double #b6beb3;box-shadow:0 8px 24px #0007;min-height:210px;height:clamp(210px,29vw,330px);padding:120px 18px 20px;border-radius:0}
+.console-r16 .scene-banner h1{color:#f6efdf;font:clamp(2.3rem,6vw,4rem)/1.08 var(--body);text-align:center;letter-spacing:.025em;border:0;background:none}
+.console-r16 .scene-banner .eyebrow{text-align:center}
+.console-r16 .quest-selector{background:none;border:0;box-shadow:none;padding:0;overflow:hidden}
+.console-r16 .quest-selector:before{display:none}
+.console-r16 .deck{height:320px}
+.console-r16 .quest-card{width:196px;height:296px;left:50%;top:10px;display:block;transform:translateX(-50%);opacity:1;padding:0}
+.console-r16 .quest-card.left{transform:translateX(calc(-50% - 130px)) scale(.86);opacity:.58}
+.console-r16 .quest-card.right{transform:translateX(calc(-50% + 130px)) scale(.86);opacity:.58}
+.console-r16 .quest-card:after{inset:6px;width:auto;height:auto;z-index:1;background:linear-gradient(180deg,#101a1d22,transparent 55%,#080d10c9);border:2px solid #c2c6b466}
+.console-r16 .quest-card strong{font-family:var(--body);display:flex;justify-content:center;align-items:center;overflow-wrap:normal;word-break:normal}
+.console-r16 .quest-card small{bottom:88px}
+.console-r16 .resume{display:block;min-height:106px;padding:3px 7px;gap:12px}
+.console-r16 .resume a{font:1.25rem/1.12 var(--body);color:#241e18;overflow-wrap:normal}
+.console-r16 .scroll-r16{border-left-width:24px;border-right-width:24px}
+.console-r16 .scroll h2:after{content:'';display:block;height:20px;background:url(silver-rule-r15.svg?v=2) center/85% 100% no-repeat;filter:brightness(.45) sepia(.5);margin-top:7px}
+.console-r16 .selected-scroll h2:after{display:none}
+.console-r16 .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 15px;margin:14px 4px 4px}
+.console-r16 .art-tile:after{background:linear-gradient(0deg,#081116f5,transparent 60%);inset:0;z-index:-1}
+.console-r16 .art-tile:before{inset:-9px;background:url(silver-frame-r15.svg?v=2) center/100% 100%;z-index:3}
+.console-r16 .shortcuts .art-tile{height:clamp(156px,23vw,255px)}
+.console-r16 .shortcuts .art-tile:last-child{grid-column:auto}
+.console-r16 .scroll details{background:#d9c49c url(worn-vellum-r15.svg);border:3px double #8b8068;border-radius:3px 7px 3px 5px}
+.console-r16 .stage-ribbon a{background:#d4bd96 url(worn-vellum-r15.svg);border:3px double #8c8571;color:#302a23}
+.console-r16 .stage-ribbon a[aria-current]{background:#663b38;color:#f0e0c7}
+.console-r16 .stage-controls button,.console-r16 .button-link{font-family:var(--body);min-height:48px;background:#263235 url(r10-metal.svg);color:#efe5d1;border:4px double #aeb8a8;border-radius:10px 3px 12px 3px;box-shadow:inset 0 0 18px #0008,0 4px 8px #0005}
+footer{background:#1d292c url(r10-stone.svg);border-top:5px double #a2ab9e;max-width:none}
+@media(min-width:800px){.console-r16 #screen.cover{padding-inline:40px;gap:28px}.console-r16 .scene-banner{width:calc(100% + 80px);margin-inline:-40px}.console-r16 .scroll-r16{border-left-width:42px;border-right-width:42px}.console-r16 .resume a{font-size:1.6rem}}
+@media(max-width:600px){.iron-header{padding:12px}.brand{font-size:1.5rem}.iron-header nav a{font-size:.85rem;min-height:44px}.console-r16 .quest-card strong{font-size:1.1rem}}
+@media(max-width:400px){.brand{font-size:1.2rem;letter-spacing:.1em}.console-r16 .resume a{font-size:1.13rem;line-height:1.24}}
+@media(max-width:360px){.console-r16 #screen.cover{padding-inline:8px}.console-r16 .scene-banner{width:calc(100% + 16px);margin-inline:-8px}.console-r16 .scroll-r16{border-left-width:24px;border-right-width:24px}.console-r16 .tiles{gap:14px 11px}.console-r16 .console-tile,.console-r16 .shortcuts .console-tile{height:153px}}
+main#content.console-r16 .orbit-controls button,main#content.console-r16 .stage-controls button{min-height:48px}
