@@ -11,12 +11,14 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
   data.labels.forEach(label=>L.marker(label.point,{icon:L.divIcon({className:'native-map-label',html:'<span>'+label.name+'</span>',iconSize:[140,20],iconAnchor:[70,-12]}),interactive:false,keyboard:false}).addTo(labels));
   const layer=L.layerGroup().addTo(map);
   const types={"pop": ["Places of Power", "pop"], "diagram": ["Diagrams", "poi"], "service": ["Services", "armourer"], "gwent": ["Gwent", "gwent"], "notice": ["Notice boards", "notice"], "abandoned": ["Abandoned sites", "abandoned"], "buff": ["Equipment enhancements", "grindstone"], "camp": ["Bandit camps", "banditcamp"], "entrance": ["Entrances", "entrance"], "guarded": ["Guarded treasure", "guarded"], "hidden": ["Hidden treasure", "hidden"], "nest": ["Monster nests", "monsternest"], "poi": ["Discoveries", "poi"], "signpost": ["Signposts", "fasttravel"], "cache": ["Water caches", "smugglers"], "quest": ["Quest starts", "sidequests"], "contract": ["Contracts", "tempcontract"]};
+  let clusterMode='browse';
   let focusedTask=null,focusedHub=null,scope=null,first=true,saveTimer;
   const panel=document.querySelector("[data-map-panel]");
   function iconFor(pin){return pin.icon||(pin.id==='tomira'?'herbalist':types[pin.type][1]);}
   function matches(pin){return (state.map.type==='all'||state.map.type===pin.type)&&(isUtility(pin)||state.map.showCompleted||!state.completed[pin.task])&& (pin.name+' '+tasks[pin.task].name+' '+(hubs.find(h=>h.id===tasks[pin.task].home)?.name||'')).toLocaleLowerCase().includes(state.map.search.trim().toLocaleLowerCase());}
-  function visiblePins(){const cluster=scope?hubs.find(h=>h.id===scope):null;const allowed=cluster?eligible(cluster):null;return data.markers.filter(p=>(!allowed||allowed.includes(p.task))&&(p.task===focusedTask||matches(p)));}
+  function visiblePins(){const cluster=scope?hubs.find(h=>h.id===scope):null;const allowed=cluster?(clusterMode==='browse'?window.PHOENIX_MAP_MEMBERSHIP[cluster.id]:eligible(cluster)):null;return data.markers.filter(p=>(!allowed||allowed.includes(p.task))&&(p.task===focusedTask||matches(p)));}
   function refresh(){
+    document.querySelectorAll('[data-cluster-mode]').forEach(b=>{b.disabled=!scope;b.setAttribute('aria-pressed',String(b.dataset.clusterMode===clusterMode));});
     layer.clearLayers();const pins=visiblePins();
     pins.forEach(pin=>{
       const done=!isUtility(pin)&&state.completed[pin.task]===true,focus=pin.task===focusedTask||tasks[pin.task].home===focusedHub;
@@ -28,6 +30,7 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
     const list=document.querySelector('[data-map-links]');list.replaceChildren();
     pins.forEach(pin=>{const row=document.createElement('div');row.className='map-test-row';const button=document.createElement('button');button.type='button';button.textContent=pin.name+(!isUtility(pin)&&state.completed[pin.task]?' ✓':'');button.addEventListener('click',()=>openPin(pin));row.append(button);list.append(row);});
     document.querySelector('[data-map-empty]').hidden=pins.length>0;
+    const empty=document.querySelector('[data-map-empty-actions]');empty.hidden=pins.length>0||!scope;empty.querySelector('p').textContent=clusterMode==='progress'?'No matching activities under your recorded progress and filters. Browse without changing progress, or review Story progress.':'No matching pins under these map filters. Try all marker types or Show completed.';
   }
   function fit(){map.fitBounds(bounds,{padding:[14,14],animate:false});}
   function focusTask(id){
@@ -47,16 +50,19 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
     const close=document.createElement('button');close.type='button';close.textContent='Close location panel';close.addEventListener('click',()=>panel.hidden=true);panel.append(close);panel.scrollIntoView({block:'nearest'});title.setAttribute('tabindex','-1');title.focus({preventScroll:true});
   }
   function focusHub(home=state.selectedHub){
-    focusedTask=null;focusedHub=null;scope=home;const hub=hubs.find(h=>h.id===home),allowed=hub?eligible(hub):[],pins=data.markers.filter(p=>allowed.includes(p.task));
+    focusedTask=null;focusedHub=null;scope=home;document.querySelector('#whiteorchard-map [data-selected-hub]').href='#whiteorchard-tree/'+home;const hub=hubs.find(h=>h.id===home),allowed=hub?(clusterMode==='browse'?window.PHOENIX_MAP_MEMBERSHIP[hub.id]:eligible(hub)):[],pins=data.markers.filter(p=>allowed.includes(p.task));
     if(pins.length)map.fitBounds(L.latLngBounds(pins.map(p=>p.point)).pad(.3),{maxZoom:-.25,padding:[65,65],animate:false});else fit();
-    status.textContent=pins.length?'Cluster map: '+hub.name+'. Only this group’s available activities are shown.':'No confirmed mapped activities for this cluster. Update progress or show all markers.';refresh();
+    status.textContent=(clusterMode==='browse'?'Browsing cluster: ':'Filtered by recorded progress: ')+(hub?.name||'')+'. Browsing never records arrival or completion.';refresh();
   }
-  function capture(){const center=map.getCenter(),context={scope,focusedTask,type:state.map.type,search:state.map.search,showCompleted:state.map.showCompleted,expanded:document.querySelector('.native-map-shell').classList.contains('map-expanded'),view:{center:[center.lat,center.lng],zoom:map.getZoom()}};state.mapContext=context;onCapture?.(context);persist();return context;}
+  function setClusterMode(mode){clusterMode=mode==='progress'?'progress':'browse';if(scope)focusHub(scope);const context=capture();history.replaceState({...history.state,map:context},'',location.href);}
+  document.querySelectorAll('[data-cluster-mode]').forEach(b=>b.addEventListener('click',()=>setClusterMode(b.dataset.clusterMode)));
+  document.querySelector('[data-map-empty-browse]').addEventListener('click',()=>setClusterMode('browse'));
+  function capture(){const center=map.getCenter(),context={clusterMode,scope,focusedTask,type:state.map.type,search:state.map.search,showCompleted:state.map.showCompleted,expanded:document.querySelector('.native-map-shell').classList.contains('map-expanded'),view:{center:[center.lat,center.lng],zoom:map.getZoom()}};state.mapContext=context;onCapture?.(context);persist();return context;}
   function show(task,hubId,entryContext){
     panel.hidden=true;map.invalidateSize({pan:false});
     const context=entryContext||state.mapContext;
     if(task==='restore'&&context&&Array.isArray(context.view?.center)&&context.view.center.length===2&&context.view.center.every(Number.isFinite)&&Number.isFinite(context.view.zoom)){
-      scope=hubs.some(h=>h.id===context.scope)?context.scope:null;focusedTask=tasks[context.focusedTask]?context.focusedTask:null;focusedHub=null;
+      clusterMode=context.clusterMode==='progress'?'progress':'browse';scope=hubs.some(h=>h.id===context.scope)?context.scope:null;focusedTask=tasks[context.focusedTask]?context.focusedTask:null;focusedHub=null;
       state.map.type=Object.hasOwn(types,context.type)?context.type:'all';state.map.search=typeof context.search==='string'?context.search:'';state.map.showCompleted=context.showCompleted===true;
       type.value=state.map.type;search.value=state.map.search;completed.checked=state.map.showCompleted;
       document.querySelector('.native-map-shell').classList.toggle('map-expanded',context.expanded===true);const expand=document.querySelector('[data-map-expand]');expand.textContent=context.expanded?'Close expanded map':'Expand map';expand.setAttribute('aria-expanded',String(context.expanded===true));map.invalidateSize({pan:false});

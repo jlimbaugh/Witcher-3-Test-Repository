@@ -25,7 +25,7 @@
  tile(explore.grid,'Regional map','#whiteorchard-map','white-orchard-map.webp');
  tile(explore.grid,'Constellation','#whiteorchard-constellation','console-constellation-r16.svg');
  tile(explore.grid,'Merchants','#economy-merchants','gwent-r15/gabor.webp');
- cover.replaceChildren(banner,cont,deck,scroll,actions.section,explore.section);
+ cover.replaceChildren(banner,cont,deck);
  home.querySelector('.study-note').textContent='Unofficial Witcher field guide · Your progress, your path';
  function updateSelection(){const id=deck.dataset.selectedQuest,t=tasks[id];if(!t)return;questTitle.textContent=t.name;description.textContent=t.intro||'Follow this lead. Discover what is worth doing along the way.';open.href='#'+t.view;open.querySelector('img').src='art-r13/'+id+'-card.webp';open.setAttribute('aria-label','Open selected quest: '+t.name);nearby.href='#whiteorchard-tree/'+t.home+'/'+id;nearby.setAttribute('aria-label','Nearby opportunities for '+t.name);}
  function updateResume(){const href=cont.getAttribute('href')||'';const root=href.replace(/^#/, '').split('/')[0];const staged=Object.values(tasks).some(t=>t.stages&&t.view===root);cont.querySelector('small').textContent=staged?'Resume last walkthrough':root==='whiteorchard-tree'?'Return to last hub':'Return to last guide page';}

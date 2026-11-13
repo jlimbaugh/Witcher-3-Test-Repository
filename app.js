@@ -5,12 +5,14 @@
   const {tasks,hubs,groups}=window.PHOENIX_ROUTE;
   const utilityTypes=new Set(['service','buff','signpost']);
   Object.entries(tasks).forEach(([id,t])=>{t.mapOnly=id==='cow-pasture-warning'||!t.stages&&id!=='gwent-start'&&window.PHOENIX_MAP.markers.some(p=>p.task===id&&utilityTypes.has(p.type));});
+  const originalHubItems=Object.fromEntries(hubs.map(h=>[h.id,[...h.items]]));
   hubs.forEach(h=>{h.items=h.items.filter(id=>!tasks[id].mapOnly&&id!=='cow-pasture-warning');});
   // Shared recommendations follow the same physical route, with one identity.
   const add=(hub,ids)=>{const h=hubs.find(h=>h.id===hub);ids.forEach(id=>{if(!h.items.includes(id))h.items.push(id);});};
   add('hub-hunt',['q-pan','q-cargo','pop-sawmill','q-deserter','pop-north','monsternest-1']);
   add('hub-viper',['q-temerian','q-deserter']);
   add('hub-missing',['q-viper']);
+  window.PHOENIX_MAP_MEMBERSHIP=Object.freeze(Object.fromEntries(hubs.map(h=>[h.id,Object.freeze([...new Set([...originalHubItems[h.id],...h.items])])])));
   tasks['departure-review'].sections=tasks['departure-review'].sections.map(([heading,text])=>[heading,heading==='Action'?'Finish the departure-sensitive quests you want before the inn transition. The risk checklist above reflects your recorded progress. Other discoveries are not departure warnings.':text]);
   Object.entries(window.PHOENIX_PROGRESS_DATA.quests).forEach(([id,q])=>{if(!Number.isFinite(tasks[id].level)&&Number.isFinite(q.level))tasks[id].level=q.level;});
   const progressEngine=window.createPhoenixProgress(window.PHOENIX_PROGRESS_DATA,tasks,hubs);
@@ -50,6 +52,7 @@
   let scrollTimer;
   let nativeMap;
   let progressUI;
+  let homeUI;
   const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,lastWalkthroughView:null,stageByView:{},map:{type:'all',search:'',showCompleted:false}};
   try {
     const raw = localStorage.getItem(key);
@@ -81,7 +84,7 @@
   state.groupOpen ||= {};state.routeUpdates ||= [];
   if ('scrollRestoration'  in history) history.scrollRestoration = 'manual';
   function persist() {
-    try {localStorage.setItem(key,JSON.stringify(state));saveAvailable=true;}
+    try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
     catch {saveAvailable=false;}
     document.querySelectorAll('[data-save-message]').forEach(el => {el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
   }
@@ -195,6 +198,7 @@
     document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
     if(progressUI)progressUI.reflect();
     renderMapLinks();
+    homeUI?.refresh();
   }
   function treeSnapshot() {
     return {selectedHub:state.selectedHub,groupOpen:{...state.groupOpen},expandedHub:state.expandedHub,windowStart:state.windowStart,scrollY:window.scrollY,scrollX:document.querySelector('.tree-viewport').scrollLeft,focusId:document.activeElement?.id||''};
@@ -343,6 +347,7 @@
   // Fail loudly during development instead of silently shipping disconnected content.
   Object.entries(tasks).forEach(([id,t])=>{if(!validHub(t.home)||(!t.mapOnly&&id!=='cow-pasture-warning'&&!hubById(t.home).items.includes(id))||!document.getElementById(t.view))throw Error('Invalid activity home/view: '+id);});
   progressUI=window.createPhoenixProgressUI({state,tasks,hubs,engine:progressEngine,persist,reflect:()=>{updateTree();reflect();requestAnimationFrame(drawConnections);},navigate,stashTree});
+  homeUI=window.createPhoenixHome({tasks,engine:progressEngine,state,navigate,progressUI});
   views=[...document.querySelectorAll('.view')];
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
   updateTree();render();
