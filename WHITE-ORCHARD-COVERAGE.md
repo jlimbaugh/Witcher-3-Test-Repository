@@ -1,30 +1,30 @@
-# White Orchard Coverage Ledger — LT-01
+# White Orchard Coverage Ledger — LT-01 (corrected LT-02)
 
 **Baseline commit:** `de288fe9f4415bef3cab0b9eae679ccdc0f35039` (R19)  
 **Working branch:** `phoenix-white-orchard-completion`  
 **Source of truth:** `white-orchard.js` → `window.PHOENIX_ROUTE`  
 **Date:** 13 November 2026  
-**Author:** LT (read-only audit)
+**Author:** LT
 
 > A completed inventory is **not** proof of complete regional coverage.  
+> “No empty fields in the data object” is not the same as “content completeness assessed.”  
 > Cmdr owns independent gameplay research and reconciliation of missing content.
 
 ---
 
-## 1. Recount vs prior claims (corrected per Cmdr disposition)
+## 1. Recount (Cmdr disposition applied)
 
 | Metric | Observed | Notes |
 |--------|----------|-------|
-| Task records | **59** | Exact match to `white-orchard.js` tasks object |
+| Task records | **59** | Exact match to tasks object |
 | Hubs | **13** | Named `hub-*` owners |
 | Quest records | **13** | All `type: "quest"` |
 | Walkthrough stages | **44** | Sum of stage arrays on the 13 quests |
-| Map markers (`map-data.js`) | **64** | Cmdr count: 64 unique marker IDs, 56 distinct referenced task IDs, zero unresolved references |
+| Map markers (`map-data.js`) | **64** | Cmdr: 64 unique marker IDs, 56 distinct referenced task IDs, zero unresolved |
 
-**Map vs task distinction (Cmdr correction):**  
-64 markers versus 59 tasks is **not** a coverage discrepancy. Multiple markers can legitimately reference the same task. Three tasks have no direct pin and need intentional mapping rationale (not invented coordinates): `q-beast`, `departure-review`, `q-incident`.
+**Map vs task:** 64 markers vs 59 tasks is **not** a discrepancy. Shared references are intentional. Three tasks lack a direct pin and need mapping rationale (not invented coordinates): `q-beast`, `departure-review`, `q-incident`.
 
-**Documented shared marker → task references (Cmdr):**  
+**Shared marker → task (Cmdr):**  
 - `gwent-start`: inn, innkeep-1  
 - `q-viper`: viper-steel, viper-silver, banditcamp-5, crypt-entrance  
 - `q-dirty`: banditcamp-4, hidden-2  
@@ -34,60 +34,62 @@
 
 ## 2. Type breakdown
 
-| Type | Count | Meaning (implementation) |
-|------|-------|--------------------------|
-| `quest` | 13 | Full or multi-stage walkthrough; permanent owner hub |
-| `service` | 9 | Merchant / forge / grindstone / herbalist / armorer table |
-| `discovery` | 37 | Places of Power, nests, camps, guarded treasure, signposts, Gwent, departure review, warnings |
-| **Total** | **59** | |
+| Type | Count |
+|------|-------|
+| quest | 13 |
+| service | 9 |
+| discovery | 37 |
+| **Total** | **59** |
 
 ---
 
-## 3. Hub inventory (13 permanent owners)
+## 3. Hub inventory (accurate item counts from baseline)
 
-| Hub ID | Display name | Label / group | Item count (from hub.items) | Primary quest |
-|--------|--------------|---------------|-----------------------------|---------------|
-| hub-arrival | Lilac and Gooseberries | MAIN STORY / ARRIVAL | 10 | q-lilac |
-| hub-firestarter | Twisted Firestarter | SECONDARY QUEST | 3 | q-firestarter |
-| hub-missing | Missing in Action | SECONDARY QUEST | 11 | q-missing |
-| hub-pan | A Frying Pan, Spick and Span | SECONDARY QUEST | 1 | q-pan |
-| hub-cargo | Precious Cargo | SECONDARY QUEST | 8 | q-cargo |
-| hub-death | On Death’s Bed | SECONDARY QUEST | 1 | q-death |
-| hub-devil | Contract: Devil by the Well | SECONDARY QUEST | 11 | q-devil |
-| hub-hunt | The Beast of White Orchard | MAIN STORY | 8 | q-beast |
-| hub-viper | Scavenger Hunt: Viper School Gear | TREASURE HUNT | 4 | q-viper |
-| hub-temerian | Temerian Valuables | TREASURE HUNT | 2 | q-temerian |
-| hub-deserter | Deserter Gold | TREASURE HUNT | 1 | q-deserter |
-| hub-dirty | Dirty Funds | TREASURE HUNT | 1 | q-dirty |
-| hub-departure | The Incident at White Orchard / Review | DEPARTURE | 2 | q-incident |
+| Hub ID | Display name | Item count | Items |
+|--------|--------------|------------|-------|
+| hub-arrival | Lilac and Gooseberries | 10 | q-lilac, gwent-start, q-firestarter, q-missing, q-pan, q-cargo, poi-4, shopkeeper-1, signpost-3, cow-pasture-warning |
+| hub-firestarter | Twisted Firestarter | 3 | loc-forge, q-firestarter, grindstone-village |
+| hub-missing | Missing in Action | 11 | q-missing, poi-1, monsternest-3, pop-cackler, monsternest-2, banditcamp-6, guarded-5, signpost-7, signpost-8, signpost-9, signpost-10 |
+| hub-pan | A Frying Pan, Spick and Span | **2** | q-pan, q-cargo |
+| hub-cargo | Precious Cargo | 8 | q-cargo, pop-sawmill, abandoned-2, banditcamp-3, grindstone-3, guarded-2, shopkeeper-2, signpost-4 |
+| hub-hunt | The Beast of White Orchard | **13** | q-death, q-devil, q-viper, q-beast, q-dirty, pop-cemetery, q-temerian, armourerstable-1, blacksmith-1, grindstone-4, guarded-4, signpost-6, spoils-1 |
+| hub-death | On Death’s Bed | 1 | q-death |
+| hub-devil | Contract: Devil by the Well | 11 | q-devil, pop-bear, pop-bridge, abandoned-1, banditcamp-1, banditcamp-2, guarded-1, herbalist-2, signpost-1, signpost-2, smugglers-1 |
+| hub-viper | Scavenger Hunt: Viper School Gear | **5** | pop-cemetery, q-viper, pop-north, monsternest-1, guarded-3 |
+| hub-temerian | Temerian Valuables | **3** | q-temerian, q-deserter, signpost-5 |
+| hub-deserter | Deserter Gold | **2** | q-deserter, q-temerian |
+| hub-dirty | Dirty Funds | 1 | q-dirty |
+| hub-departure | The Incident at White Orchard | **7** | q-firestarter, q-missing, q-pan, q-cargo, q-death, departure-review, q-incident |
 
-All 59 tasks declare a `home` that resolves to one of the 13 hubs. No orphaned `home` values observed in static inspection.
-
----
-
-## 4. Quest records (13) — stage counts
-
-| ID | Name | Stages | Home hub | View / deep link |
-|----|------|--------|----------|------------------|
-| q-lilac | Lilac and Gooseberries | 4 | hub-arrival | quest-q-lilac |
-| q-missing | Missing in Action | 3 | hub-missing | quest-q-missing |
-| q-pan | A Frying Pan, Spick and Span | 3 | hub-pan | quest-q-pan |
-| q-cargo | Precious Cargo | 3 | hub-cargo | quest-q-cargo |
-| q-death | On Death’s Bed | 3 | hub-death | quest-q-death |
-| q-devil | Contract: Devil by the Well | 5 | hub-devil | quest-q-devil |
-| q-beast | The Beast of White Orchard | 5 | hub-hunt | quest-q-beast |
-| q-viper | Scavenger Hunt: Viper School Gear | 3 | hub-viper | quest-q-viper |
-| q-temerian | Temerian Valuables | 3 | hub-temerian | quest-q-temerian |
-| q-deserter | Deserter Gold | 3 | hub-deserter | quest-q-deserter |
-| q-dirty | Dirty Funds | 3 | hub-dirty | quest-q-dirty |
-| q-firestarter | Twisted Firestarter | 4 | hub-firestarter | quest-q-firestarter |
-| q-incident | The Incident at White Orchard | 2 | hub-departure | quest-q-incident |
-
-**Stage total:** 44 (matches orders).
+All 59 tasks declare a `home` that resolves to one of the 13 hubs.
 
 ---
 
-## 5. Service records (9)
+## 4. Quest records (13)
+
+| ID | Name | Stages | Home |
+|----|------|--------|------|
+| q-lilac | Lilac and Gooseberries | 4 | hub-arrival |
+| q-missing | Missing in Action | 3 | hub-missing |
+| q-pan | A Frying Pan, Spick and Span | 3 | hub-pan |
+| q-cargo | Precious Cargo | 3 | hub-cargo |
+| q-death | On Death’s Bed | 3 | hub-death |
+| q-devil | Contract: Devil by the Well | 5 | hub-devil |
+| q-beast | The Beast of White Orchard | 5 | hub-hunt |
+| q-viper | Scavenger Hunt: Viper School Gear | 3 | hub-viper |
+| q-temerian | Temerian Valuables | 3 | hub-temerian |
+| q-deserter | Deserter Gold | 3 | hub-deserter |
+| q-dirty | Dirty Funds | 3 | hub-dirty |
+| q-firestarter | Twisted Firestarter | 4 | hub-firestarter |
+| q-incident | The Incident at White Orchard | 2 | hub-departure |
+
+Stage total: 44.
+
+---
+
+## 5. Service records (9) — completion definition (shared)
+
+**Definition:** Reviewed service — checked the service/location and what it offers. Purchase, repair, crafting or a Gwent win is never required.
 
 | ID | Name | Home |
 |----|------|------|
@@ -103,65 +105,63 @@ All 59 tasks declare a `home` that resolves to one of the 13 hubs. No orphaned `
 
 ---
 
-## 6. Discovery coverage (37) — categories observed
+## 6. Full discovery inventory (37) with completion definitions
 
-- **Places of Power (6):** pop-cemetery, pop-north, pop-cackler, pop-sawmill, pop-bear, pop-bridge  
-- **Gwent:** gwent-start  
-- **Bandit camps / nests / guarded treasures:** multiple `banditcamp-*`, `monsternest-*`, `guarded-*`  
-- **Abandoned sites:** abandoned-1, abandoned-2  
-- **Signposts / discovery markers:** several `signpost-*`, `poi-*`  
-- **Departure / warning:** departure-review, cow-pasture-warning  
-- **Other:** various location markers owned by the quest hubs above
-
-Full per-ID list is available in the companion audit file and the exported inventory.
-
----
-
-## 7. Completion-meaning notes (static)
-
-No explicit `complete` / `completion` / `mark` enum is present on individual task records in the data object at the time of LT-01. Completion semantics are enforced by the shared progress engine (owner-hub confirmation, stage-view non-completion, objective/choice tracking).  
-
-**Ambiguous / needs Cmdr clarification (do not migrate saves):**
-- Service visits (forge, grindstones, merchants) — “visited” vs “used once”
-- Signpost discovery vs map pin reveal
-- Place of Power — ability point drawn vs merely located
-- Departure-review — informational checklist vs completable activity
-- cow-pasture-warning — pure warning, no mark expected
-
-Assignment 02 supplies the descriptive metadata definitions.
-
----
-
-## 8. Content-status snapshot (engineering view)
-
-| Status | Approximate count | Evidence |
-|--------|-------------------|----------|
-| Substantive guidance (multi-stage quests with intro/why/requirements) | 13 quests | Present in data |
-| Compact discovery / service entries | ~37 + 9 | Short name + home + view |
-| Placeholder / missing | 0 observed in data object | No empty-name or null-home tasks |
-| Source references present | All sampled tasks | `hasSources: true` on every record inspected |
-
-Source *verification* (accuracy of the cited material) remains Cmdr responsibility.
-
----
-
-## 9. Map reconciliation (Cmdr-verified)
-
-- Task object: 59 unique IDs.  
-- Map markers (`map-data.js`): 64 markers, 64 unique marker IDs, 56 distinct referenced task IDs, zero unresolved task references (Cmdr independent count).  
-- 64 vs 59 is explained by shared references (see §1). Multiple markers → one task is intentional.  
-- Three tasks lack a direct pin: `q-beast`, `departure-review`, `q-incident`. Mapping rationale is required; coordinates must not be invented.  
-- No Xbox coordinate accuracy is claimed from this ledger.
+| ID | Name | Home | Completion definition |
+|----|------|------|----------------------|
+| gwent-start | Play the scholar and check inn cards | hub-arrival | Reviewed Gwent stop — the scholar/card-shopping guidance was reviewed. This mark is not proof of winning a specific card or buying every card. |
+| pop-cemetery | Cemetery Place of Power | hub-hunt | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| pop-north | Northern woods Place of Power | hub-viper | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| pop-cackler | Cackler Bridge Place of Power | hub-missing | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| pop-sawmill | Sawmill Place of Power | hub-cargo | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| pop-bear | Southern bear-guarded Place of Power | hub-devil | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| pop-bridge | Broken Bridge Place of Power | hub-devil | Ability point drawn — the first ability point has been received in game. Visiting or viewing the guide alone is not enough. |
+| departure-review | Review before leaving White Orchard | hub-departure | Reviewed departure checklist — the checklist was reviewed. This does not mean every listed activity was finished. |
+| abandoned-1 | Abandoned shrine · southeast road | hub-devil | Threats cleared and residents returned. |
+| abandoned-2 | Abandoned site · west of Sawmill | hub-cargo | Threats cleared and residents returned. |
+| banditcamp-1 | Bandit camp · Southwest of Broken Bridge | hub-devil | Camp cleared and listed loot collected. |
+| banditcamp-2 | Bandit camp · South of Ford | hub-devil | Camp cleared and listed loot collected. |
+| banditcamp-3 | Bandit camp · Northwest of Sawmill | hub-cargo | Camp cleared and listed loot collected. |
+| banditcamp-6 | Bandit camp · Southwest of Crossroads | hub-missing | Camp cleared and listed loot collected. |
+| guarded-1 | Guarded treasure · Southeast of Woesong Bridge | hub-devil | Guarded site cleared and listed containers searched. |
+| guarded-2 | Guarded treasure · Southwest of Nilfgaardian Garrison | hub-cargo | Guarded site cleared and listed containers searched. |
+| guarded-3 | Guarded treasure · North of Mill | hub-viper | Guarded site cleared and listed containers searched. |
+| guarded-4 | Guarded treasure · Southeast of Nilfgaardian Garrison | hub-hunt | Guarded site cleared and listed containers searched. |
+| guarded-5 | Guarded treasure · South of Ransacked Village | hub-missing | Guarded site cleared and listed containers searched. |
+| monsternest-1 | Ghoul nest · north of the cemetery | hub-viper | Nest destroyed and remains looted; killing nearby enemies alone is insufficient. |
+| monsternest-2 | Ghoul nest · Cackler Bridge | hub-missing | Nest destroyed and remains looted; killing nearby enemies alone is insufficient. |
+| monsternest-3 | Ghoul nest · east of Crossroads | hub-missing | Nest destroyed and remains looted; killing nearby enemies alone is insufficient. |
+| poi-1 | Battlefield search · north of Ransacked Village | hub-missing | Battlefield loot search performed; Missing in Action objectives remain separate. |
+| poi-4 | Yennefer’s crystal skull | hub-arrival | Collected — Yennefer’s crystal skull was collected in game. |
+| signpost-1 | Abandoned Village signpost | hub-devil | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-2 | Broken Bridge signpost | hub-devil | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-3 | Woesong Bridge signpost | hub-arrival | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-4 | Sawmill signpost | hub-cargo | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-5 | Mill signpost | hub-temerian | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-6 | Nilfgaardian Garrison signpost | hub-hunt | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-7 | Cackler Bridge signpost | hub-missing | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-8 | Crossroads signpost | hub-missing | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-9 | Ford signpost | hub-missing | Discovered — the fast-travel signpost was unlocked in game. |
+| signpost-10 | Ransacked Village signpost | hub-missing | Discovered — the fast-travel signpost was unlocked in game. |
+| smugglers-1 | Smugglers’ cache · South of Ford | hub-devil | Listed cache containers looted. |
+| spoils-1 | Spoils of war · East of Nilfgaardian Garrison | hub-hunt | Listed cache containers looted. |
+| cow-pasture-warning | Cow pasture · farming warning | hub-arrival | Read warning — the warning was acknowledged. Cow farming is never a completion requirement. |
 
 ---
 
-## 10. Known scope items for Cmdr research (not invented here)
+## 7. Content status distinction
 
-- Faithful Friend (confirmed later-story conditional content; spoiler-gated later-return only)  
-- Full missable / later-return list  
-- Exhaustive random container / repeatable loot (document boundary rather than checklist)  
-- Any additional Gwent opponents or notice-board contracts not present in the 59  
+| Finding | Meaning |
+|---------|---------|
+| No empty name / null-home fields | Data-object structural integrity only |
+| Content completeness | **Unassessed** — Cmdr owns accuracy, missing content, and route verification |
 
 ---
 
-*End of coverage ledger. See WHITE-ORCHARD-AUDIT-LT-01.md for technical findings and severity.*
+## 8. Faithful Friend
+
+Confirmed by Cmdr as conditional later-story content. Absent from prologue inventory. Spoiler-gated later-return only. Not imported in Assignment 02.
+
+---
+
+*End of corrected coverage ledger.*
