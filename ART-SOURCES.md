@@ -61,3 +61,9 @@ Silver frames/rules and worn-vellum textures are repo-native SVG/CSS interface a
 - `fondamento-r16.ttf`: Fondamento Regular, downloaded from the official Google Fonts repository, `https://github.com/google/fonts/tree/main/ofl/fondamento`. SIL Open Font License retained as `FONDAMENTO-OFL.txt`. Broad-pen readable lettering is the new default when no font preference is saved. Existing saved font choices are preserved; all three reading-font choices work on console text.
 - `console-constellation-r16.svg`: original code-native navigation illustration, a decorative stellar route diagram, not quest data.
 - All quest and merchant artwork reused from the R13/R15 sources above. No replacement of the locked quest illustrations.
+
+## Home visual restoration — 13 November 2026
+
+The Home quest panel, HUD and kit reuse the approved R16 curled-vellum material, R15 silver framing, R13 quest illustrations and existing official GWENT navigation art. No source artwork is replaced or regenerated. Navigation card labels remain live HTML; kit art is decorative, not a claim about equipment or NPC identity.
+
+`wolf-medallion.svg` is original code-native fan-interface artwork created for this guide: a faceted silver wolf pendant inspired by the Witcher wolf-medallion motif. It is not an extracted, official or licensed CDPR medallion rendering, nor a tracing of a game asset. The existing unofficial-fan-work attribution applies. CSS eye glow and a short warning tremble are visual feedback, with a reduced-motion alternative; no phone vibration is promised.

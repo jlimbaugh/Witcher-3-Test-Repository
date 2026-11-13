@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 136" fill="none">
+<title>Wolf medallion — original fan-interface illustration</title>
+<defs>
+ <linearGradient id="metal" x1="22" y1="16" x2="102" y2="125" gradientUnits="userSpaceOnUse"><stop stop-color="#f0eee1"/><stop offset=".22" stop-color="#969f9d"/><stop offset=".48" stop-color="#d0d5cf"/><stop offset=".61" stop-color="#505e60"/><stop offset=".82" stop-color="#a8b1ad"/><stop offset="1" stop-color="#3d4b50"/></linearGradient>
+ <linearGradient id="edge" x1="64" y1="16" x2="64" y2="132" gradientUnits="userSpaceOnUse"><stop stop-color="#f4f1df"/><stop offset="1" stop-color="#67777b"/></linearGradient>
+ <linearGradient id="ridge" x1="56" y1="38" x2="75" y2="114" gradientUnits="userSpaceOnUse"><stop stop-color="#dfe4db"/><stop offset=".5" stop-color="#68797d"/><stop offset="1" stop-color="#bbc5bf"/></linearGradient>
+</defs>
+<ellipse cx="64" cy="12" rx="8" ry="9" fill="#293438" stroke="url(#edge)" stroke-width="4"/>
+<path d="M25 16 48 33 64 28 80 33 103 16 99 57 111 75 92 101 82 99 64 130 46 99 36 101 17 75 29 57Z" fill="#131d21" stroke="#11191b" stroke-width="7" stroke-linejoin="round"/>
+<path d="M25 16 48 33 64 28 80 33 103 16 99 57 111 75 92 101 82 99 64 130 46 99 36 101 17 75 29 57Z" fill="url(#metal)" stroke="url(#edge)" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="m29 23 3 31 11-17Zm70 0-3 31-11-17Z" fill="#29383d" stroke="#7b8e91"/>
+<path d="m47 37-12 21 15 9 14-29 14 29 15-9-12-21-17 8Z" fill="#3e5056"/>
+<path d="m64 35-8 23 8 12 8-12Z" fill="url(#ridge)"/>
+<path d="m32 55 23 9-10 7-13-7Zm64 0-23 9 10 7 13-7Z" fill="#101e23" stroke="#bdc9c3" stroke-width="1.2"/>
+<path d="m36 59 13 6-7 1Zm56 0-13 6 7 1Z" fill="#a3d5cd"/>
+<path d="m31 70-9 5 18 19 5-15 10-8-9 22-6 4m57-27 9 5-18 19-5-15-10-8 9 22 6 4" stroke="#35464c" stroke-width="3"/>
+<path d="m64 64-13 26 13 12 13-12Z" fill="url(#ridge)" stroke="#34464d" stroke-width="1.5"/>
+<path d="m54 88 10-5 10 5-10 8Z" fill="#192a30" stroke="#c0ccc3" stroke-width="1"/>
+<path d="m48 94 16 13 16-13-8 18-8 11-8-11Z" fill="#1a292e" stroke="#7b8e91"/>
+<path d="m51 98 5 3 2 10-5-6Zm26 0-5 3-2 10 5-6Z" fill="#e0e1d2"/>
+<path d="M64 98v9m-26-29 5 5m47-5-5 5M46 44l6 3m30-3-6 3" stroke="#d3d8cd" stroke-width="1.2" opacity=".6"/>
+</svg>
