@@ -1,0 +1,187 @@
+{
+  "generation": "Derivatives of original R13 generated guide concepts; no new image generation",
+  "assets": [
+    {
+      "file": "q-beast-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 126324,
+      "sha256": "6961bce68f9e03988df7b7a22afd60ae85bc04d48bcc3e8a5565f302dd948d95"
+    },
+    {
+      "file": "q-beast-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 16880,
+      "sha256": "1b718fbd91f33968795bf3713d75dd8be5ef9b69d9f217369e5256d1495fcae4"
+    },
+    {
+      "file": "q-cargo-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 125168,
+      "sha256": "266906455d66f860aaa1857e342536642f8d5d66fc6efb22eb21b16d4003da46"
+    },
+    {
+      "file": "q-cargo-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 16088,
+      "sha256": "83ae235c59b105f77e9ca8c90c52c5ddd437280e1cf49ac95851cceffc1fff3c"
+    },
+    {
+      "file": "q-death-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 114544,
+      "sha256": "6d44595a479d0fb2f8aa45839f475998233a5aeb2d058642a1936483ad0ad1dd"
+    },
+    {
+      "file": "q-death-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 14832,
+      "sha256": "58e1ea3e003b638700d9d5a31308baafd370d2dcfacd8fd1074b77f0d382645e"
+    },
+    {
+      "file": "q-deserter-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 136320,
+      "sha256": "416732e5d37fe558d48aacc069434f2f4b11bc1f3b0a274dc49a676d838b20fb"
+    },
+    {
+      "file": "q-deserter-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 17542,
+      "sha256": "148237e2a0277d4b001c88ca77b0351df51985b269f4a082c99dd400a8a4ded3"
+    },
+    {
+      "file": "q-devil-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 135088,
+      "sha256": "b80ee6c47083768ca354abf08ad1830abc89841befe6e8398db3f07ec5f7a423"
+    },
+    {
+      "file": "q-devil-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 17692,
+      "sha256": "e070734b2b278d0c141cd8317f15c1ae2aa5f5b846e0a3c3b6a146b24a64d820"
+    },
+    {
+      "file": "q-dirty-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 114960,
+      "sha256": "0e5d3dc8b9ec1601345b5455561b7a449303cf4371e51c87da9999d1537c554b"
+    },
+    {
+      "file": "q-dirty-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 14832,
+      "sha256": "334b011e158d4d73d66f394ca398429b06b4e919288d6efe27a488e42581e390"
+    },
+    {
+      "file": "q-firestarter-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 127706,
+      "sha256": "1c85611948d9f123d324393ca2ce78d467386520673e635f8136bf646f7476c0"
+    },
+    {
+      "file": "q-firestarter-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 16496,
+      "sha256": "9b7b43ce6be72ee282c03d5274b95fe927d69cb56a108d436931557ca3b7b78b"
+    },
+    {
+      "file": "q-incident-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 103038,
+      "sha256": "d6df7f9caa52efe7b70289afcf4dfdc78ed31bef851f924db956faba65b11203"
+    },
+    {
+      "file": "q-incident-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 13904,
+      "sha256": "b8d616e08f46681a47dc88e52c65a9b6b47e3e5903734ab789085cc00a00c60f"
+    },
+    {
+      "file": "q-lilac-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 141590,
+      "sha256": "4f4dac270d8850dbd118b860ccc5410947ea3289b5b01aa7c097076aee5f6bd2"
+    },
+    {
+      "file": "q-lilac-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 18754,
+      "sha256": "18fab38c64fcec3e685142e628e1825b14c92a503c9c080d9a5c4916f86fbdac"
+    },
+    {
+      "file": "q-missing-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 137498,
+      "sha256": "168592db484ff138f5928a1d0422652fa3b62b933b8983ba19b7e9073f3e3d60"
+    },
+    {
+      "file": "q-missing-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 17912,
+      "sha256": "0d70408264ecd57304ab2c71b2193ee88138aeb7d10a044328be8c0c80d68eb6"
+    },
+    {
+      "file": "q-pan-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 125710,
+      "sha256": "52ab9bc32f2767f9d8ff1fa4e44a4224bcb25db46f85435da2da7a83ec38e9cd"
+    },
+    {
+      "file": "q-pan-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 15964,
+      "sha256": "cd7047d6e1f75c7d6cebd072314d1af16b230a2c4fb85f5aa3260efdfd8ce6d4"
+    },
+    {
+      "file": "q-temerian-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 122228,
+      "sha256": "600fb1675e544bb1b3bb176c8d05434d5e285d00677fed903c4a0fb70ad0b313"
+    },
+    {
+      "file": "q-temerian-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 16410,
+      "sha256": "6e24e39f84f0b0d5bddee04e63e11bae8e047049b209380cc8bc211dc966fbe7"
+    },
+    {
+      "file": "q-viper-card.webp",
+      "width": 512,
+      "height": 768,
+      "bytes": 121986,
+      "sha256": "d5ff4fd93c135655be7160896496ed98898fe3e5a7160c681c742b11a9b9fcd2"
+    },
+    {
+      "file": "q-viper-thumb.webp",
+      "width": 192,
+      "height": 288,
+      "bytes": 16160,
+      "sha256": "328bcb50ec57df7633467ce53b7d4d2067daf08eb9bb32ca2b525ef3aded3464"
+    }
+  ]
+}
