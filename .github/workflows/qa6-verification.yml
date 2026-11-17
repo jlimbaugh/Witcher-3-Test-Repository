@@ -31,8 +31,10 @@ jobs:
           set -euo pipefail
           git rev-parse HEAD
           git merge-base --is-ancestor "$QA6_COMMIT" HEAD
-          git diff --exit-code "$QA6_COMMIT" HEAD -- dist/
-          test "$(git rev-parse HEAD:dist)" = "$(git rev-parse "$QA6_COMMIT":dist)"
+          git diff --exit-code "$QA6_COMMIT" HEAD -- dist/ docs/rollback/ docs/RELEASE-FILES-QA6.sha256
+          for protected_path in dist docs/rollback docs/RELEASE-FILES-QA6.sha256; do
+            test "$(git rev-parse "HEAD:$protected_path")" = "$(git rev-parse "$QA6_COMMIT:$protected_path")"
+          done
           git worktree add --detach "$RUNNER_TEMP/v45-baseline" "$V45_COMMIT"
           git worktree add --detach "$RUNNER_TEMP/qa5-baseline" "$QA5_COMMIT"
       - name: Verify CI guards and manifest coverage
