@@ -4,7 +4,9 @@ This is a design mockup only. It is not wired into `dist/`. It does not change t
 
 ## Decisions (Cmdr-decided 2026-11-17)
 
-These answer question batch 1 and are applied to the prototype and mockups.
+### Batch 1
+
+These answers are applied to the prototype and mockups.
 
 - **Q1: A.** Keep the shared reading text, and name the selected objective above the actions. A "Selected objective" line now sits between the section title and "What to do", in both WO and Velen.
 - **Q2: B.** Nearby activities also go in the "Related optional tasks" dropdown, labelled "Nearby". The dropdown has two groups: "Optional objectives" (optional journal objectives) and "Nearby".
@@ -15,6 +17,14 @@ These answer question batch 1 and are applied to the prototype and mockups.
 - **Q3: B.** Warnings get a remembered "Got it".
   - The panel shows "Got it" until it is acknowledged. After that, the wolf badge shows a check instead of the new-warning dot, and the panel shows "Acknowledged" with a "Mark as new" control (an LT addition so it can be undone).
   - Acknowledgment never changes progress. In the mockup it lives in an in-memory Set and is never stored.
+
+### Batch 2 (owner decided 2026-11-17: "No notes proceed", so the mocked defaults stand)
+
+- **Q4: A.** Only the selected box's checkbox marks completion. Tapping a neighbour's checkbox selects that box and does not mark it. Completion never moves the selection. Tested in the prototype.
+- **Q5: A.** Velen shows 8 required with a "Route-dependent, not counted yet" note for "Defeat the baron's men". Once the route is recorded, the total switches to 9 (fight) or 5 (straight to Heatherton), using the existing progression engine. The mockups show only the undecided-route state; the switch is not simulated here.
+- **Q6: A.** The floating wolf is navigation only, with no "Warning" label. Per-objective warnings live only on the selector wolf. The prototype's floating wolf and "Navigation" tile already match.
+
+Still awaiting Cmdr: P2 (route-choice cards) and P3 (Velen hub console).
 
 ### Q3 implementation note (not part of these mockups)
 
@@ -68,7 +78,7 @@ Sample: WO selects "Take the griffin trophy." (objective 12 of 13, 11 completed)
 4. **Reading order is "What to do" (short list), then "Choice" when present, then "Why", then two separate dropdowns: "Related optional tasks" and "Information".** Why: point 6. The current page mixes actions and explanation in one block.
 5. **Less framing.** There is one vellum panel with no card inside a card, and the banner is shallower (about 104px tall). Why: point 9.
 6. **"Next unfinished" button.** It appears beside the position line when the selected objective is not the next unfinished one. Restore-last-viewed is modelled in memory only. Why: point 8.
-7. **The floating wolf is shown without its current "Warning" label.** Why: point 9 says the selector wolf and the floating navigation wolf are distinct controls. This is a conflict with the shipped page. It is not resolved here; see the open items.
+7. **The floating wolf is shown without its current "Warning" label.** Why: point 9 says the selector wolf and the floating navigation wolf are distinct controls. Decided as Q6 A on 2026-11-17: the floating wolf is navigation only.
 
 ### Velen uses the same component
 Velen renders through the same `walkthrough.js`, with no Velen-specific code paths.
@@ -115,4 +125,4 @@ Unmapped or awkward cases:
 Decided as Q3 B (see Decisions). The yellow new-warning dot stays until "Got it". Opening the panel alone does not clear it.
 
 ## Open questions
-Batch 1 was answered on 2026-11-17 (see Decisions). Batch 2 is in the draft PR description.
+Batches 1 and 2 were answered on 2026-11-17 (see Decisions). No design questions remain open. P2 and P3 still await Cmdr.
