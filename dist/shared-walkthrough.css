@@ -129,3 +129,6 @@ html body .sw-page .reading-panel .sw-ack-feedback{color:#5a1d14!important}
 html body .sw-page .reading-panel .sw-walkthrough h3,html body .sw-page .reading-panel .sw-story-row h3,html body .sw-page .reading-panel .sw-place,html body .sw-page .reading-panel .sw-context,html body .sw-page .reading-panel .sw-empty{color:var(--sw-ink-soft)!important}
 /* Landscape phones: the column stays clear of the fixed floating navigation (mockup: margin-right 190px). */
 @media (orientation:landscape) and (max-height:500px){html body .sw-page>.scene-inner,html body #velen-screen>.velen-nilf-page.sw-page{margin-left:max(16px,calc(50% - 400px))!important;margin-right:190px!important;max-width:none!important;width:auto!important}}
+/* Q6 A: navigation-only floating wolf keeps queued global warnings visible as a pending mark (read them in Warnings). */
+.phoenix-medallion[data-pending-warnings] .medallion-sigil{position:relative}
+.phoenix-medallion[data-pending-warnings] .medallion-sigil::after{content:"";position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#f4d36b;border:2px solid #6b4b12;box-shadow:0 0 0 2px #1b2122}

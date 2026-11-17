@@ -250,11 +250,12 @@
   function current(){const rootId=(location.hash||'#home').slice(1).split('/')[0];
    const q=woQuests.find(id=>tasks[id].view===rootId);if(q)return woAdapter(q);
    if(rootId==='velen'){const page=document.querySelector('#velen-screen .velen-nilf-page');if(page)return velenAdapter(page);}return null;}
-  function refresh(){const a=current();if(!a)return;const focusInRail=document.activeElement?.closest?.('.sw-rail');try{render(a);}catch(e){console.error('shared walkthrough',e);a.section.classList.remove('sw-page');return;}if(focusInRail)a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});}
+  function isShowing(){const v=document.querySelector('.view:not([hidden])');return !!(v&&(v.classList.contains('sw-page')&&v.querySelector('.sw-walkthrough')||v.querySelector('#velen-screen>.velen-nilf-page.sw-page .sw-walkthrough')));}
+  function refresh(){const a=current();try{medallion()?.reconcileWarnings?.();}catch{}if(!a)return;const focusInRail=document.activeElement?.closest?.('.sw-rail');try{render(a);}catch(e){console.error('shared walkthrough',e);a.section.classList.remove('sw-page');return;}try{medallion()?.reconcileWarnings?.();}catch{}if(focusInRail)a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});}
   for(const ev of ['phoenix:route-rendered','phoenix:progress-committed','phoenix:progress-undone'])addEventListener(ev,()=>requestAnimationFrame(refresh));
   const velenScreen=document.getElementById('velen-screen');
   if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>.velen-nilf-page');if(page&&!page.querySelector('.sw-walkthrough')){page.classList.add('sw-page');refresh();}}).observe(velenScreen,{childList:true});
   refresh();
-  return {refresh,model};
+  return {refresh,isShowing,model};
  };
 })(typeof window==='undefined'?null:window);
