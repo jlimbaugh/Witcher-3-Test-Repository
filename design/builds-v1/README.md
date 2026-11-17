@@ -1,5 +1,8 @@
 # Character & Build Vault — mockups v2
 
+**[Latest production-slice visual review](reviews/gear-reference-slice.png)** —
+shared gear reference and change-preview states; static illustration, not a browser capture.
+
 **Start with the [new revision overview](mockups/00-revision-overview.png), then open a screen below.**
 
 ![Latest build refinements](mockups/00-revision-overview.png)

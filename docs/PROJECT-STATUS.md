@@ -1,5 +1,14 @@
 # PHOENIX — project status (branch `fix/wo-save-preservation`)
 
+## Character gear-reference slice — 2026-11-17, Cmdr
+
+`implementation/character-gear-reference` follows Character foundation `10c19937`.
+Adds shared catalogue/deep links and source-version-labelled reference requirements
+in gear details and previews. The retrieved v4.04 levels are not certified for current
+Remastered and never block planning. Full baseline suite: 322/322, no skips, author-supplied.
+No Vault/schema change. Browser, current-version data and independent QA remain open.
+Visual review and source limits: `docs/CHARACTER-GEAR-REFERENCE.md`. Live stays QA6 v46.
+
 ## Character implementation checkpoint — 2026-11-17, Cmdr
 
 Owner approved the build design as the foundation. `implementation/character-foundation`

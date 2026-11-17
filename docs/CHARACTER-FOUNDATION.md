@@ -5,6 +5,10 @@ Branch: `implementation/character-foundation`, based on design commit
 `524214359d56859b9bec7d7e0bf8023eed6356e1`. This is an incremental production-code
 candidate, not a complete Character feature or a release authorization.
 
+Slice 1 evidence below is historical at `10c19937`. See
+`CHARACTER-GEAR-REFERENCE.md` for slice 2. The release-file manifest is cumulative
+and refreshed with each Character slice.
+
 ## Delivered
 
 - Dedicated `character.html` with game-inspired equipment / profile / item-detail
