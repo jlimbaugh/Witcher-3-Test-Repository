@@ -45,7 +45,7 @@ window.createPhoenixMedallion=function(opts={}){
   const pending=[active,...queue].filter(w=>w&&valid(w));active=null;queue=[];
   processing=true;
   try{for(const item of pending){records.push({id:item.id||'warning-'+Date.now(),text:item.text,href:item.href||null,at:Date.now()});try{item.onAcknowledge?.();}catch{}}
-   if(pending.length)opts.onWarningHistory?.(snapshot());
+   if(pending.length){const saved=opts.onWarningHistory?.(snapshot());if(saved==='blocked'||saved==='unavailable')status.textContent='Warning acknowledged for this visit only. The saved warning history was left unchanged.';}
   }catch{status.textContent='Warning acknowledgement could not be saved.';root.classList.add('has-error');}
   finally{processing=false;}
   historyToggle.hidden=!records.length;processQueue();
