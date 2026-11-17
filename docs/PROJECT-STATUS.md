@@ -2,7 +2,7 @@
 
 ## Character build design mockups — 2026-11-17
 
-`design/character-builds-v1` adds static Feline-duelist mockups and the owner decision
+`design/character-builds-v1` adds static Feline-duelist mockups (v2, 16 plates) and the owner decision
 record under `design/builds-v1/`. See its README for the image gallery. This is design
 review only: all stat examples are illustrative and no production code, storage, CI
 or rollback file changes. QA6 remains live. Shared-walkthrough engineering continues

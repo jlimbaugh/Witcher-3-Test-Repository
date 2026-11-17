@@ -56,3 +56,18 @@ introduced by the Vault design.
 
 Earlier questions that returned empty answers were not approvals. Later choices
 resolve the full-screen picker; no silent default is inferred for an unanswered item.
+
+## Confirmed v2 refinements
+
+| Area | Owner decision |
+|---|---|
+| Character artwork | Match the main set, determined by equipped chest armor; label it Illustration and show exact items in slots |
+| Upgrade editing | Runes, glyphs and enchantments live inside the selected gear slot, with shared-reference links |
+| Replacement preview | Show outgoing and incoming upgrades, resulting stats, requirements and set bonuses before Apply / Cancel |
+| Mutations | Panel inside Character alongside learned tree and equipped slots |
+| Locked mutation | Allow planning with a clear unmet-requirements flag and shared unlock-guide link |
+| Preview ordering | Affected stats, requirements and bonuses first; full sheet expandable |
+
+The earlier empty question responses were followed by explicit answers. The owner
+selected the recommended replacement flow, then explicitly answered the final two
+questions. No silence was interpreted as approval.

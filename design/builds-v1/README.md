@@ -1,6 +1,18 @@
-# Character & Build Vault — first mockups
+# Character & Build Vault — mockups v2
 
-**Start with the [overview](mockups/00-overview.png), then open a screen below.**
+**Start with the [new revision overview](mockups/00-revision-overview.png), then open a screen below.**
+
+![Latest build refinements](mockups/00-revision-overview.png)
+
+## New in v2
+
+- [Mutation planning](mockups/12-mutation-planning.png): plan a locked mutation with clear unmet requirements and a shared unlock-guide link.
+- [Upgrades inside the gear slot](mockups/13-gear-upgrades.png): inspect an occupied slot or choose a compatible empty slot.
+- [Replacement preview](mockups/14-replacement-preview.png): outgoing and incoming upgrade, affected stats, requirements and set effects; full sheet expandable; Apply or Cancel.
+- [Character screen](mockups/02-character.png): mutations remain inside Character beside learned investments and equipped slots.
+- [Equipment screen](mockups/01-equipment.png): the representative character art follows the chest armor’s set; exact pieces remain visible in slots. Actual set artwork is still pending sourcing and visual review.
+
+## Full first-pass gallery
 
 First visual pass for the owner's Feline duelist: swords, Quen and light Alchemy.
 These are static design plates, not screenshots of implemented menus. All displayed
@@ -66,7 +78,7 @@ simulation condition switches remain. Witcher sets form the gear catalogue; vett
 non-set exceptions require a recommended-build use and can then be used in any build.
 
 This first pass concentrates on screen hierarchy. Final acquired/required states,
-respec warnings, mutation/rune panels, compare/apply previews, backup dialogs and
+respec warnings, exact mutation/rune data, backup dialogs and
 narrow-screen refinements are subsequent mockup states, not completed features.
 Nothing here authorizes production implementation, a merge, a deploy or gameplay claims.
 
@@ -84,3 +96,11 @@ Static portrait canvas: 390×844 logical pixels rendered at 2×. Landscape: 844�
 VoiceOver or live-stat tests. Production controls need at least 44px touch targets;
 a drawn switch is only the visible part of its row target. Numbers and source art
 are for layout review. No files under dist, rollback or CI were changed.
+
+## V2 review limits
+
+Six owner decisions are now settled: chest-set artwork, in-slot upgrades, replacement
+contents, mutations inside Character, locked-mutation planning with a flag, and changed
+stats first. No unanswered defaults remain for these states. The upgrade names and
+mutation label are placeholders; compatibility and actual effects require verified
+game data. The plates do not implement persistence or live calculations.
