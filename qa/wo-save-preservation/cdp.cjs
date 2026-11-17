@@ -31,6 +31,8 @@ function connect(url){
 }
 // Static server for a dist/ directory. no-store so every load hits the server.
 function serve(root){
+  root=path.resolve(root);
+  if(!fs.existsSync(path.join(root,'index.html')))throw new Error('no index.html in '+root+' (point the PHOENIX_DIST_* variables at a dist/ directory)');
   const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2'};
   const server=http.createServer((req,res)=>{
     let p=decodeURIComponent(new URL(req.url,'http://x').pathname);if(p==='/')p='/index.html';
