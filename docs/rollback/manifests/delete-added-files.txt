@@ -1,0 +1,6 @@
+dist/velen-nilf-objectives.js
+dist/velen-nilf-progress.js
+dist/velen-nilf-ui.js
+dist/slice2-nilf.test.cjs
+dist/slice2-save-guard.test.cjs
+dist/slice2-cache-tags.test.cjs

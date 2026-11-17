@@ -1,0 +1,1297 @@
+{
+ "label": "qa4-control-livepolicy",
+ "policy": "live",
+ "candidate": "/tmp/qa5r/qa4",
+ "runs": [
+  {
+   "viewport": "phone",
+   "origin": "http://127.0.0.1:9076/",
+   "profile": "(temp persistent profile)",
+   "session1": {
+    "served": "v45",
+    "watched": [
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=velen-shell-v43",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=velen-shell-v43",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=velen-shell-v43",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=velen-shell-v43",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "storage": {
+     "phoenix.velen.arrival.v1": "{\"version\":1,\"selected\":\"nilf\",\"lastHub\":\"nilf\",\"complete\":{\"nilf\":false,\"pyres\":true,\"mercy\":false},\"stage\":{\"nilf\":2,\"pyres\":3,\"mercy\":1},\"choices\":{},\"last\":{\"id\":\"nilf\"},\"undo\":null}",
+     "phoenix.region.velen.v1": "{\"schema\":1,\"region\":\"velen\",\"origin\":{\"kind\":\"legacy-import\",\"key\":\"phoenix.velen.arrival.v1\",\"legacyVersion\":1},\"activities\":{\"velen.nilf\":{\"id\":\"velen.nilf\",\"legacy\":\"nilf\",\"source\":\"https://www.gamebanshee.com/thewitcher3/walkthrough/thenilfgaardianconnection.php\",\"requires\":[],\"complete\":false,\"objectives\":{}},\"velen.pyres\":{\"id\":\"velen.pyres\",\"legacy\":\"pyres\",\"source\":\"https://www.gamebanshee.com/thewitcher3/walkthrough/funeralpyres.php\",\"requires\":[],\"complete\":true,\"objectives\":{}},\"velen.mercy\":{\"id\":\"velen.mercy\",\"legacy\":\"mercy\",\"source\":\"https://witcher.fandom.com/wiki/At_the_Mercy_of_Strangers\",\"requires\":[],\"complete\":false,\"objectives\":{}}},\"choices\":{},\"ignored\":[],\"migration\":{\"writer\":\"velen-migration@v44-slice1\",\"fingerprint\":\"cyrb53:07a9089603fb93138d102e76c6fc:690\"}}",
+     "phoenix.whiteorchard.pendingWarnings.v1": "[]",
+     "phoenix.whiteorchard.interaction.v1": "{\"version\":1,\"completed\":{\"q-lilac\":false,\"q-missing\":false,\"q-pan\":false,\"q-cargo\":false,\"q-death\":false,\"q-devil\":false,\"q-beast\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-firestarter\":false,\"loc-forge\":false,\"gwent-start\":false,\"pop-cemetery\":false,\"pop-north\":false,\"pop-cackler\":false,\"pop-sawmill\":false,\"pop-bear\":false,\"pop-bridge\":false,\"departure-review\":false,\"q-incident\":false,\"abandoned-1\":false,\"abandoned-2\":false,\"armourerstable-1\":false,\"banditcamp-1\":false,\"banditcamp-2\":false,\"banditcamp-3\":false,\"banditcamp-6\":false,\"blacksmith-1\":false,\"grindstone-village\":false,\"grindstone-3\":false,\"grindstone-4\":false,\"guarded-1\":false,\"guarded-2\":false,\"guarded-3\":false,\"guarded-4\":false,\"guarded-5\":false,\"herbalist-2\":false,\"monsternest-1\":false,\"monsternest-2\":false,\"monsternest-3\":false,\"poi-1\":false,\"poi-4\":false,\"shopkeeper-1\":false,\"shopkeeper-2\":false,\"signpost-1\":false,\"signpost-2\":false,\"signpost-3\":false,\"signpost-4\":false,\"signpost-5\":false,\"signpost-6\":false,\"signpost-7\":false,\"signpost-8\":false,\"signpost-9\":false,\"signpost-10\":false,\"smugglers-1\":false,\"spoils-1\":false,\"cow-pasture-warning\":false,\"diagram-alder-folk-boots\":false,\"diagram-amateur-s-armor-repair-kit\":false,\"diagram-angrenian-cuirass\":false,\"diagram-ard-skellig-aketon\":false,\"diagram-assassin-s-boots\":false,\"diagram-assassin-s-gauntlets\":false,\"diagram-assassin-s-trousers\":false,\"diagram-assault-gauntlets\":false,\"diagram-axeman-s-boots\":false,\"diagram-axeman-s-gauntlets\":false,\"diagram-axeman-s-trousers\":false,\"diagram-ban-ard-breastplate\":false,\"diagram-bounty-hunter-s-gambeson\":false,\"diagram-cavalry-boots\":false,\"diagram-cavalry-gauntlets\":false,\"diagram-cavalry-trousers\":false,\"diagram-cidarian-cavalry-armor\":false,\"diagram-cidarian-gambeson\":false,\"diagram-condottiere-s-boots\":false,\"diagram-disglair\":false,\"diagram-dorian-sword\":false,\"diagram-executioner-s-boots\":false,\"diagram-glyph-of-aard\":false,\"diagram-glyph-of-axii\":false,\"diagram-glyph-of-igni\":false,\"diagram-glyph-of-quen\":false,\"diagram-glyph-of-yrden\":false,\"diagram-greater-glyph-of-aard\":false,\"diagram-greater-glyph-of-axii\":false,\"diagram-greater-glyph-of-igni\":false,\"diagram-greater-glyph-of-quen\":false,\"diagram-greater-glyph-of-yrden\":false,\"diagram-guardsman-s-boots\":false,\"diagram-hindarsfjall-heavy-armor\":false,\"diagram-hunter-s-boots\":false,\"diagram-hunter-s-gauntlets\":false,\"diagram-hunter-s-trousers\":false,\"diagram-impera-brigade-armor\":false,\"diagram-journeyman-s-armor-repair-kit\":false,\"diagram-kaedweni-gambeson\":false,\"diagram-knight-s-gauntlets\":false,\"diagram-koviri-cutlass\":false,\"diagram-lesser-chernobog-runestone\":false,\"diagram-lesser-dazhbog-runestone\":false,\"diagram-lesser-devana-runestone\":false,\"diagram-lesser-glyph-of-aard\":false,\"diagram-lesser-glyph-of-axii\":false,\"diagram-lesser-glyph-of-igni\":false,\"diagram-lesser-glyph-of-infusion\":false,\"diagram-lesser-glyph-of-quen\":false,\"diagram-lesser-glyph-of-yrden\":false,\"diagram-lesser-morana-runestone\":false,\"diagram-lesser-perun-runestone\":false,\"diagram-lesser-runestone\":false,\"diagram-lesser-stribog-runestone\":false,\"diagram-lesser-svarog-runestone\":false,\"diagram-lesser-triglav-runestone\":false,\"diagram-lesser-veles-runestone\":false,\"diagram-lesser-zoria-runestone\":false,\"diagram-lyrian-hardened-leather-trousers\":false,\"diagram-mag-deira-cuirass\":false,\"diagram-mahakaman-trousers\":false,\"diagram-master-s-armor-repair-kit\":false,\"diagram-mountain-folk-boots\":false,\"diagram-nilfgaardian-guardsman-armor\":false,\"diagram-nilfgaardian-guardsman-s-gauntlets\":false,\"diagram-reaver-s-boots\":false,\"diagram-redanian-halberdier-s-armor\":false,\"diagram-salmian-brigandine\":false,\"diagram-sapper-s-trousers\":false,\"diagram-shiadhal-s-armor\":false,\"diagram-skellige-gambeson\":false,\"diagram-spikeroog-aketon\":false,\"diagram-temerian-poniard\":false,\"diagram-thyssen-armor\":false,\"diagram-tracker-s-boots\":false,\"diagram-tracker-s-gauntlets\":false,\"diagram-tracker-s-trousers\":false,\"diagram-velen-longsword\":false,\"diagram-verden-archer-s-gambeson\":false,\"diagram-viper-silver\":false,\"diagram-viper-steel\":false,\"camp-dirty-funds\":false,\"camp-viper-ruins\":false},\"selectedHub\":\"hub-arrival\",\"expandedHub\":\"hub-arrival\",\"windowStart\":0,\"treeReturn\":null,\"lastStage\":\"forge\",\"lastContent\":null,\"lastWalkthrough\":false,\"lastWalkthroughView\":null,\"stageByView\":{\"walkthrough-firestarter\":\"forge\"},\"map\":{\"type\":\"all\",\"search\":\"\",\"showCompleted\":false},\"progress\":{\"schema\":1,\"objectives\":{},\"choices\":{},\"manual\":{\"arrival\":false,\"garrison\":false,\"griffin\":false,\"departed\":false},\"failed\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false},\"legacy\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false}},\"groupOpen\":{},\"routeUpdates\":[],\"progressUndo\":null,\"mapContext\":null,\"noticeRead\":[]}"
+    },
+    "errors": []
+   },
+   "session2": {
+    "served": "qa4",
+    "candidateTags": [
+     "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+     "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+     "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+     "velen-r18.js?v=nilf-slice2-qa3-v45",
+     "app.js?v=regional-foundation-v45",
+     "velen-view.css?v=nilf-slice2-v45"
+    ],
+    "watched": [
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=nilf-slice2-qa3-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=nilf-slice2-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "serverRequestsForWatched": [
+     {
+      "url": "/index.html",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-view.css?v=nilf-slice2-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-r18.js?v=nilf-slice2-qa3-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/app.js?v=regional-foundation-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "fromCacheUnchanged": [],
+    "appJs": {
+     "url": "app.js?v=regional-foundation-v45",
+     "status": 200,
+     "fromDiskCache": false,
+     "fromMemoryCache": false,
+     "servedFromCache": false,
+     "cacheControl": "public, max-age=0, must-revalidate"
+    },
+    "handoverRan": true,
+    "canonicalOwners": {
+     "velen.nilf": "phoenix.region.velen.v1",
+     "velen.pyres": "phoenix.velen.arrival.v1",
+     "velen.mercy": "phoenix.velen.arrival.v1"
+    },
+    "errors": [],
+    "hash": "#velen/hub/nilf",
+    "progressInitiallyOpen": false,
+    "controlsAfterExpand": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ],
+    "afterMark": {
+     "objectives": {
+      "velen.nilf:travel": "done"
+     },
+     "controls": [
+      {
+       "id": "velen.nilf:travel",
+       "checked": true,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:inn",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:ask",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:fight",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:finish",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:look",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:survivor",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:find",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:search",
+       "checked": false,
+       "disabled": false
+      }
+     ]
+    },
+    "afterReload": {
+     "hash": "#velen/hub/nilf",
+     "controls": [
+      {
+       "id": "velen.nilf:travel",
+       "checked": true,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:inn",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:ask",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:fight",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:finish",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:look",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:survivor",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:find",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:search",
+       "checked": false,
+       "disabled": false
+      }
+     ],
+     "objectives": {
+      "velen.nilf:travel": "done"
+     }
+    },
+    "returnNav": {
+     "via": "return link",
+     "consoleHash": "#velen",
+     "consoleShown": true,
+     "hubHash": "#velen/hub/nilf",
+     "back": "#velen",
+     "forward": "#velen/hub/nilf",
+     "travelAfterReturn": true,
+     "travelAfterForward": true
+    },
+    "legacyUnchangedFromSession1": true
+   }
+  },
+  {
+   "viewport": "landscape",
+   "origin": "http://127.0.0.1:9077/",
+   "profile": "(temp persistent profile)",
+   "session1": {
+    "served": "v45",
+    "watched": [
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=velen-shell-v43",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=velen-shell-v43",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=velen-shell-v43",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=velen-shell-v43",
+      "status": 304,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "storage": {
+     "phoenix.velen.arrival.v1": "{\"version\":1,\"selected\":\"nilf\",\"lastHub\":\"nilf\",\"complete\":{\"nilf\":false,\"pyres\":true,\"mercy\":false},\"stage\":{\"nilf\":2,\"pyres\":3,\"mercy\":1},\"choices\":{},\"last\":{\"id\":\"nilf\"},\"undo\":null}",
+     "phoenix.region.velen.v1": "{\"schema\":1,\"region\":\"velen\",\"origin\":{\"kind\":\"legacy-import\",\"key\":\"phoenix.velen.arrival.v1\",\"legacyVersion\":1},\"activities\":{\"velen.nilf\":{\"id\":\"velen.nilf\",\"legacy\":\"nilf\",\"source\":\"https://www.gamebanshee.com/thewitcher3/walkthrough/thenilfgaardianconnection.php\",\"requires\":[],\"complete\":false,\"objectives\":{}},\"velen.pyres\":{\"id\":\"velen.pyres\",\"legacy\":\"pyres\",\"source\":\"https://www.gamebanshee.com/thewitcher3/walkthrough/funeralpyres.php\",\"requires\":[],\"complete\":true,\"objectives\":{}},\"velen.mercy\":{\"id\":\"velen.mercy\",\"legacy\":\"mercy\",\"source\":\"https://witcher.fandom.com/wiki/At_the_Mercy_of_Strangers\",\"requires\":[],\"complete\":false,\"objectives\":{}}},\"choices\":{},\"ignored\":[],\"migration\":{\"writer\":\"velen-migration@v44-slice1\",\"fingerprint\":\"cyrb53:07a9089603fb93138d102e76c6fc:690\"}}",
+     "phoenix.whiteorchard.pendingWarnings.v1": "[]",
+     "phoenix.whiteorchard.interaction.v1": "{\"version\":1,\"completed\":{\"q-lilac\":false,\"q-missing\":false,\"q-pan\":false,\"q-cargo\":false,\"q-death\":false,\"q-devil\":false,\"q-beast\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-firestarter\":false,\"loc-forge\":false,\"gwent-start\":false,\"pop-cemetery\":false,\"pop-north\":false,\"pop-cackler\":false,\"pop-sawmill\":false,\"pop-bear\":false,\"pop-bridge\":false,\"departure-review\":false,\"q-incident\":false,\"abandoned-1\":false,\"abandoned-2\":false,\"armourerstable-1\":false,\"banditcamp-1\":false,\"banditcamp-2\":false,\"banditcamp-3\":false,\"banditcamp-6\":false,\"blacksmith-1\":false,\"grindstone-village\":false,\"grindstone-3\":false,\"grindstone-4\":false,\"guarded-1\":false,\"guarded-2\":false,\"guarded-3\":false,\"guarded-4\":false,\"guarded-5\":false,\"herbalist-2\":false,\"monsternest-1\":false,\"monsternest-2\":false,\"monsternest-3\":false,\"poi-1\":false,\"poi-4\":false,\"shopkeeper-1\":false,\"shopkeeper-2\":false,\"signpost-1\":false,\"signpost-2\":false,\"signpost-3\":false,\"signpost-4\":false,\"signpost-5\":false,\"signpost-6\":false,\"signpost-7\":false,\"signpost-8\":false,\"signpost-9\":false,\"signpost-10\":false,\"smugglers-1\":false,\"spoils-1\":false,\"cow-pasture-warning\":false,\"diagram-alder-folk-boots\":false,\"diagram-amateur-s-armor-repair-kit\":false,\"diagram-angrenian-cuirass\":false,\"diagram-ard-skellig-aketon\":false,\"diagram-assassin-s-boots\":false,\"diagram-assassin-s-gauntlets\":false,\"diagram-assassin-s-trousers\":false,\"diagram-assault-gauntlets\":false,\"diagram-axeman-s-boots\":false,\"diagram-axeman-s-gauntlets\":false,\"diagram-axeman-s-trousers\":false,\"diagram-ban-ard-breastplate\":false,\"diagram-bounty-hunter-s-gambeson\":false,\"diagram-cavalry-boots\":false,\"diagram-cavalry-gauntlets\":false,\"diagram-cavalry-trousers\":false,\"diagram-cidarian-cavalry-armor\":false,\"diagram-cidarian-gambeson\":false,\"diagram-condottiere-s-boots\":false,\"diagram-disglair\":false,\"diagram-dorian-sword\":false,\"diagram-executioner-s-boots\":false,\"diagram-glyph-of-aard\":false,\"diagram-glyph-of-axii\":false,\"diagram-glyph-of-igni\":false,\"diagram-glyph-of-quen\":false,\"diagram-glyph-of-yrden\":false,\"diagram-greater-glyph-of-aard\":false,\"diagram-greater-glyph-of-axii\":false,\"diagram-greater-glyph-of-igni\":false,\"diagram-greater-glyph-of-quen\":false,\"diagram-greater-glyph-of-yrden\":false,\"diagram-guardsman-s-boots\":false,\"diagram-hindarsfjall-heavy-armor\":false,\"diagram-hunter-s-boots\":false,\"diagram-hunter-s-gauntlets\":false,\"diagram-hunter-s-trousers\":false,\"diagram-impera-brigade-armor\":false,\"diagram-journeyman-s-armor-repair-kit\":false,\"diagram-kaedweni-gambeson\":false,\"diagram-knight-s-gauntlets\":false,\"diagram-koviri-cutlass\":false,\"diagram-lesser-chernobog-runestone\":false,\"diagram-lesser-dazhbog-runestone\":false,\"diagram-lesser-devana-runestone\":false,\"diagram-lesser-glyph-of-aard\":false,\"diagram-lesser-glyph-of-axii\":false,\"diagram-lesser-glyph-of-igni\":false,\"diagram-lesser-glyph-of-infusion\":false,\"diagram-lesser-glyph-of-quen\":false,\"diagram-lesser-glyph-of-yrden\":false,\"diagram-lesser-morana-runestone\":false,\"diagram-lesser-perun-runestone\":false,\"diagram-lesser-runestone\":false,\"diagram-lesser-stribog-runestone\":false,\"diagram-lesser-svarog-runestone\":false,\"diagram-lesser-triglav-runestone\":false,\"diagram-lesser-veles-runestone\":false,\"diagram-lesser-zoria-runestone\":false,\"diagram-lyrian-hardened-leather-trousers\":false,\"diagram-mag-deira-cuirass\":false,\"diagram-mahakaman-trousers\":false,\"diagram-master-s-armor-repair-kit\":false,\"diagram-mountain-folk-boots\":false,\"diagram-nilfgaardian-guardsman-armor\":false,\"diagram-nilfgaardian-guardsman-s-gauntlets\":false,\"diagram-reaver-s-boots\":false,\"diagram-redanian-halberdier-s-armor\":false,\"diagram-salmian-brigandine\":false,\"diagram-sapper-s-trousers\":false,\"diagram-shiadhal-s-armor\":false,\"diagram-skellige-gambeson\":false,\"diagram-spikeroog-aketon\":false,\"diagram-temerian-poniard\":false,\"diagram-thyssen-armor\":false,\"diagram-tracker-s-boots\":false,\"diagram-tracker-s-gauntlets\":false,\"diagram-tracker-s-trousers\":false,\"diagram-velen-longsword\":false,\"diagram-verden-archer-s-gambeson\":false,\"diagram-viper-silver\":false,\"diagram-viper-steel\":false,\"camp-dirty-funds\":false,\"camp-viper-ruins\":false},\"selectedHub\":\"hub-arrival\",\"expandedHub\":\"hub-arrival\",\"windowStart\":0,\"treeReturn\":null,\"lastStage\":\"forge\",\"lastContent\":null,\"lastWalkthrough\":false,\"lastWalkthroughView\":null,\"stageByView\":{\"walkthrough-firestarter\":\"forge\"},\"map\":{\"type\":\"all\",\"search\":\"\",\"showCompleted\":false},\"progress\":{\"schema\":1,\"objectives\":{},\"choices\":{},\"manual\":{\"arrival\":false,\"garrison\":false,\"griffin\":false,\"departed\":false},\"failed\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false},\"legacy\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false}},\"groupOpen\":{},\"routeUpdates\":[],\"progressUndo\":null,\"mapContext\":null,\"noticeRead\":[]}"
+    },
+    "errors": []
+   },
+   "session2": {
+    "served": "qa4",
+    "candidateTags": [
+     "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+     "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+     "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+     "velen-r18.js?v=nilf-slice2-qa3-v45",
+     "app.js?v=regional-foundation-v45",
+     "velen-view.css?v=nilf-slice2-v45"
+    ],
+    "watched": [
+     {
+      "url": "index.html",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-r18.js?v=nilf-slice2-qa3-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "app.js?v=regional-foundation-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "velen-view.css?v=nilf-slice2-v45",
+      "status": 200,
+      "fromDiskCache": false,
+      "fromMemoryCache": false,
+      "servedFromCache": false,
+      "cacheControl": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "serverRequestsForWatched": [
+     {
+      "url": "/index.html",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-view.css?v=nilf-slice2-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/velen-r18.js?v=nilf-slice2-qa3-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     },
+     {
+      "url": "/app.js?v=regional-foundation-v45",
+      "status": 200,
+      "cc": "public, max-age=0, must-revalidate"
+     }
+    ],
+    "fromCacheUnchanged": [],
+    "appJs": {
+     "url": "app.js?v=regional-foundation-v45",
+     "status": 200,
+     "fromDiskCache": false,
+     "fromMemoryCache": false,
+     "servedFromCache": false,
+     "cacheControl": "public, max-age=0, must-revalidate"
+    },
+    "handoverRan": true,
+    "canonicalOwners": {
+     "velen.nilf": "phoenix.region.velen.v1",
+     "velen.pyres": "phoenix.velen.arrival.v1",
+     "velen.mercy": "phoenix.velen.arrival.v1"
+    },
+    "errors": [],
+    "hash": "#velen/hub/nilf",
+    "progressInitiallyOpen": false,
+    "controlsAfterExpand": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ],
+    "afterMark": {
+     "objectives": {
+      "velen.nilf:travel": "done"
+     },
+     "controls": [
+      {
+       "id": "velen.nilf:travel",
+       "checked": true,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:inn",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:ask",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:fight",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:finish",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:look",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:survivor",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:find",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:search",
+       "checked": false,
+       "disabled": false
+      }
+     ]
+    },
+    "afterReload": {
+     "hash": "#velen/hub/nilf",
+     "controls": [
+      {
+       "id": "velen.nilf:travel",
+       "checked": true,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:inn",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:ask",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:fight",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:finish",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:look",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:survivor",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:find",
+       "checked": false,
+       "disabled": false
+      },
+      {
+       "id": "velen.nilf:search",
+       "checked": false,
+       "disabled": false
+      }
+     ],
+     "objectives": {
+      "velen.nilf:travel": "done"
+     }
+    },
+    "returnNav": {
+     "via": "return link",
+     "consoleHash": "#velen",
+     "consoleShown": true,
+     "hubHash": "#velen/hub/nilf",
+     "back": "#velen",
+     "forward": "#velen/hub/nilf",
+     "travelAfterReturn": true,
+     "travelAfterForward": true
+    },
+    "legacyUnchangedFromSession1": true
+   }
+  }
+ ],
+ "results": [
+  {
+   "name": "qa4-control-livepolicy-phone: session 1 (v45) imported the seeded save into the canonical record (Slice 1)",
+   "pass": true,
+   "info": [
+    "phoenix.velen.arrival.v1",
+    "phoenix.region.velen.v1",
+    "phoenix.whiteorchard.pendingWarnings.v1",
+    "phoenix.whiteorchard.interaction.v1"
+   ]
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: session 1 loaded v45 app.js from the network",
+   "pass": true
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)",
+   "pass": true,
+   "info": 0
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: returning browser requested the candidate app.js URL over the network (not from cache)",
+   "pass": true,
+   "info": {
+    "url": "app.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-r18.js?v=nilf-slice2-qa3-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: app.js?v=regional-foundation-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "app.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-view.css?v=nilf-slice2-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: Slice 2 handover ran on first load (new app.js executed)",
+   "pass": true,
+   "info": {
+    "velen.nilf": "phoenix.region.velen.v1",
+    "velen.pyres": "phoenix.velen.arrival.v1",
+    "velen.mercy": "phoenix.velen.arrival.v1"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: card tap opens the nilf hub",
+   "pass": true,
+   "info": "#velen/hub/nilf"
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: progress section starts collapsed and expands from its summary",
+   "pass": true,
+   "info": {
+    "initial": false,
+    "expanded": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: Nilfgaardian objective controls reachable after expanding",
+   "pass": true,
+   "info": 9
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: marking Travel records it in the canonical record and the control shows it",
+   "pass": true,
+   "info": {
+    "objectives": {
+     "velen.nilf:travel": "done"
+    },
+    "controls": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": true,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: Travel persists across reload",
+   "pass": true,
+   "info": {
+    "hash": "#velen/hub/nilf",
+    "controls": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": true,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ],
+    "objectives": {
+     "velen.nilf:travel": "done"
+    }
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: return to the Velen console and back to the hub keeps the recorded objective",
+   "pass": true,
+   "info": {
+    "via": "return link",
+    "consoleHash": "#velen",
+    "consoleShown": true,
+    "hubHash": "#velen/hub/nilf",
+    "back": "#velen",
+    "forward": "#velen/hub/nilf",
+    "travelAfterReturn": true,
+    "travelAfterForward": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: history back/forward between console and hub keeps the recorded objective",
+   "pass": true,
+   "info": {
+    "via": "return link",
+    "consoleHash": "#velen",
+    "consoleShown": true,
+    "hubHash": "#velen/hub/nilf",
+    "back": "#velen",
+    "forward": "#velen/hub/nilf",
+    "travelAfterReturn": true,
+    "travelAfterForward": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-phone: no page errors in session 2",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: session 1 (v45) imported the seeded save into the canonical record (Slice 1)",
+   "pass": true,
+   "info": [
+    "phoenix.velen.arrival.v1",
+    "phoenix.region.velen.v1",
+    "phoenix.whiteorchard.pendingWarnings.v1",
+    "phoenix.whiteorchard.interaction.v1"
+   ]
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: session 1 loaded v45 app.js from the network",
+   "pass": true
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)",
+   "pass": true,
+   "info": 0
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: returning browser requested the candidate app.js URL over the network (not from cache)",
+   "pass": true,
+   "info": {
+    "url": "app.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-r18.js?v=nilf-slice2-qa3-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: app.js?v=regional-foundation-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "app.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)",
+   "pass": true,
+   "info": {
+    "url": "velen-view.css?v=nilf-slice2-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false,
+    "servedFromCache": false,
+    "cacheControl": "public, max-age=0, must-revalidate"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: Slice 2 handover ran on first load (new app.js executed)",
+   "pass": true,
+   "info": {
+    "velen.nilf": "phoenix.region.velen.v1",
+    "velen.pyres": "phoenix.velen.arrival.v1",
+    "velen.mercy": "phoenix.velen.arrival.v1"
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: card tap opens the nilf hub",
+   "pass": true,
+   "info": "#velen/hub/nilf"
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: progress section starts collapsed and expands from its summary",
+   "pass": true,
+   "info": {
+    "initial": false,
+    "expanded": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: Nilfgaardian objective controls reachable after expanding",
+   "pass": true,
+   "info": 9
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: marking Travel records it in the canonical record and the control shows it",
+   "pass": true,
+   "info": {
+    "objectives": {
+     "velen.nilf:travel": "done"
+    },
+    "controls": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": true,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: Travel persists across reload",
+   "pass": true,
+   "info": {
+    "hash": "#velen/hub/nilf",
+    "controls": [
+     {
+      "id": "velen.nilf:travel",
+      "checked": true,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:inn",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:ask",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:fight",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:finish",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:look",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:survivor",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:find",
+      "checked": false,
+      "disabled": false
+     },
+     {
+      "id": "velen.nilf:search",
+      "checked": false,
+      "disabled": false
+     }
+    ],
+    "objectives": {
+     "velen.nilf:travel": "done"
+    }
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: return to the Velen console and back to the hub keeps the recorded objective",
+   "pass": true,
+   "info": {
+    "via": "return link",
+    "consoleHash": "#velen",
+    "consoleShown": true,
+    "hubHash": "#velen/hub/nilf",
+    "back": "#velen",
+    "forward": "#velen/hub/nilf",
+    "travelAfterReturn": true,
+    "travelAfterForward": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: history back/forward between console and hub keeps the recorded objective",
+   "pass": true,
+   "info": {
+    "via": "return link",
+    "consoleHash": "#velen",
+    "consoleShown": true,
+    "hubHash": "#velen/hub/nilf",
+    "back": "#velen",
+    "forward": "#velen/hub/nilf",
+    "travelAfterReturn": true,
+    "travelAfterForward": true
+   }
+  },
+  {
+   "name": "qa4-control-livepolicy-landscape: no page errors in session 2",
+   "pass": true,
+   "info": []
+  }
+ ]
+}

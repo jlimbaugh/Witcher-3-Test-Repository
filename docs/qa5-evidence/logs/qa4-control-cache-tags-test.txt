@@ -1,0 +1,52 @@
+✖ every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45 (5.257164ms)
+✖ QA5 release tags: app.js carries the QA5 release tag in index.html (1.385228ms)
+﹣ pinned v45 tag table matches PHOENIX_V45_BASELINE when provided (0.177ms) # PHOENIX_V45_BASELINE not set; pinned table used
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 50.177169
+
+✖ failing tests:
+
+test at slice2-cache-tags.test.cjs:103:1
+✖ every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45 (5.257164ms)
+  AssertionError [ERR_ASSERTION]: index.html: app.js changed since v45 but still uses the v45 tag ?v=regional-foundation-v45
+      at TestContext.<anonymous> (/tmp/qa4ctl/dist/slice2-cache-tags.test.cjs:111:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'regional-foundation-v45',
+    expected: 'regional-foundation-v45',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at slice2-cache-tags.test.cjs:116:1
+✖ QA5 release tags: app.js carries the QA5 release tag in index.html (1.385228ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'regional-foundation-v45'
+  - 'nilf-slice2-qa5-v45'
+  
+      at TestContext.<anonymous> (/tmp/qa4ctl/dist/slice2-cache-tags.test.cjs:118:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'regional-foundation-v45',
+    expected: 'nilf-slice2-qa5-v45',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

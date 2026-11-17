@@ -1,0 +1,35 @@
+session2 debug {"pages":["http://127.0.0.1:9214/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9214/index.html#velen"}
+session2 debug {"pages":["http://127.0.0.1:9215/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9215/index.html#velen"}
+PASS qa4-control-immutable-phone: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa4-control-immutable-phone: session 1 loaded v45 app.js from the network
+PASS qa4-control-immutable-phone: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+FAIL qa4-control-immutable-phone: returning browser requested the candidate app.js URL over the network (not from cache)  :: {"url":"app.js?v=regional-foundation-v45","status":200,"fromDiskCache":true,"fromMemoryCache":false,"servedFromCache":false,"cacheControl":"public, max-age=31536000, immutable"}
+PASS qa4-control-immutable-phone: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-phone: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-phone: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-phone: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+FAIL qa4-control-immutable-phone: app.js?v=regional-foundation-v45 loaded from the server (new version)  :: {"url":"app.js?v=regional-foundation-v45","status":200,"fromDiskCache":true,"fromMemoryCache":false,"servedFromCache":false,"cacheControl":"public, max-age=31536000, immutable"}
+PASS qa4-control-immutable-phone: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+FAIL qa4-control-immutable-phone: Slice 2 handover ran on first load (new app.js executed)  :: undefined
+FAIL qa4-control-immutable-phone: card tap opens the nilf hub  :: "#velen"
+FAIL qa4-control-immutable-phone: progress section starts collapsed and expands from its summary  :: {"initial":null,"expanded":false}
+FAIL qa4-control-immutable-phone: Nilfgaardian objective controls reachable after expanding  :: 0
+FAIL qa4-control-immutable-phone: direct #velen/hub/nilf also shows Nilfgaardian objective controls  :: {"hash":"#velen/hub/nilf","progressSection":false,"controls":0,"canonicalOwnsNilf":false}
+PASS qa4-control-immutable-phone: no page errors in session 2
+PASS qa4-control-immutable-landscape: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa4-control-immutable-landscape: session 1 loaded v45 app.js from the network
+PASS qa4-control-immutable-landscape: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+FAIL qa4-control-immutable-landscape: returning browser requested the candidate app.js URL over the network (not from cache)  :: {"url":"app.js?v=regional-foundation-v45","status":200,"fromDiskCache":true,"fromMemoryCache":false,"servedFromCache":false,"cacheControl":"public, max-age=31536000, immutable"}
+PASS qa4-control-immutable-landscape: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-landscape: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-landscape: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-immutable-landscape: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+FAIL qa4-control-immutable-landscape: app.js?v=regional-foundation-v45 loaded from the server (new version)  :: {"url":"app.js?v=regional-foundation-v45","status":200,"fromDiskCache":true,"fromMemoryCache":false,"servedFromCache":false,"cacheControl":"public, max-age=31536000, immutable"}
+PASS qa4-control-immutable-landscape: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+FAIL qa4-control-immutable-landscape: Slice 2 handover ran on first load (new app.js executed)  :: undefined
+FAIL qa4-control-immutable-landscape: card tap opens the nilf hub  :: "#velen"
+FAIL qa4-control-immutable-landscape: progress section starts collapsed and expands from its summary  :: {"initial":null,"expanded":false}
+FAIL qa4-control-immutable-landscape: Nilfgaardian objective controls reachable after expanding  :: 0
+FAIL qa4-control-immutable-landscape: direct #velen/hub/nilf also shows Nilfgaardian objective controls  :: {"hash":"#velen/hub/nilf","progressSection":false,"controls":0,"canonicalOwnsNilf":false}
+PASS qa4-control-immutable-landscape: no page errors in session 2
+qa4-control-immutable: 18/32 passed

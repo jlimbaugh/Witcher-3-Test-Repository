@@ -1,0 +1,29 @@
+PASS phone: direct route: final search recorded -> 5/5 and quest complete
+PASS phone: direct route: Go to the Inn unmarked, unconfirmed, not required; no inn outcome
+PASS phone: direct route: whole-quest control now offers removal (nothing left to fill)
+PASS phone: no page errors (direct completion)
+PASS phone: confirmation dialog explains no objective mark and no inn outcome
+PASS phone: confirmed completion: quest complete, only Travel + Look recorded, no inn mark, no inn outcome
+PASS phone: confirmed completion shown distinctly from recorded objectives
+PASS phone: Undo restores the exact prior record
+PASS phone: after Undo the page shows 2/5, not complete
+PASS phone: no page errors (confirmation)
+PASS phone: peace whole-quest: canonical record byte-identical to the QA3 freeze
+PASS phone: fight whole-quest: canonical record byte-identical to the QA3 freeze
+PASS phone: peace search catch-up then remove: canonical record byte-identical to the QA3 freeze
+PASS phone: unknown route: Go to the Inn: canonical record byte-identical to the QA3 freeze
+PASS landscape: direct route: final search recorded -> 5/5 and quest complete
+PASS landscape: direct route: Go to the Inn unmarked, unconfirmed, not required; no inn outcome
+PASS landscape: direct route: whole-quest control now offers removal (nothing left to fill)
+PASS landscape: no page errors (direct completion)
+PASS landscape: confirmation dialog explains no objective mark and no inn outcome
+PASS landscape: confirmed completion: quest complete, only Travel + Look recorded, no inn mark, no inn outcome
+PASS landscape: confirmed completion shown distinctly from recorded objectives
+PASS landscape: Undo restores the exact prior record
+PASS landscape: after Undo the page shows 2/5, not complete
+PASS landscape: no page errors (confirmation)
+PASS landscape: peace whole-quest: canonical record byte-identical to the QA3 freeze
+PASS landscape: fight whole-quest: canonical record byte-identical to the QA3 freeze
+PASS landscape: peace search catch-up then remove: canonical record byte-identical to the QA3 freeze
+PASS landscape: unknown route: Go to the Inn: canonical record byte-identical to the QA3 freeze
+28/28 passed

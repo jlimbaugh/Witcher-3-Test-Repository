@@ -1,0 +1,9 @@
+QA5 start-point verification (LT, 2026-11-16, America/Chicago)
+sha256 /workspace/v45/PHOENIX-v45-slice2-QA4-deliverables.zip = 18642c7b892ae1a5df2afede4cc23523121752a3b3a396748f5ab10402ded7ac  (matches the order)
+sha256 inner PHOENIX-v45-slice2-source.zip = bdc000db792a32ab47f208b600ec477e9b0a50b3b9605fe507db6d1ac72085f3 (236 entries)
+diff -r <package source> /workspace/v45/source  -> identical (frozen QA4 tree; re-checked identical again after all QA5 work)
+QA5 tree /workspace/v45/qa5/source copied from the package source; prefix-qa5 = exact package source (QA4 freeze)
+rollback-checkpoint/v45-source-a9d61c94: sha256 -c 220/220 OK; identical to baseline-untouched (read-only, unmodified)
+Not edited: /workspace/v45/source, /workspace/v45/baseline-untouched, /workspace/v44/*
+Live v45 host headers (curl -I, read-only): index.html and app.js?v=regional-foundation-v45 ->
+  cache-control: public, max-age=0, must-revalidate; cf-cache-status: HIT; etag present (Cloudflare edge)

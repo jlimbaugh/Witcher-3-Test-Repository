@@ -1,0 +1,1505 @@
+diff -ruN baseline-untouched/dist/app.js source/dist/app.js
+--- baseline-untouched/dist/app.js	2026-11-16 19:55:06.379354236 +0000
++++ source/dist/app.js	2026-11-17 00:05:02.393217004 +0000
+@@ -374,6 +374,9 @@
+   // v44 Slice 1 seam (data only): import the legacy Velen record into phoenix.region.velen.v1 before the
+   // Velen view initializes. The legacy key phoenix.velen.arrival.v1 is only read; nothing renders the canonical record.
+   try{window.PhoenixVelenMigration?.importFromStorage(localStorage);}catch{}
++  // v45 Slice 2 seam (state): explicit, idempotent handover of velen.nilf progress ownership to phoenix.region.velen.v1.
++  // Runs after the Slice 1 import; never writes phoenix.velen.arrival.v1. Guarded rollback: PhoenixVelenNilfProgress.rollbackHandover(localStorage).
++  try{window.PhoenixVelenNilfProgress?.handover(localStorage);}catch{}
+   window.PhoenixVelen=window.createPhoenixVelen({navigate});
+   views=[...document.querySelectorAll('.view')];
+   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
+diff -ruN baseline-untouched/dist/index.html source/dist/index.html
+--- baseline-untouched/dist/index.html	2026-11-16 19:55:06.379354236 +0000
++++ source/dist/index.html	2026-11-17 00:06:11.309193357 +0000
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=velen-shell-v43" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=regional-foundation-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=velen-shell-v43"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
++<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-nilf-objectives.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-progress.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-ui.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=nilf-slice2-qa3-v45" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=nilf-slice2-qa5-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
+ <a class="skip" href="#main">Skip to content</a><header class="guide-bar"><div class="bar-line"><a class="wordmark" href="#home">Witcher Field Guide</a><nav aria-label="Guide"><a href="#home">Home</a><a href="#whiteorchard-tree">Quests</a><a href="#regions">Regions</a><a href="#whiteorchard-constellation" data-world-atlas>Constellation</a></nav><div class="guide-appearance"><label><span class="sr-only">Reading font</span><select id="reading-font" aria-label="Reading font"><option value="fondamento">Calligraphy</option><option value="alegreya">Alegreya</option><option value="fell">IM Fell English</option></select></label><button type="button" id="theme-toggle" aria-label="Switch to day theme">Day</button></div></div></header><main id="main">
+ <section id="whiteorchard-console" class="view home" hidden aria-labelledby="home-title"><div class="cover"><div class="cover-art"><img src="white-orchard-scene.webp" alt="Official CDPR scene of Geralt at the White Orchard notice board"><div class="plate-caption"><span>TEMERIA · WHITE ORCHARD</span><span>AN UNOFFICIAL FIELD JOURNAL</span></div></div><div class="journal-sheet home-sheet"><span aria-hidden="true" class="corner tl"></span><span aria-hidden="true" class="corner tr"></span><p class="eyebrow">WHITE ORCHARD / THE BEGINNING OF THE PATH</p><h1 id="home-title">The Path<br>through <em>White Orchard.</em></h1><p class="intro">A witcher’s work begins with a lead. Follow it. Find what is worth doing along the way.</p><div class="rule" aria-hidden="true"><span>◆</span></div><a class="continue" data-console-continue href="#whiteorchard-tree/hub-arrival"><span class="continue-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 28 24 7M10 22C4 12 16 3 28 4c1 12-5 22-16 20M17 15l8 1M13 20l7 1"/></svg></span><span><small>YOUR JOURNAL</small><strong data-console-title>Arrival in White Orchard</strong><span class="continue-meta"><span data-console-meta>Open your selected quest hub</span></span></span><span class="arrow" aria-hidden="true">→</span></a><div class="doors"><a href="#whiteorchard-tree"><span class="door-no">01</span><div><h2>Quests</h2><p>One path. The opportunities around it.</p></div><span aria-hidden="true">→</span></a><a href="#whiteorchard-map"><span class="door-no">02</span><div><h2>The map</h2><p>Familiar ground. Something worth finding.</p></div><span aria-hidden="true">→</span></a></div><nav class="shelf" aria-label="Journal sections"><a href="#regions">Regions</a><a href="#economy-merchants">Merchants</a><button disabled aria-label="Systems — coming soon">Systems</button><button disabled aria-label="Builds — coming soon">Builds</button></nav><span aria-hidden="true" class="corner bl"></span><span aria-hidden="true" class="corner br"></span></div></div><p class="study-note">THE KEEP · XBOX SERIES X|S · YOUR PROGRESS, YOUR PATH</p></section>
+ <section class="view scene" id="regions" hidden aria-labelledby="regions-title"><div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><span>Regions</span></nav><div class="region-hero"><p class="eyebrow">THE CONTINENT / REGIONAL GUIDES</p><h1 id="regions-title">Choose your<br><em>next horizon.</em></h1><p class="lead">Every place has its stories.<br>Begin where the Path first opens.</p></div><a class="region-feature" href="#whiteorchard"><span class="eyebrow">01 / TEMERIA</span><h2>White Orchard</h2><p>Orchards, quiet roads, and the scars of war.</p><span class="entry-footer">Explore the region <b aria-hidden="true">→</b></span></a><a class="region-feature velen-entry" href="velen.html"><span class="eyebrow">02 / NO MAN’S LAND · ARRIVAL PILOT</span><h2>Velen</h2><p>The imperial agent’s trail through a country broken by war.</p><span class="entry-footer">Enter Velen <b aria-hidden="true">→</b></span></a><p class="quiet">Novigrad · Oxenfurt · Skellige · Kaer Morhen · Hearts of Stone · Toussaint<br>Further regional guides remain planned.</p></div></section>
+diff -ruN baseline-untouched/dist/slice2-cache-tags.test.cjs source/dist/slice2-cache-tags.test.cjs
+--- baseline-untouched/dist/slice2-cache-tags.test.cjs	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/slice2-cache-tags.test.cjs	2026-11-17 00:06:47.169110336 +0000
+@@ -0,0 +1,125 @@
++'use strict';
++// v45 Slice 2 QA5: cache-busting regression. Every script/stylesheet referenced from every packaged HTML entry point
++// whose bytes differ from the accepted v45 release (commit a9d61c94), or which is new, must carry a ?v= tag that
++// differs from the tag v45 used for it. Otherwise a returning browser may run the cached v45 copy next to new code
++// (the QA4 app.js defect). Portable: v45 tags and sha256 are pinned below; optionally the pins are re-derived from
++// PHOENIX_V45_BASELINE=<v45 dist dir> and must match.
++const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
++// file (relative to dist) -> [v45 ?v= tag ('' = untagged), v45 sha256]; derived from every *.html in the v45 dist.
++const V45_REFS={
++  'app.js':['regional-foundation-v45','dc471ec3efa2c41c1e56e0ee414737afa51ad1f5c4da0525cf873e61d5dac64a'],
++  'appearance.js':['type-v41','3404df095a1c1d72229fd0c6d71ebae96efb921190fd041eeedee5e5237b3878'],
++  'art-r13.css':['type-v40','96b1ae643c0329b9c5c146f0e594a3741a651d5221658c429713cc7de5ebe3ea'],
++  'atlas-r14.css':['','139f2d397dae1af5eb721df6af38b5ca72374ff85e3b3dab3b9ea4c35df52b7b'],
++  'atlas-r14.js':['diagrams-1','d5185c09751ee5c7224cc861bb8d13539a9caca7763a54efde5d6ccc06fd1f95'],
++  'console-r16.css':['type-v40','737302d97dbd16cd664c8d1e3d2bfe39df8c0c12f673c861359ff1d5521c6960'],
++  'console-r16.js':['stage1','185cb0f854f00b60f4c1aa9d06f8dc2c648f562d00f7f327c2450ed2c4c8798e'],
++  'deck-motion.js':['swipe-box-v38','286e9c52187bb2bcc406195ca98d63eb28152b1decc940db708bac1b08bdf959'],
++  'departure.css':['paired-slices-1','e17654ee00fd65223600e68e7b9c4aa97e5daf9c38feb553993fcc59d99d0a22'],
++  'departure.js':['paired-slices-1','d180d3c4cd50309cab42ae5911aeb8e907d00724cf37ec08c7299becc7d893c4'],
++  'desk-r11.css':['type-v40','fcd2b91593bd7eaeb68bc8feca9da000317598da11fd810e02fbac71ef2f4cb6'],
++  'desk-r11.js':['region-spin-2','fd71aa223797deda14ccacae094468ad428af113404653854e5318822c06baaf'],
++  'diagrams-art.js':['diagram-art-1','58f75c61a20ddcd8fdd6f73597dd7fbb9dc87d7a4eab7e4d4a2f7198ffd8f7bf'],
++  'diagrams-compass.js':['compass-v32','fcdfbec66c53e146d42a3b791e1523f1b5807c46bccf39579771f12923b25b74'],
++  'diagrams-data.js':['compass-v32','16e2047d55896a544a240a0389c788c9cd130f67840389798fc9a7d114a8d69b'],
++  'diagrams-ui.js':['search-qa-1','6163f81c1f2ae6b0cbb5682cf9ff30e4025442278275f1bfe012869ad8b18d4e'],
++  'diagrams.css':['type-v40','4f0e0ee01b90c1ea4e2a59e2a2f63c7c9aee7d9a6d524fb25474686512a5ea62'],
++  'exploration-art.js':['den-variety-3','c804a02b1101435ca68306e94614c2b8aab7f311e16b2230c92454e4f15848dd'],
++  'exploration-data.js':['exploration-1','3461036e472b44ddd02d86498e6a53266e90e34ad4ed8e5c4f8daf04cf7d6c8f'],
++  'exploration-ui.js':['warning-overlay-1','c113fa02ea952c925eb5731162e590a6bdf75ef494fa722f166a39227ddbbba9'],
++  'exploration.css':['type-v40','91848ac59093184caf4d45b836fa81e07ba299af5c39a60436a5869fe67ac0e0'],
++  'guide-art-r15.css':['type-v40','81cea97f5d0f4ac94d132d914907fda5489cc1fdc20168a503a4eee6c287347f'],
++  'guide-art-r15.js':['quest-layout-2','b2136096e6c73b88eb72ebd96d0c30ac7e23b198b72310db0807139439aba118'],
++  'guide-viewport.css':['type-v40','b69476c2d4a74370cbe8e118232a65557941b489267d7bbd8ff61a76a76684b6'],
++  'guide-viewport.js':['wolf-dock-1','20d5f907be826a65d9600d8300f55aed576a428a97dc266a6f0e8146ff34d180'],
++  'home-metrics.js':['exploration-1','da6d41f00457ef4b5a032899cae6be0a1284ac68a03353c2719a261ce338cb96'],
++  'home-panel.js':['','3d70b46f912f244c14e8ed9d53a818c6324086ac15159afabfd73d3ffbdd01c3'],
++  'home-rebuild.css':['type-v40','481357b1e0e9858d9c8b4a7343bd0fdb6e94d5445a6a4434863b146f29e6c347'],
++  'home-ui.js':['paired-slices-1','d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd'],
++  'leaflet.css':['','a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6'],
++  'leaflet.js':['','db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a'],
++  'main-console.css':['type-v40','67fc2e08b30dae593e32e8b166c0c61e2153b006a531d340611e4694e0e4a793'],
++  'main-console.js':['velen-shell-v43','a4dcff365e74f31dbf0529b1e353540beb896c20edae01c59121339ae430ad7b'],
++  'map-data.js':['progress-r8a','2a50337714f171514069c3be78227e7434c46609e4d2203def2f066970c09f90'],
++  'map-ui.js':['exploration-1','83fa1e2a22ed528bc3117ca0884869faa78e6fcd56248ce0b56f6bf936ebe462'],
++  'medallion.js':['warnings-takeover-v44','84a4684ac076352fe05d6a8aaa50b3eba35dbbdf2e8565d15b4a44c6fb6f723c'],
++  'navigation-art.css':['warnings-takeover-v44','0c5f8d48e02a6b03fba938b25776ae99293a9f8e5c033b2edbd275c9f3c75e98'],
++  'navigation-art.js':['warnings-takeover-v44','2c61342c2cb653f4a46db99b592732d53513ad6d776ffb6918c5330539675eed'],
++  'navigation-effects.js':['warnings-v29','9675daa545ee8d161fdad8e743225ed81dc3402291348251d5326d6fdb8fa58e'],
++  'objective-presentation.css':['type-v40','d07539c9ad5c3c4de7add373c2d50acf7c2d0f961a19a22ae4fe93190ea4d509'],
++  'parchment-controls.css':['type-v40','e740cd179303f916e669b3805edf5d2fdda2245af9e6e91bb5e6aa808cb36fe8'],
++  'phoenix-journal.css':['type-v40','edea07edaf16768dfe1cc655a3081f83c79f21d52bc8d4b709fed7d80642b6f8'],
++  'progression-data.js':['regional-foundation-v45','ebb676bb859ffebcdd68704d6feae0c5d4a0a1180a147af3f0698da6f4d7ad24'],
++  'progression-engine.js':['progress-r8a','08a4f8c603f554b3cab32845667073dfb1cd74b99300310075fbcce947e78469'],
++  'progression-ui.js':['objective-progress-v35','ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0'],
++  'quest-deck-motion.css':['swipe-calibration-v33','e931bb4325cfcba8430552579a5bd8a2cb3fc34491a8e21bc5d9543b441b2d5f'],
++  'quest-hubs.js':['paired-slices-1','e02e19ba98f528eb3ca46263542b3b1a1134011d69698e3ccde2b9d153831b6f'],
++  'quest-pages.css':['type-v40','13643cfdfefa818bd5cfaf26b7d67a31653347a033b67255df40696598e22435'],
++  'quest-pages.js':['paired-slices-1','43dd4397bbd463112b5512609d230b61658c79640a2d87cf71351e1d6df808cb'],
++  'reading-pilot.css':['reading-v42','a5c94a3fe763d09a8baedfe42747598beb898ad1af375a238209f7ca6914aa59'],
++  'reading-pilot.js':['reading-v42','8f36725f37301016795bf04c91628879a84a11b27519caa5023a276c774a5e08'],
++  'regional-registry.js':['regional-foundation-v45','2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283'],
++  'search-model.js':['search-qa-1','c76adbe27a3b1c4d1d816ee2a28d6a5fbf1ef7f37bff1e1c02c4a3551fbd5f83'],
++  'search-ui.css':['type-v40','6b3623b2cf03033d05cd30f43a2d63d89650d089c8373846d3077d580c238b22'],
++  'search-ui.js':['search-qa-1','2377ce3e33be4106976b2f2d58a36238b4ac8a167f6ea516f74cd888c0faa4bf'],
++  'styles.css':['type-v40','b20216106746b5584b7d6ef5b2c176497e1ac68d7295b7ea96022323822a41d2'],
++  'swipe-boxes.css':['swipe-box-v38','03e84f27e8283f6d9e469ffe1e462564819be0e03ca1ed305cb629383052c6e2'],
++  'swipe-boxes.js':['swipe-box-v39','7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8'],
++  'tarot-r12.css':['type-v40','cd7e33ee80a7415f0836bf9874dc57838ebeaeb8b99742eb51300d815d759cb9'],
++  'typography.css':['type-v40','cffdd0d2e5e6d87c9ebc4cf904d3f183ed4421e3a6e2f2c3b69d0bc1a0ca1875'],
++  'typography.js':['type-v40','13c59cc8f009f4f1beb0397c82bfd0d29ee3ee86b00e1909d4acb57df54b929f'],
++  'velen-data-r18.js':['regional-foundation-v45','4b292527a495da0d2bd0dea2bb69007423debfb48e1b12ff09551c3d7d438af2'],
++  'velen-entry.js':['velen-shell-v43','b55a79bcd3525a3aa565e6c6374e800a282946bdd98b61d1fe36850e4558a16d'],
++  'velen-migration.js':['regional-foundation-v45','0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7'],
++  'velen-r18.js':['velen-shell-v43','5908676ffe5f29503e1fc40cc867dc6eadfda63cbc2f96b404d51c31ce3c12be'],
++  'velen-routing.js':['velen-shell-v43','25224309ea4de7adebee80080359f54560b5139b0318fe7df05b1a087168c398'],
++  'velen-view.css':['velen-shell-v43','a4784bcf5b667d4da921d0c781d8937a341d63d9c40707abc649dbcc0b1828a3'],
++  'visual-system.css':['type-v40','9442198b4acc9b7988c6d8f00e579e589caa85968d25780aabf2ef1cd71e433d'],
++  'visual-system.js':['velen-shell-v43','9e37cbafe5823a3e38aed070606e3e46ab37b55ad01763250e279461cad69bb3'],
++  'warning-center.js':['objective-warning-v34','e90942f42271b592ad256744dbf92900b48062c13413e7fbdfb7772b4c85146f'],
++  'warning-details.css':['warning-overlay-1','6f5bda03c23f9b372d181326c9821d566f7402ffdf935e970bc0355f8e054970'],
++  'warning-details.js':['warnings-v29','35c4b779ef6e6e96a7a56e1e4790260a2dcac4acb60e145d9ab0b04d22920ff3'],
++  'weathered-r10.css':['type-v40','47de48932d1032566cae17c32f7d013976353e97d5b991fda83caab0617a9f21'],
++  'weathered-r10.js':['quest-layout-2','de56d94946acb34809af9b26cbd9dd1f5c9d817ebe48108f1203adc0b380229d'],
++  'white-orchard.js':['main-route-1','2d068ea09ceff260e750baeb001782602387e90a2315968dfd0dfab2335934dc'],
++};
++const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
++function htmlFiles(dir,rel=''){let out=[];for(const e of fs.readdirSync(path.join(dir,rel),{withFileTypes:true})){if(e.name==='node_modules'||e.name.startsWith('.'))continue;const r=path.posix.join(rel,e.name);if(e.isDirectory())out=out.concat(htmlFiles(dir,r));else if(e.name.endsWith('.html'))out.push(r);}return out.sort();}
++function refsOf(dir){
++ const refs=[];
++ for(const html of htmlFiles(dir)){
++  const text=fs.readFileSync(path.join(dir,html),'utf8');
++  for(const m of text.matchAll(/<(?:script|link)\b[^>]*?(?:src|href)="([^"#]+)"/g)){
++   const url=m[1];if(/^[a-z]+:|^\/\//i.test(url))continue;
++   const [p,q='']=url.split('?');if(!/\.(js|css)$/.test(p))continue;
++   const file=path.posix.normalize(path.posix.join(path.posix.dirname(html),p));
++   const tag=new URLSearchParams(q).get('v')||'';
++   refs.push({html,file,tag});
++  }
++ }
++ return refs;
++}
++const here=__dirname;
++test('every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45',()=>{
++ const refs=refsOf(here),checked=[];
++ assert.ok(refs.length>=Object.keys(V45_REFS).length,'expected at least the v45 script/style references');
++ for(const {html,file,tag} of refs){
++  const v45=V45_REFS[file],now=sha(path.join(here,file));
++  if(v45&&v45[1]===now)continue; // unchanged since v45: a reused tag is correct
++  checked.push(file);
++  assert.ok(tag,html+': '+file+' changed or new since v45 but is untagged');
++  if(v45)assert.notEqual(tag,v45[0],html+': '+file+' changed since v45 but still uses the v45 tag ?v='+v45[0]);
++ }
++ for(const f of ['app.js','velen-r18.js','velen-view.css','velen-nilf-objectives.js','velen-nilf-progress.js','velen-nilf-ui.js'])assert.ok(checked.includes(f),f+' must be referenced and checked');
++});
++test('QA5 release tags: app.js carries the QA5 release tag in index.html',()=>{
++ const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
++ assert.equal(tags['app.js'],'nilf-slice2-qa5-v45');
++ assert.notEqual(tags['app.js'],V45_REFS['app.js'][0]);
++});
++test('pinned v45 tag table matches PHOENIX_V45_BASELINE when provided',(t)=>{
++ const dir=process.env.PHOENIX_V45_BASELINE;if(!dir){t.skip('PHOENIX_V45_BASELINE not set; pinned table used');return;}
++ assert.ok(fs.existsSync(dir),'PHOENIX_V45_BASELINE does not exist: '+dir);
++ const derived={};for(const {file,tag} of refsOf(dir))derived[file]=[tag,sha(path.join(dir,file))];
++ assert.deepEqual(derived,V45_REFS);
++});
+diff -ruN baseline-untouched/dist/slice2-nilf.test.cjs source/dist/slice2-nilf.test.cjs
+--- baseline-untouched/dist/slice2-nilf.test.cjs	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/slice2-nilf.test.cjs	2026-11-17 00:05:02.397217011 +0000
+@@ -0,0 +1,320 @@
++'use strict';
++// v45 Slice 2: The Nilfgaardian Connection (velen.nilf) on the White Orchard template, with progress ownership
++// handed over to the canonical regional record. Covers the handover, completion preservation, the conditional
++// inn fight, untouched pyres/mercy ownership, the Slice 1 guard, guarded rollback and the static wiring seam.
++const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
++const m=require('./velen-migration.js'),data=require('./velen-nilf-objectives.js'),h=require('./velen-nilf-progress.js');
++const LEGACY='phoenix.velen.arrival.v1',CANON='phoenix.region.velen.v1',Q='velen.nilf',e=h.engine,O=id=>Q+':'+id;
++function store(init={},{failWrites=false,failReads=false}={}){const map=new Map(Object.entries(init));return {map,getItem:k=>{if(failReads)throw Error('denied');return map.has(k)?map.get(k):null;},setItem:(k,v)=>{if(failWrites)throw Error('quota');map.set(k,String(v));},removeItem:k=>{map.delete(k);},snapshot:()=>Object.fromEntries(map)};}
++const canon=s=>JSON.parse(s.getItem(CANON));
++const legacyText=JSON.stringify({version:1,selected:'pyres',lastHub:'mercy',complete:{nilf:true,pyres:true,mercy:false},stage:{nilf:4,pyres:3,mercy:2},choices:{mercy:'left'},last:{id:'mercy'}});
++const act=(p,id,value=true,extra={})=>h.plan(p,{kind:'objective',id:O(id),value,...extra},{catchup:true,choices:extra.choices||{}});
++const marks=p=>Object.keys(p.objectives).map(k=>k.split(':')[1]).sort().join(',');
++
++// --- Objectives: sourced journal objectives only -------------------------------------------
++test('objectives are the sourced journal objectives with https sources; reading the notes stays in the final search',()=>{
++ const ids=Object.keys(data.objectiveIndex);
++ assert.deepEqual(ids,['travel','inn','ask','fight','finish','look','survivor','find','search'].map(O));
++ for(const o of Object.values(data.objectiveIndex)){assert.match(o.source||data.source,/^https:\/\//);assert.ok(o.label.length>5);}
++ assert.match(data.routeSource,/^https:\/\/witcher\.fandom\.com\/wiki\/The_Nilfgaardian_Connection/);assert.equal(data.choices.inn.routeSource,data.routeSource);
++ assert.equal(data.source,'https://www.witcher.tools/quests/the-nilfgaardian-connection');
++ assert.match(data.objectiveIndex[O('search')].note,/notes/i);
++ assert.ok(!ids.some(id=>/read|note/i.test(id)),'reading the notes is not a separate objective');
++ assert.deepEqual(data.choices.inn.options.map(o=>o[0]),['peace','fight','direct']);
++});
++test('conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective',()=>{
++ const p0=e.init();assert.equal(e.counts(Q,p0).total,8);
++ const fight=e.init({schema:1,objectives:{},choices:{inn:'fight'}});assert.equal(e.counts(Q,fight).total,9);
++ assert.equal(e.closed(data.objectiveIndex[O('fight')],fight),false);
++ const peace=e.init({schema:1,objectives:{},choices:{inn:'peace'}});assert.equal(e.counts(Q,peace).total,8);
++ assert.equal(e.closed(data.objectiveIndex[O('fight')],peace),true);
++ const plan=act(p0,'search');assert.deepEqual(plan.missingChoices,['inn'],'catching up past the inn asks for the outcome instead of guessing');
++ const viaFight=act(p0,'search',true,{choices:{inn:'fight'}});assert.equal(viaFight.progress.objectives[O('fight')],'done');assert.equal(e.done(Q,viaFight.progress),true);
++ const viaPeace=act(p0,'search',true,{choices:{inn:'peace'}});assert.equal(viaPeace.progress.objectives[O('fight')],undefined);assert.equal(e.done(Q,viaPeace.progress),true);
++ const half=act(fight,'finish');assert.equal(half.progress.objectives[O('fight')],'done','finishing after a fight requires the fight');
++});
++
++// --- Handover --------------------------------------------------------------------------------
++test('fresh storage: handover creates a native canonical record that owns only velen.nilf',()=>{
++ const s=store();assert.equal(h.handover(s).status,'handed-over');const r=canon(s);
++ assert.equal(r.origin.kind,'canonical');assert.equal(r.migration,undefined);
++ assert.deepEqual(r.owners,{[Q]:CANON,'velen.pyres':LEGACY,'velen.mercy':LEGACY});
++ assert.deepEqual(r.activities[Q].objectives,{});assert.equal(r.activities[Q].complete,false);
++ assert.equal(r.handover.before,null);assert.equal(s.getItem(LEGACY),null,'never creates the legacy record');
++ assert.equal(h.handover(s).status,'already-handed-over');assert.equal(JSON.stringify(canon(s)),JSON.stringify(r),'idempotent');
++});
++test('imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown',()=>{
++ const s=store({[LEGACY]:legacyText});assert.equal(m.importFromStorage(s).status,'imported');const imported=s.getItem(CANON);
++ assert.equal(h.handover(s).status,'handed-over');const r=canon(s),a=r.activities[Q];
++ assert.equal(a.complete,true);assert.equal(a.legacyComplete,true);assert.deepEqual(a.objectives,{});assert.equal(r.choices.inn,undefined);
++ assert.equal(r.handover.importedComplete,true);assert.equal(r.handover.before,imported);
++ const l=h.load(s);assert.equal(l.owned,true);assert.equal(l.complete,true);assert.equal(l.legacyComplete,true);
++ assert.deepEqual(e.counts(Q,l.progress),{done:0,total:8,optionalDone:0,optionalTotal:0});assert.equal(e.status(Q,l.progress),'complete');
++ assert.equal(s.getItem(LEGACY),legacyText,'legacy record byte-identical');
++});
++test('an imported inn choice is carried over as the canonical choice',()=>{
++ const s=store({[LEGACY]:JSON.stringify({version:1,complete:{nilf:false},stage:{nilf:3},choices:{inn:'fight'}})});m.importFromStorage(s);
++ h.handover(s);const l=h.load(s);assert.equal(l.progress.choices.inn,'fight');assert.equal(e.counts(Q,l.progress).total,9);assert.equal(l.complete,false);
++});
++test('pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched',()=>{
++ const s=store({[LEGACY]:legacyText});m.importFromStorage(s);const before=canon(s);h.handover(s);const after=canon(s);
++ for(const id of ['velen.pyres','velen.mercy'])assert.deepEqual(after.activities[id],before.activities[id]);
++ assert.equal(after.owners['velen.pyres'],LEGACY);assert.equal(after.owners['velen.mercy'],LEGACY);
++ const l=h.load(s);let p=act(l.progress,'travel').progress;assert.equal(h.commit(s,p).status,'saved');
++ const c=canon(s);for(const id of ['velen.pyres','velen.mercy'])assert.deepEqual(c.activities[id],before.activities[id]);
++ assert.deepEqual(c.choices.mercy,before.choices.mercy);assert.equal(s.getItem(LEGACY),legacyText);
++});
++test('Slice 1 guard: after the handover, import and migration rollback keep the canonical record',()=>{
++ const s=store({[LEGACY]:legacyText});m.importFromStorage(s);h.handover(s);const snap=s.snapshot();
++ assert.equal(m.importFromStorage(s).status,'canonical-kept');assert.deepEqual(s.snapshot(),snap);
++ const rb=m.rollback(s);assert.equal(rb.removed,false);assert.deepEqual(s.snapshot(),snap);
++ // A later legacy edit (e.g. pyres completed in the legacy hub) never refreshes over the handed-over record.
++ s.setItem(LEGACY,JSON.stringify({...JSON.parse(legacyText),complete:{nilf:false,pyres:true,mercy:true}}));const c=s.getItem(CANON);
++ m.importFromStorage(s);assert.equal(s.getItem(CANON),c);
++});
++test('handover never overwrites newer, unreadable or unavailable storage',()=>{
++ for(const text of ['{"schema":2,"activities":{}}','not json','[]']){const s=store({[CANON]:text}),snap=s.snapshot();assert.notEqual(h.handover(s).status,'handed-over');assert.deepEqual(s.snapshot(),snap);assert.equal(h.load(s).owned,false);}
++ assert.equal(h.handover(store({},{failReads:true})).status,'storage-unavailable');
++ const w=store({},{failWrites:true});assert.notEqual(h.handover(w).status,'handed-over');assert.equal(w.map.size,0);
++});
++test('an existing native canonical record keeps its other content through the handover',()=>{
++ const native={schema:1,region:'velen',origin:{kind:'canonical'},activities:{'velen.other':{id:'velen.other',x:1}},choices:{other:{value:1}},ignored:['a'],extra:{keep:true}};
++ const s=store({[CANON]:JSON.stringify(native)});h.handover(s);const r=canon(s);
++ assert.deepEqual(r.activities['velen.other'],native.activities['velen.other']);assert.deepEqual(r.choices.other,native.choices.other);assert.deepEqual(r.extra,{keep:true});assert.deepEqual(r.ignored,['a']);
++});
++
++// --- Progress writes ------------------------------------------------------------------------
++test('commit records objectives and the inn outcome in canonical; one Undo restores the prior state',()=>{
++ const s=store();h.handover(s);let l=h.load(s);
++ const p=act(l.progress,'finish',true,{choices:{inn:'fight'}}).progress;assert.equal(h.commit(s,p).status,'saved');
++ const r=canon(s);assert.equal(r.activities[Q].objectives[O('fight')],'done');assert.deepEqual(r.choices.inn,{activity:Q,value:'fight',source:data.source});
++ l=h.load(s);assert.deepEqual(e.counts(Q,l.progress),{done:5,total:9,optionalDone:0,optionalTotal:0});assert.equal(l.undo,true);
++ assert.equal(h.undo(s).status,'saved');l=h.load(s);assert.deepEqual(l.progress.objectives,{});assert.equal(canon(s).choices.inn,undefined);
++ assert.equal(h.undo(s).status,'nothing-to-undo');
++});
++test('legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it',()=>{
++ const s=store({[LEGACY]:legacyText});m.importFromStorage(s);h.handover(s);let l=h.load(s);
++ h.commit(s,act(l.progress,'travel').progress);l=h.load(s);assert.equal(l.complete,true);assert.equal(l.legacyComplete,true);
++ const rm=e.plan(l.progress,{},{kind:'quest',quest:Q,value:false},{});h.commit(s,rm.progress);l=h.load(s);
++ assert.equal(l.complete,false);assert.equal(l.legacyComplete,false);assert.equal(canon(s).activities[Q].complete,false);
++ assert.equal(s.getItem(LEGACY),legacyText,'the legacy record is never rewritten by canonical progress');
++});
++test('unknown objective keys written by another writer are preserved on commit',()=>{
++ const s=store();h.handover(s);const r=canon(s);r.activities[Q].objectives['velen.nilf:future']='done';s.setItem(CANON,JSON.stringify(r));
++ h.commit(s,act(h.load(s).progress,'travel').progress);assert.equal(canon(s).activities[Q].objectives['velen.nilf:future'],'done');
++});
++
++// --- Guarded rollback -----------------------------------------------------------------------
++test('rollbackHandover restores the exact pre-handover storage only while the record is unchanged',()=>{
++ const s=store({[LEGACY]:legacyText});m.importFromStorage(s);const pre=s.snapshot();h.handover(s);
++ assert.deepEqual(h.rollbackHandover(s),{status:'restored',restored:true});assert.deepEqual(s.snapshot(),pre);
++ assert.equal(h.rollbackHandover(s).status,'not-handed-over');
++ const f=store();h.handover(f);assert.equal(h.rollbackHandover(f).status,'restored');assert.equal(f.getItem(CANON),null);assert.equal(h.rollbackHandover(f).status,'absent');
++ const t=store({[LEGACY]:legacyText});m.importFromStorage(t);h.handover(t);h.commit(t,act(h.load(t).progress,'travel').progress);const kept=t.snapshot();
++ assert.deepEqual(h.rollbackHandover(t),{status:'handover-edited',restored:false});assert.deepEqual(t.snapshot(),kept);
++ assert.equal(t.getItem(LEGACY),legacyText);
++ // After a restored rollback the Slice 1 migration guard and rollback apply again unchanged.
++ const u=store({[LEGACY]:legacyText});m.importFromStorage(u);h.handover(u);h.rollbackHandover(u);assert.equal(m.rollback(u).removed,true);assert.deepEqual(u.snapshot(),{[LEGACY]:legacyText});
++});
++
++// --- Static wiring seam ---------------------------------------------------------------------
++test('wiring seam: script order, app.js handover order and minimal velen-r18 delegation',()=>{
++ const html=fs.readFileSync('index.html','utf8'),order=['progression-engine.js','velen-migration.js','velen-nilf-objectives.js','velen-nilf-progress.js','velen-nilf-ui.js','velen-r18.js','app.js'].map(f=>html.indexOf('src="'+f));
++ assert.ok(order.every(i=>i>0));assert.deepEqual([...order].sort((a,b)=>a-b),order);
++ const app=fs.readFileSync('app.js','utf8'),imp=app.indexOf('PhoenixVelenMigration?.importFromStorage'),hand=app.indexOf('PhoenixVelenNilfProgress?.handover'),view=app.indexOf('createPhoenixVelen(');
++ assert.ok(imp>0&&hand>imp&&view>hand,'handover runs after the Slice 1 import and before the Velen view');
++ const r18=fs.readFileSync('velen-r18.js','utf8');
++ assert.ok(r18.includes('createPhoenixVelenNilfUI'));assert.ok(!r18.includes(CANON),'velen-r18.js never reads the canonical key itself');
++ assert.ok(!/data-stage-(select|prev|next)/.test(fs.readFileSync('velen-nilf-ui.js','utf8')),'Velen UI never uses WO stage hooks');
++ for(const hook of ['data-objective-check','data-objective-skip','data-quest-state','data-edit-choice','data-reconcile-legacy','data-undo-deck','data-story-update'])assert.ok(!fs.readFileSync('velen-nilf-ui.js','utf8').includes(hook+'"')&&!fs.readFileSync('velen-nilf-ui.js','utf8').includes(hook+'='),hook+' stays WO-only');
++ const css=fs.readFileSync('velen-view.css','utf8');assert.match(css,/#velen > \.scene-inner\.console-r16\{background:[^}]*velen-landscape-r18\.webp/);
++});
++// Portable: pinned sha256 of the accepted v45 files (commit a9d61c94), so this runs in any checkout without a
++// machine-specific baseline path. Optionally also byte-compares against PHOENIX_V45_BASELINE=<v45 dist dir>.
++const PROTECTED={
++  'progression-engine.js':'08a4f8c603f554b3cab32845667073dfb1cd74b99300310075fbcce947e78469',
++  'progression-data.js':'ebb676bb859ffebcdd68704d6feae0c5d4a0a1180a147af3f0698da6f4d7ad24',
++  'progression-ui.js':'ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0',
++  'quest-hubs.js':'e02e19ba98f528eb3ca46263542b3b1a1134011d69698e3ccde2b9d153831b6f',
++  'quest-pages.js':'43dd4397bbd463112b5512609d230b61658c79640a2d87cf71351e1d6df808cb',
++  'velen-migration.js':'0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7',
++  'regional-registry.js':'2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283',
++  'velen-data-r18.js':'4b292527a495da0d2bd0dea2bb69007423debfb48e1b12ff09551c3d7d438af2',
++  'velen-routing.js':'25224309ea4de7adebee80080359f54560b5139b0318fe7df05b1a087168c398',
++  'main-console.js':'a4dcff365e74f31dbf0529b1e353540beb896c20edae01c59121339ae430ad7b',
++  'console-r16.css':'737302d97dbd16cd664c8d1e3d2bfe39df8c0c12f673c861359ff1d5521c6960',
++  'visual-system.js':'9e37cbafe5823a3e38aed070606e3e46ab37b55ad01763250e279461cad69bb3',
++  'swipe-boxes.js':'7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8',
++  'medallion.js':'84a4684ac076352fe05d6a8aaa50b3eba35dbbdf2e8565d15b4a44c6fb6f723c',
++  'home-ui.js':'d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd',
++  'home-rebuild.css':'481357b1e0e9858d9c8b4a7343bd0fdb6e94d5445a6a4434863b146f29e6c347',
++  'guide-viewport.css':'b69476c2d4a74370cbe8e118232a65557941b489267d7bbd8ff61a76a76684b6',
++};
++// Slice 2 seam pin for the legacy Velen view. Updated deliberately at each authorized change:
++//   accepted v45 ............. 5908676ffe5f29503e1fc40cc867dc6eadfda63cbc2f96b404d51c31ce3c12be
++//   Slice 2 (freeze 1 + QA2) . ccaa703e32b8486fb5288aadc668592f537ce7a7efce2e0018d54acd595e4200
++//   QA3 save guard ........... a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898 (owner-authorized guard in save())
++const SEAM_PINS={'velen-r18.js':'a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898'};
++test('Slice 2 seam pin: velen-r18.js matches the reviewed QA3 bytes',()=>{
++ for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed QA3 seam; update SEAM_PINS deliberately');
++});
++test('protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)',()=>{
++ for(const [f,sum] of Object.entries(PROTECTED))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' differs from accepted v45');
++ const dir=process.env.PHOENIX_V45_BASELINE;
++ if(dir){assert.ok(fs.existsSync(dir),'PHOENIX_V45_BASELINE does not exist: '+dir);for(const f of Object.keys(PROTECTED))assert.ok(fs.readFileSync(f).equals(fs.readFileSync(require('node:path').join(dir,f))),f);}
++});
++
++// --- QA2 correction 1: no handover after a failed legacy import ------------------------------------
++test('unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover',()=>{
++ const broken='{"version":1,"complete":{"nilf":tru',s=store({[LEGACY]:broken});
++ assert.equal(m.importFromStorage(s).status,'legacy-unreadable');
++ assert.deepEqual(h.handover(s),{status:'legacy-not-imported'});
++ assert.deepEqual(s.snapshot(),{[LEGACY]:broken},'nothing written: the v45 fallback stays in charge');
++ assert.equal(h.load(s).owned,false);assert.equal(h.handover(s).status,'legacy-not-imported','stays refused on every load');
++ // Repair the legacy save (for example by the v45 view or the owner restoring a backup).
++ const repaired=JSON.stringify({version:1,complete:{nilf:true,pyres:false,mercy:false},stage:{nilf:4},choices:{inn:'peace'}});s.setItem(LEGACY,repaired);
++ assert.equal(m.importFromStorage(s).status,'imported','the repaired save is imported (ownership never moved)');
++ assert.equal(h.handover(s).status,'handed-over');
++ const l=h.load(s);assert.equal(l.owned,true);assert.equal(l.complete,true);assert.equal(l.legacyComplete,true);assert.equal(l.progress.choices.inn,'peace');assert.deepEqual(l.progress.objectives,{});
++ assert.equal(canon(s).handover.importedComplete,true);assert.equal(s.getItem(LEGACY),repaired);
++});
++test('a failed import write (quota) also blocks the handover; storage read failures never write',()=>{
++ const s=store({[LEGACY]:legacyText},{failWrites:true});assert.equal(m.importFromStorage(s).status,'save-unavailable');
++ assert.equal(h.handover(s).status,'legacy-not-imported');assert.equal(s.getItem(CANON),null);
++ const ok=store();assert.equal(h.handover(ok).status,'handed-over','fresh browsers with no legacy record are still handed over');
++});
++
++// --- QA2/QA3/QA4 correction 2: the direct-Heatherton route ---------------------------------------
++// QA3 evidence review: "Ask…", "Defeat…" and "Finish talking…" close (wiki "Unless you go straight to Heatherton" group).
++// QA4: the wiki's placement of "Go to the Inn at the Crossroads." does not establish its journal status on the bypass, so on
++// the direct route it is UNCONFIRMED: neither required nor marked. It stays required while unknown and on peace/fight.
++const DIRECT={choices:{inn:'direct'}},sumOf=s=>e.counts(Q,h.load(s).progress),BYPASSED=['ask','fight','finish'].map(O),UNCONFIRMED=[O('inn')];
++const both=(p,a,b,opts)=>{const r1=act(p,a,true,opts);return act(r1.progress,b,true,opts);};
++const quest=(p,value=true,choices={})=>h.plan(p,{kind:'quest',quest:Q,value},{catchup:true,choices});
++const withoutUndo=t=>{const c=JSON.parse(t);delete c.activities[Q].undo;return JSON.stringify(c);};
++test('direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded',()=>{
++ assert.equal(data.routeArchive,'https://web.archive.org/web/20260110001207/https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection');
++ assert.ok(data.routeCrossCheck.length>=2&&data.routeCrossCheck.every(u=>/^https:\/\//.test(u)));
++ assert.deepEqual(Object.values(data.objectiveIndex).filter(o=>o.route==='inn').map(o=>o.id),BYPASSED,'exactly the wiki conditional group');
++ for(const id of BYPASSED)assert.equal(data.objectiveIndex[id].routeSource,data.routeSource);
++ const inn=data.objectiveIndex[O('inn')];
++ assert.equal(inn.route,undefined,'Go to the Inn is not part of the bypassed group');assert.equal(inn.unconfirmedOn,'direct');assert.deepEqual(inn.branch,['inn',['peace','fight',undefined]]);assert.match(inn.routeNote,/unconfirmed/);
++});
++test('direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome',()=>{
++ const p0=e.init(),t=v=>e.counts(Q,e.init({schema:1,choices:v?{inn:v}:{}})).total;
++ assert.deepEqual([t(),t('peace'),t('fight'),t('direct')],[8,8,9,5],'unknown / peace / fight unchanged; direct = 5');
++ assert.deepEqual(act(p0,'search').missingChoices,['inn'],'catch-up still asks which path was taken');
++ const r=act(p0,'search',true,DIRECT);assert.equal(marks(r.progress),'find,look,search,survivor,travel','Go to the Inn is not marked by catch-up');
++ for(const id of [...BYPASSED,...UNCONFIRMED])assert.equal(e.closed(data.objectiveIndex[id],r.progress),true,id+' not required on the direct route');
++ assert.equal(e.done(Q,r.progress),true,'recording the final search (reading Hendrik’s notes) finishes the quest on the direct route');
++ const s=store();h.handover(s);assert.equal(h.commit(s,r.progress).status,'saved');
++ const c=canon(s),a=c.activities[Q];assert.equal(c.choices.inn,undefined,'no inn outcome is stored');assert.equal(a.route,'direct-heatherton');
++ assert.deepEqual(a.bypassed,BYPASSED,'skipped objectives are listed separately from completed ones');assert.deepEqual(a.unconfirmed,UNCONFIRMED,'unconfirmed objective listed separately');
++ for(const id of [...BYPASSED,...UNCONFIRMED])assert.equal(a.objectives[id],undefined,'skipped / unconfirmed is never stored as done');
++ assert.equal(a.complete,true);assert.equal(a.confirmedComplete,undefined,'completion here comes from recorded objectives, not a confirmation');assert.deepEqual(sumOf(s),{done:5,total:5,optionalDone:0,optionalTotal:0});
++ assert.equal(act(h.load(s).progress,'inn').progress.objectives[O('inn')],undefined,'Go to the Inn cannot be marked on the direct route');
++ assert.equal(h.load(s).progress.choices.inn,'direct','the route maps back in memory only');
++ const look=act(p0,'look',true,DIRECT);assert.equal(marks(look.progress),'look,travel','"Look for Hendrik" on the direct route needs only Travel to Velen');
++});
++test('QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state',()=>{
++ // Route already recorded (Look for Hendrik on the direct route), 2/5 objectives recorded.
++ const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'look',true,DIRECT).progress);
++ const before=s.getItem(CANON),p=h.load(s).progress;
++ const r=quest(p);assert.equal(r.confirmedCompletion,true);assert.deepEqual(r.catchup,[]);assert.deepEqual(r.affected,[]);assert.deepEqual(r.missingChoices,[]);assert.deepEqual(r.completionLosses,[]);
++ assert.equal(h.commit(s,r.progress).status,'saved');
++ let c=canon(s),a=c.activities[Q];
++ assert.equal(a.complete,true);assert.equal(a.confirmedComplete,true);assert.equal(a.legacyComplete,false,'not confused with imported legacy completion');
++ assert.deepEqual(Object.keys(a.objectives).sort(),[O('look'),O('travel')],'no objective mark is filled');
++ assert.equal(a.objectives[O('inn')],undefined,'Go to the Inn stays unmarked');assert.deepEqual(a.unconfirmed,UNCONFIRMED);assert.equal(c.choices.inn,undefined,'no inn outcome');
++ const l=h.load(s);assert.equal(l.complete,true);assert.equal(l.confirmedComplete,true);assert.equal(l.legacyComplete,false);assert.deepEqual(e.counts(Q,l.progress),{done:2,total:5,optionalDone:0,optionalTotal:0},'objective count stays the recorded marks');
++ assert.equal(h.undo(s).status,'saved');assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(before),'Undo restores the exact prior record');
++ assert.equal(h.load(s).complete,false);assert.equal(canon(s).activities[Q].confirmedComplete,undefined);
++ // Route unknown: the dialog asks which path; choosing the direct route confirms without any mark.
++ const u=store();h.handover(u);const ub=u.getItem(CANON);
++ const ask=quest(h.load(u).progress);assert.deepEqual(ask.missingChoices,['inn']);
++ const ru=quest(h.load(u).progress,true,{inn:'direct'});assert.equal(ru.confirmedCompletion,true);h.commit(u,ru.progress);
++ c=canon(u);assert.deepEqual(c.activities[Q].objectives,{});assert.equal(c.activities[Q].route,'direct-heatherton');assert.equal(c.choices.inn,undefined);assert.equal(c.activities[Q].complete,true);assert.equal(c.activities[Q].confirmedComplete,true);
++ h.undo(u);assert.equal(withoutUndo(u.getItem(CANON)),withoutUndo(ub));
++});
++test('QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both',()=>{
++ const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'find',true,DIRECT).progress);h.commit(s,quest(h.load(s).progress).progress);
++ const confirmed=s.getItem(CANON);
++ let r=quest(h.load(s).progress,false);assert.deepEqual(r.affected,[],'no objective mark removed');assert.deepEqual(r.completionLosses,[Q]);h.commit(s,r.progress);
++ let c=canon(s);assert.equal(c.activities[Q].complete,false);assert.equal(c.activities[Q].confirmedComplete,undefined);assert.equal(marks(h.load(s).progress),'find,look,survivor,travel');
++ h.undo(s);assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(confirmed));
++ // direct -> peace: the confirmation belonged to the direct route, so it is dropped (no legacy completion is created).
++ r=h.plan(h.load(s).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:false,choices:{inn:'peace'}});assert.ok(r.completionLosses.includes(Q));h.commit(s,r.progress);
++ c=canon(s);assert.equal(c.activities[Q].complete,false);assert.equal(c.activities[Q].confirmedComplete,undefined);assert.equal(c.activities[Q].legacyComplete,false);assert.equal(c.choices.inn.value,'peace');
++ h.undo(s);assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(confirmed));
++ // Recording more objectives keeps the confirmation; 5/5 then completes on its own as well.
++ h.commit(s,act(h.load(s).progress,'search',true).progress);c=canon(s);assert.equal(c.activities[Q].confirmedComplete,true);assert.equal(c.activities[Q].complete,true);assert.equal(c.activities[Q].objectives[O('inn')],undefined);
++});
++test('every supported path completes, and Undo restores the exact prior state',()=>{
++ const expect={peace:'ask,find,finish,inn,look,search,survivor,travel',fight:'ask,fight,find,finish,inn,look,search,survivor,travel',direct:'find,look,search,survivor,travel'};
++ for(const [path,want] of Object.entries(expect)){
++  const s=store();h.handover(s);const before=s.getItem(CANON);
++  h.commit(s,both(h.load(s).progress,'search','inn',{choices:{inn:path}}).progress);
++  const l=h.load(s);assert.equal(marks(l.progress),want,path);assert.equal(l.complete,true,path);assert.equal(l.progress.choices.inn,path);
++  assert.equal(h.undo(s).status,'saved');const back=canon(s);
++  assert.deepEqual(back.activities[Q].objectives,{});assert.equal(back.choices.inn,undefined);assert.equal(back.activities[Q].route,undefined);assert.equal(back.activities[Q].bypassed,undefined);assert.equal(back.activities[Q].unconfirmed,undefined);assert.equal(back.activities[Q].complete,false,path);
++  assert.deepEqual(back.choices,JSON.parse(before).choices,path);
++ }
++});
++test('corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction',()=>{
++ const s=store();h.handover(s);
++ h.commit(s,act(h.load(s).progress,'search',true,{choices:{inn:'fight'}}).progress);
++ // fight -> direct: ask, fight, finish and (QA4, now not required) Go to the Inn lose their marks; shown in the dialog; Undo restores them.
++ let r=h.plan(h.load(s).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:true,choices:{inn:'direct'}});
++ assert.deepEqual(r.affected.map(x=>x.split(':')[1]).sort(),['ask','fight','finish','inn']);h.commit(s,r.progress);
++ let c=canon(s);assert.equal(c.choices.inn,undefined);assert.equal(c.activities[Q].route,'direct-heatherton');assert.deepEqual(c.activities[Q].bypassed,BYPASSED);assert.deepEqual(c.activities[Q].unconfirmed,UNCONFIRMED);
++ assert.equal(marks(h.load(s).progress),'find,look,search,survivor,travel');assert.equal(h.load(s).complete,true);
++ assert.equal(h.undo(s).status,'saved');c=canon(s);assert.equal(c.choices.inn.value,'fight');assert.equal(c.activities[Q].route,undefined);assert.equal(c.activities[Q].bypassed,undefined);assert.equal(c.activities[Q].unconfirmed,undefined);assert.equal(marks(h.load(s).progress),'ask,fight,find,finish,inn,look,search,survivor,travel');
++ // fight -> peace: only the fight mark is removed.
++ r=h.plan(h.load(s).progress,{kind:'objective',id:O('ask'),value:true,editChoice:true},{catchup:true,choices:{inn:'peace'}});
++ assert.deepEqual(r.affected,[O('fight')]);h.commit(s,r.progress);assert.equal(h.load(s).complete,true);assert.equal(e.counts(Q,h.load(s).progress).total,8);
++ // direct -> peace: Go to the Inn, Ask and Finish become required again and are NOT auto-completed by the correction.
++ const d=store();h.handover(d);h.commit(d,act(h.load(d).progress,'search',true,DIRECT).progress);
++ r=h.plan(h.load(d).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:false,choices:{inn:'peace'}});h.commit(d,r.progress);
++ const l=h.load(d);assert.equal(l.complete,false,'switching away from the direct route does not invent the inn conversation');
++ assert.deepEqual(e.counts(Q,l.progress),{done:5,total:8,optionalDone:0,optionalTotal:0});assert.equal(canon(d).activities[Q].route,undefined);assert.equal(canon(d).activities[Q].bypassed,undefined);assert.equal(canon(d).choices.inn.value,'peace');
++ assert.equal(h.undo(d).status,'saved');assert.equal(canon(d).activities[Q].route,'direct-heatherton');assert.deepEqual(sumOf(d),{done:5,total:5,optionalDone:0,optionalTotal:0});
++});
++// QA4: peace, fight and unknown routes are unchanged. A fixed matrix of plans/commits/undos on those routes is replayed
++// in a fresh process and hashed; the hash was generated from the QA3 freeze (prefix-qa4) and must match byte for byte.
++// Set PHOENIX_SLICE2_QA3_DIST=<prefix-qa4/dist> to also replay against that tree directly.
++const TRACE=String.raw`
++const dir=process.argv[1];globalThis.window=globalThis;
++const h=require(dir+'/velen-nilf-progress.js'),m=require(dir+'/velen-migration.js'),Q='velen.nilf',O=x=>Q+':'+x,out=[];
++const store=init=>{const map=new Map(Object.entries(init||{}));return {getItem:k=>map.has(k)?map.get(k):null,setItem:(k,v)=>map.set(k,String(v)),removeItem:k=>map.delete(k)};};
++const steps=route=>{const c=route?{inn:route}:{};return [['objective','travel',true,{}],['objective','inn',true,{}],['objective','search',true,c],['quest',null,true,c],['quest',null,false,{}],['undo'],['quest',null,true,c],['objective','look',false,{}],['undo'],['objective','ask',true,c],['objective','finish',false,{}],['quest',null,true,{}]];};
++const run=(label,s,route)=>{for(const st of steps(route)){
++ if(st[0]==='undo'){out.push([label,'undo',h.undo(s).status,s.getItem(h.KEY)]);continue;}
++ const action=st[0]==='quest'?{kind:'quest',quest:Q,value:st[2]}:{kind:'objective',id:O(st[1]),value:st[2]};
++ const r=h.plan(h.load(s).progress,action,{catchup:true,choices:st[3]});
++ const plan={catchup:r.catchup,affected:r.affected,missingChoices:r.missingChoices,completionLosses:r.completionLosses,progress:r.progress,confirmedCompletion:r.confirmedCompletion};
++ out.push([label,JSON.stringify(action),JSON.stringify(plan)]);
++ if(!r.missingChoices.length)out.push([label,'commit',h.commit(s,r.progress).status,s.getItem(h.KEY)]);
++}};
++for(const route of [undefined,'peace','fight']){const s=store();h.handover(s);run('fresh:'+route,s,route);}
++for(const route of [undefined,'peace','fight']){const s=store({[h.LEGACY_KEY]:JSON.stringify({version:1,complete:{nilf:true},stage:{nilf:4},choices:route?{inn:route}:{}})});m.importFromStorage(s);h.handover(s);out.push(['legacy:'+route,'handover',s.getItem(h.KEY)]);run('legacy:'+route,s,route);}
++process.stdout.write(require('crypto').createHash('sha256').update(JSON.stringify(out)).digest('hex')+' '+out.length);
++`;
++const OTHER_ROUTES_QA3='a2f98352982c66453ace120c68a5e2776999e08282b72bb57917fa7744387204 125';
++const trace=dir=>require('node:child_process').execFileSync(process.execPath,['-e',TRACE,dir],{encoding:'utf8'}).trim();
++test('QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze',()=>{
++ assert.equal(trace(__dirname),OTHER_ROUTES_QA3);
++ const prior=process.env.PHOENIX_SLICE2_QA3_DIST;if(prior){assert.ok(fs.existsSync(prior+'/velen-nilf-progress.js'),'PHOENIX_SLICE2_QA3_DIST is set but missing: '+prior);assert.equal(trace(require('node:path').resolve(prior)),OTHER_ROUTES_QA3);}
++});
++test('unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports',()=>{
++ for(const path of ['peace','fight']){
++  const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'search',true,{choices:{inn:path}}).progress);
++  const r=act(h.load(s).progress,'look',false);assert.deepEqual(r.missingChoices,[]);assert.equal(r.progress.choices.inn,path);
++  h.commit(s,r.progress);assert.equal(canon(s).choices.inn.value,path);assert.equal(marks(h.load(s).progress),path==='fight'?'ask,fight,finish,inn,travel':'ask,finish,inn,travel');
++ }
++ // On the direct route "Look for Hendrik" carries the route, so unchecking it clears the route (nothing else supports it).
++ const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'search',true,DIRECT).progress);
++ const r=act(h.load(s).progress,'look',false);h.commit(s,r.progress);assert.equal(canon(s).activities[Q].route,undefined);assert.equal(marks(h.load(s).progress),'travel');
++});
++test('Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome',()=>{
++ for(const v of ['peace','fight']){const s=store({[LEGACY]:JSON.stringify({version:1,complete:{nilf:false},stage:{nilf:1},choices:{inn:v}})});m.importFromStorage(s);h.handover(s);assert.equal(canon(s).choices.inn.value,v);assert.equal(canon(s).activities[Q].route,undefined);}
++});
+diff -ruN baseline-untouched/dist/slice2-save-guard.test.cjs source/dist/slice2-save-guard.test.cjs
+--- baseline-untouched/dist/slice2-save-guard.test.cjs	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/slice2-save-guard.test.cjs	2026-11-17 00:05:02.397217011 +0000
+@@ -0,0 +1,78 @@
++'use strict';
++// v45 Slice 2 QA3: legacy Velen save guard. Executes the real load + save code of velen-r18.js (extracted verbatim and
++// run in a VM with the real velen-data-r18.js initial/apply), together with the real Slice 1 import and Slice 2 handover,
++// in app.js order: import -> handover -> Velen view load -> render/navigation/interaction saves.
++const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++const velen=require('./velen-data-r18.js'),m=require('./velen-migration.js'),h=require('./velen-nilf-progress.js');
++const LEGACY='phoenix.velen.arrival.v1',CANON='phoenix.region.velen.v1';
++function store(init={}){const map=new Map(Object.entries(init));return {map,getItem:k=>map.has(k)?map.get(k):null,setItem:(k,v)=>{map.set(k,String(v));},removeItem:k=>{map.delete(k);},snapshot:()=>Object.fromEntries(map)};}
++// Extract the legacy loader (from `let raw` up to `const state=`) and save() from a velen-r18.js source text.
++function writerFrom(src){
++ const load=src.slice(src.indexOf("let raw={};"),src.indexOf("const state=initial(raw)"));
++ const save=src.slice(src.indexOf("function save(){"),src.indexOf("function picture("));
++ assert.ok(load.length>20&&save.length>20,'loader/save not found');
++ return (storage)=>{
++  const ctx={localStorage:storage,key:LEGACY,initial:velen.initial,apply:velen.apply,status:{textContent:''},JSON};vm.createContext(ctx);
++  return vm.runInContext(load+';const state=initial(raw);'+save+';({state,save,status,guarded:typeof legacyUnreadable!=="undefined"&&legacyUnreadable})',ctx);
++ };
++}
++const current=writerFrom(fs.readFileSync('velen-r18.js','utf8'));
++// The accepted v45 velen-r18.js (before any Slice 2 change). Its loader/save region is pinned below by sha256 so the
++// comparison is portable; PHOENIX_V45_BASELINE (a v45 dist dir) can supply the full file.
++const V45_LOAD="let raw={};try{raw=JSON.parse(localStorage.getItem(key)||'{}');}catch{}";
++const V45_SAVE="function save(){try{localStorage.setItem(key,JSON.stringify(state));status.textContent='Your Velen progress saves in this browser.';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}";
++const v45=writerFrom(V45_LOAD+'const state=initial(raw)'+V45_SAVE+'function picture(');
++// One page visit as the browser runs it: Slice 1 import, Slice 2 handover, Velen view load, then UI saves.
++function visit(storage,writer=current,interact=()=>{}){
++ const imp=m.importFromStorage(storage).status,hand=h.handover(storage).status,view=writer(storage);
++ view.save();// initial render
++ interact(view);return {imp,hand,view};
++}
++const browse=v=>{for(const [id,stage] of [['nilf',3],['pyres',2],['mercy',2],['nilf',4]]){velen.apply(v.state,{kind:'view',id,stage});v.save();}
++ velen.apply(v.state,{kind:'complete',id:'pyres',value:true});v.save();velen.apply(v.state,{kind:'choice',key:'mercy',value:'freed'});v.save();velen.apply(v.state,{kind:'undo'});v.save();};
++
++test('the v45 loader/save excerpt used for byte comparison is the accepted v45 code',()=>{
++ const base=process.env.PHOENIX_V45_BASELINE;
++ if(base){const src=fs.readFileSync(path.join(base,'velen-r18.js'),'utf8');assert.ok(src.includes(V45_LOAD)&&src.includes(V45_SAVE));}
++ const src=fs.readFileSync('velen-r18.js','utf8');
++ assert.ok(src.includes(V45_LOAD),'the v45 loader line is kept verbatim');
++ assert.ok(src.includes(V45_SAVE.replace("function save(){","function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */")),'save() is v45 save() behind a single guard clause');
++ assert.equal((src.match(/localStorage\.setItem\(key,/g)||[]).length,1,'save() is the only writer of the legacy key');
++});
++for(const [name,bytes] of [['invalid JSON','{"version":1,"complete":{"nilf":tru'],['JSON array','[]'],['JSON null','null'],['JSON number','42'],['JSON string','"hello"']]){
++ test(`unreadable legacy (${name}): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover`,()=>{
++  const s=store({[LEGACY]:bytes});
++  for(let reload=0;reload<2;reload++){
++   const r=visit(s,current,browse);
++   assert.equal(r.imp,'legacy-unreadable');assert.equal(r.hand,'legacy-not-imported');assert.equal(r.view.guarded,true);
++   assert.equal(s.getItem(LEGACY),bytes,'original unreadable bytes survive visit '+(reload+1));
++   assert.equal(s.getItem(CANON),null,'no canonical record is created');
++   assert.match(r.view.status.textContent,/could not be read/);
++   assert.equal(r.view.state.complete.pyres,true,'the visit still worked in memory');assert.equal(r.view.state.choices.mercy,undefined,'in-memory undo applied');
++  }
++  // The pre-guard v45 writer would have replaced the bytes on the first visit (the defect being fixed).
++  const old=store({[LEGACY]:bytes});visit(old,v45);assert.notEqual(old.getItem(LEGACY),bytes);
++  // Repair (e.g. the owner restores a backup), then the next visit imports and hands over.
++  const repaired=JSON.stringify({version:1,selected:'pyres',lastHub:'pyres',complete:{nilf:true,pyres:true,mercy:false},stage:{nilf:4,pyres:2,mercy:1},choices:{inn:'fight',mercy:'left'},last:{id:'pyres'},undo:null});
++  s.setItem(LEGACY,repaired);
++  const r=visit(s);assert.equal(r.imp,'imported');assert.equal(r.hand,'handed-over');assert.equal(r.view.guarded,false);
++  const c=JSON.parse(s.getItem(CANON)),l=h.load(s);
++  assert.equal(l.owned,true);assert.equal(l.complete,true);assert.equal(l.legacyComplete,true);assert.deepEqual(l.progress.objectives,{});assert.equal(l.progress.choices.inn,'fight');
++  assert.equal(c.activities['velen.pyres'].complete,true);assert.equal(c.owners['velen.pyres'],LEGACY);
++  assert.equal(s.getItem(LEGACY),repaired,'the repaired record is saved byte-identically by the unchanged writer');
++ });
++}
++test('valid, partial and absent legacy records: every write is byte-identical to the v45 writer',()=>{
++ const cases=[null,'{}','{"version":1}',JSON.stringify({version:1,selected:'mercy',lastHub:'pyres',complete:{nilf:true,pyres:false,mercy:true},stage:{nilf:4,pyres:2,mercy:1},choices:{inn:'peace',mercy:'left'},last:{id:'pyres'},undo:null}),
++  JSON.stringify({version:1,complete:{pyres:'yes'},stage:{pyres:99},choices:{mercy:'bogus'},extra:1}),JSON.stringify({complete:{nilf:false},choices:{inn:'fight'}})];
++ for(const text of cases){
++  const a=store(text==null?{}:{[LEGACY]:text}),b=store(text==null?{}:{[LEGACY]:text});
++  const va=current(a),vb=v45(b);assert.equal(va.guarded,false);
++  const steps=[v=>v.save(),v=>{velen.apply(v.state,{kind:'view',id:'pyres',stage:2});v.save();},v=>{velen.apply(v.state,{kind:'complete',id:'pyres',value:true});v.save();},
++   v=>{velen.apply(v.state,{kind:'choice',key:'mercy',value:'freed'});v.save();},v=>{velen.apply(v.state,{kind:'complete',id:'mercy',value:true});v.save();},v=>{velen.apply(v.state,{kind:'undo'});v.save();},v=>{velen.apply(v.state,{kind:'view',id:'mercy',stage:3});v.save();}];
++  for(const step of steps){step(va);step(vb);assert.equal(a.getItem(LEGACY),b.getItem(LEGACY),'byte-identical write for '+text);assert.equal(va.status.textContent,vb.status.textContent);}
++ }
++});
++test('a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept',()=>{
++ const s=store({[CANON]:'{"schema":2}',[LEGACY]:'{bad'});const r=visit(s,current,browse);assert.equal(r.hand,'newer-canonical');assert.equal(s.getItem(LEGACY),'{bad');assert.equal(s.getItem(CANON),'{"schema":2}');
++});
+diff -ruN baseline-untouched/dist/velen-nilf-objectives.js source/dist/velen-nilf-objectives.js
+--- baseline-untouched/dist/velen-nilf-objectives.js	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/velen-nilf-objectives.js	2026-11-17 00:05:02.397217011 +0000
+@@ -0,0 +1,41 @@
++(function(root){
++'use strict';
++// v45 Slice 2: journal objectives for The Nilfgaardian Connection (velen.nilf), shaped for the shared
++// progression engine (createPhoenixProgress). Data only. Labels are the in-game journal objectives as
++// listed by the cited source; route order and the conditional fight follow the same source's steps.
++// No objective is invented: the wild-dog fight described by GameBanshee has no journal line and is not listed.
++// Reading Hendrik's notes stays inside the final search objective.
++const Q='velen.nilf',SOURCE='https://www.witcher.tools/quests/the-nilfgaardian-connection';
++// QA2/QA3/QA4: the direct-Heatherton route. Evidence (checked 2026-11-16; see SLICE2-REVIEW.md §9.2):
++// - Witcher Wiki objective list (live page blocks automated fetches; read via search excerpts and the full Wayback
++//   snapshot 20260110001207): "Travel to Velen." and "Go to the Inn
++//   at the Crossroads." are listed for every path; "Ask about the agent…", "Defeat the baron’s men." (if hostile) and
++//   "Finish talking to the innkeep…" are grouped under "Unless you go straight to Heatherton".
++// - witcher.tools, Game8, GameBanshee and Gamer Guides list the objectives in order and do not describe the bypass; none
++//   contradicts the wiki. No second source states which objectives close.
++// So: Ask / Defeat / Finish close on the direct route (wiki). QA4: the wiki's placement of "Go to the Inn" does not establish its
++// journal status on the bypass, so on the direct route it is UNCONFIRMED: neither required nor marked (`unconfirmedOn`).
++// It stays required while the route is unknown and on the peace/fight routes (unchanged).
++const ROUTE_SOURCE='https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection#Objectives',
++ ROUTE_ARCHIVE='https://web.archive.org/web/20260110001207/https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection',
++ ROUTE_CROSSCHECK=['https://www.witcher.tools/quests/the-nilfgaardian-connection','https://game8.co/games/Witcher3/archives/275617','https://www.gamebanshee.com/thewitcher3/walkthrough/thenilfgaardianconnection.php','https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/velen/the-niflgaardian-connection'];
++// Inn-route objectives stay required while the route is still unknown (`undefined`), and close once "direct" is recorded.
++const VIA_INN=['inn',['peace','fight',undefined]];
++const rows=[
++ ['travel','Travel to Velen.','Arrival',1,[]],
++ ['inn','Go to the Inn at the Crossroads.','Road',2,['travel'],{branch:VIA_INN,unconfirmedOn:'direct',routeNote:'Required on the inn routes. On the direct route its journal status is unconfirmed: the wiki lists it outside the “Unless you go straight to Heatherton” group but does not say what happens to it, so it is neither required nor marked.',routeSource:ROUTE_SOURCE}],
++ ['ask','Ask about the agent called Hendrik at the Inn at the Crossroads.','The Inn',3,['inn'],{choice:'inn',branch:VIA_INN,route:'inn',routeSource:ROUTE_SOURCE}],
++ ['fight','Defeat the baron’s men.','The Inn',3,['ask'],{branch:['inn','fight'],route:'inn',routeSource:ROUTE_SOURCE}],
++ ['finish','Finish talking to the innkeep about the agent called Hendrik.','The Inn',3,['ask'],{conditionalRequires:{inn:{fight:[Q+':fight']}},branch:VIA_INN,route:'inn',routeSource:ROUTE_SOURCE}],
++ ['look','Look for the agent called Hendrik in the village of Heatherton.','Heatherton',4,[],{choice:'inn',conditionalRequires:{inn:{peace:[Q+':finish'],fight:[Q+':finish'],direct:[Q+':travel']}},routeSource:ROUTE_SOURCE}],
++ ['survivor','Talk to the survivor and learn what happened in the village.','Heatherton',4,['look']],
++ ['find','Find the agent called Hendrik.','Heatherton',4,['survivor']],
++ ['search','Search the agent’s hut using your Witcher Senses.','Heatherton',4,['find'],{note:'Includes finding the hidden ledger and reading Hendrik’s notes, which finishes the quest.'}]
++];
++const objectives=rows.map(([key,label,chapter,stage,requires,extra={}])=>({id:Q+':'+key,label,chapter,stage,requires:requires.map(r=>Q+':'+r),quest:Q,region:'velen',source:SOURCE,...extra}));
++const quests={[Q]:{region:'velen',level:5,source:SOURCE,objectives}};
++const objectiveIndex=Object.fromEntries(objectives.map(o=>[o.id,o]));
++const choices={inn:{label:'What happened at the Inn at the Crossroads?',options:[['peace','Settled peacefully with the baron’s men'],['fight','Fought the baron’s men'],['direct','Went straight to Heatherton — no inn conversation']],outcome:'Fighting the baron’s men adds the journal objective “Defeat the baron’s men.” The Baron remembers it later at Crow’s Perch. Going straight to Heatherton skips the inn conversation: “Ask about…”, “Defeat…” and “Finish talking…” are closed, not completed, and no inn outcome is recorded. The journal status of “Go to the Inn at the Crossroads.” is unconfirmed on that route, so it is neither required nor marked. None of these blocks the main story.',source:SOURCE,routeSource:ROUTE_SOURCE,routeArchive:ROUTE_ARCHIVE,routeValue:'direct'}};
++const api={quest:Q,source:SOURCE,routeSource:ROUTE_SOURCE,routeArchive:ROUTE_ARCHIVE,routeCrossCheck:ROUTE_CROSSCHECK,quests,objectiveIndex,choices,milestones:{},riskQuests:[],regions:{velen:{entry:null}}};
++root.PHOENIX_VELEN_NILF_PROGRESS=api;if(typeof module!=='undefined')module.exports=api;
++})(typeof window!=='undefined'?window:globalThis);
+diff -ruN baseline-untouched/dist/velen-nilf-progress.js source/dist/velen-nilf-progress.js
+--- baseline-untouched/dist/velen-nilf-progress.js	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/velen-nilf-progress.js	2026-11-17 00:05:02.401217019 +0000
+@@ -0,0 +1,145 @@
++(function(root){
++'use strict';
++// v45 Slice 2: explicit progress-ownership handover of The Nilfgaardian Connection (velen.nilf) to the
++// canonical regional record phoenix.region.velen.v1.
++// - Owns only activities['velen.nilf'], choices.inn, owners and handover inside the canonical record.
++// - Never reads or writes the legacy record phoenix.velen.arrival.v1 for progress; velen.pyres and velen.mercy
++//   stay owned by that legacy record and their v45 hubs (`owners` says so explicitly).
++// - Imported whole-quest completion becomes the engine's `legacy` mark: the quest stays complete while its
++//   objectives remain unrecorded. No objective marks are invented and an unknown inn outcome stays unknown.
++// - The handover removes the Slice 1 migration seal, so the unchanged Slice 1 guard classifies the record as
++//   `canonical-kept`: later imports never overwrite it and migration rollback never removes it.
++// - The handover write carries its own seal; rollbackHandover restores the exact pre-handover storage only
++//   while the record is unchanged since the handover. Any later progress write preserves the record.
++const migration=root.PhoenixVelenMigration||(typeof require==='function'?require('./velen-migration.js'):null);
++const data=root.PHOENIX_VELEN_NILF_PROGRESS||(typeof require==='function'?require('./velen-nilf-objectives.js'):null);
++// Node tests only: progression-engine.js assigns to `window`, so alias it to the global object when absent.
++const engineFactory=root.createPhoenixProgress||(typeof require==='function'?((typeof window==='undefined'&&(globalThis.window=globalThis)),require('./progression-engine.js'),window.createPhoenixProgress):null);
++if(!migration||!data||!engineFactory)throw Error('velen-nilf-progress.js requires velen-migration.js, velen-nilf-objectives.js and progression-engine.js');
++const KEY=migration.CANONICAL_KEY,LEGACY_KEY=migration.LEGACY_KEY,Q=data.quest,WRITER='velen-nilf-handover@v45-slice2';
++const engine=engineFactory(data,{},[]);
++const plain=x=>!!x&&typeof x==='object'&&!Array.isArray(x);
++const clone=x=>JSON.parse(JSON.stringify(x));
++function parse(text){try{return {ok:true,value:JSON.parse(text)};}catch{return {ok:false};}}
++function read(storage){
++ let text;try{text=storage.getItem(KEY);}catch{return {status:'storage-unavailable'};}
++ if(text==null)return {status:'absent',text:null};
++ const c=parse(text);
++ if(!c.ok||!plain(c.value)||!Number.isInteger(c.value.schema)||c.value.schema<1)return {status:'canonical-unreadable',text};
++ if(c.value.schema>migration.SCHEMA)return {status:'newer-canonical',text};
++ return {status:'readable',text,value:c.value};
++}
++// Inn outcomes stored as choices.inn. The direct-Heatherton route is not an inn outcome: it is stored as the activity's
++// `route` and only mapped to the engine's inn-path value in memory (QA2 correction 2).
++const OUTCOMES=['peace','fight'],DIRECT=data.choices.inn.routeValue,ROUTE_DIRECT='direct-heatherton';
++const handedOver=v=>plain(v)&&plain(v.owners)&&v.owners[Q]===KEY&&plain(v.handover)&&plain(v.activities)&&plain(v.activities[Q]);
++function sealOf(record){const {seal,...rest}=record.handover;return migration.fingerprint({...record,handover:rest});}
++function handover(storage){
++ const r=read(storage);
++ if(r.status==='storage-unavailable'||r.status==='canonical-unreadable'||r.status==='newer-canonical')return {status:r.status};
++ if(r.value&&handedOver(r.value))return {status:'already-handed-over'};
++ // QA2 correction 1: with no canonical record, a legacy record that is still present means the Slice 1 import did not
++ // succeed (legacy-unreadable or save-unavailable: a readable legacy record is always imported first). Keep the v45
++ // fallback and write nothing, so a repaired legacy save can still be imported before ownership moves.
++ if(r.status==='absent'){let legacy;try{legacy=storage.getItem(LEGACY_KEY);}catch{return {status:'storage-unavailable'};}if(legacy!=null)return {status:'legacy-not-imported'};}
++ const base=r.value?clone(r.value):{schema:migration.SCHEMA,region:'velen',origin:{kind:'canonical'},activities:{},choices:{},ignored:[]};
++ delete base.migration;
++ const act=plain(base.activities?.[Q])?base.activities[Q]:{};
++ const imported=act.complete===true,choice=OUTCOMES.includes(base.choices?.inn?.value)?base.choices.inn.value:null;
++ base.activities={...(plain(base.activities)?base.activities:{}),[Q]:{...act,id:Q,legacy:'nilf',source:data.source,requires:[],objectives:plain(act.objectives)?{...act.objectives}:{},complete:imported,legacyComplete:act.legacyComplete===true||imported,failed:act.failed===true}};
++ base.choices=plain(base.choices)?base.choices:{};
++ base.owners={...(plain(base.owners)?base.owners:{}),[Q]:KEY,'velen.pyres':base.owners?.['velen.pyres']||LEGACY_KEY,'velen.mercy':base.owners?.['velen.mercy']||LEGACY_KEY};
++ base.handover={writer:WRITER,activity:Q,from:r.value?KEY+(r.value.origin?.kind==='legacy-import'?' (imported from '+LEGACY_KEY+')':''):null,importedComplete:imported,importedChoice:choice,before:r.text};
++ base.handover.seal=sealOf(base);
++ try{storage.setItem(KEY,JSON.stringify(base));}catch{return {status:'save-unavailable'};}
++ return {status:'handed-over',record:base};
++}
++// Shared-engine progress for velen.nilf from the canonical record. Known objective IDs only; unknown keys are kept in storage untouched.
++// QA4: a confirmed whole-quest completion on the direct route (`confirmedComplete`) is a quest-level fact, separate from
++// objective marks and from imported legacy completion. In memory it is the engine's whole-quest `legacy` mark plus a
++// `confirmed` flag (not an engine field); it only applies while the direct route is recorded.
++const confirmedOn=act=>act.confirmedComplete===true&&act.route===ROUTE_DIRECT&&act.legacyComplete!==true;
++function toProgress(record){
++ const act=record.activities[Q],objectives={};
++ for(const [id,v] of Object.entries(plain(act.objectives)?act.objectives:{}))if(data.objectiveIndex[id])objectives[id]=v;
++ const confirmed=confirmedOn(act);
++ const p=engine.init({schema:1,objectives,choices:OUTCOMES.includes(record.choices?.inn?.value)?{inn:record.choices.inn.value}:act.route===ROUTE_DIRECT?{inn:DIRECT}:{},manual:{},failed:{[Q]:act.failed===true},legacy:{[Q]:act.legacyComplete===true||confirmed}},{});
++ if(confirmed)p.confirmed={[Q]:true};
++ return p;
++}
++function load(storage){
++ const r=read(storage);
++ if(r.status!=='readable')return {owned:false,status:r.status,progress:engine.init(),complete:false};
++ if(!handedOver(r.value))return {owned:false,status:'not-handed-over',progress:engine.init(),complete:false};
++ const progress=toProgress(r.value);
++ const confirmedComplete=progress.confirmed?.[Q]===true;
++ return {owned:true,status:'owned',record:r.value,progress,complete:engine.done(Q,progress),legacyComplete:progress.legacy[Q]===true&&!confirmedComplete,confirmedComplete,undo:!!r.value.activities[Q].undo};
++}
++function snapshot(act,choices){return {objectives:clone(plain(act.objectives)?act.objectives:{}),legacyComplete:act.legacyComplete===true,failed:act.failed===true,choice:choices?.inn?clone(choices.inn):null,route:act.route||null,...(act.confirmedComplete===true?{confirmedComplete:true}:{})};}
++function write(storage,mutate){
++ const r=read(storage);
++ if(r.status!=='readable'||!handedOver(r.value))return {status:r.status==='readable'?'not-handed-over':r.status};
++ const record=clone(r.value);mutate(record);
++ const act=record.activities[Q];act.complete=engine.done(Q,toProgress(record));
++ // QA3: objectives closed by the direct route are listed explicitly, so skipped stays distinct from completed in data.
++ delete act.bypassed;delete act.unconfirmed;/* QA4: stable key order so Undo restores exact bytes */
++ if(act.route===ROUTE_DIRECT)act.bypassed=Object.values(data.objectiveIndex).filter(o=>o.route==='inn').map(o=>o.id);
++ // QA4: objectives whose journal status is unconfirmed on the direct route are listed too (never marked, never required).
++ if(act.route===ROUTE_DIRECT)act.unconfirmed=Object.values(data.objectiveIndex).filter(o=>o.unconfirmedOn===DIRECT&&act.objectives?.[o.id]!=='done').map(o=>o.id);
++ try{storage.setItem(KEY,JSON.stringify(record));}catch{return {status:'save-unavailable'};}
++ return {status:'saved',record};
++}
++// Commit a shared-engine plan result for velen.nilf. One Undo level, like the WO progress toast.
++function commit(storage,progress){
++ return write(storage,record=>{
++  const act=record.activities[Q],keep={};
++  for(const [id,v] of Object.entries(plain(act.objectives)?act.objectives:{}))if(!data.objectiveIndex[id])keep[id]=v;
++  act.undo=snapshot(act,record.choices);
++  act.objectives={...keep};
++  for(const [id,v] of Object.entries(progress.objectives))if(data.objectiveIndex[id]&&['done','skipped'].includes(v))act.objectives[id]=v;
++  const value=progress.choices?.inn,confirmed=progress.confirmed?.[Q]===true&&progress.legacy?.[Q]===true&&value===DIRECT;
++  act.legacyComplete=progress.legacy?.[Q]===true&&!confirmed;act.failed=progress.failed?.[Q]===true;
++  if(confirmed)act.confirmedComplete=true;else delete act.confirmedComplete;
++  if(OUTCOMES.includes(value))record.choices.inn={activity:Q,value,source:data.source};else delete record.choices.inn;
++  if(value===DIRECT)act.route=ROUTE_DIRECT;else delete act.route;
++ });
++}
++function undo(storage){
++ const r=read(storage);if(r.status!=='readable'||!handedOver(r.value)||!r.value.activities[Q].undo)return {status:'nothing-to-undo'};
++ return write(storage,record=>{const act=record.activities[Q],u=act.undo;act.objectives=u.objectives;act.legacyComplete=u.legacyComplete;act.failed=u.failed;if(u.choice)record.choices.inn=u.choice;else delete record.choices.inn;if(u.route)act.route=u.route;else delete act.route;if(u.confirmedComplete)act.confirmedComplete=true;else delete act.confirmedComplete;delete act.undo;});
++}
++// Shared-engine plan for velen.nilf. The inn path is carried by both "Ask about…" and "Look for… in Heatherton" (the
++// direct route has no inn conversation), and the engine clears a choice whenever an objective carrying it is unchecked.
++// Unchecking Heatherton steps must not erase a peace/fight outcome that the still-recorded inn conversation keeps.
++// QA4: on the direct route, "Record whole quest complete" records a confirmed whole-quest completion (the player read
++// Hendrik's notes, which finishes the quest) without filling any objective mark and without an inn outcome. Removing it
++// removes only that confirmation. All other routes keep the shared engine's whole-quest behaviour unchanged.
++function plan(progress,action,options={}){
++ const wasConfirmed=progress.confirmed?.[Q]===true,quest=action.kind==='quest'&&action.quest===Q&&progress.failed?.[Q]!==true;
++ const inn=Object.hasOwn(options.choices||{},'inn')?options.choices.inn:progress.choices?.inn;
++ const confirm=quest&&action.value!==false&&inn===DIRECT&&!engine.done(Q,progress),unconfirm=quest&&action.value===false&&wasConfirmed;
++ const r=engine.plan(progress,{},confirm||unconfirm?{kind:'reconcile-legacy',quest:Q}:action,confirm||unconfirm?{...options,catchup:false}:options),before=progress.choices?.inn,ASK=Q+':ask';
++ if(action.value===false&&!r.progress.choices.inn&&OUTCOMES.includes(before)&&r.progress.objectives[ASK]==='done'&&!Object.hasOwn(options.choices||{},'inn')){
++  r.progress.choices.inn=before;r.missingChoices=r.missingChoices.filter(c=>c!=='inn');
++ }
++ if(confirm&&!r.missingChoices.length){r.progress.legacy[Q]=true;r.progress.confirmed={[Q]:true};r.confirmedCompletion=true;}
++ else if(wasConfirmed&&!unconfirm&&r.progress.legacy[Q]===true){
++  // A confirmation belongs to the direct route: keep it while the route stays direct, drop it when the route changes.
++  if(r.progress.choices.inn===DIRECT)r.progress.confirmed={[Q]:true};
++  else{delete r.progress.legacy[Q];if(!r.completionLosses.includes(Q))r.completionLosses=[...r.completionLosses,Q];}
++ }
++ return r;
++}
++// Guarded storage rollback of the handover itself. The legacy key is never touched.
++function rollbackHandover(storage){
++ const r=read(storage);
++ if(r.status==='absent')return {status:'absent',restored:false};
++ if(r.status!=='readable')return {status:r.status,restored:false};
++ if(!handedOver(r.value)||r.value.handover.writer!==WRITER)return {status:'not-handed-over',restored:false};
++ if(r.value.handover.seal!==sealOf(r.value))return {status:'handover-edited',restored:false};
++ try{if(r.value.handover.before==null)storage.removeItem(KEY);else storage.setItem(KEY,r.value.handover.before);}catch{return {status:'storage-unavailable',restored:false};}
++ return {status:'restored',restored:true};
++}
++const api=Object.freeze({KEY,LEGACY_KEY,QUEST:Q,WRITER,engine,data,handover,load,plan,commit,undo,rollbackHandover,toProgress,ROUTE_DIRECT,DIRECT});
++root.PhoenixVelenNilfProgress=api;if(typeof module!=='undefined')module.exports=api;
++})(typeof window!=='undefined'?window:globalThis);
+diff -ruN baseline-untouched/dist/velen-nilf-ui.js source/dist/velen-nilf-ui.js
+--- baseline-untouched/dist/velen-nilf-ui.js	1970-01-01 00:00:00.000000000 +0000
++++ source/dist/velen-nilf-ui.js	2026-11-17 00:05:02.401217019 +0000
+@@ -0,0 +1,676 @@
++'use strict';
++/* v45 Slice 2: The Nilfgaardian Connection rendered with the White Orchard hub, walkthrough and objective
++   carousel component contract (same classes, structure and shared CSS/pointer/button/swipe enhancers).
++   State: progress is read from and written to the canonical owner (PhoenixVelenNilfProgress) through the shared
++   progression engine's plan(); reading position stays with velen-r18.js. Velen-specific data attributes
++   (data-velen-*) keep WO's document-wide progress listeners from ever seeing these cards. */
++window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, readingStage, hasReading, activityComplete, rerender }) {
++  const owner = window.PhoenixVelenNilfProgress,
++    data = owner.data,
++    engine = owner.engine,
++    Q = owner.QUEST,
++    q = quests.nilf,
++    objectives = data.quests[Q].objectives,
++    viewport = () => window.PhoenixViewport || window;
++  const make = (tag, cls, text) => {
++    const n = document.createElement(tag);
++    if (cls) n.className = cls;
++    if (text != null) n.textContent = text;
++    return n;
++  };
++  const picture = (src, cls, position) => {
++    const im = make('img', cls);
++    im.src = src;
++    im.alt = '';
++    im.decoding = 'async';
++    if (position) im.style.objectPosition = position;
++    return im;
++  };
++  const absTop = (node) => {
++    const v = viewport(),
++      offset = v.reader ? v.reader.getBoundingClientRect().top : 0;
++    return Math.max(0, Math.round(node.getBoundingClientRect().top - offset + v.scrollY));
++  };
++  let current = null, // {page, stage, deck, rail, prep, extras:{find,correct}, rails:Map}
++    pendingRestore = null,
++    busy = false;
++  const memory = { hub: { prep: false, progress: false }, walk: { prep: false, progress: true } };
++
++  // ---- canonical state ----------------------------------------------------------------------------
++  const state = () => owner.load(storage);
++  function owned() {
++    return state().owned;
++  }
++  function complete() {
++    return state().complete;
++  }
++
++  // ---- review dialog (same component markup as WO; bound to the Velen owner) ---------------------------
++  const dialog = make('dialog', 'progress-dialog velen-progress-dialog');
++  dialog.setAttribute('aria-labelledby', 'velen-progress-dialog-title');
++  document.body.append(dialog);
++  let pending = null,
++    options = { catchup: true, choices: {} },
++    returnFocus = null;
++
++  // ---- shared quick Undo (QA2 correction 3) -------------------------------------------------------------
++  // The three-second .quick-undo control belongs to the shared medallion (medallion.js / home-ui.js, unchanged),
++  // whose own handler undoes White Orchard progress. After a Velen commit this module shows that same control for
++  // the same three seconds and marks it data-undo-owner="velen". While that Velen window is open, a capture-phase
++  // listener claims the tap and undoes the Velen owner only, so the WO handler never runs for a Velen change.
++  // A WO commit or WO undo ends the Velen window immediately, so a WO change is always undone by WO.
++  const QUICK_UNDO_MS = 3000;
++  let quickActive = false,
++    quickTimer = 0;
++  const medallion = () => window.__phoenixMedallion || null;
++  const quickButton = () => medallion()?.quickUndo || document.querySelector('.quick-undo');
++  const announce = (text) => {
++    const status = medallion()?.element?.querySelector('.medallion-status');
++    if (status) status.textContent = text;
++  };
++  function releaseQuick() {
++    clearTimeout(quickTimer);
++    if (!quickActive) return;
++    quickActive = false;
++    const b = quickButton();
++    if (b) delete b.dataset.undoOwner;
++  }
++  function endQuick() {
++    const was = quickActive;
++    releaseQuick();
++    const b = quickButton();
++    if (was && b) {
++      b.hidden = true;
++      b.classList.remove('fading');
++    }
++  }
++  function signalQuickUndo() {
++    const b = quickButton();
++    if (!b || !state().undo) return;
++    const m = medallion();
++    if (m?.isQuickUndoVisible?.()) m.dismissQuickUndo?.();
++    clearTimeout(quickTimer);
++    quickActive = true;
++    b.dataset.undoOwner = 'velen';
++    b.hidden = false;
++    b.classList.remove('fading');
++    void b.offsetWidth;
++    b.classList.add('fading');
++    announce('Progress updated. Quick Undo is available.');
++    quickTimer = setTimeout(() => {
++      announce('Quick Undo closed. Undo remains in Story & correction controls.');
++      endQuick();
++    }, QUICK_UNDO_MS);
++  }
++  document.addEventListener(
++    'click',
++    (e) => {
++      if (!quickActive || !e.target.closest?.('.quick-undo')) return;
++      e.preventDefault();
++      e.stopImmediatePropagation();
++      endQuick();
++      const ok = owner.undo(storage).status === 'saved';
++      announce(ok ? 'Entire progress update undone.' : 'Undo could not be completed. Review Story & correction controls.');
++      if (ok) refreshAfterWrite();
++    },
++    true,
++  );
++  window.addEventListener('phoenix:progress-committed', releaseQuick);
++  window.addEventListener('phoenix:progress-undone', releaseQuick);
++  const esc = (x) => String(x).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
++  const label = (id) => data.objectiveIndex[id].label;
++  function request(action) {
++    if (busy) return;
++    const s = state();
++    if (!s.owned) return;
++    returnFocus = document.activeElement;
++    pending = action;
++    options = { catchup: true, choices: {} };
++    if (action.editChoice && s.progress.choices.inn) options.choices.inn = s.progress.choices.inn;
++    const plan = owner.plan(s.progress, action, options);
++    if (
++      !action.editChoice &&
++      action.kind === 'objective' &&
++      !plan.catchup.length &&
++      !plan.affected.length &&
++      !plan.missingChoices.length &&
++      !plan.completionLosses.length
++    ) {
++      commit(plan);
++      return;
++    }
++    dialog.innerHTML =
++      '<h2 id="velen-progress-dialog-title">Review progress update</h2><p data-review-target></p><label class="catchup-option" data-catchup-row><input type="checkbox" data-velen-catchup> Also complete earlier required steps</label><div data-review-choices></div><div data-review-impact aria-live="polite"></div><p>Only the required steps on your selected path are included. Unchosen objectives stay untouched. One Undo reverses this whole progress update.</p><div class="dialog-actions"><button type="button" data-velen-cancel>Cancel</button><button type="button" data-velen-confirm>Confirm update</button></div>';
++    dialog.querySelector('[data-velen-cancel]').onclick = () => dialog.close();
++    dialog.querySelector('[data-velen-confirm]').onclick = () => {
++      const p = owner.plan(state().progress, pending, options);
++      if (!p.missingChoices.length) commit(p);
++    };
++    dialog.querySelector('[data-velen-catchup]').onchange = (e) => {
++      options.catchup = e.target.checked;
++      preview();
++    };
++    preview();
++    dialog.showModal();
++  }
++  function preview() {
++    const plan = owner.plan(state().progress, pending, options);
++    dialog.querySelector('[data-review-target]').textContent = q.name;
++    const catchup = dialog.querySelector('[data-velen-catchup]');
++    dialog.querySelector('[data-catchup-row]').hidden = !plan.catchup.length;
++    catchup.checked = options.catchup;
++    catchup.disabled = pending.kind === 'quest';
++    for (const key of new Set([...plan.missingChoices, ...Object.keys(options.choices)])) {
++      let select = dialog.querySelector('[data-velen-choice="' + key + '"]');
++      if (!select) {
++        const c = data.choices[key],
++          wrapper = make('div');
++        wrapper.innerHTML =
++          '<label for="velen-review-choice-' + key + '">' + esc(c.label) + '</label><select id="velen-review-choice-' + key + '" data-velen-choice="' + key + '"><option value="">Choose what happened…</option>' +
++          c.options
++            .filter(([v]) => !(v === c.routeValue && data.objectiveIndex[pending.id]?.route === 'inn'))
++            .map(([v, t]) => '<option value="' + v + '">' + esc(t) + '</option>')
++            .join('') +
++          '</select><details><summary>Consequences · Spoilers</summary><p>' + esc(c.outcome) + '</p><p><a href="' + c.routeSource + '" target="_blank" rel="noopener noreferrer">Route source ↗</a></p></details>';
++        dialog.querySelector('[data-review-choices]').append(wrapper);
++        select = wrapper.querySelector('select');
++        select.onchange = () => {
++          options.choices[key] = select.value;
++          preview();
++        };
++      }
++      select.value = Object.hasOwn(options.choices, key) ? options.choices[key] : state().progress.choices[key] || '';
++    }
++    const list = (ids) => '<ul>' + ids.map((id) => '<li>' + esc(label(id)) + '</li>').join('') + '</ul>';
++    dialog.querySelector('[data-review-impact]').innerHTML =
++      (plan.catchup.length ? '<details><summary>' + plan.catchup.length + ' earlier required objectives</summary>' + list(plan.catchup) + '</details>' : '') +
++      (plan.catchup.length
++        ? '<p>' + (pending.kind === 'quest' ? 'Confirming whole-quest completion requires its required objectives. Cancel to record individual objectives instead.' : 'Leave catch-up unchecked to record only the selected objective; missing prerequisites will remain unconfirmed.') + '</p>'
++        : '') +
++      (plan.affected.length ? '<details open><summary>' + plan.affected.length + ' objective marks will be removed</summary>' + list(plan.affected) + '</details>' : '') +
++      (plan.completionLosses.length ? '<div class="risk-note"><strong>Saved quest completion will be removed</strong><ul><li>' + esc(q.name) + '</li></ul></div>' : '') +
++      (plan.confirmedCompletion // QA4: direct-route whole-quest confirmation
++        ? '<p data-velen-confirmation>You read Hendrik’s notes, which finishes the quest. This records the whole quest as complete without marking any objective and without an inn outcome. Objectives you have not recorded stay unmarked; “Go to the Inn at the Crossroads.” stays unconfirmed.</p>'
++        : '') +
++      (pending.kind === 'reconcile-legacy'
++        ? '<p class="risk-note">This explicitly replaces the saved whole-quest completion with the objectives recorded here. If they are incomplete, the quest becomes incomplete.</p>'
++        : '');
++    dialog.querySelector('[data-velen-confirm]').disabled = plan.missingChoices.length > 0;
++  }
++  dialog.addEventListener('close', () => {
++    pending = null;
++    returnFocus?.focus({ preventScroll: true });
++  });
++  function refreshAfterWrite() {
++    pendingRestore = capture();
++    rerender();
++  }
++  function commit(plan) {
++    busy = true;
++    const result = owner.commit(storage, plan.progress);
++    if (dialog.open) dialog.close();
++    pending = null;
++    busy = false;
++    refreshAfterWrite();
++    if (result.status === 'saved') signalQuickUndo();
++    else announce('Saving is unavailable. Progress was not recorded.');
++  }
++  function undoLast() {
++    endQuick();
++    if (owner.undo(storage).status === 'saved') {
++      announce('Entire progress update undone.');
++      refreshAfterWrite();
++    }
++  }
++
++  // ---- objective carousel -----------------------------------------------------------------------------
++  function scrollCard(deck, index) {
++    const rail = deck.querySelector('.objective-rail'),
++      card = rail.children[index];
++    if (card) {
++      rail.scrollTo({ left: card.offsetLeft - rail.firstElementChild.offsetLeft, behavior: 'auto' });
++      deck.querySelector('[data-objective-jump]').value = card.dataset.velenObjective;
++    }
++  }
++  function nextIndex(p) {
++    let i = objectives.findIndex((o) => p.objectives[o.id] !== 'done' && !engine.closed(o, p) && o.requires.every((r) => p.objectives[r] === 'done'));
++    if (i < 0) i = objectives.findIndex((o) => p.objectives[o.id] !== 'done' && !engine.closed(o, p));
++    return Math.max(0, i);
++  }
++  function progressDeck(s) {
++    const p = s.progress,
++      count = engine.counts(Q, p),
++      status = engine.status(Q, p),
++      deck = make('details', 'quest-progress velen-quest-progress');
++    deck.dataset.velenProgress = Q;
++    const summary = make(
++      'summary',
++      '',
++      s.legacyComplete && status === 'complete'
++        ? 'Quest progress · Saved complete — objectives unconfirmed'
++        : s.confirmedComplete && status === 'complete' // QA4
++          ? 'Quest progress · Confirmed complete · ' + count.done + '/' + count.total + ' objectives recorded'
++          : 'Quest progress · ' + count.done + '/' + count.total + (status === 'complete' ? ' · Quest complete' : ''),
++    );
++    const frame = make('section', 'objective-scroll-frame');
++    frame.setAttribute('aria-label', 'Quest objective progress');
++    const banner = make('header', 'objective-banner');
++    banner.innerHTML = '<span class="objective-banner-mark" aria-hidden="true">❧</span><h3 data-objective-completion></h3><p data-objective-position></p>';
++    banner.querySelector('h3').textContent = count.done + '/' + count.total + ' completed';
++    const rail = make('div', 'objective-rail');
++    rail.tabIndex = 0;
++    rail.setAttribute('role', 'region');
++    rail.setAttribute('aria-label', q.name + ' objective cards');
++    objectives.forEach((o, i) => {
++      const closed = engine.closed(o, p),
++        done = p.objectives[o.id] === 'done',
++        card = make('article', 'objective-card' + (closed ? ' unavailable' : ''));
++      card.dataset.velenObjective = o.id;
++      card.append(make('p', 'eyebrow', o.chapter + ' · ' + (i + 1) + '/' + objectives.length + (o.id === Q + ':fight' ? ' · IF YOU FOUGHT' : o.route === 'inn' ? ' · VIA THE INN' : '')));
++      const check = make('label', 'objective-check'),
++        input = make('input');
++      input.type = 'checkbox';
++      input.dataset.velenCheck = o.id;
++      input.checked = done;
++      input.disabled = closed;
++      input.setAttribute('aria-describedby', 'velen-objective-state-' + o.id.replace(/[^a-z0-9]/gi, '-'));
++      check.append(input, make('span', '', o.label));
++      const st = make(
++        'p',
++        '',
++        closed
++          ? o.unconfirmedOn && p.choices.inn === o.unconfirmedOn // QA4
++            ? 'Unconfirmed on the direct route — the sources do not establish its journal status, so it is neither required nor marked.'
++          : o.route === 'inn' && p.choices.inn === data.choices.inn.routeValue
++            ? 'Not required — you went straight to Heatherton. Left unmarked.'
++            : 'Unavailable — alternate path chosen'
++          : done
++            ? 'Completed'
++            : o.branch && !p.choices[o.branch[0]] && !engine.required(Q, p).includes(o)
++              ? 'Confirm the preceding choice to establish this path.'
++              : s.legacyComplete
++                ? 'Not individually recorded — saved quest completion covers it.'
++                : s.confirmedComplete
++                  ? 'Not individually recorded — your confirmed quest completion covers it.'
++                : 'Not completed',
++      );
++      st.dataset.objectiveState = '';
++      st.id = 'velen-objective-state-' + o.id.replace(/[^a-z0-9]/gi, '-');
++      card.append(check, st);
++      if (o.note) card.append(make('p', 'quiet objective-note', o.note));
++      if (o.choice) {
++        const b = make('button', '', 'Record / review choice');
++        b.type = 'button';
++        b.dataset.velenEditChoice = o.id;
++        card.append(b);
++        if (p.choices[o.choice]) card.append(make('p', 'quiet', 'Recorded: ' + data.choices[o.choice].options.find((x) => x[0] === p.choices[o.choice])[1]));
++      }
++      rail.append(card);
++    });
++    const controls = make('div', 'objective-controls'),
++      prev = make('button', '', '←'),
++      next = make('button', '', '→');
++    prev.type = next.type = 'button';
++    prev.dataset.velenCardPrev = '';
++    next.dataset.velenCardNext = '';
++    prev.setAttribute('aria-label', 'Previous objective card');
++    next.setAttribute('aria-label', 'Next objective card');
++    controls.append(prev, make('span', '', 'Swipe objectives'), next);
++    frame.append(banner, rail, controls);
++    const position = () => {
++      const cards = [...rail.children];
++      if (!cards.length) return;
++      const first = cards[0].offsetLeft;
++      let index = 0,
++        best = Infinity;
++      cards.forEach((card, i) => {
++        const d = Math.abs(card.offsetLeft - first - rail.scrollLeft);
++        if (d < best) {
++          best = d;
++          index = i;
++        }
++      });
++      banner.querySelector('[data-objective-position]').textContent = objectives[index].chapter;
++      return index;
++    };
++    rail.addEventListener('scroll', position, { passive: true });
++    for (const [b, delta] of [[prev, -1], [next, 1]])
++      b.onclick = () => scrollCard(deck, Math.max(0, Math.min(rail.children.length - 1, (position() || 0) + delta)));
++    // Find an objective
++    const find = make('details', 'progress-extra');
++    find.dataset.velenExtra = 'find';
++    find.append(make('summary', '', 'Find an objective'));
++    const search = make('label', '', 'Find an objective'),
++      input = make('input');
++    input.type = 'search';
++    input.placeholder = 'Search this quest…';
++    search.append(input);
++    const jumpLabel = make('label', '', 'Jump to chapter or objective'),
++      jump = make('select');
++    jump.dataset.objectiveJump = '';
++    jump.setAttribute('aria-label', 'Jump to objective for ' + q.name);
++    jumpLabel.append(jump);
++    const fill = (query = '') => {
++      jump.replaceChildren();
++      let chapter = '',
++        group;
++      for (const o of objectives.filter((o) => (o.label + ' ' + o.chapter).toLowerCase().includes(query.toLowerCase()))) {
++        if (chapter !== o.chapter) {
++          chapter = o.chapter;
++          group = make('optgroup');
++          group.label = chapter;
++          jump.append(group);
++        }
++        const option = make('option', '', o.label);
++        option.value = o.id;
++        group.append(option);
++      }
++    };
++    fill();
++    input.oninput = () => fill(input.value);
++    jump.onchange = () => scrollCard(deck, objectives.findIndex((o) => o.id === jump.value));
++    find.append(search, jumpLabel);
++    // Story & correction controls
++    const correct = make('details', 'progress-extra');
++    correct.dataset.velenExtra = 'correct';
++    correct.append(make('summary', '', 'Story & correction controls'));
++    const actions = make('div', 'progress-actions');
++    const whole = make('button', '', status === 'complete' ? 'Remove whole-quest completion' : 'Record whole quest complete');
++    whole.type = 'button';
++    whole.dataset.velenQuest = status === 'complete' ? 'false' : 'true';
++    const undo = make('button', '', 'Undo last progress change');
++    undo.type = 'button';
++    undo.dataset.velenUndo = '';
++    undo.disabled = !s.undo;
++    actions.append(whole, undo);
++    if (s.legacyComplete) {
++      const reconcile = make('button', '', 'Review saved completion');
++      reconcile.type = 'button';
++      reconcile.dataset.velenReconcile = '';
++      actions.append(reconcile);
++    }
++    correct.append(actions);
++    deck.append(summary, frame);
++    if (s.confirmedComplete)
++      deck.append(make('p', 'quiet velen-confirmed-note', 'Confirmed complete: you recorded that you read Hendrik’s notes on the direct route. Individual objective marks are kept separately; unrecorded objectives stay unmarked and “Go to the Inn at the Crossroads.” stays unconfirmed.'));
++    if (s.legacyComplete)
++      deck.append(make('p', 'quiet velen-legacy-note', 'Saved complete from your earlier Velen record. Its individual objectives were not recorded, so they stay unconfirmed until you record them.'));
++    const source = make('a', '', 'Objective reference ↗');
++    source.href = data.source;
++    source.target = '_blank';
++    source.rel = 'noopener noreferrer';
++    deck.append(find, correct, make('p', 'quiet', 'Record completed in-game objectives. These marks stay separate from your reading position.'), source);
++    return { deck, rail, find, correct, position: () => scrollCard(deck, nextIndex(p)) };
++  }
++  document.addEventListener('change', (e) => {
++    const id = e.target.dataset?.velenCheck;
++    if (!id) return;
++    const checked = e.target.checked;
++    e.target.checked = state().progress.objectives[id] === 'done';
++    request({ kind: 'objective', id, value: checked });
++  });
++  document.addEventListener('click', (e) => {
++    const t = e.target.closest('[data-velen-edit-choice],[data-velen-undo],[data-velen-quest],[data-velen-reconcile]');
++    if (!t || !t.closest('#velen')) return;
++    if (t.dataset.velenEditChoice) request({ kind: 'objective', id: t.dataset.velenEditChoice, value: true, editChoice: true });
++    else if (t.hasAttribute('data-velen-undo')) undoLast();
++    else if (t.dataset.velenQuest) request({ kind: 'quest', quest: Q, value: t.dataset.velenQuest === 'true' });
++    else if (t.hasAttribute('data-velen-reconcile')) request({ kind: 'reconcile-legacy', quest: Q });
++  });
++
++  // ---- shared pieces ----------------------------------------------------------------------------------
++  function preparation() {
++    const d = make('details', 'route-context quest-preparation');
++    d.append(make('summary', '', 'Preparation & quest details'));
++    d.append(make('p', '', q.intro), make('p', '', 'Velen · Suggested level ' + q.level + '.'));
++    q.stages.forEach((st, i) => d.append(make('p', '', i + 1 + '. ' + st.title + ' — ' + st.prep)));
++    d.append(make('p', 'quiet', 'Reading position never records progress. Record in-game objectives in Quest progress.'));
++    return d;
++  }
++  function rail(host, name) {
++    const list = make('nav', 'quest-hub-rail');
++    list.setAttribute('aria-label', name);
++    list.tabIndex = 0;
++    list.dataset.velenRail = name;
++    const controls = make('div', 'quest-hub-rail-controls'),
++      prev = make('button', '', '←'),
++      next = make('button', '', '→');
++    prev.type = next.type = 'button';
++    prev.setAttribute('aria-label', 'Previous ' + name);
++    next.setAttribute('aria-label', 'Next ' + name);
++    prev.onclick = () => list.scrollBy({ left: -220, behavior: 'auto' });
++    next.onclick = () => list.scrollBy({ left: 220, behavior: 'auto' });
++    controls.append(prev, make('span', '', 'Swipe to browse'), next);
++    host.append(list, controls);
++    return list;
++  }
++  function nearbyCard(list, { name, href, art, position, status, context, complete }) {
++    const wrap = make('article', 'nearby-card-entry'),
++      a = link('', href, 'quest-hub-card' + (complete ? ' is-complete' : ''));
++    a.append(picture(art, '', position), make('strong', '', name), make('small', '', status));
++    wrap.append(a, make('p', 'nearby-card-context', context));
++    list.append(wrap);
++  }
++
++  // ---- context capture / restore (stage, scroll, foldouts, rails) ---------------------------------------
++  function capture() {
++    if (!current || !current.deck.isConnected) return null;
++    return {
++      page: current.page,
++      stage: current.stage,
++      y: viewport().scrollY,
++      prep: current.prep.open,
++      progress: current.deck.open,
++      find: current.find.open,
++      correct: current.correct.open,
++      sources: !!current.sources?.open,
++      objectiveX: current.rail.scrollLeft,
++      rails: Object.fromEntries([...current.rails].map(([k, r]) => [k, r.scrollLeft])),
++      details: [...current.root.querySelectorAll('.stage-content details')].map((d) => d.open),
++    };
++  }
++  let saveTimer = 0;
++  function remember() {
++    clearTimeout(saveTimer);
++    saveTimer = setTimeout(() => {
++      const ctx = capture();
++      if (!ctx) return;
++      memory[ctx.page] = { prep: ctx.prep, progress: ctx.progress, sources: ctx.sources };
++      history.replaceState({ ...history.state, velenNilfUI: ctx }, '', location.href);
++    }, 120);
++  }
++  function apply(ctx, fresh) {
++    current.prep.open = !!ctx.prep;
++    current.deck.open = !!ctx.progress;
++    current.find.open = !!ctx.find;
++    current.correct.open = !!ctx.correct;
++    if (current.sources) current.sources.open = !!ctx.sources;
++    (ctx.details || []).forEach((open, i) => {
++      const d = current.root.querySelectorAll('.stage-content details')[i];
++      if (d) d.open = open;
++    });
++    const target = current;
++    requestAnimationFrame(() => {
++      if (target !== current) return;
++      if (fresh && target.deck.open) target.position();
++      else target.rail.scrollLeft = Number(ctx.objectiveX) || 0;
++      for (const [k, r] of target.rails) r.scrollLeft = Number(ctx.rails?.[k]) || 0;
++      target.rail.dispatchEvent(new Event('scroll'));
++    });
++  }
++  function mount(page, stage, root, parts) {
++    current = { page, stage, root, ...parts };
++    let ctx = null,
++      fresh = false;
++    if (pendingRestore?.page === page && pendingRestore.stage === stage) ctx = pendingRestore;
++    else if (history.state?.velenNilfUI?.page === page && history.state.velenNilfUI.stage === stage) ctx = history.state.velenNilfUI;
++    else if (history.state?.velen?.restoreUI?.page === page) ctx = history.state.velen.restoreUI;
++    else {
++      ctx = { ...memory[page] };
++      fresh = true;
++    }
++    const y = pendingRestore === ctx ? ctx.y : undefined;
++    pendingRestore = null;
++    apply(ctx, fresh);
++    for (const d of [parts.prep, parts.deck, parts.find, parts.correct, parts.sources, ...root.querySelectorAll('.stage-content details')].filter(Boolean))
++      d.addEventListener('toggle', () => {
++        if (d === parts.deck && d.open && !current.rail.scrollLeft) current.position();
++        remember();
++      });
++    for (const r of [parts.rail, ...parts.rails.values()]) r.addEventListener('scroll', remember, { passive: true });
++    remember();
++    return y;
++  }
++
++  // ---- hub ----------------------------------------------------------------------------------------------
++  function hub(screen) {
++    const s = state(),
++      stage = readingStage(),
++      root = make('div', 'velen-nilf-hub quest-hub-panel');
++    root.dataset.velenNilf = 'hub';
++    const header = make('header', 'quest-hub-briefing');
++    header.append(picture(q.art, '', q.position), make('p', 'eyebrow', 'VELEN · SUGGESTED LEVEL ' + q.level), make('h1', '', q.name));
++    const paper = make('article', 'quest-hub-paper'),
++      risk = make('p', 'quest-hub-risk');
++    risk.hidden = true;
++    const resume = link('', '#quest/nilf/' + stage, 'quest-hub-continue');
++    resume.append(make('strong', '', hasReading() ? 'Continue walkthrough' : 'Start walkthrough'), make('span', '', 'Step ' + stage + ' · ' + q.stages[stage - 1].title));
++    const tools = make('nav', 'quest-hub-tools');
++    tools.setAttribute('aria-label', q.name + ' hub tools');
++    tools.append(link('Quest cards', '#velen'), link('Regions', 'index.html#regions'));
++    const prepHost = make('div', 'quest-hub-preparation'),
++      progressHost = make('div', 'quest-hub-progress'),
++      prep = preparation(),
++      parts = progressDeck(s);
++    prepHost.append(prep);
++    progressHost.append(parts.deck);
++    paper.append(make('p', 'quest-hub-description', q.intro), risk, resume, tools, prepHost, progressHost);
++    const nearby = make('section', 'quest-hub-nearby');
++    nearby.append(make('h2', '', 'Nearby activities'));
++    const rails = new Map();
++    const group = (title) => {
++      const section = make('section', 'quest-hub-group');
++      section.append(make('h3', '', title));
++      nearby.append(section);
++      const r = rail(section, title.toLowerCase());
++      rails.set(title, r);
++      return r;
++    };
++    const side = group('Side quests & encounters');
++    for (const id of ['pyres', 'mercy']) {
++      const done = activityComplete(id);
++      nearbyCard(side, {
++        name: quests[id].name,
++        href: '#hub/' + id,
++        art: quests[id].art,
++        position: quests[id].position,
++        complete: done,
++        status: done ? '✓ Completed' : 'Open entry',
++        context: id === 'pyres' ? 'Fits the road: the priest west of Mulbrydale offers it. Completion is recorded in its own hub.' : 'Fits the road: the riverbank on the approach to the inn. Its decision is recorded in its own hub.',
++      });
++    }
++    const services = group('Services & notices');
++    nearbyCard(services, { name: 'Innkeeper', href: '#merchants', art: 'gwent-r15/gabor.webp', status: 'Open entry', context: 'At the Inn at the Crossroads: food, drink and a shop conversation.' });
++    nearbyCard(services, { name: 'Collected notices', href: '#deferred', art: 'velen-landscape-r18.webp', position: 'right center', status: 'Open entry', context: 'Notices from the inn board, kept for later. Collecting a notice is not completing it.' });
++    root.append(header, paper, nearby);
++    screen.append(root);
++    return mount('hub', null, root, { ...parts, prep, rails });
++  }
++
++  // ---- walkthrough ----------------------------------------------------------------------------------------
++  function walkthrough(screen, index) {
++    const s = state(),
++      st = q.stages[index],
++      root = make('div', 'quest-page velen-nilf-page');
++    root.dataset.velenNilf = 'walk';
++    const heading = make('div', 'page-heading r15-heading');
++    const seal = make('span', 'r15-page-seal', q.kind);
++    seal.setAttribute('aria-hidden', 'true');
++    heading.append(picture(q.art, 'r15-page-art', q.position), make('p', 'eyebrow', 'QUEST WALKTHROUGH / VELEN'), make('h1', '', q.name), make('p', 'lead', q.intro), make('p', 'quest-page-facts', 'Velen · Suggested level ' + q.level), seal);
++    const panel = make('article', 'reading-panel'),
++      stagePanel = make('div', 'stage-panel'),
++      section = make('section', 'walk-stage'),
++      content = make('div', 'stage-content');
++    section.dataset.stage = String(index + 1);
++    content.append(make('p', 'eyebrow', st.place), make('h2', '', st.title));
++    if (st.warning) {
++      const w = make('p', 'risk-note');
++      const cut = st.warning.indexOf(':');
++      if (cut > 0) w.append(make('strong', '', st.warning.slice(0, cut + 1) + ' '), document.createTextNode(st.warning.slice(cut + 1).trim()));
++      else w.append(make('strong', '', 'Warning: '), document.createTextNode(st.warning));
++      content.append(w);
++    }
++    content.append(make('p', '', st.text));
++    const detail = make('details', 'quest-step-detail');
++    detail.append(make('summary', '', 'Preparation for this step'), make('p', '', st.prep));
++    content.append(detail);
++    const related = objectives.filter((o) => o.stage === index + 1);
++    if (related.length) {
++      const d = make('details', 'quest-step-detail');
++      d.append(make('summary', '', 'Journal objectives at this step'));
++      const ul = make('ul');
++      for (const o of related) ul.append(make('li', '', o.label + (o.id === Q + ':fight' ? ' (only if you fought)' : o.route === 'inn' ? ' (unless you went straight to Heatherton)' : '')));
++      d.append(ul, make('p', 'quiet', 'Record them in Quest progress below. Reading this step does not record them.'));
++      content.append(d);
++    }
++    section.append(content);
++    stagePanel.append(section);
++    const nav = make('nav', 'stage-nav quest-step-nav');
++    nav.setAttribute('aria-label', 'Walkthrough steps');
++    const prev = make('button', '', 'Previous'),
++      next = make('button', '', 'Next'),
++      picker = make('label', 'quest-step-picker'),
++      count = make('span', '', index + 1 + ' of ' + q.stages.length),
++      select = make('select');
++    prev.type = next.type = 'button';
++    prev.dataset.velenStagePrev = '';
++    next.dataset.velenStageNext = '';
++    prev.setAttribute('aria-label', 'Previous walkthrough step');
++    next.setAttribute('aria-label', 'Next walkthrough step');
++    prev.disabled = index === 0;
++    next.disabled = index === q.stages.length - 1;
++    count.setAttribute('aria-live', 'polite');
++    const stepLabel = make('span', '', 'Step ');
++    stepLabel.append(count);
++    select.dataset.velenStageSelect = '';
++    select.setAttribute('aria-label', 'Choose walkthrough stage');
++    q.stages.forEach((x, i) => {
++      const o = make('option', '', x.title);
++      o.value = String(i + 1);
++      select.append(o);
++    });
++    select.value = String(index + 1);
++    picker.append(stepLabel, select);
++    nav.append(prev, picker, next);
++    const toStage = (n) => go('#quest/nilf/' + n, { hubReturn: history.state?.velen?.hubReturn, restoreY: Math.max(0, absTop(stagePanel) - 20) });
++    prev.onclick = () => toStage(index);
++    next.onclick = () => toStage(index + 2);
++    select.onchange = () => toStage(Number(select.value));
++    const host = make('div', 'quest-record-host'),
++      prep = preparation(),
++      parts = progressDeck(s);
++    host.append(prep, parts.deck);
++    const sources = make('details', 'sources');
++    sources.append(make('summary', '', 'Sources & verification'));
++    for (const [text, href] of [['Walkthrough · gamebanshee.com ↗', q.source], ['Journal objectives · witcher.tools ↗', data.source], ['Direct-Heatherton route · Witcher Wiki objectives ↗', data.routeSource], ['Same list · archived snapshot ↗', data.routeArchive]]) {
++      const p = make('p'),
++        a = make('a', '', text);
++      a.href = href;
++      a.target = '_blank';
++      a.rel = 'noopener noreferrer';
++      p.append(a);
++      sources.append(p);
++    }
++    sources.append(make('p', '', 'Research-led pilot; exact rewards and Xbox field acceptance remain unverified. This page records neither game state nor automatic completion.'));
++    panel.append(stagePanel, nav, host, sources);
++    const tools = make('nav', 'stage-links quest-page-tools');
++    tools.setAttribute('aria-label', 'Quest tools');
++    const back = link('Return to hub', '#hub/nilf');
++    back.dataset.returnHub = 'true';
++    tools.append(back, link('Quest cards', '#velen'));
++    root.append(heading, panel, tools);
++    screen.append(root);
++    return mount('walk', index + 1, root, { ...parts, prep, sources, rails: new Map() });
++  }
++  return { owned, complete, hub, walkthrough, capture, request, undoLast };
++};
+diff -ruN baseline-untouched/dist/velen-r18.js source/dist/velen-r18.js
+--- baseline-untouched/dist/velen-r18.js	2026-11-16 19:55:06.379354236 +0000
++++ source/dist/velen-r18.js	2026-11-17 00:05:02.397217011 +0000
+@@ -4,9 +4,21 @@
+ const view=document.createElement('section');view.id='velen';view.className='view scene main-console-view velen-view';view.hidden=true;view.setAttribute('aria-labelledby','velen-heading');view.innerHTML='<div class="scene-inner console-r16"><div class="cover" id="velen-screen"></div><p id="velen-save-status" role="status"></p></div>';document.querySelector('main').append(view);
+ const confirm=document.createElement('dialog');confirm.id='velen-confirm-progress';confirm.className='progress-dialog';confirm.setAttribute('aria-labelledby','velen-confirm-title');confirm.innerHTML='<form method="dialog"><h2 id="velen-confirm-title">Confirm recorded progress</h2><p id="velen-confirm-text"></p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="confirm">Confirm</button></div></form>';document.body.append(confirm);
+ let inputMode='pointer',renderSerial=0,renderedHash=null;document.addEventListener('pointerdown',()=>inputMode='pointer',true);document.addEventListener('keydown',e=>{if(['Tab','Enter',' '].includes(e.key))inputMode='keyboard';},true);
+-const {quests,leads,initial,apply,unlocked}=window.PHOENIX_VELEN,key='phoenix.velen.arrival.v1';let raw={};try{raw=JSON.parse(localStorage.getItem(key)||'{}');}catch{}const state=initial(raw),screen=document.getElementById('velen-screen'),status=document.getElementById('velen-save-status');let pending=null,swipeClickUntil=0;const dialog=document.getElementById('velen-confirm-progress');
++const {quests,leads,initial,apply,unlocked}=window.PHOENIX_VELEN,key='phoenix.velen.arrival.v1';let raw={};try{raw=JSON.parse(localStorage.getItem(key)||'{}');}catch{}
++// v45 Slice 2 QA3 save guard (owner-authorized, narrowly scoped; the only change to the legacy save writer):
++// if phoenix.velen.arrival.v1 exists but cannot be read (invalid JSON, or JSON that is not an object - the same rule
++// as the Slice 1 import's legacy-unreadable), this page session never writes that key. Browsing state lives in memory
++// only, so the unreadable bytes survive render, navigation, interaction, reloads and a refused handover until the
++// record is repaired. Valid or absent records are saved exactly as in v45 (same code path, same bytes).
++const legacyUnreadable=(()=>{let text;try{text=localStorage.getItem(key);}catch{return false;}if(text==null)return false;try{const v=JSON.parse(text);return !(v&&typeof v==='object'&&!Array.isArray(v));}catch{return true;}})(),legacyGuardText='Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved.';const state=initial(raw),screen=document.getElementById('velen-screen'),status=document.getElementById('velen-save-status');let pending=null,swipeClickUntil=0;const dialog=document.getElementById('velen-confirm-progress');
++
+ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};const link=(text,href,cls='')=>{const a=el('a',cls,text);a.href=href.startsWith('index.html#')?href.slice(10):href.startsWith('#')?routeModel.sharedHash(href):href;return a;};
+-function save(){try{localStorage.setItem(key,JSON.stringify(state));status.textContent='Your Velen progress saves in this browser.';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
++// v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
++// the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
++// velen.pyres/velen.mercy owners. If the handover is unavailable (e.g. newer canonical data), nilf falls back to the v45 legacy hub.
++const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:localStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>render({focus:false,y:viewport().scrollY})}):null;
++const nilfOwned=()=>!!nilfUI&&nilfUI.owned(),isComplete=id=>id==='nilf'&&nilfOwned()?nilfUI.complete():state.complete[id]===true,isUnlocked=()=>isComplete('nilf');
++function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */try{localStorage.setItem(key,JSON.stringify(state));status.textContent='Your Velen progress saves in this browser.';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
+ function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
+ function scroll(title){const n=el('section','scroll scroll-r16');if(title)n.append(el('h2','',title));return n;}
+ function artTile(title,href,src,pos){const a=link('',href,'art-tile console-tile');a.append(picture(src,'',pos),el('span','',title));return a;}
+@@ -15,26 +27,26 @@
+ function restoreHomeDeck(){const a=history.state?.velen?.selected;if(quests[a])state.selected=a;}
+ function header(title,sub,art='velen-landscape-r18.webp'){const n=el('header','scene-banner');n.append(picture(art),el('p','eyebrow',sub),el('h1','',title));return n;}
+ function carousel(){const box=el('section','quest-selector desk-carousel');box.setAttribute('aria-label','Choose a Velen quest');const ids=Object.keys(quests),idx=ids.indexOf(state.selected),deck=el('div','deck');
+-ids.forEach((id,i)=>{const q=quests[id],b=el('button','quest-card desk-card gwent-guide-card '+(i===idx?'selected':i===(idx+1)%ids.length?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()>=swipeClickUntil)select(id);};deck.append(b);});
++ids.forEach((id,i)=>{const q=quests[id],b=el('button','quest-card desk-card gwent-guide-card '+(i===idx?'selected':i===(idx+1)%ids.length?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;if(id==='nilf'&&nilfOwned()){state.selected=id;history.replaceState({...history.state,velen:{...history.state?.velen,selected:id}},'',location.href);save();go('#hub/nilf');}else select(id);};deck.append(b);});
+ const controls=el('div','orbit-controls'),prev=el('button','','← Previous'),next=el('button','','Next →'),count=el('span','',(idx+1)+' / '+ids.length);prev.type=next.type='button';count.setAttribute('aria-live','polite');prev.onclick=()=>select(ids[(idx+ids.length-1)%ids.length]);next.onclick=()=>select(ids[(idx+1)%ids.length]);controls.append(prev,count,next);box.append(deck,controls);deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('.quest-card.selected').focus({preventScroll:true});}};
+ let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.hypot(dx,dy)>=8)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
+ function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,deck.classList.contains('phoenix-horizontal-box'));if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
+ deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
+ function select(id){if(!quests[id])return;const y=viewport().scrollY;state.selected=id;history.replaceState({...history.state,velen:{...history.state?.velen,selected:id}},'',location.href);save();render({y,focus:false});}
+ function stages(id){const n=el('nav','stage-ribbon');n.setAttribute('aria-label','Walkthrough stages');quests[id].stages.forEach((s,i)=>{const a=link(s.title,'#quest/'+id+'/'+(i+1));if(state.stage[id]===i+1)a.setAttribute('aria-current','step');n.append(a);});return n;}
+-function consoleView(){const q=quests[state.selected];screen.append(header('Velen','No Man’s Land'));const resume=scroll();resume.classList.add('resume','console-continue');const last=state.last?.id;resume.append(el('small','',last?'Resume last walkthrough':'Return to last hub'),link(last?quests[last].name:quests[state.lastHub].name,last?'#quest/'+last+'/'+state.stage[last]:'#hub/'+state.lastHub));screen.append(resume,carousel());const selected=scroll(q.name);selected.classList.add('selected-panel','selected-scroll');selected.append(el('p','',q.intro),stages(state.selected),el('p','eyebrow',q.level?'Suggested level '+q.level:'Unmarked encounter · level unverified'),el('p','pilot-count','Arrival pilot · '+Object.values(state.complete).filter(Boolean).length+' / 3 activities resolved'));screen.append(selected);
++function consoleView(){const q=quests[state.selected];screen.append(header('Velen','No Man’s Land'));const resume=scroll();resume.classList.add('resume','console-continue');const last=state.last?.id;resume.append(el('small','',last?'Resume last walkthrough':'Return to last hub'),link(last?quests[last].name:quests[state.lastHub].name,last?'#quest/'+last+'/'+state.stage[last]:'#hub/'+state.lastHub));screen.append(resume,carousel());const selected=scroll(q.name);selected.classList.add('selected-panel','selected-scroll');selected.append(el('p','',q.intro),stages(state.selected),el('p','eyebrow',q.level?'Suggested level '+q.level:'Unmarked encounter · level unverified'),el('p','pilot-count','Arrival pilot · '+['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));screen.append(selected);
+ const actions=scroll('At this stop'),tiles=el('nav','tiles console-tiles');tiles.setAttribute('aria-label','Selected quest actions');tiles.append(artTile('Open selected quest','#quest/'+state.selected+'/'+state.stage[state.selected],q.art,q.position),artTile('Nearby opportunities','#hub/'+state.selected,q.art,'right center'));actions.append(tiles);screen.append(actions);
+ const along=scroll('Along the arrival road');along.append(el('p','small-note','Separate owners · completion is marked in each activity’s hub.'));for(const id of ['pyres','mercy'])along.append(link((state.complete[id]?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));screen.append(along,nextLeads());const explore=scroll('Explore Velen'),shortcuts=el('nav','tiles shortcuts console-tiles');shortcuts.append(artTile('Quests','#hub/nilf','velen-landscape-r18.webp'),artTile('Regions','index.html#regions','velen-landscape-r18.webp'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));explore.append(shortcuts);screen.append(explore);}
+-function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',unlocked(state)?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,'velen-landscape-r18.webp',id==='baron'?'right center':'center'));n.append(tiles);return n;}
++function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,'velen-landscape-r18.webp',id==='baron'?'right center':'center'));n.append(tiles);return n;}
+ function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),link('Open walkthrough →','#quest/'+id+'/'+state.stage[id],'button-link'));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
+ if(id==='nilf'){n.append(el('h3','','Side quests & encounters'));for(const other of ['pyres','mercy'])n.append(link((state.complete[other]?'✓ ':'○ ')+quests[other].name+' · open owner hub','#hub/'+other,'activity-link'));n.append(el('h3','','Services & notices'),link('Innkeeper · supplies and Gwent information','#merchants','activity-link'),link('Collected notices & deferred exploration','#deferred','activity-link'));}else n.append(link('Return to arrival quest hub','#hub/nilf','activity-link'));screen.append(n);if(id==='nilf')screen.append(nextLeads());}
+ function choice(key,n){const label=el('label','choice-label',key==='inn'?'Record your inn outcome (optional)':'Record your decision (optional)'),select=el('select');select.setAttribute('aria-label',key==='inn'?'Recorded inn outcome':'Recorded John Verdun decision');select.append(new Option('Not recorded',''));const values=key==='inn'?[['peace','Settled peacefully'],['fight','Fought the soldiers']]:[['freed','Released John'],['left','Left him tied']];for(const [v,t]of values)select.append(new Option(t,v));select.value=state.choices[key]||'';select.onchange=()=>{if(!select.value){state.undo={complete:{...state.complete},choices:{...state.choices}};delete state.choices[key];}else apply(state,{kind:'choice',key,value:select.value});save();};label.append(select);n.append(label);}
+ function rememberReading(id){try{localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+state.stage[id],name:quests[id].name,stageNumber:state.stage[id]}));}catch{}}
+-function walkthrough(id,stage){const q=quests[id];apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();const i=state.stage[id]-1,s=q.stages[i];rememberReading(id);screen.append(header(q.name,q.kind+(q.level?' · Level '+q.level:''),q.art));const n=scroll();n.append(el('p','story-intro',q.intro),stages(id),link('Return to exact hub','#hub/'+id,'back-link'));n.lastChild.dataset.returnHub='true';n.append(el('p','eyebrow',s.place),el('h2','',(i+1)+'. '+s.title));if(s.warning)n.append(el('aside','warning',s.warning));n.append(el('p','',s.text));const prep=el('details'),summary=el('summary','','Preparation & reward notes');prep.append(summary,el('p','',s.prep));n.append(prep);if(s.choice)choice(s.choice,n);if(s.spoiler){const d=el('details');d.append(el('summary','','Choice consequences — spoiler'),el('p','',s.spoiler));n.append(d);}const nav=el('nav','stage-controls');nav.setAttribute('aria-label','Walkthrough navigation');const prev=el('button','','← Previous'),next=el('button','','Next →');prev.disabled=i===0;next.disabled=i===q.stages.length-1;prev.onclick=()=>go('#quest/'+id+'/'+i,{hubReturn:history.state?.velen?.hubReturn});next.onclick=()=>go('#quest/'+id+'/'+(i+2),{hubReturn:history.state?.velen?.hubReturn});nav.append(prev,el('span','',(i+1)+' / '+q.stages.length),next);n.append(nav,el('p','small-note','Next and Previous only navigate. Mark completion separately in the owner hub.'));const src=el('details');src.append(el('summary','','Sources & pilot scope'),link('Quest reference ↗',q.source),el('p','small-note','Research-led pilot; exact rewards and Xbox field acceptance remain unverified.'));n.append(src);screen.append(n);}
+-function info(type,id){if(type==='lead'){const l=leads[id];screen.append(header(l.name,'Next lead · Suggested level '+l.level));const n=scroll(l.place);n.append(el('p','',l.text),el('p','warning',unlocked(state)?'This lead is confirmed by your recorded main-quest completion. Its full walkthrough is not built in this pilot.':'This lead follows Hendrik’s notes. If you have already read them, record The Nilfgaardian Connection as complete in its owner hub.'),link('Return to arrival hub','#hub/nilf','button-link'));screen.append(n);return;}
++function walkthrough(id,stage){if(id==='nilf'&&nilfOwned()){apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();rememberReading(id);nilfUI.walkthrough(screen,state.stage[id]-1);return;}const q=quests[id];apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();const i=state.stage[id]-1,s=q.stages[i];rememberReading(id);screen.append(header(q.name,q.kind+(q.level?' · Level '+q.level:''),q.art));const n=scroll();n.append(el('p','story-intro',q.intro),stages(id),link('Return to exact hub','#hub/'+id,'back-link'));n.lastChild.dataset.returnHub='true';n.append(el('p','eyebrow',s.place),el('h2','',(i+1)+'. '+s.title));if(s.warning)n.append(el('aside','warning',s.warning));n.append(el('p','',s.text));const prep=el('details'),summary=el('summary','','Preparation & reward notes');prep.append(summary,el('p','',s.prep));n.append(prep);if(s.choice)choice(s.choice,n);if(s.spoiler){const d=el('details');d.append(el('summary','','Choice consequences — spoiler'),el('p','',s.spoiler));n.append(d);}const nav=el('nav','stage-controls');nav.setAttribute('aria-label','Walkthrough navigation');const prev=el('button','','← Previous'),next=el('button','','Next →');prev.disabled=i===0;next.disabled=i===q.stages.length-1;prev.onclick=()=>go('#quest/'+id+'/'+i,{hubReturn:history.state?.velen?.hubReturn});next.onclick=()=>go('#quest/'+id+'/'+(i+2),{hubReturn:history.state?.velen?.hubReturn});nav.append(prev,el('span','',(i+1)+' / '+q.stages.length),next);n.append(nav,el('p','small-note','Next and Previous only navigate. Mark completion separately in the owner hub.'));const src=el('details');src.append(el('summary','','Sources & pilot scope'),link('Quest reference ↗',q.source),el('p','small-note','Research-led pilot; exact rewards and Xbox field acceptance remain unverified.'));n.append(src);screen.append(n);}
++function info(type,id){if(type==='lead'){const l=leads[id];screen.append(header(l.name,'Next lead · Suggested level '+l.level));const n=scroll(l.place);n.append(el('p','',l.text),el('p','warning',isUnlocked()?'This lead is confirmed by your recorded main-quest completion. Its full walkthrough is not built in this pilot.':'This lead follows Hendrik’s notes. If you have already read them, record The Nilfgaardian Connection as complete in its owner hub.'),link('Return to arrival hub','#hub/nilf','button-link'));screen.append(n);return;}
+ screen.append(header(type==='merchants'?'Innkeeper & notices':'Collected notices','Inn at the Crossroads'));const n=scroll(type==='merchants'?'Services at this stop':'Keep for later');if(type==='merchants'){n.append(el('p','','The innkeeper provides food, drink and a shop conversation. Check his card stock and Gwent dialogue in game; this pilot does not yet verify the named match reward or its quest-state prerequisites.'),el('p','','Quest connections: The Nilfgaardian Connection; Contract: Missing Brother. Full inventories are not tracked.'),link('Notices and deferred work','#deferred','activity-link'));}else{n.append(el('h3','','Contract: Missing Brother · level 33'),el('p','','The notice can be collected at the inn. Its combat is beyond the arrival recommendation; collecting it does not mark the contract complete.'),el('h3','','Wild at Heart'),el('p','','An inn-board lead for a separate quest cluster. Its full route is not included here; it is not labelled too high-level.'),el('h3','','Lornruk · later exploration'),el('p','','The shoreline Quen Place of Power and fortress encounter need separate guidance. Research describes level-10 drowners and a level-14 wyvern. Do not add the wyvern fight to the arrival route.'));}n.append(link('Return to The Nilfgaardian Connection hub','#hub/nilf','button-link'));screen.append(n);}
+-function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;hub(r.id);}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}save();const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
+-document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0});return;}go(href,extra);},true);
+-dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent='Progress updated. Undo is available in the owner hub.';requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
++function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads());}else hub(r.id);}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}save();const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
++document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
++dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
+ addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view};
+ };
+diff -ruN baseline-untouched/dist/velen-view.css source/dist/velen-view.css
+--- baseline-untouched/dist/velen-view.css	2026-11-16 19:55:06.379354236 +0000
++++ source/dist/velen-view.css	2026-11-17 00:05:02.393217004 +0000
+@@ -11,3 +11,7 @@
+ @media(max-width:360px){.velen-view .console-r16 #velen-screen.cover{padding-inline:8px}.velen-view .console-r16 .scene-banner{width:calc(100% + 16px);margin-inline:-8px}.velen-view .console-r16 .scroll-r16{border-left-width:24px;border-right-width:24px}.velen-view .console-r16 .tiles{gap:14px 11px}.velen-view .console-r16 .console-tile,.velen-view .console-r16 .shortcuts .console-tile{height:153px}}.velen-view main#content.console-r16 .orbit-controls button,.velen-view main#content.console-r16 .stage-controls button{min-height:48px}
+ 
+ .velen-view>.scene-inner{max-width:1100px;padding:0 12px 120px}.velen-view .cover{min-width:0}.velen-view .scene-banner:focus:not(:focus-visible){outline:none}
++
++/* v45 Slice 2: Velen scenery on the shared console frame. The shared .console-r16 rule paints
++   white-orchard-scene.webp; this replaces it with the existing Velen landscape (no new art). */
++#velen > .scene-inner.console-r16{background:linear-gradient(#10202b45,#10202b66),url(velen-landscape-r18.webp) center top/auto 100% no-repeat,#171d1f url(velen-timber-r18.svg)}

@@ -1,0 +1,90 @@
+# Returning-browser CDP network summary (session 2 = same persistent profile after the served build was swapped from v45)
+# columns: URL requested | HTTP status | fromDiskCache | servedFromCache | Cache-Control
+
+## qa5-immutable  policy=immutable  result 38/38
+-- phone: handover ran=True  unchanged v45 js/css served from cache=71
+   index.html                                       200  disk=False cache=False no-cache
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=31536000, immutable
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=31536000, immutable
+   app.js?v=nilf-slice2-qa5-v45                     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=31536000, immutable
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /app.js?v=nilf-slice2-qa5-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}
+-- landscape: handover ran=True  unchanged v45 js/css served from cache=71
+   index.html                                       200  disk=False cache=False no-cache
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=31536000, immutable
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=31536000, immutable
+   app.js?v=nilf-slice2-qa5-v45                     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=31536000, immutable
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200, /app.js?v=nilf-slice2-qa5-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}
+
+## qa4-control-immutable  policy=immutable  result 18/32
+-- phone: handover ran=False  unchanged v45 js/css served from cache=72
+   index.html                                       200  disk=False cache=False no-cache
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=31536000, immutable
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=31536000, immutable
+   app.js?v=regional-foundation-v45                 200  disk=True  cache=False public, max-age=31536000, immutable
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=31536000, immutable
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200
+   stale build, direct #velen/hub/nilf: {"hash": "#velen/hub/nilf", "progressSection": false, "controls": 0, "canonicalOwnsNilf": false}
+-- landscape: handover ran=False  unchanged v45 js/css served from cache=72
+   index.html                                       200  disk=False cache=False no-cache
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=31536000, immutable
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=31536000, immutable
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=31536000, immutable
+   app.js?v=regional-foundation-v45                 200  disk=True  cache=False public, max-age=31536000, immutable
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=31536000, immutable
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200
+   stale build, direct #velen/hub/nilf: {"hash": "#velen/hub/nilf", "progressSection": false, "controls": 0, "canonicalOwnsNilf": false}
+
+## qa5-livepolicy  policy=live  result 38/38
+-- phone: handover ran=True  unchanged v45 js/css served from cache=0
+   index.html                                       200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=0, must-revalidate
+   app.js?v=nilf-slice2-qa5-v45                     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200, /app.js?v=nilf-slice2-qa5-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}
+-- landscape: handover ran=True  unchanged v45 js/css served from cache=0
+   index.html                                       200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=0, must-revalidate
+   app.js?v=nilf-slice2-qa5-v45                     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200, /app.js?v=nilf-slice2-qa5-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}
+
+## qa4-control-livepolicy  policy=live  result 38/38
+-- phone: handover ran=True  unchanged v45 js/css served from cache=0
+   index.html                                       200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=0, must-revalidate
+   app.js?v=regional-foundation-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200, /app.js?v=regional-foundation-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}
+-- landscape: handover ran=True  unchanged v45 js/css served from cache=0
+   index.html                                       200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-objectives.js?v=nilf-slice2-qa4-v45   200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-progress.js?v=nilf-slice2-qa4-v45     200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-nilf-ui.js?v=nilf-slice2-qa4-v45           200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-r18.js?v=nilf-slice2-qa3-v45               200  disk=False cache=False public, max-age=0, must-revalidate
+   app.js?v=regional-foundation-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   velen-view.css?v=nilf-slice2-v45                 200  disk=False cache=False public, max-age=0, must-revalidate
+   server log (session 2, watched files): /index.html 200, /velen-view.css?v=nilf-slice2-v45 200, /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-progress.js?v=nilf-slice2-qa4-v45 200, /velen-nilf-ui.js?v=nilf-slice2-qa4-v45 200, /velen-r18.js?v=nilf-slice2-qa3-v45 200, /app.js?v=regional-foundation-v45 200
+   controls: 9 | progress initially open: False | after reload: #velen/hub/nilf travel checked | return nav: {"via": "return link", "consoleHash": "#velen", "consoleShown": true, "hubHash": "#velen/hub/nilf", "back": "#velen", "forward": "#velen/hub/nilf", "travelAfterReturn": true, "travelAfterForward": true}

@@ -1,0 +1,46 @@
+✔ every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45 (5.219094ms)
+✔ QA5 release tags: app.js carries the QA5 release tag in index.html (1.216989ms)
+✔ pinned v45 tag table matches PHOENIX_V45_BASELINE when provided (3.823944ms)
+✔ objectives are the sourced journal objectives with https sources; reading the notes stays in the final search (1.35525ms)
+✔ conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective (1.185464ms)
+✔ fresh storage: handover creates a native canonical record that owns only velen.nilf (0.641917ms)
+✔ imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown (0.985502ms)
+✔ an imported inn choice is carried over as the canonical choice (0.335083ms)
+✔ pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched (0.588139ms)
+✔ Slice 1 guard: after the handover, import and migration rollback keep the canonical record (0.386664ms)
+✔ handover never overwrites newer, unreadable or unavailable storage (0.259765ms)
+✔ an existing native canonical record keeps its other content through the handover (0.246644ms)
+✔ commit records objectives and the inn outcome in canonical; one Undo restores the prior state (3.770948ms)
+✔ legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it (0.693858ms)
+✔ unknown objective keys written by another writer are preserved on commit (0.266486ms)
+✔ rollbackHandover restores the exact pre-handover storage only while the record is unchanged (1.132989ms)
+✔ wiring seam: script order, app.js handover order and minimal velen-r18 delegation (2.502428ms)
+✔ Slice 2 seam pin: velen-r18.js matches the reviewed QA3 bytes (0.507399ms)
+✔ protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare) (1.102844ms)
+✔ unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover (0.352309ms)
+✔ a failed import write (quota) also blocks the handover; storage read failures never write (0.167601ms)
+✔ direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded (0.145773ms)
+✔ direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome (0.566033ms)
+✔ QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state (1.051606ms)
+✔ QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both (0.610664ms)
+✔ every supported path completes, and Undo restores the exact prior state (0.592377ms)
+✔ corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction (0.754099ms)
+✔ QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze (38.892721ms)
+✔ unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports (0.765419ms)
+✔ Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome (0.312852ms)
+✔ the v45 loader/save excerpt used for byte comparison is the accepted v45 code (0.753453ms)
+✔ unreadable legacy (invalid JSON): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover (5.271438ms)
+✔ unreadable legacy (JSON array): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover (1.905402ms)
+✔ unreadable legacy (JSON null): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover (1.824983ms)
+✔ unreadable legacy (JSON number): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover (1.761983ms)
+✔ unreadable legacy (JSON string): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover (1.811296ms)
+✔ valid, partial and absent legacy records: every write is byte-identical to the v45 writer (4.819199ms)
+✔ a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept (0.618091ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 114.850432

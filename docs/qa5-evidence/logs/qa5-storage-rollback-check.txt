@@ -1,0 +1,7 @@
+# QA5 storage-rollback check (node; velen-migration.js is protected = identical to v45)
+A import imported handover handed-over
+A v45 import on next load after code rollback: canonical-kept canonical byte-identical: true
+A rollbackHandover: {"status":"handover-edited","restored":false} canonical byte-identical: true
+A Slice 1 rollback: {"status":"canonical-kept","removed":false} canonical byte-identical: true legacy byte-identical: true keys: phoenix.velen.arrival.v1,phoenix.region.velen.v1
+B rollbackHandover: {"status":"restored","restored":true} restored to Slice 1 import bytes: true
+B Slice 1 rollback: {"status":"removed","removed":true} keys: phoenix.velen.arrival.v1 legacy byte-identical: true

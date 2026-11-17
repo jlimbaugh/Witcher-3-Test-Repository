@@ -1,0 +1,47 @@
+note: legacy record after the fallback render (QA3 guard keeps the original bytes): {"version":1,"complete":{"nilf":tru
+PASS fix1: unreadable legacy + no canonical -> no canonical owner written
+PASS fix1 (QA3): unreadable legacy bytes are left unchanged by the first render
+PASS fix1 (QA3): a reload before repair still finds the original bytes and no canonical record
+PASS fix1: v45 fallback nilf hub is shown (not the handed-over hub)
+PASS fix1: after repair the import succeeds and the handover follows
+PASS fix1: handed-over hub now renders with saved completion
+PASS fix1: no page errors
+PASS phone: fix2: Heatherton step offers peace / fight / direct route
+PASS phone: fix2: route source is cited in the dialog
+PASS phone: fix2: direct route records travel+look only, no inn outcome
+PASS phone: fix2 (QA4): banner 2/5; ask/fight/finish closed and unmarked; Go to the Inn unconfirmed (not required) and unmarked
+PASS phone: fix3: shared quick Undo appears after a Velen change, owned by Velen
+PASS phone: fix3: Velen quick Undo reverses the Velen update only
+PASS phone: fix3: quick Undo closes after use
+PASS phone: fix3: page re-rendered at 0/8
+PASS phone: fix3: direct (no-dialog) Velen commit also shows quick Undo
+PASS phone: fix3: Velen quick Undo closes after three seconds
+PASS phone: fix3: correction-panel Undo still available after expiry
+PASS phone: fix3: WO commit shows the shared quick Undo with WO ownership
+PASS phone: fix3: WO quick Undo reverses WO only; Velen record byte-identical
+PASS phone: fix3: a WO change inside the Velen window hands quick Undo to WO
+PASS phone: fix3: that tap undoes WO, Velen change kept
+PASS phone: fix4: Sources stays open after advancing and on Back
+PASS phone: fix4: a closed Sources foldout is restored closed
+PASS phone: fix2: inn-conversation objectives offer only peace / fight
+PASS phone: no page errors
+PASS landscape: fix2: Heatherton step offers peace / fight / direct route
+PASS landscape: fix2: route source is cited in the dialog
+PASS landscape: fix2: direct route records travel+look only, no inn outcome
+PASS landscape: fix2 (QA4): banner 2/5; ask/fight/finish closed and unmarked; Go to the Inn unconfirmed (not required) and unmarked
+PASS landscape: fix3: shared quick Undo appears after a Velen change, owned by Velen
+PASS landscape: fix3: Velen quick Undo reverses the Velen update only
+PASS landscape: fix3: quick Undo closes after use
+PASS landscape: fix3: page re-rendered at 0/8
+PASS landscape: fix3: direct (no-dialog) Velen commit also shows quick Undo
+PASS landscape: fix3: Velen quick Undo closes after three seconds
+PASS landscape: fix3: correction-panel Undo still available after expiry
+PASS landscape: fix3: WO commit shows the shared quick Undo with WO ownership
+PASS landscape: fix3: WO quick Undo reverses WO only; Velen record byte-identical
+PASS landscape: fix3: a WO change inside the Velen window hands quick Undo to WO
+PASS landscape: fix3: that tap undoes WO, Velen change kept
+PASS landscape: fix4: Sources stays open after advancing and on Back
+PASS landscape: fix4: a closed Sources foldout is restored closed
+PASS landscape: fix2: inn-conversation objectives offer only peace / fight
+PASS landscape: no page errors
+45/45 passed

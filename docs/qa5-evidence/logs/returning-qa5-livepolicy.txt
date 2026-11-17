@@ -1,0 +1,41 @@
+session2 debug {"pages":["http://127.0.0.1:9693/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9693/index.html#velen"}
+session2 debug {"pages":["http://127.0.0.1:9694/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9694/index.html#velen"}
+PASS qa5-livepolicy-phone: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa5-livepolicy-phone: session 1 loaded v45 app.js from the network
+PASS qa5-livepolicy-phone: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa5-livepolicy-phone: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa5-livepolicy-phone: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: app.js?v=nilf-slice2-qa5-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa5-livepolicy-phone: Slice 2 handover ran on first load (new app.js executed)
+PASS qa5-livepolicy-phone: card tap opens the nilf hub
+PASS qa5-livepolicy-phone: progress section starts collapsed and expands from its summary
+PASS qa5-livepolicy-phone: Nilfgaardian objective controls reachable after expanding
+PASS qa5-livepolicy-phone: marking Travel records it in the canonical record and the control shows it
+PASS qa5-livepolicy-phone: Travel persists across reload
+PASS qa5-livepolicy-phone: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa5-livepolicy-phone: history back/forward between console and hub keeps the recorded objective
+PASS qa5-livepolicy-phone: no page errors in session 2
+PASS qa5-livepolicy-landscape: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa5-livepolicy-landscape: session 1 loaded v45 app.js from the network
+PASS qa5-livepolicy-landscape: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa5-livepolicy-landscape: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa5-livepolicy-landscape: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: app.js?v=nilf-slice2-qa5-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa5-livepolicy-landscape: Slice 2 handover ran on first load (new app.js executed)
+PASS qa5-livepolicy-landscape: card tap opens the nilf hub
+PASS qa5-livepolicy-landscape: progress section starts collapsed and expands from its summary
+PASS qa5-livepolicy-landscape: Nilfgaardian objective controls reachable after expanding
+PASS qa5-livepolicy-landscape: marking Travel records it in the canonical record and the control shows it
+PASS qa5-livepolicy-landscape: Travel persists across reload
+PASS qa5-livepolicy-landscape: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa5-livepolicy-landscape: history back/forward between console and hub keeps the recorded objective
+PASS qa5-livepolicy-landscape: no page errors in session 2
+qa5-livepolicy: 38/38 passed

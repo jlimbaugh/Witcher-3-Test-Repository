@@ -1,0 +1,21 @@
+PASS phone: guard: status explains the record is kept unchanged
+PASS phone: guard: nilf stays on the v45 fallback hub (no handover)
+PASS phone: guard: original unreadable bytes survive first visit + two reloads (27 navigation/interaction checkpoints), no canonical record
+PASS phone: repair -> import -> handover
+PASS phone: repaired record now renders the handed-over hub with saved completion
+PASS phone: repaired record kept by the normal v45 writer (completion and choices intact)
+PASS phone: after repair, legacy pyres saving works normally
+PASS phone: no page errors (guard run)
+PASS phone: valid record (full): 9 legacy writes byte-identical to v45
+PASS phone: valid record (partial): 9 legacy writes byte-identical to v45
+PASS landscape: guard: status explains the record is kept unchanged
+PASS landscape: guard: nilf stays on the v45 fallback hub (no handover)
+PASS landscape: guard: original unreadable bytes survive first visit + two reloads (27 navigation/interaction checkpoints), no canonical record
+PASS landscape: repair -> import -> handover
+PASS landscape: repaired record now renders the handed-over hub with saved completion
+PASS landscape: repaired record kept by the normal v45 writer (completion and choices intact)
+PASS landscape: after repair, legacy pyres saving works normally
+PASS landscape: no page errors (guard run)
+PASS landscape: valid record (full): 9 legacy writes byte-identical to v45
+PASS landscape: valid record (partial): 9 legacy writes byte-identical to v45
+20/20 passed

@@ -374,6 +374,9 @@
   // v44 Slice 1 seam (data only): import the legacy Velen record into phoenix.region.velen.v1 before the
   // Velen view initializes. The legacy key phoenix.velen.arrival.v1 is only read; nothing renders the canonical record.
   try{window.PhoenixVelenMigration?.importFromStorage(localStorage);}catch{}
+  // v45 Slice 2 seam (state): explicit, idempotent handover of velen.nilf progress ownership to phoenix.region.velen.v1.
+  // Runs after the Slice 1 import; never writes phoenix.velen.arrival.v1. Guarded rollback: PhoenixVelenNilfProgress.rollbackHandover(localStorage).
+  try{window.PhoenixVelenNilfProgress?.handover(localStorage);}catch{}
   window.PhoenixVelen=window.createPhoenixVelen({navigate});
   views=[...document.querySelectorAll('.view')];
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));

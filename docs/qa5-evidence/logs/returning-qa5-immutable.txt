@@ -1,0 +1,41 @@
+session2 debug {"pages":["http://127.0.0.1:9127/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9127/index.html#velen"}
+session2 debug {"pages":["http://127.0.0.1:9128/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9128/index.html#velen"}
+PASS qa5-immutable-phone: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa5-immutable-phone: session 1 loaded v45 app.js from the network
+PASS qa5-immutable-phone: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa5-immutable-phone: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa5-immutable-phone: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: app.js?v=nilf-slice2-qa5-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa5-immutable-phone: Slice 2 handover ran on first load (new app.js executed)
+PASS qa5-immutable-phone: card tap opens the nilf hub
+PASS qa5-immutable-phone: progress section starts collapsed and expands from its summary
+PASS qa5-immutable-phone: Nilfgaardian objective controls reachable after expanding
+PASS qa5-immutable-phone: marking Travel records it in the canonical record and the control shows it
+PASS qa5-immutable-phone: Travel persists across reload
+PASS qa5-immutable-phone: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa5-immutable-phone: history back/forward between console and hub keeps the recorded objective
+PASS qa5-immutable-phone: no page errors in session 2
+PASS qa5-immutable-landscape: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa5-immutable-landscape: session 1 loaded v45 app.js from the network
+PASS qa5-immutable-landscape: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa5-immutable-landscape: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa5-immutable-landscape: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: app.js?v=nilf-slice2-qa5-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa5-immutable-landscape: Slice 2 handover ran on first load (new app.js executed)
+PASS qa5-immutable-landscape: card tap opens the nilf hub
+PASS qa5-immutable-landscape: progress section starts collapsed and expands from its summary
+PASS qa5-immutable-landscape: Nilfgaardian objective controls reachable after expanding
+PASS qa5-immutable-landscape: marking Travel records it in the canonical record and the control shows it
+PASS qa5-immutable-landscape: Travel persists across reload
+PASS qa5-immutable-landscape: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa5-immutable-landscape: history back/forward between console and hub keeps the recorded objective
+PASS qa5-immutable-landscape: no page errors in session 2
+qa5-immutable: 38/38 passed

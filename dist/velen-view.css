@@ -11,3 +11,7 @@
 @media(max-width:360px){.velen-view .console-r16 #velen-screen.cover{padding-inline:8px}.velen-view .console-r16 .scene-banner{width:calc(100% + 16px);margin-inline:-8px}.velen-view .console-r16 .scroll-r16{border-left-width:24px;border-right-width:24px}.velen-view .console-r16 .tiles{gap:14px 11px}.velen-view .console-r16 .console-tile,.velen-view .console-r16 .shortcuts .console-tile{height:153px}}.velen-view main#content.console-r16 .orbit-controls button,.velen-view main#content.console-r16 .stage-controls button{min-height:48px}
 
 .velen-view>.scene-inner{max-width:1100px;padding:0 12px 120px}.velen-view .cover{min-width:0}.velen-view .scene-banner:focus:not(:focus-visible){outline:none}
+
+/* v45 Slice 2: Velen scenery on the shared console frame. The shared .console-r16 rule paints
+   white-orchard-scene.webp; this replaces it with the existing Velen landscape (no new art). */
+#velen > .scene-inner.console-r16{background:linear-gradient(#10202b45,#10202b66),url(velen-landscape-r18.webp) center top/auto 100% no-repeat,#171d1f url(velen-timber-r18.svg)}

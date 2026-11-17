@@ -1,0 +1,357 @@
+diff -ruN prefix-qa4/dist/index.html source/dist/index.html
+--- prefix-qa4/dist/index.html	2026-11-16 21:27:19.392146471 +0000
++++ source/dist/index.html	2026-11-16 22:07:27.492097904 +0000
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-nilf-objectives.js?v=nilf-slice2-qa3-v45" defer></script><script src="velen-nilf-progress.js?v=nilf-slice2-qa3-v45" defer></script><script src="velen-nilf-ui.js?v=nilf-slice2-qa3-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=nilf-slice2-qa3-v45" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=regional-foundation-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
++<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-nilf-objectives.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-progress.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-ui.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=nilf-slice2-qa3-v45" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=regional-foundation-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
+ <a class="skip" href="#main">Skip to content</a><header class="guide-bar"><div class="bar-line"><a class="wordmark" href="#home">Witcher Field Guide</a><nav aria-label="Guide"><a href="#home">Home</a><a href="#whiteorchard-tree">Quests</a><a href="#regions">Regions</a><a href="#whiteorchard-constellation" data-world-atlas>Constellation</a></nav><div class="guide-appearance"><label><span class="sr-only">Reading font</span><select id="reading-font" aria-label="Reading font"><option value="fondamento">Calligraphy</option><option value="alegreya">Alegreya</option><option value="fell">IM Fell English</option></select></label><button type="button" id="theme-toggle" aria-label="Switch to day theme">Day</button></div></div></header><main id="main">
+ <section id="whiteorchard-console" class="view home" hidden aria-labelledby="home-title"><div class="cover"><div class="cover-art"><img src="white-orchard-scene.webp" alt="Official CDPR scene of Geralt at the White Orchard notice board"><div class="plate-caption"><span>TEMERIA · WHITE ORCHARD</span><span>AN UNOFFICIAL FIELD JOURNAL</span></div></div><div class="journal-sheet home-sheet"><span aria-hidden="true" class="corner tl"></span><span aria-hidden="true" class="corner tr"></span><p class="eyebrow">WHITE ORCHARD / THE BEGINNING OF THE PATH</p><h1 id="home-title">The Path<br>through <em>White Orchard.</em></h1><p class="intro">A witcher’s work begins with a lead. Follow it. Find what is worth doing along the way.</p><div class="rule" aria-hidden="true"><span>◆</span></div><a class="continue" data-console-continue href="#whiteorchard-tree/hub-arrival"><span class="continue-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 28 24 7M10 22C4 12 16 3 28 4c1 12-5 22-16 20M17 15l8 1M13 20l7 1"/></svg></span><span><small>YOUR JOURNAL</small><strong data-console-title>Arrival in White Orchard</strong><span class="continue-meta"><span data-console-meta>Open your selected quest hub</span></span></span><span class="arrow" aria-hidden="true">→</span></a><div class="doors"><a href="#whiteorchard-tree"><span class="door-no">01</span><div><h2>Quests</h2><p>One path. The opportunities around it.</p></div><span aria-hidden="true">→</span></a><a href="#whiteorchard-map"><span class="door-no">02</span><div><h2>The map</h2><p>Familiar ground. Something worth finding.</p></div><span aria-hidden="true">→</span></a></div><nav class="shelf" aria-label="Journal sections"><a href="#regions">Regions</a><a href="#economy-merchants">Merchants</a><button disabled aria-label="Systems — coming soon">Systems</button><button disabled aria-label="Builds — coming soon">Builds</button></nav><span aria-hidden="true" class="corner bl"></span><span aria-hidden="true" class="corner br"></span></div></div><p class="study-note">THE KEEP · XBOX SERIES X|S · YOUR PROGRESS, YOUR PATH</p></section>
+ <section class="view scene" id="regions" hidden aria-labelledby="regions-title"><div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><span>Regions</span></nav><div class="region-hero"><p class="eyebrow">THE CONTINENT / REGIONAL GUIDES</p><h1 id="regions-title">Choose your<br><em>next horizon.</em></h1><p class="lead">Every place has its stories.<br>Begin where the Path first opens.</p></div><a class="region-feature" href="#whiteorchard"><span class="eyebrow">01 / TEMERIA</span><h2>White Orchard</h2><p>Orchards, quiet roads, and the scars of war.</p><span class="entry-footer">Explore the region <b aria-hidden="true">→</b></span></a><a class="region-feature velen-entry" href="velen.html"><span class="eyebrow">02 / NO MAN’S LAND · ARRIVAL PILOT</span><h2>Velen</h2><p>The imperial agent’s trail through a country broken by war.</p><span class="entry-footer">Enter Velen <b aria-hidden="true">→</b></span></a><p class="quiet">Novigrad · Oxenfurt · Skellige · Kaer Morhen · Hearts of Stone · Toussaint<br>Further regional guides remain planned.</p></div></section>
+diff -ruN prefix-qa4/dist/slice2-nilf.test.cjs source/dist/slice2-nilf.test.cjs
+--- prefix-qa4/dist/slice2-nilf.test.cjs	2026-11-16 21:27:12.856135182 +0000
++++ source/dist/slice2-nilf.test.cjs	2026-11-16 22:07:04.144393876 +0000
+@@ -184,63 +184,126 @@
+  const ok=store();assert.equal(h.handover(ok).status,'handed-over','fresh browsers with no legacy record are still handed over');
+ });
+ 
+-// --- QA2/QA3 correction 2: the direct-Heatherton route ------------------------------------------
+-// QA3 evidence review: only "Ask…", "Defeat…" and "Finish talking…" close (wiki "Unless you go straight to Heatherton"
+-// group). "Go to the Inn at the Crossroads." stays required on every path and is never marked automatically.
+-const DIRECT={choices:{inn:'direct'}},sumOf=s=>e.counts(Q,h.load(s).progress),BYPASSED=['ask','fight','finish'].map(O);
++// --- QA2/QA3/QA4 correction 2: the direct-Heatherton route ---------------------------------------
++// QA3 evidence review: "Ask…", "Defeat…" and "Finish talking…" close (wiki "Unless you go straight to Heatherton" group).
++// QA4: the wiki's placement of "Go to the Inn at the Crossroads." does not establish its journal status on the bypass, so on
++// the direct route it is UNCONFIRMED: neither required nor marked. It stays required while unknown and on peace/fight.
++const DIRECT={choices:{inn:'direct'}},sumOf=s=>e.counts(Q,h.load(s).progress),BYPASSED=['ask','fight','finish'].map(O),UNCONFIRMED=[O('inn')];
+ const both=(p,a,b,opts)=>{const r1=act(p,a,true,opts);return act(r1.progress,b,true,opts);};
++const quest=(p,value=true,choices={})=>h.plan(p,{kind:'quest',quest:Q,value},{catchup:true,choices});
++const withoutUndo=t=>{const c=JSON.parse(t);delete c.activities[Q].undo;return JSON.stringify(c);};
+ test('direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded',()=>{
+  assert.equal(data.routeArchive,'https://web.archive.org/web/20260110001207/https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection');
+  assert.ok(data.routeCrossCheck.length>=2&&data.routeCrossCheck.every(u=>/^https:\/\//.test(u)));
+  assert.deepEqual(Object.values(data.objectiveIndex).filter(o=>o.route==='inn').map(o=>o.id),BYPASSED,'exactly the wiki conditional group');
+  for(const id of BYPASSED)assert.equal(data.objectiveIndex[id].routeSource,data.routeSource);
+- assert.equal(data.objectiveIndex[O('inn')].branch,undefined,'Go to the Inn has no route branch');assert.match(data.objectiveIndex[O('inn')].routeNote,/every path/);
++ const inn=data.objectiveIndex[O('inn')];
++ assert.equal(inn.route,undefined,'Go to the Inn is not part of the bypassed group');assert.equal(inn.unconfirmedOn,'direct');assert.deepEqual(inn.branch,['inn',['peace','fight',undefined]]);assert.match(inn.routeNote,/unconfirmed/);
+ });
+-test('direct-Heatherton route: closes Ask/Defeat/Finish without completing them, keeps Go to the Inn required, records no inn outcome',()=>{
+- const p0=e.init();assert.equal(e.counts(Q,e.init({schema:1,choices:{inn:'direct'}})).total,6);
++test('direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome',()=>{
++ const p0=e.init(),t=v=>e.counts(Q,e.init({schema:1,choices:v?{inn:v}:{}})).total;
++ assert.deepEqual([t(),t('peace'),t('fight'),t('direct')],[8,8,9,5],'unknown / peace / fight unchanged; direct = 5');
+  assert.deepEqual(act(p0,'search').missingChoices,['inn'],'catch-up still asks which path was taken');
+- const r=act(p0,'search',true,DIRECT);assert.equal(marks(r.progress),'find,look,search,survivor,travel','Go to the Inn is not marked by catch-up');assert.equal(e.done(Q,r.progress),false);
+- for(const id of BYPASSED)assert.equal(e.closed(data.objectiveIndex[id],r.progress),true,id+' closed on the direct route');
+- assert.equal(e.closed(data.objectiveIndex[O('inn')],r.progress),false,'Go to the Inn stays open');
++ const r=act(p0,'search',true,DIRECT);assert.equal(marks(r.progress),'find,look,search,survivor,travel','Go to the Inn is not marked by catch-up');
++ for(const id of [...BYPASSED,...UNCONFIRMED])assert.equal(e.closed(data.objectiveIndex[id],r.progress),true,id+' not required on the direct route');
++ assert.equal(e.done(Q,r.progress),true,'recording the final search (reading Hendrik’s notes) finishes the quest on the direct route');
+  const s=store();h.handover(s);assert.equal(h.commit(s,r.progress).status,'saved');
+- let c=canon(s);assert.equal(c.choices.inn,undefined,'no inn outcome is stored');assert.equal(c.activities[Q].route,'direct-heatherton');
+- assert.deepEqual(c.activities[Q].bypassed,BYPASSED,'skipped objectives are listed separately from completed ones');
+- for(const id of BYPASSED)assert.equal(c.activities[Q].objectives[id],undefined,'skipped is never stored as done');
+- assert.equal(c.activities[Q].complete,false);assert.deepEqual(sumOf(s),{done:5,total:6,optionalDone:0,optionalTotal:0});
+- h.commit(s,act(h.load(s).progress,'inn').progress);c=canon(s);
+- assert.equal(c.activities[Q].complete,true,'complete once the player records Go to the Inn');assert.deepEqual(sumOf(s),{done:6,total:6,optionalDone:0,optionalTotal:0});
++ const c=canon(s),a=c.activities[Q];assert.equal(c.choices.inn,undefined,'no inn outcome is stored');assert.equal(a.route,'direct-heatherton');
++ assert.deepEqual(a.bypassed,BYPASSED,'skipped objectives are listed separately from completed ones');assert.deepEqual(a.unconfirmed,UNCONFIRMED,'unconfirmed objective listed separately');
++ for(const id of [...BYPASSED,...UNCONFIRMED])assert.equal(a.objectives[id],undefined,'skipped / unconfirmed is never stored as done');
++ assert.equal(a.complete,true);assert.equal(a.confirmedComplete,undefined,'completion here comes from recorded objectives, not a confirmation');assert.deepEqual(sumOf(s),{done:5,total:5,optionalDone:0,optionalTotal:0});
++ assert.equal(act(h.load(s).progress,'inn').progress.objectives[O('inn')],undefined,'Go to the Inn cannot be marked on the direct route');
+  assert.equal(h.load(s).progress.choices.inn,'direct','the route maps back in memory only');
+  const look=act(p0,'look',true,DIRECT);assert.equal(marks(look.progress),'look,travel','"Look for Hendrik" on the direct route needs only Travel to Velen');
+ });
++test('QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state',()=>{
++ // Route already recorded (Look for Hendrik on the direct route), 2/5 objectives recorded.
++ const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'look',true,DIRECT).progress);
++ const before=s.getItem(CANON),p=h.load(s).progress;
++ const r=quest(p);assert.equal(r.confirmedCompletion,true);assert.deepEqual(r.catchup,[]);assert.deepEqual(r.affected,[]);assert.deepEqual(r.missingChoices,[]);assert.deepEqual(r.completionLosses,[]);
++ assert.equal(h.commit(s,r.progress).status,'saved');
++ let c=canon(s),a=c.activities[Q];
++ assert.equal(a.complete,true);assert.equal(a.confirmedComplete,true);assert.equal(a.legacyComplete,false,'not confused with imported legacy completion');
++ assert.deepEqual(Object.keys(a.objectives).sort(),[O('look'),O('travel')],'no objective mark is filled');
++ assert.equal(a.objectives[O('inn')],undefined,'Go to the Inn stays unmarked');assert.deepEqual(a.unconfirmed,UNCONFIRMED);assert.equal(c.choices.inn,undefined,'no inn outcome');
++ const l=h.load(s);assert.equal(l.complete,true);assert.equal(l.confirmedComplete,true);assert.equal(l.legacyComplete,false);assert.deepEqual(e.counts(Q,l.progress),{done:2,total:5,optionalDone:0,optionalTotal:0},'objective count stays the recorded marks');
++ assert.equal(h.undo(s).status,'saved');assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(before),'Undo restores the exact prior record');
++ assert.equal(h.load(s).complete,false);assert.equal(canon(s).activities[Q].confirmedComplete,undefined);
++ // Route unknown: the dialog asks which path; choosing the direct route confirms without any mark.
++ const u=store();h.handover(u);const ub=u.getItem(CANON);
++ const ask=quest(h.load(u).progress);assert.deepEqual(ask.missingChoices,['inn']);
++ const ru=quest(h.load(u).progress,true,{inn:'direct'});assert.equal(ru.confirmedCompletion,true);h.commit(u,ru.progress);
++ c=canon(u);assert.deepEqual(c.activities[Q].objectives,{});assert.equal(c.activities[Q].route,'direct-heatherton');assert.equal(c.choices.inn,undefined);assert.equal(c.activities[Q].complete,true);assert.equal(c.activities[Q].confirmedComplete,true);
++ h.undo(u);assert.equal(withoutUndo(u.getItem(CANON)),withoutUndo(ub));
++});
++test('QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both',()=>{
++ const s=store();h.handover(s);h.commit(s,act(h.load(s).progress,'find',true,DIRECT).progress);h.commit(s,quest(h.load(s).progress).progress);
++ const confirmed=s.getItem(CANON);
++ let r=quest(h.load(s).progress,false);assert.deepEqual(r.affected,[],'no objective mark removed');assert.deepEqual(r.completionLosses,[Q]);h.commit(s,r.progress);
++ let c=canon(s);assert.equal(c.activities[Q].complete,false);assert.equal(c.activities[Q].confirmedComplete,undefined);assert.equal(marks(h.load(s).progress),'find,look,survivor,travel');
++ h.undo(s);assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(confirmed));
++ // direct -> peace: the confirmation belonged to the direct route, so it is dropped (no legacy completion is created).
++ r=h.plan(h.load(s).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:false,choices:{inn:'peace'}});assert.ok(r.completionLosses.includes(Q));h.commit(s,r.progress);
++ c=canon(s);assert.equal(c.activities[Q].complete,false);assert.equal(c.activities[Q].confirmedComplete,undefined);assert.equal(c.activities[Q].legacyComplete,false);assert.equal(c.choices.inn.value,'peace');
++ h.undo(s);assert.equal(withoutUndo(s.getItem(CANON)),withoutUndo(confirmed));
++ // Recording more objectives keeps the confirmation; 5/5 then completes on its own as well.
++ h.commit(s,act(h.load(s).progress,'search',true).progress);c=canon(s);assert.equal(c.activities[Q].confirmedComplete,true);assert.equal(c.activities[Q].complete,true);assert.equal(c.activities[Q].objectives[O('inn')],undefined);
++});
+ test('every supported path completes, and Undo restores the exact prior state',()=>{
+- const expect={peace:'ask,find,finish,inn,look,search,survivor,travel',fight:'ask,fight,find,finish,inn,look,search,survivor,travel',direct:'find,inn,look,search,survivor,travel'};
++ const expect={peace:'ask,find,finish,inn,look,search,survivor,travel',fight:'ask,fight,find,finish,inn,look,search,survivor,travel',direct:'find,look,search,survivor,travel'};
+  for(const [path,want] of Object.entries(expect)){
+   const s=store();h.handover(s);const before=s.getItem(CANON);
+   h.commit(s,both(h.load(s).progress,'search','inn',{choices:{inn:path}}).progress);
+   const l=h.load(s);assert.equal(marks(l.progress),want,path);assert.equal(l.complete,true,path);assert.equal(l.progress.choices.inn,path);
+   assert.equal(h.undo(s).status,'saved');const back=canon(s);
+-  assert.deepEqual(back.activities[Q].objectives,{});assert.equal(back.choices.inn,undefined);assert.equal(back.activities[Q].route,undefined);assert.equal(back.activities[Q].bypassed,undefined);assert.equal(back.activities[Q].complete,false,path);
++  assert.deepEqual(back.activities[Q].objectives,{});assert.equal(back.choices.inn,undefined);assert.equal(back.activities[Q].route,undefined);assert.equal(back.activities[Q].bypassed,undefined);assert.equal(back.activities[Q].unconfirmed,undefined);assert.equal(back.activities[Q].complete,false,path);
+   assert.deepEqual(back.choices,JSON.parse(before).choices,path);
+  }
+ });
+ test('corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction',()=>{
+  const s=store();h.handover(s);
+  h.commit(s,act(h.load(s).progress,'search',true,{choices:{inn:'fight'}}).progress);
+- // fight -> direct: ask, fight and finish lose their marks; Go to the Inn keeps its mark; the route replaces the outcome.
++ // fight -> direct: ask, fight, finish and (QA4, now not required) Go to the Inn lose their marks; shown in the dialog; Undo restores them.
+  let r=h.plan(h.load(s).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:true,choices:{inn:'direct'}});
+- assert.deepEqual(r.affected.map(x=>x.split(':')[1]).sort(),['ask','fight','finish']);h.commit(s,r.progress);
+- let c=canon(s);assert.equal(c.choices.inn,undefined);assert.equal(c.activities[Q].route,'direct-heatherton');assert.deepEqual(c.activities[Q].bypassed,BYPASSED);
+- assert.equal(marks(h.load(s).progress),'find,inn,look,search,survivor,travel');assert.equal(h.load(s).complete,true);
+- assert.equal(h.undo(s).status,'saved');c=canon(s);assert.equal(c.choices.inn.value,'fight');assert.equal(c.activities[Q].route,undefined);assert.equal(c.activities[Q].bypassed,undefined);assert.equal(marks(h.load(s).progress),'ask,fight,find,finish,inn,look,search,survivor,travel');
++ assert.deepEqual(r.affected.map(x=>x.split(':')[1]).sort(),['ask','fight','finish','inn']);h.commit(s,r.progress);
++ let c=canon(s);assert.equal(c.choices.inn,undefined);assert.equal(c.activities[Q].route,'direct-heatherton');assert.deepEqual(c.activities[Q].bypassed,BYPASSED);assert.deepEqual(c.activities[Q].unconfirmed,UNCONFIRMED);
++ assert.equal(marks(h.load(s).progress),'find,look,search,survivor,travel');assert.equal(h.load(s).complete,true);
++ assert.equal(h.undo(s).status,'saved');c=canon(s);assert.equal(c.choices.inn.value,'fight');assert.equal(c.activities[Q].route,undefined);assert.equal(c.activities[Q].bypassed,undefined);assert.equal(c.activities[Q].unconfirmed,undefined);assert.equal(marks(h.load(s).progress),'ask,fight,find,finish,inn,look,search,survivor,travel');
+  // fight -> peace: only the fight mark is removed.
+  r=h.plan(h.load(s).progress,{kind:'objective',id:O('ask'),value:true,editChoice:true},{catchup:true,choices:{inn:'peace'}});
+  assert.deepEqual(r.affected,[O('fight')]);h.commit(s,r.progress);assert.equal(h.load(s).complete,true);assert.equal(e.counts(Q,h.load(s).progress).total,8);
+- // direct -> peace: Ask/Finish become required again and are NOT auto-completed by the correction.
++ // direct -> peace: Go to the Inn, Ask and Finish become required again and are NOT auto-completed by the correction.
+  const d=store();h.handover(d);h.commit(d,act(h.load(d).progress,'search',true,DIRECT).progress);
+  r=h.plan(h.load(d).progress,{kind:'objective',id:O('look'),value:true,editChoice:true},{catchup:false,choices:{inn:'peace'}});h.commit(d,r.progress);
+  const l=h.load(d);assert.equal(l.complete,false,'switching away from the direct route does not invent the inn conversation');
+  assert.deepEqual(e.counts(Q,l.progress),{done:5,total:8,optionalDone:0,optionalTotal:0});assert.equal(canon(d).activities[Q].route,undefined);assert.equal(canon(d).activities[Q].bypassed,undefined);assert.equal(canon(d).choices.inn.value,'peace');
+- assert.equal(h.undo(d).status,'saved');assert.equal(canon(d).activities[Q].route,'direct-heatherton');assert.deepEqual(sumOf(d),{done:5,total:6,optionalDone:0,optionalTotal:0});
++ assert.equal(h.undo(d).status,'saved');assert.equal(canon(d).activities[Q].route,'direct-heatherton');assert.deepEqual(sumOf(d),{done:5,total:5,optionalDone:0,optionalTotal:0});
++});
++// QA4: peace, fight and unknown routes are unchanged. A fixed matrix of plans/commits/undos on those routes is replayed
++// in a fresh process and hashed; the hash was generated from the QA3 freeze (prefix-qa4) and must match byte for byte.
++// Set PHOENIX_SLICE2_QA3_DIST=<prefix-qa4/dist> to also replay against that tree directly.
++const TRACE=String.raw`
++const dir=process.argv[1];globalThis.window=globalThis;
++const h=require(dir+'/velen-nilf-progress.js'),m=require(dir+'/velen-migration.js'),Q='velen.nilf',O=x=>Q+':'+x,out=[];
++const store=init=>{const map=new Map(Object.entries(init||{}));return {getItem:k=>map.has(k)?map.get(k):null,setItem:(k,v)=>map.set(k,String(v)),removeItem:k=>map.delete(k)};};
++const steps=route=>{const c=route?{inn:route}:{};return [['objective','travel',true,{}],['objective','inn',true,{}],['objective','search',true,c],['quest',null,true,c],['quest',null,false,{}],['undo'],['quest',null,true,c],['objective','look',false,{}],['undo'],['objective','ask',true,c],['objective','finish',false,{}],['quest',null,true,{}]];};
++const run=(label,s,route)=>{for(const st of steps(route)){
++ if(st[0]==='undo'){out.push([label,'undo',h.undo(s).status,s.getItem(h.KEY)]);continue;}
++ const action=st[0]==='quest'?{kind:'quest',quest:Q,value:st[2]}:{kind:'objective',id:O(st[1]),value:st[2]};
++ const r=h.plan(h.load(s).progress,action,{catchup:true,choices:st[3]});
++ const plan={catchup:r.catchup,affected:r.affected,missingChoices:r.missingChoices,completionLosses:r.completionLosses,progress:r.progress,confirmedCompletion:r.confirmedCompletion};
++ out.push([label,JSON.stringify(action),JSON.stringify(plan)]);
++ if(!r.missingChoices.length)out.push([label,'commit',h.commit(s,r.progress).status,s.getItem(h.KEY)]);
++}};
++for(const route of [undefined,'peace','fight']){const s=store();h.handover(s);run('fresh:'+route,s,route);}
++for(const route of [undefined,'peace','fight']){const s=store({[h.LEGACY_KEY]:JSON.stringify({version:1,complete:{nilf:true},stage:{nilf:4},choices:route?{inn:route}:{}})});m.importFromStorage(s);h.handover(s);out.push(['legacy:'+route,'handover',s.getItem(h.KEY)]);run('legacy:'+route,s,route);}
++process.stdout.write(require('crypto').createHash('sha256').update(JSON.stringify(out)).digest('hex')+' '+out.length);
++`;
++const OTHER_ROUTES_QA3='a2f98352982c66453ace120c68a5e2776999e08282b72bb57917fa7744387204 125';
++const trace=dir=>require('node:child_process').execFileSync(process.execPath,['-e',TRACE,dir],{encoding:'utf8'}).trim();
++test('QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze',()=>{
++ assert.equal(trace(__dirname),OTHER_ROUTES_QA3);
++ const prior=process.env.PHOENIX_SLICE2_QA3_DIST;if(prior){assert.ok(fs.existsSync(prior+'/velen-nilf-progress.js'),'PHOENIX_SLICE2_QA3_DIST is set but missing: '+prior);assert.equal(trace(require('node:path').resolve(prior)),OTHER_ROUTES_QA3);}
+ });
+ test('unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports',()=>{
+  for(const path of ['peace','fight']){
+diff -ruN prefix-qa4/dist/velen-nilf-objectives.js source/dist/velen-nilf-objectives.js
+--- prefix-qa4/dist/velen-nilf-objectives.js	2026-11-16 21:38:39.431018078 +0000
++++ source/dist/velen-nilf-objectives.js	2026-11-16 22:07:22.964153619 +0000
+@@ -6,15 +6,16 @@
+ // No objective is invented: the wild-dog fight described by GameBanshee has no journal line and is not listed.
+ // Reading Hendrik's notes stays inside the final search objective.
+ const Q='velen.nilf',SOURCE='https://www.witcher.tools/quests/the-nilfgaardian-connection';
+-// QA2/QA3: the direct-Heatherton route. Evidence (checked 2026-11-16; see SLICE2-REVIEW.md §9.2):
++// QA2/QA3/QA4: the direct-Heatherton route. Evidence (checked 2026-11-16; see SLICE2-REVIEW.md §9.2):
+ // - Witcher Wiki objective list (live page blocks automated fetches; read via search excerpts and the full Wayback
+ //   snapshot 20260110001207): "Travel to Velen." and "Go to the Inn
+ //   at the Crossroads." are listed for every path; "Ask about the agent…", "Defeat the baron’s men." (if hostile) and
+ //   "Finish talking to the innkeep…" are grouped under "Unless you go straight to Heatherton".
+ // - witcher.tools, Game8, GameBanshee and Gamer Guides list the objectives in order and do not describe the bypass; none
+ //   contradicts the wiki. No second source states which objectives close.
+-// So: Ask / Defeat / Finish close on the direct route (wiki), while "Go to the Inn" stays REQUIRED on every path (the wiki
+-// keeps it outside the conditional group and nothing shows it closing). It is never marked automatically.
++// So: Ask / Defeat / Finish close on the direct route (wiki). QA4: the wiki's placement of "Go to the Inn" does not establish its
++// journal status on the bypass, so on the direct route it is UNCONFIRMED: neither required nor marked (`unconfirmedOn`).
++// It stays required while the route is unknown and on the peace/fight routes (unchanged).
+ const ROUTE_SOURCE='https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection#Objectives',
+  ROUTE_ARCHIVE='https://web.archive.org/web/20260110001207/https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection',
+  ROUTE_CROSSCHECK=['https://www.witcher.tools/quests/the-nilfgaardian-connection','https://game8.co/games/Witcher3/archives/275617','https://www.gamebanshee.com/thewitcher3/walkthrough/thenilfgaardianconnection.php','https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/velen/the-niflgaardian-connection'];
+@@ -22,7 +23,7 @@
+ const VIA_INN=['inn',['peace','fight',undefined]];
+ const rows=[
+  ['travel','Travel to Velen.','Arrival',1,[]],
+- ['inn','Go to the Inn at the Crossroads.','Road',2,['travel'],{routeNote:'Required on every path: the wiki lists it outside the “Unless you go straight to Heatherton” group. Never marked automatically on the direct route.',routeSource:ROUTE_SOURCE}],
++ ['inn','Go to the Inn at the Crossroads.','Road',2,['travel'],{branch:VIA_INN,unconfirmedOn:'direct',routeNote:'Required on the inn routes. On the direct route its journal status is unconfirmed: the wiki lists it outside the “Unless you go straight to Heatherton” group but does not say what happens to it, so it is neither required nor marked.',routeSource:ROUTE_SOURCE}],
+  ['ask','Ask about the agent called Hendrik at the Inn at the Crossroads.','The Inn',3,['inn'],{choice:'inn',branch:VIA_INN,route:'inn',routeSource:ROUTE_SOURCE}],
+  ['fight','Defeat the baron’s men.','The Inn',3,['ask'],{branch:['inn','fight'],route:'inn',routeSource:ROUTE_SOURCE}],
+  ['finish','Finish talking to the innkeep about the agent called Hendrik.','The Inn',3,['ask'],{conditionalRequires:{inn:{fight:[Q+':fight']}},branch:VIA_INN,route:'inn',routeSource:ROUTE_SOURCE}],
+@@ -34,7 +35,7 @@
+ const objectives=rows.map(([key,label,chapter,stage,requires,extra={}])=>({id:Q+':'+key,label,chapter,stage,requires:requires.map(r=>Q+':'+r),quest:Q,region:'velen',source:SOURCE,...extra}));
+ const quests={[Q]:{region:'velen',level:5,source:SOURCE,objectives}};
+ const objectiveIndex=Object.fromEntries(objectives.map(o=>[o.id,o]));
+-const choices={inn:{label:'What happened at the Inn at the Crossroads?',options:[['peace','Settled peacefully with the baron’s men'],['fight','Fought the baron’s men'],['direct','Went straight to Heatherton — no inn conversation']],outcome:'Fighting the baron’s men adds the journal objective “Defeat the baron’s men.” The Baron remembers it later at Crow’s Perch. Going straight to Heatherton skips the inn conversation: “Ask about…”, “Defeat…” and “Finish talking…” are closed, not completed, and no inn outcome is recorded. “Go to the Inn at the Crossroads.” stays required. None of these blocks the main story.',source:SOURCE,routeSource:ROUTE_SOURCE,routeArchive:ROUTE_ARCHIVE,routeValue:'direct'}};
++const choices={inn:{label:'What happened at the Inn at the Crossroads?',options:[['peace','Settled peacefully with the baron’s men'],['fight','Fought the baron’s men'],['direct','Went straight to Heatherton — no inn conversation']],outcome:'Fighting the baron’s men adds the journal objective “Defeat the baron’s men.” The Baron remembers it later at Crow’s Perch. Going straight to Heatherton skips the inn conversation: “Ask about…”, “Defeat…” and “Finish talking…” are closed, not completed, and no inn outcome is recorded. The journal status of “Go to the Inn at the Crossroads.” is unconfirmed on that route, so it is neither required nor marked. None of these blocks the main story.',source:SOURCE,routeSource:ROUTE_SOURCE,routeArchive:ROUTE_ARCHIVE,routeValue:'direct'}};
+ const api={quest:Q,source:SOURCE,routeSource:ROUTE_SOURCE,routeArchive:ROUTE_ARCHIVE,routeCrossCheck:ROUTE_CROSSCHECK,quests,objectiveIndex,choices,milestones:{},riskQuests:[],regions:{velen:{entry:null}}};
+ root.PHOENIX_VELEN_NILF_PROGRESS=api;if(typeof module!=='undefined')module.exports=api;
+ })(typeof window!=='undefined'?window:globalThis);
+diff -ruN prefix-qa4/dist/velen-nilf-progress.js source/dist/velen-nilf-progress.js
+--- prefix-qa4/dist/velen-nilf-progress.js	2026-11-16 21:26:24.380055291 +0000
++++ source/dist/velen-nilf-progress.js	2026-11-16 22:07:22.796155702 +0000
+@@ -55,26 +55,37 @@
+  return {status:'handed-over',record:base};
+ }
+ // Shared-engine progress for velen.nilf from the canonical record. Known objective IDs only; unknown keys are kept in storage untouched.
++// QA4: a confirmed whole-quest completion on the direct route (`confirmedComplete`) is a quest-level fact, separate from
++// objective marks and from imported legacy completion. In memory it is the engine's whole-quest `legacy` mark plus a
++// `confirmed` flag (not an engine field); it only applies while the direct route is recorded.
++const confirmedOn=act=>act.confirmedComplete===true&&act.route===ROUTE_DIRECT&&act.legacyComplete!==true;
+ function toProgress(record){
+  const act=record.activities[Q],objectives={};
+  for(const [id,v] of Object.entries(plain(act.objectives)?act.objectives:{}))if(data.objectiveIndex[id])objectives[id]=v;
+- return engine.init({schema:1,objectives,choices:OUTCOMES.includes(record.choices?.inn?.value)?{inn:record.choices.inn.value}:act.route===ROUTE_DIRECT?{inn:DIRECT}:{},manual:{},failed:{[Q]:act.failed===true},legacy:{[Q]:act.legacyComplete===true}},{});
++ const confirmed=confirmedOn(act);
++ const p=engine.init({schema:1,objectives,choices:OUTCOMES.includes(record.choices?.inn?.value)?{inn:record.choices.inn.value}:act.route===ROUTE_DIRECT?{inn:DIRECT}:{},manual:{},failed:{[Q]:act.failed===true},legacy:{[Q]:act.legacyComplete===true||confirmed}},{});
++ if(confirmed)p.confirmed={[Q]:true};
++ return p;
+ }
+ function load(storage){
+  const r=read(storage);
+  if(r.status!=='readable')return {owned:false,status:r.status,progress:engine.init(),complete:false};
+  if(!handedOver(r.value))return {owned:false,status:'not-handed-over',progress:engine.init(),complete:false};
+  const progress=toProgress(r.value);
+- return {owned:true,status:'owned',record:r.value,progress,complete:engine.done(Q,progress),legacyComplete:progress.legacy[Q]===true,undo:!!r.value.activities[Q].undo};
++ const confirmedComplete=progress.confirmed?.[Q]===true;
++ return {owned:true,status:'owned',record:r.value,progress,complete:engine.done(Q,progress),legacyComplete:progress.legacy[Q]===true&&!confirmedComplete,confirmedComplete,undo:!!r.value.activities[Q].undo};
+ }
+-function snapshot(act,choices){return {objectives:clone(plain(act.objectives)?act.objectives:{}),legacyComplete:act.legacyComplete===true,failed:act.failed===true,choice:choices?.inn?clone(choices.inn):null,route:act.route||null};}
++function snapshot(act,choices){return {objectives:clone(plain(act.objectives)?act.objectives:{}),legacyComplete:act.legacyComplete===true,failed:act.failed===true,choice:choices?.inn?clone(choices.inn):null,route:act.route||null,...(act.confirmedComplete===true?{confirmedComplete:true}:{})};}
+ function write(storage,mutate){
+  const r=read(storage);
+  if(r.status!=='readable'||!handedOver(r.value))return {status:r.status==='readable'?'not-handed-over':r.status};
+  const record=clone(r.value);mutate(record);
+  const act=record.activities[Q];act.complete=engine.done(Q,toProgress(record));
+  // QA3: objectives closed by the direct route are listed explicitly, so skipped stays distinct from completed in data.
+- if(act.route===ROUTE_DIRECT)act.bypassed=Object.values(data.objectiveIndex).filter(o=>o.route==='inn').map(o=>o.id);else delete act.bypassed;
++ delete act.bypassed;delete act.unconfirmed;/* QA4: stable key order so Undo restores exact bytes */
++ if(act.route===ROUTE_DIRECT)act.bypassed=Object.values(data.objectiveIndex).filter(o=>o.route==='inn').map(o=>o.id);
++ // QA4: objectives whose journal status is unconfirmed on the direct route are listed too (never marked, never required).
++ if(act.route===ROUTE_DIRECT)act.unconfirmed=Object.values(data.objectiveIndex).filter(o=>o.unconfirmedOn===DIRECT&&act.objectives?.[o.id]!=='done').map(o=>o.id);
+  try{storage.setItem(KEY,JSON.stringify(record));}catch{return {status:'save-unavailable'};}
+  return {status:'saved',record};
+ }
+@@ -86,24 +97,37 @@
+   act.undo=snapshot(act,record.choices);
+   act.objectives={...keep};
+   for(const [id,v] of Object.entries(progress.objectives))if(data.objectiveIndex[id]&&['done','skipped'].includes(v))act.objectives[id]=v;
+-  act.legacyComplete=progress.legacy?.[Q]===true;act.failed=progress.failed?.[Q]===true;
+-  const value=progress.choices?.inn;
++  const value=progress.choices?.inn,confirmed=progress.confirmed?.[Q]===true&&progress.legacy?.[Q]===true&&value===DIRECT;
++  act.legacyComplete=progress.legacy?.[Q]===true&&!confirmed;act.failed=progress.failed?.[Q]===true;
++  if(confirmed)act.confirmedComplete=true;else delete act.confirmedComplete;
+   if(OUTCOMES.includes(value))record.choices.inn={activity:Q,value,source:data.source};else delete record.choices.inn;
+   if(value===DIRECT)act.route=ROUTE_DIRECT;else delete act.route;
+  });
+ }
+ function undo(storage){
+  const r=read(storage);if(r.status!=='readable'||!handedOver(r.value)||!r.value.activities[Q].undo)return {status:'nothing-to-undo'};
+- return write(storage,record=>{const act=record.activities[Q],u=act.undo;act.objectives=u.objectives;act.legacyComplete=u.legacyComplete;act.failed=u.failed;if(u.choice)record.choices.inn=u.choice;else delete record.choices.inn;if(u.route)act.route=u.route;else delete act.route;delete act.undo;});
++ return write(storage,record=>{const act=record.activities[Q],u=act.undo;act.objectives=u.objectives;act.legacyComplete=u.legacyComplete;act.failed=u.failed;if(u.choice)record.choices.inn=u.choice;else delete record.choices.inn;if(u.route)act.route=u.route;else delete act.route;if(u.confirmedComplete)act.confirmedComplete=true;else delete act.confirmedComplete;delete act.undo;});
+ }
+ // Shared-engine plan for velen.nilf. The inn path is carried by both "Ask about…" and "Look for… in Heatherton" (the
+ // direct route has no inn conversation), and the engine clears a choice whenever an objective carrying it is unchecked.
+ // Unchecking Heatherton steps must not erase a peace/fight outcome that the still-recorded inn conversation keeps.
++// QA4: on the direct route, "Record whole quest complete" records a confirmed whole-quest completion (the player read
++// Hendrik's notes, which finishes the quest) without filling any objective mark and without an inn outcome. Removing it
++// removes only that confirmation. All other routes keep the shared engine's whole-quest behaviour unchanged.
+ function plan(progress,action,options={}){
+- const r=engine.plan(progress,{},action,options),before=progress.choices?.inn,ASK=Q+':ask';
++ const wasConfirmed=progress.confirmed?.[Q]===true,quest=action.kind==='quest'&&action.quest===Q&&progress.failed?.[Q]!==true;
++ const inn=Object.hasOwn(options.choices||{},'inn')?options.choices.inn:progress.choices?.inn;
++ const confirm=quest&&action.value!==false&&inn===DIRECT&&!engine.done(Q,progress),unconfirm=quest&&action.value===false&&wasConfirmed;
++ const r=engine.plan(progress,{},confirm||unconfirm?{kind:'reconcile-legacy',quest:Q}:action,confirm||unconfirm?{...options,catchup:false}:options),before=progress.choices?.inn,ASK=Q+':ask';
+  if(action.value===false&&!r.progress.choices.inn&&OUTCOMES.includes(before)&&r.progress.objectives[ASK]==='done'&&!Object.hasOwn(options.choices||{},'inn')){
+   r.progress.choices.inn=before;r.missingChoices=r.missingChoices.filter(c=>c!=='inn');
+  }
++ if(confirm&&!r.missingChoices.length){r.progress.legacy[Q]=true;r.progress.confirmed={[Q]:true};r.confirmedCompletion=true;}
++ else if(wasConfirmed&&!unconfirm&&r.progress.legacy[Q]===true){
++  // A confirmation belongs to the direct route: keep it while the route stays direct, drop it when the route changes.
++  if(r.progress.choices.inn===DIRECT)r.progress.confirmed={[Q]:true};
++  else{delete r.progress.legacy[Q];if(!r.completionLosses.includes(Q))r.completionLosses=[...r.completionLosses,Q];}
++ }
+  return r;
+ }
+ // Guarded storage rollback of the handover itself. The legacy key is never touched.
+@@ -116,6 +140,6 @@
+  try{if(r.value.handover.before==null)storage.removeItem(KEY);else storage.setItem(KEY,r.value.handover.before);}catch{return {status:'storage-unavailable',restored:false};}
+  return {status:'restored',restored:true};
+ }
+-const api=Object.freeze({KEY,LEGACY_KEY,QUEST:Q,WRITER,engine,data,handover,load,plan,commit,undo,rollbackHandover,toProgress,ROUTE_DIRECT});
++const api=Object.freeze({KEY,LEGACY_KEY,QUEST:Q,WRITER,engine,data,handover,load,plan,commit,undo,rollbackHandover,toProgress,ROUTE_DIRECT,DIRECT});
+ root.PhoenixVelenNilfProgress=api;if(typeof module!=='undefined')module.exports=api;
+ })(typeof window!=='undefined'?window:globalThis);
+diff -ruN prefix-qa4/dist/velen-nilf-ui.js source/dist/velen-nilf-ui.js
+--- prefix-qa4/dist/velen-nilf-ui.js	2026-11-16 21:26:35.036022097 +0000
++++ source/dist/velen-nilf-ui.js	2026-11-16 22:05:19.405465382 +0000
+@@ -189,6 +189,9 @@
+         : '') +
+       (plan.affected.length ? '<details open><summary>' + plan.affected.length + ' objective marks will be removed</summary>' + list(plan.affected) + '</details>' : '') +
+       (plan.completionLosses.length ? '<div class="risk-note"><strong>Saved quest completion will be removed</strong><ul><li>' + esc(q.name) + '</li></ul></div>' : '') +
++      (plan.confirmedCompletion // QA4: direct-route whole-quest confirmation
++        ? '<p data-velen-confirmation>You read Hendrik’s notes, which finishes the quest. This records the whole quest as complete without marking any objective and without an inn outcome. Objectives you have not recorded stay unmarked; “Go to the Inn at the Crossroads.” stays unconfirmed.</p>'
++        : '') +
+       (pending.kind === 'reconcile-legacy'
+         ? '<p class="risk-note">This explicitly replaces the saved whole-quest completion with the objectives recorded here. If they are incomplete, the quest becomes incomplete.</p>'
+         : '');
+@@ -245,7 +248,9 @@
+       '',
+       s.legacyComplete && status === 'complete'
+         ? 'Quest progress · Saved complete — objectives unconfirmed'
+-        : 'Quest progress · ' + count.done + '/' + count.total + (status === 'complete' ? ' · Quest complete' : ''),
++        : s.confirmedComplete && status === 'complete' // QA4
++          ? 'Quest progress · Confirmed complete · ' + count.done + '/' + count.total + ' objectives recorded'
++          : 'Quest progress · ' + count.done + '/' + count.total + (status === 'complete' ? ' · Quest complete' : ''),
+     );
+     const frame = make('section', 'objective-scroll-frame');
+     frame.setAttribute('aria-label', 'Quest objective progress');
+@@ -274,17 +279,19 @@
+         'p',
+         '',
+         closed
+-          ? o.route === 'inn' && p.choices.inn === data.choices.inn.routeValue
++          ? o.unconfirmedOn && p.choices.inn === o.unconfirmedOn // QA4
++            ? 'Unconfirmed on the direct route — the sources do not establish its journal status, so it is neither required nor marked.'
++          : o.route === 'inn' && p.choices.inn === data.choices.inn.routeValue
+             ? 'Not required — you went straight to Heatherton. Left unmarked.'
+             : 'Unavailable — alternate path chosen'
+           : done
+             ? 'Completed'
+-            : o.routeNote && p.choices.inn === data.choices.inn.routeValue
+-              ? 'Still required on the direct route — not marked automatically. Mark it when your journal shows it complete.'
+             : o.branch && !p.choices[o.branch[0]] && !engine.required(Q, p).includes(o)
+               ? 'Confirm the preceding choice to establish this path.'
+               : s.legacyComplete
+                 ? 'Not individually recorded — saved quest completion covers it.'
++                : s.confirmedComplete
++                  ? 'Not individually recorded — your confirmed quest completion covers it.'
+                 : 'Not completed',
+       );
+       st.dataset.objectiveState = '';
+@@ -384,6 +391,8 @@
+     }
+     correct.append(actions);
+     deck.append(summary, frame);
++    if (s.confirmedComplete)
++      deck.append(make('p', 'quiet velen-confirmed-note', 'Confirmed complete: you recorded that you read Hendrik’s notes on the direct route. Individual objective marks are kept separately; unrecorded objectives stay unmarked and “Go to the Inn at the Crossroads.” stays unconfirmed.'));
+     if (s.legacyComplete)
+       deck.append(make('p', 'quiet velen-legacy-note', 'Saved complete from your earlier Velen record. Its individual objectives were not recorded, so they stay unconfirmed until you record them.'));
+     const source = make('a', '', 'Objective reference ↗');

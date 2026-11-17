@@ -1,0 +1,41 @@
+session2 debug {"pages":["http://127.0.0.1:9076/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9076/index.html#velen"}
+session2 debug {"pages":["http://127.0.0.1:9077/index.html#velen"],"netEvents":128,"pageUrl":"http://127.0.0.1:9077/index.html#velen"}
+PASS qa4-control-livepolicy-phone: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa4-control-livepolicy-phone: session 1 loaded v45 app.js from the network
+PASS qa4-control-livepolicy-phone: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa4-control-livepolicy-phone: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa4-control-livepolicy-phone: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: app.js?v=regional-foundation-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-phone: Slice 2 handover ran on first load (new app.js executed)
+PASS qa4-control-livepolicy-phone: card tap opens the nilf hub
+PASS qa4-control-livepolicy-phone: progress section starts collapsed and expands from its summary
+PASS qa4-control-livepolicy-phone: Nilfgaardian objective controls reachable after expanding
+PASS qa4-control-livepolicy-phone: marking Travel records it in the canonical record and the control shows it
+PASS qa4-control-livepolicy-phone: Travel persists across reload
+PASS qa4-control-livepolicy-phone: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa4-control-livepolicy-phone: history back/forward between console and hub keeps the recorded objective
+PASS qa4-control-livepolicy-phone: no page errors in session 2
+PASS qa4-control-livepolicy-landscape: session 1 (v45) imported the seeded save into the canonical record (Slice 1)
+PASS qa4-control-livepolicy-landscape: session 1 loaded v45 app.js from the network
+PASS qa4-control-livepolicy-landscape: cache control: unchanged v45 scripts were served from the HTTP cache in session 2 (proves the cache is live)
+PASS qa4-control-livepolicy-landscape: returning browser requested the candidate app.js URL over the network (not from cache)
+PASS qa4-control-livepolicy-landscape: velen-nilf-objectives.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: velen-nilf-progress.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: velen-nilf-ui.js?v=nilf-slice2-qa4-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: velen-r18.js?v=nilf-slice2-qa3-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: app.js?v=regional-foundation-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: velen-view.css?v=nilf-slice2-v45 loaded from the server (new version)
+PASS qa4-control-livepolicy-landscape: Slice 2 handover ran on first load (new app.js executed)
+PASS qa4-control-livepolicy-landscape: card tap opens the nilf hub
+PASS qa4-control-livepolicy-landscape: progress section starts collapsed and expands from its summary
+PASS qa4-control-livepolicy-landscape: Nilfgaardian objective controls reachable after expanding
+PASS qa4-control-livepolicy-landscape: marking Travel records it in the canonical record and the control shows it
+PASS qa4-control-livepolicy-landscape: Travel persists across reload
+PASS qa4-control-livepolicy-landscape: return to the Velen console and back to the hub keeps the recorded objective
+PASS qa4-control-livepolicy-landscape: history back/forward between console and hub keeps the recorded objective
+PASS qa4-control-livepolicy-landscape: no page errors in session 2
+qa4-control-livepolicy: 38/38 passed

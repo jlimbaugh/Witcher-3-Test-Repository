@@ -1,0 +1,36 @@
+PASS handover on load: canonical owns velen.nilf, legacy owns pyres/mercy
+PASS legacy record identical to the v45 baseline result (velen-r18 normalization only)
+PASS stationary card tap opens the nilf hub
+PASS imported completion shown without objective marks
+PASS no page errors (imported)
+PASS phone: Start opens walkthrough stage 1
+PASS phone: Next moves to stage 2
+PASS phone: choice objective opens review with inn outcome; confirm disabled until chosen
+PASS phone: catch-up + fight recorded canonically (3 done, fight path)
+PASS phone: banner counts conditional fight (3/9)
+PASS phone: deck Undo control available (WO hides the toast in v45 and uses the deck Undo)
+PASS phone: Return to hub restores hub y and foldout
+PASS phone: Back restores exact stage, scroll, foldout and rail
+PASS phone: progress persists across reload
+PASS phone: peace closes the fight objective (x/8)
+PASS phone: Undo restores the fight choice
+PASS phone: nilf progress never written to the legacy record
+PASS phone: pyres card tap keeps v45 select-only behaviour
+PASS phone: canonical untouched by pyres interactions
+PASS phone: no page errors
+PASS landscape: Start opens walkthrough stage 1
+PASS landscape: Next moves to stage 2
+PASS landscape: choice objective opens review with inn outcome; confirm disabled until chosen
+PASS landscape: catch-up + fight recorded canonically (3 done, fight path)
+PASS landscape: banner counts conditional fight (3/9)
+PASS landscape: deck Undo control available (WO hides the toast in v45 and uses the deck Undo)
+PASS landscape: Return to hub restores hub y and foldout
+PASS landscape: Back restores exact stage, scroll, foldout and rail
+PASS landscape: progress persists across reload
+PASS landscape: peace closes the fight objective (x/8)
+PASS landscape: Undo restores the fight choice
+PASS landscape: nilf progress never written to the legacy record
+PASS landscape: pyres card tap keeps v45 select-only behaviour
+PASS landscape: canonical untouched by pyres interactions
+PASS landscape: no page errors
+35/35 passed

@@ -1,0 +1,66 @@
+$ python3 restore_and_verify.py --self-check
+bundle self-check: 220 v45 kit files, 0 mismatches
+exit=0
+
+$ python3 restore_and_verify.py --verify-only --dist <QA5 copy>   (expected FAIL: still QA5)
+bundle self-check: 220 v45 kit files, 0 mismatches
+verify: 181 v45 code-kit files under dist/ checked, 4 restored, 6 added files checked absent; 14 errors
+  not v45: dist/app.js
+  not v45: dist/index.html
+  not v45: dist/velen-r18.js
+  not v45: dist/velen-view.css
+  still present: dist/velen-nilf-objectives.js
+  still present: dist/velen-nilf-progress.js
+  still present: dist/velen-nilf-ui.js
+  still present: dist/slice2-nilf.test.cjs
+  still present: dist/slice2-save-guard.test.cjs
+  still present: dist/slice2-cache-tags.test.cjs
+  differs from v45: dist/app.js
+  differs from v45: dist/index.html
+  differs from v45: dist/velen-r18.js
+  differs from v45: dist/velen-view.css
+RESULT: FAIL
+exit=1
+
+$ python3 restore_and_verify.py --dist <QA5 copy> --dry-run
+bundle self-check: 220 v45 kit files, 0 mismatches
+pre-check: 10/10 QA5 release files match
+WOULD RESTORE dist/app.js (v45)
+WOULD RESTORE dist/index.html (v45)
+WOULD RESTORE dist/velen-r18.js (v45)
+WOULD RESTORE dist/velen-view.css (v45)
+WOULD DELETE dist/velen-nilf-objectives.js (added by Slice 2)
+WOULD DELETE dist/velen-nilf-progress.js (added by Slice 2)
+WOULD DELETE dist/velen-nilf-ui.js (added by Slice 2)
+WOULD DELETE dist/slice2-nilf.test.cjs (added by Slice 2)
+WOULD DELETE dist/slice2-save-guard.test.cjs (added by Slice 2)
+WOULD DELETE dist/slice2-cache-tags.test.cjs (added by Slice 2)
+exit=0
+
+$ python3 restore_and_verify.py --dist <QA5 copy>
+bundle self-check: 220 v45 kit files, 0 mismatches
+pre-check: 10/10 QA5 release files match
+restore dist/app.js (v45)
+restore dist/index.html (v45)
+restore dist/velen-r18.js (v45)
+restore dist/velen-view.css (v45)
+delete dist/velen-nilf-objectives.js (added by Slice 2)
+delete dist/velen-nilf-progress.js (added by Slice 2)
+delete dist/velen-nilf-ui.js (added by Slice 2)
+delete dist/slice2-nilf.test.cjs (added by Slice 2)
+delete dist/slice2-save-guard.test.cjs (added by Slice 2)
+delete dist/slice2-cache-tags.test.cjs (added by Slice 2)
+verify: 181 v45 code-kit files under dist/ checked, 4 restored, 6 added files checked absent; 0 errors
+RESULT: PASS - target dist matches accepted v45 a9d61c94
+exit=0
+
+$ diff -r <restored copy> <v45 baseline + same full assets>
+IDENTICAL: restored tree == accepted v45 (incl. the same 300 art/font assets overlaid read-only from the v45 QA site)
+
+$ python3 restore_and_verify.py --dist <QA4 copy>   (expected ABORT without --force)
+bundle self-check: 220 v45 kit files, 0 mismatches
+pre-check: 8/10 QA5 release files match
+  differs from QA5: dist/index.html
+  differs from QA5: dist/slice2-cache-tags.test.cjs
+ABORT: target is not the QA5 release; inspect it, or re-run with --force
+exit=3
