@@ -193,7 +193,9 @@
    else line.append(make('span','sw-on-next',nu?'This is your next unfinished objective':'No unfinished required objective'));
    const pr=make('div','sw-progress');const bar=make('span','sw-bar');bar.setAttribute('aria-hidden','true');const fill=make('i');fill.style.width=(a.counts.total?100*a.counts.done/a.counts.total:0)+'%';bar.append(fill);
    pr.append(make('span','',a.counts.done+' of '+a.counts.total+' required completed'),bar);line.append(pr);
-   const cond=a.rows.filter(o=>!o.required&&!o.optional&&o.stage);if(cond.length)line.append(make('span','sw-route-note','Route-dependent, not counted yet: '+cond.map(o=>o.label).join(' ')));
+   const off=a.rows.filter(o=>!o.required&&!o.optional&&o.stage),closed=off.filter(o=>a.objState(o).closed),cond=off.filter(o=>!a.objState(o).closed);
+   if(cond.length)line.append(make('span','sw-route-note','Route-dependent, not counted yet: '+cond.map(o=>o.label).join(' ')));
+   if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));
    selector.append(line);root_.append(selector);
    // reading
@@ -214,7 +216,7 @@
     for(const n of near)ob.append(nearbyItem(n));if(!near.length)ob.append(make('p','sw-empty','No nearby activity is recorded for this objective.'));
     opt.append(ob);reading.append(opt);
     // Information: further stage detail, unmapped setup/follow-up stages, route links and spoilers.
-    const inf=make('details','sw-row');inf.dataset.swRow='info';if(mem.rows?.info)inf.open=true;inf.append(make('summary','','Information'));const ib=make('div','sw-row-body');let any=false;
+    const inf=make('details','sw-row');inf.dataset.swRow='info';if(mem.rows?.info||(mem.rows?.info===undefined&&stage!==sel.stage))inf.open=true;/* a stage without its own objective opens here */inf.append(make('summary','','Information'));const ib=make('div','sw-row-body');let any=false;
     const para=(host,list)=>{for(const x of list)host.append(make('p','',x));};
     for(const b of r.info){ib.append(make('h3','',b.title.toUpperCase()));para(ib,b.paragraphs);any=true;}
     if(r.links.length){ib.append(make('h3','','CONTINUE THE ROUTE'));for(const l of r.links){const x=make('a','sw-link',l.label+' →');x.href=l.href;ib.append(x);}any=true;}
@@ -254,7 +256,7 @@
   function refresh(){const a=current();try{medallion()?.reconcileWarnings?.();}catch{}if(!a)return;const focusInRail=document.activeElement?.closest?.('.sw-rail');try{render(a);}catch(e){console.error('shared walkthrough',e);a.section.classList.remove('sw-page');return;}try{medallion()?.reconcileWarnings?.();}catch{}if(focusInRail)a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});}
   for(const ev of ['phoenix:route-rendered','phoenix:progress-committed','phoenix:progress-undone'])addEventListener(ev,()=>requestAnimationFrame(refresh));
   const velenScreen=document.getElementById('velen-screen');
-  if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>.velen-nilf-page');if(page&&!page.querySelector('.sw-walkthrough')){page.classList.add('sw-page');refresh();}}).observe(velenScreen,{childList:true});
+  if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>.velen-nilf-page');if(page&&!page.querySelector('.sw-walkthrough'))refresh();/* render() adds .sw-page only when the owner is active */}).observe(velenScreen,{childList:true});
   refresh();
   return {refresh,isShowing,model};
  };
