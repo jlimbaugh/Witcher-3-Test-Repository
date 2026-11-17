@@ -21,7 +21,7 @@ window.createPhoenixHome=function({tasks,engine,state,navigate,progressUI}){
   if(raw===null)return {list:[],writable:true,status:'absent'};
   try{const saved=JSON.parse(raw);if(Array.isArray(saved)&&saved.every(accept))return {list:saved,writable:true,status:'accepted'};}catch{}
   return {list:[],writable:false,status:'unreadable'};}
- function writeList(storageKey,read,list){if(!read.writable)return 'blocked';try{localStorage.setItem(storageKey,JSON.stringify(list));return 'saved';}catch{return 'unavailable';}}
+ function writeList(storageKey,read,list){if(!read.writable)return read.status==='storage-unavailable'?'unavailable':'blocked';try{localStorage.setItem(storageKey,JSON.stringify(list));return 'saved';}catch{return 'unavailable';}}
  const key='phoenix.whiteorchard.warningHistory.v1',historyRead=readList(key,r=>r&&typeof r==='object'&&typeof r.text==='string');let historyRecords=historyRead.list;
  const pendingKey='phoenix.whiteorchard.pendingWarnings.v1',pendingRead=readList(pendingKey,w=>w&&typeof w==='object');let pendingWarnings=pendingRead.list.filter(w=>tasks[w.quest]&&['failed','unavailable'].includes(w.status)&&typeof w.text==='string');
  function savePending(){writeList(pendingKey,pendingRead,pendingWarnings);}

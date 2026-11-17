@@ -76,7 +76,7 @@ const HK='phoenix.whiteorchard.warningHistory.v1',ok=r=>r&&typeof r==='object'&&
 test('warning history guard: damaged, empty, non-array and read-failed saves stay unchanged with zero writes',()=>{
  const g=guard();
  for(const raw of ['{oops','','{"a":1}','null','[1,2]','[{"id":"x"}]']){const s=logged({[HK]:raw}),f=g(s),r=f.readList(HK,ok);assert.equal(r.writable,false,JSON.stringify(raw));assert.equal(f.writeList(HK,r,[{id:'a',text:'b'}]),'blocked');assert.deepEqual(s.log,[]);assert.equal(s.map.get(HK),raw);}
- const d=logged({},{read:true}),fd=g(d),rd=fd.readList(HK,ok);assert.equal(rd.status,'storage-unavailable');assert.equal(fd.writeList(HK,rd,[]),'blocked');assert.deepEqual(d.log,[]);
+ const d=logged({},{read:true}),fd=g(d),rd=fd.readList(HK,ok);assert.equal(rd.status,'storage-unavailable');assert.equal(fd.writeList(HK,rd,[]),'unavailable','denied storage is reported as unavailable, not as damaged');assert.deepEqual(d.log,[]);
 });
 test('warning history guard: absent and valid records stay writable; a failed write reports unavailable',()=>{
  const g=guard();const a=logged({}),fa=g(a),ra=fa.readList(HK,ok);assert.equal(ra.status,'absent');assert.equal(fa.writeList(HK,ra,[{id:'x',text:'t',href:null,at:1}]),'saved');assert.equal(a.log.length,1);

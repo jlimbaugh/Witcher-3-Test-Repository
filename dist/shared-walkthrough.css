@@ -132,3 +132,4 @@ html body .sw-page .reading-panel .sw-walkthrough h3,html body .sw-page .reading
 /* Q6 A: navigation-only floating wolf keeps queued global warnings visible as a pending mark (read them in Warnings). */
 .phoenix-medallion[data-pending-warnings] .medallion-sigil{position:relative}
 .phoenix-medallion[data-pending-warnings] .medallion-sigil::after{content:"";position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#f4d36b;border:2px solid #6b4b12;box-shadow:0 0 0 2px #1b2122}
+html body .sw-page .reading-panel .sw-walkthrough .sw-warning-panel h3{margin:0 0 4px;font:400 18px/1.25 Fell,Georgia,serif;letter-spacing:0;text-transform:none}
