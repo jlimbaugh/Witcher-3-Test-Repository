@@ -10,7 +10,7 @@ plus the QA6 correction. Author self-review: `docs/QA6-REVIEW.md` (evidence: `au
 | Accepted / live build | **v45** = Sites commit `a9d61c9454c4e6747a9eb0dc6c7ac9bec6b34820`. In this repo: snapshot commit `d1df0e3e2c40cad172577f4725daa7233fc8c41e` (snapshot import, not original history; `docs/PROVENANCE.md`). |
 | Previous candidate | **Slice 2 QA5** = `5ba73ace7d05551c877021de6e6fd0a2242a1e3a` (`recovery/v45-qa5`, unchanged). Superseded by QA6 for release purposes; D2 and D4 were open against it. |
 | Candidate | **QA6** = `804a3a2c83529fdc707ca5278fb3bcf39d50d771`: Slice 2 QA5 + D2 correction (White Orchard save preservation, `dist/app.js`) + D4 correction (storage-denied start-up, `dist/velen-r18.js:19`, Cmdr-authorized edit of the pinned file) + cache tags `save-guard-qa6-v45`. **Under Cmdr's independent review. Not deployed, not published, not merged.** Release files: `docs/RELEASE-FILES-QA6.sha256` (13). |
-| Hosting | **Verified by Cmdr (2026-11-17):** the configured Sites project serves the current Phoenix URL, the account has owner access, and saved version 45 names source commit `a9d61c94…`, matching the baseline provenance. The live site is not built from GitHub. Cmdr is preparing the Sites source-sync and build-identity procedure. |
+| Hosting | **Verified by Cmdr (2026-11-17):** the configured Sites project serves the current Phoenix URL, the account has owner access, and saved version 45 names source commit `a9d61c94…`, matching the baseline provenance. The live site is not built from GitHub. Also verified by Cmdr (2026-11-17): Sites uses a separate source repository, automatic publishing on push is disabled, and GitHub `main` does not control this deployment. |
 | CI | **Draft PR #1** (`ci/qa6-independent-checks`, head `3da00ff5bd2fe718b7fc3c6b8f161f526daa0048`) into this branch, not merged. It is not active on this branch until merged. Its push and PR runs at `3da00ff5` passed (Cmdr's runs). LT reviewed each revision with comment-only reviews on the PR. |
 | Deployment | **On hold.** No deployment without Cmdr's release decision. |
 | Pyres / Mercy | Incomplete at objective level; separate slice after iPhone verification of this release. |
@@ -31,19 +31,26 @@ edge caching are untested.
 
 ## Settled decisions
 - Records with a missing, string or unsupported `version` are preserved (blocked), not coerced or migrated.
-- **Empty-string record (Cmdr, 2026-11-16):** an empty string stored under the White Orchard key is preserved as unreadable. Only a
+- **Empty-string record (confirmed by Cmdr 2026-11-17; follows an earlier ruling whose timestamp is not independently verified):** an empty string stored under the White Orchard key is preserved as unreadable. Only a
   missing key counts as absent. Recovery or reset must be an explicit later action. QA6 already behaves this way; no code change.
 
 ## Blockers before release
 1. **Cmdr's independent review of QA6** and release decision. `docs/QA6-REVIEW.md` is LT's self-review.
-2. **Sites source-sync and build-identity procedure** (Cmdr, in progress). How QA6 reaches the Sites project and how the
-   deployed build is tied to a Git commit is not yet documented.
+2. **Sites synchronization instructions** (Cmdr, in progress). The release procedure is below; the detailed steps for
+   steps 3 and 4 are not yet written down.
 3. Physical iPhone/Safari acceptance (owner) after deployment verification, including a returning visit (cached v45) and the WO
    save message.
+
+## Release procedure (Cmdr, 2026-11-17)
+1. Integrate the reviewed CI and documentation changes into the QA6 branch.
+2. Run the gate on that combined commit.
+3. Synchronize the accepted source to the existing Sites repository.
+4. Verify identical application files and record both commit identities.
+5. Package and publish only after the release hold is explicitly lifted.
 
 ## Separate work (not QA6)
 - **Pages retirement (D3).** GitHub Pages still serves the old R19 build from `main`. A QA6-to-`main` PR currently conflicts
   (`dist/index.html`); that conflict belongs to this work, not to QA6.
 - **Repair / reset path** ("start fresh / export") for a blocked White Orchard or Velen record. Must be an explicit user action.
-- **N1** Undo labelling (not yet described in this repository).
+- **N1 (deferred, not in QA6 scope):** global Undo can reverse another quest's change without naming that quest.
 - **Pyres and Mercy** conversion to the White Orchard pattern, after iPhone verification.
