@@ -1,0 +1,79 @@
+name: Phoenix QA6 verification
+on:
+  push:
+    branches: [ci/qa6-independent-checks, fix/wo-save-preservation]
+  pull_request:
+    branches: [fix/wo-save-preservation, main]
+  workflow_dispatch:
+concurrency:
+  group: qa6-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      V45_COMMIT: d1df0e3e2c40cad172577f4725daa7233fc8c41e
+      QA6_COMMIT: 804a3a2c83529fdc707ca5278fb3bcf39d50d771
+      QA5_COMMIT: 5ba73ace7d05551c877021de6e6fd0a2242a1e3a
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.22.1'
+      - name: Identify source and prepare baselines
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          git merge-base --is-ancestor "$QA6_COMMIT" HEAD
+          git diff --exit-code "$QA6_COMMIT" HEAD -- dist/ docs/rollback/ docs/RELEASE-FILES-QA6.sha256
+          for protected_path in dist docs/rollback docs/RELEASE-FILES-QA6.sha256; do
+            test "$(git rev-parse "HEAD:$protected_path")" = "$(git rev-parse "$QA6_COMMIT:$protected_path")"
+          done
+          git worktree add --detach "$RUNNER_TEMP/v45-baseline" "$V45_COMMIT"
+          git worktree add --detach "$RUNNER_TEMP/qa5-baseline" "$QA5_COMMIT"
+      - name: Verify CI guards and manifest coverage
+        run: |
+          node scripts/ci-verify.cjs selftest
+          node scripts/ci-verify.cjs coverage
+      - name: Verify candidate manifests
+        run: |
+          set -euo pipefail
+          sha256sum -c docs/MANIFEST.sha256
+          sha256sum -c docs/RELEASE-FILES-QA6.sha256
+      - name: Test accepted baseline
+        run: node scripts/ci-verify.cjs test "$RUNNER_TEMP/v45-baseline/dist" 233
+      - name: Test QA5 control
+        env:
+          PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
+        run: node scripts/ci-verify.cjs test "$RUNNER_TEMP/qa5-baseline/dist" 271
+      - name: Test candidate with both baselines
+        env:
+          PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
+          PHOENIX_QA5_BASELINE: ${{ runner.temp }}/qa5-baseline/dist
+        run: node scripts/ci-verify.cjs test dist 307
+      - name: Verify rollback on disposable copies
+        run: |
+          set -euo pipefail
+          script=docs/rollback/restore_and_verify.py
+          python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --self-check
+          for target in qa5 v45; do
+            copy="$RUNNER_TEMP/rollback-$target"
+            cp -a dist "$copy"
+            python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to "$target" --dist "$copy" --dry-run
+            python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to "$target" --dist "$copy"
+            if [ "$target" = qa5 ]; then baseline="$RUNNER_TEMP/qa5-baseline/dist"; else baseline="$RUNNER_TEMP/v45-baseline/dist"; fi
+            diff -r "$baseline" "$copy"
+          done
+          cp -a "$RUNNER_TEMP/qa5-baseline/dist" "$RUNNER_TEMP/wrong-source"
+          set +e
+          python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to v45 --dist "$RUNNER_TEMP/wrong-source"
+          result=$?
+          set -e
+          test "$result" -eq 3
+          diff -r "$RUNNER_TEMP/qa5-baseline/dist" "$RUNNER_TEMP/wrong-source"
