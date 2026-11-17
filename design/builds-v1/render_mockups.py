@@ -1,0 +1,205 @@
+"""Deterministic, static UI design plates; no gameplay calculation or app changes.
+Run from repo root: python3 design/builds-v1/render_mockups.py
+Uses Pillow/fontTools and existing Phoenix assets. Fonts are converted in a temp dir.
+"""
+from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageFilter
+from fontTools.ttLib import TTFont
+from pathlib import Path
+import tempfile, math
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'design/builds-v1/mockups';OUT.mkdir(exist_ok=True)
+S=2; W=390;H=844
+C={'bg':'#151e21','panel':'#202c2f','panel2':'#29383a','silver':'#aebbb5','muted':'#b1bdb8','white':'#f0ecde','sage':'#a7c3a6','ink':'#302921','paper':'#e3d0a8','red':'#e4aaa0'}
+tmp=tempfile.TemporaryDirectory(); fonts={}
+for k,f in [('serif','im-fell-english-latin-400-normal.woff2'),('body','alegreya-latin-400-normal.woff2'),('caps','cinzel-latin-400-normal.woff2')]:
+ t=TTFont(ROOT/'dist'/f);t.flavor=None;p=Path(tmp.name)/(k+'.ttf');t.save(p);fonts[k]=p
+cache={}
+def font(n=16,k='body'):
+ key=(n,k)
+ if key not in cache:cache[key]=ImageFont.truetype(str(fonts[k]),round(n*S))
+ return cache[key]
+def rect(x,y,w,h,fill=None,outline=None,r=0,width=1):
+ fn=d.rounded_rectangle if r else d.rectangle;kw={'fill':fill,'outline':outline,'width':round(width*S)}
+ if r:kw['radius']=round(r*S)
+ fn((round(x*S),round(y*S),round((x+w)*S),round((y+h)*S)),**kw)
+def line(x,y,x2,y2,c=None,width=1):d.line((x*S,y*S,x2*S,y2*S),fill=c or C['silver'],width=round(width*S))
+def text(x,y,s,n=16,c=None,k='body',anchor=None):
+ f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',round(n*S)) if any(ch in s for ch in ['→','▾','▸','✓']) else font(n,k)
+ d.text((x*S,y*S),s,font=f,fill=c or C['white'],anchor=anchor)
+def wrap(x,y,s,width,n=16,c=None,k='body',leading=1.25):
+ words=s.split();ls=[];cur=''
+ for w in words:
+  test=(cur+' '+w).strip()
+  if d.textlength(test,font=font(n,k))>width*S and cur:ls.append(cur);cur=w
+  else:cur=test
+ if cur:ls.append(cur)
+ for l in ls:text(x,y,l,n,c,k);y+=n*leading
+ return y
+def button(x,y,w,label,primary=False,h=43):
+ rect(x,y,w,h,C['sage'] if primary else C['panel2'],C['silver'],r=3)
+ text(x+w/2,y+h/2,label,16,C['bg'] if primary else C['white'],anchor='mm')
+def tag(x,y,s,color=None):
+ width=d.textlength(s,font=font(10,'caps'))/S+16
+ rect(x,y,width,20,C['panel2'],color or C['silver'],r=8)
+ text(x+8,y+4,s,10,color or C['white'],'caps');return width
+paper=Image.open(ROOT/'dist/r10-haunted-scroll-concept.webp').convert('RGB').crop((190,240,870,1140))
+wolf=Image.open(ROOT/'dist/visual-art/wolf-pointer.webp').convert('RGBA')
+def sheet(y,h):
+ tex=ImageOps.fit(paper,(round(358*S),round(h*S)));im.paste(tex,(16*S,round(y*S)));rect(16,y,358,h,None,C['silver'],r=4)
+ line(23,y+7,367,y+7,'#7c8479');line(23,y+h-7,367,y+h-7,'#7c8479')
+def card(y,h):rect(16,y,358,h,C['panel'],C['silver'],r=4)
+def rule(y):line(28,y,362,y,'#586865')
+def begin(title,subtitle='MY CURRENT BUILD',tab=0):
+ global im,d
+ im=Image.new('RGB',(W*S,H*S),C['bg']);d=ImageDraw.Draw(im)
+ text(18,15,'PHOENIX',13,C['silver'],'caps');text(372,16,'Build Vault  →',14,anchor='ra');line(16,43,374,43,'#6b7b78')
+ text(18,58,subtitle,10,C['sage'],'caps');text(18,78,title,29,k='serif')
+ text(18,115,'Swords · Quen · light Alchemy',15,C['muted'])
+ for i,(x,w,name) in enumerate([(16,86,'Equipment'),(106,89,'Character'),(199,75,'Alchemy'),(278,96,'Performance')]):
+  rect(x,149,w,39,C['panel2'] if i==tab else C['bg'],C['silver'] if i==tab else '#455653',r=3)
+  text(x+w/2,168,name,12,C['white'] if i==tab else C['muted'],anchor='mm')
+ line(16,199,374,199,'#43544f')
+def footer(label='Unsaved experiment · current build unchanged',actions=True):
+ rect(0,752,390,92,C['bg']);line(16,752,374,752,'#71827b')
+ wrap(18,760,label,278,12,C['muted']);
+ if actions:button(16,794,126,'Save build',True,h=36);button(150,794,133,'Save a copy',h=36)
+ wi=wolf.copy();wi.thumbnail((66*S,58*S));im.paste(wi,(307*S,775*S),wi);text(340,836,'Navigate',11,anchor='ms')
+def save(name):
+ # Palette PNG keeps review files small; plates are already rendered at 2x phone size.
+ im.quantize(colors=192).save(OUT/name,optimize=True)
+ return im.copy()
+plates=[]
+# 01 equipment
+begin('Feline duelist',tab=0)
+text(18,210,'EQUIPMENT',12,C['silver'],'caps');tag(279,207,'BASE GAME')
+text(18,239,'Set tier',15);button(89,232,193,'Enhanced  ▾',h=34);text(18,274,'Whole set selected · override any piece below',13,C['muted'])
+rect(116,302,158,220,'#263536','#697a74',r=3)
+# Original schematic, not a claim of in-game art or exact menu geometry.
+d.ellipse((178*S,317*S,211*S,352*S),fill='#9ba8a0',outline='#c2cbc4',width=2)
+d.polygon([(162*S,361*S),(224*S,361*S),(242*S,423*S),(216*S,442*S),(210*S,492*S),(180*S,492*S),(174*S,442*S),(146*S,423*S)],fill='#53635e',outline='#a5b5aa')
+for yy in [377,393,410,427]:line(172,yy,218,yy,'#9caaa1')
+line(185,493,176,518,'#a5b5aa',7);line(204,493,215,518,'#a5b5aa',7)
+for x,y,title,sub in [(18,302,'Steel sword','Enhanced'),(284,302,'Silver sword','Enhanced'),(18,378,'Chest armor','Enhanced'),(284,378,'Gauntlets','Enhanced'),(18,454,'Trousers','Basic override'),(284,454,'Boots','Enhanced')]:
+ rect(x,y,88,65,C['panel'],C['silver'],r=3);text(x+8,y+10,title,12);wrap(x+8,y+31,sub,72,11,C['sage'])
+text(123,531,'Tap a slot to inspect or replace',12,C['muted'])
+sheet(561,119);text(29,574,'Set effects & requirements',21,C['ink'],'serif')
+wrap(29,607,'Show active bonuses, missing pieces and unmet requirements for this exact loadout.',328,15,C['ink'])
+text(29,648,'Gear reference  →       Review crafting pieces  →',14,C['ink'])
+text(18,700,'Next upgrade',12,C['sage'],'caps');text(18,721,'Upgrade the lagging piece · inspect benefit  →',16)
+footer();plates.append(('Equipment',save('01-equipment.png')))
+# 02 skills
+begin('Feline duelist',tab=1)
+text(18,210,'CHARACTER & SKILLS',12,C['silver'],'caps')
+card(238,67);text(28,249,'Level 29   ·   Velen',18);text(28,276,'Points: 6 available · 24 invested',14,C['sage']);text(301,277,'Edit profile →',12)
+text(18,323,'Learned skills',22,k='serif');text(18,352,'Combat       Signs       Alchemy       General',14,C['muted'])
+for i in range(4):
+ for j in range(3):
+  x=24+j*118;y=382+i*55;rect(x,y,105,44,C['panel2'] if i<2 else C['panel'],'#74827b',r=3)
+  text(x+9,y+10,['Learned','Planned','Locked'][min(i,2)],13,C['white'] if i<2 else C['muted']);text(x+95,y+27,'2/3' if i<2 else '0/3',11,C['sage'],anchor='ra')
+text(18,615,'Equipped slots & mutagens',21,k='serif')
+for j in range(6):
+ x=20+j*59;rect(x,649,51,48,C['panel2'],C['silver'],r=3);text(x+25,673,str(j+1),17,anchor='mm')
+text(18,710,'All learned ranks count, even when unequipped.',14,C['muted'])
+footer('Skill names & ranks here are layout placeholders');plates.append(('Character',save('02-character.png')))
+# 03 alchemy
+begin('Feline duelist',tab=2)
+text(18,210,'PREPARATION',12,C['silver'],'caps');text(18,235,'Effects feed the live stat sheet.',17,C['muted'])
+for y,title,desc,active in [(277,'Potions','Choose preparations for this build',True),(373,'Decoctions','Inspect effects and toxicity cost',False),(469,'Oils & bombs','Select a preparation for the target',True)]:
+ card(y,82);text(30,y+12,title,23,k='serif');text(30,y+44,desc,14,C['muted']);text(350,y+16,'Choose →',14,C['sage'],anchor='ra')
+ if active:tag(289,y+47,'SELECTED',C['sage'])
+sheet(577,132);text(29,591,'Toxicity & active effects',22,C['ink'],'serif')
+wrap(29,627,'Show capacity, selected effects and any conflicts. Combat switches live in Conditions.',328,16,C['ink'])
+text(29,681,'Open shared Alchemy reference  →',15,C['ink'])
+footer();plates.append(('Alchemy',save('03-alchemy.png')))
+# 04 performance
+begin('Feline duelist',tab=3)
+text(18,209,'LIVE PERFORMANCE',12,C['silver'],'caps');text(18,233,'Baseline: saved “Feline — before edits”',15,C['muted'])
+card(264,192);text(29,276,'Conditions',22,k='serif');text(353,282,'3 active  −',14,C['sage'],anchor='ra')
+for y,label,on in [(313,'Quen active',True),(350,'Selected potion active',True),(387,'Target status effect',True)]:
+ text(29,y,label,16);rect(315,y,42,23,C['sage'] if on else C['panel2'],C['silver'],r=11);d.ellipse(((339 if on else 318)*S,(y+3)*S,(354 if on else 333)*S,(y+19)*S),fill=C['bg'])
+text(29,424,'Conditions saved with this build',13,C['muted'])
+text(18,474,'ILLUSTRATIVE VALUES · NOT VERIFIED',10,C['sage'],'caps')
+for i,(name,value,delta) in enumerate([('Attack power','1,240','+120'),('Armor','280','−15'),('Sign intensity','45%','+10 pp'),('Stamina recovery','12/s','+2/s'),('Toxicity','45 / 100','+10')]):
+ y=502+i*36;text(20,y,name,16);text(270,y,value,17,anchor='ra');text(365,y,delta+'  ›',15,C['sage'],anchor='ra');line(20,y+29,370,y+29,'#3a4e49')
+text(18,694,'Target assumptions  ▸',17);text(18,719,'Same conditions applied to both builds',13,C['muted'])
+footer();plates.append(('Performance',save('04-performance.png')))
+# 05 picker
+begin('Choose chest armor','EQUIPMENT / CHEST SLOT',tab=0)
+card(213,44);text(29,224,'Search Witcher sets & vetted alternatives',15,C['muted'])
+text(18,276,'Family: Feline  ▾        Tier: Enhanced  ▾',16)
+for y,title,sub,picked in [(318,'Feline armor','Basic · BASE GAME',False),(389,'Enhanced Feline armor','Selected tier · BASE GAME',True),(460,'Superior Feline armor','Unmet requirements shown · BASE GAME',False)]:
+ rect(16,y,358,60,C['panel2'] if picked else C['panel'],C['sage'] if picked else '#667871',r=3)
+ text(30,y+9,title,20,k='serif');text(30,y+35,sub,12,C['sage'] if picked else C['muted']);text(352,y+20,'✓' if picked else '›',21,anchor='ra')
+sheet(544,148);text(29,558,'Enhanced Feline armor',22,C['ink'],'serif')
+wrap(29,593,'Key effects, requirements and the impact on set bonuses appear here.',326,16,C['ink'])
+text(29,654,'Full gear page  →     Acquisition guide  →',15,C['ink'])
+button(16,711,172,'Cancel');button(202,711,172,'Preview change',True)
+footer('Picker concept · no change until you apply the preview',False);plates.append(('Slot picker',save('05-slot-picker.png')))
+# 06 vault
+begin('Build Vault','CHARACTER / SAVED BUILDS',tab=0)
+text(18,212,'Search your builds…',16,C['muted']);line(18,245,371,245,'#7b8a83')
+button(16,263,171,'School  ▾',h=39);button(201,263,173,'Playstyle  ▾',h=39)
+for y,title,status,desc in [(322,'Feline duelist','CURRENT BUILD','Swords · Quen · light Alchemy'),(466,'Feline — Sign experiment','SAVED EXPERIMENT','Mixed set · alternate skill allocation')]:
+ card(y,126)
+ art=ImageOps.fit(Image.open(ROOT/'dist/art-r13/q-viper-card.webp').convert('RGB'),(60*S,98*S));im.paste(art,(26*S,(y+14)*S));rect(26,y+14,60,98,None,C['silver'])
+ tag(98,y+13,status,C['sage']);text(98,y+43,title,20,k='serif');wrap(98,y+73,desc,253,14,C['muted']);text(350,y+104,'Open build →',13,C['sage'],anchor='ra')
+text(18,620,'Find a recommended build',22,k='serif');text(18,651,'Browse by playstyle or Witcher school  →',16)
+button(16,699,171,'Import / export');button(201,699,173,'New experiment',True)
+footer('Each card opens its own build screen and controls',False);plates.append(('Build Vault',save('06-build-vault.png')))
+# 07 preview
+begin('Feline duelist','RECOMMENDED BUILD / PREVIEW',tab=0)
+sheet(214,218);text(29,230,'Fast blades. Measured risks.',25,C['ink'],'serif')
+wrap(29,270,'A mobile sword-focused playstyle with Quen and light Alchemy support.',329,18,C['ink'])
+text(29,331,'Strengths',16,C['ink'],'caps');wrap(29,355,'Quick pressure and flexible preparation.',328,16,C['ink'])
+text(29,388,'Tradeoff: staying exposed can be costly.',16,C['ink'])
+card(452,115);text(29,466,'Milestones & next steps',23,k='serif');wrap(29,500,'See the next useful skill, gear upgrade or unlock, with its benefit and a direct guide link.',328,16,C['muted'])
+text(18,591,'Shared build page',12,C['sage'],'caps')
+text(18,618,'Preparation & combat routine  →',18);text(18,652,'Gear, skills & full requirements  →',18)
+button(16,699,171,'Compare');button(201,699,173,'Copy to Vault',True)
+footer('Recommended original stays unchanged',False);plates.append(('Build preview',save('07-build-preview.png')))
+# 08 crafting
+begin('Review crafting pieces','BUILD → SHARED CRAFTING PLAN',tab=0)
+text(18,212,'Choose what to add',23,k='serif');wrap(18,246,'Select pieces and target tiers before changing your existing plan.',350,16,C['muted'])
+for y,label,tier,on in [(307,'Chest armor','Enhanced',True),(377,'Trousers','Enhanced · upgrade from Basic',True),(447,'Silver sword','Enhanced',False)]:
+ card(y,60);rect(28,y+17,25,25,C['sage'] if on else C['panel2'],C['silver'],r=3)
+ if on:text(40,y+30,'✓',18,C['bg'],anchor='mm')
+ text(66,y+8,label,20,k='serif');text(66,y+34,tier,14,C['muted'])
+sheet(532,150);text(29,547,'One shared crafting plan',23,C['ink'],'serif')
+wrap(29,584,'Preview additions and duplicate requirements before applying. Materials you own are not tracked.',326,16,C['ink'])
+text(29,645,'Craftsman & cost details  →',16,C['ink'])
+button(16,704,171,'Back to build');button(201,704,173,'Preview plan',True)
+footer('Preview first · your existing plan stays intact',False);plates.append(('Crafting handoff',save('08-crafting-handoff.png')))
+# landscape comparison design, not a resized portrait
+im=Image.new('RGB',(844*S,390*S),C['bg']);d=ImageDraw.Draw(im)
+text(18,14,'PHOENIX  /  Feline duelist',21,k='serif');text(824,20,'Performance · illustrative values',13,C['muted'],anchor='ra');line(16,49,827,49,'#74877d')
+rect(16,65,236,254,C['panel'],C['silver'],r=4);text(30,78,'Conditions · 3 active',22,k='serif')
+for y,s in [(122,'✓  Quen active'),(157,'✓  Selected potion active'),(192,'✓  Target status effect')]:text(30,y,s,16)
+text(30,240,'Same conditions for both builds',13,C['sage']);text(30,277,'Target assumptions  ▸',17)
+text(277,72,'Baseline: Feline — before edits',15,C['muted'])
+for i,(name,v,delta) in enumerate([('Attack power','1,240','+120'),('Armor','280','−15'),('Sign intensity','45%','+10 pp'),('Stamina recovery','12/s','+2/s'),('Toxicity','45 / 100','+10')]):
+ y=108+i*39;text(278,y,name,17);text(652,y,v,17,anchor='ra');text(810,y,delta+'  ›',16,C['sage'],anchor='ra');line(278,y+31,812,y+31,'#41564b')
+line(16,337,827,337,'#74877d');button(16,347,125,'Save build',True,h=34);button(152,347,140,'Save a copy',h=34);text(316,356,'Unsaved experiment · current build unchanged',14,C['muted']);text(810,356,'Navigate',14,anchor='ra')
+save('09-performance-landscape.png')
+# Contact sheet with legible titles; full plates remain available separately.
+board=Image.new('RGB',(1120,1370),C['bg']);bd=ImageDraw.Draw(board)
+boardfont=ImageFont.truetype(str(fonts['serif']),34);smallfont=ImageFont.truetype(str(fonts['body']),18)
+bd.text((30,18),'PHOENIX · Character & Build Vault',font=boardfont,fill=C['white']);bd.text((30,62),'Feline duelist / design review v1 / static concepts, not the live application',font=smallfont,fill=C['muted'])
+for i,(label,plate) in enumerate(plates):
+ x=28+(i%4)*274;y=110+(i//4)*620;bd.text((x,y),str(i+1).zfill(2)+'  '+label,font=smallfont,fill=C['white']);thumb=plate.resize((248,537),Image.Resampling.LANCZOS);board.paste(thumb,(x,y+32))
+board.quantize(colors=192).save(OUT/'00-overview.png',optimize=True)
+# Detailed stat contributor panel: arithmetic is illustrative, never game data.
+begin('Attack power breakdown','PERFORMANCE / SHARED MECHANICS',tab=3)
+text(18,213,'ILLUSTRATIVE CALCULATION ONLY',10,C['sage'],'caps')
+card(249,96);text(30,265,'1,240',38,k='serif');text(352,279,'+120 vs baseline',17,C['sage'],anchor='ra');text(30,314,'Tap any contributor to open its shared entry',14,C['muted'])
+for y,title,amount in [(372,'Equipment contribution','1,000'),(417,'Skill contribution','+140'),(462,'Active effects','+100')]:
+ text(22,y,title,18);text(363,y,amount+'  ›',18,C['sage'],anchor='ra');line(22,y+35,367,y+35,'#52685c')
+sheet(532,136);text(29,546,'Calculation',23,C['ink'],'serif');text(29,584,'1,000 + 140 + 100 = 1,240',24,C['ink']);wrap(29,627,'Real formulas, stacking and uncertainty will be verified before implementation.',327,15,C['ink'])
+text(18,696,'Open shared Combat mechanics  →',17)
+footer();save('10-stat-breakdown.png')
+begin('Target assumptions','PERFORMANCE / TARGET CONTROLS',tab=3)
+card(216,129);text(30,230,'Comparison scenario',23,k='serif');text(30,273,'Target type: Monster  ▾',18);text(30,310,'Apply the same target to both builds',15,C['sage'])
+card(367,157);text(30,382,'Simple conditions',23,k='serif')
+for y,label in [(425,'Target affected by selected status'),(468,'Oil matches the target')]:
+ wrap(30,y,label,262,16);rect(321,y,34,23,C['panel2'],C['silver'],r=11)
+sheet(550,146);text(29,565,'Advanced assumptions  +',23,C['ink'],'serif');wrap(29,607,'Expand supported armor, resistance and other target inputs. Estimates stay clearly labelled.',329,16,C['ink']);text(29,663,'Shared enemy & mechanics reference  →',14,C['ink'])
+footer('Conditions saved with this build');save('11-target-assumptions.png')
+print('Rendered 12 design plates')

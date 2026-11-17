@@ -1,5 +1,13 @@
 # PHOENIX — project status (branch `fix/wo-save-preservation`)
 
+## Character build design mockups — 2026-11-17
+
+`design/character-builds-v1` adds static Feline-duelist mockups and the owner decision
+record under `design/builds-v1/`. See its README for the image gallery. This is design
+review only: all stat examples are illustrative and no production code, storage, CI
+or rollback file changes. QA6 remains live. Shared-walkthrough engineering continues
+separately in draft PR #7.
+
 Last updated: 2026-11-17 (America/Chicago) by LT, in a docs-only commit on top of QA6 `804a3a2c83529fdc707ca5278fb3bcf39d50d771`.
 This commit changes no application or rollback file. The QA6 application candidate is still `804a3a2c…`. This branch is the D2
 investigation (`investigation/wo-save-preservation` `75768834b768e53b3acd5f912c1c2032a848b8fb`, itself QA5 `5ba73ace…` + probe)
