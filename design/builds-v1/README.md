@@ -104,3 +104,40 @@ contents, mutations inside Character, locked-mutation planning with a flag, and 
 stats first. No unanswered defaults remain for these states. The upgrade names and
 mutation label are placeholders; compatibility and actual effects require verified
 game data. The plates do not implement persistence or live calculations.
+
+## Equipment interaction prototype (development source)
+
+[Open the prototype source](prototype/index.html). GitHub displays HTML source;
+it does not run this page. No public preview or live-site change is published.
+
+The prototype implements selectable loadout slots, a full-screen two-school demo
+picker, whole-set tier changes, isolated piece overrides, in-slot upgrade changes,
+Apply/Cancel previews, a pinned comparison, condition controls, in-memory Save / Save
+a copy / Open / Discard and a shared-reference return panel. It is a focused equipment
+slice; Character and Alchemy currently link to their approved mockup images.
+
+The page groups an equipment list, character/loadout and selected-item details on
+wide screens, then prioritizes the loadout on a phone. This is a game-inspired
+structure study, not a claim of exact parity with the owner's current Xbox menus.
+The silhouette is still a clearly labelled artwork placeholder. The official
+[CDPR manual](https://cdn-l-thewitcher.cdprojektred.com/media/TW3/Pdf/Manuals/PC/The_Witcher_3_Wild_Hunt_Game_Manual_PC_EN.pdf)
+is a control/interface reference, not a source of verified current stat formulas
+or proof that this prototype matches the current menu geometry.
+
+No localStorage, saved guide progress, APIs or real account state are used. Refresh
+clears the demo Vault. All stats use synthetic arithmetic; all upgrade compatibility,
+real effects, requirements, final artwork and persistent Vault behavior remain out
+of scope for this first prototype. No real game formulas are implied.
+
+Checks: JavaScript syntax; model checks for non-mutating proposals, isolated slot
+changes, whole-tier changes, preserving mixed schools, independent baseline snapshots,
+synthetic condition effects and invalid-input refusal. Browser layout, modal focus,
+touch and Safari are not verified. Before visual acceptance, supply a runnable preview
+and representative set art; do not ask the owner to judge HTML source as the final UI.
+
+To run locally from the repo root in a capable development environment:
+
+```sh
+python3 -m http.server 8772
+# Open http://localhost:8772/design/builds-v1/prototype/index.html
+```

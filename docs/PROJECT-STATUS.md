@@ -4,7 +4,7 @@
 
 `design/character-builds-v1` adds static Feline-duelist mockups (v2, 16 plates) and the owner decision
 record under `design/builds-v1/`. See its README for the image gallery. This is design
-review only: all stat examples are illustrative and no production code, storage, CI
+review plus an isolated equipment interaction prototype: stat examples are synthetic; no production code, storage, CI
 or rollback file changes. QA6 remains live. Shared-walkthrough engineering continues
 separately in draft PR #7.
 
