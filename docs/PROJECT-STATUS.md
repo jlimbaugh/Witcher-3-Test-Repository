@@ -1,5 +1,22 @@
 # PHOENIX — project status (branch `fix/wo-save-preservation`)
 
+## Current development checkpoint — 2026-11-17, Cmdr
+
+Draft PR #7 (`impl/issue-4-shared-walkthrough` into `implementation/shared-walkthrough-v1`)
+contains the shared WO/Nilfgaardian walkthrough implementation. LT checkpoint:
+`adb2f507fbbc4f6002b4e871d90c0b1bedde6e9e`. Cmdr has taken over completion.
+QA6 version 46 remains live; nothing in this checkpoint is merged or deployed.
+
+Cmdr independently ran LT's full suite with all three baselines: 322/322, no skips.
+The follow-up fixes malformed pending-warning validation and browser audit scripts,
+adds a ten-file release manifest and a tested exact-file rollback to QA6. Its suite
+passes 323/323. Cmdr-authored changes still need another officer's independent QA.
+Browser runs are blocked here before page load by Chromium socket restrictions;
+visual parity, contrast, content reachability and final browser journeys are open.
+The CI identity gate remains pinned to QA6 intentionally; update it separately only
+after candidate verification. Full findings and resume steps: `docs/ISSUE4-CMDR-REVIEW.md`.
+The QA6 status below is historical release context, not this candidate's acceptance.
+
 Last updated: 2026-11-17 (America/Chicago) by LT, in a docs-only commit on top of QA6 `804a3a2c83529fdc707ca5278fb3bcf39d50d771`.
 This commit changes no application or rollback file. The QA6 application candidate is still `804a3a2c…`. This branch is the D2
 investigation (`investigation/wo-save-preservation` `75768834b768e53b3acd5f912c1c2032a848b8fb`, itself QA5 `5ba73ace…` + probe)

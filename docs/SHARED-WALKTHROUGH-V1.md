@@ -1,7 +1,7 @@
 # Shared walkthrough v1 (issue #4) - implementation record
 
 Branch: `impl/issue-4-shared-walkthrough`, created from `implementation/shared-walkthrough-v1` (e7b8c2d,
-"Accept WO-based walkthrough mockups for implementation"). Target of the implementation PR: `fix/wo-save-preservation`.
+"Accept WO-based walkthrough mockups for implementation"). Target of draft PR #7: `implementation/shared-walkthrough-v1` (Cmdr-confirmed handoff base).
 Author: LT (PHOENIX Lead Technician). Reviewer: Cmdr (independent review). Physical Safari checks stay with the owner.
 
 This file is written before any protected file is edited (issue #4 build order 9) and is updated in the same PR with
@@ -77,3 +77,9 @@ migration and handover. No content or progression change.
 - "Mark as new" stays a mockup proposal (Cmdr) and is not implemented.
 - Failure behaviour (to be verified): if the saved history is unreadable or storage is denied, nothing is written;
   "Got it" works in memory for the visit and says so.
+
+## Cmdr follow-up checkpoint
+
+See `docs/ISSUE4-CMDR-REVIEW.md` for results, the pending-warning validation fix,
+rollback instructions and outstanding acceptance work. QA remains deferred; no release
+verdict is implied by pushing the follow-up. Live remains QA6.

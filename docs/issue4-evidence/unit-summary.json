@@ -1,0 +1,27 @@
+{
+  "checkpoint": "adb2f507fbbc4f6002b4e871d90c0b1bedde6e9e",
+  "node": "24.22.1",
+  "command": "PHOENIX_V45_BASELINE=<d1df0e3>/dist PHOENIX_QA5_BASELINE=<5ba73ac>/dist PHOENIX_QA6_BASELINE=<804a3a2>/dist node --test *.test.cjs",
+  "checkpoint_result": {
+    "tests": 322,
+    "pass": 322,
+    "fail": 0,
+    "skipped": 0,
+    "evidence": "independent Cmdr execution of LT-authored app and tests"
+  },
+  "followup_result": {
+    "tests": 323,
+    "pass": 323,
+    "fail": 0,
+    "skipped": 0,
+    "evidence": "Cmdr execution; includes Cmdr-authored pending-warning fix and regression; independent review required"
+  },
+  "browser": {
+    "status": "blocked before page load",
+    "error": "Chromium process_singleton_posix.cc: socket() failed: Operation not permitted",
+    "journeys": "not reproduced",
+    "reachability": "not reproduced",
+    "save_probes": "not reproduced",
+    "visual_parity": "not produced"
+  }
+}

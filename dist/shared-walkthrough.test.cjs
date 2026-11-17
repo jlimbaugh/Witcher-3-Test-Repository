@@ -70,7 +70,7 @@ test('the component writes no storage of its own and never calls the progress ow
 });
 // home-ui.js warning persistence guard: the classification functions are extracted verbatim and run against a logged store.
 function guard(){const src=fs.readFileSync(path.join(__dirname,'home-ui.js'),'utf8');const a=src.indexOf(' function readList('),b=src.indexOf(" const key='phoenix.whiteorchard.warningHistory.v1'");assert.ok(a>0&&b>a,'guard functions not found');
- return store=>{const ctx={localStorage:store};vm.createContext(ctx);vm.runInContext(src.slice(a,b)+';this.readList=readList;this.writeList=writeList;',ctx);return ctx;};}
+ return store=>{const ctx={localStorage:store};vm.createContext(ctx);vm.runInContext(src.slice(a,b)+';this.readList=readList;this.writeList=writeList;this.acceptPendingWarning=acceptPendingWarning;',ctx);return ctx;};}
 function logged(init,fault={}){const map=new Map(Object.entries(init)),log=[];return {log,map,getItem(k){if(fault.read)throw Object.assign(new Error('denied'),{name:'SecurityError'});return map.has(k)?map.get(k):null;},setItem(k,v){if(fault.write)throw new Error('quota');log.push([k,v]);map.set(k,String(v));},removeItem(k){log.push(['remove',k]);map.delete(k);}};}
 const HK='phoenix.whiteorchard.warningHistory.v1',ok=r=>r&&typeof r==='object'&&typeof r.text==='string';
 test('warning history guard: damaged, empty, non-array and read-failed saves stay unchanged with zero writes',()=>{
@@ -82,4 +82,15 @@ test('warning history guard: absent and valid records stay writable; a failed wr
  const g=guard();const a=logged({}),fa=g(a),ra=fa.readList(HK,ok);assert.equal(ra.status,'absent');assert.equal(fa.writeList(HK,ra,[{id:'x',text:'t',href:null,at:1}]),'saved');assert.equal(a.log.length,1);
  const valid='[{"id":"crystal-skull-cutoff","text":"t","href":null,"at":1}]',v=logged({[HK]:valid}),fv=g(v),rv=fv.readList(HK,ok);assert.equal(rv.status,'accepted');assert.equal(rv.list.length,1);
  const w=logged({},{write:true}),fw=g(w),rw=fw.readList(HK,ok);assert.equal(fw.writeList(HK,rw,[]),'unavailable');
+});
+
+test('pending warning guard rejects malformed entries before pruning can overwrite them',()=>{
+ const key='phoenix.whiteorchard.pendingWarnings.v1',g=guard();
+ for(const raw of ['[{}]','[[]]','[{"id":"x","quest":"q-beast","status":"failed"}]','[{"id":"x","quest":"q-beast","status":"other","text":"t"}]']){
+  const store=logged({[key]:raw}),f=g(store),r=f.readList(key,f.acceptPendingWarning);
+  assert.equal(r.writable,false,raw);assert.equal(f.writeList(key,r,[]),'blocked');assert.deepEqual(store.log,[]);assert.equal(store.map.get(key),raw);
+ }
+ const valid=[{id:'failed:q-beast:1',quest:'q-beast',status:'failed',text:'Recorded failed',href:'#quest-beast'}];
+ const store=logged({[key]:JSON.stringify(valid)}),f=g(store),r=f.readList(key,f.acceptPendingWarning);
+ assert.equal(r.status,'accepted');assert.equal(f.writeList(key,r,valid),'saved');
 });

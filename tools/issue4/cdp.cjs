@@ -5,8 +5,10 @@ const {spawn}=require('node:child_process'),fs=require('node:fs'),os=require('no
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function launch({width=390,height=844,profile=null,scale=1}={}){
  const dir=profile||fs.mkdtempSync(path.join(os.tmpdir(),'sw-cdp-'));const port=9400+Math.floor(Math.random()*500);
- const chrome=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--hide-scrollbars','--no-first-run','--user-data-dir='+dir,'--remote-debugging-port='+port,'about:blank'],{stdio:'ignore'});
+ const chrome=spawn(process.env.CHROME_PATH||'google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--hide-scrollbars','--no-first-run','--user-data-dir='+dir,'--remote-debugging-port='+port,'about:blank'],{stdio:['ignore','ignore','pipe']});
+ let launchError='',launchFailure=null;chrome.stderr.on('data',chunk=>{launchError=(launchError+chunk.toString()).slice(-3000);});chrome.on('error',e=>{launchFailure=e;});
  let list;for(let i=0;i<60;i++){try{list=await (await fetch(`http://127.0.0.1:${port}/json`)).json();if(list.some(t=>t.type==='page'))break;}catch{}await sleep(200);}
+ if(!list?.some(t=>t.type==='page')){chrome.kill();if(!profile)fs.rmSync(dir,{recursive:true,force:true});throw Error('Browser startup failed: '+(launchFailure?.message||launchError||'no debugging endpoint'));}
  const target=list.find(t=>t.type==='page');const ws=new WebSocket(target.webSocketDebuggerUrl);let id=0;const pend=new Map(),events=[];
  ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pend.has(m.id)){pend.get(m.id)(m);pend.delete(m.id);}else if(m.method)events.push(m);};
  await new Promise(r=>ws.onopen=r);

@@ -155,9 +155,9 @@ const PROTECTED={
 //                           walkthrough pages with a pending mark; acknowledgeRecord() for one selector-wolf "Got it";
 //                           "acknowledged for this visit only" status when the history write is blocked)
 //   home-ui.js    v45 ..... d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd
-//                 issue #4  a1b8798df452de864b9d692868a137bb6b7cbd5444f96e9b0db6b747ad375743 (passes navigationOnly; guards
+//                 issue #4  dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722 (passes navigationOnly; guards
 //                           warningHistory.v1 / pendingWarnings.v1: unreadable or denied saves are never written)
-const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'a1b8798df452de864b9d692868a137bb6b7cbd5444f96e9b0db6b747ad375743'};
+const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722'};
 test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed candidate bytes',()=>{
  for(const [f,sum] of Object.entries(CANDIDATE_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed issue #4 candidate; update CANDIDATE_PINS deliberately');
  for(const f of Object.keys(CANDIDATE_PINS))assert.ok(!Object.hasOwn(PROTECTED,f),f+' is pinned once');

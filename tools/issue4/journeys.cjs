@@ -67,9 +67,9 @@ const REGIONS={
    // 7 warning expand + Got it
    await b.eval(`location.hash=${JSON.stringify(R.warnStage)}`);await sleep(1500);s=await snap(b);check('warning objective shows an unread wolf badge',/unread/.test(s.badge||''),s);
    await tapSel(b,'.view:not([hidden]) .sw-wolf');s=await snap(b);check('wolf expands the warning inline',s.warnPanel,s);await shot(b,'07-warning');
-   await tapSel(b,'.view:not([hidden]) .sw-ack-btn');s=await snap(b);check('Got it marks the warning acknowledged',/acked/.test(s.badge||''),s);
+   const beforeAck=await snap(b);await tapSel(b,'.view:not([hidden]) .sw-ack-btn');s=await snap(b);check('Got it marks the warning acknowledged',/acked/.test(s.badge||''),s);
    const hist=await b.eval(`localStorage.getItem('phoenix.whiteorchard.warningHistory.v1')`);check('acknowledgment is written to the existing warning history (no new key)',hist&&hist.includes('"text"'),hist);
-   check('acknowledgment is separate from completion',s.count===c0.count||true,{count:s.count});await shot(b,'08-warning-ack');
+   check('acknowledgment is separate from completion',s.progress===beforeAck.progress&&s.count===beforeAck.count,{before:beforeAck.count,after:s.count});await shot(b,'08-warning-ack');
    // 8 route change (Velen) through Story & correction controls
    if(rid==='velen'){await b.eval(`(()=>{const r=document.querySelector('.view:not([hidden]) .sw-story-row');r.open=true;r.querySelector('[data-velen-edit-choice]').click()})()`);await sleep(800);
     await b.eval(`(()=>{const s=document.querySelector('dialog[open] select');s.value='fight';s.dispatchEvent(new Event('change',{bubbles:true}));})()`);await sleep(200);await confirmDialog(b);s=await snap(b);
