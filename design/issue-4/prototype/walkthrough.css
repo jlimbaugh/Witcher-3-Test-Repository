@@ -1,0 +1,100 @@
+/* Issue #4 mockup. Visual language borrowed from the shipped White Orchard page: stone ground, curled vellum
+   panel, Fell/Fondamento type, silver-framed rows with steel discs, dark iron buttons, silver wolf pointer. */
+@font-face{font-family:Fell;src:url(../../../dist/im-fell-english-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Fondamento;src:url(../../../dist/fondamento-r16.ttf) format('truetype')}
+@font-face{font-family:Cinzel;src:url(../../../dist/cinzel-latin-400-normal.woff2) format('woff2')}
+:root{--ink:#2a211b;--ink-soft:#4a3d31;--paper:#efe0bd;--paper-2:#e6d2a6;--silver:#b8bfb4;--silver-2:#7f887b;--iron:#22282a;--stone:#151c1e;--warn:#8c2a1e;--warn-soft:#f3d7c8;--focus:#f4d36b}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--stone) url(../../../dist/r10-stone.svg);color:var(--ink);font:19px/1.5 Fondamento,Fell,Georgia,serif;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.site-bar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:3px double #9aa49a;color:#e9e3d2;font:13px/1.2 Cinzel,serif;letter-spacing:.08em}
+.proto-flag{font:12px/1.2 Fondamento,serif;letter-spacing:0;color:#d7cdb5;border:1px solid #9aa49a;padding:4px 8px;border-radius:3px}
+main{max-width:560px;margin:0 auto;padding:12px 10px 120px}
+
+/* 1. Compact illustrated heading: WO banner, shallower. */
+.quest-heading{position:relative;border:5px double var(--silver);border-radius:4px;overflow:hidden;min-height:104px;padding:12px 14px 10px;color:#f3ead7;background:#1d2426;box-shadow:0 2px 10px #0008}
+.quest-heading img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.48;filter:saturate(.8)}
+.quest-heading::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141a1ccc 0,#141a1c88 60%,#141a1c33)}
+.quest-heading>*{position:relative;z-index:1}
+.quest-heading .eyebrow{margin:0;font:12px/1.3 Cinzel,serif;letter-spacing:.08em;color:#d8dccf}
+.quest-heading h1{margin:4px 0 2px;font:400 26px/1.15 Fell,Georgia,serif}
+.quest-heading .meta{margin:0;font-size:15px;color:#ece3cc}
+.kind-chip{display:inline-block;vertical-align:2px;margin-left:8px;font:11px/1 Cinzel,serif;letter-spacing:.06em;border:1px solid var(--silver);border-radius:12px;padding:5px 9px;background:#1c2325cc;color:#eef0e8}
+
+/* WO reading panel: curled vellum border image, unchanged. */
+.panel{margin-top:14px;border-style:solid;border-width:36px 22px;border-image:url(../../../dist/curled-vellum-r16.webp) 155 100 150 fill / 38px 18px / 0 stretch;padding:4px 8px 8px}
+
+/* 2. Objective selector: first thing inside the panel, scrolls with the page (never sticky). */
+.selector{position:relative;margin:0 -8px 6px;padding:0 0 10px;border-bottom:1px solid #8b7d6188}
+.wolf-wrap{display:flex;flex-direction:column;align-items:center;position:relative;z-index:2;margin-top:-6px}
+.wolf{position:relative;display:grid;place-items:center;width:76px;height:64px;padding:0;margin:0;border:0;background:none;cursor:pointer}
+.wolf img{width:72px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 2px #0006)}
+.wolf[disabled]{cursor:default}
+.wolf-badge{position:absolute;right:2px;top:4px;min-width:24px;height:24px;border-radius:12px;background:var(--warn);color:#fff7ef;border:2px solid #f3e6d0;font:bold 15px/20px Georgia,serif;text-align:center;box-shadow:0 1px 3px #0007}
+.wolf-badge.unread::after{content:"";position:absolute;right:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:#f4d36b;border:1px solid #6b4b12}
+.wolf-caption{font-size:14px;color:var(--warn);margin:-2px 0 0;min-height:20px}
+.warning-panel{margin:6px 12px 8px;border:2px solid var(--warn);border-radius:4px;background:var(--warn-soft);padding:10px 12px;position:relative}
+.warning-panel::before{content:"";position:absolute;top:-9px;left:calc(50% - 8px);width:14px;height:14px;background:var(--warn-soft);border-left:2px solid var(--warn);border-top:2px solid var(--warn);transform:rotate(45deg)}
+.warning-panel h3{margin:0 0 4px;font:400 18px/1.25 Fell,serif;color:#5d1a10}
+.warning-panel p{margin:4px 0;font-size:16px;line-height:1.4}
+.warning-panel dt{font:13px/1.2 Cinzel,serif;letter-spacing:.05em;color:#5d1a10;margin-top:8px}
+.warning-panel dd{margin:2px 0 0;font-size:16px;line-height:1.4}
+.warning-panel .provenance{font-size:12px;color:#6a4a3c;margin-top:8px}
+.rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 16% 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.box{flex:0 0 68%;scroll-snap-align:center;display:flex;gap:8px;align-items:flex-start;min-height:84px;padding:10px 10px 10px 8px;border:2px solid var(--silver-2);border-radius:4px 2px;background:linear-gradient(#f3e7c8,#e8d6ac);box-shadow:inset 0 0 0 1px #fff6,0 1px 3px #0003;opacity:.72;transition:opacity .2s,transform .2s;cursor:pointer}
+.box.selected{opacity:1;border:3px solid #5f6a66;outline:1px solid #c9d0c6;outline-offset:2px;transform:translateY(-2px);box-shadow:inset 0 0 0 1px #fff8,0 4px 10px #0004}
+.box .check{flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;border:0;background:none;padding:0;cursor:pointer}
+.box .check span{width:28px;height:28px;border:2px solid #5f6a66;border-radius:3px;background:#fbf4e2;box-shadow:inset 0 1px 2px #0003;display:grid;place-items:center;font:bold 20px/1 Georgia,serif;color:#2f4a2b}
+.box.done .check span{background:#d9e2cf;border-color:#3e5a3a}
+.box .name{font-size:17px;line-height:1.3;padding-top:9px;overflow-wrap:break-word}
+.box.done .name{color:#3d4a37}
+.box .tick-note{display:block;font-size:13px;color:#3e5a3a;margin-top:2px}
+.status-line{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;margin:6px 4px 0;font-size:15px}
+.status-line .position{font:13px/1.3 Cinzel,serif;letter-spacing:.05em;color:var(--ink-soft)}
+.progress{flex:1 1 100%;display:flex;align-items:center;gap:8px;font-size:15px}
+.bar{flex:1;height:8px;border:1px solid #6b6b5d;border-radius:4px;background:#f6ecd2;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#55705a,#7d9a80)}
+.next-btn{min-height:44px;padding:8px 14px;border:1px solid #11161766;border-radius:3px;background:linear-gradient(#3a4244,#22282a);color:#f1ead8;box-shadow:inset 0 0 0 1px #c9d0c633;font-size:15px;cursor:pointer}
+.on-next{font-size:14px;color:var(--ink-soft);min-height:44px;display:flex;align-items:center}
+
+/* 3. Reading layout: identical for every objective in every region. */
+.reading h2{margin:10px 0 2px;font:400 26px/1.2 Fell,Georgia,serif}
+.reading .place{margin:0 0 6px;font-size:15px;color:var(--ink-soft)}
+.ornament{display:block;margin:2px auto 8px;width:120px;height:10px;border-top:1px solid #8b7d61;opacity:.7}
+.reading h3{margin:12px 0 4px;font:13px/1.3 Cinzel,serif;letter-spacing:.06em;color:var(--ink-soft)}
+.actions{margin:0;padding-left:26px}
+.actions li{margin:4px 0;padding-left:2px}
+.choices{margin:6px 0 0;padding-left:26px;list-style:"◇ "}
+.explain p{margin:4px 0;font-size:17px;line-height:1.45;color:#3a2f26}
+details.row{margin:12px 0;border:2px solid #a6a99a;border-radius:3px;background:linear-gradient(#f3e8cb,#ead9b2);box-shadow:inset 0 0 0 1px #fff7,0 1px 2px #0002}
+details.row>summary{list-style:none;position:relative;min-height:54px;padding:13px 52px 13px 13px;font-size:17.6px;cursor:pointer}
+details.row>summary::-webkit-details-marker{display:none}
+details.row>summary::after{content:"+";position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#56615b,#25302e 75%);color:#eef0e8;display:grid;place-items:center;font:20px/1 Georgia,serif;box-shadow:0 0 0 2px #c9d0c6}
+details.row[open]>summary::after{content:"−"}
+details.row .row-body{padding:0 13px 12px;font-size:16.5px;line-height:1.45}
+details.row .row-body p{margin:6px 0}
+details.row .count{font-size:14px;color:var(--ink-soft)}
+.opt-item{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px dashed #a6997b}
+.opt-item:first-child{border-top:0}
+.opt-item .check{flex:0 0 44px;height:44px;display:grid;place-items:center;border:0;background:none;padding:0}
+.opt-item .check span{width:24px;height:24px;border:2px solid #5f6a66;border-radius:3px;background:#fbf4e2}
+.opt-item .kind{display:block;font-size:13px;color:var(--ink-soft)}
+.opt-item a,.row-body a{color:#3b2b1f;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.link-entry{display:inline-flex;align-items:center;min-height:44px;padding:4px 0}
+.empty{font-size:15px;color:var(--ink-soft);font-style:italic}
+.quest-rows{margin-top:16px;border-top:1px solid #8b7d6188;padding-top:4px}
+.footer-buttons{display:flex;gap:10px;margin:14px 0 0}
+.footer-buttons span{flex:1;min-height:52px;display:grid;place-items:center;border:1px solid #9aa49a;border-radius:3px;background:linear-gradient(#2f3638,#1c2224);color:#efe8d6;font-size:16px}
+.floating-nav{position:fixed;right:10px;bottom:10px;display:flex;align-items:flex-end;gap:8px;pointer-events:none}
+.floating-nav-tile{display:grid;place-items:center;width:96px;height:88px;border:1px solid #9aa49a;border-radius:3px;background:linear-gradient(#2c3335,#191f21);color:#efe8d6;font-size:15px;box-shadow:0 2px 8px #0008}
+.floating-nav-wolf{width:62px;height:62px}
+@media (orientation:landscape) and (max-height:500px){main{max-width:620px}.quest-heading{min-height:84px}.quest-heading h1{font-size:23px}.rail{padding-inline:22%}.box{flex-basis:56%;min-height:80px}.floating-nav-tile{width:84px;height:64px}}
+@media (prefers-reduced-motion:reduce){.box{transition:none}.rail{scroll-behavior:auto}}
+/* r2 tweaks after first render */
+.box .name{font-size:16.5px;line-height:1.28}
+.route-note{flex-basis:100%;font-size:14px;color:#4a3f30;font-style:italic}
+/* Landscape: keep the column clear of the floating navigation controls on the right. */
+@media (orientation:landscape) and (max-height:500px){main{margin-left:max(16px,calc(50% - 400px));margin-right:190px}}
