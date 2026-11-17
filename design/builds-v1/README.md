@@ -1,5 +1,7 @@
 # Character & Build Vault — mockups v2
 
+**[NEW: completed game-art review gallery](art-mockups/README.md)** — start here.
+
 **[Latest production-slice visual review](reviews/gear-reference-slice.png)** —
 shared gear reference and change-preview states; static illustration, not a browser capture.
 
