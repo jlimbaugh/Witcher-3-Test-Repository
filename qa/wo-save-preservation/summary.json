@@ -1,0 +1,1691 @@
+{
+ "meta": {
+  "probe": "qa/wo-save-preservation/probe.cjs",
+  "generatedAt": "2026-11-17T01:19:29.051Z",
+  "node": "v24.22.1",
+  "chrome": "Google Chrome 156.0.8078.47 (headless=new)",
+  "evidence": "author-run (LT self-evidence); not independent review",
+  "builds": {
+   "baseline": "d1df0e3e2c40cad172577f4725daa7233fc8c41e:dist",
+   "candidate": "5ba73ace7d05551c877021de6e6fd0a2242a1e3a:dist"
+  },
+  "validRecordSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+  "validRecordFile": "fixtures/valid-record.json"
+ },
+ "rows": [
+  {
+   "name": "absent",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:localStorage-access-throws",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    }
+   }
+  },
+  {
+   "name": "fault:read-throws-first-load-only",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:read-throws-wo-key",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:write-throws-all-keys-quota",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:write-throws-wo-key-quota",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "invalid-json-text",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "invalid-json-truncated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-array",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-null",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-number",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-object-missing-fields",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-string",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "valid-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-invalid-json",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "790848db0a9bd1febaad75ed5f06f6c3544b1e26729e5a5bf2efeec255fee121",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-shape-array",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-shape-string",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "ba2df4903a2c14e86dc3bcca58911b44ac1d2514b7227bf6eb08cfb978f55a1b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-valid-absent",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=nilf-slice2-qa3-v45:21:118)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-2-divergent",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-2-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-missing-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-string-1-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "candidate/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  }
+ ]
+}
