@@ -1,0 +1,670 @@
+{
+  "diagram-viper-steel": {
+    "id": "diagram-viper-steel",
+    "name": "Viper steel sword diagram",
+    "view": "gear-diagram-viper-steel",
+    "subject": "Viper steel sword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Viper steel sword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-a2878b3b-394b-49b3-8c79-327af533c82b.png"
+  },
+  "diagram-viper-silver": {
+    "id": "diagram-viper-silver",
+    "name": "Viper silver sword diagram",
+    "view": "gear-diagram-viper-silver",
+    "subject": "Viper silver sword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Viper silver sword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b9f3cd83-a4e7-46de-adfa-19caa632ffe8.png"
+  },
+  "diagram-amateur-s-armor-repair-kit": {
+    "id": "diagram-amateur-s-armor-repair-kit",
+    "name": "Amateur's armor repair kit diagram",
+    "view": "gear-diagram-amateur-s-armor-repair-kit",
+    "subject": "Amateur's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, simple rustic few tools",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Amateur's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, simple rustic few tools. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-bebd252f-1b25-4f8a-b4e1-f4a1c945081a.png"
+  },
+  "diagram-journeyman-s-armor-repair-kit": {
+    "id": "diagram-journeyman-s-armor-repair-kit",
+    "name": "Journeyman's armor repair kit diagram",
+    "view": "gear-diagram-journeyman-s-armor-repair-kit",
+    "subject": "Journeyman's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, organized medium tool selection",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Journeyman's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, organized medium tool selection. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ec600e58-4f34-47e3-b6ee-2caa077db65a.png"
+  },
+  "diagram-cidarian-gambeson": {
+    "id": "diagram-cidarian-gambeson",
+    "name": "Cidarian gambeson diagram",
+    "view": "gear-diagram-cidarian-gambeson",
+    "subject": "Cidarian gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Cidarian gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-410e0e39-a66e-4ad2-ad45-96ffa0813cd9.png"
+  },
+  "diagram-skellige-gambeson": {
+    "id": "diagram-skellige-gambeson",
+    "name": "Skellige gambeson diagram",
+    "view": "gear-diagram-skellige-gambeson",
+    "subject": "Skellige gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Skellige gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ba4cbb4f-ca03-4b8c-846a-a3deaf723084.png"
+  },
+  "diagram-kaedweni-gambeson": {
+    "id": "diagram-kaedweni-gambeson",
+    "name": "Kaedweni gambeson diagram",
+    "view": "gear-diagram-kaedweni-gambeson",
+    "subject": "Kaedweni gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Kaedweni gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-74f0eed3-cd73-45ec-86dc-485d61ff0a45.png"
+  },
+  "diagram-hunter-s-trousers": {
+    "id": "diagram-hunter-s-trousers",
+    "name": "Hunter's trousers diagram",
+    "view": "gear-diagram-hunter-s-trousers",
+    "subject": "Hunter's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Hunter's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-2f5565d3-47ad-4091-a081-8a85d8458924.png"
+  },
+  "diagram-hunter-s-boots": {
+    "id": "diagram-hunter-s-boots",
+    "name": "Hunter's boots diagram",
+    "view": "gear-diagram-hunter-s-boots",
+    "subject": "a pair of Hunter's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Hunter's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-5de07e91-4da2-46f6-b806-4465480364dc.png"
+  },
+  "diagram-hunter-s-gauntlets": {
+    "id": "diagram-hunter-s-gauntlets",
+    "name": "Hunter's gauntlets diagram",
+    "view": "gear-diagram-hunter-s-gauntlets",
+    "subject": "a pair of Hunter's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Hunter's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7a6c80d9-f32c-4e5c-b672-c53924bae92b.png"
+  },
+  "diagram-spikeroog-aketon": {
+    "id": "diagram-spikeroog-aketon",
+    "name": "Spikeroog aketon diagram",
+    "view": "gear-diagram-spikeroog-aketon",
+    "subject": "Spikeroog aketon, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Spikeroog aketon, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-67992422-eeaf-4085-8562-aeabb20b072a.png"
+  },
+  "diagram-shiadhal-s-armor": {
+    "id": "diagram-shiadhal-s-armor",
+    "name": "Shiadhal's armor diagram",
+    "view": "gear-diagram-shiadhal-s-armor",
+    "subject": "Shiadhal's armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Shiadhal's armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-bc6d5cfa-f5fa-44bc-9e91-c05c389216a7.png"
+  },
+  "diagram-verden-archer-s-gambeson": {
+    "id": "diagram-verden-archer-s-gambeson",
+    "name": "Verden archer's gambeson diagram",
+    "view": "gear-diagram-verden-archer-s-gambeson",
+    "subject": "Verden archer's gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Verden archer's gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-807c5195-f147-4f9d-94f3-f82c61e5d595.png"
+  },
+  "diagram-bounty-hunter-s-gambeson": {
+    "id": "diagram-bounty-hunter-s-gambeson",
+    "name": "Bounty hunter's gambeson diagram",
+    "view": "gear-diagram-bounty-hunter-s-gambeson",
+    "subject": "Bounty hunter's gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Bounty hunter's gambeson, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-443865f5-8841-46cb-9a69-8be7e0a5238f.png"
+  },
+  "diagram-cavalry-trousers": {
+    "id": "diagram-cavalry-trousers",
+    "name": "Cavalry trousers diagram",
+    "view": "gear-diagram-cavalry-trousers",
+    "subject": "Cavalry trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Cavalry trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-49de90a3-a0d8-47fd-84b8-8ee5a041a569.png"
+  },
+  "diagram-tracker-s-trousers": {
+    "id": "diagram-tracker-s-trousers",
+    "name": "Tracker's trousers diagram",
+    "view": "gear-diagram-tracker-s-trousers",
+    "subject": "Tracker's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Tracker's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-edb02332-b58e-4410-8606-eac419c6d80e.png"
+  },
+  "diagram-cavalry-boots": {
+    "id": "diagram-cavalry-boots",
+    "name": "Cavalry boots diagram",
+    "view": "gear-diagram-cavalry-boots",
+    "subject": "a pair of Cavalry boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Cavalry boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-411a9fa1-f17b-407f-8fe3-05727fc937a5.png"
+  },
+  "diagram-tracker-s-boots": {
+    "id": "diagram-tracker-s-boots",
+    "name": "Tracker's boots diagram",
+    "view": "gear-diagram-tracker-s-boots",
+    "subject": "a pair of Tracker's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Tracker's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ef67c756-9e18-4eab-a998-2fdc63e641a4.png"
+  },
+  "diagram-cavalry-gauntlets": {
+    "id": "diagram-cavalry-gauntlets",
+    "name": "Cavalry gauntlets diagram",
+    "view": "gear-diagram-cavalry-gauntlets",
+    "subject": "a pair of Cavalry gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Cavalry gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-74718184-5e3b-4720-9c7f-0d8f5a8655aa.png"
+  },
+  "diagram-tracker-s-gauntlets": {
+    "id": "diagram-tracker-s-gauntlets",
+    "name": "Tracker's gauntlets diagram",
+    "view": "gear-diagram-tracker-s-gauntlets",
+    "subject": "a pair of Tracker's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Tracker's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-13903852-b362-4f2b-b4f5-54e2af09f1de.png"
+  },
+  "diagram-lesser-glyph-of-infusion": {
+    "id": "diagram-lesser-glyph-of-infusion",
+    "name": "Lesser Glyph of Infusion diagram",
+    "view": "gear-diagram-lesser-glyph-of-infusion",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Infusion, on worn parchment, small rough-edged charm, restrained silver magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Infusion, on worn parchment, small rough-edged charm, restrained silver magical accent. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-fdfca66f-3086-45ff-8ddd-dc3a2ca81570.png"
+  },
+  "diagram-lesser-glyph-of-aard": {
+    "id": "diagram-lesser-glyph-of-aard",
+    "name": "Lesser Glyph of Aard diagram",
+    "view": "gear-diagram-lesser-glyph-of-aard",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Aard, on worn parchment, small rough-edged charm, restrained cool blue magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Aard, on worn parchment, small rough-edged charm, restrained cool blue magical accent. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-a275f5e7-e39c-4989-9b70-2ddc7e948480.png"
+  },
+  "diagram-lesser-glyph-of-axii": {
+    "id": "diagram-lesser-glyph-of-axii",
+    "name": "Lesser Glyph of Axii diagram",
+    "view": "gear-diagram-lesser-glyph-of-axii",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Axii, on worn parchment, small rough-edged charm, restrained muted green magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Axii, on worn parchment, small rough-edged charm, restrained muted green magical accent. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b13d46a0-4065-4d9a-a159-05cc41e50412.png"
+  },
+  "diagram-lesser-glyph-of-igni": {
+    "id": "diagram-lesser-glyph-of-igni",
+    "name": "Lesser Glyph of Igni diagram",
+    "view": "gear-diagram-lesser-glyph-of-igni",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Igni, on worn parchment, small rough-edged charm, restrained warm ember magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Igni, on worn parchment, small rough-edged charm, restrained warm ember magical accent. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7364bbf6-b15b-4f3e-afc7-e916373c1ac1.png"
+  },
+  "diagram-lesser-glyph-of-quen": {
+    "id": "diagram-lesser-glyph-of-quen",
+    "name": "Lesser Glyph of Quen diagram",
+    "view": "gear-diagram-lesser-glyph-of-quen",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Quen, on worn parchment, small rough-edged charm, restrained soft amber magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Quen, on worn parchment, small rough-edged charm, restrained soft amber magical accent. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-2e334650-f7a0-4f09-90f2-bbfd2f7028a7.png"
+  },
+  "diagram-lesser-glyph-of-yrden": {
+    "id": "diagram-lesser-glyph-of-yrden",
+    "name": "Lesser Glyph of Yrden diagram",
+    "view": "gear-diagram-lesser-glyph-of-yrden",
+    "subject": "a single engraved armor glyph charm, Lesser Glyph of Yrden, on worn parchment, small rough-edged charm, restrained muted violet magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Lesser Glyph of Yrden, on worn parchment, small rough-edged charm, restrained muted violet magical accent. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-88183f96-595e-4048-a3ba-7e3aa4b04d6b.png"
+  },
+  "diagram-koviri-cutlass": {
+    "id": "diagram-koviri-cutlass",
+    "name": "Koviri cutlass diagram",
+    "view": "gear-diagram-koviri-cutlass",
+    "subject": "Koviri cutlass, a single medieval fantasy curved single-edge sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Koviri cutlass, a single medieval fantasy curved single-edge sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-cde56cb4-d26e-48b1-b1ed-8bedd3bb6385.png"
+  },
+  "diagram-temerian-poniard": {
+    "id": "diagram-temerian-poniard",
+    "name": "Temerian poniard diagram",
+    "view": "gear-diagram-temerian-poniard",
+    "subject": "Temerian poniard, a single medieval fantasy dagger, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Temerian poniard, a single medieval fantasy dagger, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-449faffa-6cbf-4cee-9f74-4b9c5b59d6b8.png"
+  },
+  "diagram-velen-longsword": {
+    "id": "diagram-velen-longsword",
+    "name": "Velen longsword diagram",
+    "view": "gear-diagram-velen-longsword",
+    "subject": "Velen longsword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Velen longsword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-d3186bd2-bba0-429b-9bf0-e80bc911ba53.png"
+  },
+  "diagram-dorian-sword": {
+    "id": "diagram-dorian-sword",
+    "name": "Dorian sword diagram",
+    "view": "gear-diagram-dorian-sword",
+    "subject": "Dorian sword, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Square painterly-realism museum object still-life for a medieval fantasy crafting guide: a single fully sheathed Dorian-style longsword laid diagonally on an old linen cloth over dark timber. Show beautifully worn brown leather scabbard and silver steel hilt with simple swept guard, small folded blank crafting parchment to one side. No person. Sharp tactile materials, charcoal, cold silver and earth tones, soft window light. Main object centrally crop-safe in upper two-thirds. No lettering, text, frame, interface, symbols or watermark. Quiet artisan display.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7d66a41e-189e-4bfd-b085-d2e9f6474de5.png"
+  },
+  "diagram-disglair": {
+    "id": "diagram-disglair",
+    "name": "Disglair diagram",
+    "view": "gear-diagram-disglair",
+    "subject": "Disglair, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Disglair, a single medieval fantasy sword, distinct hilt, guard and blade silhouette, displayed diagonally beside a folded crafting sketch; focus the weapon as a still-life, no wielder or combat. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ef0c4d20-895a-4863-87e2-8eee257e2a97.png"
+  },
+  "diagram-lesser-runestone": {
+    "id": "diagram-lesser-runestone",
+    "name": "Lesser runestone diagram",
+    "view": "gear-diagram-lesser-runestone",
+    "subject": "one carved dark mineral runestone, Lesser runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-5b37b4cf-e572-44bd-abd5-5afa7c5bd1f6.png"
+  },
+  "diagram-lesser-stribog-runestone": {
+    "id": "diagram-lesser-stribog-runestone",
+    "name": "Lesser Stribog runestone diagram",
+    "view": "gear-diagram-lesser-stribog-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Stribog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Stribog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-09725296-285d-4f17-979c-f06683b63a0d.png"
+  },
+  "diagram-lesser-dazhbog-runestone": {
+    "id": "diagram-lesser-dazhbog-runestone",
+    "name": "Lesser Dazhbog runestone diagram",
+    "view": "gear-diagram-lesser-dazhbog-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Dazhbog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Dazhbog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-de56708c-ffbc-4b26-b24a-ee2c01d57e54.png"
+  },
+  "diagram-lesser-devana-runestone": {
+    "id": "diagram-lesser-devana-runestone",
+    "name": "Lesser Devana runestone diagram",
+    "view": "gear-diagram-lesser-devana-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Devana runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Devana runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-688ea6d1-2feb-4e4b-97e1-1dc5479275b5.png"
+  },
+  "diagram-lesser-zoria-runestone": {
+    "id": "diagram-lesser-zoria-runestone",
+    "name": "Lesser Zoria runestone diagram",
+    "view": "gear-diagram-lesser-zoria-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Zoria runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Zoria runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-2e76c306-a5ec-4356-86e5-5ee17945f999.png"
+  },
+  "diagram-lesser-morana-runestone": {
+    "id": "diagram-lesser-morana-runestone",
+    "name": "Lesser Morana runestone diagram",
+    "view": "gear-diagram-lesser-morana-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Morana runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Morana runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-f6bc11f4-a75b-4f3d-9592-da1d932354f5.png"
+  },
+  "diagram-lesser-triglav-runestone": {
+    "id": "diagram-lesser-triglav-runestone",
+    "name": "Lesser Triglav runestone diagram",
+    "view": "gear-diagram-lesser-triglav-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Triglav runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Triglav runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-859a4af2-bd04-4024-95cd-87ecfd44c2a4.png"
+  },
+  "diagram-lesser-svarog-runestone": {
+    "id": "diagram-lesser-svarog-runestone",
+    "name": "Lesser Svarog runestone diagram",
+    "view": "gear-diagram-lesser-svarog-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Svarog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Svarog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-477dd4e8-60f4-497b-bb7b-9f437f6ee7ed.png"
+  },
+  "diagram-lesser-veles-runestone": {
+    "id": "diagram-lesser-veles-runestone",
+    "name": "Lesser Veles runestone diagram",
+    "view": "gear-diagram-lesser-veles-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Veles runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Veles runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-cf71d20b-31af-43e0-9f54-0a42bfa80bab.png"
+  },
+  "diagram-lesser-perun-runestone": {
+    "id": "diagram-lesser-perun-runestone",
+    "name": "Lesser Perun runestone diagram",
+    "view": "gear-diagram-lesser-perun-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Perun runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Perun runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-3feb92dd-0648-4751-9330-ac9c9e62db0a.png"
+  },
+  "diagram-lesser-chernobog-runestone": {
+    "id": "diagram-lesser-chernobog-runestone",
+    "name": "Lesser Chernobog runestone diagram",
+    "view": "gear-diagram-lesser-chernobog-runestone",
+    "subject": "one carved dark mineral runestone, Lesser Chernobog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: one carved dark mineral runestone, Lesser Chernobog runestone, irregular natural stone with its own unique engraved geometric motif, subtle restrained glow and mineral texture; different silhouette for this entry; no readable words. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b65bce56-ca81-496a-9e52-85351add1851.png"
+  },
+  "diagram-master-s-armor-repair-kit": {
+    "id": "diagram-master-s-armor-repair-kit",
+    "name": "Master's armor repair kit diagram",
+    "view": "gear-diagram-master-s-armor-repair-kit",
+    "subject": "Master's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, finely made specialist tools",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Master's armor repair kit represented by a compact leather armor-mending roll, awl, needle, thread and metal rivets, finely made specialist tools. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-391eed30-b586-4406-b08c-d0f6cfec9d97.png"
+  },
+  "diagram-ard-skellig-aketon": {
+    "id": "diagram-ard-skellig-aketon",
+    "name": "Ard Skellig aketon diagram",
+    "view": "gear-diagram-ard-skellig-aketon",
+    "subject": "Ard Skellig aketon, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Ard Skellig aketon, a padded medieval fantasy torso garment on a simple wooden display, distinct quilting, collar and straps, fabric and leather, no person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-1cb5a528-b519-404e-8105-51815f7e1137.png"
+  },
+  "diagram-salmian-brigandine": {
+    "id": "diagram-salmian-brigandine",
+    "name": "Salmian brigandine diagram",
+    "view": "gear-diagram-salmian-brigandine",
+    "subject": "Salmian brigandine, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Salmian brigandine, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-e32693cd-47ac-4384-9903-28f0ec3bf125.png"
+  },
+  "diagram-cidarian-cavalry-armor": {
+    "id": "diagram-cidarian-cavalry-armor",
+    "name": "Cidarian cavalry armor diagram",
+    "view": "gear-diagram-cidarian-cavalry-armor",
+    "subject": "Cidarian cavalry armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Cidarian cavalry armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7407d65a-3da7-4fb9-be68-edf8c946654d.png"
+  },
+  "diagram-redanian-halberdier-s-armor": {
+    "id": "diagram-redanian-halberdier-s-armor",
+    "name": "Redanian halberdier's armor diagram",
+    "view": "gear-diagram-redanian-halberdier-s-armor",
+    "subject": "Redanian halberdier's armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Redanian halberdier's armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7c42b7a8-4bd6-4513-91f9-2ca8c6c38e67.png"
+  },
+  "diagram-assassin-s-trousers": {
+    "id": "diagram-assassin-s-trousers",
+    "name": "Assassin's trousers diagram",
+    "view": "gear-diagram-assassin-s-trousers",
+    "subject": "Assassin's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Assassin's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-46720fd8-e67a-43af-9801-4b0ce5d38a65.png"
+  },
+  "diagram-axeman-s-trousers": {
+    "id": "diagram-axeman-s-trousers",
+    "name": "Axeman's trousers diagram",
+    "view": "gear-diagram-axeman-s-trousers",
+    "subject": "Axeman's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Axeman's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-1fe03e1d-e2b7-448a-853d-ca9426517f4f.png"
+  },
+  "diagram-assassin-s-boots": {
+    "id": "diagram-assassin-s-boots",
+    "name": "Assassin's boots diagram",
+    "view": "gear-diagram-assassin-s-boots",
+    "subject": "a pair of Assassin's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Assassin's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-e4086de0-b4c1-46d9-815c-7d485f8fcede.png"
+  },
+  "diagram-assassin-s-gauntlets": {
+    "id": "diagram-assassin-s-gauntlets",
+    "name": "Assassin's gauntlets diagram",
+    "view": "gear-diagram-assassin-s-gauntlets",
+    "subject": "a pair of Assassin's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Square detailed painterly-realism object illustration for a medieval fantasy clothing-crafting guide. A pair of slim black leather gloves with long fitted cuffs, subtle stitched seams and small dull-silver buckles, laid together on charcoal linen over a weathered wooden bench. Soft cool window light, worn tactile leather and silver, restrained earth tones. Gloves fill 70 percent, centrally positioned in upper two-thirds for portrait card and wide header cropping. No person, hands, readable words, labels, frame, interface, tools or watermark. Quiet artisan product study.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-70392310-39be-40af-83ef-fcab55962f42.png"
+  },
+  "diagram-angrenian-cuirass": {
+    "id": "diagram-angrenian-cuirass",
+    "name": "Angrenian cuirass diagram",
+    "view": "gear-diagram-angrenian-cuirass",
+    "subject": "Angrenian cuirass, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Angrenian cuirass, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-c2b83a4b-be74-41ae-b80f-285394e04c7d.png"
+  },
+  "diagram-mag-deira-cuirass": {
+    "id": "diagram-mag-deira-cuirass",
+    "name": "Mag Deira cuirass diagram",
+    "view": "gear-diagram-mag-deira-cuirass",
+    "subject": "Mag Deira cuirass, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Mag Deira cuirass, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-43f0bb69-b278-42f2-9a3d-83c9ba93550c.png"
+  },
+  "diagram-ban-ard-breastplate": {
+    "id": "diagram-ban-ard-breastplate",
+    "name": "Ban Ard breastplate diagram",
+    "view": "gear-diagram-ban-ard-breastplate",
+    "subject": "Ban Ard breastplate, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Ban Ard breastplate, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-66840e2e-acf3-4f25-89ce-2aba5f3ae6a7.png"
+  },
+  "diagram-nilfgaardian-guardsman-armor": {
+    "id": "diagram-nilfgaardian-guardsman-armor",
+    "name": "Nilfgaardian guardsman armor diagram",
+    "view": "gear-diagram-nilfgaardian-guardsman-armor",
+    "subject": "Nilfgaardian guardsman armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Nilfgaardian guardsman armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-de9ebdbb-8e66-4142-850e-a8f4633e007a.png"
+  },
+  "diagram-impera-brigade-armor": {
+    "id": "diagram-impera-brigade-armor",
+    "name": "Impera Brigade armor diagram",
+    "view": "gear-diagram-impera-brigade-armor",
+    "subject": "Impera Brigade armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Impera Brigade armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-14a9b01f-9c3c-41f0-a522-4972dde60071.png"
+  },
+  "diagram-hindarsfjall-heavy-armor": {
+    "id": "diagram-hindarsfjall-heavy-armor",
+    "name": "Hindarsfjall heavy armor diagram",
+    "view": "gear-diagram-hindarsfjall-heavy-armor",
+    "subject": "Hindarsfjall heavy armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Hindarsfjall heavy armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-5201a9e5-67ce-47e2-9e42-13a2b658b5b0.png"
+  },
+  "diagram-thyssen-armor": {
+    "id": "diagram-thyssen-armor",
+    "name": "Thyssen armor diagram",
+    "view": "gear-diagram-thyssen-armor",
+    "subject": "Thyssen armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Thyssen armor, a distinct medieval fantasy torso armor object on a simple stand, materials and ornament appropriate to equipment name; no person; do not invent exact historical or in-game model fidelity. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-105a05cd-8ec1-4c55-91d1-874c31845b1d.png"
+  },
+  "diagram-axeman-s-gauntlets": {
+    "id": "diagram-axeman-s-gauntlets",
+    "name": "Axeman's gauntlets diagram",
+    "view": "gear-diagram-axeman-s-gauntlets",
+    "subject": "a pair of Axeman's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Axeman's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-5ee42a09-1e40-48e1-96d6-85db97a39c9a.png"
+  },
+  "diagram-knight-s-gauntlets": {
+    "id": "diagram-knight-s-gauntlets",
+    "name": "Knight's gauntlets diagram",
+    "view": "gear-diagram-knight-s-gauntlets",
+    "subject": "a pair of Knight's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Knight's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-9a7eb492-d47a-471f-ace4-fea89c705ad7.png"
+  },
+  "diagram-assault-gauntlets": {
+    "id": "diagram-assault-gauntlets",
+    "name": "Assault gauntlets diagram",
+    "view": "gear-diagram-assault-gauntlets",
+    "subject": "a pair of Assault gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Assault gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-7e9921f9-7749-4025-9a7d-9822fcebf376.png"
+  },
+  "diagram-nilfgaardian-guardsman-s-gauntlets": {
+    "id": "diagram-nilfgaardian-guardsman-s-gauntlets",
+    "name": "Nilfgaardian guardsman's gauntlets diagram",
+    "view": "gear-diagram-nilfgaardian-guardsman-s-gauntlets",
+    "subject": "a pair of Nilfgaardian guardsman's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Nilfgaardian guardsman's gauntlets, distinct medieval fantasy glove construction inferred from the name, articulated or leather surfaces appropriate to name, no hands or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-dd1f8244-9a17-4400-bf5e-e01b4f018559.png"
+  },
+  "diagram-sapper-s-trousers": {
+    "id": "diagram-sapper-s-trousers",
+    "name": "Sapper's trousers diagram",
+    "view": "gear-diagram-sapper-s-trousers",
+    "subject": "Sapper's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Sapper's trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b6476d9e-f90b-4551-a42d-06028eae28a7.png"
+  },
+  "diagram-lyrian-hardened-leather-trousers": {
+    "id": "diagram-lyrian-hardened-leather-trousers",
+    "name": "Lyrian hardened leather trousers diagram",
+    "view": "gear-diagram-lyrian-hardened-leather-trousers",
+    "subject": "Lyrian hardened leather trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Lyrian hardened leather trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-2fc5ea11-db2a-4122-83c2-e26be0cca414.png"
+  },
+  "diagram-mahakaman-trousers": {
+    "id": "diagram-mahakaman-trousers",
+    "name": "Mahakaman trousers diagram",
+    "view": "gear-diagram-mahakaman-trousers",
+    "subject": "Mahakaman trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: Mahakaman trousers, distinct medieval fantasy trousers laid flat and slightly folded on a bench, fitted fabric or leather appropriate to name, waist to hem visible; no person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ef929530-a708-46d6-a11a-28f119e51bf4.png"
+  },
+  "diagram-mountain-folk-boots": {
+    "id": "diagram-mountain-folk-boots",
+    "name": "Mountain Folk boots diagram",
+    "view": "gear-diagram-mountain-folk-boots",
+    "subject": "a pair of Mountain Folk boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Mountain Folk boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-c7527a4c-4648-434e-8b5c-d8c7adb8cde0.png"
+  },
+  "diagram-axeman-s-boots": {
+    "id": "diagram-axeman-s-boots",
+    "name": "Axeman's boots diagram",
+    "view": "gear-diagram-axeman-s-boots",
+    "subject": "a pair of Axeman's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Axeman's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-e77c0c17-75a4-41e1-9a06-e9861b738aab.png"
+  },
+  "diagram-guardsman-s-boots": {
+    "id": "diagram-guardsman-s-boots",
+    "name": "Guardsman's boots diagram",
+    "view": "gear-diagram-guardsman-s-boots",
+    "subject": "a pair of Guardsman's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Guardsman's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-e4b04b61-4cf3-4c95-ba71-34e18c8463a7.png"
+  },
+  "diagram-reaver-s-boots": {
+    "id": "diagram-reaver-s-boots",
+    "name": "Reaver's boots diagram",
+    "view": "gear-diagram-reaver-s-boots",
+    "subject": "a pair of Reaver's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Reaver's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b6c72370-0d91-4c19-89a5-64db90301f32.png"
+  },
+  "diagram-executioner-s-boots": {
+    "id": "diagram-executioner-s-boots",
+    "name": "Executioner's boots diagram",
+    "view": "gear-diagram-executioner-s-boots",
+    "subject": "a pair of Executioner's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Executioner's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-1b84bf3d-9667-4aec-887b-927a0e09db7f.png"
+  },
+  "diagram-condottiere-s-boots": {
+    "id": "diagram-condottiere-s-boots",
+    "name": "Condottiere's boots diagram",
+    "view": "gear-diagram-condottiere-s-boots",
+    "subject": "a pair of Condottiere's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Condottiere's boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-ff78f041-e970-448c-a047-4cf4e6c9e78a.png"
+  },
+  "diagram-alder-folk-boots": {
+    "id": "diagram-alder-folk-boots",
+    "name": "Alder Folk boots diagram",
+    "view": "gear-diagram-alder-folk-boots",
+    "subject": "a pair of Alder Folk boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a pair of Alder Folk boots, distinct medieval fantasy design inferred from this equipment name, worn leather and appropriate armor details; focus boots, no legs or person. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-24d3d1b3-2748-4bd3-8cd6-d23bd22f8429.png"
+  },
+  "diagram-glyph-of-aard": {
+    "id": "diagram-glyph-of-aard",
+    "name": "Glyph of Aard diagram",
+    "view": "gear-diagram-glyph-of-aard",
+    "subject": "a single engraved armor glyph charm, Glyph of Aard, on worn parchment, medium refined charm, restrained cool blue magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Glyph of Aard, on worn parchment, medium refined charm, restrained cool blue magical accent. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-01dde235-2920-4e88-bf72-79e112d62ef9.png"
+  },
+  "diagram-glyph-of-axii": {
+    "id": "diagram-glyph-of-axii",
+    "name": "Glyph of Axii diagram",
+    "view": "gear-diagram-glyph-of-axii",
+    "subject": "a single engraved armor glyph charm, Glyph of Axii, on worn parchment, medium refined charm, restrained muted green magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Glyph of Axii, on worn parchment, medium refined charm, restrained muted green magical accent. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-a0ae07cd-3691-4172-b1c1-cd45819f80dc.png"
+  },
+  "diagram-glyph-of-igni": {
+    "id": "diagram-glyph-of-igni",
+    "name": "Glyph of Igni diagram",
+    "view": "gear-diagram-glyph-of-igni",
+    "subject": "a single engraved armor glyph charm, Glyph of Igni, on worn parchment, medium refined charm, restrained warm ember magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Glyph of Igni, on worn parchment, medium refined charm, restrained warm ember magical accent. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-0969b499-b56a-4b68-a359-8410ec01bb49.png"
+  },
+  "diagram-glyph-of-quen": {
+    "id": "diagram-glyph-of-quen",
+    "name": "Glyph of Quen diagram",
+    "view": "gear-diagram-glyph-of-quen",
+    "subject": "a single engraved armor glyph charm, Glyph of Quen, on worn parchment, medium refined charm, restrained soft amber magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Glyph of Quen, on worn parchment, medium refined charm, restrained soft amber magical accent. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-b764dc43-c668-4b70-8323-8223f4d78563.png"
+  },
+  "diagram-glyph-of-yrden": {
+    "id": "diagram-glyph-of-yrden",
+    "name": "Glyph of Yrden diagram",
+    "view": "gear-diagram-glyph-of-yrden",
+    "subject": "a single engraved armor glyph charm, Glyph of Yrden, on worn parchment, medium refined charm, restrained muted violet magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Glyph of Yrden, on worn parchment, medium refined charm, restrained muted violet magical accent. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-e9929955-f249-4e91-81e4-5e9a9f71b753.png"
+  },
+  "diagram-greater-glyph-of-aard": {
+    "id": "diagram-greater-glyph-of-aard",
+    "name": "Greater Glyph of Aard diagram",
+    "view": "gear-diagram-greater-glyph-of-aard",
+    "subject": "a single engraved armor glyph charm, Greater Glyph of Aard, on worn parchment, intricate ornate large charm, restrained cool blue magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Greater Glyph of Aard, on worn parchment, intricate ornate large charm, restrained cool blue magical accent. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-a6f23efb-e13e-4341-8d0d-8924e05f11bf.png"
+  },
+  "diagram-greater-glyph-of-axii": {
+    "id": "diagram-greater-glyph-of-axii",
+    "name": "Greater Glyph of Axii diagram",
+    "view": "gear-diagram-greater-glyph-of-axii",
+    "subject": "a single engraved armor glyph charm, Greater Glyph of Axii, on worn parchment, intricate ornate large charm, restrained muted green magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Greater Glyph of Axii, on worn parchment, intricate ornate large charm, restrained muted green magical accent. Composition: low side-lit close object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Charcoal leather mat and soft silvery window light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-03b0fe01-ff0a-421b-9531-3c01e81774bd.png"
+  },
+  "diagram-greater-glyph-of-igni": {
+    "id": "diagram-greater-glyph-of-igni",
+    "name": "Greater Glyph of Igni diagram",
+    "view": "gear-diagram-greater-glyph-of-igni",
+    "subject": "a single engraved armor glyph charm, Greater Glyph of Igni, on worn parchment, intricate ornate large charm, restrained warm ember magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Greater Glyph of Igni, on worn parchment, intricate ornate large charm, restrained warm ember magical accent. Composition: diagonal object study with crisp surface detail, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Moss-grey stone and an aged brown tool roll. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-18c2176d-1c47-4365-bade-6a28883de397.png"
+  },
+  "diagram-greater-glyph-of-quen": {
+    "id": "diagram-greater-glyph-of-quen",
+    "name": "Greater Glyph of Quen diagram",
+    "view": "gear-diagram-greater-glyph-of-quen",
+    "subject": "a single engraved armor glyph charm, Greater Glyph of Quen, on worn parchment, intricate ornate large charm, restrained soft amber magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Greater Glyph of Quen, on worn parchment, intricate ornate large charm, restrained soft amber magical accent. Composition: three-quarter upright object portrait, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Cool stone bench and a worn linen cloth. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-80099459-5e1e-4c31-9df3-2191c4ae89b5.png"
+  },
+  "diagram-greater-glyph-of-yrden": {
+    "id": "diagram-greater-glyph-of-yrden",
+    "name": "Greater Glyph of Yrden diagram",
+    "view": "gear-diagram-greater-glyph-of-yrden",
+    "subject": "a single engraved armor glyph charm, Greater Glyph of Yrden, on worn parchment, intricate ornate large charm, restrained muted violet magical accent",
+    "prompt": "Use case: stylized-concept. One square high-resolution illustration for Operation Phoenix Witcher field-guide diagram card and matching page header. Main subject: a single engraved armor glyph charm, Greater Glyph of Yrden, on worn parchment, intricate ornate large charm, restrained muted violet magical accent. Composition: angled overhead workbench study, object fills 70 percent, upper central crop safe for narrow cards and wide headers; a small aged crafting parchment supports the object without becoming the main subject. Dark timber bench and faint warm forge light. Sharp painterly realism, tactile worn materials, dark ethereal Witcher aesthetic, charcoal, cold silver, earth browns and muted moss. No readable text, frame, label, HUD, UI, logo, watermark, people, injuries or combat. This is an artistic concept of a diagram's subject, not an exact game model or recipe instruction.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-09ef2296-613c-468b-b0e5-6b16f17d7b44.png"
+  },
+  "monsternest-2": {
+    "id": "monsternest-2",
+    "name": "Cackler Bridge nest entrance",
+    "prompt": "Square sharp painterly realism Witcher field-guide illustration: intimate low-angle close-up of a ghoul nest entrance beside Cackler Bridge, White Orchard. Ragged tunnel mouth under tangled roots and freshly torn earth dominates foreground; a few bleached animal bones and claw tracks, ferns, a small distant yellow Quen monolith. No monster portrait or people. Distinct structure-focused composition. Dark ethereal charcoal, muted moss, earth brown, cold silver light, tactile roots and soil. No gore, text, HUD, frame or watermark. Keep nest mouth central and above lower title area for card and matching header.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-0c265760-6c24-4de6-b82f-ffbcaefee191.png"
+  },
+  "monsternest-3": {
+    "id": "monsternest-3",
+    "name": "Crossroads nest preparation",
+    "prompt": "Square sharp painterly-realism Witcher field-guide illustration: close still-life of an unlit round alchemical nest-clearing bomb in a leather pouch with rolled field supplies on a tree stump, overlooking the ghoul burrow east of White Orchard Crossroads. Bomb and pouch dominate foreground, ragged root-bound nest visible behind as secondary context. No explosion, no person, no monster portrait, no gore. Materials sharply detailed; charcoal, moss, earthy leather, cold silver morning light with restrained amber. No words, recipe quantities, HUD, frame, logo or watermark. Central crop-safe composition for card and matching header.",
+    "path": "/workspace/scratch/3b50b0e4934d/generated_images/exec-cfe99aa7-6f5f-4786-9aa7-7d1ab21e7521.png"
+  }
+}

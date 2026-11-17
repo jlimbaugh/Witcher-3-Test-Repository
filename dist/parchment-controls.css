@@ -1,0 +1,51 @@
+/* Shared parchment controls: approved outlined tabs, embossed markers and stamp boxes. */
+
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) summary{
+ position:relative;display:block!important;list-style:none!important;box-sizing:border-box;
+ min-height:54px!important;padding:13px 48px 13px 13px!important;
+ border:3px double #655f50;border-radius:5px 2px 7px 2px;
+ background:linear-gradient(100deg,#f4e9cc99,#c1a97b33);
+ box-shadow:inset 0 0 0 2px #f6ebd280,0 2px 3px #49342030;
+ font-family:var(--body);font-size:1.1rem;line-height:1.35;color:#2a211b!important;cursor:pointer;
+}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) summary::-webkit-details-marker{display:none}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) summary::marker{content:''}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) summary:after{
+ content:'+';content:'+' / '';position:absolute;right:10px;top:50%;transform:translateY(-50%);
+ display:grid!important;place-items:center;width:28px;height:28px;box-sizing:border-box;
+ border:3px double #b9c0b0;border-radius:50%;background:radial-gradient(circle at 35% 25%,#56615b,#25302e 75%);
+ box-shadow:0 2px 3px #211c1870,inset 0 0 0 1px #17211d;color:#f7ecd5;font:1.375rem/1 Georgia,serif;
+}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) details[open]>summary,:is(details.scroll-r16,details.main-parchment)[open]>summary{border-color:#3d4b43;background:linear-gradient(100deg,#f4e9ccbb,#9eac972b)}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) details[open]>summary:after,:is(details.scroll-r16,details.main-parchment)[open]>summary:after{content:'−';content:'−' / ''}
+.quest-page .progress-extra,.quest-hub-paper .progress-extra{padding:0!important;margin:14px 0!important}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) label:has(>input[type=checkbox]):not(.task-completion){
+ position:relative;box-sizing:border-box;min-height:60px;padding:12px!important;
+ border:3px double #6d6451;border-radius:3px 7px 3px 5px;background:#f0e1bd66;
+ box-shadow:inset 0 0 0 2px #fff0cf66,0 2px 3px #49342022;cursor:pointer;
+}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) input[type=checkbox]{
+ -webkit-appearance:none;appearance:none;box-sizing:border-box;flex:0 0 30px;
+ display:block!important;width:30px!important;height:30px!important;min-height:30px!important;
+ margin:0!important;border:4px double #4b5347;border-radius:3px;background:#f4e8ca;
+ box-shadow:inset 0 1px 4px #3e2e2444;cursor:pointer;
+}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) input[type=checkbox]:checked{
+ background:#36483e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 12 4 5 10-11' fill='none' stroke='%23f5ebd4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/24px 24px no-repeat;border-color:#84927c;
+}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) label:has(>input[type=checkbox]):not(.task-completion):has(input:checked){border-color:#3e5b45;background:#708b6230}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) label:has(>input[type=checkbox]):not(.task-completion):has(input:disabled){cursor:default}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) input[type=checkbox]:disabled{opacity:.55;cursor:default}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) label:has(>input[type=checkbox]):not(.task-completion) span{min-width:0}
+.quest-page .objective-card [data-objective-state],.quest-hub-paper .objective-card [data-objective-state]{margin:10px 2px}
+
+/* Keep toggle labels comfortable and their native controls aligned. */
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) label:has(>input[type=checkbox]):not(.task-completion){display:flex!important;align-items:flex-start;gap:12px;line-height:1.45}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) input[type=checkbox]:focus-visible{outline:3px solid #344f49;outline-offset:3px}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) select{box-sizing:border-box;max-width:100%;min-height:48px;border:3px double #655f50;border-radius:3px;background:#eadbc0 url(worn-vellum-r15.svg);color:#2a211b}
+:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) summary small{display:block;font-size:.88rem;margin-top:8px;line-height:1.45}
+@media(forced-colors:active){:is(.reading-panel,.quest-hub-paper,.scroll-r16,.main-parchment,.journal-sheet,.home-sheet,.journal-note,.location-card,.map-location-panel,.progress-dialog,.map-paper,.atlas-panel) input[type=checkbox]{appearance:auto}}
+
+#progress .home-hud>summary:before{display:block;margin-bottom:8px}
+/* Nested Progress foldouts stay on the same paper as their surrounding text. */
+#progress .home-hud details{background:transparent;color:#2a211b}

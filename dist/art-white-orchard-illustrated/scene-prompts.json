@@ -1,0 +1,226 @@
+{
+  "method": "Image generation, one asset per prompt, shared cemetery illustration as style reference",
+  "style": "Crisp weathered painterly realism; silver-grey light; aged stone and wood; muted moss and earth; readable central landmark; no HUD, words, borders or plaques. Square focal composition usable in portrait card and landscape header.",
+  "scenes": [
+    {
+      "id": "pop-cackler",
+      "scene": "Quen stone with restrained yellow glow on the grassy woodland edge northeast of Cackler Bridge, ghoul nest earth nearby. Focus the single rune monolith among ferns."
+    },
+    {
+      "id": "pop-cemetery",
+      "scene": "Igni monolith with subtle orange glow before a small worn stone cemetery chapel, low gravestones and tangled tree branches. Rural, not cathedral."
+    },
+    {
+      "id": "pop-north",
+      "scene": "Aard standing stone with restrained blue glow in northern White Orchard woods, pine trunks and a disturbed earthen ghoul nest nearby. Focus the stone, not a monster portrait."
+    },
+    {
+      "id": "pop-sawmill",
+      "scene": "Axii monolith with subtle green rune in an open lightly wooded field between the two tracks north of Sawmill. Suggest a thin wraith silhouette in distant mist, not a large foreground figure."
+    },
+    {
+      "id": "pop-bridge",
+      "scene": "Quen monolith with restrained gold rune in a quiet little thicket above Broken Bridge; uneven uphill track, golden grass and close oaks. No guardian."
+    },
+    {
+      "id": "pop-bear",
+      "scene": "Yrden monolith with restrained purple rune east of the abandoned village, old roadside woods; a large brown bear watches from the middle distance. Stone remains focal."
+    },
+    {
+      "id": "banditcamp-6",
+      "scene": "Small deserter camp guarding a rustic bridge southwest of Crossroads. Low plank bridge, a tent, abandoned weapons and a chest at the southern end. Clear noon silhouettes; no combat gore."
+    },
+    {
+      "id": "camp-viper-ruins",
+      "scene": "Collapsed red-brick ramp climbing to a small ruined fort west of Ransacked Village. Tent and treasure chest on upper masonry, thin broken walls, wild grass. Central tower ruin, not a grand castle."
+    },
+    {
+      "id": "banditcamp-2",
+      "scene": "Deserter woodland clearing south of Ford: modest campfire, bow and steel weapons beside a rough tent, chest near fire and dense oaks. Warm fire versus cool shaded woods."
+    },
+    {
+      "id": "camp-dirty-funds",
+      "scene": "Dirty Funds camp northwest of Cackler Bridge: an unusually rich canvas leader tent, low table, several treasure chests, a shield propped against the tent pole, surrounding deserter camp in trees. No inscriptions or coins lettering."
+    },
+    {
+      "id": "monsternest-3",
+      "scene": "Ghoul nest east of Crossroads: clearly visible earthen burrow, gnawed bones and scattered branches on a sloping grassy clearing, distant local track. Two small ghoul silhouettes in background, no hero."
+    },
+    {
+      "id": "monsternest-2",
+      "scene": "Ghoul nest beside the Cackler Bridge stone: torn soil and a low burrow in a sunlit birch clearing; distant yellow-rune monolith subtly visible. Focal burrow and ragged grass."
+    },
+    {
+      "id": "guarded-5",
+      "scene": "Treasure pit below the cliffs south of Ransacked Village: two weathered chests in sandy shallow depression, river reeds, exposed bank and a ruined village silhouette high above. Waterline footprints; no gore."
+    },
+    {
+      "id": "guarded-1",
+      "scene": "Guarded treasure southeast of Woesong Bridge: broken river boat with a partly submerged chest and crate beside it; sun on water, mud and reeds. Wreck-and-chest focal, not an open sea ship."
+    },
+    {
+      "id": "guarded-2",
+      "scene": "Western garrison swamp treasure: solitary chest on a muddy little island, wisps of greenish marsh gas and distant ruined red brick fort. Poison gas subtly visible, not fantasy neon explosion."
+    },
+    {
+      "id": "guarded-4",
+      "scene": "Ruined wagon on the southeastern garrison approach, one chest still on cart and another beside it, wolves watching from reeds. Small White Orchard fort on far bank, not massive castle."
+    },
+    {
+      "id": "guarded-3",
+      "scene": "Dim crypt beneath the White Orchard cemetery chapel: brick vaults, roots, a chest and a weathered witcher relic beside an unreadable folded diagram. Single torch-gold light and spectral mist, no combat or readable text."
+    },
+    {
+      "id": "q-temerian",
+      "scene": "Temerian Valuables river trail: an old iron key and sealed soaked orders on a riverbank rock beside the bridge, submerged chest visible in clear shallows; Mill route in misty distance. No corpse close-up, no readable writing."
+    },
+    {
+      "id": "q-deserter",
+      "scene": "Deserter Gold spy camp: small isolated tent, travel pack and an unrolled unreadable spy note on a wooden chest in northern White Orchard woods. Neutral grey dawn, secretive atmosphere; no readable text."
+    },
+    {
+      "id": "q-dirty",
+      "scene": "Dirty Funds trailhead: a deserted woodland tent and chest holding an unreadable crumpled note, wolf tracks on damp earth, early sun through branches. This is the notes camp, not the larger final deserter tent."
+    },
+    {
+      "id": "abandoned-1",
+      "scene": "Roadside shrine east of Abandoned Village restored after ghouls: small weathered wayside shrine and simple wooden shelter beside a dusty road, herbs and a villager\u2019s basket, rural White Orchard trees and fields. No invented temple."
+    },
+    {
+      "id": "abandoned-2",
+      "scene": "Abandoned Sawmill restored: weathered low timber sheds, stacked cut trunks, saw equipment, rough fences and a rural forest path. A small merchant stall implied, not a modern factory or watermill."
+    },
+    {
+      "id": "poi-4",
+      "scene": "Yennefer\u2019s crystal bird skull on grass beside the opening camp near Crossroads: a small translucent crystal raven-like skull, dew and ash from a cold campfire, ruined rural road in soft background. Precise small keepsake focal, not a giant monster skull."
+    },
+    {
+      "id": "poi-1",
+      "scene": "Battlefield north of Ransacked Village: broken Temerian shields, discarded spears and trampled grass across a broad rural field, mist and distant ruined huts. Somber aftermath with no graphic wounds or bodies in close-up."
+    },
+    {
+      "id": "signpost-1",
+      "scene": "Weathered wooden fingerpost by the ruined Abandoned Village, old well and low burned timber cottages behind. Signboards have no readable text; clear road junction foreground."
+    },
+    {
+      "id": "signpost-2",
+      "scene": "Broken Bridge travel landmark: weathered fingerpost beside the damaged rural wooden crossing, missing planks, rocky slope and uphill track. No readable lettering."
+    },
+    {
+      "id": "signpost-4",
+      "scene": "Sawmill travel landmark: wooden fingerpost beside log stacks and weathered low sawmill sheds at woodland edge. No readable lettering."
+    },
+    {
+      "id": "signpost-5",
+      "scene": "Mill travel landmark: wooden fingerpost at a road with a rustic wooden windmill and low cottage nearby; pale White Orchard hills and hazy pines. No readable lettering."
+    },
+    {
+      "id": "signpost-6",
+      "scene": "Nilfgaardian Garrison travel landmark: wooden fingerpost below the small ruined red-brick river fortress; scaffolding and a modest military banner, rocky bank. No readable lettering or emblem invented as a logo."
+    },
+    {
+      "id": "signpost-7",
+      "scene": "Cackler Bridge landmark: wooden fingerpost by a rural gated wooden bridge, old palisade and spring woodland beyond. No readable lettering."
+    },
+    {
+      "id": "signpost-8",
+      "scene": "Crossroads landmark near the opening campsite: simple fingerpost where dusty tracks fork among grass and thin birches, extinguished campfire nearby, wide White Orchard countryside. No readable lettering."
+    },
+    {
+      "id": "signpost-9",
+      "scene": "Ford travel landmark: wooden fingerpost beside the shallow river crossing, cart tracks into water, reeds and distant cottages. No griffin battle; quiet useful landmark. No readable lettering."
+    },
+    {
+      "id": "signpost-10",
+      "scene": "Ransacked Village travel landmark: wooden fingerpost at a muddy fork, burned thatch roofs, leaning fences and one surviving hut. Bright overcast detail, not a fire disaster scene. No readable lettering."
+    },
+    {
+      "id": "category-power",
+      "scene": "Overview of White Orchard Places of Power: single aged rune monolith in countryside woods, faint ancient glow, low mist and distant chapel hint. Distinct balanced landscape, not multi-panel collage."
+    },
+    {
+      "id": "category-camps",
+      "scene": "Overview of White Orchard bandit camps: rough canvas tents and a guarded treasure chest on ruined red brick beside forest road, spear and shield silhouettes. No portrait of generic bandit."
+    },
+    {
+      "id": "category-nests",
+      "scene": "Overview of White Orchard monster nests: ragged earth burrow and roots among ferns, an unlit alchemical bomb and sword tip nearby, necrophage silhouettes distant. No giant boss monster."
+    },
+    {
+      "id": "category-treasure",
+      "scene": "Overview of guarded treasure: battered iron-banded chest at a river wreck, claw prints in mud, reeds, White Orchard woodland in silvery dawn. Chest as focal."
+    },
+    {
+      "id": "category-hunts",
+      "scene": "Create one sharp square overview of White Orchard hidden treasure hunts: battered chest at a low cellar entrance beside a humble timber cottage, old key and sealed unreadable orders in foreground, rustic wooden windmill with four large sails on a nearby hill. NO waterwheel, watermill or river at the mill. Match the cemetery illustration style master: crisp weathered painterly realism, aged wood and masonry, muted moss/earth, silver-grey dawn, amber cellar light. Center focal objects within the middle 55% for portrait and landscape crops. No people, legible text, numbers, HUD, logos, watermarks, borders or plaques."
+    },
+    {
+      "id": "category-sites",
+      "scene": "Overview of restored abandoned sites: humble roadside shrine, a sawmill-like timber shelter and a returning villager\u2019s supply basket in White Orchard countryside. One coherent location impression, not split panels."
+    },
+    {
+      "id": "category-discoveries",
+      "scene": "Overview of other discoveries: a translucent crystal bird skull on an old Temerian shield at grassy camp edge, village path and distant battlefield under dawn mist. No readable text."
+    },
+    {
+      "id": "category-travel",
+      "scene": "Overview of travel in White Orchard: rustic wooden fingerpost at a road junction, wooden bridge and distant windmill in rural valley. No readable sign lettering, no maps or labels."
+    },
+    {
+      "id": "category-preparation",
+      "scene": "Overview of equipment preparation: grindstone and armor workbench in a soot-stained village forge, steel tools and a warm hearth, dark timber and aged iron. Fine material detail."
+    },
+    {
+      "id": "category-diagrams",
+      "scene": "Overview of White Orchard diagrams: steel and silver sword hilts beside unreadable hand-drawn crafting parchment in a ruined stone chamber, an old chest and cool light. No readable writing or inventory screen."
+    },
+    {
+      "id": "monsternest-1",
+      "scene": "Northern cemetery woods ghoul nest: earthen burrow threaded with pale roots and bleached bones, pine needles and dark fir trunks; faint blue-rune stone through trees. Low-angle focus on nest mouth."
+    },
+    {
+      "id": "banditcamp-1",
+      "scene": "Bandit camp deep in the woods southwest of Broken Bridge. A low canvas tent protects a battered chest, archer equipment, damp tree trunks and a curved forest path. Distinct dusky charcoal-and-amber composition."
+    },
+    {
+      "id": "banditcamp-3",
+      "scene": "Camp northwest of Sawmill at the edge of the garrison marsh: ragged tent, chest and abandoned camp supplies between pines and reeds. Distinct foggy marsh rather than dry forest."
+    },
+    {
+      "id": "smugglers-1",
+      "scene": "Smugglers cache at the river bridge south of Ford: low stone-and-timber crossing, partly submerged bundled goods and chest beneath it, clear river shallows, reeds and the southern country road. Focus hidden chest through water."
+    },
+    {
+      "id": "spoils-1",
+      "scene": "Sunken spoils east of Nilfgaardian Garrison: split-level view at river surface, weathered submerged barrel and bundled salvage underwater, the small broken red-brick garrison high on distant rocky bank. Clear water, subdued morning."
+    },
+    {
+      "id": "cow-pasture-warning",
+      "scene": "White Orchard village cow pasture near Woesong Bridge: rustic fence, two ordinary cattle, scattered hay, low timber-and-thatch village buildings. Looming shadow at the far woodland edge suggests caution without depicting an unverified monster attack."
+    },
+    {
+      "id": "signpost-3",
+      "scene": "Woesong Bridge travel landmark: wooden fingerpost at the village bridge, humble timber houses and river reflected behind it, pale spring light. No readable lettering."
+    },
+    {
+      "id": "grindstone-village",
+      "scene": "Usable foot-powered grindstone outside Willis\u2019s humble White Orchard village forge, anvil, bucket, soot-stained stone hearth and partly damaged roof behind. Focus the circular stone and crank; no people required."
+    },
+    {
+      "id": "grindstone-3",
+      "scene": "Usable grindstone near the restored Sawmill: wooden treadle grinding wheel, rough log wall and stacked timber, mossy yard and cool woodland sun. Different from village forge; no masonry furnace."
+    },
+    {
+      "id": "grindstone-4",
+      "scene": "Grindstone in the Nilfgaardian garrison service yard: foot-powered circular stone on wooden frame, red-brick ruined fort walls, a rack of unmarked swords and dark military canvas. Station is focal."
+    },
+    {
+      "id": "armourerstable-1",
+      "scene": "Armorer worktable near the Nilfgaardian Garrison: sturdy timber bench with tongs, small hammer, leather straps and one steel breastplate, ruined red-brick wall and military canvas behind. Focus bench, not a grindstone."
+    },
+    {
+      "id": "category-water",
+      "scene": "Overview of White Orchard water caches: clear river shallows with submerged chest and barrel, small wooden crossing and distant red-brick garrison; surface reflections, submerged salvage focal."
+    }
+  ]
+}

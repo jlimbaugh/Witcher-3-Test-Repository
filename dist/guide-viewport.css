@@ -1,0 +1,29 @@
+/* Full-height reader, floating wolf, and scrollable end clearance for safe areas. */
+:root{--nav-dock-height:112px;--nav-sigil-size:72px;--nav-core-height:96px;--nav-core-width:96px}
+html.phoenix-viewport-ready,html.phoenix-viewport-ready body{height:100%;overflow:hidden!important}
+.phoenix-reader{position:fixed;top:0;left:0;right:0;bottom:0;overflow:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scroll-padding-block:16px;scroll-padding-bottom:calc(var(--nav-dock-height) + env(safe-area-inset-bottom,0px) + 16px);padding-bottom:calc(var(--nav-dock-height) + env(safe-area-inset-bottom,0px));box-sizing:border-box}
+.phoenix-reader.is-locked{overflow:hidden;overscroll-behavior:none}
+.phoenix-nav-dock{position:fixed;left:0;right:0;bottom:0;height:calc(var(--nav-dock-height) + env(safe-area-inset-bottom,0px));box-sizing:border-box;background:transparent;border:0;box-shadow:none;z-index:1400;pointer-events:none}
+.phoenix-nav-dock .phoenix-medallion{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));height:var(--nav-core-height);max-width:calc(100vw - 28px);display:flex;flex-direction:row;align-items:center;gap:10px;pointer-events:auto}
+.phoenix-nav-dock .phoenix-medallion .medallion-core{width:var(--nav-core-width);height:var(--nav-core-height);box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible}
+.phoenix-nav-dock .medallion-sigil{width:var(--nav-sigil-size);height:var(--nav-sigil-size)}
+.phoenix-nav-dock .medallion-label{position:static;flex:none;margin:0;max-width:100%;width:auto;box-sizing:border-box;padding:2px 9px;font-size:0.75rem;line-height:1.25}
+.phoenix-nav-dock .medallion-eyes{width:9px;height:4px}
+.phoenix-nav-dock .medallion-eyes:after{left:14px;top:-5px;width:9px;height:4px}
+/* History remains available in the wolf menu; it does not form a second floating stack. */
+.phoenix-nav-dock .medallion-history-toggle{display:none!important}
+.phoenix-nav-dock .medallion-warning,.phoenix-nav-dock .medallion-history,.phoenix-nav-dock .phoenix-medallion.has-error .medallion-status{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(var(--nav-dock-height) + env(safe-area-inset-bottom,0px) + 8px);max-height:min(45dvh,400px);max-width:calc(100vw - 24px);overflow:auto;pointer-events:auto}
+.phoenix-nav-dock .medallion-nav-toggle{margin:0;max-width:140px}
+.quick-undo{z-index:1450;bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+.command-open .quick-undo{visibility:hidden}
+@media(max-height:500px){
+ :root{--nav-dock-height:80px;--nav-sigil-size:44px;--nav-core-height:64px;--nav-core-width:80px}
+ .phoenix-nav-dock .medallion-label{font-size:0.6875rem;padding-block:1px}
+ .phoenix-nav-dock .medallion-eyes{width:6px;height:3px}
+ .phoenix-nav-dock .medallion-eyes:after{left:9px;top:-3px;width:6px;height:3px}
+ .quick-undo{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+}
+@media print{
+ html.phoenix-viewport-ready,html.phoenix-viewport-ready body{height:auto;overflow:visible!important}
+ .phoenix-reader{position:static;overflow:visible;height:auto;padding-bottom:0}.phoenix-nav-dock,.quick-undo{display:none!important}
+}

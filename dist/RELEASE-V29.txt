@@ -1,0 +1,23 @@
+PHOENIX v29 — Sixth Warnings tile and shared risk list
+Base/rollback: accepted v28, 43dd118640b6c3711277534a67ccf5c80b652a50.
+
+Warnings occupies the sixth tile beside Constellation. Broken-seal dispatch art
+has no painted example count/status. Count and FINAL below Warnings are live
+text. Burgundy ink-reveal effect participates in the existing arrival/quiet/
+reduced-motion sequence. Routing destinations remain the five accepted routes.
+
+Warnings replaces popup contents with compact parchment entries. Four authored
+White Orchard missable/departure risks use the existing canonical detail and
+completion records. Completed/recorded failed outcomes are omitted. Uncertain
+passed cutoffs remain unknown with verification guidance, without FINAL.
+Ordering follows authored cutoff order; no new progress or save schema.
+Back returns to the six tiles; wolf closes to the source. Shared-detail close
+returns to the warning list. Related-entry custom Return restores that list.
+No acknowledgment/completion is caused by opening, closing or reading.
+Legacy medallion warning/Undo behavior is preserved. LT diagram files excluded.
+
+Validation: node --test *.test.cjs — 141/141 pass.
+Chromium: six tiles, live count, list, shared-detail close and related-entry
+return checked. Phone frames 390x844 and 320x640 reviewed. FINAL measured below
+Warnings title; warning-list position 464 restored, source Y 296 preserved and
+reader unlocked after wolf close. Physical iPhone Safari acceptance pending.

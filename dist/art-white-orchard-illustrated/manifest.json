@@ -1,0 +1,882 @@
+{
+  "pop-cackler": {
+    "src": "art-white-orchard-illustrated/pop-cackler.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Quen stone northeast of Cackler Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-cackler.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_claim-a7e346c1.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "82d56409731ae247cce6e2aa365b8dcc7eca8a78f19f04787ed252e075efe7d8"
+  },
+  "pop-cemetery": {
+    "src": "art-white-orchard-illustrated/pop-cemetery.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Igni stone in front of the cemetery chapel",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-cemetery.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_chapel-b845b38b.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "36960f035b4f3921fb71e0072a5e79a066fbe165d6deeed425dee9597b5dc735"
+  },
+  "pop-north": {
+    "src": "art-white-orchard-illustrated/pop-north.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Northern stone and nearby ghoul encounter",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-north.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_north_ghouls-0ede79dd.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "4a9a5c0f26f5adc37e3d25d73a16754578cf100e0d87df5a65f57da88fb050ee"
+  },
+  "pop-sawmill": {
+    "src": "art-white-orchard-illustrated/pop-sawmill.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Axii stone in the field northeast of Sawmill",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-sawmill.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_sawmill-520b160a.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "f98010c19803fed9894aba04301de05ff57bff107b5fa82715d8977f2190502c"
+  },
+  "pop-bridge": {
+    "src": "art-white-orchard-illustrated/pop-bridge.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Quen stone above Broken Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-bridge.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_broken_bridge_claim-c504b50f.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "9b551bd0fee45d92a1e9ae4b12a7d06e05d620c3e872077abe6e5f2c7a5d210e"
+  },
+  "pop-bear": {
+    "src": "art-white-orchard-illustrated/pop-bear.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Yrden stone east of Abandoned Village",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/pop-bear.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_abandoned_village_claim-c0706b6b.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "d74379e56bd735c81dfa5be03e93b7d74f0cc20af28e43ed4c616306f03804cd"
+  },
+  "banditcamp-6": {
+    "src": "art-white-orchard-illustrated/banditcamp-6.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Bridge camp southwest of Crossroads",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/banditcamp-6.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_crossroads_fight-65e1695d.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "54c7886e841a8009b119f3ec8204a0dbcf1250f7bcb851218b6df6e7e20a87a1"
+  },
+  "camp-viper-ruins": {
+    "src": "art-white-orchard-illustrated/camp-viper-ruins.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Deserters at the Viper diagram ruins",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/camp-viper-ruins.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_viper_school_gear_bandit_fight-365af1f5.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "3eaf30c9953c830c03e438f042d4867cce174b7b33e7f17f526879a70d766908"
+  },
+  "banditcamp-2": {
+    "src": "art-white-orchard-illustrated/banditcamp-2.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Archers at the woodland camp south of Ford",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/banditcamp-2.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_ford_archers-fe3e84e5.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "ef4d0d4737b3c8e70f5b7d60c50e79745ebde4a1ad53430640961dd5984ff333"
+  },
+  "camp-dirty-funds": {
+    "src": "art-white-orchard-illustrated/camp-dirty-funds.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Treasure tent at the Dirty Funds camp",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/camp-dirty-funds.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_cackler_bridge_loot-3e63dd1e.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "b2a31edc25a6537e1752947acb7c24547f1a5c98c9bd6931b028e0bc67a7a486"
+  },
+  "monsternest-3": {
+    "src": "art-white-orchard-illustrated/monsternest-3.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ghoul encounter at the Crossroads nest",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests",
+    "sourceImage": "art-white-orchard-illustrated/monsternest-3.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_monster_nest_ghoul_fight-eedf546c.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "1d8db8d900252c225754be5bba39eddd0d472b2cf345029d871b7a5eecbf4096"
+  },
+  "monsternest-2": {
+    "src": "art-white-orchard-illustrated/monsternest-2.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ghouls at the nest beside the Cackler stone",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/monsternest-2.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_ghoul_fight-6cfba1ac.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "26808fe3b696a90bbb643fd383d1a67aaba8e6be391e137ae216cb07ab9d36b5"
+  },
+  "guarded-5": {
+    "src": "art-white-orchard-illustrated/guarded-5.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Treasure pit south of Ransacked Village",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/guarded-5.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_ransacked_village_loot-c4bab791.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "7fd14ed33dd8ff8e60a0844f7fc35c169f9d810ea460939c7b33db8ea662014d"
+  },
+  "guarded-1": {
+    "src": "art-white-orchard-illustrated/guarded-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Wreck and treasure southeast of Woesong Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/guarded-1.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_woesong_bridge_loot-846643d6.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "518d5eeb0061f52561e65988796013540cf8f4db47e86369e4b282d7f7418f01"
+  },
+  "guarded-2": {
+    "src": "art-white-orchard-illustrated/guarded-2.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Gas-covered cache west of the garrison",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/guarded-2.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_gas_loot-9a9b612c.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "eca625b63c5c4aa92fd45cfda60adccad64f0909cbd60d686cf7a4977a1f01d4"
+  },
+  "guarded-4": {
+    "src": "art-white-orchard-illustrated/guarded-4.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ruined wagon on the garrison approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/guarded-4.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_warg_loot-f9eba03f.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "f76d5e8069d85fa6a8ed24e0fcce2c9bf58c713c6eb1dede9aa3af8feeb3b43e"
+  },
+  "guarded-3": {
+    "src": "art-white-orchard-illustrated/guarded-3.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Cemetery crypt during the Viper hunt",
+    "sourcePage": "https://witcher3guide.wordpress.com/2022/02/10/viper-school-witcher-gear/",
+    "sourceImage": "art-white-orchard-illustrated/guarded-3.webp",
+    "referenceImage": "https://witcher3guide.wordpress.com/wp-content/uploads/2022/02/viper-school-gear-24.jpg?w=1024",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "80a90f2af9ee6e4250decbd012da5f0d5c717c0c1968fc9866f3d07a35376ecb"
+  },
+  "q-temerian": {
+    "src": "art-white-orchard-illustrated/q-temerian.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Riverside key location for Temerian Valuables",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/q-temerian.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_hidden_treasure_temerian_lily_key-beab8913.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "01cddf3274f6882dfb2f0c39fa19ed2df7e1aa1d41232b07bd3be1baf388f6c8"
+  },
+  "q-deserter": {
+    "src": "art-white-orchard-illustrated/q-deserter.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Spy camp for Deserter Gold",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/q-deserter.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_deserter_gold_spy_notes-c26daba3.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "96687d9626d21fc17da02cb9a4ca083f0d5aa52c4e2df8ac4efe0d53f9cb2d8d"
+  },
+  "q-dirty": {
+    "src": "art-white-orchard-illustrated/q-dirty.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Scrawled Notes at the Dirty Funds starting camp",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/q-dirty.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_dirty_funds_scrawled_notes-945378ae.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "1ef6cb350f548111108257c75675bf23ca0c1e071a8e699c1c9b094181f73446"
+  },
+  "abandoned-1": {
+    "src": "art-white-orchard-illustrated/abandoned-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ghoul-infested roadside shrine",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/abandoned-1.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_abandoned_village_ghoul_fight-1bbbe28c.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "e8d20a48925ce8d5088b8823d2b64a3e5ad1266c077a928caf45d421cf2ca61a"
+  },
+  "abandoned-2": {
+    "src": "art-white-orchard-illustrated/abandoned-2.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ghoul encounter at the abandoned sawmill",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/abandoned-2.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_sawmill_ghoul_fight-afbfaa80.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "66bf1cb63352d86f6e1d9a9740c895cb1a6912c0c50931e2687a91b8f8fc7c20"
+  },
+  "poi-4": {
+    "src": "art-white-orchard-illustrated/poi-4.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Crystal skull at the opening campsite",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "art-white-orchard-illustrated/poi-4.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_crystal_skull-fb173c18.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "301a4398ff1cec05c042e39f83a8f83215984e2d65bdeb9652fc413e020d9244"
+  },
+  "poi-1": {
+    "src": "art-white-orchard-illustrated/poi-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Temerian shield search on the battlefield",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/exploring-the-battlefield",
+    "sourceImage": "art-white-orchard-illustrated/poi-1.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_missing_in_action_shield_witcher_senses-b2f6d721.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "9a562e27e35eb83e7590ed285361a63f874b4c94e215179d2fc03b80d7f080b5"
+  },
+  "signpost-1": {
+    "src": "art-white-orchard-illustrated/signpost-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Abandoned Village landmark near its signpost",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/witcher-contracts/white-orchard/devil-by-the-well-witcher-contract",
+    "sourceImage": "art-white-orchard-illustrated/signpost-1.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_devil_by_the_well_corpse_investigate-bb14f829.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "2c6d9aef39647f711ff3b38405792f96cc6c8a7515cbebefc4ccd616002d25a6"
+  },
+  "signpost-2": {
+    "src": "art-white-orchard-illustrated/signpost-2.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Broken Bridge landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/signpost-2.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_broken_bridge_jump-30f0684a.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "b68d62e2757d042f8767ebd664ca2af2db54791081f104a1c3bd9e05d1b86ef5"
+  },
+  "signpost-4": {
+    "src": "art-white-orchard-illustrated/signpost-4.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Restored Sawmill landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/signpost-4.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_sawmill_merchant-eeec7d9c.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "7d9921e409ddea156333d0f65684bfee1b855dee04c15db4d70356aac34325ed"
+  },
+  "signpost-5": {
+    "src": "art-white-orchard-illustrated/signpost-5.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Mill-area building landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/signpost-5.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_temerian_valuables_mill_hut-ae06ea52.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "a7225c79d371d90f3883b506656a375735c73107e3bc4e65d40c51c36368df8d"
+  },
+  "signpost-6": {
+    "src": "art-white-orchard-illustrated/signpost-6.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Nilfgaardian Garrison approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "art-white-orchard-illustrated/signpost-6.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_nilfgaardian_garrison_travel-ccab3889.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "e01688a319dd315ad596496921f506989bc1895bf867d5626098a7b70db31c3f"
+  },
+  "signpost-7": {
+    "src": "art-white-orchard-illustrated/signpost-7.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Cackler Bridge gate landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/signpost-7.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_open-45bde7d8.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "f544ec9b0b3f64a9e09c947c714152c7be43ac52ae4f9110100e60190354c605"
+  },
+  "signpost-8": {
+    "src": "art-white-orchard-illustrated/signpost-8.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Opening-camp encounter near Crossroads",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "art-white-orchard-illustrated/signpost-8.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_ghoul_dodge-fff7167e.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "86f7dd17dbd42b98a228e9b9ce5f524875134e91af88cb75cc3c37456de42e57"
+  },
+  "signpost-9": {
+    "src": "art-white-orchard-illustrated/signpost-9.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ford encounter landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "art-white-orchard-illustrated/signpost-9.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_griffin_encounter-55f95359.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "15e521647992afe30e98be2b3af3f3a35b3d618661f93d31f62c5f46e12f0274"
+  },
+  "signpost-10": {
+    "src": "art-white-orchard-illustrated/signpost-10.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Dune at the Ransacked Village landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/exploring-the-battlefield",
+    "sourceImage": "art-white-orchard-illustrated/signpost-10.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_missing_in_action_dune_talk-77639244.jpg",
+    "referenceKind": "landmark",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "355de42a9b96221658e351faa10fd10376bee6d0eff45762c2e536cd322d9357"
+  },
+  "category-power": {
+    "src": "art-white-orchard-illustrated/category-power.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Bear guarding the southern stone",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "art-white-orchard-illustrated/category-power.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_abandoned_village_bear-73aaf3ed.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "40e80711b6cbfaf278819a52463523eca43cfc8749b09c73bb9fea306677516b"
+  },
+  "category-camps": {
+    "src": "art-white-orchard-illustrated/category-camps.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Deserter camp encounter",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-camps.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_cackler_bridge_leader_kill-f1fd0529.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "073bb47186b65a1272fcd446446d2bae1f5cfeb13d29ef0653e9b78702e25ecd"
+  },
+  "category-nests": {
+    "src": "art-white-orchard-illustrated/category-nests.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Destroying a White Orchard ghoul nest",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests",
+    "sourceImage": "art-white-orchard-illustrated/category-nests.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_monster_nest_nest_bomb-d0c5c048.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "083df67866350d5cb864fc48fd8c238b6c78f2b3a672c8f0b96cbf7bb0b6bd3d"
+  },
+  "category-treasure": {
+    "src": "art-white-orchard-illustrated/category-treasure.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Clearing gas around a treasure cache",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-treasure.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_gas_ignite-ce291351.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "5700370e247c76f8669917eab10840dbd2fec435c17752ab7a69bca38651c88d"
+  },
+  "category-hunts": {
+    "src": "art-white-orchard-illustrated/category-hunts.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Cellar on the Mill treasure route",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-hunts.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_temerian_valuables_cellar-b80e5319.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "c49b88030e211b57ea54b38b042cd6de0f8d8427df9326006f033ffe9aaec383"
+  },
+  "category-sites": {
+    "src": "art-white-orchard-illustrated/category-sites.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Herbalist at the restored roadside shrine",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-sites.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_abandoned_village_herbalist-8b75a5dc.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "4a8d24a1d6eb74ea8da9681146c0ae314449fa684d308ab1bf5ed00ed4514789"
+  },
+  "category-discoveries": {
+    "src": "art-white-orchard-illustrated/category-discoveries.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 White Orchard countryside on the opening ride",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "art-white-orchard-illustrated/category-discoveries.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_vesemir_follow-d8ec6831.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "80a5d51b21e5a96d487a6545126fb0ae8b843eaa77d47a9f6319d61b0b2a1948"
+  },
+  "category-travel": {
+    "src": "art-white-orchard-illustrated/category-travel.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 White Orchard bridge and ruins approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-travel.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher_3_viper_school_scavenger_hunt_castle_ruins.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "a3c1fef34c25ba660e193309184b7d767924655fd7603a4dca5471a21e6e28ec"
+  },
+  "category-preparation": {
+    "src": "art-white-orchard-illustrated/category-preparation.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Willis at the village forge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/twisted-firestarter",
+    "sourceImage": "art-white-orchard-illustrated/category-preparation.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_twisted_firestarter_willis_start-e5d061c8.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "70c5e345f4a681c7693f2fc6e3747f6249a7c24dd93504275e915ca6b8c9d663"
+  },
+  "category-diagrams": {
+    "src": "art-white-orchard-illustrated/category-diagrams.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Viper silver diagram in the White Orchard hunt",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/exploring-white-orchard",
+    "sourceImage": "art-white-orchard-illustrated/category-diagrams.webp",
+    "referenceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_viper_school_gear_diagram_viper_silver_sword-a0bc0852.jpg",
+    "referenceKind": "scene",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "e442431675dcb648c8035fb84ea09cb7acc9616103f4c8d60edeed02953869ea"
+  },
+  "monsternest-1": {
+    "src": "art-white-orchard-illustrated/monsternest-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Ghoul nest \u00b7 north of the cemetery",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/monsternest-1.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "3bf0b26d50d47c1db6af1cc484059a9517b0a7fedf8a75e683032cdd467df448"
+  },
+  "banditcamp-1": {
+    "src": "art-white-orchard-illustrated/banditcamp-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Bandit camp \u00b7 Southwest of Broken Bridge",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/banditcamp-1.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "3ae672280bd5c18430b5db2593a9c5ba65f18e304b35da42354aaf7793082aed"
+  },
+  "banditcamp-3": {
+    "src": "art-white-orchard-illustrated/banditcamp-3.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Bandit camp \u00b7 Northwest of Sawmill",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/banditcamp-3.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "85b69cef1c998a6484caa47edf197afccf36a3d14419c4723e30cb043a0021f9"
+  },
+  "smugglers-1": {
+    "src": "art-white-orchard-illustrated/smugglers-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Smugglers\u2019 cache \u00b7 South of Ford",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/smugglers-1.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "625f01c82b7bb12449d4b8486a2adfe833d9c0fb2af9d4ac58564328132974d4"
+  },
+  "spoils-1": {
+    "src": "art-white-orchard-illustrated/spoils-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Spoils of war \u00b7 East of Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/spoils-1.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "43d229f8a4046096f48ff8e57a9ee06ed175327c5cdc4c8d68f1255219d60fec"
+  },
+  "cow-pasture-warning": {
+    "src": "art-white-orchard-illustrated/cow-pasture-warning.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Cow pasture \u00b7 farming warning",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/cow-pasture-warning.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "64be3966c15aa753481899504f403a814bee1346c35f90f90c8532d5fec6bd2e"
+  },
+  "signpost-3": {
+    "src": "art-white-orchard-illustrated/signpost-3.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Woesong Bridge signpost",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/signpost-3.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "6c78dcd16c8ecbe124d0684e2a3da8d98ad5b9de75d335d11e3e6b75a0b31955"
+  },
+  "grindstone-village": {
+    "src": "art-white-orchard-illustrated/grindstone-village.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Grindstone \u00b7 West of Woesong Bridge",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/grindstone-village.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "a9878d164d0b969862449cc44018e1257f42690c3103dceb0ae3d8a152db2628"
+  },
+  "grindstone-3": {
+    "src": "art-white-orchard-illustrated/grindstone-3.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Grindstone \u00b7 West of Sawmill",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/grindstone-3.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "a0836cb8194f0d0a870f41dea3d97d253bcbed250b03bb3c38a19dc48d4df29a"
+  },
+  "grindstone-4": {
+    "src": "art-white-orchard-illustrated/grindstone-4.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Grindstone \u00b7 Near Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/grindstone-4.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "160b9d1fd7aea4ebf0ba92a4245e547911fd29e16efd14c5524ac262d368b764"
+  },
+  "armourerstable-1": {
+    "src": "art-white-orchard-illustrated/armourerstable-1.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 Armorer\u2019s table \u00b7 Near Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/armourerstable-1.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "310c9011431ce1b0be7cdf2dbb1655334b759bc886e1ac5f72968ae8802876fd"
+  },
+  "category-water": {
+    "src": "art-white-orchard-illustrated/category-water.webp",
+    "kind": "illustration",
+    "caption": "White Orchard \u00b7 White Orchard water-cache locations",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "art-white-orchard-illustrated/category-water.webp",
+    "referenceImage": "white-orchard-map.webp",
+    "referenceKind": "map",
+    "credit": "Illustrated reconstruction for Operation Phoenix; linked sources provide location reference. This is not an exact in-game image.",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "focus": "50% 45%",
+    "sha256": "cdaf0a78970e0b2b4aa6f462d1fad6a7d0b140b581e709766e2158339b34ec18"
+  }
+}

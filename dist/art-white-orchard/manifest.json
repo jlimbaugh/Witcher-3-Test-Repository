@@ -1,0 +1,834 @@
+{
+  "pop-cackler": {
+    "src": "art-white-orchard/pop-cackler.webp",
+    "kind": "scene",
+    "caption": "Quen stone northeast of Cackler Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_claim-a7e346c1.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "d3c1dee7d32537eabb272d13cf8c8910580ab4f96d9d42c14a04aa35a29c3c0a"
+  },
+  "pop-cemetery": {
+    "src": "art-white-orchard/pop-cemetery.webp",
+    "kind": "scene",
+    "caption": "Igni stone in front of the cemetery chapel",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_chapel-b845b38b.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "add50eabfed633b92e4e13534eb5e153d1d257fb3d65d9d0af49ce770dcc3490"
+  },
+  "pop-north": {
+    "src": "art-white-orchard/pop-north.webp",
+    "kind": "scene",
+    "caption": "Northern stone and nearby ghoul encounter",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_north_ghouls-0ede79dd.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "406a6f868829da9c9ee9f8cdef2a62e74b947f8cafeb8fffa7fa85aadb7c10be"
+  },
+  "pop-sawmill": {
+    "src": "art-white-orchard/pop-sawmill.webp",
+    "kind": "scene",
+    "caption": "Axii stone in the field northeast of Sawmill",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_sawmill-520b160a.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "a8fe851fd81c473b91167940d9caaba863a67fe3098f098c11f8db890b846369"
+  },
+  "pop-bridge": {
+    "src": "art-white-orchard/pop-bridge.webp",
+    "kind": "scene",
+    "caption": "Quen stone above Broken Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_broken_bridge_claim-c504b50f.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "2ac9fe39f54e580ac5d8f4e72cbfe5e4769e967fd0dc8488170333a7a96178e8"
+  },
+  "pop-bear": {
+    "src": "art-white-orchard/pop-bear.webp",
+    "kind": "scene",
+    "caption": "Yrden stone east of Abandoned Village",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_abandoned_village_claim-c0706b6b.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "e9bed9d3d646ec80ad7e39fd0317b2d90301474c98051dfe7d4108796053a7ef"
+  },
+  "banditcamp-6": {
+    "src": "art-white-orchard/banditcamp-6.webp",
+    "kind": "scene",
+    "caption": "Bridge camp southwest of Crossroads",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_crossroads_fight-65e1695d.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "b9bf022fe8d4d990a5b025618c5a3aadc87db107718ccc3d919910f9ba38e6b3"
+  },
+  "camp-viper-ruins": {
+    "src": "art-white-orchard/camp-viper-ruins.webp",
+    "kind": "scene",
+    "caption": "Deserters at the Viper diagram ruins",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_viper_school_gear_bandit_fight-365af1f5.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "029045c2272376fe243ed7d49deb9062b5c86fe7e389fb8af33dd0a8553e3c96"
+  },
+  "banditcamp-2": {
+    "src": "art-white-orchard/banditcamp-2.webp",
+    "kind": "scene",
+    "caption": "Archers at the woodland camp south of Ford",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_ford_archers-fe3e84e5.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "d50f47d4c18a9b91ef832b88770ecaa61c1ec0ef8c7a8951efda423c6d8b792e"
+  },
+  "camp-dirty-funds": {
+    "src": "art-white-orchard/camp-dirty-funds.webp",
+    "kind": "scene",
+    "caption": "Treasure tent at the Dirty Funds camp",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_cackler_bridge_loot-3e63dd1e.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "5d80d3b3446976b8c6b377a1c079b0268a44078e9183f0a77472ad5b311fb7d8"
+  },
+  "monsternest-3": {
+    "src": "art-white-orchard/monsternest-3.webp",
+    "kind": "scene",
+    "caption": "Ghoul encounter at the Crossroads nest",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_monster_nest_ghoul_fight-eedf546c.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "16d3808a4c4c0a39b8cf48017af01146555d2452e879b0ef52cd00accd5e5ded"
+  },
+  "monsternest-2": {
+    "src": "art-white-orchard/monsternest-2.webp",
+    "kind": "scene",
+    "caption": "Ghouls at the nest beside the Cackler stone",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_ghoul_fight-6cfba1ac.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3fd774b8fb3eff56cfcd6239623d7e5e7bd786df992d1f8e6e7d93e3830a8b97"
+  },
+  "guarded-5": {
+    "src": "art-white-orchard/guarded-5.webp",
+    "kind": "scene",
+    "caption": "Treasure pit south of Ransacked Village",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_ransacked_village_loot-c4bab791.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "348a481e37886b98845b06fc8aa378d1d8c0a839883a25423e13128245f0edff"
+  },
+  "guarded-1": {
+    "src": "art-white-orchard/guarded-1.webp",
+    "kind": "scene",
+    "caption": "Wreck and treasure southeast of Woesong Bridge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_woesong_bridge_loot-846643d6.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "e50b37bb07339fd7c2c33c93bd2e5e5b494972e3da43dfa80cf9785cf03f06e5"
+  },
+  "guarded-2": {
+    "src": "art-white-orchard/guarded-2.webp",
+    "kind": "scene",
+    "caption": "Gas-covered cache west of the garrison",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_gas_loot-9a9b612c.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "cedc94bb74df3e51a56af8b875fef37e0803e2c742334b713bfe25991928ed2c"
+  },
+  "guarded-4": {
+    "src": "art-white-orchard/guarded-4.webp",
+    "kind": "scene",
+    "caption": "Ruined wagon on the garrison approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_warg_loot-f9eba03f.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "df8f3400791d8e0f23ecc8b072733e4f676b44fbc6dd8e743766b123a5fef4ff"
+  },
+  "guarded-3": {
+    "src": "art-white-orchard/guarded-3.webp",
+    "kind": "scene",
+    "caption": "Cemetery crypt during the Viper hunt",
+    "sourcePage": "https://witcher3guide.wordpress.com/2022/02/10/viper-school-witcher-gear/",
+    "sourceImage": "https://witcher3guide.wordpress.com/wp-content/uploads/2022/02/viper-school-gear-24.jpg?w=1024",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Witcher 3 Guide",
+    "originalSize": [
+      1024,
+      576
+    ],
+    "focus": "50% 45%",
+    "sha256": "75ba9a1c1c46e336b6606bbee22c7353fc0bc2a9eec8e96eadcd9279fd26021f"
+  },
+  "q-temerian": {
+    "src": "art-white-orchard/q-temerian.webp",
+    "kind": "scene",
+    "caption": "Riverside key location for Temerian Valuables",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_hidden_treasure_temerian_lily_key-beab8913.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3f6ad3c16046257a4c6f47112fa7f26065cf8f6971f5e87d4061b32163e145ee"
+  },
+  "q-deserter": {
+    "src": "art-white-orchard/q-deserter.webp",
+    "kind": "scene",
+    "caption": "Spy camp for Deserter Gold",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_deserter_gold_spy_notes-c26daba3.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "e8e047adac1829adc1aac7b362f950266fab3763e63a92f9ca7158b9d9bc4e4f"
+  },
+  "q-dirty": {
+    "src": "art-white-orchard/q-dirty.webp",
+    "kind": "scene",
+    "caption": "Scrawled Notes at the Dirty Funds starting camp",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_dirty_funds_scrawled_notes-945378ae.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3227003720c499afdd104b38810497dc6c7e44bb523e62c675bfd05d11ae7721"
+  },
+  "abandoned-1": {
+    "src": "art-white-orchard/abandoned-1.webp",
+    "kind": "scene",
+    "caption": "Ghoul-infested roadside shrine",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_abandoned_village_ghoul_fight-1bbbe28c.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3dd581c17f3015a22275b86fc94498be5d10c9705a9c8547fe391e6ee6b7fcff"
+  },
+  "abandoned-2": {
+    "src": "art-white-orchard/abandoned-2.webp",
+    "kind": "scene",
+    "caption": "Ghoul encounter at the abandoned sawmill",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_sawmill_ghoul_fight-afbfaa80.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3323282ebed727639ad846c81fd9402cc2e394b5d798759e7b81789521a634b1"
+  },
+  "poi-4": {
+    "src": "art-white-orchard/poi-4.webp",
+    "kind": "scene",
+    "caption": "Crystal skull at the opening campsite",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_crystal_skull-fb173c18.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "d45d412e23a7207cc2e2c6fe0e8f70e3c441abb4048ca75319b19366e0276e56"
+  },
+  "poi-1": {
+    "src": "art-white-orchard/poi-1.webp",
+    "kind": "scene",
+    "caption": "Temerian shield search on the battlefield",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/exploring-the-battlefield",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_missing_in_action_shield_witcher_senses-b2f6d721.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "e39f6b06e24242b43b2ceac3bfb7c40f0f84ba9cecf2e733c276b79349916d00"
+  },
+  "signpost-1": {
+    "src": "art-white-orchard/signpost-1.webp",
+    "kind": "landmark",
+    "caption": "Abandoned Village landmark near its signpost",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/witcher-contracts/white-orchard/devil-by-the-well-witcher-contract",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_devil_by_the_well_corpse_investigate-bb14f829.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "26a5682df810b709f82c4348ec824a27587acc0a3456f00d97d56dee8d64b43a"
+  },
+  "signpost-2": {
+    "src": "art-white-orchard/signpost-2.webp",
+    "kind": "landmark",
+    "caption": "Broken Bridge landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_broken_bridge_jump-30f0684a.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "76320fb51b06866ad47da6b02b3269464ef2f6f9bf6c8db407357d81050c70c0"
+  },
+  "signpost-4": {
+    "src": "art-white-orchard/signpost-4.webp",
+    "kind": "landmark",
+    "caption": "Restored Sawmill landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_sawmill_merchant-eeec7d9c.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "0f7a3accc8807ab6d49310d3d3a764036d9a05826ebff63826cd522b8c74bc83"
+  },
+  "signpost-5": {
+    "src": "art-white-orchard/signpost-5.webp",
+    "kind": "landmark",
+    "caption": "Mill-area building landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_temerian_valuables_mill_hut-ae06ea52.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "02315b0d3e40c7af475de949a59cb6e2335cdf136eb4815381a58d2dce60b1ef"
+  },
+  "signpost-6": {
+    "src": "art-white-orchard/signpost-6.webp",
+    "kind": "landmark",
+    "caption": "Nilfgaardian Garrison approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_nilfgaardian_garrison_travel-ccab3889.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "0d165e4469063625f2292c63bbcf1d062e39e62a5d26d2fd985499aacf7e72c4"
+  },
+  "signpost-7": {
+    "src": "art-white-orchard/signpost-7.webp",
+    "kind": "landmark",
+    "caption": "Cackler Bridge gate landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_cackler_bridge_open-45bde7d8.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "d82e09a753d388717bb0b1985d0cb3a891e077ae519b2aa19331cb6a43dc0d39"
+  },
+  "signpost-8": {
+    "src": "art-white-orchard/signpost-8.webp",
+    "kind": "landmark",
+    "caption": "Opening-camp encounter near Crossroads",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_ghoul_dodge-fff7167e.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "75f10af71431eb67a12bfa852ce4d89a3df95863d5c73ea1de081e5a4f6df3a9"
+  },
+  "signpost-9": {
+    "src": "art-white-orchard/signpost-9.webp",
+    "kind": "landmark",
+    "caption": "Ford encounter landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_griffin_encounter-55f95359.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "1199aa3657027486bac3303bc374dadc1d30a30d3fcbe6f2b1a429d6f4f1dc23"
+  },
+  "signpost-10": {
+    "src": "art-white-orchard/signpost-10.webp",
+    "kind": "landmark",
+    "caption": "Dune at the Ransacked Village landmark",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/exploring-the-battlefield",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_missing_in_action_dune_talk-77639244.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "b195bafdf7bebffed8dc0bcf92a3be739d86ba48e7fa3a249e7eae9c3f1c7212"
+  },
+  "category-power": {
+    "src": "art-white-orchard/category-power.webp",
+    "kind": "scene",
+    "caption": "Bear guarding the southern stone",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/place-of-power-locations",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_places_of_power_abandoned_village_bear-73aaf3ed.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "bccc1763f25f6219285b1eb0c419232f152665f98d0906d9ce3caec30608796a"
+  },
+  "category-camps": {
+    "src": "art-white-orchard/category-camps.webp",
+    "kind": "scene",
+    "caption": "Deserter camp encounter",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_bandit_camp_cackler_bridge_leader_kill-f1fd0529.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "8dbfa34017a7fc535a666b6eab3a47ef0615788df15e8f0f044b06b7cf1a32b4"
+  },
+  "category-nests": {
+    "src": "art-white-orchard/category-nests.webp",
+    "kind": "scene",
+    "caption": "Destroying a White Orchard ghoul nest",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/monster-nests",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_monster_nest_nest_bomb-d0c5c048.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "3f25e20fe0b54fdbafaf45fb311c1dfb191b980ca14321b6e60234b3a00b44df"
+  },
+  "category-treasure": {
+    "src": "art-white-orchard/category-treasure.webp",
+    "kind": "scene",
+    "caption": "Clearing gas around a treasure cache",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/guarded-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_guarded_treasure_gas_ignite-ce291351.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "2286f18c98bb990aa199f42c489711d1517b40ad64bc693ee1b9a128b22e4165"
+  },
+  "category-hunts": {
+    "src": "art-white-orchard/category-hunts.webp",
+    "kind": "scene",
+    "caption": "Cellar on the Mill treasure route",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/hidden-treasure-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_temerian_valuables_cellar-b80e5319.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "af36b0c409f1e85fa917d8a57b60cae897d4ebc3d155caeab9d9baaadd3e42e4"
+  },
+  "category-sites": {
+    "src": "art-white-orchard/category-sites.webp",
+    "kind": "scene",
+    "caption": "Herbalist at the restored roadside shrine",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/abandoned-sites-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_white_orchard_abandoned_site_abandoned_village_herbalist-8b75a5dc.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "46f7992f8ad82468af6b1239a0d35668a5c9503fdac5b339b6cc704709c34116"
+  },
+  "category-discoveries": {
+    "src": "art-white-orchard/category-discoveries.webp",
+    "kind": "scene",
+    "caption": "White Orchard countryside on the opening ride",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/lilac-and-gooseberries",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_lilac_and_gooseberries_vesemir_follow-d8ec6831.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "45304da06a4a39996e1e6aca21321f5e2416ab71a157062bcfe147336105983c"
+  },
+  "category-travel": {
+    "src": "art-white-orchard/category-travel.webp",
+    "kind": "scene",
+    "caption": "White Orchard bridge and ruins approach",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/white-orchard/activities/bandit-camps-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher_3_viper_school_scavenger_hunt_castle_ruins.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      1920,
+      1080
+    ],
+    "focus": "50% 45%",
+    "sha256": "abeb9fd0a77927dbb92de1c8417c055a92d109b8365f3b8c722cc813301bab2e"
+  },
+  "category-preparation": {
+    "src": "art-white-orchard/category-preparation.webp",
+    "kind": "scene",
+    "caption": "Willis at the village forge",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/secondary-quests/white-orchard/twisted-firestarter",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_twisted_firestarter_willis_start-e5d061c8.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "6869fb63080828187314e747cd5efa20fb14420f550cbcb4b5c8e408825f0eac"
+  },
+  "category-diagrams": {
+    "src": "art-white-orchard/category-diagrams.webp",
+    "kind": "scene",
+    "caption": "Viper silver diagram in the White Orchard hunt",
+    "sourcePage": "https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/white-orchard/exploring-white-orchard",
+    "sourceImage": "https://www.gamerguides.com/assets/media/17/67/witcher3_viper_school_gear_diagram_viper_silver_sword-a0bc0852.jpg",
+    "credit": "Game imagery \u00a9 CD PROJEKT RED \u00b7 Capture: Gamer Guides",
+    "originalSize": [
+      3840,
+      2160
+    ],
+    "focus": "50% 45%",
+    "sha256": "cff58f7b9b029a4efb42e95c660ed0a2f06b584328cc6597be3d6e985d8b1d36"
+  },
+  "monsternest-1": {
+    "src": "art-white-orchard/monsternest-1.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Ghoul nest \u00b7 north of the cemetery",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1884.004497338506,
+      960
+    ],
+    "crop": [
+      550,
+      0,
+      820,
+      690
+    ],
+    "focus": "50.0% 23.8%",
+    "sha256": "c8262334aa91841884410ec5f6a48f7698d2de4ed67d3ef89c1949dd09191d2e"
+  },
+  "banditcamp-1": {
+    "src": "art-white-orchard/banditcamp-1.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Bandit camp \u00b7 Southwest of Broken Bridge",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      345.976563264785,
+      657.9996444444444
+    ],
+    "crop": [
+      247,
+      1357,
+      820,
+      690
+    ],
+    "focus": "50.1% 50.0%",
+    "sha256": "a9183c50e237523dea12ad53ff9e114cf0b2b8232feaa3a1ab14fde09f29c87a"
+  },
+  "banditcamp-3": {
+    "src": "art-white-orchard/banditcamp-3.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Bandit camp \u00b7 Northwest of Sawmill",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1321.3594078661695,
+      253.4968888888889
+    ],
+    "crop": [
+      0,
+      381,
+      820,
+      690
+    ],
+    "focus": "30.9% 50.1%",
+    "sha256": "8d9cbac807539d9a127e8dbd8f8babfc1486d8d26e629cbf77f7cdce53e21666"
+  },
+  "smugglers-1": {
+    "src": "art-white-orchard/smugglers-1.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Smugglers\u2019 cache \u00b7 South of Ford",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      646.0110598966894,
+      1693.0019555555557
+    ],
+    "crop": [
+      1283,
+      1056,
+      820,
+      690
+    ],
+    "focus": "50.0% 50.1%",
+    "sha256": "b6ec2d1e607fe5375a31936beb346a9d0c22c1676a4884a2e1a7e4b13a855e61"
+  },
+  "spoils-1": {
+    "src": "art-white-orchard/spoils-1.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Spoils of war \u00b7 East of Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1902.000983266355,
+      586.5016888888889
+    ],
+    "crop": [
+      176,
+      0,
+      820,
+      690
+    ],
+    "focus": "50.1% 21.2%",
+    "sha256": "60013bdb6000112fd0b50aa906e509e8470a7f0cd4dd5ff49b295a4eb608e048"
+  },
+  "cow-pasture-warning": {
+    "src": "art-white-orchard/cow-pasture-warning.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Cow pasture \u00b7 farming warning",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      998.0144302213084,
+      1174.994488888889
+    ],
+    "crop": [
+      764,
+      704,
+      820,
+      690
+    ],
+    "focus": "50.1% 50.1%",
+    "sha256": "6ff76bfa103ca5a93625038bab1c2b0b485db1467d9f3871b182b089b97aa3ed"
+  },
+  "signpost-3": {
+    "src": "art-white-orchard/signpost-3.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Woesong Bridge signpost",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1005.9950039025362,
+      1226.501688888889
+    ],
+    "crop": [
+      816,
+      697,
+      820,
+      690
+    ],
+    "focus": "50.1% 50.0%",
+    "sha256": "b0af5adbbc1042d633f8e95501fe91e050c34cd4ff5aa4658ce836d66c968ae5"
+  },
+  "grindstone-village": {
+    "src": "art-white-orchard/grindstone-village.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Grindstone \u00b7 West of Woesong Bridge",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      960.2673886376933,
+      1044.4117333333334
+    ],
+    "crop": [
+      634,
+      742,
+      820,
+      690
+    ],
+    "focus": "50.1% 50.1%",
+    "sha256": "233c81a925ee7fa97e69c9403d3434b811f47f29449cd53791f902dee26a708d"
+  },
+  "grindstone-3": {
+    "src": "art-white-orchard/grindstone-3.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Grindstone \u00b7 West of Sawmill",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1075.996739837131,
+      281.9982222222222
+    ],
+    "crop": [
+      0,
+      627,
+      820,
+      690
+    ],
+    "focus": "34.4% 50.0%",
+    "sha256": "eb89125bc90965f4483eb087f3016b868d36ee12986b38032de9f399223d1f88"
+  },
+  "grindstone-4": {
+    "src": "art-white-orchard/grindstone-4.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Grindstone \u00b7 Near Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1730.006084356019,
+      342.00462222222217
+    ],
+    "crop": [
+      0,
+      0,
+      820,
+      690
+    ],
+    "focus": "41.7% 46.1%",
+    "sha256": "b9b09999a902f81fe4036483402bced3869341dbc5036c3fa359d5db83bd7bce"
+  },
+  "armourerstable-1": {
+    "src": "art-white-orchard/armourerstable-1.webp",
+    "kind": "map",
+    "caption": "In-game map detail \u00b7 Armorer\u2019s table \u00b7 Near Nilfgaardian Garrison",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain and marker icon \u00a9 CD PROJEKT RED \u00b7 Coordinates: witcher3map contributors (CC BY-NC-SA 4.0)",
+    "point": [
+      1749.5237005132599,
+      312.4451555555557
+    ],
+    "crop": [
+      0,
+      0,
+      820,
+      690
+    ],
+    "focus": "38.1% 43.3%",
+    "sha256": "ab5e294ac176f695649ba861e2acc5b674d3598daca6d00f5945e09ff50a901c"
+  },
+  "category-water": {
+    "src": "art-white-orchard/category-water.webp",
+    "kind": "map",
+    "caption": "White Orchard water-cache locations",
+    "sourcePage": "MAP-SOURCES.md",
+    "sourceImage": "white-orchard-map.webp",
+    "credit": "Terrain \u00a9 CD PROJEKT RED \u00b7 Map-data credits in MAP-SOURCES.md",
+    "focus": "50% 50%",
+    "sha256": "d98e92e30507f538ff34ebe8d1dc8c48579b105df7173d26af014e75fd5ac16c"
+  }
+}

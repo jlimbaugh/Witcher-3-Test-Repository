@@ -1,0 +1,39 @@
+PHOENIX — WHITE ORCHARD DIAGRAM CONTENT SLICE
+Baseline: ffa8eb87e51e8eff34be0efd8cf775016798196d
+
+OWNER SCOPE
+All White Orchard diagram entries/cluster links; acquisition walkthrough and map location first; crafting details later. Individual names in clusters. Activities & Discoveries horizontal category cards below quest content; Diagrams functional, other category landings dim Not built yet. Exact-task map center, circle and modest zoom with nearby markers retained.
+
+DELIVERED CONTENT
+82 canonical named entries: two fixed Viper acquisitions and 80 deduplicated source-listed merchant-stock leads. Includes Willis, garrison quartermaster and Sawmill seller associations. A recipe sold by several sources remains one entry/one acquired record. Stock leads are explicitly PROVISIONAL, not guaranteed early-game stock. Twelve variable-container source notes are separate and promise no named reward. Starting-known recipes and arbitrary random rolls are not falsely represented as fixed map acquisitions.
+Acquisition steps, direct map routes, merchant-location alternatives and source links are functional. No crafting requirements/stat tables were invented. This is a usable content slice with verification distinctions, not a certification that every possible White Orchard randomized recipe or merchant stock item is exhaustively verified.
+
+ACCESS
+White Orchard -> below quest content -> Activities & Discoveries -> Diagrams.
+Field Reference -> Character -> Gear -> Diagrams uses the same directory.
+Named cluster entries link the same canonical page. The two fixed map pins now open their exact diagram instead of the aggregate Viper quest. Service map panels expose diagram-source links without adding 80 overlapping permanent pins.
+
+PROGRESS AND RETURN
+Each diagram has one acquired flag in the existing completion store. Detail, cards and every relevant cluster use that flag. Quest journal search/read/both-diagrams objectives remain separate criteria; legacy whole-quest marks do not silently manufacture individual acquisitions. Existing engine transaction/Undo is reused; no new duplicate Undo listener or progress schema reset.
+Return preserves origin cluster and scroll, or directory filter/horizontal position. Diagram -> map -> Return to diagram preserves original entry context. Map-origin entry return uses existing map restore machinery.
+
+MAP
+Task-origin cluster links carry the focused task. Exact named diagram and merchant targets center, zoom about 1.25 levels over regional fit (capped), and receive a restrained gold ring. Nearby markers remain. Multiple-pin tasks select one documented marker deterministically; pin-specific approach links can target an exact marker. Missing/unverified exact positions use a labeled cluster/approach fallback rather than invented coordinates.
+Diagram merchant focus is transient; existing permanent marker inventory remains 64. Focus state is captured/restored. Completed selected targets can still be displayed while general completed markers are hidden.
+
+VERIFICATION
+72/72 automated checks pass (66 prior + six diagram data/progression tests). JS syntax passes. Tests cover valid IDs/cluster/points, distinct Viper pins, one acquisition not completing another/quest, legacy protection, deduplication across merchants and randomized leads not creating guaranteed items.
+Browser: White Orchard category link; directory/card filters; fixed entry; mapped ring centered at 0px horizontal/vertical offset; task-origin cluster ring within 1px; acquisition reflected in cluster; Undo reflected in both; settled exact cluster scroll restored at 2079px; phone-width directory has content width=scroll width=375px; merchant-specific source routes and focused marker verified.
+Temporary phone inspection fixture removed. Real iPhone Safari, Xbox stock verification and exhaustive random-source coordinate audit remain pending. No new NPC/Simulator/Gwent/Constellation/crafting-system work. Existing pet-project Constellation excludes the new catalog nodes to avoid an unintended large redesign.
+
+SOURCES AND EVIDENCE
+https://www.gamebanshee.com/thewitcher3/walkthrough/viperschoolgear.php
+https://www.gamebanshee.com/thewitcher3/walkthrough/location-whiteorchard.php
+https://witcher3.th.gl/db/merchants/merchant_willis_white_orchard
+https://witcher3.th.gl/db/merchants/merchant_quartermaster_white_orchard
+https://witcher3.th.gl/db/merchants/merchant_merchant_sawmill
+https://witcher.fandom.com/wiki/The_Witcher_3_diagram_locations
+Viper acquisition route corroborated by walkthrough/reference sources. Vendor lists are database stock leads and can describe variable/conditional offerings; do not elevate them to guaranteed current-playthrough inventory. Random notes derive from indexed source snippets and have explicit precision limits. Existing project map coordinates/credits reused; no unsourced new exact coordinates.
+
+RELEASE BOUNDARY
+Private review Site only. GitHub main and Pages unchanged. Baseline commit remains recoverable. Owner retesting follows meaningful implemented content; no claim that the whole guide or all activity categories are complete.

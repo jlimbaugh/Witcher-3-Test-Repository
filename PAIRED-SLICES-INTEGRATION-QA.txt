@@ -1,0 +1,10 @@
+PAIRED SLICES — INTEGRATION QA
+Accepted baseline: v24 / 564aebfdecd67d8bbdbc94779d2e3bdc3e63edc1.
+Cmdr nearby/Optional stops: LT source/model cross-review passed, parenthesis clarification adopted at 48678ecdf62fce476eb598a128b21135b3e0d200.
+LT departure: revised return package reviewed; warning eligibility restored for unrecorded entries independently of summary classification; risk-title overlay triggers; Resolved expansion retained; explicit zero counts and positive all-complete confirmation.
+Integration changes: regional checklist link placed in a named Preparation & departure tools section below the witcher's kit; changed runtime asset cache keys bumped. No progress schema/migration/reset changes.
+Tests: 121/121 passed in combined source. Replaced LT's copied-snippet Resolved test with tests executing createPhoenixDeparture and its refresh through a small DOM adapter. Tests verify actual Resolved expansion preservation, shared overlay trigger titles, unrecorded cutoff reminders/no duplicate queued reminder, stale warning removal after departure correction, tools insertion, and no optional checklist section.
+Local Chrome: corrected checklist summary shows 0 known open / 4 unknown; skull checklist title opens shared parchment overlay; close returns to checklist; regional link appears in preparation/departure tools. Prior Cmdr runtime checks cover Optional-stop scroll return (317 -> 317), quest-wide expansion and merchant-return fallback; LT's model review covers counts/order/prerequisite links/no mutation.
+Limits: combined physical Safari and VoiceOver acceptance pending. No live UI claim for artificial all-complete fixture; that rendering case is covered by model summary and real factory tests.
+Skipped owner questions remain open: passed-cutoff uncertainty wording; same-cutoff tie order; mixed lost/completed summary wording. Retained authored order and factual labels without resolving those choices.
+STATUS: integrated locally on integration-two-slices-v24; not pushed, saved as a Site version, or deployed. Live remains accepted version 24. Await publication step for Safari acceptance. No next-slice expansion.

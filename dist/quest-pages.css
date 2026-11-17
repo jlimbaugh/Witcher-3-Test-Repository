@@ -1,0 +1,91 @@
+/* One walkthrough structure, with the accepted illustrated steel and parchment. */
+.quest-page .scene-inner{max-width:900px;padding:16px 16px 120px}.quest-page .r15-heading{min-height:160px!important;padding:52px 22px 20px!important;margin:8px 0 16px!important;gap:7px}.quest-page .r15-heading h1{font-size:clamp(1.7rem,4vw,2.4rem)!important;max-width:27ch}.quest-page .r15-page-seal{font-size:.65rem;padding:4px 8px;top:12px;right:12px}.quest-page-facts{margin:0;color:#e9dfc9!important;font-size:.9rem;line-height:1.35}.quest-page .reading-panel{padding:20px!important;max-width:none;margin:0}.quest-page .reading-panel:before{height:12px;margin-bottom:8px}.quest-page .quest-step-nav{position:static!important;display:grid;grid-template-columns:minmax(70px,1fr) minmax(0,2fr) minmax(70px,1fr);gap:10px;align-items:end;margin:0 0 20px;padding:0 0 18px;border:0;border-bottom:1px solid #88785e;box-shadow:none}.quest-page .quest-step-nav button{min-width:0;width:100%;min-height:48px;padding:10px 6px;font-size:1rem}.quest-step-picker{display:flex;flex-direction:column;gap:6px;min-width:0;text-align:center;font-size:.85rem}.quest-step-picker select{display:block;width:100%;min-width:0;min-height:48px;padding:8px 4px;margin:0;background:#dfcba6;color:#302a23;border:3px double #8b8068;font:1rem var(--body)}.quest-page .stage-panel{min-height:0;scroll-margin-top:20px}.quest-page .stage-content{display:block;margin:0;padding:0 0 12px!important;border:0!important;background:none!important;box-shadow:none!important}.quest-page .stage-content h2{margin:0 0 14px;font-size:1.65rem;line-height:1.2}.quest-page .stage-content p{font-size:1.12rem;line-height:1.65;margin:12px 0}.quest-page .stage-content .risk-note{padding:14px;font-size:1.05rem}.quest-page .quest-page-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 24px}.quest-page .quest-page-tools a{display:flex;justify-content:center;align-items:center;min-width:0;min-height:48px;padding:8px!important;font-size:1rem;text-align:center}.quest-page .quest-record-host{margin:0 0 24px}.quest-page .quest-progress{padding:14px;margin:0}.quest-page .quest-progress>summary{padding:0 0 12px;font-size:1.2rem;line-height:1.4;min-height:44px}.quest-page .objective-controls{display:flex;gap:8px;justify-content:space-between;margin:10px 0}.quest-page .objective-controls button{min-height:48px;padding:8px;font-size:1rem;flex:1;min-width:0}.quest-page .objective-rail{margin:10px 0 16px}.quest-page .objective-card{min-height:0;padding:14px}.quest-page .objective-check{line-height:1.45}.quest-page .progress-extra{margin:12px 0;padding:10px}.quest-page .progress-extra>summary{min-height:44px;display:list-item;padding:8px 0}.quest-page .quest-preparation,.quest-page .sources{padding:12px;margin:16px 0 0}.quest-page .quest-preparation>summary,.quest-page .sources>summary{min-height:44px;padding:8px 0;font-size:1.15rem}.quest-cluster-progress{display:block;padding:14px;min-height:48px}.quest-page .departure-step-link{margin:12px 0;padding:12px;font-size:1.1rem}.quest-page [data-page-warning-history]{margin-top:16px}.quest-page .save-message{font-size:.85rem}.quest-page .objective-card[hidden]{display:none!important}@media(max-width:600px){.quest-page .scene-inner{padding:10px 10px 120px}.quest-page .r15-heading{min-height:150px!important;padding:50px 16px 16px!important}.quest-page .r15-heading h1{font-size:1.7rem!important}.quest-page .reading-panel{padding:16px!important}.quest-page .quest-step-nav{gap:7px}.quest-page .quest-step-nav button{font-size:.9rem;padding-inline:2px}.quest-page .quest-progress{padding:10px}.quest-page .objective-card{flex-basis:calc(100% - 20px);box-sizing:border-box}.quest-page .progress-actions{display:flex;flex-direction:column;gap:10px}.quest-page .progress-actions>*{width:100%;box-sizing:border-box}}@media print{.quest-page-tools,.quest-step-nav,.quest-record-host{display:none!important}}
+.quest-page .quest-step-nav>.quest-step-picker{order:0;display:flex;flex-direction:column;width:auto;min-width:0;flex-basis:auto}.quest-page .stage-content details{margin-left:0}
+
+.quest-page .objective-controls{align-items:center}.quest-page .objective-controls button{flex:0 0 48px;font-size:1.3rem}.quest-page .objective-controls span{font-size:.9rem;text-align:center}#quest-q-devil.quest-page .reading-panel{background:#dfcba6 url(worn-vellum-r15.svg);border:6px double #959c8d;box-shadow:inset 0 0 28px #61483066,0 12px 26px #0008;margin:0}#quest-q-devil.quest-page .reading-panel:before{display:block}#quest-q-devil.quest-page .reading-panel:after{display:block}
+
+.quest-page .quest-step-nav button{height:48px;white-space:nowrap}
+
+.reading-quest .medallion-history-toggle{display:none}
+/* Approved hub -> walkthrough flow. */
+.quest-page .quest-page-tools{grid-template-columns:repeat(2,minmax(0,1fr))}.quest-acquisition{margin-top:16px;padding:12px}.quest-hub-legacy{display:none!important}#whiteorchard-tree:not(.quest-hub-mode) .tree-viewport,#whiteorchard-tree:not(.quest-hub-mode) .return-to-deck{display:none!important}.quest-hub-mode .tree-heading,.quest-hub-mode .desk-carousel,.quest-hub-mode .quest-jump,.quest-hub-mode .tree-hint,.quest-hub-mode .return-to-deck,.quest-hub-mode .tree-controls,.quest-hub-mode .tree-window,.quest-hub-mode>.scene-inner>.primary-action,.quest-hub-mode .tree-shell>details{display:none!important}.quest-hub-mode .tree-shell,.quest-hub-mode .scene-inner{max-width:940px;padding:12px 16px 110px}.quest-hub-mode .tree-viewport{padding:0;margin:0;width:100%;max-width:900px}.quest-hub-mode .story-tree{padding:0}.quest-hub-mode .hub-toggle{display:none!important}.quest-hub-mode .hub-activities{padding:18px!important;margin:0;border-radius:5px 10px 5px 8px}.quest-hub-mode .hub-activities:before{position:relative;inset:auto;display:block;height:12px;margin-bottom:12px;background:url(silver-rule-r15.svg) center/100% 100%;border:0}.quest-hub-briefing{position:relative;isolation:isolate;overflow:hidden;min-height:160px;box-sizing:border-box;padding:68px 20px 20px;border:5px double #a6b1a5;border-radius:4px 10px 3px 7px;background:#1b292d;display:flex;flex-direction:column;justify-content:flex-end}.quest-hub-briefing:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0f1a20f2,#0f1a2040);z-index:-1}.quest-hub-briefing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:-2}.quest-hub-briefing h1{font:clamp(1.7rem,4vw,2.4rem)/1.15 var(--body);color:#f4e6cf!important;margin:0}.quest-hub-briefing .eyebrow{color:#eddfc8!important;font-size:.72rem;margin:0 0 8px}.quest-hub-description{font-size:1.2rem;line-height:1.6;margin:18px 0}.quest-hub-risk{border-left:5px solid #7e3d35;background:#853d3320;padding:12px 14px;line-height:1.5}.quest-hub-risk[hidden]{display:none}.quest-hub-continue,.quest-hub-tools a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:#263235 url(r10-metal.svg);color:#f3e7d0!important;border:4px double #aeb8a8;border-radius:6px 3px 8px 3px;text-decoration:none;min-height:48px}.quest-hub-continue{flex-direction:column;gap:5px;text-align:center;padding:15px;margin:18px 0;font-size:1.4rem}.quest-hub-continue span{font-size:1rem;font-weight:normal}.quest-hub-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0 0 20px}.quest-hub-tools a{padding:9px 4px;font-size:1rem;text-align:center}.quest-hub-progress .quest-progress{padding:12px;margin:16px 0 24px}.quest-hub-progress .quest-progress>summary{padding:8px 0;font-size:1.2rem;min-height:44px;box-sizing:border-box}.quest-hub-progress .objective-controls{display:flex;gap:12px;justify-content:space-between;align-items:center}.quest-hub-progress .objective-controls button{min-width:48px;min-height:48px}.quest-hub-progress .progress-extra{padding:12px;margin:12px 0}.quest-hub-progress .progress-extra>summary{min-height:44px;padding:8px 0;box-sizing:border-box}.quest-hub-nearby>h2{font-size:1.8rem;margin:24px 0 16px;text-align:center}.quest-hub-group h3{font-size:1.35rem;margin:18px 0 8px}.quest-hub-rail{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;touch-action:pan-x pan-y;padding:8px 8px 20px;min-width:0;scrollbar-color:#8d8370 #1c282d}.quest-hub-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;flex:0 0 180px;height:calc(270px * var(--guide-type-scale,1));padding:20px 12px;box-sizing:border-box;border:4px double #abb5a6;border-radius:4px 8px 3px 6px;scroll-snap-align:start;text-decoration:none;color:#f5e8cf!important;background:#18282e;box-shadow:0 6px 12px #0006}.quest-hub-card:before{content:'';position:absolute;inset:-5px;background:url(silver-frame-r15.svg) center/100% 100%;z-index:1;pointer-events:none}.quest-hub-card:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#102029 0%,#102029ed 25%,#10202910 75%);z-index:-1}.quest-hub-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.quest-hub-card strong{font:1.2rem/1.25 var(--body);color:#f5e8cf}.quest-hub-card small{font-size:.82rem;line-height:1.4;color:#e4d6bc;margin-top:9px;text-transform:capitalize}.quest-hub-card.is-complete{border-color:#b4c9ac}.quest-hub-card[hidden],.quest-hub-group[hidden]{display:none!important}.quest-hub-rail-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 8px 20px}.quest-hub-rail-controls button{min-width:48px;min-height:48px;font-size:1.2rem}.quest-hub-rail-controls span{font-size:.85rem}.quest-hub-completed{padding:12px;margin-top:24px}.quest-hub-completed>summary{padding:8px 0;min-height:44px;box-sizing:border-box;font-size:1.2rem}.quest-hub-progress .progress-actions{display:flex;flex-wrap:wrap;gap:10px}.quest-hub-progress .progress-actions button{min-height:48px;padding:10px}.reading-hub .medallion-history-toggle{display:none}@media(max-width:600px){.quest-hub-mode .tree-shell,.quest-hub-mode .scene-inner{padding:10px 8px 110px}.quest-hub-mode .hub-activities{padding:14px!important}.quest-hub-briefing{padding:55px 14px 16px;min-height:160px}.quest-hub-card{flex-basis:165px;height:calc(250px * var(--guide-type-scale,1))}.quest-hub-card strong{font-size:1.1rem}.quest-hub-continue{font-size:1.25rem}.quest-hub-description{font-size:1.1rem}.quest-hub-tools{gap:7px}.quest-hub-tools a{font-size:.95rem}.quest-hub-progress .objective-card{flex-basis:calc(100% - 20px);box-sizing:border-box}.quest-hub-progress .progress-actions{flex-direction:column}.quest-hub-progress .progress-actions>*{width:100%;box-sizing:border-box}}
+
+.quest-hub-mode .crumbs{display:none}.quest-hub-mode .quest-hub-panel .quest-hub-risk{font-style:normal;font-size:1.05rem}
+
+/* Shared reading material: the approved White Orchard scroll, not a new card skin. */
+.reading-panel,.quest-hub-paper,#quest-q-devil.quest-page .reading-panel{
+ box-sizing:border-box;position:relative;color:#2a211b;background:transparent!important;
+ border:40px solid transparent!important;
+ border-image:url(curled-vellum-r16.webp) 155 100 150 100 fill / 42px 23px 42px 23px / 0 stretch!important;
+ border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 9px 6px #0008);
+ padding:10px 4px!important;
+}
+.reading-panel:before,.reading-panel:after{display:none!important}
+.quest-hub-mode .hub-activities{background:none!important;border:0!important;border-image:none!important;box-shadow:none!important;padding:0!important}
+.quest-hub-mode .hub-activities:before,.quest-hub-mode .hub-activities:after{display:none!important}
+.quest-hub-mode .tree-viewport{background:none;border:0;box-shadow:none;overflow:visible}
+.quest-hub-mode .quest-hub-briefing{margin-bottom:18px}
+.quest-hub-paper{margin:0 0 22px}
+.quest-hub-paper .quest-hub-description{margin-top:0}
+.quest-hub-nearby>h2,.quest-hub-group>h3,.quest-hub-rail-controls>span,.quest-hub-completed>summary,.quest-hub-nearby>p,.quest-hub-completed>p{color:#f1e6d2;text-shadow:0 2px 3px #000}
+.quest-hub-completed{background:transparent;border:0;border-top:1px solid #a9b2a3;box-shadow:none}
+/* Foldouts read as ink on the same sheet, rather than paper panels on paper. */
+.quest-page .reading-panel details,.quest-hub-paper details,
+.quest-page .objective-card,.quest-hub-paper .objective-card,
+.quest-page .progress-extra,.quest-hub-paper .progress-extra{
+ background:none!important;border:0!important;border-image:none!important;border-radius:0!important;box-shadow:none!important;color:#2a211b;
+}
+.quest-page .quest-preparation,.quest-page .quest-progress,.quest-page .quest-acquisition,.quest-page .sources,
+.quest-hub-paper .quest-preparation,.quest-hub-paper .quest-progress{border-top:1px solid #74604780!important;padding:12px 0!important;margin:12px 0 0!important}
+.quest-hub-paper .quest-preparation>summary{font-size:1.15rem;min-height:44px;padding:8px 0}
+.quest-page .quest-progress>summary,.quest-hub-paper .quest-progress>summary{padding:8px 0;min-height:44px}
+.quest-page .quest-step-nav{margin:12px 0 20px;padding:12px 0 18px;border-top:1px solid #74604780;align-items:end}
+.quest-page .quest-record-host{margin:0}
+.quest-page .quest-page-tools{margin:20px 0 0}
+.quest-page .quest-step-picker select{background:#eadbc0 url(worn-vellum-r15.svg)}
+.quest-page .objective-card,.quest-hub-paper .objective-card{padding:12px 0;border-bottom:1px solid #74604755!important}
+.quest-page .save-message:empty{display:none}
+@media(max-width:600px){
+ .reading-panel,.quest-hub-paper,#quest-q-devil.quest-page .reading-panel{border-width:36px 22px!important;border-image-width:38px 18px!important;padding:8px 0!important}
+ .quest-hub-mode .scene-inner,.quest-hub-mode .tree-shell{padding-inline:8px}
+ .quest-hub-mode .hub-activities{padding:0!important}
+ .quest-page .quest-step-nav{grid-template-columns:minmax(58px,1fr) minmax(0,1.8fr) minmax(58px,1fr);gap:5px}
+ .quest-page .quest-step-picker select{font-size:.9rem}
+ .quest-page .quest-step-picker>span{font-size:.8rem}
+ .quest-hub-paper .quest-hub-tools{gap:5px}
+ .quest-hub-paper .quest-hub-tools a{padding-inline:2px;font-size:.9rem}
+}
+@media print{.reading-panel,.quest-hub-paper{border:0!important;border-image:none!important;filter:none;background:white!important}}
+.quest-hub-mode .bracket-round{display:none}
+.quest-page .quest-preparation>summary,.quest-hub-paper .quest-preparation>summary{display:list-item;cursor:pointer;list-style:disclosure-closed inside}
+.quest-page .quest-preparation[open]>summary,.quest-hub-paper .quest-preparation[open]>summary{list-style-type:disclosure-open}
+
+
+/* Complete main-story guidance remains inside the approved reading framework. */
+.quest-step-detail,.quest-rewards{margin:16px 0;padding:0!important}
+.quest-step-detail[open]>summary,.quest-rewards[open]>summary{margin-bottom:14px}
+.quest-page .quest-context-links{display:block;margin:20px 0;padding:14px 0;border-block:1px solid #74604780}
+.quest-context-links h3,.quest-choices h3{font:1.2rem/1.3 var(--body);margin:0 0 12px}
+.quest-context-links a{display:block;box-sizing:border-box;min-height:48px;padding:10px 4px;line-height:1.4;text-decoration:underline;text-underline-offset:4px}
+.quest-context-links a+a{border-top:1px solid #74604740}
+.quest-choices{margin:18px 0}.quest-choices ul{padding-left:24px;margin:8px 0}
+.quest-reward-table{border-collapse:collapse;width:100%;table-layout:fixed;font:1rem/1.45 var(--body);margin:16px 0}
+.quest-reward-table th,.quest-reward-table td{text-align:left;vertical-align:top;border:1px solid #74604780;padding:10px;overflow-wrap:anywhere}
+.quest-reward-table th{font-weight:normal;background:#7e694a18}.quest-reward-table thead th{font-weight:bold}
+.quest-page .stage-content .quest-step-detail p{font-size:1.05rem;line-height:1.6}
+@media(max-width:600px){.quest-reward-table th,.quest-reward-table td{padding:8px 6px}.quest-reward-table{font-size:.95rem}}
+
+/* Shared nearby cards retain their identity and completion in every context. */
+.nearby-card-entry{flex:0 0 180px;min-width:0;color:#f1e6d2}
+.nearby-card-entry .quest-hub-card{width:100%}
+.nearby-card-context,.nearby-verification,.nearby-prerequisite{font:1rem/1.4 var(--body);margin:12px 4px;color:#f1e6d2}
+.nearby-card-entry a:not(.quest-hub-card){display:block;min-height:44px;padding:8px 0;text-decoration:underline;text-underline-offset:3px;color:inherit}
+.nearby-other-stops{margin:8px 4px}.nearby-other-stops summary{min-height:44px;cursor:pointer}.nearby-card-entry [hidden]{display:none!important}
+.optional-stops{margin:18px 0;padding:12px 0;border-top:1px solid #74604780}.optional-stops>summary{min-height:44px;padding:8px 0;cursor:pointer;font-size:1.15rem}
+.optional-stops ul{padding-left:22px}.optional-stops li{margin:10px 0}.optional-stops a{display:inline-block;min-height:44px;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
+.optional-stop-status{display:block;font-size:.95rem}.optional-stop-warning{border-left:4px solid #793b3a;background:#853d3315;padding:10px 12px;margin:8px 0}.optional-stop-prerequisite{font-size:.95rem}
+@media(max-width:600px){.nearby-card-entry{flex-basis:165px}}
+
+.optional-source-return{display:block;margin:16px 0;min-height:48px;padding:10px 14px;border:3px double #aeb8a8;background:#263235 url(r10-metal.svg);color:#f3e7d0;font:1rem var(--body);cursor:pointer}
+.quest-hub-nearby .nearby-card-context,.quest-hub-nearby .nearby-verification,.quest-hub-nearby .nearby-prerequisite{color:#f1e6d2!important;text-shadow:0 2px 3px #000}
+.quest-hub-nearby .nearby-other-stops,.quest-hub-nearby .nearby-other-stops summary,.quest-hub-nearby .nearby-other-stops a{color:#2a211b!important;text-shadow:none}

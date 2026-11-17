@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" fill="none">
+ <defs>
+  <linearGradient id="steel" x1="78" y1="8" x2="104" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#e1e5da"/><stop offset=".23" stop-color="#8f9a94"/><stop offset=".43" stop-color="#c3cbc1"/><stop offset=".64" stop-color="#626e69"/><stop offset=".82" stop-color="#b1bcb3"/><stop offset="1" stop-color="#535e59"/></linearGradient>
+  <linearGradient id="edge" x1="90" y1="8" x2="90" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#f0eee1"/><stop offset=".6" stop-color="#aebcb3"/><stop offset="1" stop-color="#d7dfd4"/></linearGradient>
+ </defs>
+ <!-- Carved side scrolls, mounted against the banner's lower edge. -->
+ <g stroke="#303c36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M79 24C64 10 49 13 37 20S17 25 14 15C10 21 12 31 21 32C30 34 37 25 31 22C26 19 24 24 28 25M101 24C116 10 131 13 143 20S163 25 166 15C170 21 168 31 159 32C150 34 143 25 149 22C154 19 156 24 152 25"/>
+  <path d="M77 29C62 24 53 29 45 37L53 19M103 29C118 24 127 29 135 37L127 19"/>
+ </g>
+ <g stroke="#adb8ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M79 24C64 10 49 13 37 20S17 25 14 15C10 21 12 31 21 32C30 34 37 25 31 22C26 19 24 24 28 25M101 24C116 10 131 13 143 20S163 25 166 15C170 21 168 31 159 32C150 34 143 25 149 22C154 19 156 24 152 25"/>
+  <path d="M77 29C62 24 53 29 45 37L53 19M103 29C118 24 127 29 135 37L127 19"/>
+ </g>
+ <!-- Engraved, faceted spearhead with a long unmistakable downward point. -->
+ <path d="M90 5L111 23L104 34L102 49L90 75L78 49L76 34L69 23Z" fill="url(#steel)" stroke="#2b3731" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M90 9L107 24L100 35L99 48L90 69L81 48L80 35L73 24Z" stroke="url(#edge)" stroke-width="1.5"/>
+ <path d="M90 10V67L82 47L81 35L75 24Z" fill="#e0e4d5" opacity=".24"/>
+ <path d="M90 33V65M82 26L90 33L98 26M82 40L90 46L98 40" stroke="#3c4941" stroke-width="1.6" stroke-linecap="round"/>
+ <path d="M90 16L97 23L90 30L83 23Z" fill="#36443e" stroke="#d4dccf" stroke-width="1.1"/>
+ <path d="M90 20L93 23L90 26L87 23Z" fill="#a6b4a8"/>
+ <g stroke="#eff0df" stroke-width=".7" opacity=".55"><path d="M76 22L80 25M99 30L102 27M83 46L85 49M95 52L97 48M55 20L60 18M121 19L126 21"/></g>
+</svg>

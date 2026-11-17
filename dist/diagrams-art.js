@@ -1,0 +1,987 @@
+/* Distinct conceptual item studies; acquisition records unchanged. */
+window.PHOENIX_DIAGRAM_ART = {
+  "diagram-viper-steel": {
+    "src": "art-diagrams/diagram-viper-steel.webp",
+    "focus": "50% 25%",
+    "caption": "Viper steel sword diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "e54d18f451485e56261d71f474ea4ded1b76973c7c667a2082252e2c28cb072d",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-viper-silver": {
+    "src": "art-diagrams/diagram-viper-silver.webp",
+    "focus": "50% 25%",
+    "caption": "Viper silver sword diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "e0fedb613e319a9fd27b683a007740afdd981bed1f2de2594d2a4b9436d65551",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-amateur-s-armor-repair-kit": {
+    "src": "art-diagrams/diagram-amateur-s-armor-repair-kit.webp",
+    "focus": "50% 25%",
+    "caption": "Amateur's armor repair kit diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "8e8a0b9b0b6d340bdf1d62dbb45075e788a754c4a6be5456bc2ce4568f41113c",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-journeyman-s-armor-repair-kit": {
+    "src": "art-diagrams/diagram-journeyman-s-armor-repair-kit.webp",
+    "focus": "50% 25%",
+    "caption": "Journeyman's armor repair kit diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "fd27a730bf8929ac22290ca22f78e8835329657cda3b1dfbc3b0f896bfe578fc",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-cidarian-gambeson": {
+    "src": "art-diagrams/diagram-cidarian-gambeson.webp",
+    "focus": "50% 25%",
+    "caption": "Cidarian gambeson diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "807cb9798e492fee606032330fce027f039c75db5c1f0b2776b9dafef09cccff",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-skellige-gambeson": {
+    "src": "art-diagrams/diagram-skellige-gambeson.webp",
+    "focus": "50% 25%",
+    "caption": "Skellige gambeson diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "830e1d2f856683b357cb8996eceaef949ae954f562f342d0680986ee84e2728f",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-kaedweni-gambeson": {
+    "src": "art-diagrams/diagram-kaedweni-gambeson.webp",
+    "focus": "50% 25%",
+    "caption": "Kaedweni gambeson diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "c918a161fd38b302ae75d5772ddfd07b387d7fed90c5c9e5c830c3ac39944892",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-hunter-s-trousers": {
+    "src": "art-diagrams/diagram-hunter-s-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Hunter's trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "1f88e5bd40f16d3947dae04324de2b3cff8ad7533e279e90cc86e56d7654e8c7",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-hunter-s-boots": {
+    "src": "art-diagrams/diagram-hunter-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Hunter's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "0afd14896dfd1908815e1e1e4f3b0b246676c47ea1bc91e9b8e153c3ad8f97d4",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-hunter-s-gauntlets": {
+    "src": "art-diagrams/diagram-hunter-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Hunter's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "158fc15c477834318b1a6725e803aec4c41a6b3057e38c8ba714bcfe65159e2f",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-spikeroog-aketon": {
+    "src": "art-diagrams/diagram-spikeroog-aketon.webp",
+    "focus": "50% 25%",
+    "caption": "Spikeroog aketon diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "be8aed00b8d95c6475333caa799b499527d2d76a2b55ae27fc5f5016e741e482",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-shiadhal-s-armor": {
+    "src": "art-diagrams/diagram-shiadhal-s-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Shiadhal's armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "8da61ceead074ad776afff3933d9590c7b7a825c7e38a76845112cb7f73db020",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-verden-archer-s-gambeson": {
+    "src": "art-diagrams/diagram-verden-archer-s-gambeson.webp",
+    "focus": "50% 25%",
+    "caption": "Verden archer's gambeson diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "f90b149bbfca837c86fc4711fc6cca090b074fa8aa6131907f7930e8e190a46a",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-bounty-hunter-s-gambeson": {
+    "src": "art-diagrams/diagram-bounty-hunter-s-gambeson.webp",
+    "focus": "50% 25%",
+    "caption": "Bounty hunter's gambeson diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "856aa4d0404223e4b9f6c82e8f8bfa84e646b754f75f6959410cd842b2ec8902",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-cavalry-trousers": {
+    "src": "art-diagrams/diagram-cavalry-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Cavalry trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "421dc2f467b075582c06ddfb78b32efc42827950ac6fa826c501350dfb0e9682",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-tracker-s-trousers": {
+    "src": "art-diagrams/diagram-tracker-s-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Tracker's trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "0535963729115ce6000ed0b0c602bf266a838eb690c5ac38c44adabc94edd61c",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-cavalry-boots": {
+    "src": "art-diagrams/diagram-cavalry-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Cavalry boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "dc3d0ef72e66d7a73c804841de3c60a333233cfe3a1a5796c568499bf70b7d85",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-tracker-s-boots": {
+    "src": "art-diagrams/diagram-tracker-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Tracker's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "23b6cdba598488a017d138ea17736b4336a05ec0b179a64ab339c525cd9b4ee4",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-cavalry-gauntlets": {
+    "src": "art-diagrams/diagram-cavalry-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Cavalry gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "b917f7aa9d53a36d3058f62c1d9ea5f14c7031b53b121dc8a8b4d38a4dcb7cf4",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-tracker-s-gauntlets": {
+    "src": "art-diagrams/diagram-tracker-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Tracker's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "73425920363d9704bab17c679f2a63f116a7f408c08b5b402efdc74ef11355c1",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-infusion": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-infusion.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Infusion diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "c2a76251350665ce36bcb0967200ed93c974bc96200c5147afb523617f23e6a7",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-aard": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-aard.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Aard diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "41d6b3434519d8c5437fb7ca20cb1cf84817fe71a27d84fb4a947dacfe37e94f",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-axii": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-axii.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Axii diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "f0bf122e2b59a9b558983f6574628fb0ebbf7bfe1f2a501d26825e9731512db3",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-igni": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-igni.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Igni diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "746037c9f551022001902c7f0246df90aa24124c8afa8b0fe548b534044faace",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-quen": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-quen.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Quen diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "9dfcda30d711c82651f365349dec5d2de864084d0cbeb4e63c2e94fd2716b8e5",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-glyph-of-yrden": {
+    "src": "art-diagrams/diagram-lesser-glyph-of-yrden.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Glyph of Yrden diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "e2f79bf8acab1e378737516e3b331c9dbaf47da4bf629e6cb690272e3ae0c662",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-koviri-cutlass": {
+    "src": "art-diagrams/diagram-koviri-cutlass.webp",
+    "focus": "50% 25%",
+    "caption": "Koviri cutlass diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "sha256": "8397c56a6e1028598ee0aae3ce6ca11a21c51201d34f1da51dd48527590c754a",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-temerian-poniard": {
+    "src": "art-diagrams/diagram-temerian-poniard.webp",
+    "focus": "50% 25%",
+    "caption": "Temerian poniard diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "bb1076135ae47a1f70665fef565e2393a1693a326f665b399eccbc91ca1190dc",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-velen-longsword": {
+    "src": "art-diagrams/diagram-velen-longsword.webp",
+    "focus": "50% 25%",
+    "caption": "Velen longsword diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "c5acb7a916e5c9e634d65684b0fb6ccf6e5e6c6dfcdc4bfb377b7ede3691cf65",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-dorian-sword": {
+    "src": "art-diagrams/diagram-dorian-sword.webp",
+    "focus": "50% 25%",
+    "caption": "Dorian sword diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "6e8df5bc0fcb47896c13f861ead869bb8cb21dbd4396c2087f7d3144887d403e",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-disglair": {
+    "src": "art-diagrams/diagram-disglair.webp",
+    "focus": "50% 25%",
+    "caption": "Disglair diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1774,
+      887
+    ],
+    "sha256": "bef28dd4f4202552d71186b8be89d59fdf53d9481e638cc51a0878deb7bf2ff9",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-runestone": {
+    "src": "art-diagrams/diagram-lesser-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "e92942f74802c722bf7487065e9d724df40285d16a89825e2362577b6a0d5356",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-stribog-runestone": {
+    "src": "art-diagrams/diagram-lesser-stribog-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Stribog runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "e11494c29e3255445d7f1cb7306f8a5a5d095871a9aef41a2c35564cb1836553",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-dazhbog-runestone": {
+    "src": "art-diagrams/diagram-lesser-dazhbog-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Dazhbog runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "09ab62cebfedd718c0410866b78668147dbaf7552300648cca7c712eee1e4d91",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-devana-runestone": {
+    "src": "art-diagrams/diagram-lesser-devana-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Devana runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "ca53c4aeb50063690a51cb63fc63286403d47a869c3de8d2f08680d84c60da74",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-zoria-runestone": {
+    "src": "art-diagrams/diagram-lesser-zoria-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Zoria runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "22137612e145f3d47b1c35aa8856aece34bb7d315b58a128f8e93fe44e8bf92b",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-morana-runestone": {
+    "src": "art-diagrams/diagram-lesser-morana-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Morana runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "cb12b7c220076c7421366f482bf2f8795bef620f623fb11980cdb9ab4a77d756",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-triglav-runestone": {
+    "src": "art-diagrams/diagram-lesser-triglav-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Triglav runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "dedf4260f808e6b85da7c8d27a49f02268a13cff74fbde4ea0d3ece46b9fe119",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-svarog-runestone": {
+    "src": "art-diagrams/diagram-lesser-svarog-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Svarog runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "035c595901f6f052c8c880ebe6b240e5440c2edaa77fb996589da9702c10b377",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-veles-runestone": {
+    "src": "art-diagrams/diagram-lesser-veles-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Veles runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "5e42fb2d72c133f8ea263922b5a2ee81e1620879502a65b9be8fdd91c264b839",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-perun-runestone": {
+    "src": "art-diagrams/diagram-lesser-perun-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Perun runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "496e88de2f6551199739c4ca5776d82220de7ee604da8f7fbb013987bb6fafbf",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lesser-chernobog-runestone": {
+    "src": "art-diagrams/diagram-lesser-chernobog-runestone.webp",
+    "focus": "50% 25%",
+    "caption": "Lesser Chernobog runestone diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "3811ef499235b1a19d76e0579e4c3826fddd24d23437a5adcfcf590b3d6b4b2a",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-master-s-armor-repair-kit": {
+    "src": "art-diagrams/diagram-master-s-armor-repair-kit.webp",
+    "focus": "50% 25%",
+    "caption": "Master's armor repair kit diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "3538cbc90716a30bc6813dd4643302177f4b593747178d6a944fe8bb398e031d",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-ard-skellig-aketon": {
+    "src": "art-diagrams/diagram-ard-skellig-aketon.webp",
+    "focus": "50% 25%",
+    "caption": "Ard Skellig aketon diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "ac431d3e313456201114590a9d0fdf804b616207d7d6f90729249afe6fdcc16c",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-salmian-brigandine": {
+    "src": "art-diagrams/diagram-salmian-brigandine.webp",
+    "focus": "50% 25%",
+    "caption": "Salmian brigandine diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "12c72d985c7bc6fd2751bf61c3553eb8117d35f38bfbb5dd8b0d1af6b56e2144",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-cidarian-cavalry-armor": {
+    "src": "art-diagrams/diagram-cidarian-cavalry-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Cidarian cavalry armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "69cff742b56401fe55020ebdd81dc24213705fbb7345552d4b69b20bb83ad99b",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-redanian-halberdier-s-armor": {
+    "src": "art-diagrams/diagram-redanian-halberdier-s-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Redanian halberdier's armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "8c38d3c9930d42a2f46fc9744fbc79dd5292367b61ca721bc169da3a1542a129",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-assassin-s-trousers": {
+    "src": "art-diagrams/diagram-assassin-s-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Assassin's trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "3ca35a3d0cd3b98ea91618fdabe3b1d681b171516e1d910cf3e8f7439c32f800",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-axeman-s-trousers": {
+    "src": "art-diagrams/diagram-axeman-s-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Axeman's trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "9416779ce4323fe9e419c0eb91287dc7a8e36b3a20ffa50bacad7d35fa2952ec",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-assassin-s-boots": {
+    "src": "art-diagrams/diagram-assassin-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Assassin's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "1c141fa64484ed5975789816f78ee1a85d1ba86bff11876622d64ead1d0e0068",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-assassin-s-gauntlets": {
+    "src": "art-diagrams/diagram-assassin-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Assassin's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "a6291c61e9b8818de7aacf8d0c20c45323cdbf14e422f3cd6e2a014d71f60308",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-angrenian-cuirass": {
+    "src": "art-diagrams/diagram-angrenian-cuirass.webp",
+    "focus": "50% 25%",
+    "caption": "Angrenian cuirass diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "333d16f9a3f6f5cf6325e7ff218a66cce458826f1e0a3564f7355af81e341445",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-mag-deira-cuirass": {
+    "src": "art-diagrams/diagram-mag-deira-cuirass.webp",
+    "focus": "50% 25%",
+    "caption": "Mag Deira cuirass diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "20ed3497a66deb4a36c23ce48bf03a8af530e7e3a68a327ecb9c7f5dcfee339c",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-ban-ard-breastplate": {
+    "src": "art-diagrams/diagram-ban-ard-breastplate.webp",
+    "focus": "50% 25%",
+    "caption": "Ban Ard breastplate diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "a4d3e53003260e6c80d281591879b2a6f25ea3a12b682ca6534d91877b5132f3",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-nilfgaardian-guardsman-armor": {
+    "src": "art-diagrams/diagram-nilfgaardian-guardsman-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Nilfgaardian guardsman armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "48813b77ffdb04e767472254dbfc222bfb749ef767d27b0a35b44a873b8ff312",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-impera-brigade-armor": {
+    "src": "art-diagrams/diagram-impera-brigade-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Impera Brigade armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "96d88dc76aff7e752ad8067c55f9d1d18809f60473c4aca076e245dbdbcd5e1f",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-hindarsfjall-heavy-armor": {
+    "src": "art-diagrams/diagram-hindarsfjall-heavy-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Hindarsfjall heavy armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "b6c89db9aac45d1909c8b7ee6c2860433bd4f6f7db9b2c52e52bf1ecb3fe7a6a",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-thyssen-armor": {
+    "src": "art-diagrams/diagram-thyssen-armor.webp",
+    "focus": "50% 25%",
+    "caption": "Thyssen armor diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "39d8cdc22cf64ee64bb3c96a4c5769c7cb8ecaf29a59f794b604526f207ff717",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-axeman-s-gauntlets": {
+    "src": "art-diagrams/diagram-axeman-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Axeman's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "0ee9b9d3d241f49058a7a67e2a7840e34f492833abae9b2477ee8b880d907bb9",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-knight-s-gauntlets": {
+    "src": "art-diagrams/diagram-knight-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Knight's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "1c9b22867358993ba2f54433cfdb31bf73b5845d800376ccf23bf80ff3af1055",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-assault-gauntlets": {
+    "src": "art-diagrams/diagram-assault-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Assault gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "42462d826c39152e474b78078ef45a3b22ff857b017922593908fa78f8f38c9d",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-nilfgaardian-guardsman-s-gauntlets": {
+    "src": "art-diagrams/diagram-nilfgaardian-guardsman-s-gauntlets.webp",
+    "focus": "50% 25%",
+    "caption": "Nilfgaardian guardsman's gauntlets diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "19f8d3a457b205668fc1e32c328e311d84d9bc988faf7957e09b32b2e1355039",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-sapper-s-trousers": {
+    "src": "art-diagrams/diagram-sapper-s-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Sapper's trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "497e0c2f38e65f60986d061184aa72812e8386e575b01928504729f04a9fa43e",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-lyrian-hardened-leather-trousers": {
+    "src": "art-diagrams/diagram-lyrian-hardened-leather-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Lyrian hardened leather trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "ee9873255f63796d628399732e3bd30d32b12b208853ca0f1ffde9a1db8c2835",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-mahakaman-trousers": {
+    "src": "art-diagrams/diagram-mahakaman-trousers.webp",
+    "focus": "50% 25%",
+    "caption": "Mahakaman trousers diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "f3874a02d1f4460199c252fabe92e444879c96941a0f52d44bf4dee8c47ad545",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-mountain-folk-boots": {
+    "src": "art-diagrams/diagram-mountain-folk-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Mountain Folk boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "3893efbb94b80b9c87ee466f84402232a9d4e2a0d6309027db208c10988afd30",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-axeman-s-boots": {
+    "src": "art-diagrams/diagram-axeman-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Axeman's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "cca9c9598cdaa973db1b43194074f09f52824cbc168cb3feed2a482659b5218c",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-guardsman-s-boots": {
+    "src": "art-diagrams/diagram-guardsman-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Guardsman's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "eb0379208565e111db3e61d2b2289918775ef2b1c2f524001c0044b4a346c729",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-reaver-s-boots": {
+    "src": "art-diagrams/diagram-reaver-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Reaver's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "d02aa16cbbb1571c217d0691e0ea1c003af200557575b79cd84908f19940e99d",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-executioner-s-boots": {
+    "src": "art-diagrams/diagram-executioner-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Executioner's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "2c7d33c3f741e563eedeb5bf8943c1d44511b0731282d14704150337c9537f7b",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-condottiere-s-boots": {
+    "src": "art-diagrams/diagram-condottiere-s-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Condottiere's boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "bdbcb092a1435962c8f4ca983aad497dd6fe9e30210881f433475807b91c0c50",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-alder-folk-boots": {
+    "src": "art-diagrams/diagram-alder-folk-boots.webp",
+    "focus": "50% 25%",
+    "caption": "Alder Folk boots diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "9c58d7cd6c8211cf33d95dac76b941967cf0ec44406ec981f375425e7ce3c9e2",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-glyph-of-aard": {
+    "src": "art-diagrams/diagram-glyph-of-aard.webp",
+    "focus": "50% 25%",
+    "caption": "Glyph of Aard diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "61dbbe9d59a1d3dcab6417e8b5357f14f559990ea297bba0dd6d5a2a7a6ac91b",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-glyph-of-axii": {
+    "src": "art-diagrams/diagram-glyph-of-axii.webp",
+    "focus": "50% 25%",
+    "caption": "Glyph of Axii diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1536,
+      1024
+    ],
+    "sha256": "2821117277856e1743b130519afe44122657aff17617d24cd13ca894f8e30d1a",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-glyph-of-igni": {
+    "src": "art-diagrams/diagram-glyph-of-igni.webp",
+    "focus": "50% 25%",
+    "caption": "Glyph of Igni diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "05dc37ef558a15ab5d278c89a9d46b211902cdb14b546565f8a4e82a6a4527cc",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-glyph-of-quen": {
+    "src": "art-diagrams/diagram-glyph-of-quen.webp",
+    "focus": "50% 25%",
+    "caption": "Glyph of Quen diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "32f66ce10332ceef65ca5f985bbf7ff94b2af074b50350c484ca528e52eadb13",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-glyph-of-yrden": {
+    "src": "art-diagrams/diagram-glyph-of-yrden.webp",
+    "focus": "50% 25%",
+    "caption": "Glyph of Yrden diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "497c00e14b33eaa46291f222d2152b59e80d6b323eccceb612c03146d088ffca",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-greater-glyph-of-aard": {
+    "src": "art-diagrams/diagram-greater-glyph-of-aard.webp",
+    "focus": "50% 25%",
+    "caption": "Greater Glyph of Aard diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "65052ef3885369780f5a87f7b4aa83d3eb5775fdd2f37e9b3a93ec551e14d87e",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-greater-glyph-of-axii": {
+    "src": "art-diagrams/diagram-greater-glyph-of-axii.webp",
+    "focus": "50% 25%",
+    "caption": "Greater Glyph of Axii diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1672,
+      941
+    ],
+    "sha256": "c1e10a29e80c56f871ea47977e86e9095ac29675506d356f581d459b3c31e034",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-greater-glyph-of-igni": {
+    "src": "art-diagrams/diagram-greater-glyph-of-igni.webp",
+    "focus": "50% 25%",
+    "caption": "Greater Glyph of Igni diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "04ef0de88ed535ddb6ca9b9f672e9857aa2e42c66f76f10a3b875c97a9cd103e",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-greater-glyph-of-quen": {
+    "src": "art-diagrams/diagram-greater-glyph-of-quen.webp",
+    "focus": "50% 25%",
+    "caption": "Greater Glyph of Quen diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "2619df645d1ba09cbda90d8ddf2370fc1bb37e05d3982966aba2fb1e33b2fda3",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  },
+  "diagram-greater-glyph-of-yrden": {
+    "src": "art-diagrams/diagram-greater-glyph-of-yrden.webp",
+    "focus": "50% 25%",
+    "caption": "Greater Glyph of Yrden diagram",
+    "kind": "illustration",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "sha256": "9ddceb2e977f95018214b81fa633ccb409b7e99894e3dc45fca08d7fb3588280",
+    "credit": "Operation Phoenix illustrated subject study; not an exact in-game model or crafting recipe."
+  }
+};

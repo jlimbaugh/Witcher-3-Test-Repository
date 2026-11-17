@@ -1,0 +1,11 @@
+SHARED WARNING OVERLAYS — 2026-11-14
+Base source: version 22, 9f9dcd1f5983b619e9e01a663154c1287c8b9c6b.
+Version 22 accepted by owner before this slice.
+Workspace maintenance removed the old local checkout during the pause; restored source through Sites helper and rebuilt unpublished warning changes from the session. No version-22 progress code or saved player state replaced.
+Scope: shared crystal-skull and White Orchard departure-risk explanations. Short contextual callouts at selected quest hubs, relevant walkthrough warnings, Beast reading reminder and existing departure-review risk rows link to native parchment dialogs. Explanations show consequence, cutoff, prevention; use existing quest/activity destinations and completion owners. Unrelated timed payment warning unchanged.
+Close button, outside tap and Escape close overlay without navigation. Background reader locks while open. Following a linked entry uses an existing return control when available. Return metadata lives in the browser history entry, allowing nested linked destinations to unwind to their exact origins. Completion, acknowledgment, save schema and wolf-history behavior unchanged.
+105/105 automated tests passed. JS syntax checks and git diff --check passed.
+Local Chrome QA: departure overlay renders coherent parchment/burgundy treatment; outside-tap and Escape closure; walkthrough -> departure review -> crystal-skull entry -> review -> walkthrough. Review scroll returned exactly to 1243; walkthrough returned to recorded warning position 215. Existing return controls reused; no duplicated return button on review/skull entry.
+Prior pre-maintenance checks also exercised skull overlay from Lilac step 1 and direct source return. Physical iPhone Safari/VoiceOver and narrow-layout acceptance remain pending.
+Deferred: open-only wolf history, cutoff re-alerts, departure risk sorting/filtering and removal of optional checklist content. No broad content acceptance claimed.
+Rollback: saved version 22. Publication identifiers returned by Sites are authoritative.

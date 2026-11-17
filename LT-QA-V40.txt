@@ -1,0 +1,13 @@
+SUPERSEDED BY OWNER — v41 removes the slider. Audit retained typography/button layout at100% only. Slider, readability mode and VoiceOver are parked. Verify old saved sizes no longer enlarge the guide and font/theme still work. The previous v40 brief below is retained only for history.
+
+LT — PHOENIX v40 TYPOGRAPHY / APPEARANCE REGRESSION QA
+
+LIVE: https://phoenix-wo-qa-1c91b66.krwpfbtbn8.chatgpt.site/
+Baseline comparison: v39. Read-only live audit. No source package is needed for this pass. No edits, publication, or next-slice implementation.
+
+1. Appearance: open from header. Test100%,125%,150%; move slider both directions; check percentage; reset; change among Calligraphy/Alegreya/IM Fell; verify the saved size/font/theme after reload and Velen navigation. Existing theme choice must survive. Check outside click and Escape, plus narrow/landscape popover reachability.
+2. Text/layout: Home, Regions, WO console and longest quest titles, hubs, walkthroughs, objectives, nearby cards, Field Reference, diagrams, warnings/departure and Search; Velen selector/stage ribbons. Look for clipping, text/art overlap, cut-off words, category/title collisions, excessive wrapping, mismatched button heights and horizontal page overflow. Confirm purpose labels/dividers and existing art remain coherent. Controls may wrap to two lines and grow; at enlarged sizes rows can rearrange. Card heights intentionally grow.
+3. Regression: Previous/Next below rails; compass above cards, matching letters and jump; wolf pointers; two-column wolf popup; side-gutter vertical scrolling versus horizontal card swipes; flick/tap-stop where supported; Search/results/Return; exact linked return positions after layout has settled at the selected text size. Do not mark any real player progress during audit.
+4. Environments:320x844,390x844,844x390 where available. Distinguish desktop emulation from physical Safari. Readability mode and VoiceOver are permanently parked.
+
+Return only reproducible findings with page/route, font, percentage, viewport, steps, expected/actual, severity and screenshot. Separate confirmed defects, aesthetic suggestions and unverified touch concerns. If clean, list surfaces verified and environment limits. Freeze pending Cmdr review and owner Safari acceptance.

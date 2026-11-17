@@ -1,0 +1,22 @@
+PHOENIX — OVERLAY PRESENTATION DECISIONS
+Owner clarification: November 15, 2026
+
+Navigation is a floating framed popup, not a full-screen takeover. The dimmed
+source page stays visible around it. Two large illustrated destinations per row;
+Constellation is centered on the final row. The wolf remains visible outside the
+panel and toggles navigation open and closed. Outside tap and Escape also close.
+Scroll overflow inside the popup; keep the source reader locked while open.
+Restore exact source location and focus on close. Selected category retains a
+steady category backlight and silver marker. Existing effect and reduced-motion
+rules remain unchanged. Approved open-state mockup is the visual reference.
+
+This v28 clarification supersedes v27 full-screen navigation. Other overlays are
+unchanged by this slice; their presentation requires their own bounded review.
+
+V29 warning access: six illustrated tiles in two columns by three rows. Warnings
+uses the broken-seal dispatch, a live unresolved count and FINAL directly below
+Warnings when the current step is a final opportunity. Its list replaces popup
+contents with parchment entries; wolf remains the close toggle. Back restores
+the artwork. Canonical risks are in cutoff order, resolved outcomes omitted;
+unknowns show in-game verification guidance. Shared details and linked returns
+restore the warning list and preserve the underlying reading position.

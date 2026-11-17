@@ -1,0 +1,11 @@
+/* The framed card surface owns L/R. Its side gutters belong to the page. */
+:root{--swipe-gutter:12px}
+html body .phoenix-horizontal-box.phoenix-horizontal-box{box-sizing:border-box!important;width:calc(100% - var(--swipe-gutter)*2)!important;max-width:calc(100% - var(--swipe-gutter)*2)!important;min-width:0;margin-inline:var(--swipe-gutter)!important;border:1px solid #7f887b;border-radius:5px 2px;background-color:#5b624c0c;overflow-y:hidden!important;overscroll-behavior-x:contain;overscroll-behavior-y:none;scroll-snap-type:none!important}
+html body .phoenix-horizontal-box.phoenix-horizontal-box[data-swipe-engine=native]{touch-action:pan-x pinch-zoom!important}
+html body .phoenix-horizontal-box.phoenix-horizontal-box[data-swipe-engine=custom]{touch-action:pinch-zoom!important;overflow:hidden!important}
+.diagram-view .diagram-browser-scroll .diagram-letter-strip.phoenix-horizontal-box,.diagram-view .diagram-browser-scroll .diagram-letter-strip.phoenix-horizontal-box button{touch-action:pinch-zoom!important}
+html body .diagram-letter-strip.phoenix-horizontal-box{overscroll-behavior-y:none!important}
+.quest-progress .objective-scroll-frame .objective-rail.phoenix-horizontal-box{align-items:flex-start}
+.quest-progress .objective-scroll-frame .objective-rail.phoenix-horizontal-box>.objective-card{flex-basis:calc(100% - 12px)}
+.scroll-wolf-cue:has(+.phoenix-horizontal-box){width:calc(100% - var(--swipe-gutter)*2);margin-inline:var(--swipe-gutter)}
+@media(max-width:360px){:root{--swipe-gutter:8px}}

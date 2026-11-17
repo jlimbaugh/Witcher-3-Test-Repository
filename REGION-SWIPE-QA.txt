@@ -1,0 +1,9 @@
+REGION DECK / CARD SWIPE CONTAINMENT — 2026-11-14
+Base: version 21, commit 4fdd6080110df36f2a47a79c48a2f50fa67d2a8e.
+Scope: Home and Regions region selectors use shared drag/momentum engine with WO quest selectors. Continuous circular position, no snapping, catch-before-activate, reduced-motion short glide, keyboard navigation, history-based exact position restoration.
+Containment: custom card decks permit pinch zoom without native page panning; native card rails permit horizontal panning and pinch zoom without vertical page panning. Velen card surface receives containment CSS too, without a Velen carousel rewrite. Other native rails are not migrated to circular looping in this slice.
+Reading page remains vertically scrollable outside card surfaces. Card art, routes, expansion settings and progress data retained.
+Checks: 103 Node tests passed, JS syntax checks and git diff --check passed. Three new gesture tests verify immediate drag, momentum release, catch-before-activate, cancelled drag and vertical gesture non-activation.
+Local Chrome checks: Home End -> Right transitions region 8 -> 1; diagonal drag moves region pose fractionally while reader scroll stays 489; navigate Progress and Back restores exact region pose; computed touch-action pinch-zoom and overflow hidden on Home orbit.
+Limitations: mouse drag and CSS inspection do not certify iPhone touch arbitration, fling feel, pinch zoom or VoiceOver. User Safari acceptance pending.
+Publication authorized in this session; version/deployment identifiers returned by Sites are authoritative. Prior version 21 remains rollback point.

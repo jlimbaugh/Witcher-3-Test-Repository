@@ -1,0 +1,45 @@
+LT-DEPARTURE-REVIEW (revised after QA)
+Slice: Departure checklist refinement (v24 baseline 564aebf…)
+Date: 2026-11-14
+Engineer: LT
+
+QA corrections applied (assigned files only)
+1. High — unknown items restored to warning eligibility.
+   warningEligible / active now include unrecorded quests and open items.
+   Cutoff-unknown (skull after griffin), failed, completed, and unavailable remain excluded.
+   Summary counts stay separate; unknowns are not double-counted as known-open.
+   Regression: “unrecorded departure-sensitive quest still produces a cutoff reminder”.
+
+2. Medium — risk title opens its canonical warning overlay.
+   Title is a button.warning-details-trigger with data-warning-details and an accessible aria-label.
+   Related-entry navigation remains inside the shared overlay (existing catalog action).
+
+3. Medium — Resolved expansion state preserved.
+   refresh() reads .departure-resolved.open before replaceChildren and restores it on the new details element.
+   Covers progress refresh and linked returns that re-render the review.
+
+4. Medium — summary always shows both counts, including zero.
+   summaryText always emits “N known open risks · M unknown items”.
+   Explicit “All 4 items recorded complete” only when all four are positively recorded and no unknown/failed remain.
+   Fresh, mixed, all-completed, and failed-with-no-open cases covered. Owner-skipped wording left factual.
+
+Regional link
+Console insertion after #whiteorchard-console .home-selected retained. Relocation into departure/preparation tools remains a separate Cmdr integration task. Not claimed as already relocated.
+
+Retained
+Four-item scope (skull + three quests), earlier skull cutoff, uncertainty guidance beneath status, cutoff order, existing completion owners, unchanged player-save schema.
+
+Tests
+node --test departure.test.cjs departure-checklist.test.cjs
+Result: 16/16 pass.
+
+Pending presentation decisions (owner skipped; baseline wording preserved)
+- Wording when cutoff recorded but outcome unknown.
+- Tie-break for same-cutoff risks (authored order kept).
+- Summary wording when no open/unknown remain but failed items exist (factual counts only; no All clear / Review complete).
+
+Gaps
+- Source kit only; live UI and physical Safari not certified.
+- No new save schema.
+
+Handoff frozen. Ready for Cmdr review.

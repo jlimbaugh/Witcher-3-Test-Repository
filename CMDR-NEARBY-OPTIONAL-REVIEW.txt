@@ -1,0 +1,34 @@
+CMDR BUILD — NEARBY CARDS AND OPTIONAL STOPS
+Base: accepted v24, 564aebfdecd67d8bbdbc94779d2e3bdc3e63edc1.
+Branch: cmdr-nearby-optional-v24. No push, deployment or change to live version 24.
+Files: dist/quest-hubs.js, dist/quest-pages.js, dist/quest-pages.css, dist/nearby-optional.test.cjs; this review record.
+LT independently owns departure.js/departure.css/departure.test.cjs and optional new departure-checklist tests. Those files remain untouched by this slice. app.js, index.html, progress engine, shared warnings and wolf scripts unchanged.
+
+Implemented:
+- Nearby completion uses existing single activity/quest owners. Completed cards remain in their original contextual groups. Known blocked activities remain visible with prerequisite links. Failed cards follow the remaining cards; correcting status restores the authored group route position. Group route order follows existing membership, replacing the old nearby-diagram alphabetic override (diagram directory itself remains alphabetic).
+- Existing artwork/title reused. Context text combines authored quest-stage detour connection or existing route membership with authored approach/why text. Other referencing quest stops expandable. Unknown availability explains missing guide confirmation and directs in-game checking. Known engine prerequisite links cover Beast (Lilac garrison step 3) and Incident (Beast payment step); no new prerequisite assumptions.
+- Walkthrough detours become one collapsed Optional stops section, names only, with unfinished/total counts, same order, completed labels, missed excluded from unfinished but retained in total. Blocked remains unfinished. All-completed collapses, without resetting the user's expansion preference for other unfinished panels.
+- Expansion preference is quest-wide for this open session; no new save schema or cross-reload preference claim.
+- Contextual optional missable warning lives inside the foldout with a heading indicator. Equivalent existing step callout is hidden for the same optional stop; other main-step warnings and shared hub warnings retained. Full-detail buttons reuse existing shared warning overlays. Indicator reads existing wolf acknowledgment history and active warning without altering it. New open-only history/cutoff re-alert redesign remains deferred.
+- Optional detour navigation records an origin in its history entry. Existing return controls are reused; merchant pages without one receive Return to walkthrough. Return restores the exact route and reading position after route rendering. Normal entry controls are relabeled only in optional-origin context and restored afterward.
+
+Checks:
+108/108 Node tests passed before the final one-line expansion-preference correction; final suite rerun recorded in task output. JS syntax/git diff --check passed.
+New tests cover blocked/missed/completed counts, distinction of zero unfinished vs all completed, stable route ordering and restoration after correction, real prerequisite stage links, and no state mutation by model queries.
+Local Chrome: Lilac step 1 starts collapsed; expanding and opening skull entry gives Return to walkthrough; return preserves route, expansion and y=317. Moving to Lilac step 2 carries expansion preference. Scholar/merchant detour returns to step 2 via fallback return. Hub card artwork retained; context text computed RGB(241,230,210) after contrast repair.
+
+LT cross-review requests:
+1. Check optional-count state edge cases against real engine semantics, especially unavailable vs explicitly failed.
+2. Check history-entry return handling for normal links, prerequisite links, browser Back, nested warning overlays, and avoiding stale return interception.
+3. Check foldout toggle events do not alter unrelated steps/quests and all-completed auto-collapse does not overwrite quest preference.
+4. Check wrappers retain shared identity/state and all relevant cards, with no hidden completed or blocked items.
+5. Check whether authored route/approach context is concise enough and whether any nearby grouping still needs manual ordering. Do not invent distance/time estimates.
+6. Inspect contrast/layout changes and interactions with gesture containment. No artwork or primitive visual redesign requested.
+
+Limits:
+No physical iPhone/VoiceOver certification. Live site is still v24 and cannot demonstrate this unpublished slice. Review package provides full changed files, unified patch, originals and model-test dependencies; it is not a visual asset/deployment backup.
+No claim that all regional routes or broad questionnaire features are complete. Notes, active quest/Undo rules, remaining looping rails, shared-entry landing redesign, and wolf-history redesign are not part of this slice.
+Keep frozen until LT returns QA findings; Cmdr handles corrections and integration. Owner final Safari acceptance follows an authorized integrated release.
+
+LT CROSS-REVIEW RECEIVED
+LT reports 3/3 focused tests pass and no confirmed defects. Adopted explicit parentheses around the unavailable/unknown expression, retaining the intended requirement that completed entries are not unknown. Focused tests, JS syntax, and diff check pass after this clarification. Other source-review notes remain integration/device checks, not verified defects. Slice remains frozen/unpublished pending the corrected LT departure build and combined integration review.

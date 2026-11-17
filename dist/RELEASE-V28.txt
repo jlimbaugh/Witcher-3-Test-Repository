@@ -1,0 +1,18 @@
+PHOENIX v28 — Illustrated wolf popup
+Base/rollback: a97de40c32f679928be6d31d619f017de79282a8 (v27).
+
+Replaces full-screen navigation with the approved floating popup: two columns,
+centered Constellation, visible dimmed source margins, wolf outside the panel.
+Shorter artwork windows use the existing art; star chart remains fully legible.
+Overflow scrolls within the popup on compact/landscape screens.
+Wolf toggles closed without acknowledging active warnings. Modal focus includes
+the wolf. Existing wolf label, reader scroll, focus, and source controls restore
+on close. Outside tap, Escape, category effects and routes remain supported.
+Changes confined to navigation-art.js/css/tests, cache tags and decision record.
+No progression data, save schema, diagrams or LT slice integration changed.
+
+Validation: node --test *.test.cjs — 134/134 pass.
+Desktop Chromium UI: destination routing, wolf/outside/Escape close pass.
+Phone-sized iframe layouts reviewed at 390x844, 320x640 and 568x320.
+Reader scroll returned 296 to 296, reader unlocked, active warning unchanged.
+Physical iPhone Safari acceptance remains with owner.

@@ -1,0 +1,10 @@
+LT — read-only cross-QA: Velen shared navigation shell
+
+Test the published Phoenix site, v43. Do not edit or publish.
+
+1. Home → Velen → Nilfgaardian Connection hub → walkthrough → Return. Verify shared wolf navigation, Search and warnings remain reachable; entry should not require an extra tap. Record exact route/step/scroll and expanded-state results.
+2. Test an old velen.html deep link and a Continue record for an existing Velen walkthrough. Confirm correct shared destination without loss of saved completion, choices or Undo ownership. Use isolated test saves if mutation is necessary.
+3. Check all three Velen activities, phone portrait and short landscape, reading font/Night, wolf open/close and vertical reader clearance. Check WO, diagrams and shared warning returns for regressions.
+4. Distinguish confirmed defects, source leads and device-unverified behavior. Objective data/rail for Velen is intentionally pending; do not report deferred content as a regression.
+
+Cmdr evidence: full 205/205 suite; Chromium 390/320 px; hub scroll 284 → 284; Search round trip retained Velen step and preparation foldout. Physical Safari is owner acceptance. Baseline rollback v42 e20367c593e78c35161ec46aa789420e456496a0. Freeze next-slice advancement pending QA and owner acceptance.

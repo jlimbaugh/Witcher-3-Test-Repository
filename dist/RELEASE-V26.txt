@@ -1,0 +1,31 @@
+PHOENIX V26 — APPROVED NAVIGATION ART AND EFFECTS
+November 14, 2026
+Baseline: accepted v25, 20b7eabc17b15c311c698d4942d32f493aae7b80.
+
+Five equally sized Home / Regions / Field Reference / Progress / Constellation
+buttons now form one compact visible row inside the wolf navigation overlay.
+Approved dark medieval artwork and purpose-specific material treatments are used.
+Home: no dragon; NOAA-reference-inspired cloud flashes and fine branching lightning.
+Regions: turning compass and muted-green location glows.
+Field Reference: candle dance, brief fire figure and individual silver-ink strokes.
+Progress: amber-lit map annotations. Constellation: teal glow and meteors.
+Arrival effects play once per menu instance, one button at a time. Reopening stays
+quiet; deliberate button activation starts only that button's effect. The current
+category keeps steady colored backlighting and a silver marker. Navigation remains
+immediate; effects never delay routing. Closing, reduced motion and a hidden tab
+stop animations. Home overview tiles reuse approved Progress and Reference artwork.
+
+Preserved: five destination routes, floating wolf without a full-width bottom band,
+exact reader-scroll restoration, background lock, focus return, warning/Undo state,
+player-save schema and completion state.
+Excluded: LT diagram letter-strip/placement changes pending four QA corrections.
+No diagrams-ui.js or diagrams.css changes. No journal/history redesign, save
+migration, quest logic changes or additional looping implementation.
+
+Validation: all 132 automated tests pass (121 prior plus 11 new production-code
+sequence/menu-renderer tests). Desktop Chromium: all five routes work; 320px
+portrait has equal ~55px-wide buttons and readable labels; 568x320 landscape fits
+all actions without panel overflow. Menu close restored reader scroll 936 exactly
+and unlocked reading. Warning-mode navigation did not acknowledge the warning.
+Physical iPhone Safari and VoiceOver acceptance remain owner/device checks.
+Rollback: restore accepted v25 saved deployment; no save-schema rollback required.

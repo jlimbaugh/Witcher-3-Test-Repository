@@ -1,0 +1,25 @@
+PHOENIX STAGE 1 — MAIN CONSOLE AND WOLF NAVIGATION
+Baseline: 1a0a590bbc6e42aaaa028d93c34fb36160233b43
+Planning authority: PHOENIX-Planning-Package-v1.0.zip (libfile_cc28f66c737881918606f83d5cd02dcc).
+
+DELIVERED
+Home is a separate whole-guide overview. White Orchard's accepted regional presentation now uses #whiteorchard-console; existing #whiteorchard links alias to it. Local quest controls/counts and map links remain. Home/Regions use one geographic catalog and card component; unsupported destinations are dim Not built yet placeholders. Expansion settings persist independently, with no deletion of player progress. No expansion-content database is newly claimed.
+Continue resumes recorded walkthrough stage. A narrow shared resume pointer connects existing White Orchard and Velen walkthroughs without migrating their progression stores.
+Separate illustrated Progress and Field Reference cards open shared landings. Existing broad White Orchard HUD moved to Progress; the full future progress system is not built. Economy landing links to the working merchant page; other reference systems remain labeled disabled placeholders.
+Wolf uses five rotating cards, immediate destination selection, swipe and Previous/Next, Home-centered opening, dimmed backdrop/scroll lock, outside/Close/Escape dismissal and focus restoration. Search utility is a disabled placeholder; quest-only Log a note placeholder appears only during walkthrough context. Existing warning/history/Undo state machine retained via an optional navigation decorator.
+Shared art materials and prepared silver wolf reused. Constellation access retained; no redesign. GitHub main and Pages are not changed by this private review publication.
+
+VALIDATION
+66/66 existing and added automated checks pass. Added checks cover five configured routes, navigation decorator lifecycle, and a risk arriving during decorated navigation remaining deferred until closure. Existing transaction/Undo/progression and Velen suites pass.
+JavaScript syntax checks pass. Referenced local assets validated.
+Browser: Home -> White Orchard; retained quest info/counts; Progress relocation; Field Reference routing; card rotation/immediate navigation; Continue to saved stage; context-only note utility; outside tap restores scrolling; phone-width rendering at 390px outer frame (375px content viewport). Overlay panel horizontal overflow fixed; measured panel/content widths equal.
+Physical iPhone Safari, real touch swipe, VoiceOver and full offline persistence are NOT certified here. Offline system, full Search/Journal, new message taxonomy, simulator, Gwent and NPC features remain future stages. Expansion deep-content filtering follows canonical data work in Stage 2; existing available regions here contain base-game pilot content.
+
+INSPECT
+1. Main Home overview -> White Orchard card; confirm regional art and quest behavior.
+2. Open wolf, rotate, tap a destination, reopen (starts Home), tap outside to close.
+3. Test Continue, Field Reference and Progress entry cards. Dim placeholders should remain inert.
+4. Verify the menu does not cover or interfere with controls after dismissal on physical iPhone Safari.
+
+ROLLBACK
+Recover the baseline source commit/saved review version from the original savepoint. Never reset or wipe Safari progress as a rollback mechanism. No progress schema migration was performed by this slice; extra expansion/resume preferences are separate keys.

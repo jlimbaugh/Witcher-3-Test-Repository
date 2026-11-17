@@ -1,0 +1,38 @@
+/* Silver-and-ink Search stays in the guide's parchment and stone language. */
+.phoenix-medallion .art-navigation-layer .art-search-trigger{display:flex;align-items:center;gap:9px;flex:none;width:100%;min-height:44px;margin:0 0 9px;padding:9px 12px!important;border:3px double #9aa59e!important;border-radius:5px 2px;background:#1c292b url(r10-metal.svg)!important;box-shadow:inset 0 1px 5px #0008!important;color:#e9e6da!important;font:1rem/1.3 var(--body,Georgia)!important;text-align:left;cursor:pointer}
+.art-search-trigger:before{content:'⌕';font:1.5625rem/1 Georgia,serif;color:#cbd5cb}
+.guide-search-dialog{box-sizing:border-box;padding:0;border:4px double #a1aaa2;border-radius:10px 3px;width:min(680px,calc(100vw - 22px));max-width:680px;height:min(760px,calc(var(--search-viewport-height,100dvh) - 32px));max-height:calc(var(--search-viewport-height,100dvh) - 32px);overflow:hidden;background:#d8c5a2;color:#30271f;box-shadow:0 10px 40px #000b}
+.guide-search-dialog::backdrop{background:#070c11c7}
+.guide-search-paper{box-sizing:border-box;height:100%;min-height:0;display:flex;flex-direction:column;padding:14px;background:#dfcba6 url(worn-vellum-r15.svg);color:#30271f;overflow:hidden}
+.guide-search-paper>header{display:flex;flex:none;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.guide-search-paper h2{font:400 1.65rem/1.2 var(--body,Georgia);margin:0;color:#30271f}
+.guide-search-paper button,.guide-search-paper select,.guide-search-paper input{box-sizing:border-box;min-height:44px;font:1rem/1.35 var(--body,Georgia);border-radius:4px 2px;color:#30271f}
+.guide-search-paper button{border:3px double #aab5ab;background:#273336 url(r10-metal.svg);color:#f4e8d4;padding:8px 12px;cursor:pointer}
+.guide-search-form{display:flex;flex:none;gap:8px;margin:0 0 8px}
+.guide-search-form input{flex:1;min-width:0;width:100%;background:#f0e2c6;border:3px double #626e63;padding:10px}
+.guide-search-form button{flex:none}
+.guide-search-filters{flex:none;margin:0 0 6px;padding:0;border:0;background:transparent}
+.guide-search-filters>summary{padding:9px 0;min-height:44px;box-sizing:border-box;font:1.0625rem/1.4 var(--body,Georgia);cursor:pointer}
+.guide-search-filter-row{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:8px}
+.guide-search-filter-row label{flex:1 1 130px;min-width:0;font:0.875rem/1.3 var(--body,Georgia)}
+.guide-search-filter-row select{display:block;width:100%;max-width:100%;background:#ead9b7;border:2px solid #7f806b;padding:6px}
+.guide-search-coverage,.guide-search-message{flex:none;margin:4px 0 8px;font:0.875rem/1.35 var(--body,Georgia);color:#4b3d2d}
+.guide-search-message:empty{display:none}
+.guide-search-results{flex:1;min-height:80px;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;padding:3px 3px 12px;scrollbar-color:#818b7e #d8c5a2}
+.guide-search-results h3{font:400 1.2rem/1.3 var(--body,Georgia);margin:14px 0 8px;color:#30271f}
+.guide-search-results p{font:1rem/1.45 var(--body,Georgia);color:#4b3d2d}
+.guide-search-paper .guide-search-result{display:block;width:100%;text-align:left;margin:0 0 10px;padding:12px;border:3px double #7b806c;background:#f0e0be99;color:#30271f;box-shadow:inset 0 0 0 1px #fff0d055}
+.guide-search-result strong{display:block;font:600 1.16rem/1.3 var(--body,Georgia);color:#2c2920}
+.guide-search-result span{display:block;margin-top:7px;font:0.875rem/1.4 var(--body,Georgia);color:#514333}
+.guide-search-paper .guide-search-recent-query{display:block;text-align:left;width:100%;margin-bottom:7px;padding:10px 12px;background:#efe0bf88;color:#30271f;border-color:#7b806c}
+.guide-search-return{display:block;min-height:44px;margin:0 0 14px;padding:10px 14px;border:3px double #aab5ab;border-radius:4px 2px;background:#273336 url(r10-metal.svg);color:#f4e8d4;font:1.0625rem/1.3 var(--body,Georgia);cursor:pointer}
+.guide-search-paper :focus-visible{outline:3px solid #526756;outline-offset:2px}
+@media(max-height:500px){.guide-search-paper{padding:8px 12px}.guide-search-paper>header{margin-bottom:5px}.guide-search-paper h2{font-size:1.2rem}.guide-search-coverage{display:none}.guide-search-filters[open]{max-height:100px;overflow:auto}.guide-search-dialog{height:calc(var(--search-viewport-height,100dvh) - 16px);max-height:calc(var(--search-viewport-height,100dvh) - 16px)}}
+
+.guide-search-paper .guide-search-filters>summary,.guide-search-paper .guide-search-filter-row label{color:#30271f}
+/* Keep native rails at the same width while Search or the wolf locks the reader. */
+.phoenix-reader{scrollbar-gutter:stable}
+
+.main-search-trigger{display:block;width:100%;min-height:48px;padding:12px 16px;margin:16px 0;border:4px double #aab5ab;border-radius:5px 2px;background:#273336 url(r10-metal.svg);color:#f4e8d4;font:1.1875rem/1.3 var(--body,Georgia);cursor:pointer}
+/* The site's global metal-button rule must not paint over result parchment. */
+.guide-search-dialog .guide-search-paper button.guide-search-result,.guide-search-dialog .guide-search-paper button.guide-search-recent-query{background:#f0e0be url(worn-vellum-r15.svg)!important;color:#30271f!important}

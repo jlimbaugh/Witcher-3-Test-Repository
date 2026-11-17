@@ -1,0 +1,50 @@
+{
+  "baseline_commit": "20b7eabc17b15c311c698d4942d32f493aae7b80",
+  "scope": "Approved six-tile wolf navigation with shared unresolved-warning list; LT diagram slice excluded",
+  "assets": [
+    {
+      "key": "home",
+      "file": "home.webp",
+      "bytes": 148750,
+      "sha256": "b2a24aa8d59fafb8191c4aab8be4c7b5a78fd3ea7d0c792f8ced26eeb12cb38f",
+      "approved_source_library_id": "libfile_de4c38b66cb0819188c3e5f84401a682"
+    },
+    {
+      "key": "regions",
+      "file": "regions.webp",
+      "bytes": 317136,
+      "sha256": "b38c582080660131b557b4396cc919380de0c62b548d0e1cc0b3ca19cc0db1bb",
+      "approved_source_library_id": "libfile_918aee6b95fc8191ab93d589c4285cb1"
+    },
+    {
+      "key": "reference",
+      "file": "reference.webp",
+      "bytes": 248930,
+      "sha256": "c680e0ffe64567642a081f9a31039ff983b0a8bc4362d5d388a624d7c3cf3528",
+      "approved_source_library_id": "libfile_883ce0ff390081918d80fc2210293e83"
+    },
+    {
+      "key": "progress",
+      "file": "progress.webp",
+      "bytes": 319840,
+      "sha256": "d3424addb93e1829c1e488e8b5dac98d8f84ccaa6bc6c161e8339a76025ac886",
+      "approved_source_library_id": "libfile_b2d7e91e23548191a8f54cc5133e1a33"
+    },
+    {
+      "key": "constellation",
+      "file": "constellation.webp",
+      "bytes": 343912,
+      "sha256": "07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe",
+      "approved_source_library_id": "libfile_dde681b9153c81919c1479a0af84b01b"
+    },
+    {
+      "key": "warnings",
+      "file": "warnings.webp",
+      "bytes": 451714,
+      "sha256": "bc91b0fff7db0a62cbf2737f3fbe488ecfe21f0b0e58e39927eb1d88e690722b",
+      "approved_mockup_library_id": "libfile_25ff393426a481918ca19fac20bbaf36",
+      "production_note": "Generated edit removes sample count and cutoff plaque; live count and FINAL below title are HTML."
+    }
+  ],
+  "constellation_display": "Approved right-hand plaque displayed from the three-study board; source bitmap preserved."
+}

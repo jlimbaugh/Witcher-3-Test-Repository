@@ -1,0 +1,27 @@
+PHOENIX V27 — FULL-SCREEN TWO-COLUMN NAVIGATION
+November 15, 2026
+Baseline v26: 97b04aeb2bfba31b154998cef22771b95eeb8710
+
+The wolf navigation overlay now occupies the entire viewport. Large illustrated
+buttons form two columns, with the fifth centered on the final row. The gallery
+scrolls independently; Close remains visible above it. Message history remains
+available when present. Underlying wolf/warning controls are hidden while the
+primary overlay is open and restored unchanged on closure.
+
+Approved artwork, effect sequencing, category backlights, silver markers, immediate
+routing, player saves, warning/Undo state and reader behavior are retained. Up/Down
+keyboard movement follows the two-column grid and brings focused cards into view.
+Source-page scroll, focus and expanded state continue to use existing restoration.
+
+Validation: all 133 automated tests pass. Chromium rendered at 320x640, 390x844
+and 568x320. At 390px phone width, artwork is approximately 153.5x230.25px,
+compared with the prior compact-row artwork. The overlay measures 390x844 exactly.
+Keyboard movement reached the fifth card through independent gallery scrolling;
+Close stayed at y=12. Native Escape closed the overlay. Reader scroll restored
+936 to 936, source wolf became visible again and reader inert/lock state cleared.
+Physical iPhone Safari and VoiceOver remain owner/device acceptance checks.
+
+Only navigation is migrated here. Other modal conversions are recorded in
+OVERLAY-DESIGN-DECISIONS.txt for bounded implementation; no claim they are complete.
+LT diagram corrections remain unpublished and untouched.
+Rollback: restore saved v26; no save-schema changes.

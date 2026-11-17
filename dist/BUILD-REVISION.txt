@@ -1,0 +1,2 @@
+Application revision: 26a2dc9b841ae75b3cbb22ff95eed056dab8de16
+Exact tested application source: a853e8b6a6f3ffbe7d053f8bcd69d8376c311da3

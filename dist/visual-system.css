@@ -1,0 +1,64 @@
+/* Approved engraved wolf, parchment headings, and silver / dark-iron action family. */
+.wolf-pointer{position:relative;display:block;flex:none;width:66px;height:76px;max-width:none;pointer-events:none;user-select:none;filter:drop-shadow(0 2px 2px #19231d77);isolation:isolate}
+.wolf-pointer .wolf-pointer-art{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;pointer-events:none}
+.wolf-pointer-eyes{position:absolute;inset:0;z-index:1;opacity:0;transition:opacity .2s ease-out;pointer-events:none}
+.wolf-pointer-eyes:before,.wolf-pointer-eyes:after{content:'';position:absolute;top:35.8%;width:10%;height:3.4%;background:var(--wolf-eye-color,#8bb9bd);box-shadow:0 0 4px 1px var(--wolf-eye-color,#8bb9bd);border-radius:55%;clip-path:polygon(0 0,100% 60%,100% 100%,20% 75%)}
+.wolf-pointer-eyes:before{left:35.4%;transform:rotate(13deg)}.wolf-pointer-eyes:after{left:54.6%;transform:scaleX(-1) rotate(13deg)}
+.wolf-pointer.is-awake .wolf-pointer-eyes{opacity:.95}
+.scroll-wolf-cue{position:relative;display:flex;justify-content:center;align-items:center;height:78px;margin:6px 0 2px;background:url(visual-art/ink-rule.svg) center/100% 40px no-repeat;pointer-events:none}
+.scroll-wolf-cue:not(.is-on-paper){background-image:url(silver-rule-r15.svg);background-size:100% 18px}
+.scroll-wolf-cue .wolf-pointer{width:62px;height:74px}
+.quest-progress .objective-banner{display:flex;flex-direction:column;gap:0;isolation:isolate;text-align:center;padding:12px 5px 0;margin:0 0 3px;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;color:#30271f}
+.quest-progress .objective-banner:after{content:none!important;display:none!important}
+.quest-progress .objective-banner:before{content:'';position:absolute;z-index:-1;top:4px;left:0;right:0;height:68px;background:url(visual-art/ink-rule.svg) center/100% 100% no-repeat;opacity:.7;pointer-events:none}
+.quest-progress .objective-banner h3{font:400 clamp(1.45rem,5.8vw,1.85rem)/1.25 var(--body,Georgia)!important;color:#30271f!important;text-shadow:0 1px #f6e8c7;margin:0!important}
+.quest-progress .objective-banner [data-objective-position]{font:italic 1.14rem/1.4 var(--body,Georgia)!important;color:#4b3d2c!important;margin:5px 0 0!important}
+.quest-progress .objective-banner-mark{display:none}
+.quest-progress .objective-banner .objective-wolf-pointer{width:78px;height:88px;margin:6px auto -2px}
+.quest-progress .objective-scroll-frame .objective-card{border:8px solid transparent!important;border-image:url(visual-art/iron-button-frame.webp) 112 / 8px / 0 stretch!important;background:#e8d7b499!important;border-radius:3px;padding:12px}
+.diagram-browser-scroll .diagram-compass{margin-top:63px}
+.diagram-browser-scroll .diagram-compass .diagram-compass-pointer.wolf-pointer{position:absolute;top:-67px;left:50%;transform:translateX(-50%);width:66px;height:78px;z-index:2;font-size:0;text-shadow:none;pointer-events:none}
+/* The nine-slice frame retains corners at different button widths; labels stay live text. */
+html body .phoenix-action.phoenix-action{position:relative;isolation:isolate;box-sizing:border-box;min-height:48px;min-width:44px;max-width:100%;padding:6px 10px!important;border:8px solid transparent!important;border-image:url(visual-art/iron-button-frame.webp) 112 fill / 8px / 0 stretch!important;border-radius:3px;background:#202525!important;color:#f1e8d5!important;box-shadow:0 3px 5px #0005!important;text-decoration:none;font-family:var(--body,Georgia);line-height:1.3;text-shadow:0 1px #000;cursor:pointer;touch-action:manipulation}
+html body .phoenix-action[data-button-purpose]:not([data-button-purpose=plain]){display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center}
+.phoenix-action[data-button-purpose]:not([data-button-purpose=plain]):before{content:'';display:block;flex:none;width:27px;height:24px;background:var(--action-icon) center/contain no-repeat;pointer-events:none}
+.phoenix-action[data-button-purpose=continue]{--action-icon:url(visual-art/icon-continue.svg)}
+.phoenix-action[data-button-purpose=map]{--action-icon:url(visual-art/icon-map.svg)}
+.phoenix-action[data-button-purpose=return]{--action-icon:url(visual-art/icon-return.svg)}
+.phoenix-action[data-button-purpose=previous]{--action-icon:url(visual-art/icon-previous.svg)}
+.phoenix-action[data-button-purpose=next]{--action-icon:url(visual-art/icon-next.svg)}
+html body .phoenix-action[data-button-purpose=continue]{min-height:76px;font-size:1.22rem}
+html body .phoenix-action[data-button-purpose=previous],html body .phoenix-action[data-button-purpose=next]{border-width:7px!important;border-image-width:7px!important;min-width:48px;min-height:60px;padding:5px 3px!important;font-size:0.75rem;line-height:1.25}
+.phoenix-action[aria-pressed=true]:after{content:'◆';position:absolute;right:5px;top:3px;font:0.5625rem/1 Georgia;color:#dce9de;pointer-events:none}
+html body .phoenix-action:focus-visible{outline:3px solid #a9c3b4!important;outline-offset:3px}
+html body .phoenix-action:disabled{opacity:.48;cursor:default}
+html body .phoenix-action:active:not(:disabled){filter:brightness(1.14)}
+@media(prefers-reduced-motion:reduce){.wolf-pointer-eyes{transition:none}.wolf-pointer-eyes:before,.wolf-pointer-eyes:after{box-shadow:none}.wolf-pointer{filter:none}html body .phoenix-action:active:not(:disabled){filter:none}}
+/* Keep the ornament below the live count, and leave room for visible arrow labels. */
+.quest-progress .objective-banner:before{top:auto;bottom:38px;height:30px}
+.quest-progress .objective-scroll-frame .objective-controls .phoenix-action{flex:0 0 68px;min-width:68px}
+:is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls) .phoenix-action[data-button-purpose=previous],:is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls) .phoenix-action[data-button-purpose=next]{flex:0 0 76px;min-width:76px}
+:is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls)>span{min-width:0;flex:1;text-align:center;overflow-wrap:anywhere}
+html body .phoenix-action[hidden]{display:none!important}
+/* Letter jumps leave the wolf and the selected letter visible together. */
+.diagram-view .diagram-browser-scroll .diagram-letter-strip{scroll-margin-top:90px}
+@media(max-width:360px){
+ :is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls,.objective-controls){display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 10px;align-items:center}
+ :is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls,.objective-controls)>span{grid-column:1/-1;grid-row:1;text-align:center}
+ :is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls,.objective-controls)>.phoenix-action[data-button-purpose=previous]{grid-column:1;grid-row:2;justify-self:start}
+ :is(.main-deck-controls,.orbit-controls,.diagram-browse,.quest-hub-rail-controls,.objective-controls)>.phoenix-action[data-button-purpose=next]{grid-column:2;grid-row:2;justify-self:end}
+}
+.diagram-view .diagram-browser-scroll .diagram-compass{scroll-margin-top:90px}
+/* Radio-tuner mounting: the head rests on the rail border; the point enters the cards. */
+.scroll-wolf-cue{display:block;height:0;margin:56px 0 0;border-top:1px solid #8f9a8c;background:none!important;z-index:4}
+.scroll-wolf-cue:before{content:'';position:absolute;inset:-16px 0 auto;height:30px;background:url(visual-art/ink-rule.svg) center/100% 100% no-repeat;pointer-events:none}
+.scroll-wolf-cue:not(.is-on-paper):before{background-image:url(silver-rule-r15.svg);background-size:100% 16px}
+.scroll-wolf-cue .wolf-pointer{position:absolute;top:-52px;left:50%;transform:translateX(-50%);width:62px;height:74px;z-index:2}
+.quest-progress .objective-banner:before{display:none}
+.quest-progress .objective-scroll-cue{margin-top:58px}
+.quest-progress .objective-scroll-cue .objective-wolf-pointer{width:72px;height:82px;top:-58px}
+.quest-progress .objective-scroll-frame .objective-card{padding-top:25px}
+.diagram-browser-scroll .diagram-compass .diagram-compass-pointer.wolf-pointer{top:-61px}
+.scroll-wolf-cue .wolf-pointer{top:-38px}
+.quest-progress .objective-scroll-cue .objective-wolf-pointer{top:-46px}
+.diagram-browser-scroll .diagram-compass .diagram-compass-pointer.wolf-pointer{top:-53px}

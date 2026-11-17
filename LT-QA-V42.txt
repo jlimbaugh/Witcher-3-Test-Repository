@@ -1,0 +1,14 @@
+LT — READ-ONLY v42 LILAC READING PILOT QA
+
+Live: https://phoenix-wo-qa-1c91b66.krwpfbtbn8.chatgpt.site/
+Open Lilac and Gooseberries. Audit all seven walkthrough stages; other quests are deliberately unchanged.
+
+Check Do/Where/Needed essentials for accuracy and clarity; Needed appears only when useful. Confirm every original instruction and supporting explanation remains reachable in the purpose foldouts. Choices and spoiler content must retain their existing treatment. Core warnings remain visible under the previously approved dismissal rules; the skull Optional stops risk stays under its existing warning ownership.
+
+Open different supporting foldouts in steps1 and2, move away/back and reload: each step should remember its own state. Optional stops remains quest-wide as previously accepted. Test foldouts independently of quest progress; do not complete objectives or acknowledge warnings for the audit.
+
+Check the brief title/category glow on entering Lilac from another destination; no replay for step changes or browser/custom returns. Reduced motion should disable it. Check shared warning overlay and a nested departure/skull return, including original step, page position and expanded sections.
+
+Inspect320/390px portrait and short landscape for text clipping, crowded labels, seams and tap targets. Existing horizontal swipe boxes, objective controls below rails, wolf navigation and Search returns must not regress. Text remains100%; slider, readability mode and VoiceOver are parked.
+
+Return reproducible defects with route, viewport/font, steps, expected/actual, severity and screenshot. Separate defects, aesthetic feedback and unverified Safari/touch concerns. No edits or publication. Freeze pending Cmdr review and owner Safari acceptance.

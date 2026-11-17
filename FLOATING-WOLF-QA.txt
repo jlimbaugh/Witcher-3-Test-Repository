@@ -1,0 +1,6 @@
+FLOATING WOLF — 2026-11-14
+Owner accepted version 23 warning overlays, then reported full-width bottom dock reducing fullscreen usability.
+CSS-only repair: reader bottom 0; remove dock background, border and shadow. Wolf remains bottom-right. Safe-area-aware bottom padding is scrollable end-of-page clearance, not a permanently reserved viewport band. Scroll padding brings focused content clear of the wolf. Print padding reset.
+105 existing tests passed; git diff --check passed. Local Chrome: reader bottom=viewport height=936px; dock computed transparent, border 0, shadow none; wolf menu open/close retained scroll 317. No source progress/save schema changes.
+Limit: floating wolf can visually overlay content passing through its corner; content can scroll clear, including page-end controls. Physical iPhone acceptance pending.
+Rollback version 23. Exact commit/version/deployment returned by Sites are authoritative.

@@ -1,0 +1,1 @@
+Browser QA copy of jlimbaugh/Witcher-3-Test-Repository at 1c91b66eeefb5ec99a357f1a18d7aeccfb53be31. dist contains exact tracked files from that Git commit; hosting configuration lives outside dist. No GitHub Pages change.

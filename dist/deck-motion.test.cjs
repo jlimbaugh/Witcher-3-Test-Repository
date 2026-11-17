@@ -1,0 +1,6 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {DeckMotion,wrap}=require('./deck-motion');
+test('crossing either loop boundary keeps travel continuous and resolves the correct logical card',()=>{assert.equal(wrap(13,13),0);assert.equal(wrap(-1,13),12);const m=new DeckMotion(12.9);m.release(.01,false);const next=m.advance(16);assert.ok(next>13&&next<13.1);assert.equal(wrap(Math.round(next),13),0);});
+test('momentum follows flick strength, decays and can stop without changing the travel position',()=>{const slow=new DeckMotion(),fast=new DeckMotion();slow.release(.002,false);fast.release(.01,false);for(let i=0;i<20;i++){slow.advance(16);fast.advance(16);}assert.ok(fast.position>slow.position*4);const at=fast.position;fast.stop();fast.advance(16);assert.equal(fast.position,at);assert.equal(fast.velocity,0);});
+test('reduced motion keeps a short glide and both directions remain symmetric',()=>{const normal=new DeckMotion(),short=new DeckMotion(),reverse=new DeckMotion();normal.release(.01,false);short.release(.01,true);reverse.release(-.01,false);for(let i=0;i<150;i++){normal.advance(16);short.advance(16);reverse.advance(16);}assert.ok(short.position<normal.position/4);assert.ok(Math.abs(normal.position+reverse.position)<1e-10);assert.equal(normal.velocity,0);assert.equal(short.velocity,0);});

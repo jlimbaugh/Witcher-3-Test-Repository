@@ -1,0 +1,9 @@
+LT — v44 Warnings read-only cross-QA
+Live Phoenix link is unchanged. No edits, publication or next-slice advancement.
+
+1. Visit the Lilac final departure-review step with unresolved risks. The wolf should flash; no warning popup should appear automatically. Tapping the wolf opens full-screen Warnings and stops current alerts. Acknowledgement must not complete any objective or resolve a risk.
+2. Test manual navigation → Warnings too. Normal navigation stays a popup. The Warnings view takes the screen with open/unknown counts, verification guidance and canonical details.
+3. Open quest progress for a risk. Existing objective carousel, wolf pointer and authoritative correction/Undo controls must remain. Return to Warnings must preserve list position; wolf/Return must restore original source step and reader position. Exercise both different-quest and same-quest sources; contextual detail close/linked returns too.
+4. Check repeated open/close, empty/resolved states and stale alerts after Undo using isolated test data. Note physical Safari limitations separately; VoiceOver remains parked.
+
+Cmdr evidence: 206/206 tests, portrait/landscape Chromium, source 782 -> 782, correction returns verified. Baseline v43 9adc49549de6f8ab8a630bdee23af22e6b511cd3.

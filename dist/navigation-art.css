@@ -1,0 +1,80 @@
+/* Framed popup with separate visible wolf toggle. */
+.phoenix-medallion .art-navigation-layer{padding:0 0 calc(120px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box;background:transparent;align-items:flex-end;justify-content:center}
+.phoenix-medallion .art-navigation-layer[hidden]{display:none!important}
+.phoenix-medallion.fan-open>.medallion-core{position:relative;z-index:3;visibility:visible;pointer-events:auto}.phoenix-medallion.fan-open>.medallion-nav-toggle{display:none!important}
+.art-navigation-layer .command-backdrop{display:block;background:#05090d99;backdrop-filter:blur(1px)}
+.art-navigation-panel{position:relative;display:flex;flex-direction:column;width:min(500px,88vw);height:auto;max-height:min(76dvh,calc(100dvh - 150px - env(safe-area-inset-bottom,0px)));overflow:hidden;box-sizing:border-box;padding:12px 12px 10px;background:linear-gradient(#0b1016d9,#10171ef2),url(r10-stone.svg);border:4px double #9ba5ad;border-radius:14px 5px;box-shadow:0 12px 36px #000c,inset 0 0 18px #000;color:#e6e8e7}
+.art-navigation-heading{display:flex;flex:none;align-items:center;justify-content:center;gap:12px;width:100%;max-width:760px;margin:0 auto 8px}
+.art-navigation-heading h2{font:400 1.65rem/1.2 var(--body,Georgia);margin:0;color:#e6e8e7}
+.art-navigation-row{display:grid;min-height:0;width:100%;max-width:620px;margin:0 auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:min-content;gap:10px 12px;align-items:start;align-content:start;padding:6px 4px;box-sizing:border-box;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;scroll-padding-block:8px}
+.art-navigation-item{min-width:0;min-height:0;height:auto;position:relative;display:flex;justify-content:center}
+.art-navigation-item:last-child{grid-column:1/-1}
+.phoenix-medallion .art-navigation-layer .art-navigation-button{display:flex;position:static;flex-direction:column;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;height:auto!important;margin:0;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#e1e5e9;transform:none;animation:none;touch-action:manipulation;font-family:var(--body,Georgia);cursor:pointer}
+.art-navigation-item:last-child .art-navigation-button{width:calc((100% - 12px)/2)}
+.art-navigation-picture{display:block;position:relative;flex:none;width:100%;height:auto;max-width:100%;aspect-ratio:4/3;background:#10151a;isolation:isolate;overflow:hidden;border:2px ridge #7c858b;box-sizing:border-box;border-radius:7px 3px;box-shadow:0 4px 12px #000a}
+.art-navigation-picture>img{display:block;position:absolute;top:0;left:0;width:100%;height:200%;object-fit:fill;pointer-events:none}
+[data-art-key=constellation] .art-navigation-picture>img{position:absolute;right:0;top:0;left:auto;width:300%;height:200%;max-width:none;object-fit:fill}
+.art-navigation-picture canvas{position:absolute;top:0;left:0;width:100%;height:200%;pointer-events:none}
+.art-navigation-label{display:flex;flex:none;flex-direction:column;align-items:center;justify-content:flex-start;height:28px;min-height:28px;padding-top:6px;font:400 0.875rem/1.3 Georgia,'Times New Roman',serif!important;color:#e1e5e9;white-space:nowrap;text-align:center;text-shadow:0 1px 2px #000}
+.art-navigation-marker{display:block;flex:none;height:12px;font-size:0.6875rem;line-height:12px;color:#e9f0f6;opacity:0;text-align:center}
+.art-navigation-item.is-current .art-navigation-marker{opacity:1}
+.art-navigation-item.is-current .art-navigation-picture{box-shadow:0 0 15px 3px color-mix(in srgb,var(--navigation-glow) 65%,transparent),0 4px 12px #000a}
+.art-navigation-item.is-current .art-navigation-label{color:#fff4e4;text-shadow:0 0 5px color-mix(in srgb,var(--navigation-glow) 45%,transparent)}
+.art-navigation-item.is-playing .art-navigation-picture:after{content:'';position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--navigation-glow) 60%,transparent);pointer-events:none}
+.art-navigation-utilities{display:flex;flex:none;justify-content:center;margin-top:10px}
+.phoenix-medallion .art-navigation-layer .art-navigation-close,.phoenix-medallion .art-navigation-layer .art-navigation-utilities button{min-height:44px;padding:8px 14px;color:#e2e9ee;background:#202b35 url(r10-metal.svg);border:2px solid #a4b0ba;border-radius:3px;font:400 1rem/1.3 var(--body,Georgia);cursor:pointer}
+.art-navigation-layer :focus-visible{outline:3px solid #d1e0ef;outline-offset:4px}
+.art-navigation-layer [hidden]{display:none!important}
+
+.art-navigation-label{height:25px;min-height:25px;padding-top:5px;font-size:clamp(0.6875rem,3.2vw,0.9375rem)!important;letter-spacing:.025em;text-transform:uppercase}
+.art-navigation-marker{height:8px;line-height:8px;font-size:0.5rem}
+.art-navigation-utilities{margin-top:6px}
+@media(max-height:500px){.art-navigation-panel{max-height:calc(100dvh - 132px - env(safe-area-inset-bottom,0px));width:min(440px,86vw)}.art-navigation-heading h2{font-size:1.2rem}.art-navigation-heading{margin-bottom:3px}}
+@media(prefers-reduced-motion:reduce){.art-navigation-layer *{animation:none!important;transition:none!important}.art-navigation-layer .command-backdrop{backdrop-filter:none}}
+/* Keep the full star chart legible within its shorter tile. */
+[data-art-key=constellation] .art-navigation-picture>img,[data-art-key=constellation] .art-navigation-picture canvas{height:120%;top:-8%}
+/* Six tiles: Warnings balances Constellation. Count and FINAL are live text. */
+.art-navigation-item:last-child{grid-column:auto}
+.art-navigation-item:last-child .art-navigation-button{width:100%}
+[data-art-key=warnings] .art-navigation-picture>img,[data-art-key=warnings] .art-navigation-picture canvas{height:133.333%;top:0}
+.art-warning-count{position:absolute;top:5px;right:5px;min-width:25px;min-height:25px;display:flex;align-items:center;justify-content:center;padding:2px 5px;box-sizing:border-box;border:2px ridge #b3b8b9;background:#4b1624;color:#f2e9da;font:bold 1rem/1 Georgia,serif;box-shadow:0 2px 5px #000b;z-index:2}
+.art-warning-final{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);padding:3px 9px;background:#531b2af2;color:#f4e6dc;border:1px solid #b8a7ac;font:bold 0.6875rem/1.2 Georgia,serif;letter-spacing:.1em;z-index:2}
+.art-warning-list{min-height:0;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;padding:6px 3px;color:#30241d;background:#d8c7a8 url(r10-paper.svg);border:1px solid #82786a}
+.art-navigation-heading:has(.art-warning-back:not([hidden])){flex-wrap:wrap;justify-content:space-between}
+.phoenix-medallion .art-navigation-layer .art-warning-back{min-height:44px;padding:8px 10px;font:0.875rem/1.3 Georgia,serif;background:#263235 url(r10-metal.svg);color:#ece5d8;border:2px solid #a9b1b5;border-radius:4px}
+.art-warning-summary,.art-warning-empty{margin:8px 12px;font:1rem/1.4 Georgia,serif;color:#392a22}
+.art-warning-entry{margin:10px 6px;padding:12px;border-left:3px solid #8e7b72;background:#f4e7ce99;box-shadow:0 1px 3px #38271b22}
+.art-warning-entry.is-final{border-left:5px solid #74293b;background:#e8cdc3bb}
+.phoenix-medallion .art-navigation-layer .art-warning-title{display:block;text-align:left;width:100%;min-height:44px;padding:4px 0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#3e2924!important;font:700 1.0625rem/1.3 Georgia,serif!important;text-decoration:underline;text-underline-offset:3px}
+.art-warning-entry p{margin:6px 0;font:0.9375rem/1.4 Georgia,serif;color:#392a22}
+.art-warning-entry .art-warning-status{font-weight:bold}
+.art-warning-final-inline{display:inline-block;margin:3px 0;padding:3px 7px;background:#692337;color:#fff1e4;font:bold 0.75rem/1.3 Georgia,serif;letter-spacing:.08em}
+.art-warning-entry .art-warning-verify{font-style:italic}
+.art-warning-list :focus-visible{outline-color:#4e3541}
+
+/* Keep the entire Warnings plaque visible, with FINAL engraved below its title. */
+[data-art-key=warnings] .art-navigation-picture>img,[data-art-key=warnings] .art-navigation-picture canvas{height:90%;top:0}
+[data-art-key=warnings] .art-navigation-picture{aspect-ratio:4/3}
+[data-art-key=warnings] .art-warning-final{position:absolute;left:50%;bottom:4.4%;transform:translateX(-50%);margin:0;padding:1px 8px;min-height:14px;box-sizing:border-box;line-height:10px;color:#c2b7ac;background:#271f1bb8;border:1px solid #817b73;box-shadow:inset 0 1px 3px #000a;text-shadow:0 1px #000;font-size:0.5625rem;letter-spacing:.12em}
+[data-art-key=warnings] .has-final-risk .art-warning-final{color:#fff1e4;background:#74293b;border-color:#dfb9be;box-shadow:0 0 9px 2px #af3c55a0,inset 0 1px 3px #44101d}
+.art-warning-illustration{float:left;width:58px;height:76px;object-fit:cover;object-position:center 30%;margin:3px 12px 8px 0;border:3px double #7b8180;border-radius:3px;box-sizing:border-box}
+.art-warning-entry{display:grid;grid-template-columns:58px minmax(0,1fr);column-gap:12px;align-content:start}
+.art-warning-entry .art-warning-illustration{grid-column:1;grid-row:1 / span 2;margin:3px 0 8px}
+.art-warning-entry .art-warning-title,.art-warning-entry .art-warning-status{grid-column:2}
+.art-warning-entry .art-warning-final-inline,.art-warning-entry .art-warning-verify,.art-warning-entry .art-warning-cutoff{grid-column:1/-1}
+.art-warning-entry .art-warning-final-inline{justify-self:start}
+.art-warning-entry .art-warning-cutoff{clear:both}
+.medallion-warning .medallion-final-heading{color:#74293b;font-weight:bold;letter-spacing:.12em;margin:0 0 8px}
+/* Warnings takes the screen; the normal destination menu retains its popup form. */
+.phoenix-medallion .art-navigation-layer.warnings-takeover{padding:0!important;align-items:stretch;z-index:1}
+.warnings-takeover .command-backdrop{background:#080d11}
+.warnings-takeover .art-navigation-panel{width:100%;max-width:none;height:100dvh;max-height:none;border-radius:0;padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(112px + env(safe-area-inset-bottom,0px));border:3px double #949d9e}
+.warnings-takeover .art-navigation-heading{max-width:900px;justify-content:space-between}
+.warnings-takeover .art-warning-list{flex:1;min-height:0;width:100%;max-width:900px;margin:0 auto;box-sizing:border-box;padding:10px 8px 24px;background:#d8c7a8 url(r10-paper.svg);scrollbar-color:#686a64 #d8c7a8}
+.warnings-takeover .art-warning-entry{margin:12px 4px 20px;padding:15px;grid-template-columns:66px minmax(0,1fr);border-bottom:1px solid #867564}
+.warnings-takeover .art-warning-illustration{width:66px;height:90px}
+.warnings-takeover .art-warning-entry .art-warning-consequence,.warnings-takeover .art-warning-entry .art-warning-correction{grid-column:1/-1}
+.warnings-takeover .art-warning-entry .art-warning-consequence{font-size:1.0625rem;line-height:1.45}
+.phoenix-medallion .warnings-takeover .art-warning-correction{min-height:48px;margin-top:10px;padding:10px 14px;color:#eee7d9;background:#263235 url(r10-metal.svg);border:3px double #b0b8b6;font:1rem/1.3 var(--body,Georgia);text-align:center}
+.phoenix-medallion .medallion-warning{display:none!important}
+@media(min-width:720px){.warnings-takeover .art-warning-entry{padding:20px 24px}}

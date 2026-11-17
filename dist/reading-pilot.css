@@ -1,0 +1,13 @@
+/* Lilac pilot: the same continuous parchment with a clear opening hierarchy. */
+.reading-pilot-step .step-essentials{display:grid;grid-template-columns:4.3rem minmax(0,1fr);gap:10px 12px;margin:18px 0 22px;padding:14px 0;border-block:3px double #8f9a8b;color:#35291e}
+.reading-pilot-step .step-essentials dt{font:small-caps 1.1rem/1.5 var(--body);color:#643e32;margin:0}
+.reading-pilot-step .step-essentials dd{font:1.13rem/1.6 var(--body);margin:0;min-width:0}
+.reading-pilot-step .step-essentials dt:first-child,.reading-pilot-step .step-essentials dd:nth-child(2){font-size:1.2rem}
+.reading-pilot-step>.reading-support{padding:12px 14px;margin:12px 0;border:1px solid #8b806a;border-radius:3px;background:#584e3008}
+.reading-pilot-step>.reading-support>summary{min-height:44px;font:1.08rem/1.5 var(--body);cursor:pointer;align-content:center;color:#3e3023}
+.reading-pilot-step>.reading-support>p{margin:12px 0;line-height:1.65}
+.reading-pilot-step>.risk-note:before{content:'Risk';display:block;font:small-caps 1rem/1.4 var(--body);margin-bottom:5px;color:#663b32}
+.reading-arrival :is(h1,.eyebrow){animation:reading-title-arrival 1.45s ease-out 1}
+@keyframes reading-title-arrival{0%{text-shadow:0 0 3px #dceae4,0 0 11px #9bbdc7;filter:brightness(1.3)}100%{text-shadow:0 0 0 transparent;filter:brightness(1)}}
+@media(max-width:360px){.reading-pilot-step .step-essentials{grid-template-columns:1fr;gap:3px}.reading-pilot-step .step-essentials dd{margin-bottom:10px}.reading-pilot-step .step-essentials dd:last-child{margin-bottom:0}}
+@media(prefers-reduced-motion:reduce){.reading-arrival :is(h1,.eyebrow){animation:none}}

@@ -1,0 +1,20 @@
+WO QUEST SELECTOR — LOCAL SLICE CHECKPOINT
+2026-11-14
+Base source: 6c0f14c7a784854523d994e99c36bc2e44cb9ed0 (published version 20)
+Status: uncommitted local working tree; no push, saved Site version, or deployment.
+Recovered Safari changes remain intact; index.html contains both Safari integration and selector integration.
+Scope: two existing WO quest-selector instances created by desk-r11.js. Does not migrate other rails/decks.
+Implemented: continuous drag coordinates, friction momentum, unbounded rotation, stop-before-activate, explicit-only selection, direct hub opening, per-history phase restoration, short reduced-motion glide, keyboard arrows/Home/End.
+100/100 node tests pass; JS syntax and git diff --check pass.
+Three new physics tests cover both loop boundaries, velocity decay/stop, reduced motion and direction symmetry.
+Local Chrome UI checks: End then Right wraps 13->1; mouse drag changes rotation fractionally; details remain unchanged while dragging; stationary card opens Missing in Action hub; browser Back restores rotation exactly (-399.021deg).
+Previous slice checks: Progress parchment contrast, wolf dock clearance at portrait/landscape sizes, menu close restoring scroll; physical Safari not certified.
+Limits: real iPhone flick momentum, tap-to-catch during live momentum, pinch/vertical gesture arbitration, reduced-motion device behavior and VoiceOver still need device/integration acceptance.
+Do not treat this as final acceptance or publish automatically.
+Rollback for selector: restore desk-r11.js from base; remove deck-motion/quest-deck-motion imports from index.html while retaining guide-viewport and wolf-dock Safari imports; remove only new selector files.
+File SHA-256:
+f33325a6414ce02d0de5c785077efd190518bf4925570f06a22f81d694cc17c8  dist/desk-r11.js
+69cfe348a9dd83578842d9f115f4480af55b3a184d768fe5b0053cec9e0948e8  dist/deck-motion.js
+ada6b80a62dab84e7202d38fa90f8fcb3288fe2c8b5e88638d2f891ee54fb886  dist/deck-motion.test.cjs
+c6867843947be885bcc645bd600ee65a76c5c9b4aa71e1b500d3fa623ae0883d  dist/quest-deck-motion.css
+9ffcd602bb93aa06a96d16d253cb51b569376feff751a94c0d518aeac77b5686  dist/index.html
