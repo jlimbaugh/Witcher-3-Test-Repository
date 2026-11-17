@@ -6,7 +6,7 @@ on:
     branches: [fix/wo-save-preservation, main]
   workflow_dispatch:
 concurrency:
-  group: qa6-${{ github.event.pull_request.head.ref || github.ref_name }}
+  group: qa6-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 permissions:
   contents: read
@@ -16,6 +16,7 @@ jobs:
     timeout-minutes: 15
     env:
       V45_COMMIT: d1df0e3e2c40cad172577f4725daa7233fc8c41e
+      QA6_COMMIT: 804a3a2c83529fdc707ca5278fb3bcf39d50d771
       QA5_COMMIT: 5ba73ace7d05551c877021de6e6fd0a2242a1e3a
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -29,6 +30,9 @@ jobs:
         run: |
           set -euo pipefail
           git rev-parse HEAD
+          git merge-base --is-ancestor "$QA6_COMMIT" HEAD
+          git diff --exit-code "$QA6_COMMIT" HEAD -- dist/
+          test "$(git rev-parse HEAD:dist)" = "$(git rev-parse "$QA6_COMMIT":dist)"
           git worktree add --detach "$RUNNER_TEMP/v45-baseline" "$V45_COMMIT"
           git worktree add --detach "$RUNNER_TEMP/qa5-baseline" "$QA5_COMMIT"
       - name: Verify CI guards and manifest coverage
