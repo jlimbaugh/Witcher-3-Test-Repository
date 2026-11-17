@@ -1,5 +1,15 @@
 # PHOENIX — project status (branch `fix/wo-save-preservation`)
 
+## Character implementation checkpoint — 2026-11-17, Cmdr
+
+Owner approved the build design as the foundation. `implementation/character-foundation`
+starts the production Character page and guarded persistent Build Vault, based on
+`524214359d56859b9bec7d7e0bf8023eed6356e1`. New modules share one Feline identity
+catalogue; the existing index gains only a new entry script. Full suite: 317/317
+with v45 and QA5 baselines, no skips (author-supplied). Stats/formulas, final art,
+other sets, Skills/Alchemy, browser/Safari and independent review remain pending.
+See `docs/CHARACTER-FOUNDATION.md`. QA6 v46 stays live; nothing deployed.
+
 ## Character build design mockups — 2026-11-17
 
 `design/character-builds-v1` adds static Feline-duelist mockups (v2, 16 plates) and the owner decision
