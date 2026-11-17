@@ -643,3 +643,5 @@ ffe8e3964e131c464583e0a482c6611ac223baca6a8b2578f6e7f543b0d31786  qa/wo-save-pre
 8259f6e5986df5591ece6660178aa6036dcd3237de83c50d7c669e8eb731c39c  qa/wo-save-preservation/results.json
 67dc0164e57915bd492fcbeffd6f676c69f9a61fa541d451cbe094a2e897912a  qa/wo-save-preservation/summarize.cjs
 add6a33faa501fe7b3c39222e6161da48a0e67d4af9ce8053113e323af9c75e7  qa/wo-save-preservation/summary.json
+9461b5b97bbb7b86da415d6ca28dcc8bcd11cda861a98c121cc08ec60be9c03f  docs/QA6-SITES-SYNC.md
+b503b68a15d774ba8f6e38c494d3b22578d6945d8b5b8826f4930f486f88a29b  docs/qa6-sites-sync.diff
