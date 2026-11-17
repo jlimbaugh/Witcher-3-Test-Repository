@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+ok 1 - every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+  ---
+  duration_ms: 8.138645
+  type: 'test'
+  ...
+# Subtest: QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+ok 2 - QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+  ---
+  duration_ms: 3.490216
+  type: 'test'
+  ...
+# Subtest: QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+ok 3 - QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+  ---
+  duration_ms: 5.138425
+  type: 'test'
+  ...
+# Subtest: pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided
+ok 4 - pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided # SKIP PHOENIX_QA5_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.155635
+  type: 'test'
+  ...
+# Subtest: pinned v45 tag table matches PHOENIX_V45_BASELINE when provided
+ok 5 - pinned v45 tag table matches PHOENIX_V45_BASELINE when provided # SKIP PHOENIX_V45_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.112818
+  type: 'test'
+  ...
+# Subtest: objectives are the sourced journal objectives with https sources; reading the notes stays in the final search
+ok 6 - objectives are the sourced journal objectives with https sources; reading the notes stays in the final search
+  ---
+  duration_ms: 1.522206
+  type: 'test'
+  ...
+# Subtest: conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective
+ok 7 - conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective
+  ---
+  duration_ms: 1.234909
+  type: 'test'
+  ...
+# Subtest: fresh storage: handover creates a native canonical record that owns only velen.nilf
+ok 8 - fresh storage: handover creates a native canonical record that owns only velen.nilf
+  ---
+  duration_ms: 0.669209
+  type: 'test'
+  ...
+# Subtest: imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown
+ok 9 - imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown
+  ---
+  duration_ms: 0.905226
+  type: 'test'
+  ...
+# Subtest: an imported inn choice is carried over as the canonical choice
+ok 10 - an imported inn choice is carried over as the canonical choice
+  ---
+  duration_ms: 0.325611
+  type: 'test'
+  ...
+# Subtest: pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched
+ok 11 - pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched
+  ---
+  duration_ms: 0.604433
+  type: 'test'
+  ...
+# Subtest: Slice 1 guard: after the handover, import and migration rollback keep the canonical record
+ok 12 - Slice 1 guard: after the handover, import and migration rollback keep the canonical record
+  ---
+  duration_ms: 0.384088
+  type: 'test'
+  ...
+# Subtest: handover never overwrites newer, unreadable or unavailable storage
+ok 13 - handover never overwrites newer, unreadable or unavailable storage
+  ---
+  duration_ms: 0.278606
+  type: 'test'
+  ...
+# Subtest: an existing native canonical record keeps its other content through the handover
+ok 14 - an existing native canonical record keeps its other content through the handover
+  ---
+  duration_ms: 0.294528
+  type: 'test'
+  ...
+# Subtest: commit records objectives and the inn outcome in canonical; one Undo restores the prior state
+ok 15 - commit records objectives and the inn outcome in canonical; one Undo restores the prior state
+  ---
+  duration_ms: 0.651893
+  type: 'test'
+  ...
+# Subtest: legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it
+ok 16 - legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it
+  ---
+  duration_ms: 0.726563
+  type: 'test'
+  ...
+# Subtest: unknown objective keys written by another writer are preserved on commit
+ok 17 - unknown objective keys written by another writer are preserved on commit
+  ---
+  duration_ms: 0.288671
+  type: 'test'
+  ...
+# Subtest: rollbackHandover restores the exact pre-handover storage only while the record is unchanged
+ok 18 - rollbackHandover restores the exact pre-handover storage only while the record is unchanged
+  ---
+  duration_ms: 1.319291
+  type: 'test'
+  ...
+# Subtest: wiring seam: script order, app.js handover order and minimal velen-r18 delegation
+ok 19 - wiring seam: script order, app.js handover order and minimal velen-r18 delegation
+  ---
+  duration_ms: 2.755857
+  type: 'test'
+  ...
+# Subtest: Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes
+ok 20 - Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes
+  ---
+  duration_ms: 0.534851
+  type: 'test'
+  ...
+# Subtest: protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)
+ok 21 - protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)
+  ---
+  duration_ms: 0.536918
+  type: 'test'
+  ...
+# Subtest: unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover
+ok 22 - unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover
+  ---
+  duration_ms: 0.365643
+  type: 'test'
+  ...
+# Subtest: a failed import write (quota) also blocks the handover; storage read failures never write
+ok 23 - a failed import write (quota) also blocks the handover; storage read failures never write
+  ---
+  duration_ms: 0.189312
+  type: 'test'
+  ...
+# Subtest: direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded
+ok 24 - direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded
+  ---
+  duration_ms: 0.152106
+  type: 'test'
+  ...
+# Subtest: direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome
+ok 25 - direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome
+  ---
+  duration_ms: 0.606466
+  type: 'test'
+  ...
+# Subtest: QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state
+ok 26 - QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state
+  ---
+  duration_ms: 1.136962
+  type: 'test'
+  ...
+# Subtest: QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both
+ok 27 - QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both
+  ---
+  duration_ms: 0.662497
+  type: 'test'
+  ...
+# Subtest: every supported path completes, and Undo restores the exact prior state
+ok 28 - every supported path completes, and Undo restores the exact prior state
+  ---
+  duration_ms: 0.609122
+  type: 'test'
+  ...
+# Subtest: corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction
+ok 29 - corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction
+  ---
+  duration_ms: 0.728842
+  type: 'test'
+  ...
+# Subtest: QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze
+ok 30 - QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze
+  ---
+  duration_ms: 44.300362
+  type: 'test'
+  ...
+# Subtest: unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports
+ok 31 - unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports
+  ---
+  duration_ms: 0.816305
+  type: 'test'
+  ...
+# Subtest: Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome
+ok 32 - Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome
+  ---
+  duration_ms: 0.327607
+  type: 'test'
+  ...
+# Subtest: the v45 loader/save excerpt used for byte comparison is the accepted v45 code
+ok 33 - the v45 loader/save excerpt used for byte comparison is the accepted v45 code
+  ---
+  duration_ms: 0.815747
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (invalid JSON): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 34 - unreadable legacy (invalid JSON): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 4.708456
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON array): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 35 - unreadable legacy (JSON array): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 2.71719
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON null): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 36 - unreadable legacy (JSON null): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 1.861921
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON number): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 37 - unreadable legacy (JSON number): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 1.979215
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON string): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 38 - unreadable legacy (JSON string): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 2.042345
+  type: 'test'
+  ...
+# Subtest: valid, partial and absent legacy records: every write is byte-identical to the v45 writer
+ok 39 - valid, partial and absent legacy records: every write is byte-identical to the v45 writer
+  ---
+  duration_ms: 5.610181
+  type: 'test'
+  ...
+# Subtest: a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept
+ok 40 - a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept
+  ---
+  duration_ms: 0.623597
+  type: 'test'
+  ...
+1..40
+# tests 40
+# suites 0
+# pass 38
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 125.49401

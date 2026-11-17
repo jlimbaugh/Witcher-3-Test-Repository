@@ -1,0 +1,14 @@
+PASS index.html revalidated and the QA6 copy served
+PASS app.js requested with the QA6 tag and fetched from the network (not the HTTP cache)
+PASS velen-r18.js requested with the QA6 tag and fetched from the network (not the HTTP cache)
+PASS long-lived cache is in force: every script/stylesheet unchanged since the old build came from the HTTP cache with no server request
+PASS every script/stylesheet changed since the old build was fetched from the network under a URL the old build never used
+PASS QA6 save guard active: unreadable White Orchard bytes kept through load, hub and reload; 0 writes
+PASS QA6 status shown on the White Orchard hub: unreadable / kept unchanged
+PASS scripts in the page are the QA6 URLs
+PASS storage denied: start page renders (QA6 velen-r18.js storage guard active)
+PASS storage denied: Velen -> hub -> quest -> back -> back works
+PASS storage denied: accurate messages (WO storage-unavailable; Velen saving unavailable)
+PASS storage denied: no uncaught errors
+PASS no uncaught errors in session 2 before the denial step
+v45 -> qa6 (landscape): 13/13 passed

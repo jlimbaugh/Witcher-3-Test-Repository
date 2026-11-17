@@ -1,0 +1,64 @@
+### self-check (both kits)
+bundle self-check: 220 v45 kit files, 0 mismatches
+QA5 kit self-check: 487 QA5 dist files, 0 mismatches
+exit 0
+### QA6 -> QA5 dry run
+bundle self-check: 220 v45 kit files, 0 mismatches
+QA5 kit self-check: 487 QA5 dist files, 0 mismatches
+pre-check: 13/13 QA6 release files match
+WOULD RESTORE dist/app.js (qa5)
+WOULD RESTORE dist/home-candidate.test.cjs (qa5)
+WOULD RESTORE dist/index.html (qa5)
+WOULD RESTORE dist/slice2-cache-tags.test.cjs (qa5)
+WOULD RESTORE dist/slice2-nilf.test.cjs (qa5)
+WOULD RESTORE dist/velen-r18.js (qa5)
+WOULD DELETE dist/wo-save-guard.test.cjs (not in qa5)
+WOULD DELETE dist/storage-denied-startup.test.cjs (not in qa5)
+exit 0
+### QA6 -> QA5
+bundle self-check: 220 v45 kit files, 0 mismatches
+QA5 kit self-check: 487 QA5 dist files, 0 mismatches
+pre-check: 13/13 QA6 release files match
+restore dist/app.js (qa5)
+restore dist/home-candidate.test.cjs (qa5)
+restore dist/index.html (qa5)
+restore dist/slice2-cache-tags.test.cjs (qa5)
+restore dist/slice2-nilf.test.cjs (qa5)
+restore dist/velen-r18.js (qa5)
+delete dist/wo-save-guard.test.cjs (not in qa5)
+delete dist/storage-denied-startup.test.cjs (not in qa5)
+verify: 487 qa5 kit files under dist/ checked, 6 restored, 2 added files checked absent; 0 errors
+RESULT: PASS - target dist matches QA5 candidate 5ba73ace
+exit 0
+### diff -r vs QA5 dist (tracked files)
+IDENTICAL to QA5 dist
+### QA6 -> v45
+bundle self-check: 220 v45 kit files, 0 mismatches
+pre-check: 13/13 QA6 release files match
+restore dist/app.js (v45)
+restore dist/home-candidate.test.cjs (v45)
+restore dist/index.html (v45)
+restore dist/velen-r18.js (v45)
+restore dist/velen-view.css (v45)
+delete dist/velen-nilf-objectives.js (not in v45)
+delete dist/velen-nilf-progress.js (not in v45)
+delete dist/velen-nilf-ui.js (not in v45)
+delete dist/slice2-nilf.test.cjs (not in v45)
+delete dist/slice2-save-guard.test.cjs (not in v45)
+delete dist/slice2-cache-tags.test.cjs (not in v45)
+delete dist/wo-save-guard.test.cjs (not in v45)
+delete dist/storage-denied-startup.test.cjs (not in v45)
+verify: 181 v45 kit files under dist/ checked, 5 restored, 8 added files checked absent; 0 errors
+RESULT: PASS - target dist matches accepted v45 a9d61c94
+exit 0
+### diff -r vs v45 dist
+IDENTICAL to v45 dist
+### wrong source guard: QA6 -> QA5 on a QA5 dir (expect exit 3)
+  differs from QA6: dist/wo-save-guard.test.cjs
+ABORT: target is not the QA6 release; inspect it, or re-run with --force
+exit 3
+### legacy default (QA5 -> v45) still works on a QA5 copy
+verify: 181 v45 kit files under dist/ checked, 4 restored, 6 added files checked absent; 0 errors
+RESULT: PASS - target dist matches accepted v45 a9d61c94
+exit 0
+IDENTICAL to v45 dist

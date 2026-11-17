@@ -1,0 +1,2 @@
+dist/wo-save-guard.test.cjs
+dist/storage-denied-startup.test.cjs

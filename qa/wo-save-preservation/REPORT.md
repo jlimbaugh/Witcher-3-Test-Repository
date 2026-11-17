@@ -1,5 +1,12 @@
 # White Orchard save preservation (audit finding D2) — investigation report
 
+> **QA6 addendum (branch `fix/wo-save-preservation`):** the correction proposed below has been implemented as QA6, with
+> Cmdr's decision that missing/string/unsupported versions are preserved, and D4 corrected at `dist/velen-r18.js:19`.
+> The probe was extended (`--build label=dir`, empty-string input, Velen at both viewports, `d4:` flow) and re-run on
+> v45 / QA5 / QA6: `qa/wo-save-preservation/qa6/` (144 runs). Self-review and matrix: `docs/QA6-REVIEW.md`. Everything
+> below this note is the original investigation report, unchanged.
+
+
 **Author:** LT. **Evidence label for every runtime result below:** `author-supplied` (LT's own probe runs, not independent review).
 Source references are `source-inspection` unless a write stack from the probe is quoted.
 **Scope:** reproduce and document D2. No application change, no deployment, no workflow, no merge, no Pages change.

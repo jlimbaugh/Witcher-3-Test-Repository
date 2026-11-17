@@ -1,0 +1,411 @@
+diff --git b/dist/app.js a/dist/app.js
+index 3f66133..ce7093d 100644
+--- b/dist/app.js
++++ a/dist/app.js
+@@ -58,16 +58,11 @@
+   let progressUI;
+   let homeUI;
+   const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,lastWalkthroughView:null,stageByView:{},map:{type:'all',search:'',showCompleted:false}};
+-  // QA6 save guard (D2): the White Orchard record is read and classified exactly once. Only a plain object with numeric
+-  // version === 1 is accepted, and every saved field below comes from that same record. A record that cannot be parsed,
+-  // is not a plain object, or has a missing/non-numeric/unsupported version is kept byte-for-byte; a read that throws is
+-  // never answered with defaults. Either way this page session never writes the key (saveBlocked). Absence keeps the v45
+-  // fresh/legacy path. Progress, Undo and navigation still work in memory.
+-  const saveRecord=(()=>{let raw;try{raw=localStorage.getItem(key);}catch{return {status:'storage-unavailable'};}if(raw==null)return {status:'absent'};let value;try{value=JSON.parse(raw);}catch{return {status:'unreadable'};}if(!value||typeof value!=='object'||Array.isArray(value))return {status:'unreadable'};if(typeof value.version!=='number'||value.version!==1)return {status:'unsupported'};return {status:'accepted',value};})();
+-  const saved=saveRecord.status==='accepted'?saveRecord.value:null;
+-  const saveBlocked=saved||saveRecord.status==='absent'?null:saveRecord.status;
+   try {
+-    if (saved) {
++    const raw = localStorage.getItem(key);
++    if (raw) {
++      const saved = JSON.parse(raw);
++      if (saved && saved.version === 1) {
+         Object.keys(tasks).forEach(id => {state.completed[id] = saved.completed?.[id] === true;});
+         if (validHub(saved.selectedHub)) state.selectedHub = saved.selectedHub;
+         if (saved.expandedHub === null || validHub(saved.expandedHub)) state.expandedHub = saved.expandedHub;
+@@ -81,28 +76,22 @@
+         if (validTask(saved.lastContent?.task) && [...Object.values(tasks).map(t=>t.view),'quest-firestarter'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
+         if (validHub(saved.treeReturn?.expandedHub) || saved.treeReturn?.expandedHub === null) state.treeReturn = saved.treeReturn;
+         if (saved.map) state.map = {type:["all", "pop", "diagram", "service", "gwent", "notice", "abandoned", "buff", "camp", "entrance", "guarded", "hidden", "nest", "poi", "signpost", "cache", "quest", "contract"].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true,view:saved.map.view};
+-    } else if (saveRecord.status === 'absent') {
++      }
++    } else {
+       // Read, but never overwrite or delete, the old pilot save.
+       const legacy = JSON.parse(localStorage.getItem(legacyKey) || '{}');
+       if (legacy?.firestarter === true) state.completed['q-firestarter'] = true;
+     }
+-  } catch {}
+-  state.progress=progressEngine.init(saved?.progress||{},state.completed);
+-  try{const old=saved||{};state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.noticeRead=Array.isArray(old.noticeRead)?old.noticeRead:[];}catch{}
++  } catch { saveAvailable = false; }
++  state.progress=progressEngine.init((()=>{try{return JSON.parse(localStorage.getItem(key)||'{}').progress||{};}catch{return {};}})(),state.completed);
++  try{const old=JSON.parse(localStorage.getItem(key)||'{}');state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.noticeRead=Array.isArray(old.noticeRead)?old.noticeRead:[];}catch{}
+   state.groupOpen ||= {};state.routeUpdates ||= [];
+   if ('scrollRestoration'  in history) history.scrollRestoration = 'manual';
+   function persist() {
+-    if (!saveBlocked) {
+-      try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
+-      catch {saveAvailable=false;}
+-    }
+-    showSaveStatus();
++    try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
++    catch {saveAvailable=false;}
++    document.querySelectorAll('[data-save-message]').forEach(el => {el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
+   }
+-  // QA6: one source for the save-status text, used by persist() and reflect(). A blocked state is fixed for the page
+-  // session; only the normal/write-failed pair follows the outcome of the last write.
+-  const SAVE_MESSAGES={saving:'Progress and your place save in this browser.','write-failed':'Saving is unavailable. Changes last for this visit only.',unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.','storage-unavailable':'Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.'};
+-  function saveStatus() {return saveBlocked||(saveAvailable?'saving':'write-failed');}
+-  function showSaveStatus() {const status=saveStatus();document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=SAVE_MESSAGES[status];el.dataset.saveState=status;});}
+   function taskAnchor(id,home=false) {
+     const a=document.createElement('a');
+     a.textContent=tasks[id].name;
+@@ -210,7 +199,7 @@
+     const unfinished=document.querySelector('[data-unfinished]');unfinished.replaceChildren();
+     Object.keys(tasks).filter(id=>!tasks[id].mapOnly&&!state.completed[id]&&progressEngine.availability(id,state.progress)==='available').forEach(id=>unfinished.append(taskAnchor(id,true)));
+     if(!unfinished.children.length)unfinished.textContent=!progressEngine.facts(state.progress).arrival?'Confirm your story progress to reveal unfinished opportunities.':Object.keys(tasks).some(id=>!tasks[id].mapOnly&&!state.completed[id])?'No unfinished activities are currently available for this recorded progress.':'All listed guide activities are marked completed.';
+-    showSaveStatus();
++    document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
+     if(progressUI)progressUI.reflect();
+     renderMapLinks();
+     homeUI?.refresh();
+diff --git b/dist/home-candidate.test.cjs a/dist/home-candidate.test.cjs
+index aea7a6c..6503b24 100644
+--- b/dist/home-candidate.test.cjs
++++ a/dist/home-candidate.test.cjs
+@@ -29,7 +29,7 @@ test('seeded history survives new acknowledgement and is copied to integration c
+ 
+ test('warning arriving during repeated Undo preserves the original FIFO head',()=>{const {api,tick}=med({onUndo:()=>true});api.enqueueWarning({id:'a',text:'A'});api.signalUndoAvailable();tick(500);api.signalUndoAvailable();api.enqueueWarning({id:'b',text:'B'});tick(3900);assert.equal(api.getActiveWarning().id,'a');});
+ test('browse registry survives row filtering and includes utility and shared task members',()=>{const x=load(['white-orchard.js','map-data.js']);const source=fs.readFileSync('app.js','utf8');vm.runInContext(source.slice(0,source.indexOf("  tasks['departure-review'].sections="))+'})();',x);const registry=x.PHOENIX_MAP_MEMBERSHIP;assert.equal(Object.isFrozen(registry),true);for(const h of x.PHOENIX_ROUTE.hubs){assert.equal(new Set(registry[h.id]).size,registry[h.id].length);}assert.ok(registry['hub-missing'].includes('q-viper'));assert.ok(Object.values(registry).flat().some(id=>id.startsWith('signpost-')));assert.ok(Object.values(registry).flat().some(id=>x.PHOENIX_ROUTE.tasks[id].type==='service'));});
+-test('cluster browse mode is excluded from serialized progress context',()=>{const source=fs.readFileSync('app.js','utf8');const body=source.slice(source.indexOf('  function persist() {'),source.indexOf('  function taskAnchor('));let saved;const x={state:{mapContext:{clusterMode:'progress',scope:'hub-missing'},progress:{schema:1}},key:'test',saveAvailable:true,saveBlocked:null,localStorage:{setItem(k,v){saved=JSON.parse(v);}},document:{querySelectorAll:()=>[]}};vm.runInNewContext(body+'persist();',x);assert.equal(saved.mapContext.clusterMode,undefined);assert.equal(saved.mapContext.scope,'hub-missing');assert.equal(saved.progress.schema,1);assert.equal(x.state.mapContext.clusterMode,'progress');});
++test('cluster browse mode is excluded from serialized progress context',()=>{const source=fs.readFileSync('app.js','utf8');const body=source.slice(source.indexOf('  function persist() {'),source.indexOf('  function taskAnchor('));let saved;const x={state:{mapContext:{clusterMode:'progress',scope:'hub-missing'},progress:{schema:1}},key:'test',saveAvailable:true,localStorage:{setItem(k,v){saved=JSON.parse(v);}},document:{querySelectorAll:()=>[]}};vm.runInNewContext(body+'persist();',x);assert.equal(saved.mapContext.clusterMode,undefined);assert.equal(saved.mapContext.scope,'hub-missing');assert.equal(saved.progress.schema,1);assert.equal(x.state.mapContext.clusterMode,'progress');});
+ test('warning mode retains separate navigation without acknowledging the warning',()=>{let route;const {api}=med({onNavigate:hash=>route=hash});api.enqueueWarning({id:'a',text:'A'});const nav=api.element.querySelector('.medallion-nav-toggle');assert.equal(nav.hidden,false);nav.onclick();assert.equal(api.isFanOpen(),true);api.element.querySelector('.medallion-fan').children[1].onclick();assert.equal(route,'#whiteorchard-tree');assert.equal(api.getActiveWarning().id,'a');assert.equal(api.getHistory().length,0);});
+ test('Undo navigation does not execute Undo or stop its timer',()=>{let undos=0;const {api,tick}=med({onUndo:()=>{undos++;return true;}});api.signalUndoAvailable();api.element.querySelector('.medallion-nav-toggle').onclick();assert.equal(api.isFanOpen(),true);tick(3900);assert.equal(api.getMode(),'nav');assert.equal(api.isFanOpen(),true);assert.equal(undos,0);});
+ test('wolf image and four illustrated navigation cards are present',()=>{const {api,core}=med();assert.equal(core.querySelector('img').src,'wolf-medallion-silver.png');const cards=api.element.querySelector('.medallion-fan').children;assert.equal(cards.length,4);for(const card of cards){assert.ok(card.querySelector('img').src);assert.ok(card.getAttribute('aria-label'));}});
+diff --git b/dist/index.html a/dist/index.html
+index 28aae69..9e77ade 100644
+--- b/dist/index.html
++++ a/dist/index.html
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-nilf-objectives.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-progress.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-ui.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=save-guard-qa6-v45" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=save-guard-qa6-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
++<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141311"><meta name="description" content="A field guide to the Path: regions, quests and shared reference."><title>Witcher Field Guide · White Orchard</title><link rel="stylesheet" href="leaflet.css"><link rel="stylesheet" href="styles.css?v=type-v40"><link rel="stylesheet" href="phoenix-journal.css?v=type-v40"><script src="appearance.js?v=type-v41"></script><script src="guide-viewport.js?v=wolf-dock-1" defer></script><script src="white-orchard.js?v=main-route-1" defer></script><script src="leaflet.js" defer></script><script src="map-data.js?v=progress-r8a" defer></script><script src="map-ui.js?v=exploration-1" defer></script><script src="progression-data.js?v=regional-foundation-v45"></script><script src="progression-engine.js?v=progress-r8a"></script><script src="progression-ui.js?v=objective-progress-v35"></script><script src="home-panel.js" defer></script><script src="home-metrics.js?v=exploration-1" defer></script><script src="medallion.js?v=warnings-takeover-v44" defer></script><script src="home-ui.js?v=paired-slices-1" defer></script><script src="diagrams-data.js?v=compass-v32" defer></script><script src="exploration-data.js?v=exploration-1" defer></script><script src="diagrams-art.js?v=diagram-art-1" defer></script><script src="diagrams-compass.js?v=compass-v32" defer></script><script src="diagrams-ui.js?v=search-qa-1" defer></script><script src="exploration-art.js?v=den-variety-3" defer></script><script src="exploration-ui.js?v=warning-overlay-1" defer></script><script src="deck-motion.js?v=swipe-box-v38" defer></script><script src="navigation-effects.js?v=warnings-v29" defer></script><script src="navigation-art.js?v=warnings-takeover-v44" defer></script><script src="velen-data-r18.js?v=regional-foundation-v45" defer></script><script src="regional-registry.js?v=regional-foundation-v45" defer></script><script src="velen-migration.js?v=regional-foundation-v45" defer></script><script src="velen-nilf-objectives.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-progress.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-nilf-ui.js?v=nilf-slice2-qa4-v45" defer></script><script src="velen-routing.js?v=velen-shell-v43" defer></script><script src="velen-r18.js?v=nilf-slice2-qa3-v45" defer></script><script src="main-console.js?v=velen-shell-v43" defer></script><script src="departure.js?v=paired-slices-1" defer></script><script src="quest-hubs.js?v=paired-slices-1" defer></script><script src="quest-pages.js?v=paired-slices-1" defer></script><script src="warning-details.js?v=warnings-v29" defer></script><script src="warning-center.js?v=objective-warning-v34" defer></script><script src="search-model.js?v=search-qa-1" defer></script><script src="search-ui.js?v=search-qa-1" defer></script><script src="visual-system.js?v=velen-shell-v43" defer></script><script src="swipe-boxes.js?v=swipe-box-v39" defer></script><script src="reading-pilot.js?v=reading-v42" defer></script><script src="app.js?v=nilf-slice2-qa5-v45" defer></script><link rel="stylesheet" href="weathered-r10.css?v=type-v40"><script src="weathered-r10.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="desk-r11.css?v=type-v40"><script src="desk-r11.js?v=region-spin-2" defer></script><link rel="stylesheet" href="tarot-r12.css?v=type-v40"><link rel="stylesheet" href="art-r13.css?v=type-v40"><link rel="stylesheet" href="atlas-r14.css"><script src="atlas-r14.js?v=diagrams-1" defer></script><link rel="stylesheet" href="guide-art-r15.css?v=type-v40"><script src="guide-art-r15.js?v=quest-layout-2" defer></script><link rel="stylesheet" href="console-r16.css?v=type-v40"><script src="console-r16.js?v=stage1" defer></script><link rel="stylesheet" href="home-rebuild.css?v=type-v40"><link rel="stylesheet" href="main-console.css?v=type-v40"><link rel="stylesheet" href="diagrams.css?v=type-v40"><link rel="stylesheet" href="exploration.css?v=type-v40"><link rel="stylesheet" href="departure.css?v=paired-slices-1"><link rel="stylesheet" href="quest-pages.css?v=type-v40"><link rel="stylesheet" href="parchment-controls.css?v=type-v40"><link rel="stylesheet" href="guide-viewport.css?v=type-v40"><link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33"><link rel="stylesheet" href="warning-details.css?v=warning-overlay-1"><link rel="stylesheet" href="navigation-art.css?v=warnings-takeover-v44"><link rel="stylesheet" href="objective-presentation.css?v=type-v40"><link rel="stylesheet" href="search-ui.css?v=type-v40"><link rel="stylesheet" href="visual-system.css?v=type-v40"><link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38"><link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45"><link rel="stylesheet" href="typography.css?v=type-v40"><script src="typography.js?v=type-v40" defer></script><link rel="stylesheet" href="reading-pilot.css?v=reading-v42"></head><body>
+ <a class="skip" href="#main">Skip to content</a><header class="guide-bar"><div class="bar-line"><a class="wordmark" href="#home">Witcher Field Guide</a><nav aria-label="Guide"><a href="#home">Home</a><a href="#whiteorchard-tree">Quests</a><a href="#regions">Regions</a><a href="#whiteorchard-constellation" data-world-atlas>Constellation</a></nav><div class="guide-appearance"><label><span class="sr-only">Reading font</span><select id="reading-font" aria-label="Reading font"><option value="fondamento">Calligraphy</option><option value="alegreya">Alegreya</option><option value="fell">IM Fell English</option></select></label><button type="button" id="theme-toggle" aria-label="Switch to day theme">Day</button></div></div></header><main id="main">
+ <section id="whiteorchard-console" class="view home" hidden aria-labelledby="home-title"><div class="cover"><div class="cover-art"><img src="white-orchard-scene.webp" alt="Official CDPR scene of Geralt at the White Orchard notice board"><div class="plate-caption"><span>TEMERIA · WHITE ORCHARD</span><span>AN UNOFFICIAL FIELD JOURNAL</span></div></div><div class="journal-sheet home-sheet"><span aria-hidden="true" class="corner tl"></span><span aria-hidden="true" class="corner tr"></span><p class="eyebrow">WHITE ORCHARD / THE BEGINNING OF THE PATH</p><h1 id="home-title">The Path<br>through <em>White Orchard.</em></h1><p class="intro">A witcher’s work begins with a lead. Follow it. Find what is worth doing along the way.</p><div class="rule" aria-hidden="true"><span>◆</span></div><a class="continue" data-console-continue href="#whiteorchard-tree/hub-arrival"><span class="continue-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 28 24 7M10 22C4 12 16 3 28 4c1 12-5 22-16 20M17 15l8 1M13 20l7 1"/></svg></span><span><small>YOUR JOURNAL</small><strong data-console-title>Arrival in White Orchard</strong><span class="continue-meta"><span data-console-meta>Open your selected quest hub</span></span></span><span class="arrow" aria-hidden="true">→</span></a><div class="doors"><a href="#whiteorchard-tree"><span class="door-no">01</span><div><h2>Quests</h2><p>One path. The opportunities around it.</p></div><span aria-hidden="true">→</span></a><a href="#whiteorchard-map"><span class="door-no">02</span><div><h2>The map</h2><p>Familiar ground. Something worth finding.</p></div><span aria-hidden="true">→</span></a></div><nav class="shelf" aria-label="Journal sections"><a href="#regions">Regions</a><a href="#economy-merchants">Merchants</a><button disabled aria-label="Systems — coming soon">Systems</button><button disabled aria-label="Builds — coming soon">Builds</button></nav><span aria-hidden="true" class="corner bl"></span><span aria-hidden="true" class="corner br"></span></div></div><p class="study-note">THE KEEP · XBOX SERIES X|S · YOUR PROGRESS, YOUR PATH</p></section>
+ <section class="view scene" id="regions" hidden aria-labelledby="regions-title"><div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><span>Regions</span></nav><div class="region-hero"><p class="eyebrow">THE CONTINENT / REGIONAL GUIDES</p><h1 id="regions-title">Choose your<br><em>next horizon.</em></h1><p class="lead">Every place has its stories.<br>Begin where the Path first opens.</p></div><a class="region-feature" href="#whiteorchard"><span class="eyebrow">01 / TEMERIA</span><h2>White Orchard</h2><p>Orchards, quiet roads, and the scars of war.</p><span class="entry-footer">Explore the region <b aria-hidden="true">→</b></span></a><a class="region-feature velen-entry" href="velen.html"><span class="eyebrow">02 / NO MAN’S LAND · ARRIVAL PILOT</span><h2>Velen</h2><p>The imperial agent’s trail through a country broken by war.</p><span class="entry-footer">Enter Velen <b aria-hidden="true">→</b></span></a><p class="quiet">Novigrad · Oxenfurt · Skellige · Kaer Morhen · Hearts of Stone · Toussaint<br>Further regional guides remain planned.</p></div></section>
+diff --git b/dist/slice2-cache-tags.test.cjs a/dist/slice2-cache-tags.test.cjs
+index 3484954..becf50f 100644
+--- b/dist/slice2-cache-tags.test.cjs
++++ a/dist/slice2-cache-tags.test.cjs
+@@ -1,5 +1,5 @@
+ 'use strict';
+-// v45 Slice 2 QA5 (extended in QA6 for QA5 -> QA6): cache-busting regression. Every script/stylesheet referenced from every packaged HTML entry point
++// v45 Slice 2 QA5: cache-busting regression. Every script/stylesheet referenced from every packaged HTML entry point
+ // whose bytes differ from the accepted v45 release (commit a9d61c94), or which is new, must carry a ?v= tag that
+ // differs from the tag v45 used for it. Otherwise a returning browser may run the cached v45 copy next to new code
+ // (the QA4 app.js defect). Portable: v45 tags and sha256 are pinned below; optionally the pins are re-derived from
+@@ -112,38 +112,10 @@ test('every changed or new script/stylesheet loaded by any HTML entry point carr
+  }
+  for(const f of ['app.js','velen-r18.js','velen-view.css','velen-nilf-objectives.js','velen-nilf-progress.js','velen-nilf-ui.js'])assert.ok(checked.includes(f),f+' must be referenced and checked');
+ });
+-// QA6: the release after QA5. Files changed since the QA5 candidate (commit 5ba73ace) must also leave QA5's tag, so a
+-// browser holding cached QA5 copies fetches them. QA5 = v45 plus the entries below (derived from every *.html in QA5 dist).
+-const QA5_DELTA={
+-  'app.js':['nilf-slice2-qa5-v45','e8fb57a86511c1eb1a17e8d746ec2045aab91d1fb86bf454cc044e9bbbfd26f2'],
+-  'velen-nilf-objectives.js':['nilf-slice2-qa4-v45','d4f64e1003ec940e074ff8ffce5768b3953ffe2822523661aebd163788b81d1c'],
+-  'velen-nilf-progress.js':['nilf-slice2-qa4-v45','ee9086355206974758dbe3513c68ad6846b7fb2a793a7a92f4ac6a8db67e9888'],
+-  'velen-nilf-ui.js':['nilf-slice2-qa4-v45','5d79aa4e7fb1f0d42c9071cd02a6483b2ea43eccf71b5d348b28ed73905f41b9'],
+-  'velen-r18.js':['nilf-slice2-qa3-v45','a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898'],
+-  'velen-view.css':['nilf-slice2-v45','4b171890a5cef380db134efef891ad7518f0a0150510aed1ccdda6a8bc74e2cc'],
+-};
+-const QA5_REFS={...V45_REFS,...QA5_DELTA};
+-test('QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45',()=>{
+- const checked=[];
+- for(const {html,file,tag} of refsOf(here)){
+-  const qa5=QA5_REFS[file],now=sha(path.join(here,file));
+-  if(qa5&&qa5[1]===now)continue; // unchanged since QA5: a reused tag is correct
+-  checked.push(file);
+-  assert.ok(tag,html+': '+file+' changed or new since QA5 but is untagged');
+-  if(qa5)assert.notEqual(tag,qa5[0],html+': '+file+' changed since QA5 but still uses the QA5 tag ?v='+qa5[0]);
+-  if(V45_REFS[file])assert.notEqual(tag,V45_REFS[file][0],html+': '+file+' changed but uses the v45 tag ?v='+V45_REFS[file][0]);
+- }
+- for(const f of ['app.js','velen-r18.js'])assert.ok(checked.includes(f),f+' changed in QA6 and must be referenced and checked');
+-});
+-test('QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html',()=>{
++test('QA5 release tags: app.js carries the QA5 release tag in index.html',()=>{
+  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
+- for(const f of ['app.js','velen-r18.js']){assert.equal(tags[f],'save-guard-qa6-v45',f);assert.notEqual(tags[f],QA5_REFS[f][0]);assert.notEqual(tags[f],V45_REFS[f][0]);}
+-});
+-test('pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided',(t)=>{
+- const dir=process.env.PHOENIX_QA5_BASELINE;if(!dir){t.skip('PHOENIX_QA5_BASELINE not set; pinned table used');return;}
+- assert.ok(fs.existsSync(dir),'PHOENIX_QA5_BASELINE does not exist: '+dir);
+- const derived={};for(const {file,tag} of refsOf(dir))derived[file]=[tag,sha(path.join(dir,file))];
+- assert.deepEqual(derived,QA5_REFS);
++ assert.equal(tags['app.js'],'nilf-slice2-qa5-v45');
++ assert.notEqual(tags['app.js'],V45_REFS['app.js'][0]);
+ });
+ test('pinned v45 tag table matches PHOENIX_V45_BASELINE when provided',(t)=>{
+  const dir=process.env.PHOENIX_V45_BASELINE;if(!dir){t.skip('PHOENIX_V45_BASELINE not set; pinned table used');return;}
+diff --git b/dist/slice2-nilf.test.cjs a/dist/slice2-nilf.test.cjs
+index ebbe243..3da2464 100644
+--- b/dist/slice2-nilf.test.cjs
++++ a/dist/slice2-nilf.test.cjs
+@@ -154,11 +154,9 @@ const PROTECTED={
+ //   accepted v45 ............. 5908676ffe5f29503e1fc40cc867dc6eadfda63cbc2f96b404d51c31ce3c12be
+ //   Slice 2 (freeze 1 + QA2) . ccaa703e32b8486fb5288aadc668592f537ce7a7efce2e0018d54acd595e4200
+ //   QA3 save guard ........... a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898 (owner-authorized guard in save())
+-//   QA6 D4 storage guard ..... ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d (Cmdr-authorized: guarded
+-//                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
+-const SEAM_PINS={'velen-r18.js':'ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d'};
+-test('Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes',()=>{
+- for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed QA6 seam; update SEAM_PINS deliberately');
++const SEAM_PINS={'velen-r18.js':'a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898'};
++test('Slice 2 seam pin: velen-r18.js matches the reviewed QA3 bytes',()=>{
++ for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed QA3 seam; update SEAM_PINS deliberately');
+ });
+ test('protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)',()=>{
+  for(const [f,sum] of Object.entries(PROTECTED))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' differs from accepted v45');
+diff --git b/dist/storage-denied-startup.test.cjs a/dist/storage-denied-startup.test.cjs
+deleted file mode 100644
+index 119e72c..0000000
+--- b/dist/storage-denied-startup.test.cjs
++++ /dev/null
+@@ -1,52 +0,0 @@
+-'use strict';
+-// v45 QA6: start-up when the browser denies localStorage access (finding D4: in QA5 the `localStorage` getter threw at
+-// velen-r18.js:19 while the Nilfgaardian owner was being built, the error escaped createPhoenixVelen() at app.js:380, and
+-// the initial render never ran - a blank page). Executes the real code: the guarded storage acquisition from
+-// velen-r18.js (extracted verbatim), the real Nilfgaardian owner (velen-nilf-progress.js), the real Slice 1 import, and the
+-// real White Orchard loader/persist region of app.js, each with a `localStorage` getter that throws SecurityError.
+-// The full page start-up and Home -> Velen -> quest -> return in a browser are covered by qa/wo-save-preservation/probe.cjs.
+-const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+-const h=require('./velen-nilf-progress.js'),m=require('./velen-migration.js');
+-const R18=fs.readFileSync(path.join(__dirname,'velen-r18.js'),'utf8'),APP=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
+-// The getter is installed from inside the context: an accessor on the sandbox object is not seen by global lookups.
+-const deny=c=>vm.runInContext('Object.defineProperty(globalThis,"localStorage",{configurable:true,get(){const e=new Error("The operation is insecure.");e.name="SecurityError";throw e;}})',c);
+-const denied=()=>{const c={};vm.createContext(c);deny(c);return c;};
+-const acquisition=()=>{const a=R18.indexOf('const nilfStorage='),b=R18.indexOf('const nilfUI=');assert.ok(a>0&&b>a,'guarded acquisition not found before the Nilfgaardian UI');return R18.slice(a,b);};
+-
+-test('velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on',()=>{
+- const line=R18.slice(R18.indexOf('const nilfUI='),R18.indexOf('\n',R18.indexOf('const nilfUI=')));
+- assert.match(line,/\{storage:nilfStorage,/);assert.doesNotMatch(line,/storage:localStorage/);
+- assert.doesNotMatch(acquisition(),/catch\{\}/,'no silent catch: the stand-in re-throws the original error on use');
+-});
+-test('denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call',()=>{
+- const c=denied();assert.throws(()=>vm.runInContext('localStorage',c),e=>e.name==='SecurityError','the simulated denial is real');
+- const s=vm.runInContext(acquisition()+';nilfStorage',c);
+- for(const op of ['getItem','setItem','removeItem'])assert.throws(()=>s[op]('k','v'),e=>e.name==='SecurityError',op);
+-});
+-test('working storage: acquisition returns the real localStorage object itself (no behaviour change)',()=>{
+- const real={getItem(){return null;},setItem(){},removeItem(){}},c={localStorage:real};vm.createContext(c);
+- assert.equal(vm.runInContext(acquisition()+';nilfStorage',c),real);
+-});
+-test('denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)',()=>{
+- const s=vm.runInContext(acquisition()+';nilfStorage',denied());
+- assert.equal(h.load(s).owned,false);assert.equal(h.load(s).status,'storage-unavailable');
+- assert.equal(h.handover(s).status,'storage-unavailable');
+- assert.notEqual(h.commit(s,h.load(s).progress).status,'saved');assert.equal(h.undo(s).status,'nothing-to-undo');
+- assert.equal(h.rollbackHandover(s).restored,false);
+- assert.doesNotThrow(()=>{try{m.importFromStorage(s);}catch(e){if(e.name!=='SecurityError')throw e;}},'Slice 1 import: app.js wraps it; only the storage error may surface');
+-});
+-test('denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status',()=>{
+- const a=APP.indexOf("  const key = 'phoenix.whiteorchard.interaction.v1';"),b=APP.indexOf('  function taskAnchor(');
+- const c={};c.window=c;vm.createContext(c);for(const f of ['white-orchard.js','map-data.js','progression-data.js','progression-engine.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,f),'utf8'),c);
+- const {tasks,hubs,groups}=c.PHOENIX_ROUTE,msg={textContent:'',dataset:{}};
+- Object.assign(c,{tasks,hubs,groups,stages:tasks['q-firestarter'].stages.map(s=>s.id),progressEngine:c.createPhoenixProgress(c.PHOENIX_PROGRESS_DATA,tasks,hubs),history:{},document:{querySelectorAll:sel=>sel==='[data-save-message]'?[msg]:[]}});
+- deny(c);
+- const api=vm.runInContext(APP.slice(a,b)+';({persist})',c);
+- assert.doesNotThrow(()=>{api.persist();api.persist();});
+- assert.equal(msg.dataset.saveState,'storage-unavailable');assert.match(msg.textContent,/^Saving is unavailable/);assert.doesNotMatch(msg.textContent,/kept unchanged/);
+-});
+-test('start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch',()=>{
+- const tail=APP.slice(APP.indexOf('PhoenixVelenMigration?.importFromStorage'));
+- assert.match(tail,/^PhoenixVelenMigration\?\.importFromStorage\(localStorage\);\}catch\{\}/);
+- assert.match(APP,/\n  window\.PhoenixVelen=window\.createPhoenixVelen\(\{navigate\}\);\n  views=\[\.\.\.document\.querySelectorAll\('\.view'\)\];\n  addEventListener\('phoenix:views-ready',\(\)=>render\(\{mode:'initial'\}\)\);\n  updateTree\(\);render\(\);\n\}\)\(\);/,'unrelated init errors still surface');
+-});
+diff --git b/dist/velen-r18.js a/dist/velen-r18.js
+index 870e7df..836300a 100644
+--- b/dist/velen-r18.js
++++ a/dist/velen-r18.js
+@@ -16,7 +16,7 @@ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className
+ // v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
+ // the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
+ // velen.pyres/velen.mercy owners. If the handover is unavailable (e.g. newer canonical data), nilf falls back to the v45 legacy hub.
+-/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>render({focus:false,y:viewport().scrollY})}):null;
++const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:localStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>render({focus:false,y:viewport().scrollY})}):null;
+ const nilfOwned=()=>!!nilfUI&&nilfUI.owned(),isComplete=id=>id==='nilf'&&nilfOwned()?nilfUI.complete():state.complete[id]===true,isUnlocked=()=>isComplete('nilf');
+ function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */try{localStorage.setItem(key,JSON.stringify(state));status.textContent='Your Velen progress saves in this browser.';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
+ function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
+diff --git b/dist/wo-save-guard.test.cjs a/dist/wo-save-guard.test.cjs
+deleted file mode 100644
+index 378c498..0000000
+--- b/dist/wo-save-guard.test.cjs
++++ /dev/null
+@@ -1,167 +0,0 @@
+-'use strict';
+-// v45 QA6: White Orchard save guard (audit finding D2). Executes the real White Orchard loader, persist() and save-status
+-// code of app.js (extracted verbatim from `const key = ...interaction.v1` up to `function taskAnchor(`) in a VM with the
+-// real route, progression data and engine, against an in-memory Storage that logs every write and can inject faults.
+-// Each "visit" is one page session: load -> initial render persist -> interaction persists -> pagehide persist.
+-// Behaviour checked: unusable records are preserved byte-for-byte with zero writes for the whole session, a failed read
+-// never leads to a write of defaults, valid and absent records give exactly the v45 bytes, write failures behave as in
+-// v45, and the status text distinguishes normal / blocked-unreadable / blocked-unsupported / storage-unavailable /
+-// write-failed. Optional PHOENIX_V45_BASELINE=<v45 dist dir> replays the same visits against the v45 app.js region.
+-const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),crypto=require('node:crypto');
+-const KEY='phoenix.whiteorchard.interaction.v1',LEGACY='phoenix.whiteorchard.pilot.v1';
+-const J=x=>JSON.parse(JSON.stringify(x)); // VM objects come from another realm: compare as plain JSON
+-const sha=s=>crypto.createHash('sha256').update(s,'utf8').digest('hex');
+-const VALID="{\"version\":1,\"completed\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false},\"selectedHub\":\"hub-arrival\",\"expandedHub\":\"hub-arrival\",\"windowStart\":0,\"treeReturn\":{\"hubDecks\":{\"completed\":false,\"rails\":{\"Merchants & services\":0,\"Quests & contracts\":0,\"Exploration\":0},\"doneX\":0},\"selectedHub\":\"hub-arrival\",\"groupOpen\":{},\"expandedHub\":\"hub-arrival\",\"windowStart\":0,\"scrollY\":0,\"scrollX\":0,\"focusId\":\"\"},\"lastStage\":\"forge\",\"lastContent\":{\"task\":\"q-lilac\",\"view\":\"quest-lilac\"},\"lastWalkthrough\":true,\"lastWalkthroughView\":\"quest-lilac\",\"stageByView\":{\"quest-lilac\":\"1\"},\"map\":{\"type\":\"all\",\"search\":\"\",\"showCompleted\":false},\"progress\":{\"schema\":1,\"objectives\":{\"q-lilac:ghouls\":\"done\",\"q-lilac:ride\":\"done\"},\"choices\":{},\"manual\":{\"arrival\":false,\"garrison\":false,\"griffin\":false,\"departed\":false},\"failed\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false},\"legacy\":{\"q-lilac\":false,\"q-beast\":false,\"q-firestarter\":false,\"q-pan\":false,\"q-cargo\":false,\"q-missing\":false,\"q-death\":false,\"q-devil\":false,\"q-viper\":false,\"q-temerian\":false,\"q-deserter\":false,\"q-dirty\":false,\"q-incident\":false}},\"groupOpen\":{},\"routeUpdates\":[],\"progressUndo\":{\"progress\":{\"schema\":1,\"objectives\":{},\"choices\":{},\"manual\":{},\"failed\":{},\"legacy\":{}},\"completed\":{},\"routeUpdates\":[]},\"mapContext\":null,\"noticeRead\":[]}";
+-// The probe fixture qa/wo-save-preservation/fixtures/valid-record.json (written by the v45 UI), embedded for portability.
+-assert.equal(sha(VALID),'1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf');
+-function data(){
+- const c={};c.window=c;vm.createContext(c);
+- for(const f of ['white-orchard.js','map-data.js','progression-data.js','progression-engine.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,f),'utf8'),c,{filename:f});
+- return c;
+-}
+-function region(src){
+- const a=src.indexOf("  const key = 'phoenix.whiteorchard.interaction.v1';"),b=src.indexOf('  function taskAnchor(');
+- assert.ok(a>0&&b>a,'White Orchard loader/persist region not found');return src.slice(a,b);
+-}
+-// Storage double: Map-backed, logs writes, optional faults {read:true} (getItem of KEY throws), {write:'key'|'all'}.
+-function store(init={},fault={}){
+- const map=new Map(Object.entries(init)),log=[];
+- return {map,log,fault,
+-  getItem(k){if(fault.read&&k===KEY)throw Object.assign(new Error('simulated read failure'),{name:'SecurityError'});return map.has(k)?map.get(k):null;},
+-  setItem(k,v){if(fault.write==='all'||fault.write==='key'&&k===KEY){log.push(['refused',k]);throw Object.assign(new Error('simulated quota'),{name:'QuotaExceededError'});}log.push(['set',k]);map.set(k,String(v));},
+-  removeItem(k){log.push(['remove',k]);map.delete(k);},clear(){log.push(['clear']);map.clear();},
+-  writes(k=KEY){return log.filter(([op,key])=>op==='set'&&key===k).length;},
+- };
+-}
+-// One page session of the given app.js source. denied: the localStorage getter itself throws (storage blocked).
+-function visit(src,storage,{denied=false,interact=true}={}){
+- const d=data(),{tasks,hubs,groups}=d.PHOENIX_ROUTE;
+- Object.entries(d.PHOENIX_PROGRESS_DATA.quests).forEach(([id,q])=>{if(!Number.isFinite(tasks[id].level)&&Number.isFinite(q.level))tasks[id].level=q.level;});
+- const engine=d.createPhoenixProgress(d.PHOENIX_PROGRESS_DATA,tasks,hubs);
+- const messages=[{textContent:'',dataset:{}},{textContent:'',dataset:{}}];
+- const ctx={tasks,hubs,groups,progressEngine:engine,stages:tasks['q-firestarter'].stages.map(s=>s.id),history:{},JSON,Object,Array,Number,Math,Set,Boolean,String,
+-  document:{querySelectorAll:sel=>sel==='[data-save-message]'?messages:[]}};
+- if(!denied)ctx.localStorage=storage;
+- vm.createContext(ctx);
+- // Installed from inside the context: an accessor on the sandbox object is not seen by global lookups.
+- if(denied){vm.runInContext('Object.defineProperty(globalThis,"localStorage",{configurable:true,get(){const e=new Error("storage access denied");e.name="SecurityError";throw e;}})',ctx);assert.throws(()=>vm.runInContext('localStorage',ctx),e=>e.name==='SecurityError');}
+- const api=vm.runInContext(region(src)+';({state,persist,show:typeof showSaveStatus==="function"?showSaveStatus:null})',ctx);
+- const seen=[];const note=()=>seen.push(messages[0].textContent);
+- api.persist();note(); // initial render() -> persist()
+- if(interact){
+-  // Interaction as the UI does it (progression-ui apply/undoLast): change progress in memory, persist, then Undo, persist.
+-  const before={progress:api.state.progress,completed:{...api.state.completed}};
+-  const plan=engine.plan(api.state.progress,api.state.completed,{kind:'objective',id:'q-lilac:ride',value:true});
+-  api.state.progressUndo={progress:before.progress,completed:before.completed,routeUpdates:api.state.routeUpdates};
+-  api.state.progress=plan.progress;api.persist();note();
+-  const afterTick=engine.facts?api.state.progress:null;
+-  api.state.progress=engine.init(before.progress,before.completed);api.state.progressUndo=null;api.persist();note();
+-  api.ticked=afterTick;
+- }
+- api.persist();note(); // pagehide
+- return {...api,messages,seen,state:api.state};
+-}
+-const APP=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
+-const V45_DIR=process.env.PHOENIX_V45_BASELINE,V45_APP=V45_DIR?fs.readFileSync(path.join(V45_DIR,'app.js'),'utf8'):null;
+-const MSG={saving:'Progress and your place save in this browser.',writeFailed:'Saving is unavailable. Changes last for this visit only.',
+- unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',
+- unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.',
+- storage:'Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.'};
+-const v=JSON.parse(VALID);
+-const DAMAGED={
+- 'invalid JSON (truncated)':[VALID.slice(0,Math.floor(VALID.length/2)),'unreadable'],
+- 'invalid JSON (text)':['not json {','unreadable'],
+- 'empty string':['','unreadable'],
+- 'array':['[]','unreadable'],'string':['"hello"','unreadable'],'null':['null','unreadable'],'number':['42','unreadable'],
+- 'object without version':['{"foo":1}','unsupported'],
+- 'populated, version missing':[JSON.stringify((({version,...rest})=>rest)(v)),'unsupported'],
+- 'populated, version "1" (string)':[JSON.stringify({...v,version:'1'}),'unsupported'],
+- 'populated, version 2':[JSON.stringify({...v,version:2}),'unsupported'],
+- 'populated, version 2, divergent fields':[JSON.stringify({...v,version:2,completed:{...v.completed,'q-lilac':true},selectedHub:'hub-missing',expandedHub:'hub-missing'}),'unsupported'],
+- 'populated, version 0':[JSON.stringify({...v,version:0}),'unsupported'],
+- 'populated, version null':[JSON.stringify({...v,version:null}),'unsupported'],
+-};
+-const DEFAULT_COMPLETED=k=>Object.values(k).every(x=>x===false);
+-
+-for(const [name,[bytes,status]] of Object.entries(DAMAGED))test('unusable record is preserved and never written: '+name,()=>{
+- const s=store({[KEY]:bytes});
+- for(let session=0;session<3;session++){ // first load + two reloads
+-  const r=visit(APP,s);
+-  assert.equal(s.map.get(KEY),bytes,'stored bytes unchanged');
+-  assert.equal(r.messages[0].dataset.saveState,status);
+-  assert.deepEqual([...new Set(r.seen)],[status==='unreadable'?MSG.unreadable:MSG.unsupported],'blocked message only; the normal message never appears');
+-  assert.ok(DEFAULT_COMPLETED(r.state.completed),'nothing imported from an unusable record');
+-  assert.equal(r.state.selectedHub,'hub-arrival');assert.deepEqual(J(r.state.noticeRead),[]);assert.equal(r.state.progressUndo,null);
+- }
+- assert.equal(s.writes(),0,'zero writes of the White Orchard key across three sessions');
+- assert.ok(!s.log.some(([op])=>op==='remove'||op==='clear'));
+-});
+-test('blocked session: progress still changes in memory, Undo restores it, and nothing is written',()=>{
+- const s=store({[KEY]:'{"version":2}'}),r=visit(APP,s);
+- assert.ok(r.ticked,'in-memory progress was updated by the objective tick');
+- assert.notDeepEqual(J(r.ticked),J(r.state.progress),'Undo restored the previous in-memory progress');
+- assert.equal(s.writes(),0);assert.equal(s.map.get(KEY),'{"version":2}');
+-});
+-test('a later successful write elsewhere does not clear the blocked state',()=>{
+- const s=store({[KEY]:'[]'}),r=visit(APP,s,{interact:false});
+- s.setItem('phoenix.guide.resume.v1','{}');r.persist();r.persist();
+- assert.equal(r.messages[0].dataset.saveState,'unreadable');assert.equal(r.messages[0].textContent,MSG.unreadable);assert.equal(s.writes(),0);
+-});
+-test('read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation',()=>{
+- const s=store({[KEY]:VALID},{read:true});
+- for(let i=0;i<3;i++){const r=visit(APP,s);assert.equal(r.messages[0].dataset.saveState,'storage-unavailable');assert.deepEqual([...new Set(r.seen)],[MSG.storage]);assert.ok(!/kept unchanged|preserved/i.test(r.messages[0].textContent));}
+- assert.equal(s.writes(),0);assert.equal(s.map.get(KEY),VALID);
+-});
+-test('read failure on the first load only: the original progress survives and is used once storage recovers',()=>{
+- const s=store({[KEY]:VALID},{read:true});
+- visit(APP,s);assert.equal(s.writes(),0);assert.equal(s.map.get(KEY),VALID);
+- s.fault.read=false;
+- const r=visit(APP,s,{interact:false});
+- assert.equal(r.messages[0].dataset.saveState,'saving');
+- assert.deepEqual(J(r.state.progress.objectives),v.progress.objectives,'progress comes from the preserved record');
+- assert.deepEqual(JSON.parse(s.map.get(KEY)).progress.objectives,v.progress.objectives);
+-});
+-test('localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status',()=>{
+- const r=visit(APP,null,{denied:true});
+- assert.equal(r.messages[0].dataset.saveState,'storage-unavailable');assert.deepEqual([...new Set(r.seen)],[MSG.storage]);
+-});
+-test('write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)',()=>{
+- const s=store({[KEY]:VALID},{write:'key'}),r=visit(APP,s);
+- assert.equal(s.map.get(KEY),VALID);assert.deepEqual([...new Set(r.seen)],[MSG.writeFailed]);assert.equal(r.messages[0].dataset.saveState,'write-failed');
+- s.fault.write=null;r.persist();assert.equal(r.messages[0].textContent,MSG.saving);assert.equal(r.messages[0].dataset.saveState,'saving');
+- if(V45_APP){const s5=store({[KEY]:VALID},{write:'key'}),r5=visit(V45_APP,s5);assert.deepEqual(r5.seen,r.seen,'same messages as v45');assert.equal(s5.map.get(KEY),VALID);}
+-});
+-test('write failure for every key: bytes kept, write-failed message',()=>{
+- const s=store({[KEY]:VALID},{write:'all'}),r=visit(APP,s);assert.equal(s.map.get(KEY),VALID);assert.deepEqual([...new Set(r.seen)],[MSG.writeFailed]);
+-});
+-test('accepted record: every saved field comes from that one record',()=>{
+- const rec={...v,completed:{...v.completed,'q-beast':true},selectedHub:'hub-missing',expandedHub:null,groupOpen:{'hub-arrival:quest':true},noticeRead:['n1'],
+-  routeUpdates:[{hub:'hub-arrival',activities:['q-lilac'],id:'u1'},{hub:'nope',activities:[]}],progressUndo:{progress:v.progress,completed:v.completed},mapContext:{scope:'hub-missing'}};
+- const s=store({[KEY]:JSON.stringify(rec)}),r=visit(APP,s,{interact:false});
+- assert.equal(r.state.completed['q-beast'],true);assert.equal(r.state.selectedHub,'hub-missing');assert.equal(r.state.expandedHub,null);
+- assert.deepEqual(J(r.state.groupOpen),rec.groupOpen);assert.deepEqual(J(r.state.noticeRead),['n1']);assert.deepEqual(J(r.state.routeUpdates),[rec.routeUpdates[0]]);
+- assert.deepEqual(J(r.state.progressUndo),rec.progressUndo);assert.deepEqual(J(r.state.mapContext),rec.mapContext);
+- assert.deepEqual(J(r.state.progress.objectives),v.progress.objectives);assert.equal(r.messages[0].textContent,MSG.saving);
+-});
+-// Final bytes after one session (load, tick, Undo, pagehide), pinned from the v45 app.js region; re-checked live against
+-// PHOENIX_V45_BASELINE when it is set.
+-const PINNED={
+- 'valid fixture':[()=>({[KEY]:VALID}),'710d37b70979c4694f02054d32d4696de27bd2681ae7a04708335b092a247159'],
+- 'absent':[()=>({}),'8f8e07e9a201ff12edf0a05cd7e6c9db7412760e253b1cfb22364d976662ef7a'],
+- 'absent + legacy pilot firestarter':[()=>({[LEGACY]:'{"firestarter":true}'}),'66f3d2fb3efe92818595090eab377a1dff99f42e8b2275c167278a5fc45ae2c1'],
+- 'absent + unreadable legacy pilot':[()=>({[LEGACY]:'{oops'}),'8f8e07e9a201ff12edf0a05cd7e6c9db7412760e253b1cfb22364d976662ef7a'],
+- 'valid with a malformed routeUpdates entry':[()=>({[KEY]:JSON.stringify({...v,routeUpdates:[null]})}),'16d84a0e654af7cd8bda26eb1a4867ce20cb20a07c66dcf69c9157447d51f9d3'],
+-};
+-for(const [name,[init,pin]] of Object.entries(PINNED))test('valid/absent bytes are identical to v45: '+name,()=>{
+- const s=store(init()),r=visit(APP,s),out=s.map.get(KEY);
+- assert.equal(r.messages[0].textContent,MSG.saving);
+- if(init()[LEGACY]!==undefined)assert.equal(s.map.get(LEGACY),init()[LEGACY],'legacy pilot key never written');
+- if(V45_APP){const s5=store(init());visit(V45_APP,s5);assert.equal(out,s5.map.get(KEY),'byte-identical to the v45 region');assert.equal(s.writes(),s5.writes(),'same number of writes as v45');}
+- assert.equal(sha(out),pin,'pinned v45 bytes');
+-});
+-test('one status writer: persist() and reflect() both use showSaveStatus()',()=>{
+- assert.equal(APP.split("querySelectorAll('[data-save-message]')").length-1,1,'only showSaveStatus writes [data-save-message]');
+- const persist=APP.slice(APP.indexOf('  function persist() {'),APP.indexOf('  // QA6: one source'));assert.match(persist,/showSaveStatus\(\)/);assert.match(persist,/if \(!saveBlocked\)/);
+- const reflect=APP.slice(APP.indexOf('function reflect('),APP.indexOf('function reflect(')+4000);assert.match(reflect,/showSaveStatus\(\);/);
+- assert.equal(APP.split('localStorage.getItem(key)').length-1,1,'the White Orchard record is read exactly once');
+-});

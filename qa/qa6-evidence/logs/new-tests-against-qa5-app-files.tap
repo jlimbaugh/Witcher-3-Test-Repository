@@ -1,0 +1,822 @@
+TAP version 13
+# Subtest: every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+ok 1 - every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+  ---
+  duration_ms: 7.036088
+  type: 'test'
+  ...
+# Subtest: QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+not ok 2 - QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+  ---
+  duration_ms: 3.587051
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/slice2-cache-tags.test.cjs:126:1'
+  failureType: 'testCodeFailure'
+  error: 'app.js changed in QA6 and must be referenced and checked'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/slice2-cache-tags.test.cjs:136:50)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+not ok 3 - QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+  ---
+  duration_ms: 2.096932
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/slice2-cache-tags.test.cjs:138:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    app.js
+    + actual - expected
+    
+    + 'nilf-slice2-qa5-v45'
+    - 'save-guard-qa6-v45'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'save-guard-qa6-v45'
+  actual: 'nilf-slice2-qa5-v45'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/slice2-cache-tags.test.cjs:140:51)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided
+ok 4 - pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided # SKIP PHOENIX_QA5_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.211635
+  type: 'test'
+  ...
+# Subtest: pinned v45 tag table matches PHOENIX_V45_BASELINE when provided
+ok 5 - pinned v45 tag table matches PHOENIX_V45_BASELINE when provided # SKIP PHOENIX_V45_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.161622
+  type: 'test'
+  ...
+# Subtest: velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+not ok 6 - velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+  ---
+  duration_ms: 1.072156
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:16:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /\{storage:nilfStorage,/. Input:
+    
+    "const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:localStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>render({focus:false,y:viewport().scrollY})}):null;"
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: "const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:localStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>render({focus:false,y:viewport().scrollY})}):null;"
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:18:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+not ok 7 - denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+  ---
+  duration_ms: 1.511028
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:21:1'
+  failureType: 'testCodeFailure'
+  error: 'guarded acquisition not found before the Nilfgaardian UI'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    acquisition (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:14:104)
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:23:26)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: working storage: acquisition returns the real localStorage object itself (no behaviour change)
+not ok 8 - working storage: acquisition returns the real localStorage object itself (no behaviour change)
+  ---
+  duration_ms: 0.528804
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:26:1'
+  failureType: 'testCodeFailure'
+  error: 'guarded acquisition not found before the Nilfgaardian UI'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    acquisition (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:14:104)
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:28:31)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+not ok 9 - denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+  ---
+  duration_ms: 0.193548
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:30:1'
+  failureType: 'testCodeFailure'
+  error: 'guarded acquisition not found before the Nilfgaardian UI'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    acquisition (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:14:104)
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:31:26)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+not ok 10 - denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+  ---
+  duration_ms: 5.040204
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:38:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'storage-unavailable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'storage-unavailable'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/storage-denied-startup.test.cjs:46:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+ok 11 - start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+  ---
+  duration_ms: 0.190096
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (truncated)
+not ok 12 - unusable record is preserved and never written: invalid JSON (truncated)
+  ---
+  duration_ms: 7.301357
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+    - '{"version":1,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"o'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":1,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"o'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (text)
+not ok 13 - unusable record is preserved and never written: invalid JSON (text)
+  ---
+  duration_ms: 3.515137
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+    - 'not json {'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'not json {'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: unusable record is preserved and never written: empty string
+not ok 14 - unusable record is preserved and never written: empty string
+  ---
+  duration_ms: 4.252967
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - ''
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: ''
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: array
+not ok 15 - unusable record is preserved and never written: array
+  ---
+  duration_ms: 3.075422
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '[]'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '[]'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: string
+not ok 16 - unusable record is preserved and never written: string
+  ---
+  duration_ms: 3.752452
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '"hello"'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '"hello"'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: null
+not ok 17 - unusable record is preserved and never written: null
+  ---
+  duration_ms: 2.909901
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+    - 'null'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'null'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: number
+not ok 18 - unusable record is preserved and never written: number
+  ---
+  duration_ms: 3.748718
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '42'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '42'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: object without version
+not ok 19 - unusable record is preserved and never written: object without version
+  ---
+  duration_ms: 2.632373
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"foo":1}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"foo":1}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version missing
+not ok 20 - unusable record is preserved and never written: populated, version missing
+  ---
+  duration_ms: 14.172504
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version "1" (string)
+not ok 21 - unusable record is preserved and never written: populated, version "1" (string)
+  ---
+  duration_ms: 11.737427
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"version":"1","completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":"1","completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2
+not ok 22 - unusable record is preserved and never written: populated, version 2
+  ---
+  duration_ms: 11.848934
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"version":2,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":2,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2, divergent fields
+not ok 23 - unusable record is preserved and never written: populated, version 2, divergent fields
+  ---
+  duration_ms: 12.148544
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"version":2,"completed":{"q-lilac":true,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-missing","expandedHub":"hub-missing","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":2,"completed":{"q-lilac":true,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-missing","expandedHub":"hub-missing","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 0
+not ok 24 - unusable record is preserved and never written: populated, version 0
+  ---
+  duration_ms: 11.693313
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"version":0,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":0,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: unusable record is preserved and never written: populated, version null
+not ok 25 - unusable record is preserved and never written: populated, version null
+  ---
+  duration_ms: 11.613771
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:86:60'
+  failureType: 'testCodeFailure'
+  error: |-
+    stored bytes unchanged
+    + actual - expected
+    
+    + '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+    - '{"version":null,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '{"version":null,"completed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":{"hubDecks":{"completed":false,"rails":{"Merchants & services":0,"Quests & contracts":0,"Exploration":0},"doneX":0},"selectedHub":"hub-arrival","groupOpen":{},"expandedHub":"hub-arrival","windowStart":0,"scrollY":0,"scrollX":0,"focusId":""},"lastStage":"forge","lastContent":{"task":"q-lilac","view":"quest-lilac"},"lastWalkthrough":true,"lastWalkthroughView":"quest-lilac","stageByView":{"quest-lilac":"1"},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":{"progress":{"schema":1,"objectives":{},"choices":{},"manual":{},"failed":{},"legacy":{}},"completed":{},"routeUpdates":[]},"mapContext":null,"noticeRead":[]}'
+  actual: '{"version":1,"completed":{},"selectedHub":"hub-arrival","expandedHub":"hub-arrival","windowStart":0,"treeReturn":null,"lastStage":"forge","lastContent":null,"lastWalkthrough":false,"lastWalkthroughView":null,"stageByView":{},"map":{"type":"all","search":"","showCompleted":false},"progress":{"schema":1,"objectives":{"q-lilac:ghouls":"done","q-lilac:ride":"done"},"choices":{},"manual":{"arrival":false,"garrison":false,"griffin":false,"departed":false},"failed":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false},"legacy":{"q-lilac":false,"q-beast":false,"q-firestarter":false,"q-pan":false,"q-cargo":false,"q-missing":false,"q-death":false,"q-devil":false,"q-viper":false,"q-temerian":false,"q-deserter":false,"q-dirty":false,"q-incident":false}},"groupOpen":{},"routeUpdates":[],"progressUndo":null,"mapContext":null,"noticeRead":[]}'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: blocked session: progress still changes in memory, Undo restores it, and nothing is written
+not ok 26 - blocked session: progress still changes in memory, Undo restores it, and nothing is written
+  ---
+  duration_ms: 3.34567
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:99:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    4 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:103:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: a later successful write elsewhere does not clear the blocked state
+not ok 27 - a later successful write elsewhere does not clear the blocked state
+  ---
+  duration_ms: 2.019538
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:105:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'unreadable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'unreadable'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:108:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+not ok 28 - read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+  ---
+  duration_ms: 2.831624
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:110:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'storage-unavailable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'storage-unavailable'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:112:51)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: read failure on the first load only: the original progress survives and is used once storage recovers
+not ok 29 - read failure on the first load only: the original progress survives and is used once storage recovers
+  ---
+  duration_ms: 2.863762
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:115:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    4 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:117:22)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+not ok 30 - localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+  ---
+  duration_ms: 3.68502
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:124:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'storage-unavailable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'storage-unavailable'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:126:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+not ok 31 - write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+  ---
+  duration_ms: 12.993795
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:128:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'write-failed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'write-failed'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:130:101)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: write failure for every key: bytes kept, write-failed message
+ok 32 - write failure for every key: bytes kept, write-failed message
+  ---
+  duration_ms: 13.519361
+  type: 'test'
+  ...
+# Subtest: accepted record: every saved field comes from that one record
+ok 33 - accepted record: every saved field comes from that one record
+  ---
+  duration_ms: 2.451447
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid fixture
+ok 34 - valid/absent bytes are identical to v45: valid fixture
+  ---
+  duration_ms: 14.936086
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent
+ok 35 - valid/absent bytes are identical to v45: absent
+  ---
+  duration_ms: 2.721873
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+ok 36 - valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+  ---
+  duration_ms: 2.52876
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+ok 37 - valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+  ---
+  duration_ms: 3.233832
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+ok 38 - valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+  ---
+  duration_ms: 11.680025
+  type: 'test'
+  ...
+# Subtest: one status writer: persist() and reflect() both use showSaveStatus()
+not ok 39 - one status writer: persist() and reflect() both use showSaveStatus()
+  ---
+  duration_ms: 0.266224
+  type: 'test'
+  location: '<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:162:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    only showSaveStatus writes [data-save-message]
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<qa6 copy with QA5 app.js, velen-r18.js, index.html>/wo-save-guard.test.cjs:163:9)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 9
+# fail 28
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 247.9808

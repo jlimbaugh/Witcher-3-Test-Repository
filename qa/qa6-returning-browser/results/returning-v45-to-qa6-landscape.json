@@ -1,0 +1,1056 @@
+{
+ "meta": {
+  "harness": "qa/qa6-returning-browser/returning.cjs",
+  "evidence": "author-supplied (LT)",
+  "generatedAt": "2026-11-17T02:18:02.111Z",
+  "node": "v24.22.1",
+  "old": "v45",
+  "oldDir": "/workspace/qa6/wt-v45/dist",
+  "newDir": "/workspace/qa6/repo/dist",
+  "viewport": "landscape",
+  "cachePolicy": "HTML no-cache+ETag; other files public, max-age=31536000, immutable"
+ },
+ "session1": {
+  "ui": {
+   "hash": "#home",
+   "views": [
+    "home"
+   ],
+   "save": [
+    ": Progress and your place save in this browser."
+   ],
+   "velen": "Your Velen progress saves in this browser.",
+   "scripts": [
+    "velen-r18.js?v=velen-shell-v43",
+    "app.js?v=regional-foundation-v45"
+   ]
+  },
+  "requests": 131,
+  "errors": [],
+  "cachedScripts": [
+   "velen-r18.js?v=velen-shell-v43",
+   "app.js?v=regional-foundation-v45"
+  ],
+  "allUrls": [
+   "index.html",
+   "leaflet.css",
+   "styles.css?v=type-v40",
+   "phoenix-journal.css?v=type-v40",
+   "appearance.js?v=type-v41",
+   "guide-viewport.js?v=wolf-dock-1",
+   "white-orchard.js?v=main-route-1",
+   "leaflet.js",
+   "map-data.js?v=progress-r8a",
+   "map-ui.js?v=exploration-1",
+   "progression-data.js?v=regional-foundation-v45",
+   "progression-engine.js?v=progress-r8a",
+   "progression-ui.js?v=objective-progress-v35",
+   "home-panel.js",
+   "home-metrics.js?v=exploration-1",
+   "medallion.js?v=warnings-takeover-v44",
+   "home-ui.js?v=paired-slices-1",
+   "diagrams-data.js?v=compass-v32",
+   "exploration-data.js?v=exploration-1",
+   "diagrams-art.js?v=diagram-art-1",
+   "diagrams-compass.js?v=compass-v32",
+   "diagrams-ui.js?v=search-qa-1",
+   "exploration-art.js?v=den-variety-3",
+   "exploration-ui.js?v=warning-overlay-1",
+   "deck-motion.js?v=swipe-box-v38",
+   "navigation-effects.js?v=warnings-v29",
+   "navigation-art.js?v=warnings-takeover-v44",
+   "velen-data-r18.js?v=regional-foundation-v45",
+   "regional-registry.js?v=regional-foundation-v45",
+   "velen-migration.js?v=regional-foundation-v45",
+   "velen-routing.js?v=velen-shell-v43",
+   "velen-r18.js?v=velen-shell-v43",
+   "main-console.js?v=velen-shell-v43",
+   "departure.js?v=paired-slices-1",
+   "quest-hubs.js?v=paired-slices-1",
+   "quest-pages.js?v=paired-slices-1",
+   "warning-details.js?v=warnings-v29",
+   "warning-center.js?v=objective-warning-v34",
+   "search-model.js?v=search-qa-1",
+   "search-ui.js?v=search-qa-1",
+   "visual-system.js?v=velen-shell-v43",
+   "swipe-boxes.js?v=swipe-box-v39",
+   "reading-pilot.js?v=reading-v42",
+   "app.js?v=regional-foundation-v45",
+   "weathered-r10.css?v=type-v40",
+   "weathered-r10.js?v=quest-layout-2",
+   "desk-r11.css?v=type-v40",
+   "desk-r11.js?v=region-spin-2",
+   "tarot-r12.css?v=type-v40",
+   "art-r13.css?v=type-v40",
+   "atlas-r14.css",
+   "atlas-r14.js?v=diagrams-1",
+   "guide-art-r15.css?v=type-v40",
+   "guide-art-r15.js?v=quest-layout-2",
+   "console-r16.css?v=type-v40",
+   "console-r16.js?v=stage1",
+   "home-rebuild.css?v=type-v40",
+   "main-console.css?v=type-v40",
+   "diagrams.css?v=type-v40",
+   "exploration.css?v=type-v40",
+   "departure.css?v=paired-slices-1",
+   "quest-pages.css?v=type-v40",
+   "parchment-controls.css?v=type-v40",
+   "guide-viewport.css?v=type-v40",
+   "quest-deck-motion.css?v=swipe-calibration-v33",
+   "warning-details.css?v=warning-overlay-1",
+   "navigation-art.css?v=warnings-takeover-v44",
+   "objective-presentation.css?v=type-v40",
+   "search-ui.css?v=type-v40",
+   "visual-system.css?v=type-v40",
+   "swipe-boxes.css?v=swipe-box-v38",
+   "velen-view.css?v=velen-shell-v43",
+   "typography.css?v=type-v40",
+   "typography.js?v=type-v40",
+   "reading-pilot.css?v=reading-v42",
+   "white-orchard-scene.webp",
+   "map-icon-pop.png",
+   "map-icon-poi.png",
+   "map-icon-armourer.png",
+   "map-icon-herbalist.png",
+   "map-icon-gwent.png",
+   "map-icon-notice.png",
+   "r10-stone.svg",
+   "fondamento-r16.ttf",
+   "r10-metal.svg",
+   "cinzel-latin-400-normal.woff2",
+   "im-fell-english-latin-400-normal.woff2",
+   "gwent-r15/gabor.webp",
+   "gwent-r15/ivo.webp",
+   "art-r13/q-viper-card.webp",
+   "art-r13/q-death-card.webp",
+   "navigation-art-v26/reference.webp",
+   "navigation-art-v26/progress.webp",
+   "art-r13/q-deserter-card.webp",
+   "art-r13/q-beast-card.webp",
+   "gwent-r15/woodland.webp",
+   "velen-landscape-r18.webp",
+   "gwent-r15/cavalry.webp",
+   "gwent-r15/isbel.webp",
+   "visual-art/iron-button-frame.webp",
+   "curled-vellum-r16.webp",
+   "visual-art/ink-rule.svg",
+   "silver-frame-r15.svg",
+   "visual-art/icon-previous.svg",
+   "visual-art/icon-next.svg",
+   "r10-map.svg",
+   "r10-contract.svg",
+   "wolf-medallion-silver.png",
+   "navigation-art-v26/home.webp",
+   "navigation-art-v26/regions.webp",
+   "navigation-art-v26/constellation.webp",
+   "navigation-art-v26/warnings.webp",
+   "visual-art/wolf-pointer.webp",
+   "art-r13/q-lilac-thumb.webp",
+   "map-icon-sidequests.png",
+   "map-icon-tempcontract.png",
+   "white-orchard-map.webp",
+   "art-r13/q-lilac-card.webp",
+   "worn-vellum-r15.svg",
+   "favicon.ico",
+   "visual-art/icon-continue.svg",
+   "visual-art/icon-map.svg",
+   "art-r13/q-firestarter-card.webp",
+   "art-r13/q-missing-card.webp",
+   "art-r13/q-pan-card.webp",
+   "art-r13/q-cargo-card.webp",
+   "silver-rule-r15.svg",
+   "silver-frame-r15.svg?v=2",
+   "silver-rule-r15.svg?v=2",
+   "velen-pyres-r18.webp",
+   "velen-mercy-r18.webp"
+  ]
+ },
+ "session2": {
+  "firstLoadRequests": [
+   {
+    "id": "3A67A4F71200B9BD592A038C93063BD1",
+    "url": "index.html",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.4",
+    "url": "leaflet.css",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.5",
+    "url": "styles.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.6",
+    "url": "phoenix-journal.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.7",
+    "url": "appearance.js?v=type-v41",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.8",
+    "url": "guide-viewport.js?v=wolf-dock-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.9",
+    "url": "white-orchard.js?v=main-route-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.10",
+    "url": "leaflet.js",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.11",
+    "url": "map-data.js?v=progress-r8a",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.12",
+    "url": "map-ui.js?v=exploration-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.13",
+    "url": "progression-data.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.14",
+    "url": "progression-engine.js?v=progress-r8a",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.15",
+    "url": "progression-ui.js?v=objective-progress-v35",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.16",
+    "url": "home-panel.js",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.17",
+    "url": "home-metrics.js?v=exploration-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.18",
+    "url": "medallion.js?v=warnings-takeover-v44",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.19",
+    "url": "home-ui.js?v=paired-slices-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.20",
+    "url": "diagrams-data.js?v=compass-v32",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.21",
+    "url": "exploration-data.js?v=exploration-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.22",
+    "url": "diagrams-art.js?v=diagram-art-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.23",
+    "url": "diagrams-compass.js?v=compass-v32",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.24",
+    "url": "diagrams-ui.js?v=search-qa-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.25",
+    "url": "exploration-art.js?v=den-variety-3",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.26",
+    "url": "exploration-ui.js?v=warning-overlay-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.27",
+    "url": "deck-motion.js?v=swipe-box-v38",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.28",
+    "url": "navigation-effects.js?v=warnings-v29",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.29",
+    "url": "navigation-art.js?v=warnings-takeover-v44",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.30",
+    "url": "velen-data-r18.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.31",
+    "url": "regional-registry.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.32",
+    "url": "velen-migration.js?v=regional-foundation-v45",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.33",
+    "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.34",
+    "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.35",
+    "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.36",
+    "url": "velen-routing.js?v=velen-shell-v43",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.37",
+    "url": "velen-r18.js?v=save-guard-qa6-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.38",
+    "url": "main-console.js?v=velen-shell-v43",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.39",
+    "url": "departure.js?v=paired-slices-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.40",
+    "url": "quest-hubs.js?v=paired-slices-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.41",
+    "url": "quest-pages.js?v=paired-slices-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.42",
+    "url": "warning-details.js?v=warnings-v29",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.43",
+    "url": "warning-center.js?v=objective-warning-v34",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.44",
+    "url": "search-model.js?v=search-qa-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.45",
+    "url": "search-ui.js?v=search-qa-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.46",
+    "url": "visual-system.js?v=velen-shell-v43",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.47",
+    "url": "swipe-boxes.js?v=swipe-box-v39",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.48",
+    "url": "reading-pilot.js?v=reading-v42",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.49",
+    "url": "app.js?v=save-guard-qa6-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.50",
+    "url": "weathered-r10.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.51",
+    "url": "weathered-r10.js?v=quest-layout-2",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.52",
+    "url": "desk-r11.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.53",
+    "url": "desk-r11.js?v=region-spin-2",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.54",
+    "url": "tarot-r12.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.55",
+    "url": "art-r13.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.56",
+    "url": "atlas-r14.css",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.57",
+    "url": "atlas-r14.js?v=diagrams-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.58",
+    "url": "guide-art-r15.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.59",
+    "url": "guide-art-r15.js?v=quest-layout-2",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.60",
+    "url": "console-r16.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.61",
+    "url": "console-r16.js?v=stage1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.62",
+    "url": "home-rebuild.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.63",
+    "url": "main-console.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.64",
+    "url": "diagrams.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.65",
+    "url": "exploration.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.66",
+    "url": "departure.css?v=paired-slices-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.67",
+    "url": "quest-pages.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.68",
+    "url": "parchment-controls.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.69",
+    "url": "guide-viewport.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.70",
+    "url": "quest-deck-motion.css?v=swipe-calibration-v33",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.71",
+    "url": "warning-details.css?v=warning-overlay-1",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.72",
+    "url": "navigation-art.css?v=warnings-takeover-v44",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.73",
+    "url": "objective-presentation.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.74",
+    "url": "search-ui.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.75",
+    "url": "visual-system.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.76",
+    "url": "swipe-boxes.css?v=swipe-box-v38",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.77",
+    "url": "velen-view.css?v=nilf-slice2-v45",
+    "status": 200,
+    "fromDiskCache": false,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.78",
+    "url": "typography.css?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.79",
+    "url": "typography.js?v=type-v40",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   },
+   {
+    "id": "351304.80",
+    "url": "reading-pilot.css?v=reading-v42",
+    "status": 200,
+    "fromDiskCache": true,
+    "fromMemoryCache": false
+   }
+  ],
+  "serverLogSession2": [
+   "404 /favicon.ico",
+   "200 /index.html",
+   "200 /velen-view.css?v=nilf-slice2-v45",
+   "200 /velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+   "200 /velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+   "200 /velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+   "200 /velen-r18.js?v=save-guard-qa6-v45",
+   "200 /app.js?v=save-guard-qa6-v45"
+  ],
+  "changedSinceOld": [
+   {
+    "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+    "fromNetwork": true,
+    "status": 200
+   },
+   {
+    "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+    "fromNetwork": true,
+    "status": 200
+   },
+   {
+    "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+    "fromNetwork": true,
+    "status": 200
+   },
+   {
+    "url": "velen-r18.js?v=save-guard-qa6-v45",
+    "fromNetwork": true,
+    "status": 200
+   },
+   {
+    "url": "app.js?v=save-guard-qa6-v45",
+    "fromNetwork": true,
+    "status": 200
+   },
+   {
+    "url": "velen-view.css?v=nilf-slice2-v45",
+    "fromNetwork": true,
+    "status": 200
+   }
+  ],
+  "unreadable": {
+   "afterLoad": {
+    "hash": "",
+    "views": [
+     "home"
+    ],
+    "save": [
+     "unreadable: Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+    ],
+    "velen": "Your Velen progress saves in this browser.",
+    "scripts": [
+     "velen-r18.js?v=save-guard-qa6-v45",
+     "app.js?v=save-guard-qa6-v45"
+    ]
+   },
+   "hub": {
+    "hash": "#whiteorchard-tree/hub-arrival",
+    "views": [
+     "whiteorchard-tree"
+    ],
+    "save": [
+     "unreadable: Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+    ],
+    "velen": "Your Velen progress saves in this browser.",
+    "scripts": [
+     "velen-r18.js?v=save-guard-qa6-v45",
+     "app.js?v=save-guard-qa6-v45"
+    ]
+   },
+   "afterReload": {
+    "hash": "#whiteorchard-tree/hub-arrival",
+    "views": [
+     "whiteorchard-tree"
+    ],
+    "save": [
+     "unreadable: Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+    ],
+    "velen": "Your Velen progress saves in this browser.",
+    "scripts": [
+     "velen-r18.js?v=save-guard-qa6-v45",
+     "app.js?v=save-guard-qa6-v45"
+    ]
+   },
+   "bytes": "not json {",
+   "woWrites": []
+  },
+  "denied": {
+   "start": {
+    "hash": "",
+    "views": [
+     "home"
+    ],
+    "save": [
+     "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+    ],
+    "velen": "Saving is unavailable. Progress lasts for this visit only.",
+    "scripts": [
+     "velen-r18.js?v=save-guard-qa6-v45",
+     "app.js?v=save-guard-qa6-v45"
+    ]
+   },
+   "steps": [
+    {
+     "hash": "#velen",
+     "views": [
+      "velen"
+     ],
+     "save": [
+      "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "velen": "Saving is unavailable. Progress lasts for this visit only.",
+     "scripts": [
+      "velen-r18.js?v=save-guard-qa6-v45",
+      "app.js?v=save-guard-qa6-v45"
+     ]
+    },
+    {
+     "hash": "#velen/hub/nilf",
+     "views": [
+      "velen"
+     ],
+     "save": [
+      "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "velen": "Saving is unavailable. Progress lasts for this visit only.",
+     "scripts": [
+      "velen-r18.js?v=save-guard-qa6-v45",
+      "app.js?v=save-guard-qa6-v45"
+     ]
+    },
+    {
+     "hash": "#velen/quest/nilf/1",
+     "views": [
+      "velen"
+     ],
+     "save": [
+      "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "velen": "Saving is unavailable. Progress lasts for this visit only.",
+     "scripts": [
+      "velen-r18.js?v=save-guard-qa6-v45",
+      "app.js?v=save-guard-qa6-v45"
+     ]
+    },
+    {
+     "hash": "#velen/hub/nilf",
+     "views": [
+      "velen"
+     ],
+     "save": [
+      "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "velen": "Saving is unavailable. Progress lasts for this visit only.",
+     "scripts": [
+      "velen-r18.js?v=save-guard-qa6-v45",
+      "app.js?v=save-guard-qa6-v45"
+     ]
+    },
+    {
+     "hash": "#velen",
+     "views": [
+      "velen"
+     ],
+     "save": [
+      "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "velen": "Saving is unavailable. Progress lasts for this visit only.",
+     "scripts": [
+      "velen-r18.js?v=save-guard-qa6-v45",
+      "app.js?v=save-guard-qa6-v45"
+     ]
+    }
+   ],
+   "errors": []
+  }
+ },
+ "results": [
+  {
+   "name": "index.html revalidated and the QA6 copy served",
+   "pass": true,
+   "info": [
+    {
+     "session": "s2",
+     "root": "qa6",
+     "url": "/index.html",
+     "status": 200
+    }
+   ]
+  },
+  {
+   "name": "app.js requested with the QA6 tag and fetched from the network (not the HTTP cache)",
+   "pass": true,
+   "info": [
+    {
+     "id": "351304.49",
+     "url": "app.js?v=save-guard-qa6-v45",
+     "status": 200,
+     "fromDiskCache": false,
+     "fromMemoryCache": false
+    }
+   ]
+  },
+  {
+   "name": "velen-r18.js requested with the QA6 tag and fetched from the network (not the HTTP cache)",
+   "pass": true,
+   "info": [
+    {
+     "id": "351304.37",
+     "url": "velen-r18.js?v=save-guard-qa6-v45",
+     "status": 200,
+     "fromDiskCache": false,
+     "fromMemoryCache": false
+    }
+   ]
+  },
+  {
+   "name": "long-lived cache is in force: every script/stylesheet unchanged since the old build came from the HTTP cache with no server request",
+   "pass": true,
+   "info": {
+    "count": 71,
+    "fromNetwork": []
+   }
+  },
+  {
+   "name": "every script/stylesheet changed since the old build was fetched from the network under a URL the old build never used",
+   "pass": true,
+   "info": [
+    {
+     "url": "velen-nilf-objectives.js?v=nilf-slice2-qa4-v45",
+     "fromNetwork": true,
+     "status": 200
+    },
+    {
+     "url": "velen-nilf-progress.js?v=nilf-slice2-qa4-v45",
+     "fromNetwork": true,
+     "status": 200
+    },
+    {
+     "url": "velen-nilf-ui.js?v=nilf-slice2-qa4-v45",
+     "fromNetwork": true,
+     "status": 200
+    },
+    {
+     "url": "velen-r18.js?v=save-guard-qa6-v45",
+     "fromNetwork": true,
+     "status": 200
+    },
+    {
+     "url": "app.js?v=save-guard-qa6-v45",
+     "fromNetwork": true,
+     "status": 200
+    },
+    {
+     "url": "velen-view.css?v=nilf-slice2-v45",
+     "fromNetwork": true,
+     "status": 200
+    }
+   ]
+  },
+  {
+   "name": "QA6 save guard active: unreadable White Orchard bytes kept through load, hub and reload; 0 writes",
+   "pass": true,
+   "info": {
+    "bytes": "not json {",
+    "writes": []
+   }
+  },
+  {
+   "name": "QA6 status shown on the White Orchard hub: unreadable / kept unchanged",
+   "pass": true,
+   "info": {
+    "hub": [
+     "unreadable: Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+    ],
+    "reload": [
+     "unreadable: Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+    ]
+   }
+  },
+  {
+   "name": "scripts in the page are the QA6 URLs",
+   "pass": true,
+   "info": [
+    "velen-r18.js?v=save-guard-qa6-v45",
+    "app.js?v=save-guard-qa6-v45"
+   ]
+  },
+  {
+   "name": "storage denied: start page renders (QA6 velen-r18.js storage guard active)",
+   "pass": true,
+   "info": {
+    "hash": "",
+    "views": [
+     "home"
+    ],
+    "save": [
+     "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+    ],
+    "velen": "Saving is unavailable. Progress lasts for this visit only.",
+    "scripts": [
+     "velen-r18.js?v=save-guard-qa6-v45",
+     "app.js?v=save-guard-qa6-v45"
+    ]
+   }
+  },
+  {
+   "name": "storage denied: Velen -> hub -> quest -> back -> back works",
+   "pass": true,
+   "info": [
+    "#velen",
+    "#velen/hub/nilf",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen"
+   ]
+  },
+  {
+   "name": "storage denied: accurate messages (WO storage-unavailable; Velen saving unavailable)",
+   "pass": true,
+   "info": {
+    "wo": [
+     "storage-unavailable: Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+    ],
+    "velen": "Saving is unavailable. Progress lasts for this visit only."
+   }
+  },
+  {
+   "name": "storage denied: no uncaught errors",
+   "pass": true,
+   "info": []
+  },
+  {
+   "name": "no uncaught errors in session 2 before the denial step",
+   "pass": true,
+   "info": []
+  }
+ ]
+}

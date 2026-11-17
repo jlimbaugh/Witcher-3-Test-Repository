@@ -1,0 +1,1852 @@
+TAP version 13
+# Subtest: font and theme remain available while saved slider sizes are ignored
+ok 1 - font and theme remain available while saved slider sizes are ignored
+  ---
+  duration_ms: 1.009472
+  type: 'test'
+  ...
+# Subtest: missing or corrupt preferences restore the intended default typography
+ok 2 - missing or corrupt preferences restore the intended default typography
+  ---
+  duration_ms: 0.136373
+  type: 'test'
+  ...
+# Subtest: drag follows pointer immediately and release continues with momentum without snapping
+ok 3 - drag follows pointer immediately and release continues with momentum without snapping
+  ---
+  duration_ms: 1.994241
+  type: 'test'
+  ...
+# Subtest: first tap catches momentum without activating; a second deliberate tap can activate
+ok 4 - first tap catches momentum without activating; a second deliberate tap can activate
+  ---
+  duration_ms: 1.569109
+  type: 'test'
+  ...
+# Subtest: vertical gesture never rotates deck or activates a card; cancelled drag has no inertia
+ok 5 - vertical gesture never rotates deck or activates a card; cancelled drag has no inertia
+  ---
+  duration_ms: 0.836997
+  type: 'test'
+  ...
+# Subtest: ambiguous diagonal movement waits for clearer intent and never activates a card
+ok 6 - ambiguous diagonal movement waits for clearer intent and never activates a card
+  ---
+  duration_ms: 0.623978
+  type: 'test'
+  ...
+# Subtest: clear horizontal intent retains immediate drag without vertical page ownership
+ok 7 - clear horizontal intent retains immediate drag without vertical page ownership
+  ---
+  duration_ms: 0.592147
+  type: 'test'
+  ...
+# Subtest: native vertical cancellation rolls back an early horizontal movement without inertia
+ok 8 - native vertical cancellation rolls back an early horizontal movement without inertia
+  ---
+  duration_ms: 0.556701
+  type: 'test'
+  ...
+# Subtest: enclosed deck follows a diagonal swipe without waiting for a stronger axis ratio
+ok 9 - enclosed deck follows a diagonal swipe without waiting for a stronger axis ratio
+  ---
+  duration_ms: 0.636534
+  type: 'test'
+  ...
+# Subtest: enclosed deck can pick up horizontal movement after initial vertical drift
+ok 10 - enclosed deck can pick up horizontal movement after initial vertical drift
+  ---
+  duration_ms: 0.570183
+  type: 'test'
+  ...
+# Subtest: a vertical-only swipe inside a box never rotates or activates a card
+ok 11 - a vertical-only swipe inside a box never rotates or activates a card
+  ---
+  duration_ms: 0.992677
+  type: 'test'
+  ...
+# Subtest: crossing either loop boundary keeps travel continuous and resolves the correct logical card
+ok 12 - crossing either loop boundary keeps travel continuous and resolves the correct logical card
+  ---
+  duration_ms: 0.608656
+  type: 'test'
+  ...
+# Subtest: momentum follows flick strength, decays and can stop without changing the travel position
+ok 13 - momentum follows flick strength, decays and can stop without changing the travel position
+  ---
+  duration_ms: 0.147073
+  type: 'test'
+  ...
+# Subtest: reduced motion keeps a short glide and both directions remain symmetric
+ok 14 - reduced motion keeps a short glide and both directions remain symmetric
+  ---
+  duration_ms: 0.77932
+  type: 'test'
+  ...
+# Subtest: fresh records: all four items unknown, skull first, zero open shown
+ok 15 - fresh records: all four items unknown, skull first, zero open shown
+  ---
+  duration_ms: 14.540073
+  type: 'test'
+  ...
+# Subtest: cutoff-passed skull remains unknown, not failed, and not warning-eligible
+ok 16 - cutoff-passed skull remains unknown, not failed, and not warning-eligible
+  ---
+  duration_ms: 2.673605
+  type: 'test'
+  ...
+# Subtest: explicit failed stays failed; unavailable is unknown not failed
+ok 17 - explicit failed stays failed; unavailable is unknown not failed
+  ---
+  duration_ms: 2.669591
+  type: 'test'
+  ...
+# Subtest: completed collapse group preserves cutoff order
+ok 18 - completed collapse group preserves cutoff order
+  ---
+  duration_ms: 3.271715
+  type: 'test'
+  ...
+# Subtest: no false all-clear when unknowns or failed remain
+ok 19 - no false all-clear when unknowns or failed remain
+  ---
+  duration_ms: 2.746857
+  type: 'test'
+  ...
+# Subtest: mixed case shows separate counts including zeros and no confirmation
+ok 20 - mixed case shows separate counts including zeros and no confirmation
+  ---
+  duration_ms: 3.864386
+  type: 'test'
+  ...
+# Subtest: all four positively recorded complete shows confirmation
+ok 21 - all four positively recorded complete shows confirmation
+  ---
+  duration_ms: 2.669066
+  type: 'test'
+  ...
+# Subtest: failed with no open items shows counts and no confirmation
+ok 22 - failed with no open items shows counts and no confirmation
+  ---
+  duration_ms: 3.592828
+  type: 'test'
+  ...
+# Subtest: real renderer preserves Resolved expansion through refresh and adds shared overlay triggers
+ok 23 - real renderer preserves Resolved expansion through refresh and adds shared overlay triggers
+  ---
+  duration_ms: 15.166655
+  type: 'test'
+  ...
+# Subtest: real cutoff refresh queues unrecorded risk reminders and removes stale ones after correction
+ok 24 - real cutoff refresh queues unrecorded risk reminders and removes stale ones after correction
+  ---
+  duration_ms: 3.886631
+  type: 'test'
+  ...
+# Subtest: real renderer puts regional link in preparation tools and omits optional content
+ok 25 - real renderer puts regional link in preparation tools and omits optional content
+  ---
+  duration_ms: 3.967534
+  type: 'test'
+  ...
+# Subtest: unrecorded departure risks ask for verification without writing progress
+ok 26 - unrecorded departure risks ask for verification without writing progress
+  ---
+  duration_ms: 14.093537
+  type: 'test'
+  ...
+# Subtest: unrecorded departure-sensitive quest still produces a cutoff reminder
+ok 27 - unrecorded departure-sensitive quest still produces a cutoff reminder
+  ---
+  duration_ms: 2.906185
+  type: 'test'
+  ...
+# Subtest: recorded completion, failure and departure suppress applicable risk pulses
+ok 28 - recorded completion, failure and departure suppress applicable risk pulses
+  ---
+  duration_ms: 3.123349
+  type: 'test'
+  ...
+# Subtest: skull uses its earlier cutoff and returns after story correction
+ok 29 - skull uses its earlier cutoff and returns after story correction
+  ---
+  duration_ms: 4.033433
+  type: 'test'
+  ...
+# Subtest: checklist contains only skull and three quests; optional groups removed
+ok 30 - checklist contains only skull and three quests; optional groups removed
+  ---
+  duration_ms: 4.06964
+  type: 'test'
+  ...
+# Subtest: known-open and unknown counts stay distinct; no double-counting
+ok 31 - known-open and unknown counts stay distinct; no double-counting
+  ---
+  duration_ms: 2.587235
+  type: 'test'
+  ...
+# Subtest: warning trigger is limited to departure walkthrough stages
+ok 32 - warning trigger is limited to departure walkthrough stages
+  ---
+  duration_ms: 2.703261
+  type: 'test'
+  ...
+# Subtest: every named diagram has a distinct, sharp local illustration
+ok 33 - every named diagram has a distinct, sharp local illustration
+  ---
+  duration_ms: 53.637164
+  type: 'test'
+  ...
+# Subtest: current letter centers beneath a fixed pointer, including A and Z
+ok 34 - current letter centers beneath a fixed pointer, including A and Z
+  ---
+  duration_ms: 3.475221
+  type: 'test'
+  ...
+# Subtest: letter drag browses independently and leaves current card identity alone
+ok 35 - letter drag browses independently and leaves current card identity alone
+  ---
+  duration_ms: 1.863561
+  type: 'test'
+  ...
+# Subtest: flick glides without snapping, first tap stops, next deliberate tap picks a letter
+ok 36 - flick glides without snapping, first tap stops, next deliberate tap picks a letter
+  ---
+  duration_ms: 1.217209
+  type: 'test'
+  ...
+# Subtest: keyboard browsing skips unavailable letters and never selects until activation
+ok 37 - keyboard browsing skips unavailable letters and never selects until activation
+  ---
+  duration_ms: 0.854782
+  type: 'test'
+  ...
+# Subtest: return restores independent letter position without moving any card
+ok 38 - return restores independent letter position without moving any card
+  ---
+  duration_ms: 2.372493
+  type: 'test'
+  ...
+# Subtest: looping positions remain usable with empty filters and reduced motion
+ok 39 - looping positions remain usable with empty filters and reduced motion
+  ---
+  duration_ms: 0.766881
+  type: 'test'
+  ...
+# Subtest: many full loops retain one logical identity and choose the nearest cycle on selection
+ok 40 - many full loops retain one logical identity and choose the nearest cycle on selection
+  ---
+  duration_ms: 0.866045
+  type: 'test'
+  ...
+# Subtest: filter membership hides absent letters and compacts visible alphabetical spacing
+ok 41 - filter membership hides absent letters and compacts visible alphabetical spacing
+  ---
+  duration_ms: 0.761311
+  type: 'test'
+  ...
+# Subtest: a lone matching letter stays centered through drag, flick, wheel and restore
+ok 42 - a lone matching letter stays centered through drag, flick, wheel and restore
+  ---
+  duration_ms: 1.296798
+  type: 'test'
+  ...
+# Subtest: empty filters produce no active letters and repopulate cleanly after a filter change
+ok 43 - empty filters produce no active letters and repopulate cleanly after a filter change
+  ---
+  duration_ms: 0.962605
+  type: 'test'
+  ...
+# Subtest: a filtered overflowing alphabet loops without gaps and preserves its independent position
+ok 44 - a filtered overflowing alphabet loops without gaps and preserves its independent position
+  ---
+  duration_ms: 0.776016
+  type: 'test'
+  ...
+# Subtest: every named diagram has one canonical record and valid cluster and map references
+ok 45 - every named diagram has one canonical record and valid cluster and map references
+  ---
+  duration_ms: 12.217749
+  type: 'test'
+  ...
+# Subtest: Viper pins open distinct exact diagram entries instead of a shared whole quest
+ok 46 - Viper pins open distinct exact diagram entries instead of a shared whole quest
+  ---
+  duration_ms: 4.070442
+  type: 'test'
+  ...
+# Subtest: acquiring one diagram neither acquires its sibling nor completes a scavenger hunt
+ok 47 - acquiring one diagram neither acquires its sibling nor completes a scavenger hunt
+  ---
+  duration_ms: 7.290237
+  type: 'test'
+  ...
+# Subtest: legacy whole-quest completion does not silently acquire any new individual diagram
+ok 48 - legacy whole-quest completion does not silently acquire any new individual diagram
+  ---
+  duration_ms: 9.008241
+  type: 'test'
+  ...
+# Subtest: diagrams offered by multiple merchants still have one shared acquisition ID
+ok 49 - diagrams offered by multiple merchants still have one shared acquisition ID
+  ---
+  duration_ms: 2.262623
+  type: 'test'
+  ...
+# Subtest: variable source leads never become guaranteed named acquisitions
+ok 50 - variable source leads never become guaranteed named acquisitions
+  ---
+  duration_ms: 2.626837
+  type: 'test'
+  ...
+# Subtest: canonical diagram titles sort alphabetically without stripping the first word
+ok 51 - canonical diagram titles sort alphabetically without stripping the first word
+  ---
+  duration_ms: 2.765405
+  type: 'test'
+  ...
+# Subtest: letter jump finds only a matching item within the supplied source-filtered entries
+ok 52 - letter jump finds only a matching item within the supplied source-filtered entries
+  ---
+  duration_ms: 2.271153
+  type: 'test'
+  ...
+# Subtest: every task and category has a distinct, locally available credited image
+ok 53 - every task and category has a distinct, locally available credited image
+  ---
+  duration_ms: 13.97833
+  type: 'test'
+  ...
+# Subtest: illustrated scenes retain location provenance and sharp source dimensions
+ok 54 - illustrated scenes retain location provenance and sharp source dimensions
+  ---
+  duration_ms: 2.906557
+  type: 'test'
+  ...
+# Subtest: every regional exploration marker has a deck entry and sourced practical guidance
+ok 55 - every regional exploration marker has a deck entry and sourced practical guidance
+  ---
+  duration_ms: 14.549902
+  type: 'test'
+  ...
+# Subtest: clearing either quest-linked camp never completes a quest or acquires a diagram
+ok 56 - clearing either quest-linked camp never completes a quest or acquires a diagram
+  ---
+  duration_ms: 12.042043
+  type: 'test'
+  ...
+# Subtest: new camp records do not inherit old whole-quest marks on reload
+ok 57 - new camp records do not inherit old whole-quest marks on reload
+  ---
+  duration_ms: 7.20931
+  type: 'test'
+  ...
+# Subtest: each activity type has a stable authored route and precise map positions
+ok 58 - each activity type has a stable authored route and precise map positions
+  ---
+  duration_ms: 6.579367
+  type: 'test'
+  ...
+# Subtest: all power stones have independent first-draw definitions and no guessed duration
+ok 59 - all power stones have independent first-draw definitions and no guessed duration
+  ---
+  duration_ms: 2.649295
+  type: 'test'
+  ...
+# Subtest: reading viewport contains all page landmarks while dock and overlays stay outside
+ok 60 - reading viewport contains all page landmarks while dock and overlays stay outside
+  ---
+  duration_ms: 2.136514
+  type: 'test'
+  ...
+# Subtest: route scroll coordinates and option-based scrolling use the reading viewport
+ok 61 - route scroll coordinates and option-based scrolling use the reading viewport
+  ---
+  duration_ms: 0.724759
+  type: 'test'
+  ...
+# Subtest: navigation lock preserves reading position and scroll events reach existing route listeners
+ok 62 - navigation lock preserves reading position and scroll events reach existing route listeners
+  ---
+  duration_ms: 1.941191
+  type: 'test'
+  ...
+# Subtest: missing page landmarks leave the document layout unchanged
+ok 63 - missing page landmarks leave the document layout unchanged
+  ---
+  duration_ms: 0.600843
+  type: 'test'
+  ...
+# Subtest: all 13 selectable quests have real objective totals and a valid view
+ok 64 - all 13 selectable quests have real objective totals and a valid view
+  ---
+  duration_ms: 3.792992
+  type: 'test'
+  ...
+# Subtest: objective completion advances without affecting optional totals
+ok 65 - objective completion advances without affecting optional totals
+  ---
+  duration_ms: 1.526778
+  type: 'test'
+  ...
+# Subtest: legacy complete does not invent objective evidence
+ok 66 - legacy complete does not invent objective evidence
+  ---
+  duration_ms: 0.268428
+  type: 'test'
+  ...
+# Subtest: failed and departure-unavailable quests never offer next objective
+ok 67 - failed and departure-unavailable quests never offer next objective
+  ---
+  duration_ms: 0.346292
+  type: 'test'
+  ...
+# Subtest: selected branch skips closed objectives
+ok 68 - selected branch skips closed objectives
+  ---
+  duration_ms: 0.775505
+  type: 'test'
+  ...
+# Subtest: risk warnings use canonical risk list, never requirement keywords
+ok 69 - risk warnings use canonical risk list, never requirement keywords
+  ---
+  duration_ms: 0.228619
+  type: 'test'
+  ...
+# Subtest: metrics classify every included record once and exclude review/utility marks
+ok 70 - metrics classify every included record once and exclude review/utility marks
+  ---
+  duration_ms: 1.119322
+  type: 'test'
+  ...
+# Subtest: separate quick Undo expires at three seconds while wolf remains navigation
+ok 71 - separate quick Undo expires at three seconds while wolf remains navigation
+  ---
+  duration_ms: 2.240877
+  type: 'test'
+  ...
+# Subtest: reduced motion retains the same three second lifetime
+ok 72 - reduced motion retains the same three second lifetime
+  ---
+  duration_ms: 1.104439
+  type: 'test'
+  ...
+# Subtest: successful quick Undo invalidates stale warnings before presentation
+ok 73 - successful quick Undo invalidates stale warnings before presentation
+  ---
+  duration_ms: 0.894312
+  type: 'test'
+  ...
+# Subtest: late durable Undo removes an already active stale warning
+ok 74 - late durable Undo removes an already active stale warning
+  ---
+  duration_ms: 0.951706
+  type: 'test'
+  ...
+# Subtest: failed and throwing Undo recover warnings and announce failure
+ok 75 - failed and throwing Undo recover warnings and announce failure
+  ---
+  duration_ms: 1.315263
+  type: 'test'
+  ...
+# Subtest: no Undo without a callback or when availability throws
+ok 76 - no Undo without a callback or when availability throws
+  ---
+  duration_ms: 1.126644
+  type: 'test'
+  ...
+# Subtest: wolf gestures never invoke quick Undo
+ok 77 - wolf gestures never invoke quick Undo
+  ---
+  duration_ms: 1.116629
+  type: 'test'
+  ...
+# Subtest: open fan defers quick Undo until Escape closes navigation
+ok 78 - open fan defers quick Undo until Escape closes navigation
+  ---
+  duration_ms: 1.825644
+  type: 'test'
+  ...
+# Subtest: repeated progress restarts expiry and quick Undo executes once
+ok 79 - repeated progress restarts expiry and quick Undo executes once
+  ---
+  duration_ms: 0.62125
+  type: 'test'
+  ...
+# Subtest: seeded history survives new acknowledgement and is copied to integration callback
+ok 80 - seeded history survives new acknowledgement and is copied to integration callback
+  ---
+  duration_ms: 1.00437
+  type: 'test'
+  ...
+# Subtest: warning arriving during repeated Undo preserves the original FIFO head
+ok 81 - warning arriving during repeated Undo preserves the original FIFO head
+  ---
+  duration_ms: 0.924752
+  type: 'test'
+  ...
+# Subtest: browse registry survives row filtering and includes utility and shared task members
+ok 82 - browse registry survives row filtering and includes utility and shared task members
+  ---
+  duration_ms: 2.450467
+  type: 'test'
+  ...
+# Subtest: cluster browse mode is excluded from serialized progress context
+ok 83 - cluster browse mode is excluded from serialized progress context
+  ---
+  duration_ms: 0.997191
+  type: 'test'
+  ...
+# Subtest: warning mode retains separate navigation without acknowledging the warning
+ok 84 - warning mode retains separate navigation without acknowledging the warning
+  ---
+  duration_ms: 0.660057
+  type: 'test'
+  ...
+# Subtest: Undo navigation does not execute Undo or stop its timer
+ok 85 - Undo navigation does not execute Undo or stop its timer
+  ---
+  duration_ms: 0.659868
+  type: 'test'
+  ...
+# Subtest: wolf image and four illustrated navigation cards are present
+ok 86 - wolf image and four illustrated navigation cards are present
+  ---
+  duration_ms: 0.730555
+  type: 'test'
+  ...
+# Subtest: wolf acknowledges all valid alerts and opens Warnings without an alert popup
+ok 87 - wolf acknowledges all valid alerts and opens Warnings without an alert popup
+  ---
+  duration_ms: 0.716916
+  type: 'test'
+  ...
+# Subtest: configured command deck routes all five destinations without invoking Undo
+ok 88 - configured command deck routes all five destinations without invoking Undo
+  ---
+  duration_ms: 0.625094
+  type: 'test'
+  ...
+# Subtest: navigation decorator opens and releases its backdrop once per toggle
+ok 89 - navigation decorator opens and releases its backdrop once per toggle
+  ---
+  duration_ms: 0.747269
+  type: 'test'
+  ...
+# Subtest: risk arriving during decorated navigation stays deferred until closure
+ok 90 - risk arriving during decorated navigation stays deferred until closure
+  ---
+  duration_ms: 0.672672
+  type: 'test'
+  ...
+# Subtest: resolved departure messages are removed without clearing unrelated warnings
+ok 91 - resolved departure messages are removed without clearing unrelated warnings
+  ---
+  duration_ms: 0.888165
+  type: 'test'
+  ...
+# Subtest: warning history shortcut uses Warnings takeover rather than a second popup
+ok 92 - warning history shortcut uses Warnings takeover rather than a second popup
+  ---
+  duration_ms: 1.973256
+  type: 'test'
+  ...
+# Subtest: expanded route retains all persisted legacy reading step IDs
+ok 93 - expanded route retains all persisted legacy reading step IDs
+  ---
+  duration_ms: 4.964759
+  type: 'test'
+  ...
+# Subtest: contextual route and detour links resolve to canonical tasks and existing reading steps
+ok 94 - contextual route and detour links resolve to canonical tasks and existing reading steps
+  ---
+  duration_ms: 2.90223
+  type: 'test'
+  ...
+# Subtest: early warning identities resolve to independent activity and quest records
+ok 95 - early warning identities resolve to independent activity and quest records
+  ---
+  duration_ms: 8.120938
+  type: 'test'
+  ...
+# Subtest: main story checklist identities stay independent of expanded reading steps
+ok 96 - main story checklist identities stay independent of expanded reading steps
+  ---
+  duration_ms: 1.738543
+  type: 'test'
+  ...
+# Subtest: five destinations and one warnings action reference real assets without altering game state
+ok 97 - five destinations and one warnings action reference real assets without altering game state
+  ---
+  duration_ms: 4.450556
+  type: 'test'
+  ...
+# Subtest: nested guide routes select their owning category
+ok 98 - nested guide routes select their owning category
+  ---
+  duration_ms: 0.760693
+  type: 'test'
+  ...
+# Subtest: arrival plays every category once and never overlaps effects
+ok 99 - arrival plays every category once and never overlaps effects
+  ---
+  duration_ms: 0.917352
+  type: 'test'
+  ...
+# Subtest: individual touch interrupts arrival and only restarts the touched category
+ok 100 - individual touch interrupts arrival and only restarts the touched category
+  ---
+  duration_ms: 0.681546
+  type: 'test'
+  ...
+# Subtest: closing cancels rendering and returning does not restart an arrival sequence
+ok 101 - closing cancels rendering and returning does not restart an arrival sequence
+  ---
+  duration_ms: 0.618812
+  type: 'test'
+  ...
+# Subtest: reduced motion retains all destinations while suppressing animated rendering
+ok 102 - reduced motion retains all destinations while suppressing animated rendering
+  ---
+  duration_ms: 0.654487
+  type: 'test'
+  ...
+# Subtest: quieting an open menu cancels pending arrival and still allows deliberate replay
+ok 103 - quieting an open menu cancels pending arrival and still allows deliberate replay
+  ---
+  duration_ms: 0.781413
+  type: 'test'
+  ...
+# Subtest: actual menu renderer keeps five existing navigation callbacks and hides unavailable utilities
+ok 104 - actual menu renderer keeps five existing navigation callbacks and hides unavailable utilities
+  ---
+  duration_ms: 3.372028
+  type: 'test'
+  ...
+# Subtest: actual menu open/close preserves reader position, focus, and inert state
+ok 105 - actual menu open/close preserves reader position, focus, and inert state
+  ---
+  duration_ms: 1.897455
+  type: 'test'
+  ...
+# Subtest: route correction changes selection; sixth tile opens a takeover and Return restores the source
+ok 106 - route correction changes selection; sixth tile opens a takeover and Return restores the source
+  ---
+  duration_ms: 2.221849
+  type: 'test'
+  ...
+# Subtest: two-column keyboard navigation follows rows and reaches the sixth tile without activating routes
+ok 107 - two-column keyboard navigation follows rows and reaches the sixth tile without activating routes
+  ---
+  duration_ms: 1.240637
+  type: 'test'
+  ...
+# Subtest: assets and scripts load before console construction
+ok 108 - assets and scripts load before console construction
+  ---
+  duration_ms: 1.219563
+  type: 'test'
+  ...
+# Subtest: popup keeps the wolf inside modal focus order and uses it to close without navigating
+ok 109 - popup keeps the wolf inside modal focus order and uses it to close without navigating
+  ---
+  duration_ms: 0.941042
+  type: 'test'
+  ...
+# Subtest: warning count refresh and empty list never claim all game content is safe
+ok 110 - warning count refresh and empty list never claim all game content is safe
+  ---
+  duration_ms: 0.968202
+  type: 'test'
+  ...
+# Subtest: returning from shared details reopens the warning list at its saved scroll without a route change
+ok 111 - returning from shared details reopens the warning list at its saved scroll without a route change
+  ---
+  duration_ms: 1.135087
+  type: 'test'
+  ...
+# Subtest: opening directly into the reading list consumes arrival quietly and permits later deliberate effects
+ok 112 - opening directly into the reading list consumes arrival quietly and permits later deliberate effects
+  ---
+  duration_ms: 0.901724
+  type: 'test'
+  ...
+# Subtest: FINAL stays engraved on the artwork and only lights for an immediate risk
+ok 113 - FINAL stays engraved on the artwork and only lights for an immediate risk
+  ---
+  duration_ms: 0.790743
+  type: 'test'
+  ...
+# Subtest: warning list shows final and unresolved counts with a shared-entry illustration
+ok 114 - warning list shows final and unresolved counts with a shared-entry illustration
+  ---
+  duration_ms: 0.77372
+  type: 'test'
+  ...
+# Subtest: Search bar opens above the art grid and returns through its existing menu callback
+ok 115 - Search bar opens above the art grid and returns through its existing menu callback
+  ---
+  duration_ms: 1.726876
+  type: 'test'
+  ...
+# Subtest: Warnings is a takeover while navigation remains a popup; acknowledgement does not alter unresolved membership
+ok 116 - Warnings is a takeover while navigation remains a popup; acknowledgement does not alter unresolved membership
+  ---
+  duration_ms: 0.814658
+  type: 'test'
+  ...
+# Subtest: wolf closes the Warnings takeover without navigation or progress mutation
+ok 117 - wolf closes the Warnings takeover without navigation or progress mutation
+  ---
+  duration_ms: 0.807845
+  type: 'test'
+  ...
+# Subtest: production letterOf and firstForLetter
+ok 118 - production letterOf and firstForLetter
+  ---
+  duration_ms: 10.454309
+  type: 'test'
+  ...
+# Subtest: production currentCard returns the leftmost visible card at a partial boundary
+ok 119 - production currentCard returns the leftmost visible card at a partial boundary
+  ---
+  duration_ms: 2.829948
+  type: 'test'
+  ...
+# Subtest: production currentCard ignores hidden and fully offscreen cards
+ok 120 - production currentCard ignores hidden and fully offscreen cards
+  ---
+  duration_ms: 2.141626
+  type: 'test'
+  ...
+# Subtest: production currentCard is stable after a simulated filter hides earlier letters
+ok 121 - production currentCard is stable after a simulated filter hides earlier letters
+  ---
+  duration_ms: 2.22117
+  type: 'test'
+  ...
+# Subtest: restored rail position selects the card that occupies that window
+ok 122 - restored rail position selects the card that occupies that window
+  ---
+  duration_ms: 2.626697
+  type: 'test'
+  ...
+# Subtest: optional counts retain blocked stops as unfinished and missed stops in total without claiming all completed
+ok 123 - optional counts retain blocked stops as unfinished and missed stops in total without claiming all completed
+  ---
+  duration_ms: 14.960336
+  type: 'test'
+  ...
+# Subtest: missed entries move below available and completed entries; correcting failure restores original route order
+ok 124 - missed entries move below available and completed entries; correcting failure restores original route order
+  ---
+  duration_ms: 3.412385
+  type: 'test'
+  ...
+# Subtest: all-completed is distinct from zero unfinished with missed outcomes; prerequisites link to real authored stages
+ok 125 - all-completed is distinct from zero unfinished with missed outcomes; prerequisites link to real authored stages
+  ---
+  duration_ms: 3.746956
+  type: 'test'
+  ...
+# Subtest: all objective IDs, prerequisites and branch references resolve; graph is acyclic
+ok 126 - all objective IDs, prerequisites and branch references resolve; graph is acyclic
+  ---
+  duration_ms: 3.163252
+  type: 'test'
+  ...
+# Subtest: catch-up uses required ancestors and never optional/alternate objectives
+ok 127 - catch-up uses required ancestors and never optional/alternate objectives
+  ---
+  duration_ms: 2.692694
+  type: 'test'
+  ...
+# Subtest: branch choice is required and closes only the other paths
+ok 128 - branch choice is required and closes only the other paths
+  ---
+  duration_ms: 1.997123
+  type: 'test'
+  ...
+# Subtest: parallel hunter work does not infer buckthorn; later ambush joins both branches
+ok 129 - parallel hunter work does not infer buckthorn; later ambush joins both branches
+  ---
+  duration_ms: 4.554157
+  type: 'test'
+  ...
+# Subtest: departure previews failed active quests and unavailable unstarted quests
+ok 130 - departure previews failed active quests and unavailable unstarted quests
+  ---
+  duration_ms: 12.490325
+  type: 'test'
+  ...
+# Subtest: correction cascades across quests and removes story grants
+ok 131 - correction cascades across quests and removes story grants
+  ---
+  duration_ms: 32.897428
+  type: 'test'
+  ...
+# Subtest: legacy marks preserved without inventing objectives or story milestones
+ok 132 - legacy marks preserved without inventing objectives or story milestones
+  ---
+  duration_ms: 0.183958
+  type: 'test'
+  ...
+# Subtest: cargo escape fails cargo only
+ok 133 - cargo escape fails cargo only
+  ---
+  duration_ms: 0.484474
+  type: 'test'
+  ...
+# Subtest: no story fact from later objective when catch-up is declined
+ok 134 - no story fact from later objective when catch-up is declined
+  ---
+  duration_ms: 2.124886
+  type: 'test'
+  ...
+# Subtest: skipped optional objective leaves available optional denominator
+ok 135 - skipped optional objective leaves available optional denominator
+  ---
+  duration_ms: 1.761748
+  type: 'test'
+  ...
+# Subtest: correction of a departed story restores availability of unfailed quests
+ok 136 - correction of a departed story restores availability of unfailed quests
+  ---
+  duration_ms: 9.743467
+  type: 'test'
+  ...
+# Subtest: changing an existing choice removes completed closed-branch marks
+ok 137 - changing an existing choice removes completed closed-branch marks
+  ---
+  duration_ms: 8.872787
+  type: 'test'
+  ...
+# Subtest: final Firestarter report catches up the selected escort path
+ok 138 - final Firestarter report catches up the selected escort path
+  ---
+  duration_ms: 0.503395
+  type: 'test'
+  ...
+# Subtest: unfinished optional cards close independently of quest completion count
+ok 139 - unfinished optional cards close independently of quest completion count
+  ---
+  duration_ms: 0.780424
+  type: 'test'
+  ...
+# Subtest: D1 story correction preserves untouched migrated completions
+ok 140 - D1 story correction preserves untouched migrated completions
+  ---
+  duration_ms: 0.60909
+  type: 'test'
+  ...
+# Subtest: D1 story correction with recorded marks still preserves legacy until reconciliation
+ok 141 - D1 story correction with recorded marks still preserves legacy until reconciliation
+  ---
+  duration_ms: 0.466064
+  type: 'test'
+  ...
+# Subtest: D2 partial objective edit preserves legacy quest completion
+ok 142 - D2 partial objective edit preserves legacy quest completion
+  ---
+  duration_ms: 0.597325
+  type: 'test'
+  ...
+# Subtest: D1/D2 explicit reconciliation previews lost quest completion
+ok 143 - D1/D2 explicit reconciliation previews lost quest completion
+  ---
+  duration_ms: 1.433247
+  type: 'test'
+  ...
+# Subtest: D2 full-quest reconfirmation reconciles legacy without loss
+ok 144 - D2 full-quest reconfirmation reconciles legacy without loss
+  ---
+  duration_ms: 0.463721
+  type: 'test'
+  ...
+# Subtest: D3 the inn fight cannot grant departure without a separate confirmation
+ok 145 - D3 the inn fight cannot grant departure without a separate confirmation
+  ---
+  duration_ms: 1.970827
+  type: 'test'
+  ...
+# Subtest: D4 arrival produces no twelve-hub notice burst
+ok 146 - D4 arrival produces no twelve-hub notice burst
+  ---
+  duration_ms: 0.534668
+  type: 'test'
+  ...
+# Subtest: D4 primary quests never appear as newly revealed notices
+ok 147 - D4 primary quests never appear as newly revealed notices
+  ---
+  duration_ms: 11.582736
+  type: 'test'
+  ...
+# Subtest: D4 stale and already-read notices are pruned even when restoring old undo snapshots
+ok 148 - D4 stale and already-read notices are pruned even when restoring old undo snapshots
+  ---
+  duration_ms: 0.735641
+  type: 'test'
+  ...
+# Subtest: D7 unskip deletes its key and status survives JSON round trip
+ok 149 - D7 unskip deletes its key and status survives JSON round trip
+  ---
+  duration_ms: 2.629988
+  type: 'test'
+  ...
+# Subtest: D7 skipping required objectives is rejected by the engine
+ok 150 - D7 skipping required objectives is rejected by the engine
+  ---
+  duration_ms: 0.410885
+  type: 'test'
+  ...
+# Subtest: D8 checking and unchecking never silently clear manual failure
+ok 151 - D8 checking and unchecking never silently clear manual failure
+  ---
+  duration_ms: 14.596982
+  type: 'test'
+  ...
+# Subtest: D9 blank choice explicitly clears the saved value and blocks confirmation
+ok 152 - D9 blank choice explicitly clears the saved value and blocks confirmation
+  ---
+  duration_ms: 7.617091
+  type: 'test'
+  ...
+# Subtest: D11 unknown primary levels never become a made-up ceiling of six
+ok 153 - D11 unknown primary levels never become a made-up ceiling of six
+  ---
+  duration_ms: 0.784962
+  type: 'test'
+  ...
+# Subtest: D13 merchant flags name explicit pins and carry source links
+ok 154 - D13 merchant flags name explicit pins and carry source links
+  ---
+  duration_ms: 0.682825
+  type: 'test'
+  ...
+# Subtest: all seven pilot steps preserve every original instruction and supporting paragraph without changing source
+ok 155 - all seven pilot steps preserve every original instruction and supporting paragraph without changing source
+  ---
+  duration_ms: 1.91021
+  type: 'test'
+  ...
+# Subtest: empty categories and invented preparation are omitted
+ok 156 - empty categories and invented preparation are omitted
+  ---
+  duration_ms: 0.19063
+  type: 'test'
+  ...
+# Subtest: arrival glow skips returns, repeated renders, other quests and within-quest steps
+ok 157 - arrival glow skips returns, repeated renders, other quests and within-quest steps
+  ---
+  duration_ms: 0.126274
+  type: 'test'
+  ...
+# Subtest: foldout keys distinguish steps and restore only valid boolean preferences
+ok 158 - foldout keys distinguish steps and restore only valid boolean preferences
+  ---
+  duration_ms: 0.538112
+  type: 'test'
+  ...
+# Subtest: choosing a result does not schedule a late source restore onto the destination page
+ok 159 - choosing a result does not schedule a late source restore onto the destination page
+  ---
+  duration_ms: 7.471373
+  type: 'test'
+  ...
+# Subtest: Return to Search restores query, list position, source rails and modal locking
+ok 160 - Return to Search restores query, list position, source rails and modal locking
+  ---
+  duration_ms: 1.559711
+  type: 'test'
+  ...
+# Subtest: closing Search reopens the menu on a later frame instead of its closing click
+ok 161 - closing Search reopens the menu on a later frame instead of its closing click
+  ---
+  duration_ms: 2.072738
+  type: 'test'
+  ...
+# Subtest: search history writes only its own record and leaves game progress unchanged
+ok 162 - search history writes only its own record and leaves game progress unchanged
+  ---
+  duration_ms: 1.686431
+  type: 'test'
+  ...
+# Subtest: Escape closes Search once instead of merely clearing the search field
+ok 163 - Escape closes Search once instead of merely clearing the search field
+  ---
+  duration_ms: 2.040389
+  type: 'test'
+  ...
+# Subtest: index has unique identities and safe shared routes, with individual quest steps
+ok 164 - index has unique identities and safe shared routes, with individual quest steps
+  ---
+  duration_ms: 19.598688
+  type: 'test'
+  ...
+# Subtest: title matches rank above body matches and all query words must match
+ok 165 - title matches rank above body matches and all query words must match
+  ---
+  duration_ms: 11.989586
+  type: 'test'
+  ...
+# Subtest: normalization handles case, apostrophes, punctuation and accents
+ok 166 - normalization handles case, apostrophes, punctuation and accents
+  ---
+  duration_ms: 7.395427
+  type: 'test'
+  ...
+# Subtest: spoiler-only branch consequences are excluded from the index
+ok 167 - spoiler-only branch consequences are excluded from the index
+  ---
+  duration_ms: 7.271398
+  type: 'test'
+  ...
+# Subtest: blank input has no fabricated results and malicious text is treated literally
+ok 168 - blank input has no fabricated results and malicious text is treated literally
+  ---
+  duration_ms: 7.366769
+  type: 'test'
+  ...
+# Subtest: region and content filters combine without losing matching entries
+ok 169 - region and content filters combine without losing matching entries
+  ---
+  duration_ms: 6.424944
+  type: 'test'
+  ...
+# Subtest: completion labels and filters are derived live from shared progress
+ok 170 - completion labels and filters are derived live from shared progress
+  ---
+  duration_ms: 7.048429
+  type: 'test'
+  ...
+# Subtest: quest-step results label quest status without claiming the step is complete
+ok 171 - quest-step results label quest status without claiming the step is complete
+  ---
+  duration_ms: 7.918321
+  type: 'test'
+  ...
+# Subtest: default search excludes expansion entries unless explicitly included
+ok 172 - default search excludes expansion entries unless explicitly included
+  ---
+  duration_ms: 6.395386
+  type: 'test'
+  ...
+# Subtest: searching and reading history do not mutate game progress or canonical tasks
+ok 173 - searching and reading history do not mutate game progress or canonical tasks
+  ---
+  duration_ms: 11.9839
+  type: 'test'
+  ...
+# Subtest: recent history is bounded, deduplicated and rejects obsolete entries
+ok 174 - recent history is bounded, deduplicated and rejects obsolete entries
+  ---
+  duration_ms: 7.529489
+  type: 'test'
+  ...
+# Subtest: malformed saved history degrades to empty history
+ok 175 - malformed saved history degrades to empty history
+  ---
+  duration_ms: 7.226173
+  type: 'test'
+  ...
+# Subtest: Velen activities have stable IDs mapped one-to-one to legacy keys; leads are references only
+ok 176 - Velen activities have stable IDs mapped one-to-one to legacy keys; leads are references only
+  ---
+  duration_ms: 1.490825
+  type: 'test'
+  ...
+# Subtest: Velen prerequisites are explicit and never inherit the White Orchard entry objective
+ok 177 - Velen prerequisites are explicit and never inherit the White Orchard entry objective
+  ---
+  duration_ms: 0.188455
+  type: 'test'
+  ...
+# Subtest: Velen objective records carry actual https source URLs, not source names
+ok 178 - Velen objective records carry actual https source URLs, not source names
+  ---
+  duration_ms: 0.271712
+  type: 'test'
+  ...
+# Subtest: White Orchard prerequisites are authored explicitly; no implicit injection remains
+ok 179 - White Orchard prerequisites are authored explicitly; no implicit injection remains
+  ---
+  duration_ms: 13.128147
+  type: 'test'
+  ...
+# Subtest: a regional extension quest with no prerequisite is not given q-lilac:ghouls
+ok 180 - a regional extension quest with no prerequisite is not given q-lilac:ghouls
+  ---
+  duration_ms: 1.240605
+  type: 'test'
+  ...
+# Subtest: White Orchard objective graph and 270 progression/branch/departure/correction scenarios match untouched v44
+ok 181 - White Orchard objective graph and 270 progression/branch/departure/correction scenarios match untouched v44
+  ---
+  duration_ms: 5474.246835
+  type: 'test'
+  ...
+# Subtest: WO prerequisites: arrival still gates regional availability and catch-up still includes the entry objective
+ok 182 - WO prerequisites: arrival still gates regional availability and catch-up still includes the entry objective
+  ---
+  duration_ms: 4.940347
+  type: 'test'
+  ...
+# Subtest: WO branching, departure and correction behave as in v44
+ok 183 - WO branching, departure and correction behave as in v44
+  ---
+  duration_ms: 380.237988
+  type: 'test'
+  ...
+# Subtest: empty storage and an empty legacy record
+ok 184 - empty storage and an empty legacy record
+  ---
+  duration_ms: 0.976381
+  type: 'test'
+  ...
+# Subtest: corrupt legacy data is never imported or modified
+ok 185 - corrupt legacy data is never imported or modified
+  ---
+  duration_ms: 0.466163
+  type: 'test'
+  ...
+# Subtest: the three whole-activity completion marks import independently
+ok 186 - the three whole-activity completion marks import independently
+  ---
+  duration_ms: 0.683003
+  type: 'test'
+  ...
+# Subtest: completion imports without inventing per-objective or per-stage marks
+ok 187 - completion imports without inventing per-objective or per-stage marks
+  ---
+  duration_ms: 0.183312
+  type: 'test'
+  ...
+# Subtest: both choices import with every valid value; unknown branch values never become outcomes
+ok 188 - both choices import with every valid value; unknown branch values never become outcomes
+  ---
+  duration_ms: 0.671321
+  type: 'test'
+  ...
+# Subtest: partially recorded reading positions are preserved and never treated as completion
+ok 189 - partially recorded reading positions are preserved and never treated as completion
+  ---
+  duration_ms: 0.349945
+  type: 'test'
+  ...
+# Subtest: repeat import is idempotent and byte-stable; later legacy edits refresh only import-owned data
+ok 190 - repeat import is idempotent and byte-stable; later legacy edits refresh only import-owned data
+  ---
+  duration_ms: 0.705823
+  type: 'test'
+  ...
+# Subtest: newer or non-import canonical data is never overwritten by the legacy record
+ok 191 - newer or non-import canonical data is never overwritten by the legacy record
+  ---
+  duration_ms: 0.152563
+  type: 'test'
+  ...
+# Subtest: the legacy record is retained byte-for-byte and the v44 Velen loader reads it unchanged
+ok 192 - the legacy record is retained byte-for-byte and the v44 Velen loader reads it unchanged
+  ---
+  duration_ms: 0.280921
+  type: 'test'
+  ...
+# Subtest: rollback removes only the unchanged owned canonical record and restores the exact pre-import storage
+ok 193 - rollback removes only the unchanged owned canonical record and restores the exact pre-import storage
+  ---
+  duration_ms: 0.447124
+  type: 'test'
+  ...
+# Subtest: unavailable storage never throws or touches the legacy record
+ok 194 - unavailable storage never throws or touches the legacy record
+  ---
+  duration_ms: 0.148362
+  type: 'test'
+  ...
+# Subtest: init seam: migration loads after Velen data and runs before the Velen view initializes
+ok 195 - init seam: migration loads after Velen data and runs before the Velen view initializes
+  ---
+  duration_ms: 1.47422
+  type: 'test'
+  ...
+# Subtest: written records are sealed with a verifiable fingerprint of exactly what the migration wrote
+ok 196 - written records are sealed with a verifiable fingerprint of exactly what the migration wrote
+  ---
+  duration_ms: 0.323869
+  type: 'test'
+  ...
+# Subtest: rollback preserves a newer-schema canonical record and never touches the legacy key
+ok 197 - rollback preserves a newer-schema canonical record and never touches the legacy key
+  ---
+  duration_ms: 0.088248
+  type: 'test'
+  ...
+# Subtest: rollback preserves native, non-import, unsealed and unreadable canonical records
+ok 198 - rollback preserves native, non-import, unsealed and unreadable canonical records
+  ---
+  duration_ms: 0.227211
+  type: 'test'
+  ...
+# Subtest: rollback preserves an import record later edited by the canonical side
+ok 199 - rollback preserves an import record later edited by the canonical side
+  ---
+  duration_ms: 0.344593
+  type: 'test'
+  ...
+# Subtest: rollback removes an unchanged owned record and leaves the legacy key byte-identical
+ok 200 - rollback removes an unchanged owned record and leaves the legacy key byte-identical
+  ---
+  duration_ms: 0.135167
+  type: 'test'
+  ...
+# Subtest: refresh never erases canonical-recorded objectives or reverts canonical completion
+ok 201 - refresh never erases canonical-recorded objectives or reverts canonical completion
+  ---
+  duration_ms: 0.229817
+  type: 'test'
+  ...
+# Subtest: an unchanged owned record still refreshes when legacy completion or choices change, then stays idempotent
+ok 202 - an unchanged owned record still refreshes when legacy completion or choices change, then stays idempotent
+  ---
+  duration_ms: 0.478421
+  type: 'test'
+  ...
+# Subtest: every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+ok 203 - every changed or new script/stylesheet loaded by any HTML entry point carries a tag distinct from v45
+  ---
+  duration_ms: 8.690278
+  type: 'test'
+  ...
+# Subtest: QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+ok 204 - QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45
+  ---
+  duration_ms: 3.958848
+  type: 'test'
+  ...
+# Subtest: QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+ok 205 - QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html
+  ---
+  duration_ms: 3.359784
+  type: 'test'
+  ...
+# Subtest: pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided
+ok 206 - pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided # SKIP PHOENIX_QA5_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.152457
+  type: 'test'
+  ...
+# Subtest: pinned v45 tag table matches PHOENIX_V45_BASELINE when provided
+ok 207 - pinned v45 tag table matches PHOENIX_V45_BASELINE when provided # SKIP PHOENIX_V45_BASELINE not set; pinned table used
+  ---
+  duration_ms: 0.098518
+  type: 'test'
+  ...
+# Subtest: objectives are the sourced journal objectives with https sources; reading the notes stays in the final search
+ok 208 - objectives are the sourced journal objectives with https sources; reading the notes stays in the final search
+  ---
+  duration_ms: 1.65857
+  type: 'test'
+  ...
+# Subtest: conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective
+ok 209 - conditional inn fight: 8 required without the fight, 9 when fought; peace closes the fight objective
+  ---
+  duration_ms: 1.21318
+  type: 'test'
+  ...
+# Subtest: fresh storage: handover creates a native canonical record that owns only velen.nilf
+ok 210 - fresh storage: handover creates a native canonical record that owns only velen.nilf
+  ---
+  duration_ms: 0.632963
+  type: 'test'
+  ...
+# Subtest: imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown
+ok 211 - imported legacy completion is kept without inventing objective marks; unknown inn outcome stays unknown
+  ---
+  duration_ms: 3.983384
+  type: 'test'
+  ...
+# Subtest: an imported inn choice is carried over as the canonical choice
+ok 212 - an imported inn choice is carried over as the canonical choice
+  ---
+  duration_ms: 0.371889
+  type: 'test'
+  ...
+# Subtest: pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched
+ok 213 - pyres and mercy stay owned by the legacy record: their saves and imported snapshots are untouched
+  ---
+  duration_ms: 0.655284
+  type: 'test'
+  ...
+# Subtest: Slice 1 guard: after the handover, import and migration rollback keep the canonical record
+ok 214 - Slice 1 guard: after the handover, import and migration rollback keep the canonical record
+  ---
+  duration_ms: 0.404482
+  type: 'test'
+  ...
+# Subtest: handover never overwrites newer, unreadable or unavailable storage
+ok 215 - handover never overwrites newer, unreadable or unavailable storage
+  ---
+  duration_ms: 0.333292
+  type: 'test'
+  ...
+# Subtest: an existing native canonical record keeps its other content through the handover
+ok 216 - an existing native canonical record keeps its other content through the handover
+  ---
+  duration_ms: 0.265034
+  type: 'test'
+  ...
+# Subtest: commit records objectives and the inn outcome in canonical; one Undo restores the prior state
+ok 217 - commit records objectives and the inn outcome in canonical; one Undo restores the prior state
+  ---
+  duration_ms: 0.600778
+  type: 'test'
+  ...
+# Subtest: legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it
+ok 218 - legacy-complete quest: recording objectives keeps the whole-quest completion; removing the quest clears it
+  ---
+  duration_ms: 0.641126
+  type: 'test'
+  ...
+# Subtest: unknown objective keys written by another writer are preserved on commit
+ok 219 - unknown objective keys written by another writer are preserved on commit
+  ---
+  duration_ms: 0.253197
+  type: 'test'
+  ...
+# Subtest: rollbackHandover restores the exact pre-handover storage only while the record is unchanged
+ok 220 - rollbackHandover restores the exact pre-handover storage only while the record is unchanged
+  ---
+  duration_ms: 1.23066
+  type: 'test'
+  ...
+# Subtest: wiring seam: script order, app.js handover order and minimal velen-r18 delegation
+ok 221 - wiring seam: script order, app.js handover order and minimal velen-r18 delegation
+  ---
+  duration_ms: 3.005721
+  type: 'test'
+  ...
+# Subtest: Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes
+ok 222 - Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes
+  ---
+  duration_ms: 0.566511
+  type: 'test'
+  ...
+# Subtest: protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)
+ok 223 - protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)
+  ---
+  duration_ms: 0.533369
+  type: 'test'
+  ...
+# Subtest: unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover
+ok 224 - unreadable legacy + no canonical: handover writes nothing; after repair the import succeeds, then the handover
+  ---
+  duration_ms: 0.363853
+  type: 'test'
+  ...
+# Subtest: a failed import write (quota) also blocks the handover; storage read failures never write
+ok 225 - a failed import write (quota) also blocks the handover; storage read failures never write
+  ---
+  duration_ms: 0.244355
+  type: 'test'
+  ...
+# Subtest: direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded
+ok 226 - direct-route membership is sourced: wiki live + archived snapshot, cross-checked sources recorded
+  ---
+  duration_ms: 0.160453
+  type: 'test'
+  ...
+# Subtest: direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome
+ok 227 - direct-Heatherton route: closes Ask/Defeat/Finish, leaves Go to the Inn unconfirmed (not required, unmarked), records no inn outcome
+  ---
+  duration_ms: 0.64507
+  type: 'test'
+  ...
+# Subtest: QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state
+ok 228 - QA4 regression: direct-route whole-quest confirmation fills no objective mark, invents no inn outcome, stays distinct; Undo restores the exact prior state
+  ---
+  duration_ms: 1.424021
+  type: 'test'
+  ...
+# Subtest: QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both
+ok 229 - QA4: removing a confirmation keeps recorded marks; a route change drops the confirmation; Undo reverses both
+  ---
+  duration_ms: 0.654453
+  type: 'test'
+  ...
+# Subtest: every supported path completes, and Undo restores the exact prior state
+ok 230 - every supported path completes, and Undo restores the exact prior state
+  ---
+  duration_ms: 0.718186
+  type: 'test'
+  ...
+# Subtest: corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction
+ok 231 - corrections between paths: marks on closed objectives are removed, never carried over, and Undo reverses each correction
+  ---
+  duration_ms: 1.479403
+  type: 'test'
+  ...
+# Subtest: QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze
+ok 232 - QA4: peace, fight and unknown routes (fresh and imported-legacy) behave byte-identically to the QA3 freeze
+  ---
+  duration_ms: 44.654564
+  type: 'test'
+  ...
+# Subtest: unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports
+ok 233 - unchecking a Heatherton step keeps the inn outcome the recorded inn conversation still supports
+  ---
+  duration_ms: 1.046254
+  type: 'test'
+  ...
+# Subtest: Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome
+ok 234 - Slice 1 imports never produce the direct route; an imported peace/fight outcome stays an outcome
+  ---
+  duration_ms: 0.335084
+  type: 'test'
+  ...
+# Subtest: the v45 loader/save excerpt used for byte comparison is the accepted v45 code
+ok 235 - the v45 loader/save excerpt used for byte comparison is the accepted v45 code
+  ---
+  duration_ms: 0.78051
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (invalid JSON): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 236 - unreadable legacy (invalid JSON): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 5.454892
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON array): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 237 - unreadable legacy (JSON array): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 3.686203
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON null): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 238 - unreadable legacy (JSON null): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 2.711351
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON number): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 239 - unreadable legacy (JSON number): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 2.779319
+  type: 'test'
+  ...
+# Subtest: unreadable legacy (JSON string): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+ok 240 - unreadable legacy (JSON string): two reloads with navigation and interaction keep the exact bytes; no canonical owner; repair -> import -> handover
+  ---
+  duration_ms: 3.028515
+  type: 'test'
+  ...
+# Subtest: valid, partial and absent legacy records: every write is byte-identical to the v45 writer
+ok 241 - valid, partial and absent legacy records: every write is byte-identical to the v45 writer
+  ---
+  duration_ms: 5.309333
+  type: 'test'
+  ...
+# Subtest: a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept
+ok 242 - a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept
+  ---
+  duration_ms: 0.617532
+  type: 'test'
+  ...
+# Subtest: velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+ok 243 - velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+  ---
+  duration_ms: 0.710811
+  type: 'test'
+  ...
+# Subtest: denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+ok 244 - denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+  ---
+  duration_ms: 2.09685
+  type: 'test'
+  ...
+# Subtest: working storage: acquisition returns the real localStorage object itself (no behaviour change)
+ok 245 - working storage: acquisition returns the real localStorage object itself (no behaviour change)
+  ---
+  duration_ms: 0.928402
+  type: 'test'
+  ...
+# Subtest: denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+ok 246 - denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+  ---
+  duration_ms: 1.482357
+  type: 'test'
+  ...
+# Subtest: denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+ok 247 - denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+  ---
+  duration_ms: 6.160395
+  type: 'test'
+  ...
+# Subtest: start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+ok 248 - start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+  ---
+  duration_ms: 0.264396
+  type: 'test'
+  ...
+# Subtest: objective fitting follows the visible card rather than the tallest hidden card
+ok 249 - objective fitting follows the visible card rather than the tallest hidden card
+  ---
+  duration_ms: 1.595298
+  type: 'test'
+  ...
+# Subtest: fit accounts for changing card widths, leading offsets and restored horizontal positions
+ok 250 - fit accounts for changing card widths, leading offsets and restored horizontal positions
+  ---
+  duration_ms: 0.603498
+  type: 'test'
+  ...
+# Subtest: the box includes card content, padding, border and native scrollbar without rounding clipping
+ok 251 - the box includes card content, padding, border and native scrollbar without rounding clipping
+  ---
+  duration_ms: 0.531841
+  type: 'test'
+  ...
+# Subtest: Velen enclosed selector accepts diagonal horizontal swipes but rejects taps and vertical-only movement
+ok 252 - Velen enclosed selector accepts diagonal horizontal swipes but rejects taps and vertical-only movement
+  ---
+  duration_ms: 0.643932
+  type: 'test'
+  ...
+# Subtest: historical Velen console, hubs, stages and leads enter the same shared view
+ok 253 - historical Velen console, hubs, stages and leads enter the same shared view
+  ---
+  duration_ms: 1.581429
+  type: 'test'
+  ...
+# Subtest: saved legacy Continue destinations normalize without accepting unknown quests or impossible stages
+ok 254 - saved legacy Continue destinations normalize without accepting unknown quests or impossible stages
+  ---
+  duration_ms: 0.27592
+  type: 'test'
+  ...
+# Subtest: entry and pointer navigation never force heading focus, while deliberate keyboard navigation can
+ok 255 - entry and pointer navigation never force heading focus, while deliberate keyboard navigation can
+  ---
+  duration_ms: 0.116234
+  type: 'test'
+  ...
+# Subtest: shared history restores the recorded hub and back positions without applying stale return Y to a new page
+ok 256 - shared history restores the recorded hub and back positions without applying stale return Y to a new page
+  ---
+  duration_ms: 0.276457
+  type: 'test'
+  ...
+# Subtest: route conversion leaves legacy completion, choices and Undo ownership unchanged
+ok 257 - route conversion leaves legacy completion, choices and Undo ownership unchanged
+  ---
+  duration_ms: 1.828286
+  type: 'test'
+  ...
+# Subtest: Velen viewing every stage never records completion or unlocks the next leads
+ok 258 - Velen viewing every stage never records completion or unlocks the next leads
+  ---
+  duration_ms: 1.191997
+  type: 'test'
+  ...
+# Subtest: Velen side completion is independent of main and other owners
+ok 259 - Velen side completion is independent of main and other owners
+  ---
+  duration_ms: 0.139323
+  type: 'test'
+  ...
+# Subtest: Velen explicit main completion confirms only the next leads; correcting it preserves side marks
+ok 260 - Velen explicit main completion confirms only the next leads; correcting it preserves side marks
+  ---
+  duration_ms: 0.180329
+  type: 'test'
+  ...
+# Subtest: Velen Undo survives JSON reload and restores completion and choices together
+ok 261 - Velen Undo survives JSON reload and restores completion and choices together
+  ---
+  duration_ms: 3.602344
+  type: 'test'
+  ...
+# Subtest: Velen choice changes never infer completion and can be undone
+ok 262 - Velen choice changes never infer completion and can be undone
+  ---
+  duration_ms: 0.159926
+  type: 'test'
+  ...
+# Subtest: Velen corrupt stage and selected IDs normalize to valid pilot data
+ok 263 - Velen corrupt stage and selected IDs normalize to valid pilot data
+  ---
+  duration_ms: 0.110831
+  type: 'test'
+  ...
+# Subtest: Velen stage resume remains independent for all three activities after reload
+ok 264 - Velen stage resume remains independent for all three activities after reload
+  ---
+  duration_ms: 0.122578
+  type: 'test'
+  ...
+# Subtest: Velen data contains one main owner with four stages and no invented encounter level
+ok 265 - Velen data contains one main owner with four stages and no invented encounter level
+  ---
+  duration_ms: 0.0873
+  type: 'test'
+  ...
+# Subtest: Velen browsing selection does not replace the saved hub resume destination
+ok 266 - Velen browsing selection does not replace the saved hub resume destination
+  ---
+  duration_ms: 0.112216
+  type: 'test'
+  ...
+# Subtest: existing action labels and routes select the approved button symbols
+ok 267 - existing action labels and routes select the approved button symbols
+  ---
+  duration_ms: 2.505509
+  type: 'test'
+  ...
+# Subtest: category lighting uses established region, progress and reference colors
+ok 268 - category lighting uses established region, progress and reference colors
+  ---
+  duration_ms: 0.680847
+  type: 'test'
+  ...
+# Subtest: eye awakening has one bounded timer and settles after interaction
+ok 269 - eye awakening has one bounded timer and settles after interaction
+  ---
+  duration_ms: 0.789508
+  type: 'test'
+  ...
+# Subtest: quiet clears pending effects and never changes pointer or control identity
+ok 270 - quiet clears pending effects and never changes pointer or control identity
+  ---
+  duration_ms: 0.839848
+  type: 'test'
+  ...
+# Subtest: production pointer and button assets exist and fit the static delivery budget
+ok 271 - production pointer and button assets exist and fit the static delivery budget
+  ---
+  duration_ms: 0.900995
+  type: 'test'
+  ...
+# Subtest: nested primary labels keep word boundaries when choosing the journal symbol
+ok 272 - nested primary labels keep word boundaries when choosing the journal symbol
+  ---
+  duration_ms: 0.741812
+  type: 'test'
+  ...
+# Subtest: fresh risks have canonical identity, verification and cutoff order without changing records
+ok 273 - fresh risks have canonical identity, verification and cutoff order without changing records
+  ---
+  duration_ms: 6.114238
+  type: 'test'
+  ...
+# Subtest: FINAL applies only to relevant actual cutoff steps, never ordinary browsing
+ok 274 - FINAL applies only to relevant actual cutoff steps, never ordinary browsing
+  ---
+  duration_ms: 2.919706
+  type: 'test'
+  ...
+# Subtest: resolved outcomes disappear, uncertain passed cutoffs remain unknown without FINAL
+ok 275 - resolved outcomes disappear, uncertain passed cutoffs remain unknown without FINAL
+  ---
+  duration_ms: 1.792575
+  type: 'test'
+  ...
+# Subtest: progress correction quietly restores the same canonical risk
+ok 276 - progress correction quietly restores the same canonical risk
+  ---
+  duration_ms: 1.705633
+  type: 'test'
+  ...
+# Subtest: final summary and shared illustrations derive from canonical risks without writing saves
+ok 277 - final summary and shared illustrations derive from canonical risks without writing saves
+  ---
+  duration_ms: 2.034541
+  type: 'test'
+  ...
+# Subtest: contextual warnings share one risk entry while unrelated timed choices stay untouched
+ok 278 - contextual warnings share one risk entry while unrelated timed choices stay untouched
+  ---
+  duration_ms: 2.783335
+  type: 'test'
+  ...
+# Subtest: every explanation links a real entry and supplies consequence, cutoff and prevention without changing task data
+ok 279 - every explanation links a real entry and supplies consequence, cutoff and prevention without changing task data
+  ---
+  duration_ms: 2.792366
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (truncated)
+ok 280 - unusable record is preserved and never written: invalid JSON (truncated)
+  ---
+  duration_ms: 12.993954
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (text)
+ok 281 - unusable record is preserved and never written: invalid JSON (text)
+  ---
+  duration_ms: 8.861169
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: empty string
+ok 282 - unusable record is preserved and never written: empty string
+  ---
+  duration_ms: 8.401423
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: array
+ok 283 - unusable record is preserved and never written: array
+  ---
+  duration_ms: 9.002413
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: string
+ok 284 - unusable record is preserved and never written: string
+  ---
+  duration_ms: 8.178747
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: null
+ok 285 - unusable record is preserved and never written: null
+  ---
+  duration_ms: 8.502001
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: number
+ok 286 - unusable record is preserved and never written: number
+  ---
+  duration_ms: 8.391003
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: object without version
+ok 287 - unusable record is preserved and never written: object without version
+  ---
+  duration_ms: 7.504022
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version missing
+ok 288 - unusable record is preserved and never written: populated, version missing
+  ---
+  duration_ms: 9.932519
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version "1" (string)
+ok 289 - unusable record is preserved and never written: populated, version "1" (string)
+  ---
+  duration_ms: 7.309397
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2
+ok 290 - unusable record is preserved and never written: populated, version 2
+  ---
+  duration_ms: 7.972533
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2, divergent fields
+ok 291 - unusable record is preserved and never written: populated, version 2, divergent fields
+  ---
+  duration_ms: 7.601318
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 0
+ok 292 - unusable record is preserved and never written: populated, version 0
+  ---
+  duration_ms: 8.196672
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version null
+ok 293 - unusable record is preserved and never written: populated, version null
+  ---
+  duration_ms: 8.776455
+  type: 'test'
+  ...
+# Subtest: blocked session: progress still changes in memory, Undo restores it, and nothing is written
+ok 294 - blocked session: progress still changes in memory, Undo restores it, and nothing is written
+  ---
+  duration_ms: 2.594686
+  type: 'test'
+  ...
+# Subtest: a later successful write elsewhere does not clear the blocked state
+ok 295 - a later successful write elsewhere does not clear the blocked state
+  ---
+  duration_ms: 1.905858
+  type: 'test'
+  ...
+# Subtest: read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+ok 296 - read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+  ---
+  duration_ms: 7.741865
+  type: 'test'
+  ...
+# Subtest: read failure on the first load only: the original progress survives and is used once storage recovers
+ok 297 - read failure on the first load only: the original progress survives and is used once storage recovers
+  ---
+  duration_ms: 4.95197
+  type: 'test'
+  ...
+# Subtest: localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+ok 298 - localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+  ---
+  duration_ms: 3.487215
+  type: 'test'
+  ...
+# Subtest: write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+ok 299 - write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+  ---
+  duration_ms: 14.443035
+  type: 'test'
+  ...
+# Subtest: write failure for every key: bytes kept, write-failed message
+ok 300 - write failure for every key: bytes kept, write-failed message
+  ---
+  duration_ms: 11.624209
+  type: 'test'
+  ...
+# Subtest: accepted record: every saved field comes from that one record
+ok 301 - accepted record: every saved field comes from that one record
+  ---
+  duration_ms: 2.319694
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid fixture
+ok 302 - valid/absent bytes are identical to v45: valid fixture
+  ---
+  duration_ms: 12.180141
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent
+ok 303 - valid/absent bytes are identical to v45: absent
+  ---
+  duration_ms: 2.717908
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+ok 304 - valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+  ---
+  duration_ms: 2.77011
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+ok 305 - valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+  ---
+  duration_ms: 2.845782
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+ok 306 - valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+  ---
+  duration_ms: 12.369879
+  type: 'test'
+  ...
+# Subtest: one status writer: persist() and reflect() both use showSaveStatus()
+ok 307 - one status writer: persist() and reflect() both use showSaveStatus()
+  ---
+  duration_ms: 0.267718
+  type: 'test'
+  ...
+1..307
+# tests 307
+# suites 0
+# pass 305
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 6117.648496

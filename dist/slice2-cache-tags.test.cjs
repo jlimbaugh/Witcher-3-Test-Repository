@@ -1,5 +1,5 @@
 'use strict';
-// v45 Slice 2 QA5: cache-busting regression. Every script/stylesheet referenced from every packaged HTML entry point
+// v45 Slice 2 QA5 (extended in QA6 for QA5 -> QA6): cache-busting regression. Every script/stylesheet referenced from every packaged HTML entry point
 // whose bytes differ from the accepted v45 release (commit a9d61c94), or which is new, must carry a ?v= tag that
 // differs from the tag v45 used for it. Otherwise a returning browser may run the cached v45 copy next to new code
 // (the QA4 app.js defect). Portable: v45 tags and sha256 are pinned below; optionally the pins are re-derived from
@@ -112,10 +112,38 @@ test('every changed or new script/stylesheet loaded by any HTML entry point carr
  }
  for(const f of ['app.js','velen-r18.js','velen-view.css','velen-nilf-objectives.js','velen-nilf-progress.js','velen-nilf-ui.js'])assert.ok(checked.includes(f),f+' must be referenced and checked');
 });
-test('QA5 release tags: app.js carries the QA5 release tag in index.html',()=>{
+// QA6: the release after QA5. Files changed since the QA5 candidate (commit 5ba73ace) must also leave QA5's tag, so a
+// browser holding cached QA5 copies fetches them. QA5 = v45 plus the entries below (derived from every *.html in QA5 dist).
+const QA5_DELTA={
+  'app.js':['nilf-slice2-qa5-v45','e8fb57a86511c1eb1a17e8d746ec2045aab91d1fb86bf454cc044e9bbbfd26f2'],
+  'velen-nilf-objectives.js':['nilf-slice2-qa4-v45','d4f64e1003ec940e074ff8ffce5768b3953ffe2822523661aebd163788b81d1c'],
+  'velen-nilf-progress.js':['nilf-slice2-qa4-v45','ee9086355206974758dbe3513c68ad6846b7fb2a793a7a92f4ac6a8db67e9888'],
+  'velen-nilf-ui.js':['nilf-slice2-qa4-v45','5d79aa4e7fb1f0d42c9071cd02a6483b2ea43eccf71b5d348b28ed73905f41b9'],
+  'velen-r18.js':['nilf-slice2-qa3-v45','a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898'],
+  'velen-view.css':['nilf-slice2-v45','4b171890a5cef380db134efef891ad7518f0a0150510aed1ccdda6a8bc74e2cc'],
+};
+const QA5_REFS={...V45_REFS,...QA5_DELTA};
+test('QA6: every script/stylesheet changed or new since QA5 carries a tag distinct from both QA5 and v45',()=>{
+ const checked=[];
+ for(const {html,file,tag} of refsOf(here)){
+  const qa5=QA5_REFS[file],now=sha(path.join(here,file));
+  if(qa5&&qa5[1]===now)continue; // unchanged since QA5: a reused tag is correct
+  checked.push(file);
+  assert.ok(tag,html+': '+file+' changed or new since QA5 but is untagged');
+  if(qa5)assert.notEqual(tag,qa5[0],html+': '+file+' changed since QA5 but still uses the QA5 tag ?v='+qa5[0]);
+  if(V45_REFS[file])assert.notEqual(tag,V45_REFS[file][0],html+': '+file+' changed but uses the v45 tag ?v='+V45_REFS[file][0]);
+ }
+ for(const f of ['app.js','velen-r18.js'])assert.ok(checked.includes(f),f+' changed in QA6 and must be referenced and checked');
+});
+test('QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html',()=>{
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
- assert.equal(tags['app.js'],'nilf-slice2-qa5-v45');
- assert.notEqual(tags['app.js'],V45_REFS['app.js'][0]);
+ for(const f of ['app.js','velen-r18.js']){assert.equal(tags[f],'save-guard-qa6-v45',f);assert.notEqual(tags[f],QA5_REFS[f][0]);assert.notEqual(tags[f],V45_REFS[f][0]);}
+});
+test('pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided',(t)=>{
+ const dir=process.env.PHOENIX_QA5_BASELINE;if(!dir){t.skip('PHOENIX_QA5_BASELINE not set; pinned table used');return;}
+ assert.ok(fs.existsSync(dir),'PHOENIX_QA5_BASELINE does not exist: '+dir);
+ const derived={};for(const {file,tag} of refsOf(dir))derived[file]=[tag,sha(path.join(dir,file))];
+ assert.deepEqual(derived,QA5_REFS);
 });
 test('pinned v45 tag table matches PHOENIX_V45_BASELINE when provided',(t)=>{
  const dir=process.env.PHOENIX_V45_BASELINE;if(!dir){t.skip('PHOENIX_V45_BASELINE not set; pinned table used');return;}

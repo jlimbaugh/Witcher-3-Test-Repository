@@ -1,0 +1,2951 @@
+{
+ "meta": {
+  "probe": "qa/wo-save-preservation/probe.cjs",
+  "generatedAt": "2026-11-17T02:05:23.864Z",
+  "node": "v24.22.1",
+  "chrome": "/usr/bin/google-chrome",
+  "evidence": "author-run (LT self-evidence); not independent review",
+  "builds": {
+   "baseline": "../wt-v45/dist",
+   "qa5": "../wt-qa5/dist",
+   "qa6": "dist"
+  },
+  "validRecordSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf"
+ },
+ "rows": [
+  {
+   "name": "absent",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "d4:localStorage-access-denied",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:352:62 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:46495/app.js?v=nilf-slice2-qa5-v45:352:62 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:352:62\n    at <anonymous>:1:15 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62 | :1:15",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:352:62 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62",
+      "interaction: TypeError: Cannot read properties of null (reading 'innerText')\n    at render (http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:322:46)\n    at http://127.0.0.1:41003/app.js?v=nilf-slice2-qa5-v45:352:62 @ app.js?v=nilf-slice2-qa5-v45:322:46 | app.js?v=nilf-slice2-qa5-v45:352:62",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:localStorage-access-throws",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "",
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [],
+     "errors": [
+      "load: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-1: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3",
+      "reload-2: SecurityError: probe: storage access denied @ :8:83 | velen-r18.js?v=nilf-slice2-qa3-v45:19:120 | app.js?v=nilf-slice2-qa5-v45:380:30 | app.js?v=nilf-slice2-qa5-v45:384:3"
+     ]
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:read-throws-first-load-only",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": false,
+     "keyWrites": 4,
+     "refusedWrites": 0,
+     "firstWritePhase": "reload-1",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "838201edb77214f692309b14d6f9aa392a9e4580f86a9363017266a1114a3b43",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.",
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": false,
+     "keyWrites": 4,
+     "refusedWrites": 0,
+     "firstWritePhase": "reload-1",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "838201edb77214f692309b14d6f9aa392a9e4580f86a9363017266a1114a3b43",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.",
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:read-throws-wo-key",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "264ba932eb0ac4965009d894567ce430bce1f03de45e16722227d3994f005de4",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:write-throws-all-keys-quota",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "fault:write-throws-wo-key-quota",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 14,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "1c55d017171f31bda61c156a7150d770aa7aa38def32e96f81e172a3da9c0dbf",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Saving is unavailable. Changes last for this visit only."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "invalid-json-empty-string",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "invalid-json-text",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "c3f07c17117dc1953b6b514cc4e816c00a33fb6cbbe66cbb31e5e22cd1a05fd0",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "c3f07c17117dc1953b6b514cc4e816c00a33fb6cbbe66cbb31e5e22cd1a05fd0",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "invalid-json-truncated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "30b4f5acab14c6209d7855494e0d304a22f38b76aef554861c0e6f78a60a34be",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "30b4f5acab14c6209d7855494e0d304a22f38b76aef554861c0e6f78a60a34be",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-array",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-null",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-number",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-object-missing-fields",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "37a76343c8e3c695feeaadfe52329673ff129c65f99f55ae6056c9254f4c481d",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "37a76343c8e3c695feeaadfe52329673ff129c65f99f55ae6056c9254f4c481d",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "shape-string",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "2ee5531eb7860f638eb16faeac1b82d301851c57e27ecf2261536f7884cfdf12",
+     "finalVersion": 1,
+     "finalObjectives": {},
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "5aa762ae383fbb727af3c7a36d4940a5b8c40a989452d2304fc958ff3f354e7a",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "5aa762ae383fbb727af3c7a36d4940a5b8c40a989452d2304fc958ff3f354e7a",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "valid-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=save-guard-qa6-v45:96:25)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-invalid-json",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "790848db0a9bd1febaad75ed5f06f6c3544b1e26729e5a5bf2efeec255fee121",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "790848db0a9bd1febaad75ed5f06f6c3544b1e26729e5a5bf2efeec255fee121",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "790848db0a9bd1febaad75ed5f06f6c3544b1e26729e5a5bf2efeec255fee121",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "790848db0a9bd1febaad75ed5f06f6c3544b1e26729e5a5bf2efeec255fee121",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-shape-array",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "49a64717d5d4cb19952e6eac2946415cf6879adacf9908e7d872332d32c6e684",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-shape-string",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "ba2df4903a2c14e86dc3bcca58911b44ac1d2514b7227bf6eb08cfb978f55a1b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "ba2df4903a2c14e86dc3bcca58911b44ac1d2514b7227bf6eb08cfb978f55a1b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "ba2df4903a2c14e86dc3bcca58911b44ac1d2514b7227bf6eb08cfb978f55a1b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "ba2df4903a2c14e86dc3bcca58911b44ac1d2514b7227bf6eb08cfb978f55a1b",
+     "finalVersion": null,
+     "finalObjectives": null,
+     "messages": [
+      "Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "velen-valid-absent",
+   "key": "phoenix.velen.arrival.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=velen-shell-v43:9:34)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=nilf-slice2-qa3-v45:21:118)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=nilf-slice2-qa3-v45:21:118)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=save-guard-qa6-v45:21:118)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": null,
+     "preservedThroughReload2": null,
+     "keyWrites": 6,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at save (velen-r18.js?v=save-guard-qa6-v45:21:118)",
+     "finalSha256": "bc657eb3f41a7621e0fbb5ffb41bcee94ac50cba191e0d014ad4af19feed9df7",
+     "finalVersion": 1,
+     "finalObjectives": null,
+     "messages": [
+      "Your Velen progress saves in this browser."
+     ],
+     "initialViews": [
+      "velen"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-2-divergent",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "2550eb1ac0c42f93c07c7e7ce80fb47c00824974ef59c8021d12826d6dc24d09",
+     "finalVersion": 2,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "2550eb1ac0c42f93c07c7e7ce80fb47c00824974ef59c8021d12826d6dc24d09",
+     "finalVersion": 2,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-2-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "11b3595e2911d353383fe5d145164eff6fb7a1fd022deb37d2b157e5a8952b3e",
+     "finalVersion": 2,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "11b3595e2911d353383fe5d145164eff6fb7a1fd022deb37d2b157e5a8952b3e",
+     "finalVersion": 2,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-missing-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "b38af1f9fdc381162177fb5cc6c7dbe8328ad0cd0d7e27ebf6dd43ff003bda0a",
+     "finalVersion": null,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "b38af1f9fdc381162177fb5cc6c7dbe8328ad0cd0d7e27ebf6dd43ff003bda0a",
+     "finalVersion": null,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  },
+  {
+   "name": "version-string-1-populated",
+   "key": "phoenix.whiteorchard.interaction.v1",
+   "runs": {
+    "baseline/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "baseline/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=regional-foundation-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/landscape": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa5/portrait": {
+     "preservedAfterLoad": false,
+     "preservedThroughReload2": false,
+     "keyWrites": 14,
+     "refusedWrites": 0,
+     "firstWritePhase": "load",
+     "firstWriteAt": "at persist (app.js?v=nilf-slice2-qa5-v45:91:23)",
+     "finalSha256": "780bf3505d0d51e0a5a7c4ec784d1483f6892845fe065e051fb12cbe9a2a18bc",
+     "finalVersion": 1,
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Progress and your place save in this browser."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/landscape": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "2764717ecc5d7698d47f288b5a9c2de873e2cf65d4d4c6def95288a50e643d8f",
+     "finalVersion": "1",
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    },
+    "qa6/portrait": {
+     "preservedAfterLoad": true,
+     "preservedThroughReload2": true,
+     "keyWrites": 0,
+     "refusedWrites": 0,
+     "firstWritePhase": null,
+     "firstWriteAt": null,
+     "finalSha256": "2764717ecc5d7698d47f288b5a9c2de873e2cf65d4d4c6def95288a50e643d8f",
+     "finalVersion": "1",
+     "finalObjectives": {
+      "q-lilac:ghouls": "done",
+      "q-lilac:ride": "done"
+     },
+     "messages": [
+      "Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved."
+     ],
+     "initialViews": [
+      "home"
+     ],
+     "errors": []
+    }
+   }
+  }
+ ]
+}

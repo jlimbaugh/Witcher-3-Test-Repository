@@ -1,4 +1,32 @@
-# Rollback — QA5 → accepted v45
+# Rollback — QA6 → QA5, QA6 → accepted v45 (and the QA5 → v45 procedure)
+
+## QA6 (branch `fix/wo-save-preservation`)
+Targets: **QA5** commit `5ba73ace7d05551c877021de6e6fd0a2242a1e3a`, or **v45** snapshot `d1df0e3e2c40cad172577f4725daa7233fc8c41e`
+(= Sites commit `a9d61c9454c4e6747a9eb0dc6c7ac9bec6b34820`). Files only; never delete user localStorage. QA6 writes no new
+storage records (it only stops writing a White Orchard record it cannot use), so no storage rollback is needed for QA6.
+
+    git worktree add /tmp/v45-kit d1df0e3e2c40cad172577f4725daa7233fc8c41e
+    git worktree add /tmp/qa5-kit 5ba73ace7d05551c877021de6e6fd0a2242a1e3a
+    python3 docs/rollback/restore_and_verify.py --kit /tmp/v45-kit --qa5-kit /tmp/qa5-kit --self-check                 # 220 v45 + 487 QA5 kit files, 0 mismatches
+    # QA6 -> QA5: restore 6, delete 2, verify 487 QA5 dist files
+    python3 docs/rollback/restore_and_verify.py --kit /tmp/v45-kit --qa5-kit /tmp/qa5-kit --from qa6 --to qa5 --dist <deployed dist> [--dry-run]
+    # QA6 -> v45: restore 5, delete 8, verify 181 v45 dist files
+    python3 docs/rollback/restore_and_verify.py --kit /tmp/v45-kit --from qa6 --to v45 --dist <deployed dist> [--dry-run]
+Exit 0 = PASS; exit 3 = target is not the QA6 release (`--force` overrides). Tested on copies of the QA6 `dist/`: both
+rollbacks PASS and `diff -r` is byte-identical to the QA5 / v45 `dist/` (`qa/qa6-evidence/logs/rollback-test.txt`).
+
+In git: `git diff --stat 5ba73ace7d05551c877021de6e6fd0a2242a1e3a <QA6 commit> -- dist/` (6 changed + 2 added files);
+`git checkout 5ba73ace7d05551c877021de6e6fd0a2242a1e3a -- dist/ && git rm dist/wo-save-guard.test.cjs dist/storage-denied-startup.test.cjs`
+(working-tree rollback; do not push to main).
+
+QA6 manifests (in `manifests/`): `qa6-release-files.sha256` (13, = `docs/RELEASE-FILES-QA6.sha256`),
+`qa5-dist-5ba73ace.sha256` (487 QA5 dist files), `qa5-restored-files-from-qa6.sha256` (6), `delete-added-files-qa6-to-qa5.txt` (2),
+`v45-restored-files-from-qa6.sha256` (5), `delete-added-files-qa6-to-v45.txt` (8). Diffs: `qa6-reverse-to-qa5.diff`,
+`qa6-reverse-to-v45.diff` (dist/ only, `git diff`).
+
+---
+
+## QA5 → accepted v45 (unchanged procedure; the script defaults are `--from qa5 --to v45`)
 
 **Rollback target:** v45 snapshot commit `d1df0e3e2c40cad172577f4725daa7233fc8c41e` on this branch (= Sites commit `a9d61c9454c4e6747a9eb0dc6c7ac9bec6b34820`).
 Files only; never delete user localStorage (see §3 of `BUNDLE-README-QA5-zip.md`, unchanged from the QA5 ZIP).

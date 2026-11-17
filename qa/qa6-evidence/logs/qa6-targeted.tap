@@ -1,0 +1,388 @@
+TAP version 13
+# Subtest: all 13 selectable quests have real objective totals and a valid view
+ok 1 - all 13 selectable quests have real objective totals and a valid view
+  ---
+  duration_ms: 4.981798
+  type: 'test'
+  ...
+# Subtest: objective completion advances without affecting optional totals
+ok 2 - objective completion advances without affecting optional totals
+  ---
+  duration_ms: 1.992722
+  type: 'test'
+  ...
+# Subtest: legacy complete does not invent objective evidence
+ok 3 - legacy complete does not invent objective evidence
+  ---
+  duration_ms: 0.158966
+  type: 'test'
+  ...
+# Subtest: failed and departure-unavailable quests never offer next objective
+ok 4 - failed and departure-unavailable quests never offer next objective
+  ---
+  duration_ms: 0.184688
+  type: 'test'
+  ...
+# Subtest: selected branch skips closed objectives
+ok 5 - selected branch skips closed objectives
+  ---
+  duration_ms: 0.805407
+  type: 'test'
+  ...
+# Subtest: risk warnings use canonical risk list, never requirement keywords
+ok 6 - risk warnings use canonical risk list, never requirement keywords
+  ---
+  duration_ms: 0.209538
+  type: 'test'
+  ...
+# Subtest: metrics classify every included record once and exclude review/utility marks
+ok 7 - metrics classify every included record once and exclude review/utility marks
+  ---
+  duration_ms: 1.136521
+  type: 'test'
+  ...
+# Subtest: separate quick Undo expires at three seconds while wolf remains navigation
+ok 8 - separate quick Undo expires at three seconds while wolf remains navigation
+  ---
+  duration_ms: 1.545411
+  type: 'test'
+  ...
+# Subtest: reduced motion retains the same three second lifetime
+ok 9 - reduced motion retains the same three second lifetime
+  ---
+  duration_ms: 0.791649
+  type: 'test'
+  ...
+# Subtest: successful quick Undo invalidates stale warnings before presentation
+ok 10 - successful quick Undo invalidates stale warnings before presentation
+  ---
+  duration_ms: 0.842303
+  type: 'test'
+  ...
+# Subtest: late durable Undo removes an already active stale warning
+ok 11 - late durable Undo removes an already active stale warning
+  ---
+  duration_ms: 0.702008
+  type: 'test'
+  ...
+# Subtest: failed and throwing Undo recover warnings and announce failure
+ok 12 - failed and throwing Undo recover warnings and announce failure
+  ---
+  duration_ms: 1.252835
+  type: 'test'
+  ...
+# Subtest: no Undo without a callback or when availability throws
+ok 13 - no Undo without a callback or when availability throws
+  ---
+  duration_ms: 1.204752
+  type: 'test'
+  ...
+# Subtest: wolf gestures never invoke quick Undo
+ok 14 - wolf gestures never invoke quick Undo
+  ---
+  duration_ms: 0.732222
+  type: 'test'
+  ...
+# Subtest: open fan defers quick Undo until Escape closes navigation
+ok 15 - open fan defers quick Undo until Escape closes navigation
+  ---
+  duration_ms: 1.33962
+  type: 'test'
+  ...
+# Subtest: repeated progress restarts expiry and quick Undo executes once
+ok 16 - repeated progress restarts expiry and quick Undo executes once
+  ---
+  duration_ms: 0.65282
+  type: 'test'
+  ...
+# Subtest: seeded history survives new acknowledgement and is copied to integration callback
+ok 17 - seeded history survives new acknowledgement and is copied to integration callback
+  ---
+  duration_ms: 0.800778
+  type: 'test'
+  ...
+# Subtest: warning arriving during repeated Undo preserves the original FIFO head
+ok 18 - warning arriving during repeated Undo preserves the original FIFO head
+  ---
+  duration_ms: 0.707694
+  type: 'test'
+  ...
+# Subtest: browse registry survives row filtering and includes utility and shared task members
+ok 19 - browse registry survives row filtering and includes utility and shared task members
+  ---
+  duration_ms: 2.050758
+  type: 'test'
+  ...
+# Subtest: cluster browse mode is excluded from serialized progress context
+ok 20 - cluster browse mode is excluded from serialized progress context
+  ---
+  duration_ms: 0.977135
+  type: 'test'
+  ...
+# Subtest: warning mode retains separate navigation without acknowledging the warning
+ok 21 - warning mode retains separate navigation without acknowledging the warning
+  ---
+  duration_ms: 0.732013
+  type: 'test'
+  ...
+# Subtest: Undo navigation does not execute Undo or stop its timer
+ok 22 - Undo navigation does not execute Undo or stop its timer
+  ---
+  duration_ms: 0.666963
+  type: 'test'
+  ...
+# Subtest: wolf image and four illustrated navigation cards are present
+ok 23 - wolf image and four illustrated navigation cards are present
+  ---
+  duration_ms: 0.698451
+  type: 'test'
+  ...
+# Subtest: wolf acknowledges all valid alerts and opens Warnings without an alert popup
+ok 24 - wolf acknowledges all valid alerts and opens Warnings without an alert popup
+  ---
+  duration_ms: 0.790785
+  type: 'test'
+  ...
+# Subtest: configured command deck routes all five destinations without invoking Undo
+ok 25 - configured command deck routes all five destinations without invoking Undo
+  ---
+  duration_ms: 0.801233
+  type: 'test'
+  ...
+# Subtest: navigation decorator opens and releases its backdrop once per toggle
+ok 26 - navigation decorator opens and releases its backdrop once per toggle
+  ---
+  duration_ms: 0.726018
+  type: 'test'
+  ...
+# Subtest: risk arriving during decorated navigation stays deferred until closure
+ok 27 - risk arriving during decorated navigation stays deferred until closure
+  ---
+  duration_ms: 0.667813
+  type: 'test'
+  ...
+# Subtest: resolved departure messages are removed without clearing unrelated warnings
+ok 28 - resolved departure messages are removed without clearing unrelated warnings
+  ---
+  duration_ms: 0.71892
+  type: 'test'
+  ...
+# Subtest: warning history shortcut uses Warnings takeover rather than a second popup
+ok 29 - warning history shortcut uses Warnings takeover rather than a second popup
+  ---
+  duration_ms: 1.547107
+  type: 'test'
+  ...
+# Subtest: velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+ok 30 - velen-r18.js reads the localStorage getter only inside the guarded acquisition and passes the guarded value on
+  ---
+  duration_ms: 0.688785
+  type: 'test'
+  ...
+# Subtest: denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+ok 31 - denied access: acquisition does not throw; the stand-in re-throws the original SecurityError on every call
+  ---
+  duration_ms: 1.355636
+  type: 'test'
+  ...
+# Subtest: working storage: acquisition returns the real localStorage object itself (no behaviour change)
+ok 32 - working storage: acquisition returns the real localStorage object itself (no behaviour change)
+  ---
+  duration_ms: 0.557132
+  type: 'test'
+  ...
+# Subtest: denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+ok 33 - denied access: the Nilfgaardian owner reports storage-unavailable and never throws (load, handover, commit, undo, rollback)
+  ---
+  duration_ms: 1.764775
+  type: 'test'
+  ...
+# Subtest: denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+ok 34 - denied access: the White Orchard loader and persist() run to completion with the storage-unavailable status
+  ---
+  duration_ms: 3.973777
+  type: 'test'
+  ...
+# Subtest: start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+ok 35 - start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch
+  ---
+  duration_ms: 0.146612
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (truncated)
+ok 36 - unusable record is preserved and never written: invalid JSON (truncated)
+  ---
+  duration_ms: 14.003655
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: invalid JSON (text)
+ok 37 - unusable record is preserved and never written: invalid JSON (text)
+  ---
+  duration_ms: 11.986712
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: empty string
+ok 38 - unusable record is preserved and never written: empty string
+  ---
+  duration_ms: 10.269285
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: array
+ok 39 - unusable record is preserved and never written: array
+  ---
+  duration_ms: 10.093322
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: string
+ok 40 - unusable record is preserved and never written: string
+  ---
+  duration_ms: 8.060304
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: null
+ok 41 - unusable record is preserved and never written: null
+  ---
+  duration_ms: 8.637834
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: number
+ok 42 - unusable record is preserved and never written: number
+  ---
+  duration_ms: 8.134803
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: object without version
+ok 43 - unusable record is preserved and never written: object without version
+  ---
+  duration_ms: 7.352893
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version missing
+ok 44 - unusable record is preserved and never written: populated, version missing
+  ---
+  duration_ms: 9.76216
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version "1" (string)
+ok 45 - unusable record is preserved and never written: populated, version "1" (string)
+  ---
+  duration_ms: 7.244324
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2
+ok 46 - unusable record is preserved and never written: populated, version 2
+  ---
+  duration_ms: 7.925711
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 2, divergent fields
+ok 47 - unusable record is preserved and never written: populated, version 2, divergent fields
+  ---
+  duration_ms: 7.182301
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version 0
+ok 48 - unusable record is preserved and never written: populated, version 0
+  ---
+  duration_ms: 7.996416
+  type: 'test'
+  ...
+# Subtest: unusable record is preserved and never written: populated, version null
+ok 49 - unusable record is preserved and never written: populated, version null
+  ---
+  duration_ms: 8.727815
+  type: 'test'
+  ...
+# Subtest: blocked session: progress still changes in memory, Undo restores it, and nothing is written
+ok 50 - blocked session: progress still changes in memory, Undo restores it, and nothing is written
+  ---
+  duration_ms: 2.657977
+  type: 'test'
+  ...
+# Subtest: a later successful write elsewhere does not clear the blocked state
+ok 51 - a later successful write elsewhere does not clear the blocked state
+  ---
+  duration_ms: 1.87362
+  type: 'test'
+  ...
+# Subtest: read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+ok 52 - read failure (getItem throws, persistently): no write of defaults; storage-unavailable message never claims preservation
+  ---
+  duration_ms: 7.619924
+  type: 'test'
+  ...
+# Subtest: read failure on the first load only: the original progress survives and is used once storage recovers
+ok 53 - read failure on the first load only: the original progress survives and is used once storage recovers
+  ---
+  duration_ms: 4.723662
+  type: 'test'
+  ...
+# Subtest: localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+ok 54 - localStorage access denied (getter throws): the loader and persist() do not throw; storage-unavailable status
+  ---
+  duration_ms: 3.193311
+  type: 'test'
+  ...
+# Subtest: write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+ok 55 - write failure for the key: unchanged v45 behaviour (bytes kept, "Saving is unavailable…", recovers after a good write)
+  ---
+  duration_ms: 14.724914
+  type: 'test'
+  ...
+# Subtest: write failure for every key: bytes kept, write-failed message
+ok 56 - write failure for every key: bytes kept, write-failed message
+  ---
+  duration_ms: 11.645639
+  type: 'test'
+  ...
+# Subtest: accepted record: every saved field comes from that one record
+ok 57 - accepted record: every saved field comes from that one record
+  ---
+  duration_ms: 2.26279
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid fixture
+ok 58 - valid/absent bytes are identical to v45: valid fixture
+  ---
+  duration_ms: 11.6166
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent
+ok 59 - valid/absent bytes are identical to v45: absent
+  ---
+  duration_ms: 2.958208
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+ok 60 - valid/absent bytes are identical to v45: absent + legacy pilot firestarter
+  ---
+  duration_ms: 2.526404
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+ok 61 - valid/absent bytes are identical to v45: absent + unreadable legacy pilot
+  ---
+  duration_ms: 2.663972
+  type: 'test'
+  ...
+# Subtest: valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+ok 62 - valid/absent bytes are identical to v45: valid with a malformed routeUpdates entry
+  ---
+  duration_ms: 11.778556
+  type: 'test'
+  ...
+# Subtest: one status writer: persist() and reflect() both use showSaveStatus()
+ok 63 - one status writer: persist() and reflect() both use showSaveStatus()
+  ---
+  duration_ms: 0.276749
+  type: 'test'
+  ...
+1..63
+# tests 63
+# suites 0
+# pass 63
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 270.220094

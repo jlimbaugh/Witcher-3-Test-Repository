@@ -11,6 +11,10 @@
    PHOENIX_DIST_CANDIDATE=<candidate checkout>/dist \
    node qa/wo-save-preservation/probe.cjs [--out results.json] [--only <case-substring>] [--jobs 3]
  If only one of the two dist variables is set, only that build is probed.
+ QA6 extension: any number of builds with repeated `--build <label>=<dist dir>` (e.g. --build baseline=../v45/dist
+ --build qa5=../qa5/dist --build qa6=dist); these replace the two variables when given. Adds the empty-string input,
+ Velen cases at both viewports, and the `d4:` flow (localStorage access denied: Home -> Velen -> hub -> quest -> return
+ -> Home, with storage, messages, visible views and page errors captured after every step).
 */
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {launchChrome,serve,sleep}=require('./cdp.cjs');
@@ -19,7 +23,8 @@ const WO='phoenix.whiteorchard.interaction.v1',VELEN='phoenix.velen.arrival.v1';
 const argv=process.argv.slice(2),arg=(n,d)=>{const i=argv.indexOf(n);return i>=0?argv[i+1]:d;};
 const OUT=arg('--out',path.join(__dirname,'results.json')),ONLY=arg('--only',''),JOBS=Number(arg('--jobs',3));
 const CHROME=process.env.CHROME_PATH||'google-chrome';
-const builds=[['baseline',process.env.PHOENIX_DIST_BASELINE],['candidate',process.env.PHOENIX_DIST_CANDIDATE]].filter(([,d])=>d);
+const buildArgs=argv.flatMap((a,i)=>a==='--build'?[argv[i+1]]:[]).map(x=>{const i=x.indexOf('=');return [x.slice(0,i),x.slice(i+1)];});
+const builds=buildArgs.length?buildArgs:[['baseline',process.env.PHOENIX_DIST_BASELINE],['candidate',process.env.PHOENIX_DIST_CANDIDATE]].filter(([,d])=>d);
 if(!builds.length){console.error('Set PHOENIX_DIST_BASELINE and/or PHOENIX_DIST_CANDIDATE to a dist/ directory.');process.exit(2);}
 const sha=s=>crypto.createHash('sha256').update(s,'utf8').digest('hex');
 const VIEWPORTS={portrait:{width:390,height:844},landscape:{width:844,height:390}};
@@ -31,6 +36,7 @@ const WO_INPUTS=()=>({
   'absent':null,
   'invalid-json-truncated':VALID.slice(0,Math.floor(VALID.length/2)),
   'invalid-json-text':'not json {',
+  'invalid-json-empty-string':'',
   'shape-array':'[]',
   'shape-string':'"hello"',
   'shape-null':'null',
@@ -68,7 +74,7 @@ if(F.access){Object.defineProperty(window,'localStorage',{configurable:true,get(
 async function settle(c,ms=1500){await sleep(ms);}
 async function run(build,dist,name,seed,viewport,fault,flow){
   const {server,origin}=await serve(dist);const c=await launchChrome(CHROME);
-  const rec={build,name,viewport,fault:fault||null,seedKey:flow==='velen'?VELEN:WO,phases:[],writes:[],errors:[],interaction:[]};
+  const rec={build,name,viewport,flow,fault:fault||null,seedKey:flow==='velen'?VELEN:WO,phases:[],writes:[],errors:[],interaction:[]};
   let phase='seed';
   c.on(m=>{
     if(m.method==='Runtime.bindingCalled'&&m.params.name==='__phxWrite'){const w=JSON.parse(m.params.payload);w.phase=phase;
@@ -83,7 +89,7 @@ async function run(build,dist,name,seed,viewport,fault,flow){
   const ev=async(expr)=>{const r=await c.send('Runtime.evaluate',{expression:expr,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error('eval: '+(r.exceptionDetails.exception?.description||r.exceptionDetails.text));return r.result.value;};
   const storage=async()=>{let items;try{items=(await c.send('DOMStorage.getDOMStorageItems',{storageId:{storageKey:origin+'/',isLocalStorage:true}})).entries;}catch{items=(await c.send('DOMStorage.getDOMStorageItems',{storageId:{securityOrigin:origin,isLocalStorage:true}})).entries;}
     const o={};for(const [k,v] of items.sort())o[k]=(k===WO||k===VELEN||k==='phoenix.guide.resume.v1')?{bytes:v,sha256:sha(v),length:v.length}:{sha256:sha(v),length:v.length};return o;};
-  const messages=async()=>ev(`(()=>{const vis=e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length);const m=[...document.querySelectorAll('[data-save-message],#velen-save-status')].map(e=>({sel:e.id?'#'+e.id:'[data-save-message]',text:e.textContent,visible:vis(e)}));const u={};m.forEach(x=>{const k=x.sel+'|'+x.text;u[k]=u[k]||{...x,count:0,visibleCount:0};u[k].count++;if(x.visible)u[k].visibleCount++;});return {hash:location.hash,visibleViews:[...document.querySelectorAll('.view')].filter(v=>!v.hidden).map(v=>v.id),messages:Object.values(u)};})()`).catch(e=>({error:String(e)}));
+  const messages=async()=>ev(`(()=>{const vis=e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length);const m=[...document.querySelectorAll('[data-save-message],#velen-save-status')].map(e=>({sel:e.id?'#'+e.id:'[data-save-message]',text:e.textContent,state:e.dataset.saveState||null,visible:vis(e)}));const u={};m.forEach(x=>{const k=x.sel+'|'+x.text;u[k]=u[k]||{...x,count:0,visibleCount:0};u[k].count++;if(x.visible)u[k].visibleCount++;});return {hash:location.hash,visibleViews:[...document.querySelectorAll('.view')].filter(v=>!v.hidden).map(v=>v.id),messages:Object.values(u)};})()`).catch(e=>({error:String(e)}));
   const snap=async(label)=>{const s=await storage();const m=label==='before-load'?null:await messages();rec.phases.push({phase:label,storage:s,ui:m});};
   const load=async(url)=>{const done=new Promise(r=>{const h=m=>{if(m.method==='Page.loadEventFired')r();};c.on(h);});await c.send('Page.navigate',{url});await Promise.race([done,sleep(8000)]);await settle(c);};
   try{
@@ -92,6 +98,16 @@ async function run(build,dist,name,seed,viewport,fault,flow){
     await snap('before-load');
     const script=(await c.send('Page.addScriptToEvaluateOnNewDocument',{source:instrument(fault)})).identifier;
     phase='load';await load(origin+'/index.html'+(flow==='velen'?'#velen':''));await snap('after-load');
+    if(flow==='d4'){ // QA6: storage access denied; the whole start-up and the Velen route must work.
+      phase='interaction';
+      for(const [label,expr] of [['velen','(location.hash="#velen",location.hash)'],['velen-hub','(location.hash="#velen/hub/nilf",location.hash)'],['velen-quest','(location.hash="#velen/quest/nilf/1",location.hash)'],['return-hub','(history.back(),"back")'],['return-velen','(history.back(),"back")'],['home','(location.hash="#home",location.hash)']]){
+        let r;try{r=await ev(expr);}catch(e){r='ERROR '+e.message;}await sleep(1100);
+        const ui=await messages(),dom=await ev(`(()=>({hash:location.hash,velenHub:!!document.querySelector('#velen .velen-nilf-hub,#velen .quest-hub'),velenText:(document.querySelector('#velen:not([hidden])')?.innerText||'').replace(/\s+/g,' ').slice(0,160),bodyText:(document.querySelector('.view:not([hidden])')?.innerText||'').replace(/\s+/g,' ').slice(0,120)}))()`).catch(e=>({error:String(e)}));
+        rec.interaction.push({step:label,result:r,dom});rec.phases.push({phase:'after-'+label,storage:await storage(),ui});
+      }
+      for(const n of [1,2]){phase='reload-'+n;const done=new Promise(r=>{c.on(m=>{if(m.method==='Page.loadEventFired')r();});});await c.send('Page.reload',{ignoreCache:true});await Promise.race([done,sleep(8000)]);await settle(c);await snap('after-reload-'+n);}
+      throw {done:true};
+    }
     phase='interaction';
     const step=async(label,expr,wait=900)=>{let r;try{r=await ev(expr);}catch(e){r='ERROR '+e.message;}rec.interaction.push({step:label,result:r});await sleep(wait);};
     if(flow==='velen'){
@@ -111,7 +127,7 @@ async function run(build,dist,name,seed,viewport,fault,flow){
     await snap('after-interaction');
     if(fault?.read==='first-load')await c.send('Page.removeScriptToEvaluateOnNewDocument',{identifier:script}).then(()=>c.send('Page.addScriptToEvaluateOnNewDocument',{source:instrument(null)}));
     for(const n of [1,2]){phase='reload-'+n;const done=new Promise(r=>{c.on(m=>{if(m.method==='Page.loadEventFired')r();});});await c.send('Page.reload',{ignoreCache:true});await Promise.race([done,sleep(8000)]);await settle(c);await snap('after-reload-'+n);}
-  }catch(e){rec.errors.push({phase,kind:'probe',text:String(e.stack||e)});}
+  }catch(e){if(!e?.done)rec.errors.push({phase,kind:'probe',text:String(e.stack||e)});}
   await c.close();server.close();
   summarize(rec,seed);return rec;
 }
@@ -121,6 +137,7 @@ function summarize(rec,seed){
   const keyWrites=rec.writes.filter(w=>w.key===k&&w.op==='setItem');
   const firstWrite=keyWrites[0];
   rec.summary={
+    flow:rec.flow,
     seedPresent:seed!=null,seedSha256:seed==null?null:sha(seed),
     preservedAfterLoad:seed==null?null:afterLoad?.bytes===seed,
     preservedThroughReload2:seed==null?null:final?.bytes===seed,
@@ -147,7 +164,8 @@ async function pool(tasks,n){const out=[];let i=0;await Promise.all(Array.from({
   for(const [b,d] of builds)for(const vp of Object.keys(VIEWPORTS)){
     for(const [n,s] of Object.entries(WO_INPUTS()))tasks.push(['wo',b,d,n,s,vp,null]);
     for(const [n,f] of Object.entries(FAULTS))tasks.push(['wo',b,d,'fault:'+n,VALID,vp,f]);
-    if(vp==='portrait')for(const [n,s] of Object.entries(VELEN_INPUTS))tasks.push(['velen',b,d,n,s,vp,null]);
+    for(const [n,s] of Object.entries(VELEN_INPUTS))tasks.push(['velen',b,d,n,s,vp,null]);
+    tasks.push(['d4',b,d,'d4:localStorage-access-denied',VALID,vp,{access:'always'}]);
   }
   const sel=tasks.filter(t=>!ONLY||t[3].includes(ONLY));
   const results=await pool(sel.map(([flow,b,d,n,s,vp,f])=>()=>run(b,d,n,s,vp,f,flow)),JOBS);

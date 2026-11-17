@@ -1,0 +1,382 @@
+TAP version 13
+# Subtest: fresh records: all four items unknown, skull first, zero open shown
+ok 1 - fresh records: all four items unknown, skull first, zero open shown
+  ---
+  duration_ms: 15.3453
+  type: 'test'
+  ...
+# Subtest: cutoff-passed skull remains unknown, not failed, and not warning-eligible
+ok 2 - cutoff-passed skull remains unknown, not failed, and not warning-eligible
+  ---
+  duration_ms: 2.725185
+  type: 'test'
+  ...
+# Subtest: explicit failed stays failed; unavailable is unknown not failed
+ok 3 - explicit failed stays failed; unavailable is unknown not failed
+  ---
+  duration_ms: 3.024561
+  type: 'test'
+  ...
+# Subtest: completed collapse group preserves cutoff order
+ok 4 - completed collapse group preserves cutoff order
+  ---
+  duration_ms: 3.518611
+  type: 'test'
+  ...
+# Subtest: no false all-clear when unknowns or failed remain
+ok 5 - no false all-clear when unknowns or failed remain
+  ---
+  duration_ms: 2.674742
+  type: 'test'
+  ...
+# Subtest: mixed case shows separate counts including zeros and no confirmation
+ok 6 - mixed case shows separate counts including zeros and no confirmation
+  ---
+  duration_ms: 3.22494
+  type: 'test'
+  ...
+# Subtest: all four positively recorded complete shows confirmation
+ok 7 - all four positively recorded complete shows confirmation
+  ---
+  duration_ms: 2.346035
+  type: 'test'
+  ...
+# Subtest: failed with no open items shows counts and no confirmation
+ok 8 - failed with no open items shows counts and no confirmation
+  ---
+  duration_ms: 3.358851
+  type: 'test'
+  ...
+# Subtest: unrecorded departure risks ask for verification without writing progress
+ok 9 - unrecorded departure risks ask for verification without writing progress
+  ---
+  duration_ms: 15.489076
+  type: 'test'
+  ...
+# Subtest: unrecorded departure-sensitive quest still produces a cutoff reminder
+ok 10 - unrecorded departure-sensitive quest still produces a cutoff reminder
+  ---
+  duration_ms: 2.939139
+  type: 'test'
+  ...
+# Subtest: recorded completion, failure and departure suppress applicable risk pulses
+ok 11 - recorded completion, failure and departure suppress applicable risk pulses
+  ---
+  duration_ms: 3.067078
+  type: 'test'
+  ...
+# Subtest: skull uses its earlier cutoff and returns after story correction
+ok 12 - skull uses its earlier cutoff and returns after story correction
+  ---
+  duration_ms: 4.081711
+  type: 'test'
+  ...
+# Subtest: checklist contains only skull and three quests; optional groups removed
+ok 13 - checklist contains only skull and three quests; optional groups removed
+  ---
+  duration_ms: 3.680581
+  type: 'test'
+  ...
+# Subtest: known-open and unknown counts stay distinct; no double-counting
+ok 14 - known-open and unknown counts stay distinct; no double-counting
+  ---
+  duration_ms: 2.655611
+  type: 'test'
+  ...
+# Subtest: warning trigger is limited to departure walkthrough stages
+ok 15 - warning trigger is limited to departure walkthrough stages
+  ---
+  duration_ms: 2.598259
+  type: 'test'
+  ...
+# Subtest: expanded route retains all persisted legacy reading step IDs
+ok 16 - expanded route retains all persisted legacy reading step IDs
+  ---
+  duration_ms: 6.284496
+  type: 'test'
+  ...
+# Subtest: contextual route and detour links resolve to canonical tasks and existing reading steps
+ok 17 - contextual route and detour links resolve to canonical tasks and existing reading steps
+  ---
+  duration_ms: 3.285754
+  type: 'test'
+  ...
+# Subtest: early warning identities resolve to independent activity and quest records
+ok 18 - early warning identities resolve to independent activity and quest records
+  ---
+  duration_ms: 10.10399
+  type: 'test'
+  ...
+# Subtest: main story checklist identities stay independent of expanded reading steps
+ok 19 - main story checklist identities stay independent of expanded reading steps
+  ---
+  duration_ms: 1.714872
+  type: 'test'
+  ...
+# Subtest: all objective IDs, prerequisites and branch references resolve; graph is acyclic
+ok 20 - all objective IDs, prerequisites and branch references resolve; graph is acyclic
+  ---
+  duration_ms: 2.470122
+  type: 'test'
+  ...
+# Subtest: catch-up uses required ancestors and never optional/alternate objectives
+ok 21 - catch-up uses required ancestors and never optional/alternate objectives
+  ---
+  duration_ms: 2.107659
+  type: 'test'
+  ...
+# Subtest: branch choice is required and closes only the other paths
+ok 22 - branch choice is required and closes only the other paths
+  ---
+  duration_ms: 1.900807
+  type: 'test'
+  ...
+# Subtest: parallel hunter work does not infer buckthorn; later ambush joins both branches
+ok 23 - parallel hunter work does not infer buckthorn; later ambush joins both branches
+  ---
+  duration_ms: 2.260821
+  type: 'test'
+  ...
+# Subtest: departure previews failed active quests and unavailable unstarted quests
+ok 24 - departure previews failed active quests and unavailable unstarted quests
+  ---
+  duration_ms: 11.093983
+  type: 'test'
+  ...
+# Subtest: correction cascades across quests and removes story grants
+ok 25 - correction cascades across quests and removes story grants
+  ---
+  duration_ms: 25.061656
+  type: 'test'
+  ...
+# Subtest: legacy marks preserved without inventing objectives or story milestones
+ok 26 - legacy marks preserved without inventing objectives or story milestones
+  ---
+  duration_ms: 0.177465
+  type: 'test'
+  ...
+# Subtest: cargo escape fails cargo only
+ok 27 - cargo escape fails cargo only
+  ---
+  duration_ms: 0.477577
+  type: 'test'
+  ...
+# Subtest: no story fact from later objective when catch-up is declined
+ok 28 - no story fact from later objective when catch-up is declined
+  ---
+  duration_ms: 1.487671
+  type: 'test'
+  ...
+# Subtest: skipped optional objective leaves available optional denominator
+ok 29 - skipped optional objective leaves available optional denominator
+  ---
+  duration_ms: 1.407133
+  type: 'test'
+  ...
+# Subtest: correction of a departed story restores availability of unfailed quests
+ok 30 - correction of a departed story restores availability of unfailed quests
+  ---
+  duration_ms: 8.622162
+  type: 'test'
+  ...
+# Subtest: changing an existing choice removes completed closed-branch marks
+ok 31 - changing an existing choice removes completed closed-branch marks
+  ---
+  duration_ms: 8.153434
+  type: 'test'
+  ...
+# Subtest: final Firestarter report catches up the selected escort path
+ok 32 - final Firestarter report catches up the selected escort path
+  ---
+  duration_ms: 0.481153
+  type: 'test'
+  ...
+# Subtest: unfinished optional cards close independently of quest completion count
+ok 33 - unfinished optional cards close independently of quest completion count
+  ---
+  duration_ms: 0.426195
+  type: 'test'
+  ...
+# Subtest: D1 story correction preserves untouched migrated completions
+ok 34 - D1 story correction preserves untouched migrated completions
+  ---
+  duration_ms: 0.423648
+  type: 'test'
+  ...
+# Subtest: D1 story correction with recorded marks still preserves legacy until reconciliation
+ok 35 - D1 story correction with recorded marks still preserves legacy until reconciliation
+  ---
+  duration_ms: 0.439075
+  type: 'test'
+  ...
+# Subtest: D2 partial objective edit preserves legacy quest completion
+ok 36 - D2 partial objective edit preserves legacy quest completion
+  ---
+  duration_ms: 0.58321
+  type: 'test'
+  ...
+# Subtest: D1/D2 explicit reconciliation previews lost quest completion
+ok 37 - D1/D2 explicit reconciliation previews lost quest completion
+  ---
+  duration_ms: 1.219252
+  type: 'test'
+  ...
+# Subtest: D2 full-quest reconfirmation reconciles legacy without loss
+ok 38 - D2 full-quest reconfirmation reconciles legacy without loss
+  ---
+  duration_ms: 0.410566
+  type: 'test'
+  ...
+# Subtest: D3 the inn fight cannot grant departure without a separate confirmation
+ok 39 - D3 the inn fight cannot grant departure without a separate confirmation
+  ---
+  duration_ms: 1.466665
+  type: 'test'
+  ...
+# Subtest: D4 arrival produces no twelve-hub notice burst
+ok 40 - D4 arrival produces no twelve-hub notice burst
+  ---
+  duration_ms: 0.653809
+  type: 'test'
+  ...
+# Subtest: D4 primary quests never appear as newly revealed notices
+ok 41 - D4 primary quests never appear as newly revealed notices
+  ---
+  duration_ms: 7.852682
+  type: 'test'
+  ...
+# Subtest: D4 stale and already-read notices are pruned even when restoring old undo snapshots
+ok 42 - D4 stale and already-read notices are pruned even when restoring old undo snapshots
+  ---
+  duration_ms: 0.712289
+  type: 'test'
+  ...
+# Subtest: D7 unskip deletes its key and status survives JSON round trip
+ok 43 - D7 unskip deletes its key and status survives JSON round trip
+  ---
+  duration_ms: 2.530103
+  type: 'test'
+  ...
+# Subtest: D7 skipping required objectives is rejected by the engine
+ok 44 - D7 skipping required objectives is rejected by the engine
+  ---
+  duration_ms: 0.422239
+  type: 'test'
+  ...
+# Subtest: D8 checking and unchecking never silently clear manual failure
+ok 45 - D8 checking and unchecking never silently clear manual failure
+  ---
+  duration_ms: 14.704768
+  type: 'test'
+  ...
+# Subtest: D9 blank choice explicitly clears the saved value and blocks confirmation
+ok 46 - D9 blank choice explicitly clears the saved value and blocks confirmation
+  ---
+  duration_ms: 7.602388
+  type: 'test'
+  ...
+# Subtest: D11 unknown primary levels never become a made-up ceiling of six
+ok 47 - D11 unknown primary levels never become a made-up ceiling of six
+  ---
+  duration_ms: 0.667264
+  type: 'test'
+  ...
+# Subtest: D13 merchant flags name explicit pins and carry source links
+ok 48 - D13 merchant flags name explicit pins and carry source links
+  ---
+  duration_ms: 0.628966
+  type: 'test'
+  ...
+# Subtest: historical Velen console, hubs, stages and leads enter the same shared view
+ok 49 - historical Velen console, hubs, stages and leads enter the same shared view
+  ---
+  duration_ms: 1.7337
+  type: 'test'
+  ...
+# Subtest: saved legacy Continue destinations normalize without accepting unknown quests or impossible stages
+ok 50 - saved legacy Continue destinations normalize without accepting unknown quests or impossible stages
+  ---
+  duration_ms: 0.283492
+  type: 'test'
+  ...
+# Subtest: entry and pointer navigation never force heading focus, while deliberate keyboard navigation can
+ok 51 - entry and pointer navigation never force heading focus, while deliberate keyboard navigation can
+  ---
+  duration_ms: 0.141654
+  type: 'test'
+  ...
+# Subtest: shared history restores the recorded hub and back positions without applying stale return Y to a new page
+ok 52 - shared history restores the recorded hub and back positions without applying stale return Y to a new page
+  ---
+  duration_ms: 0.127816
+  type: 'test'
+  ...
+# Subtest: route conversion leaves legacy completion, choices and Undo ownership unchanged
+ok 53 - route conversion leaves legacy completion, choices and Undo ownership unchanged
+  ---
+  duration_ms: 0.856409
+  type: 'test'
+  ...
+# Subtest: Velen viewing every stage never records completion or unlocks the next leads
+ok 54 - Velen viewing every stage never records completion or unlocks the next leads
+  ---
+  duration_ms: 1.364925
+  type: 'test'
+  ...
+# Subtest: Velen side completion is independent of main and other owners
+ok 55 - Velen side completion is independent of main and other owners
+  ---
+  duration_ms: 0.142258
+  type: 'test'
+  ...
+# Subtest: Velen explicit main completion confirms only the next leads; correcting it preserves side marks
+ok 56 - Velen explicit main completion confirms only the next leads; correcting it preserves side marks
+  ---
+  duration_ms: 0.116295
+  type: 'test'
+  ...
+# Subtest: Velen Undo survives JSON reload and restores completion and choices together
+ok 57 - Velen Undo survives JSON reload and restores completion and choices together
+  ---
+  duration_ms: 0.956212
+  type: 'test'
+  ...
+# Subtest: Velen choice changes never infer completion and can be undone
+ok 58 - Velen choice changes never infer completion and can be undone
+  ---
+  duration_ms: 0.187548
+  type: 'test'
+  ...
+# Subtest: Velen corrupt stage and selected IDs normalize to valid pilot data
+ok 59 - Velen corrupt stage and selected IDs normalize to valid pilot data
+  ---
+  duration_ms: 0.107816
+  type: 'test'
+  ...
+# Subtest: Velen stage resume remains independent for all three activities after reload
+ok 60 - Velen stage resume remains independent for all three activities after reload
+  ---
+  duration_ms: 0.123592
+  type: 'test'
+  ...
+# Subtest: Velen data contains one main owner with four stages and no invented encounter level
+ok 61 - Velen data contains one main owner with four stages and no invented encounter level
+  ---
+  duration_ms: 0.08874
+  type: 'test'
+  ...
+# Subtest: Velen browsing selection does not replace the saved hub resume destination
+ok 62 - Velen browsing selection does not replace the saved hub resume destination
+  ---
+  duration_ms: 0.112911
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 169.096175

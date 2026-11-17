@@ -58,11 +58,16 @@
   let progressUI;
   let homeUI;
   const state = {version:1,completed:{},selectedHub:'hub-arrival',expandedHub:'hub-arrival',windowStart:0,treeReturn:null,lastStage:'forge',lastContent:null,lastWalkthrough:false,lastWalkthroughView:null,stageByView:{},map:{type:'all',search:'',showCompleted:false}};
+  // QA6 save guard (D2): the White Orchard record is read and classified exactly once. Only a plain object with numeric
+  // version === 1 is accepted, and every saved field below comes from that same record. A record that cannot be parsed,
+  // is not a plain object, or has a missing/non-numeric/unsupported version is kept byte-for-byte; a read that throws is
+  // never answered with defaults. Either way this page session never writes the key (saveBlocked). Absence keeps the v45
+  // fresh/legacy path. Progress, Undo and navigation still work in memory.
+  const saveRecord=(()=>{let raw;try{raw=localStorage.getItem(key);}catch{return {status:'storage-unavailable'};}if(raw==null)return {status:'absent'};let value;try{value=JSON.parse(raw);}catch{return {status:'unreadable'};}if(!value||typeof value!=='object'||Array.isArray(value))return {status:'unreadable'};if(typeof value.version!=='number'||value.version!==1)return {status:'unsupported'};return {status:'accepted',value};})();
+  const saved=saveRecord.status==='accepted'?saveRecord.value:null;
+  const saveBlocked=saved||saveRecord.status==='absent'?null:saveRecord.status;
   try {
-    const raw = localStorage.getItem(key);
-    if (raw) {
-      const saved = JSON.parse(raw);
-      if (saved && saved.version === 1) {
+    if (saved) {
         Object.keys(tasks).forEach(id => {state.completed[id] = saved.completed?.[id] === true;});
         if (validHub(saved.selectedHub)) state.selectedHub = saved.selectedHub;
         if (saved.expandedHub === null || validHub(saved.expandedHub)) state.expandedHub = saved.expandedHub;
@@ -76,22 +81,28 @@
         if (validTask(saved.lastContent?.task) && [...Object.values(tasks).map(t=>t.view),'quest-firestarter'].includes(saved.lastContent.view)) state.lastContent = saved.lastContent;
         if (validHub(saved.treeReturn?.expandedHub) || saved.treeReturn?.expandedHub === null) state.treeReturn = saved.treeReturn;
         if (saved.map) state.map = {type:["all", "pop", "diagram", "service", "gwent", "notice", "abandoned", "buff", "camp", "entrance", "guarded", "hidden", "nest", "poi", "signpost", "cache", "quest", "contract"].includes(saved.map.type)?saved.map.type:'all',search:typeof saved.map.search==='string'?saved.map.search.slice(0,100):'',showCompleted:saved.map.showCompleted===true,view:saved.map.view};
-      }
-    } else {
+    } else if (saveRecord.status === 'absent') {
       // Read, but never overwrite or delete, the old pilot save.
       const legacy = JSON.parse(localStorage.getItem(legacyKey) || '{}');
       if (legacy?.firestarter === true) state.completed['q-firestarter'] = true;
     }
-  } catch { saveAvailable = false; }
-  state.progress=progressEngine.init((()=>{try{return JSON.parse(localStorage.getItem(key)||'{}').progress||{};}catch{return {};}})(),state.completed);
-  try{const old=JSON.parse(localStorage.getItem(key)||'{}');state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.noticeRead=Array.isArray(old.noticeRead)?old.noticeRead:[];}catch{}
+  } catch {}
+  state.progress=progressEngine.init(saved?.progress||{},state.completed);
+  try{const old=saved||{};state.groupOpen=old.groupOpen||{};state.routeUpdates=Array.isArray(old.routeUpdates)?old.routeUpdates.filter(u=>validHub(u.hub)&&Array.isArray(u.activities)):[];state.progressUndo=old.progressUndo||null;state.mapContext=old.mapContext||null;state.noticeRead=Array.isArray(old.noticeRead)?old.noticeRead:[];}catch{}
   state.groupOpen ||= {};state.routeUpdates ||= [];
   if ('scrollRestoration'  in history) history.scrollRestoration = 'manual';
   function persist() {
-    try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
-    catch {saveAvailable=false;}
-    document.querySelectorAll('[data-save-message]').forEach(el => {el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
+    if (!saveBlocked) {
+      try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
+      catch {saveAvailable=false;}
+    }
+    showSaveStatus();
   }
+  // QA6: one source for the save-status text, used by persist() and reflect(). A blocked state is fixed for the page
+  // session; only the normal/write-failed pair follows the outcome of the last write.
+  const SAVE_MESSAGES={saving:'Progress and your place save in this browser.','write-failed':'Saving is unavailable. Changes last for this visit only.',unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.','storage-unavailable':'Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.'};
+  function saveStatus() {return saveBlocked||(saveAvailable?'saving':'write-failed');}
+  function showSaveStatus() {const status=saveStatus();document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=SAVE_MESSAGES[status];el.dataset.saveState=status;});}
   function taskAnchor(id,home=false) {
     const a=document.createElement('a');
     a.textContent=tasks[id].name;
@@ -199,7 +210,7 @@
     const unfinished=document.querySelector('[data-unfinished]');unfinished.replaceChildren();
     Object.keys(tasks).filter(id=>!tasks[id].mapOnly&&!state.completed[id]&&progressEngine.availability(id,state.progress)==='available').forEach(id=>unfinished.append(taskAnchor(id,true)));
     if(!unfinished.children.length)unfinished.textContent=!progressEngine.facts(state.progress).arrival?'Confirm your story progress to reveal unfinished opportunities.':Object.keys(tasks).some(id=>!tasks[id].mapOnly&&!state.completed[id])?'No unfinished activities are currently available for this recorded progress.':'All listed guide activities are marked completed.';
-    document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=saveAvailable?'Progress and your place save in this browser.':'Saving is unavailable. Changes last for this visit only.';});
+    showSaveStatus();
     if(progressUI)progressUI.reflect();
     renderMapLinks();
     homeUI?.refresh();
