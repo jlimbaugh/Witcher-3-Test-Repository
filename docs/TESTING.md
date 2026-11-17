@@ -6,7 +6,9 @@ All commands run from `dist/`. Art and fonts are in the tree, so no extra downlo
 ## Commits
 - v45 snapshot: `d1df0e3e2c40cad172577f4725daa7233fc8c41e`
 - QA5 candidate: `5ba73ace7d05551c877021de6e6fd0a2242a1e3a` (`recovery/v45-qa5`)
-- QA6 candidate: head of `fix/wo-save-preservation` (`git log -1 --format=%H -- docs/TESTING.md`)
+- QA6 candidate: `804a3a2c83529fdc707ca5278fb3bcf39d50d771` (application files). Later docs-only commits on
+  `fix/wo-save-preservation` do not change `dist/`, `docs/rollback/` or `docs/RELEASE-FILES-QA6.sha256`; check with
+  `git diff --stat 804a3a2c83529fdc707ca5278fb3bcf39d50d771 HEAD -- dist docs/rollback docs/RELEASE-FILES-QA6.sha256` (expected empty).
 
 ## Commands (QA6 commit)
     cd dist

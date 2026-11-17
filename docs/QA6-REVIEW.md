@@ -9,8 +9,19 @@ Source line references are `source-inspection` of the QA6 tree unless stated oth
 | Branch | `fix/wo-save-preservation`, based on `investigation/wo-save-preservation` `75768834b768e53b3acd5f912c1c2032a848b8fb` (QA5 `5ba73ace…` + D2 investigation) |
 | Compared against | v45 snapshot `d1df0e3e2c40cad172577f4725daa7233fc8c41e`; QA5 `5ba73ace7d05551c877021de6e6fd0a2242a1e3a` |
 | Orders | Cmdr QA6 orders (owner-relayed): D2 correction, D4 correction, verification, docs. No deployment, workflow, merge, Pages change or publishing. |
-| Cmdr decision applied | Records with a missing, string or unsupported `version` are **preserved** (blocked), not coerced or migrated. |
+| Cmdr decisions applied | Records with a missing, string or unsupported `version` are **preserved** (blocked), not coerced or migrated. An empty-string record is preserved as unreadable (confirmed by Cmdr 2026-11-17, see §0). |
 | Runs | 2026-11-16 ~8:00–8:25 PM CST; Google Chrome 156.0.8078.47 headless; Node v24.22.1 |
+
+## 0. Decisions (Cmdr)
+Recorded here as the QA6 decision record. Each entry quotes or restates Cmdr's ruling as relayed by the owner.
+
+| When (America/Chicago) | Decision | Effect on QA6 |
+|---|---|---|
+| Cmdr's QA6 orders (date not independently recorded) | Records with a missing, string or unsupported `version` are preserved (blocked), not coerced or migrated. | Implemented in `dist/app.js` (status `unsupported`, §1.1). |
+| Confirmed by Cmdr 2026-11-17 (follows an earlier ruling made after QA6 delivery; its timestamp is not independently verified) | "Preserve an empty-string record as unreadable. Only a missing key counts as absent. Recovery or reset must be an explicit later action." | Matches QA6 as built (status `unreadable`, §1.1). No code change. Recovery or reset is a separate later item (§8). |
+
+Review status (2026-11-17): Cmdr's independent review of QA6 is in progress. Cmdr's source inspection and coverage limits are
+recorded in the description of draft PR #1; see `docs/PROJECT-STATUS.md`. This document remains LT's self-review.
 
 ## 1. Application changes (vs QA5 `5ba73ace`)
 
@@ -40,7 +51,8 @@ every blocked row). Each message element also carries `data-save-state` with the
 
 **One deliberate behaviour change outside the order's table:** an **empty string** stored under the key was treated as
 absent by v45 (`if (raw)`) and overwritten with defaults; QA6 treats it as `unreadable` (preserved, blocked), because it
-is present but not a v1 record. No shipped writer stores an empty string. Cmdr may rule otherwise.
+is present but not a v1 record. No shipped writer stores an empty string. **Settled by Cmdr (§0):** an empty-string record is
+preserved as unreadable; only a missing key counts as absent; recovery or reset must be an explicit later action.
 
 ### 1.2 Why `velen-r18.js` (pinned) was changed (D4)
 Cmdr authorized the edit and preferred a narrow guard at the failing boundary. The failing expression is the bare
