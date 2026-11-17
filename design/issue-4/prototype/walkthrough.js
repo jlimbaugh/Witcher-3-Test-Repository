@@ -7,8 +7,10 @@ const qk=params.get('q')==='velen'?'velen':'wo',Q=D[qk],state=params.get('state'
 // Sample progress: isolated, ephemeral, representative. Nothing here is read from or written to the browser.
 const SAMPLE={wo:{selected:'trophy',done:['herbalist','buckthorn','ask','follow','site','tracks','nest','vesemir','prepare','field','kill']},
               velen:{selected:'ask',done:['travel','inn']}};
-const s={selected:params.get('sel')||SAMPLE[qk].selected,done:new Set(SAMPLE[qk].done),warnOpen:state==='warning',warnSeen:state==='warning'};
+// Q3 (Cmdr, 2026-11-17): a remembered "Got it" per warning. Simulated here with an in-memory Set; production needs a new storage key (see README).
+const s={selected:params.get('sel')||SAMPLE[qk].selected,done:new Set(SAMPLE[qk].done),warnOpen:state==='warning'||state==='warning-ack',ack:new Set()};
 if(state==='completed')s.done.add(s.selected);
+if(state==='warning-ack'){const o=Q.objectives.find(o=>o.key===s.selected),w=o&&Q.stages[o.stage].warning;if(w)s.ack.add(w.id);}
 const art=p=>'../../../dist/'+p;
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
 const primary=Q.objectives.filter(o=>!o.optional&&!o.conditional);         // selector boxes = required journal objectives
@@ -26,17 +28,24 @@ function selector(){
   // Wolf pointer: fixed above the centre of the rail. Carries the selected objective's warning, if any.
   const ww=el('div','wolf-wrap'),wolf=el('button','wolf');wolf.type='button';
   const wi=el('img');wi.src=art('visual-art/wolf-pointer.webp');wi.alt='';wolf.append(wi);
-  if(warn){const b=el('span','wolf-badge'+(s.warnSeen?'':' unread'),'!');wolf.append(b);
+  const acked=warn&&s.ack.has(warn.id);
+  if(warn){const b=el('span','wolf-badge'+(acked?' acked':' unread'),acked?'✓':'!');wolf.append(b);
     wolf.setAttribute('aria-expanded',String(s.warnOpen));wolf.setAttribute('aria-controls','warning-panel');
-    wolf.setAttribute('aria-label',(s.warnOpen?'Hide':'Show')+' warning for this objective'+(s.warnSeen?'':' (unread)'));
-    wolf.onclick=()=>{s.warnOpen=!s.warnOpen;s.warnSeen=true;render(true);};}
+    wolf.setAttribute('aria-label',(s.warnOpen?'Hide':'Show')+' warning for this objective'+(acked?' (acknowledged)':' (not yet acknowledged)'));
+    wolf.onclick=()=>{s.warnOpen=!s.warnOpen;render(true);};}
   else{wolf.disabled=true;wolf.setAttribute('aria-label','No warning for this objective');}
-  ww.append(wolf,el('p','wolf-caption',warn?(s.warnOpen?'Warning · tap the wolf to close':'Warning · tap the wolf'):''));
+  ww.append(wolf,el('p','wolf-caption'+(acked?' acked':''),warn?((acked?'Warning, acknowledged':'Warning')+(s.warnOpen?' · tap the wolf to close':' · tap the wolf')):''));
   wrap.append(ww);
   if(warn&&s.warnOpen){const p=el('div','warning-panel');p.id='warning-panel';p.setAttribute('role','region');p.setAttribute('aria-label','Warning');
     p.append(el('h3','',warn.short));
+    const ackRow=el('div','ack-row');
+    if(acked){ackRow.append(el('span','ack-done','✓ Acknowledged. The wolf will not mark this warning as new again.'));
+      const u=el('button','ack-btn secondary','Mark as new');u.type='button';u.onclick=()=>{s.ack.delete(warn.id);render(true);};ackRow.append(u);}
+    else{const g=el('button','ack-btn','Got it');g.type='button';g.setAttribute('aria-label','Got it: acknowledge this warning');g.onclick=()=>{s.ack.add(warn.id);render(true);};
+      ackRow.append(g,el('span','ack-hint','Clears the new-warning dot for this warning. Does not change progress.'));}
+    p.append(ackRow);
     if(warn.sections.length){const dl=el('dl');for(const [k,v] of warn.sections)dl.append(el('dt','',k),el('dd','',v));p.append(dl);}
-    p.append(el('p','provenance','Shown for: '+sel.label+' Opening this panel does not change progress.'));wrap.append(p);}
+    p.append(el('p','provenance','Shown for: '+sel.label+' Mockup: acknowledgment is held in memory only.'));wrap.append(p);}
   const rail=el('div','rail');rail.setAttribute('role','listbox');rail.setAttribute('aria-label','Objectives, swipe or tap to choose');
   for(const o of primary){const b=el('div','box'+(o.key===sel.key?' selected':'')+(s.done.has(o.key)?' done':''));b.dataset.key=o.key;
     b.setAttribute('role','option');b.setAttribute('aria-selected',String(o.key===sel.key));b.tabIndex=o.key===sel.key?0:-1;
@@ -65,17 +74,24 @@ function selector(){
 function reading(){
   const sel=primary.find(o=>o.key===s.selected)||primary[0],st=Q.stages[sel.stage];const r=el('section','reading');r.setAttribute('aria-live','polite');
   r.append(el('h2','',st.title));if(st.place)r.append(el('p','place',st.place));r.append(el('span','ornament'));
+  // Q1 (Cmdr, 2026-11-17): keep the shared stage text and name the selected objective above the actions.
+  const fo=el('div','for-objective');fo.append(el('span','label','SELECTED OBJECTIVE'),el('strong','',sel.label));r.append(fo);
   r.append(el('h3','','WHAT TO DO'));const ol=el('ol','actions');for(const a of st.actions)ol.append(el('li','',a));r.append(ol);
   if(st.choices.length){r.append(el('h3','','CHOICE'));const ul=el('ul','choices');for(const c of st.choices)ul.append(el('li','',c));r.append(ul);}
   if(st.explanation.length){r.append(el('h3','','WHY'));const ex=el('div','explain');for(const p of st.explanation)ex.append(el('p','',p));r.append(ex);}
   // Related optional tasks: optional journal objectives mapped to this stage, then this stage's optional entries.
   const opt=el('details','row');opt.id='optional';if(state==='optional')opt.open=true;
-  const optObjs=Q.objectives.filter(o=>o.optional&&o.stage===sel.stage),total=optObjs.length+st.optional.length;
+  const optObjs=Q.objectives.filter(o=>o.optional&&o.stage===sel.stage),near=st.nearby,total=optObjs.length+near.length;
   const sum=el('summary');sum.append('Related optional tasks ',el('span','count','· '+total));opt.append(sum);const ob=el('div','row-body');
+  ob.append(el('h3','','OPTIONAL OBJECTIVES'));
   for(const o of optObjs){const it=el('div','opt-item'),c=el('button','check');c.type='button';c.append(el('span','',s.done.has(o.key)?'✓':''));c.setAttribute('aria-label','Mark optional objective complete: '+o.label);c.onclick=()=>{s.done.has(o.key)?s.done.delete(o.key):s.done.add(o.key);render(true);};
     const t=el('div');t.append(el('span','kind','Optional journal objective'),o.label);it.append(c,t);ob.append(it);}
-  for(const d of st.optional){const it=el('div','opt-item'),t=el('div');const a=el('a','link-entry',d.label+' →');a.href='#';a.onclick=e=>e.preventDefault();t.append(el('span','kind','Optional entry · '+d.target),a);it.append(el('span','check'),t);ob.append(it);}
-  if(!total)ob.append(el('p','empty','No optional task is linked to this objective.'));
+  if(!optObjs.length)ob.append(el('p','empty','No optional objective is linked to this objective.'));
+  // Q2 (Cmdr, 2026-11-17): nearby activities also go here, labelled "Nearby".
+  ob.append(el('h3','','NEARBY'));
+  for(const d of near){const it=el('div','opt-item nearby'),t=el('div');const a=el('a','link-entry',d.label+' →');a.href='#';a.onclick=e=>e.preventDefault();
+    t.append(el('span','kind','Nearby · '+d.kind),a);if(d.context)t.append(el('p','context',d.context));it.append(el('span','pin','◆'),t);ob.append(it);}
+  if(!near.length)ob.append(el('p','empty','No nearby activity is recorded for this objective.'));
   opt.append(ob);r.append(opt);
   const inf=el('details','row');inf.id='info';if(state==='info')inf.open=true;const is=el('summary');is.append('Information');inf.append(is);const ib=el('div','row-body');
   for(const b of st.info){ib.append(el('h3','',b.title.toUpperCase()));for(const p of b.paragraphs)ib.append(el('p','',p));}

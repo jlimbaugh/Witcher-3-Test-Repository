@@ -185,7 +185,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Tomira provides the buckthorn lead, while Mislav provides the patrol location. Finding the herb early can skip the herbalist objective in-game; do not mark a conversation complete unless it happened."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -201,11 +201,12 @@ window.MOCKUP_DATA={
     "explanation": [
      "On Death’s Bed is a separate quest with its own potion and hand-in. Open its entry for the instructions; the griffin quest does not require completing it."
     ],
-    "optional": [
+    "nearby": [
      {
       "label": "At the cottage · On Death’s Bed",
       "target": "On Death’s Bed",
-      "kind": "quest"
+      "kind": "quest",
+      "source": "white-orchard.js stage 2 detours"
      }
     ],
     "info": [],
@@ -225,7 +226,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Helping and talking afterward provides additional experience and an optional personal story. Skipping the dogs still lets you continue the required investigation."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [
      {
       "title": "If you help",
@@ -248,16 +249,18 @@ window.MOCKUP_DATA={
      "Follow the Alchemy tutorial if enabled, and check your inventory if tutorials are off. The basic Thunderbolt recipe uses 1 dwarven spirit, 2 cortinarius and 1 endrega embryo; the quest supplies the tutorial preparation. Equip the potion if you plan to use it.",
      "Repair your silver sword, equip food or a healing potion you already have, and leave room to dodge. This encounter does not require a particular build or crafted witcher set."
     ],
-    "optional": [
+    "nearby": [
      {
       "label": "Willis’s forge · repairs and access requirements",
       "target": "Willis’s forge",
-      "kind": "service"
+      "kind": "service",
+      "source": "white-orchard.js stage 4 detours"
      },
      {
       "label": "Optional gear route · Viper diagrams",
       "target": "Scavenger Hunt: Viper School Gear",
-      "kind": "quest"
+      "kind": "quest",
+      "source": "white-orchard.js stage 4 detours"
      }
     ],
     "info": [],
@@ -276,7 +279,7 @@ window.MOCKUP_DATA={
      "Keep Quen available if it helps your playstyle. Move sideways from the approach of a diving attack, then close only after the landing. Aard can help interrupt the beast at close range; avoid spending all your stamina when you need a defensive Sign.",
      "Do not stay under its wings swinging continuously. Back away, watch the next attack, and take a few safe hits. The second location is still part of the same hunt, not another quest."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -291,7 +294,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Check that the buckthorn objective is tracked and search the bottom inside its marked area. Watch your breath meter and surface between searches; carrying the herb is what advances this branch."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -306,7 +309,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Inspect the bloodied ground and other highlighted evidence, then locate the outgoing tracks. Follow the trail across the broken bridge and up the slope rather than returning to the hunter."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -321,11 +324,12 @@ window.MOCKUP_DATA={
     "explanation": [
      "The investigation establishes why the surviving griffin began attacking people: the soldiers killed its mate. This explains the hunt without changing the required confrontation."
     ],
-    "optional": [
+    "nearby": [
      {
       "label": "Optional nearby stop · Broken Bridge Place of Power",
       "target": "Broken Bridge Place of Power",
-      "kind": "discovery"
+      "kind": "discovery",
+      "source": "white-orchard.js stage nest detours"
      }
     ],
     "info": [
@@ -350,7 +354,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Check the crossbow in your ranged slot and follow the on-screen firing prompt. Keep your silver sword equipped for the griffin. You can delay the ready response while sorting your loadout."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -365,15 +369,17 @@ window.MOCKUP_DATA={
     "explanation": [
      "Return to the body and inspect its loot. Killing the griffin and taking the quest trophy are separate actions; keep the trophy until the report is complete."
     ],
-    "optional": [
+    "nearby": [
      {
       "label": "Check crystal skull entry and location",
       "target": "Yennefer’s crystal skull",
-      "kind": "discovery"
+      "kind": "discovery",
+      "source": "white-orchard.js stage trophy detours"
      }
     ],
     "info": [],
     "warning": {
+     "id": "poi-4",
      "short": "Optional missable: collect the crystal skull before completing the griffin quest.",
      "sections": [
       [
@@ -407,9 +413,10 @@ window.MOCKUP_DATA={
     "explanation": [
      "Published reference values: accepting gives 300 XP plus 150 crowns in GameBanshee, GosuNoob and Guides4Gamers; witcher.tools instead lists 250 crowns. Refusing is listed as 500 XP with no coin. Some guides report differing XP. Current Xbox payout remains unconfirmed. Both replies continue the story."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": {
+     "id": "wo.q-beast.stage-payment",
      "short": "The payment reply is timed. Decide before the dialogue timer expires; the exact reward comparison is behind Consequences below.",
      "sections": [],
      "source": "white-orchard.js stage payment warning"
@@ -581,7 +588,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Check equipment condition and replenish supplies before taking the road."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    },
@@ -599,7 +606,22 @@ window.MOCKUP_DATA={
     "explanation": [
      "Open each nearby activity’s owner hub below. Taking a detour does not advance or complete the main quest."
     ],
-    "optional": [],
+    "nearby": [
+     {
+      "label": "Funeral Pyres",
+      "target": "Funeral Pyres",
+      "kind": "side quest",
+      "context": "Fits the road: the priest west of Mulbrydale offers it. Completion is recorded in its own hub.",
+      "source": "velen-nilf-ui.js nearbyCard"
+     },
+     {
+      "label": "At the Mercy of Strangers",
+      "target": "At the Mercy of Strangers",
+      "kind": "encounter",
+      "context": "Fits the road: the riverbank on the approach to the inn. Its decision is recorded in its own hub.",
+      "source": "velen-nilf-ui.js nearbyCard"
+     }
+    ],
     "info": [],
     "warning": null
    },
@@ -615,7 +637,22 @@ window.MOCKUP_DATA={
     "explanation": [
      "You can read the notice board and inspect the innkeeper’s services while at this stop. Collecting a notice is not completing its contract."
     ],
-    "optional": [],
+    "nearby": [
+     {
+      "label": "Innkeeper",
+      "target": "Innkeeper",
+      "kind": "service",
+      "context": "At the Inn at the Crossroads: food, drink and a shop conversation.",
+      "source": "velen-nilf-ui.js nearbyCard"
+     },
+     {
+      "label": "Collected notices",
+      "target": "Collected notices",
+      "kind": "notices",
+      "context": "Notices from the inn board, kept for later. Collecting a notice is not completing it.",
+      "source": "velen-nilf-ui.js nearbyCard"
+     }
+    ],
     "info": [
      {
       "title": "What the inn choice changes",
@@ -625,6 +662,7 @@ window.MOCKUP_DATA={
      }
     ],
     "warning": {
+     "id": "velen.nilf.stage-3",
      "short": "Before answering the soldiers: this conversation affects the later approach to Crow’s Perch. It does not block the main story.",
      "sections": [],
      "source": "velen-data-r18.js stage 3 warning"
@@ -644,7 +682,7 @@ window.MOCKUP_DATA={
     "explanation": [
      "Reading the notes finishes this quest and provides two investigative leads. Mark completion separately in the owner hub when you have done this in the game."
     ],
-    "optional": [],
+    "nearby": [],
     "info": [],
     "warning": null
    }

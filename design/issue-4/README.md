@@ -2,11 +2,40 @@
 
 This is a design mockup only. It is not wired into `dist/`. It does not change tests, rollback, the release file list, storage or quest content, and nothing here is published.
 
+## Decisions (Cmdr-decided 2026-11-17)
+
+These answer question batch 1 and are applied to the prototype and mockups.
+
+- **Q1: A.** Keep the shared reading text, and name the selected objective above the actions. A "Selected objective" line now sits between the section title and "What to do", in both WO and Velen.
+- **Q2: B.** Nearby activities also go in the "Related optional tasks" dropdown, labelled "Nearby". The dropdown has two groups: "Optional objectives" (optional journal objectives) and "Nearby".
+  - WO: the stage detours from `white-orchard.js`.
+  - Velen: Funeral Pyres, At the Mercy of Strangers, Innkeeper and Collected notices. The names come from `velen-data-r18.js`; the context lines are the hub card text in `velen-nilf-ui.js`.
+  - Placing each Velen entry on a reading stage by its place (road: stage 2; inn: stage 3) is an LT proposal.
+  - Stages with nothing recorded say so.
+- **Q3: B.** Warnings get a remembered "Got it".
+  - The panel shows "Got it" until it is acknowledged. After that, the wolf badge shows a check instead of the new-warning dot, and the panel shows "Acknowledged" with a "Mark as new" control (an LT addition so it can be undone).
+  - Acknowledgment never changes progress. In the mockup it lives in an in-memory Set and is never stored.
+
+### Q3 implementation note (not part of these mockups)
+
+A real "Got it" needs its own scoped change and review:
+
+- **New storage key**, proposed: `phoenix.guide.warnings-ack.v1`. It is separate from progress and save keys.
+- **Versioned record**, for example `{v:1, acks:{<warningId>: {at:<ISO time>, text:<hash of the warning text>}}}`. The text hash lets a changed warning show as new again. Warning ids are the catalog ids (for example `poi-4`), or a stable stage id where no catalog entry exists (for example `velen.nilf.stage-3`).
+- **Read and write failure handling**, consistent with the QA6 save guard:
+  - Never overwrite data that cannot be read or parsed.
+  - Treat an unreadable record as "not acknowledged" for display only.
+  - Report failed writes without retry loops.
+  - Keep an unknown future version read-only.
+- **Cache tags and file pins:** new or changed files need the usual cache-tag bumps and release-list and manifest updates.
+- **Its own tests and review.** None of this is implemented here: `dist/`, tests and real storage are untouched.
+
 ## How to view
 
-- Open `prototype/index.html?q=wo|velen&state=default|warning|optional|info|completed` from a local static server at the repo root. The prototype loads fonts and art from `../../../dist/` as read-only.
+- Open `prototype/index.html?q=wo|velen&state=default|warning|warning-ack|optional|info|completed` from a local static server at the repo root. The prototype loads fonts and art from `../../../dist/` as read-only.
 - `tools/extract-data.cjs` reads the shipped data files (read-only, in a vm sandbox) and writes `prototype/mockup-data.js`.
 - `tools/render.cjs` produces `mockups/*.png` at 390x844 and 844x390, device scale 2, using headless Chrome.
+- To keep the repo small, the portrait PNGs are saved as 256-colour dithered images (rendered at scale 2, then quantised with Pillow). The landscape PNGs are from the first pass and are lossless.
 - Sample progress lives in memory only (`walkthrough.js`, `SAMPLE`). The prototype never reads or writes localStorage.
 
 ## States rendered
@@ -14,11 +43,12 @@ This is a design mockup only. It is not wired into `dist/`. It does not change t
 | File | State |
 |---|---|
 | `mockups/wo-portrait-default.png`, `velen-portrait-default.png` | Selected objective, warning collapsed, unread dot |
-| `*-portrait-warning.png` | Warning expanded inside the selector, beneath the wolf |
-| `*-portrait-optional.png` | Related optional tasks dropdown open |
+| `*-portrait-warning.png` | Warning expanded inside the selector, beneath the wolf, not yet acknowledged ("Got it" shown) |
+| `*-portrait-warning-ack.png` | Same warning after "Got it": acknowledged badge (no new-warning dot) and a "Mark as new" control |
+| `*-portrait-optional.png` | Related optional tasks dropdown open: "Optional objectives" group, then "Nearby" group |
 | `*-portrait-info.png` | Information dropdown open (WO shows objective "nest", because the trophy stage has no extra information) |
 | `*-portrait-completed.png` | Selected objective ticked; selection stays put; "Next unfinished" appears |
-| `*-landscape-default.png` | Landscape check, 844x390 |
+| `*-landscape-default.png` | Landscape check, 844x390 (not re-rendered for the 2026-11-17 decisions; the changes sit below the fold or inside the expanded warning) |
 
 Sample: WO selects "Take the griffin trophy." (objective 12 of 13, 11 completed). Velen selects "Ask about the agent called Hendrik..." (objective 3 of 8, 2 completed).
 
@@ -44,7 +74,7 @@ Sample: WO selects "Take the griffin trophy." (objective 12 of 13, 11 completed)
 Velen renders through the same `walkthrough.js`, with no Velen-specific code paths.
 
 **Velen-only features left out (proposals, need Cmdr approval):**
-- P1. Nearby activities rail (Funeral Pyres, Wandering in the Dark / John Verdun, Innkeeper services, collected notices).
+- P1. Nearby activities rail. After Q2 B, its content (Funeral Pyres, At the Mercy of Strangers / John Verdun, Innkeeper, Collected notices) now appears in the shared Nearby group. Only a separate Velen rail is still a proposal.
 - P2. Route-choice cards (fight the baron's men vs go straight to Heatherton) as a separate control. The mockup uses the WO "Story & correction controls" row and an Information note instead.
 - P3. The Velen hub console / region dashboard.
 
@@ -54,8 +84,8 @@ Velen renders through the same `walkthrough.js`, with no Velen-specific code pat
 
 - `model` = `{quest, region, level, kind, art, objectives[], stages{}, questInfo[]}`
 - Each `objectives[]` entry = `{key, id, label, optional, conditional, stage}`. Selector boxes = `!optional && !conditional`.
-- Each `stages{}` entry = `{title, place, actions[], choices[], explanation[], optional[], info[], warning}`, where `warning` = `{short, sections[[label, text]]}`.
-- `progressAdapter` = `{isDone(id), toggle(id), lastViewed()/setLastViewed(key)}`. Production would back this with the existing progression engine and storage, unchanged. The mockup backs it with an in-memory Set.
+- Each `stages{}` entry = `{title, place, actions[], choices[], explanation[], nearby[], info[], warning}`, where `nearby[]` = `{label, target, kind, context?, source}` and `warning` = `{id, short, sections[[label, text]]}`.
+- `progressAdapter` = `{isDone(id), toggle(id), lastViewed()/setLastViewed(key)}`, plus a separate `warningAckAdapter` = `{isAcked(warningId), ack(warningId), unack(warningId)}` (Q3). Production would back this with the existing progression engine and storage, unchanged. The mockup backs it with an in-memory Set.
 - Region modules supply the model through an adapter like `tools/extract-data.cjs`. The renderer stays the same.
 
 ## Objective to reading-stage mapping (LT proposal; source: read from the shipped data files)
@@ -77,12 +107,12 @@ Velen renders through the same `walkthrough.js`, with no Velen-specific code pat
 
 Unmapped or awkward cases:
 - WO stage "1" (Take the griffin contract) has no journal objective. It is not reachable from the selector in the mockup.
-- Shared stages: several objectives show the same reading text (WO patrol x3, WO stage 3, WO stage 4, Velen stage 3, Velen stage 4).
+- Shared stages: several objectives show the same reading text (WO patrol x3, WO stage 3, WO stage 4, Velen stage 3, Velen stage 4). Resolved by Q1 A: the shared text stays, and the selected objective is named above the actions.
 - Velen "Defeat the baron's men" counts only on the fight route. With the route undecided the selector shows 8 boxes and a "route-dependent, not counted yet" note. The data's 9 (fight route) and 5 (direct route) totals are not shown. No membership or denominator was changed.
 - The Velen stage 3 warning only has short text. It has no consequence, cutoff or prevention fields, so the panel is shorter than WO's.
 
 ## Warning unread / acknowledgment
-The mockup shows a yellow dot on the wolf badge until the panel is opened once. The state lives in memory, per page view. Persisting acknowledgment would need a storage change, which is out of scope. See question 3.
+Decided as Q3 B (see Decisions). The yellow new-warning dot stays until "Got it". Opening the panel alone does not clear it.
 
-## Open questions (batch of three)
-See the draft PR description.
+## Open questions
+Batch 1 was answered on 2026-11-17 (see Decisions). Batch 2 is in the draft PR description.

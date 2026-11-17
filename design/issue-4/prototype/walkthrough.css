@@ -98,3 +98,17 @@ details.row .count{font-size:14px;color:var(--ink-soft)}
 .route-note{flex-basis:100%;font-size:14px;color:#4a3f30;font-style:italic}
 /* Landscape: keep the column clear of the floating navigation controls on the right. */
 @media (orientation:landscape) and (max-height:500px){main{margin-left:max(16px,calc(50% - 400px));margin-right:190px}}
+/* r3: Cmdr decisions Q1-Q3 (2026-11-17) */
+.for-objective{margin:10px 0 2px;padding:8px 10px;border-left:3px solid #6f7b77;background:#efe3c6aa}
+.for-objective .label{display:block;font-size:12.5px;letter-spacing:.08em;color:var(--ink-soft)}
+.for-objective strong{font-weight:normal;font-size:18px;color:#1f1a14}
+.wolf-badge.acked{background:#4f5d58}
+.wolf-caption.acked{color:#3f4a46}
+.ack-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:10px 0 4px}
+.ack-btn{min-height:44px;min-width:96px;padding:0 16px;border-radius:4px;border:1px solid #c9c2b0;background:linear-gradient(#2c3634,#1b2322);color:#f3ecdc;font:inherit;font-size:16px;cursor:pointer}
+.ack-btn.secondary{background:#f5e4dc;color:#5a1d14;border-color:#a5483b}
+.ack-hint{font-size:13.5px;color:#5a2a22;flex:1 1 150px}
+.ack-done{font-size:15px;color:#22402c;flex:1 1 100%}
+.opt-item .pin{flex:0 0 44px;height:44px;display:grid;place-items:center;color:#5f6a66;font-size:14px}
+.opt-item .context{margin:2px 0 0;font-size:14.5px;line-height:1.35;color:var(--ink-soft)}
+.row-body h3+.opt-item{border-top:0}
