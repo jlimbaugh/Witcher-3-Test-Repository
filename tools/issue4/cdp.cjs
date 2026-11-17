@@ -21,7 +21,10 @@ async function launch({width=390,height=844,profile=null,scale=1}={}){
   async swipe(x1,y,x2,steps=8){await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:x1,y}]});for(let i=1;i<=steps;i++){await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x1+(x2-x1)*i/steps,y}]});await sleep(16);}await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await sleep(900);},
   async key(key,code=key,keyCode=0){for(const type of ['keyDown','keyUp'])await send('Input.dispatchKeyEvent',{type,key,code,windowsVirtualKeyCode:keyCode});await sleep(120);},
   sleep,
-  async close(keep=false){try{ws.close();}catch{}chrome.kill('SIGKILL');await sleep(300);if(!keep&&!profile)fs.rmSync(dir,{recursive:true,force:true});}
+  async close(keep=false){
+   // graceful Browser.close so DOM storage is flushed to the profile (a SIGKILL can lose the last writes)
+   try{const v=await (await fetch(`http://127.0.0.1:${port}/json/version`)).json();const bws=new WebSocket(v.webSocketDebuggerUrl);await new Promise(r=>bws.onopen=r);bws.send(JSON.stringify({id:1,method:'Browser.close'}));await new Promise(r=>{chrome.once('exit',r);setTimeout(r,5000);});}catch{}
+   try{ws.close();}catch{}chrome.kill('SIGKILL');await sleep(300);if(!keep&&!profile)fs.rmSync(dir,{recursive:true,force:true});}
  };
  await send('Page.enable');await send('Runtime.enable');await send('Network.enable');
  await api.size(width,height);await send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:5});
