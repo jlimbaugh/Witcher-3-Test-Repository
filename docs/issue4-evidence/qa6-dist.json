@@ -1,0 +1,1958 @@
+{
+  "ART-SOURCES.md": {
+    "sha256": "1061e4bc245188e988f3f0a05c3e9d8e0f095dba015c61c475a7c535156ea402",
+    "mode": "100644"
+  },
+  "BUILD-REVISION.txt": {
+    "sha256": "d9730f9c4d1f13d0f55a02c4507a1a5363fa66d190bff4ae7e94401649c9bcd9",
+    "mode": "100644"
+  },
+  "FONDAMENTO-OFL.txt": {
+    "sha256": "382232d1add5623ba5b06394afa071f4eeecccb6d2b2bd02cfecff4a8a45065a",
+    "mode": "100644"
+  },
+  "GROUPED-HUBS-R4.md": {
+    "sha256": "6d254507ea63ec511c37040c87fbac28f6da4683eb41754f0244e4f142e0ecf2",
+    "mode": "100644"
+  },
+  "INTERACTION-PILOT-R1.md": {
+    "sha256": "d582ba4eaf55533a41ee0bbdb13e23184b8e2b95ddd432c2d08f7be5e651b5d5",
+    "mode": "100644"
+  },
+  "LEAFLET-LICENSE.txt": {
+    "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb",
+    "mode": "100644"
+  },
+  "MAP-COVERAGE-R6.json": {
+    "sha256": "a4356ea3c012d3ca2b83b9529d4c2a839e0afa0b6c17b3f7180cecc01b291ec7",
+    "mode": "100644"
+  },
+  "MAP-SOURCES.md": {
+    "sha256": "6b1f0ff201b1a733ee9345e96dfa44af45fdae28ed4ce22f0bad0c412237a924",
+    "mode": "100644"
+  },
+  "NATIVE-MAP-R5.md": {
+    "sha256": "a4ed6e8c3a4f3249b209ade4418ba91e880af1c75a1de214f661602fe201fb32",
+    "mode": "100644"
+  },
+  "OVERLAY-DESIGN-DECISIONS.txt": {
+    "sha256": "6715d69e1a4bfa3f74c91c6ebb109d1b2a9f9f984552eb0f8eede013cdaa316c",
+    "mode": "100644"
+  },
+  "PHOENIX-JOURNAL-R9.md": {
+    "sha256": "a272b5c3e101d982bc32ae3bf2de3573697383a6e86bb0d28e9e4ca3e9984fea",
+    "mode": "100644"
+  },
+  "PHOENIX-PFC-BRIEF-R7.md": {
+    "sha256": "918a3e8d0cf903e65ce34f9522679b2c16d5724b9a343895cce739bb56f175ff",
+    "mode": "100644"
+  },
+  "PHOENIX-PFC-RESPONSE-R8.md": {
+    "sha256": "0b790ec90721fb8484bcc76a57101e70a84cbacae5f67bfa5d6335bc54c7aac4",
+    "mode": "100644"
+  },
+  "PHOENIX-QA-R7.md": {
+    "sha256": "0503202c9cdcb9df0a6597fca8b3415af562f83da00b37cb8c1a9923033a1a30",
+    "mode": "100644"
+  },
+  "PHOENIX-QUESTIONNAIRE-R7.md": {
+    "sha256": "7cbcdd9662df1e91c57cb19996bcb50a632f8b5c86275bda64652d346298089c",
+    "mode": "100644"
+  },
+  "PHOENIX-WHITE-ORCHARD-REVIEW-R6.md": {
+    "sha256": "ab344175bee587d535eaa96699a837c030ce638c7fccd902e9249fe1d9aa9093",
+    "mode": "100644"
+  },
+  "README.md": {
+    "sha256": "6e9a0cae41f8af0d5a723bef10d80d8030b28596b4944a3a7c8cca2028c2dcc6",
+    "mode": "100644"
+  },
+  "RELEASE-R16.md": {
+    "sha256": "928f027e88d6528c808668e00ab06d65a9fbab4a2d1d84443159a580fdf4f754",
+    "mode": "100644"
+  },
+  "RELEASE-R17.md": {
+    "sha256": "2cd5363d3a34c9fa7e95f51dc34f0b7fcf0fa58627ef23ebb5be1ed6b327e0e7",
+    "mode": "100644"
+  },
+  "RELEASE-R18.md": {
+    "sha256": "0e11e448bf274fe56f71a50322390344446a05b95e6de2608760e71a96330f0b",
+    "mode": "100644"
+  },
+  "RELEASE-R19.md": {
+    "sha256": "4f6dc44c50b5755a4a96e01c4779667378b372ec1f5c6fee9c772dea19e6c5ac",
+    "mode": "100644"
+  },
+  "RELEASE-V26.txt": {
+    "sha256": "ee8aab6e8a75792dcd6886eedfe69d66076ea2d86fc6d4e9a0644147c0a0f220",
+    "mode": "100644"
+  },
+  "RELEASE-V27.txt": {
+    "sha256": "a0b51806fa99c4997769ae473c7be0c46ae293fb2fc847ec8ba482879d8a2ba6",
+    "mode": "100644"
+  },
+  "RELEASE-V28.txt": {
+    "sha256": "149196ab7301eb37ce3d75dc738a276c86ac12e50a84b985745cc5b8541d78b4",
+    "mode": "100644"
+  },
+  "RELEASE-V29.txt": {
+    "sha256": "6b3a8547fe82f5eae47a0d5fd5fc921a20f254803a7067e906fd6557606e43dc",
+    "mode": "100644"
+  },
+  "VELEN-BUILD-BRIEF-R1.md": {
+    "sha256": "72e974f3234a6f189d20fc8270334cb1a70f9314337d8278fcaeaf333488be13",
+    "mode": "100644"
+  },
+  "VELEN-R18-SOURCES.md": {
+    "sha256": "6d1b66b955e8777637885f7ab25f261f8253bbe9653d9aed35857a5b25387a48",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-AUDIT-LT-01.md": {
+    "sha256": "b47f02f9a8f22adb8a3d1513b0da49d157e64b8480dd3d3029bafb9a41b57b49",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-CONTENT-AUDIT-ARRIVAL.md": {
+    "sha256": "e8f8bde74bf91268a66803416ece02ac076a4e4b92475ee4af4516ce25aa58d9",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-COVERAGE.md": {
+    "sha256": "d4bef4725a398bda06be1d6d299a55b7f7bce4d07c5e689019449b2c1a558f73",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-HOME-VISUAL-QA-02.md": {
+    "sha256": "ec6577f094576596419424905b95682a0e5349a3b2f3fc644057d1c689bd09dc",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-LT-ORDERS-01.md": {
+    "sha256": "775c904e8606f7a3f9192bb5ccb57dc9c3fc7e46d58f06252788113e1e72ed62",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-LT-ORDERS-02.md": {
+    "sha256": "4da096aeca1b6c858d4d6ae30426ba70c9c5a566bc4f37912e4f34ad7ae7a745",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-LT-ORDERS-03.md": {
+    "sha256": "28e35f228cf3b2108b9e58bedd83b9e75d804fd7a6778ef5755425e4c79ed98c",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-LT-ORDERS-03A.md": {
+    "sha256": "1040525e6611d3ee71f170c5096a3e53f09392004ce47b2609c6d10ac614fca9",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-QA-02.md": {
+    "sha256": "54c34edf9f1cdbee8344a1a3909967a018d4d60f1f914f2cccc7839eebe7c074",
+    "mode": "100644"
+  },
+  "WHITE-ORCHARD-R3.md": {
+    "sha256": "071770a3d5f66b7744b3168e7985b823ce7a2aaac375f60eca3716216cecd2bb",
+    "mode": "100644"
+  },
+  "alegreya-latin-400-normal.woff2": {
+    "sha256": "7cbcf38a5ef682a8b9e2ef4a330b31a08b33bf1ae08e338267c0d1292479c68a",
+    "mode": "100644"
+  },
+  "app.js": {
+    "sha256": "2b62272e0142cd0f7faea59930603addd231440bf9fa42d91fc64c93c44f3120",
+    "mode": "100644"
+  },
+  "appearance.js": {
+    "sha256": "3404df095a1c1d72229fd0c6d71ebae96efb921190fd041eeedee5e5237b3878",
+    "mode": "100644"
+  },
+  "appearance.test.cjs": {
+    "sha256": "2317c4095f22be494a330bb3c7e512dbaf6f4c7414837774fa603bacfb01f177",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-alder-folk-boots.webp": {
+    "sha256": "9c58d7cd6c8211cf33d95dac76b941967cf0ec44406ec981f375425e7ce3c9e2",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-amateur-s-armor-repair-kit.webp": {
+    "sha256": "8e8a0b9b0b6d340bdf1d62dbb45075e788a754c4a6be5456bc2ce4568f41113c",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-angrenian-cuirass.webp": {
+    "sha256": "333d16f9a3f6f5cf6325e7ff218a66cce458826f1e0a3564f7355af81e341445",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-ard-skellig-aketon.webp": {
+    "sha256": "ac431d3e313456201114590a9d0fdf804b616207d7d6f90729249afe6fdcc16c",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-assassin-s-boots.webp": {
+    "sha256": "1c141fa64484ed5975789816f78ee1a85d1ba86bff11876622d64ead1d0e0068",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-assassin-s-gauntlets.webp": {
+    "sha256": "a6291c61e9b8818de7aacf8d0c20c45323cdbf14e422f3cd6e2a014d71f60308",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-assassin-s-trousers.webp": {
+    "sha256": "3ca35a3d0cd3b98ea91618fdabe3b1d681b171516e1d910cf3e8f7439c32f800",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-assault-gauntlets.webp": {
+    "sha256": "42462d826c39152e474b78078ef45a3b22ff857b017922593908fa78f8f38c9d",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-axeman-s-boots.webp": {
+    "sha256": "cca9c9598cdaa973db1b43194074f09f52824cbc168cb3feed2a482659b5218c",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-axeman-s-gauntlets.webp": {
+    "sha256": "0ee9b9d3d241f49058a7a67e2a7840e34f492833abae9b2477ee8b880d907bb9",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-axeman-s-trousers.webp": {
+    "sha256": "9416779ce4323fe9e419c0eb91287dc7a8e36b3a20ffa50bacad7d35fa2952ec",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-ban-ard-breastplate.webp": {
+    "sha256": "a4d3e53003260e6c80d281591879b2a6f25ea3a12b682ca6534d91877b5132f3",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-bounty-hunter-s-gambeson.webp": {
+    "sha256": "856aa4d0404223e4b9f6c82e8f8bfa84e646b754f75f6959410cd842b2ec8902",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-cavalry-boots.webp": {
+    "sha256": "dc3d0ef72e66d7a73c804841de3c60a333233cfe3a1a5796c568499bf70b7d85",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-cavalry-gauntlets.webp": {
+    "sha256": "b917f7aa9d53a36d3058f62c1d9ea5f14c7031b53b121dc8a8b4d38a4dcb7cf4",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-cavalry-trousers.webp": {
+    "sha256": "421dc2f467b075582c06ddfb78b32efc42827950ac6fa826c501350dfb0e9682",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-cidarian-cavalry-armor.webp": {
+    "sha256": "69cff742b56401fe55020ebdd81dc24213705fbb7345552d4b69b20bb83ad99b",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-cidarian-gambeson.webp": {
+    "sha256": "807cb9798e492fee606032330fce027f039c75db5c1f0b2776b9dafef09cccff",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-condottiere-s-boots.webp": {
+    "sha256": "bdbcb092a1435962c8f4ca983aad497dd6fe9e30210881f433475807b91c0c50",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-disglair.webp": {
+    "sha256": "bef28dd4f4202552d71186b8be89d59fdf53d9481e638cc51a0878deb7bf2ff9",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-dorian-sword.webp": {
+    "sha256": "6e8df5bc0fcb47896c13f861ead869bb8cb21dbd4396c2087f7d3144887d403e",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-executioner-s-boots.webp": {
+    "sha256": "2c7d33c3f741e563eedeb5bf8943c1d44511b0731282d14704150337c9537f7b",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-glyph-of-aard.webp": {
+    "sha256": "61dbbe9d59a1d3dcab6417e8b5357f14f559990ea297bba0dd6d5a2a7a6ac91b",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-glyph-of-axii.webp": {
+    "sha256": "2821117277856e1743b130519afe44122657aff17617d24cd13ca894f8e30d1a",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-glyph-of-igni.webp": {
+    "sha256": "05dc37ef558a15ab5d278c89a9d46b211902cdb14b546565f8a4e82a6a4527cc",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-glyph-of-quen.webp": {
+    "sha256": "32f66ce10332ceef65ca5f985bbf7ff94b2af074b50350c484ca528e52eadb13",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-glyph-of-yrden.webp": {
+    "sha256": "497c00e14b33eaa46291f222d2152b59e80d6b323eccceb612c03146d088ffca",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-greater-glyph-of-aard.webp": {
+    "sha256": "65052ef3885369780f5a87f7b4aa83d3eb5775fdd2f37e9b3a93ec551e14d87e",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-greater-glyph-of-axii.webp": {
+    "sha256": "c1e10a29e80c56f871ea47977e86e9095ac29675506d356f581d459b3c31e034",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-greater-glyph-of-igni.webp": {
+    "sha256": "04ef0de88ed535ddb6ca9b9f672e9857aa2e42c66f76f10a3b875c97a9cd103e",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-greater-glyph-of-quen.webp": {
+    "sha256": "2619df645d1ba09cbda90d8ddf2370fc1bb37e05d3982966aba2fb1e33b2fda3",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-greater-glyph-of-yrden.webp": {
+    "sha256": "9ddceb2e977f95018214b81fa633ccb409b7e99894e3dc45fca08d7fb3588280",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-guardsman-s-boots.webp": {
+    "sha256": "eb0379208565e111db3e61d2b2289918775ef2b1c2f524001c0044b4a346c729",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-hindarsfjall-heavy-armor.webp": {
+    "sha256": "b6c89db9aac45d1909c8b7ee6c2860433bd4f6f7db9b2c52e52bf1ecb3fe7a6a",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-hunter-s-boots.webp": {
+    "sha256": "0afd14896dfd1908815e1e1e4f3b0b246676c47ea1bc91e9b8e153c3ad8f97d4",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-hunter-s-gauntlets.webp": {
+    "sha256": "158fc15c477834318b1a6725e803aec4c41a6b3057e38c8ba714bcfe65159e2f",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-hunter-s-trousers.webp": {
+    "sha256": "1f88e5bd40f16d3947dae04324de2b3cff8ad7533e279e90cc86e56d7654e8c7",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-impera-brigade-armor.webp": {
+    "sha256": "96d88dc76aff7e752ad8067c55f9d1d18809f60473c4aca076e245dbdbcd5e1f",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-journeyman-s-armor-repair-kit.webp": {
+    "sha256": "fd27a730bf8929ac22290ca22f78e8835329657cda3b1dfbc3b0f896bfe578fc",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-kaedweni-gambeson.webp": {
+    "sha256": "c918a161fd38b302ae75d5772ddfd07b387d7fed90c5c9e5c830c3ac39944892",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-knight-s-gauntlets.webp": {
+    "sha256": "1c9b22867358993ba2f54433cfdb31bf73b5845d800376ccf23bf80ff3af1055",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-koviri-cutlass.webp": {
+    "sha256": "8397c56a6e1028598ee0aae3ce6ca11a21c51201d34f1da51dd48527590c754a",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-chernobog-runestone.webp": {
+    "sha256": "3811ef499235b1a19d76e0579e4c3826fddd24d23437a5adcfcf590b3d6b4b2a",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-dazhbog-runestone.webp": {
+    "sha256": "09ab62cebfedd718c0410866b78668147dbaf7552300648cca7c712eee1e4d91",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-devana-runestone.webp": {
+    "sha256": "ca53c4aeb50063690a51cb63fc63286403d47a869c3de8d2f08680d84c60da74",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-aard.webp": {
+    "sha256": "41d6b3434519d8c5437fb7ca20cb1cf84817fe71a27d84fb4a947dacfe37e94f",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-axii.webp": {
+    "sha256": "f0bf122e2b59a9b558983f6574628fb0ebbf7bfe1f2a501d26825e9731512db3",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-igni.webp": {
+    "sha256": "746037c9f551022001902c7f0246df90aa24124c8afa8b0fe548b534044faace",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-infusion.webp": {
+    "sha256": "c2a76251350665ce36bcb0967200ed93c974bc96200c5147afb523617f23e6a7",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-quen.webp": {
+    "sha256": "9dfcda30d711c82651f365349dec5d2de864084d0cbeb4e63c2e94fd2716b8e5",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-glyph-of-yrden.webp": {
+    "sha256": "e2f79bf8acab1e378737516e3b331c9dbaf47da4bf629e6cb690272e3ae0c662",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-morana-runestone.webp": {
+    "sha256": "cb12b7c220076c7421366f482bf2f8795bef620f623fb11980cdb9ab4a77d756",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-perun-runestone.webp": {
+    "sha256": "496e88de2f6551199739c4ca5776d82220de7ee604da8f7fbb013987bb6fafbf",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-runestone.webp": {
+    "sha256": "e92942f74802c722bf7487065e9d724df40285d16a89825e2362577b6a0d5356",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-stribog-runestone.webp": {
+    "sha256": "e11494c29e3255445d7f1cb7306f8a5a5d095871a9aef41a2c35564cb1836553",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-svarog-runestone.webp": {
+    "sha256": "035c595901f6f052c8c880ebe6b240e5440c2edaa77fb996589da9702c10b377",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-triglav-runestone.webp": {
+    "sha256": "dedf4260f808e6b85da7c8d27a49f02268a13cff74fbde4ea0d3ece46b9fe119",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-veles-runestone.webp": {
+    "sha256": "5e42fb2d72c133f8ea263922b5a2ee81e1620879502a65b9be8fdd91c264b839",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lesser-zoria-runestone.webp": {
+    "sha256": "22137612e145f3d47b1c35aa8856aece34bb7d315b58a128f8e93fe44e8bf92b",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-lyrian-hardened-leather-trousers.webp": {
+    "sha256": "ee9873255f63796d628399732e3bd30d32b12b208853ca0f1ffde9a1db8c2835",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-mag-deira-cuirass.webp": {
+    "sha256": "20ed3497a66deb4a36c23ce48bf03a8af530e7e3a68a327ecb9c7f5dcfee339c",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-mahakaman-trousers.webp": {
+    "sha256": "f3874a02d1f4460199c252fabe92e444879c96941a0f52d44bf4dee8c47ad545",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-master-s-armor-repair-kit.webp": {
+    "sha256": "3538cbc90716a30bc6813dd4643302177f4b593747178d6a944fe8bb398e031d",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-mountain-folk-boots.webp": {
+    "sha256": "3893efbb94b80b9c87ee466f84402232a9d4e2a0d6309027db208c10988afd30",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-nilfgaardian-guardsman-armor.webp": {
+    "sha256": "48813b77ffdb04e767472254dbfc222bfb749ef767d27b0a35b44a873b8ff312",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-nilfgaardian-guardsman-s-gauntlets.webp": {
+    "sha256": "19f8d3a457b205668fc1e32c328e311d84d9bc988faf7957e09b32b2e1355039",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-reaver-s-boots.webp": {
+    "sha256": "d02aa16cbbb1571c217d0691e0ea1c003af200557575b79cd84908f19940e99d",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-redanian-halberdier-s-armor.webp": {
+    "sha256": "8c38d3c9930d42a2f46fc9744fbc79dd5292367b61ca721bc169da3a1542a129",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-salmian-brigandine.webp": {
+    "sha256": "12c72d985c7bc6fd2751bf61c3553eb8117d35f38bfbb5dd8b0d1af6b56e2144",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-sapper-s-trousers.webp": {
+    "sha256": "497e0c2f38e65f60986d061184aa72812e8386e575b01928504729f04a9fa43e",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-shiadhal-s-armor.webp": {
+    "sha256": "8da61ceead074ad776afff3933d9590c7b7a825c7e38a76845112cb7f73db020",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-skellige-gambeson.webp": {
+    "sha256": "830e1d2f856683b357cb8996eceaef949ae954f562f342d0680986ee84e2728f",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-spikeroog-aketon.webp": {
+    "sha256": "be8aed00b8d95c6475333caa799b499527d2d76a2b55ae27fc5f5016e741e482",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-temerian-poniard.webp": {
+    "sha256": "bb1076135ae47a1f70665fef565e2393a1693a326f665b399eccbc91ca1190dc",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-thyssen-armor.webp": {
+    "sha256": "39d8cdc22cf64ee64bb3c96a4c5769c7cb8ecaf29a59f794b604526f207ff717",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-tracker-s-boots.webp": {
+    "sha256": "23b6cdba598488a017d138ea17736b4336a05ec0b179a64ab339c525cd9b4ee4",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-tracker-s-gauntlets.webp": {
+    "sha256": "73425920363d9704bab17c679f2a63f116a7f408c08b5b402efdc74ef11355c1",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-tracker-s-trousers.webp": {
+    "sha256": "0535963729115ce6000ed0b0c602bf266a838eb690c5ac38c44adabc94edd61c",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-velen-longsword.webp": {
+    "sha256": "c5acb7a916e5c9e634d65684b0fb6ccf6e5e6c6dfcdc4bfb377b7ede3691cf65",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-verden-archer-s-gambeson.webp": {
+    "sha256": "f90b149bbfca837c86fc4711fc6cca090b074fa8aa6131907f7930e8e190a46a",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-viper-silver.webp": {
+    "sha256": "e0fedb613e319a9fd27b683a007740afdd981bed1f2de2594d2a4b9436d65551",
+    "mode": "100644"
+  },
+  "art-diagrams/diagram-viper-steel.webp": {
+    "sha256": "e54d18f451485e56261d71f474ea4ded1b76973c7c667a2082252e2c28cb072d",
+    "mode": "100644"
+  },
+  "art-diagrams/manifest.json": {
+    "sha256": "c89ddd2be299b47faa3fb8b5b696a0b7f200ef91fc7646de552095f5fce8dee2",
+    "mode": "100644"
+  },
+  "art-diagrams/monsternest-2.webp": {
+    "sha256": "1f7a59d6978c1574e77743caa5893c7ec0bddc9fd1449b80d81f0d5ba2b4b713",
+    "mode": "100644"
+  },
+  "art-diagrams/monsternest-3.webp": {
+    "sha256": "e6b6880f99a78e2537aa519bf285e12e27242ae007342234682aef3aa11459ae",
+    "mode": "100644"
+  },
+  "art-diagrams/prompts.json": {
+    "sha256": "f209667249f14129ddfe7bab459f094d0ad9fddf248b56f43d6d8fefc188cd43",
+    "mode": "100644"
+  },
+  "art-r13/MANIFEST-R14.json": {
+    "sha256": "9c5ba864525db5bfc15972113b674c80de6c043eb11deecde84fc3fb5161c57b",
+    "mode": "100644"
+  },
+  "art-r13/q-beast-card.webp": {
+    "sha256": "6961bce68f9e03988df7b7a22afd60ae85bc04d48bcc3e8a5565f302dd948d95",
+    "mode": "100644"
+  },
+  "art-r13/q-beast-thumb.webp": {
+    "sha256": "1b718fbd91f33968795bf3713d75dd8be5ef9b69d9f217369e5256d1495fcae4",
+    "mode": "100644"
+  },
+  "art-r13/q-cargo-card.webp": {
+    "sha256": "266906455d66f860aaa1857e342536642f8d5d66fc6efb22eb21b16d4003da46",
+    "mode": "100644"
+  },
+  "art-r13/q-cargo-thumb.webp": {
+    "sha256": "83ae235c59b105f77e9ca8c90c52c5ddd437280e1cf49ac95851cceffc1fff3c",
+    "mode": "100644"
+  },
+  "art-r13/q-death-card.webp": {
+    "sha256": "6d44595a479d0fb2f8aa45839f475998233a5aeb2d058642a1936483ad0ad1dd",
+    "mode": "100644"
+  },
+  "art-r13/q-death-thumb.webp": {
+    "sha256": "58e1ea3e003b638700d9d5a31308baafd370d2dcfacd8fd1074b77f0d382645e",
+    "mode": "100644"
+  },
+  "art-r13/q-deserter-card.webp": {
+    "sha256": "416732e5d37fe558d48aacc069434f2f4b11bc1f3b0a274dc49a676d838b20fb",
+    "mode": "100644"
+  },
+  "art-r13/q-deserter-thumb.webp": {
+    "sha256": "148237e2a0277d4b001c88ca77b0351df51985b269f4a082c99dd400a8a4ded3",
+    "mode": "100644"
+  },
+  "art-r13/q-devil-card.webp": {
+    "sha256": "b80ee6c47083768ca354abf08ad1830abc89841befe6e8398db3f07ec5f7a423",
+    "mode": "100644"
+  },
+  "art-r13/q-devil-thumb.webp": {
+    "sha256": "e070734b2b278d0c141cd8317f15c1ae2aa5f5b846e0a3c3b6a146b24a64d820",
+    "mode": "100644"
+  },
+  "art-r13/q-dirty-card.webp": {
+    "sha256": "0e5d3dc8b9ec1601345b5455561b7a449303cf4371e51c87da9999d1537c554b",
+    "mode": "100644"
+  },
+  "art-r13/q-dirty-thumb.webp": {
+    "sha256": "334b011e158d4d73d66f394ca398429b06b4e919288d6efe27a488e42581e390",
+    "mode": "100644"
+  },
+  "art-r13/q-firestarter-card.webp": {
+    "sha256": "1c85611948d9f123d324393ca2ce78d467386520673e635f8136bf646f7476c0",
+    "mode": "100644"
+  },
+  "art-r13/q-firestarter-thumb.webp": {
+    "sha256": "9b7b43ce6be72ee282c03d5274b95fe927d69cb56a108d436931557ca3b7b78b",
+    "mode": "100644"
+  },
+  "art-r13/q-incident-card.webp": {
+    "sha256": "d6df7f9caa52efe7b70289afcf4dfdc78ed31bef851f924db956faba65b11203",
+    "mode": "100644"
+  },
+  "art-r13/q-incident-thumb.webp": {
+    "sha256": "b8d616e08f46681a47dc88e52c65a9b6b47e3e5903734ab789085cc00a00c60f",
+    "mode": "100644"
+  },
+  "art-r13/q-lilac-card.webp": {
+    "sha256": "4f4dac270d8850dbd118b860ccc5410947ea3289b5b01aa7c097076aee5f6bd2",
+    "mode": "100644"
+  },
+  "art-r13/q-lilac-thumb.webp": {
+    "sha256": "18fab38c64fcec3e685142e628e1825b14c92a503c9c080d9a5c4916f86fbdac",
+    "mode": "100644"
+  },
+  "art-r13/q-missing-card.webp": {
+    "sha256": "168592db484ff138f5928a1d0422652fa3b62b933b8983ba19b7e9073f3e3d60",
+    "mode": "100644"
+  },
+  "art-r13/q-missing-thumb.webp": {
+    "sha256": "0d70408264ecd57304ab2c71b2193ee88138aeb7d10a044328be8c0c80d68eb6",
+    "mode": "100644"
+  },
+  "art-r13/q-pan-card.webp": {
+    "sha256": "52ab9bc32f2767f9d8ff1fa4e44a4224bcb25db46f85435da2da7a83ec38e9cd",
+    "mode": "100644"
+  },
+  "art-r13/q-pan-thumb.webp": {
+    "sha256": "cd7047d6e1f75c7d6cebd072314d1af16b230a2c4fb85f5aa3260efdfd8ce6d4",
+    "mode": "100644"
+  },
+  "art-r13/q-temerian-card.webp": {
+    "sha256": "600fb1675e544bb1b3bb176c8d05434d5e285d00677fed903c4a0fb70ad0b313",
+    "mode": "100644"
+  },
+  "art-r13/q-temerian-thumb.webp": {
+    "sha256": "6e24e39f84f0b0d5bddee04e63e11bae8e047049b209380cc8bc211dc966fbe7",
+    "mode": "100644"
+  },
+  "art-r13/q-viper-card.webp": {
+    "sha256": "d5ff4fd93c135655be7160896496ed98898fe3e5a7160c681c742b11a9b9fcd2",
+    "mode": "100644"
+  },
+  "art-r13/q-viper-thumb.webp": {
+    "sha256": "328bcb50ec57df7633467ce53b7d4d2067daf08eb9bb32ca2b525ef3aded3464",
+    "mode": "100644"
+  },
+  "art-r13.css": {
+    "sha256": "96b1ae643c0329b9c5c146f0e594a3741a651d5221658c429713cc7de5ebe3ea",
+    "mode": "100644"
+  },
+  "art-white-orchard/abandoned-1.webp": {
+    "sha256": "94400534542bf6de6bcc5e93ac1b742251ae95075bd57b97d53f145ebed09180",
+    "mode": "100644"
+  },
+  "art-white-orchard/abandoned-2.webp": {
+    "sha256": "3a4a1e25197435445583ea28bee447da3f9a19d8847e5abbd508e5fd7d67f19f",
+    "mode": "100644"
+  },
+  "art-white-orchard/armourerstable-1.webp": {
+    "sha256": "ab5e294ac176f695649ba861e2acc5b674d3598daca6d00f5945e09ff50a901c",
+    "mode": "100644"
+  },
+  "art-white-orchard/banditcamp-1.webp": {
+    "sha256": "a9183c50e237523dea12ad53ff9e114cf0b2b8232feaa3a1ab14fde09f29c87a",
+    "mode": "100644"
+  },
+  "art-white-orchard/banditcamp-2.webp": {
+    "sha256": "2361d33211a48464c146bb6a9000c49a3859c1574641c4907dfdac2ee4ab2139",
+    "mode": "100644"
+  },
+  "art-white-orchard/banditcamp-3.webp": {
+    "sha256": "8d9cbac807539d9a127e8dbd8f8babfc1486d8d26e629cbf77f7cdce53e21666",
+    "mode": "100644"
+  },
+  "art-white-orchard/banditcamp-6.webp": {
+    "sha256": "366d383cc349257aba3d695d93fe40e9265ea250d374f572dc40df85baea2417",
+    "mode": "100644"
+  },
+  "art-white-orchard/camp-dirty-funds.webp": {
+    "sha256": "a78df9e9cc73fc4640e79409f617fbb183270c1c940c768dbbbbe6c2ce741e31",
+    "mode": "100644"
+  },
+  "art-white-orchard/camp-viper-ruins.webp": {
+    "sha256": "868893e1fb719abd6ad09d4a3f33b62c50a48ae1a6d0cb3b6fdbc3dc4867570a",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-camps.webp": {
+    "sha256": "adaff9672a1f6a9e6fe62a0fe1e9a47100b18598c360e1c6959c4cd857edeaba",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-diagrams.webp": {
+    "sha256": "c2ae2bce5cea90b01dd6b7eab8676757971810a2da826936e66d744fbfa0ba88",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-discoveries.webp": {
+    "sha256": "41e2e078e6f4695f1f712e90211ee008c408e40745faa9e7c450428d7efe3567",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-hunts.webp": {
+    "sha256": "2c54863b231c6ffa9b813bb5d77ebd1d8d41af73810023bc93a7075258649acf",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-nests.webp": {
+    "sha256": "01a47fe5c3a63bc01c9dd49749842d1942a0b3dc1855ea73fcf6206f5b64340d",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-power.webp": {
+    "sha256": "c88b3181671d59eb4954d0a113c596ec696f1c075a165845456a46b1ec6fb942",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-preparation.webp": {
+    "sha256": "9209c1caa7bcc7e89d0494d05f9c4398547f37f3a49968b03e383fefde7a3b4b",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-sites.webp": {
+    "sha256": "8f97d466f2eba297ea8aadc4983b3c48d6229c318099feabc9b538c41de73ebc",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-travel.webp": {
+    "sha256": "5bc6099d441427d0ae0b79c2ad91a79998f28296fb5df71a8f86693541eafd77",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-treasure.webp": {
+    "sha256": "6aecaedd6b57492975789e30c6c08f453048cae8836edcfa848bf7cd94063110",
+    "mode": "100644"
+  },
+  "art-white-orchard/category-water.webp": {
+    "sha256": "d98e92e30507f538ff34ebe8d1dc8c48579b105df7173d26af014e75fd5ac16c",
+    "mode": "100644"
+  },
+  "art-white-orchard/cow-pasture-warning.webp": {
+    "sha256": "6ff76bfa103ca5a93625038bab1c2b0b485db1467d9f3871b182b089b97aa3ed",
+    "mode": "100644"
+  },
+  "art-white-orchard/credits.html": {
+    "sha256": "3461e50fa6821a85fb2182ac92fb5234773f12219e6118074b031e1ae3f800e6",
+    "mode": "100644"
+  },
+  "art-white-orchard/grindstone-3.webp": {
+    "sha256": "eb89125bc90965f4483eb087f3016b868d36ee12986b38032de9f399223d1f88",
+    "mode": "100644"
+  },
+  "art-white-orchard/grindstone-4.webp": {
+    "sha256": "b9b09999a902f81fe4036483402bced3869341dbc5036c3fa359d5db83bd7bce",
+    "mode": "100644"
+  },
+  "art-white-orchard/grindstone-village.webp": {
+    "sha256": "233c81a925ee7fa97e69c9403d3434b811f47f29449cd53791f902dee26a708d",
+    "mode": "100644"
+  },
+  "art-white-orchard/guarded-1.webp": {
+    "sha256": "99618a66558a4b323fbabfae99d8be6cd3fa8e26adc5edea300f43d3ac41a7a9",
+    "mode": "100644"
+  },
+  "art-white-orchard/guarded-2.webp": {
+    "sha256": "ea7f0e01f48423930deb75f356bb426f1d1d7b55b9be8b8d55d8eb16d3313062",
+    "mode": "100644"
+  },
+  "art-white-orchard/guarded-3.webp": {
+    "sha256": "c207c7930c3a5496d8f72620d2e629ffa2638cd2a2ef60b22ae200c436ab80d1",
+    "mode": "100644"
+  },
+  "art-white-orchard/guarded-4.webp": {
+    "sha256": "027898850a5e0a4e675172601183798878ad0697527012a323d60330bd5ededb",
+    "mode": "100644"
+  },
+  "art-white-orchard/guarded-5.webp": {
+    "sha256": "dbaae01beb0abdf221829c1b3958ebbb34c2d13d64e21d2b9a44531fb7199515",
+    "mode": "100644"
+  },
+  "art-white-orchard/manifest.json": {
+    "sha256": "ce16ec4bda14c060287dde88599f957c08d6e7fd025796c32b70ef419845b763",
+    "mode": "100644"
+  },
+  "art-white-orchard/monsternest-1.webp": {
+    "sha256": "c8262334aa91841884410ec5f6a48f7698d2de4ed67d3ef89c1949dd09191d2e",
+    "mode": "100644"
+  },
+  "art-white-orchard/monsternest-2.webp": {
+    "sha256": "b92f479e10c65b0d26951d97a89a09172c8f11d8c5604ef8b22f3c9f73244970",
+    "mode": "100644"
+  },
+  "art-white-orchard/monsternest-3.webp": {
+    "sha256": "26d4938d8111d9489791906f2055b9d506848975200431c6f803df7e458880e4",
+    "mode": "100644"
+  },
+  "art-white-orchard/poi-1.webp": {
+    "sha256": "53fa857c272652f693c439dcc4ea98507d0eb16edd2f4cf0142d1bdfa9dfb76a",
+    "mode": "100644"
+  },
+  "art-white-orchard/poi-4.webp": {
+    "sha256": "fdb2866e006b1c4ab1a472c8caa848dfa56d53b81a2cb06d73b292a456c617f2",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-bear.webp": {
+    "sha256": "da8e8ba8a0342d603a0f639e6e237d42dc0c471e0acd8fcc9769737fe1e2e4a4",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-bridge.webp": {
+    "sha256": "ad0f7934aa8680ecbdf22bcc0591e55e1564cc876cfd3f8a8bdecb89399718d1",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-cackler.webp": {
+    "sha256": "925dbadacc2886d369f7116ad7a9b82ae570d255bcfe3d8d5082e4d3b3353e1b",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-cemetery.webp": {
+    "sha256": "4e49bc9728e3cdf63f6059b2656f18c374bb22a78f81e029b378f1f566deeb66",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-north.webp": {
+    "sha256": "21092617b1b3cb5cc6d8bbc00564007f2337c95edd4528c0bc8d0aff953db61d",
+    "mode": "100644"
+  },
+  "art-white-orchard/pop-sawmill.webp": {
+    "sha256": "407ca579e4daf51d1ca0964da9fe82508da65adf9523048f29ad9021460a139b",
+    "mode": "100644"
+  },
+  "art-white-orchard/q-deserter.webp": {
+    "sha256": "02a7247e825805530f9dd222fdb144fb2e592ac7de6571035611c1e8b232c593",
+    "mode": "100644"
+  },
+  "art-white-orchard/q-dirty.webp": {
+    "sha256": "1d75c16392a456c56b680c1967e9fdcaa22b9a268f69ea7baf9376775bfc366a",
+    "mode": "100644"
+  },
+  "art-white-orchard/q-temerian.webp": {
+    "sha256": "85f6621e9b5ea7ded14451df6a357e3a94b9f601e2cf620c42adf896aabc36f3",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-1.webp": {
+    "sha256": "0d4cf214c22d7cca07bfc3720aff04884215576b2f9ad16c2f41d68b43e8dbde",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-10.webp": {
+    "sha256": "294749bdfa9bae8ca184d7ca1f1d82a88046e0b7ece57d6b29011df300101c67",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-2.webp": {
+    "sha256": "25bf181bb33a5fe1ae3d0847d137dc81dd65f7d5c9d3652cd0363bdbbd21e84a",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-3.webp": {
+    "sha256": "b0af5adbbc1042d633f8e95501fe91e050c34cd4ff5aa4658ce836d66c968ae5",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-4.webp": {
+    "sha256": "a9366629f29b3b271da95be1fbee5d1c2037593694130968d209183b8c54fe61",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-5.webp": {
+    "sha256": "c95f671e10015ac298cea4a56b88ba26132aa76744b58b92bbb852a5b5f78c4a",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-6.webp": {
+    "sha256": "4121f4b8c49535ff9adce76015e5a46add4d6d9b35f60f2fbc8af6fed7a26b03",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-7.webp": {
+    "sha256": "7a5b6330007119e361f44b0c2d476613141aa6b7627995e2cd45d08e20b689e7",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-8.webp": {
+    "sha256": "2de4c9ce49c0a06bb0ff4891d4ee2cfa5f0ce37ad097540f81a3ab596d6bbd1a",
+    "mode": "100644"
+  },
+  "art-white-orchard/signpost-9.webp": {
+    "sha256": "90018a65ea6fba4775e4d1ecbbe12f328d36eb684f80af8acca3206dc038cd9e",
+    "mode": "100644"
+  },
+  "art-white-orchard/smugglers-1.webp": {
+    "sha256": "b6ec2d1e607fe5375a31936beb346a9d0c22c1676a4884a2e1a7e4b13a855e61",
+    "mode": "100644"
+  },
+  "art-white-orchard/spoils-1.webp": {
+    "sha256": "60013bdb6000112fd0b50aa906e509e8470a7f0cd4dd5ff49b295a4eb608e048",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/abandoned-1.webp": {
+    "sha256": "e8d20a48925ce8d5088b8823d2b64a3e5ad1266c077a928caf45d421cf2ca61a",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/abandoned-2.webp": {
+    "sha256": "66bf1cb63352d86f6e1d9a9740c895cb1a6912c0c50931e2687a91b8f8fc7c20",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/armourerstable-1.webp": {
+    "sha256": "310c9011431ce1b0be7cdf2dbb1655334b759bc886e1ac5f72968ae8802876fd",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/banditcamp-1.webp": {
+    "sha256": "3ae672280bd5c18430b5db2593a9c5ba65f18e304b35da42354aaf7793082aed",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/banditcamp-2.webp": {
+    "sha256": "ef4d0d4737b3c8e70f5b7d60c50e79745ebde4a1ad53430640961dd5984ff333",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/banditcamp-3.webp": {
+    "sha256": "85b69cef1c998a6484caa47edf197afccf36a3d14419c4723e30cb043a0021f9",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/banditcamp-6.webp": {
+    "sha256": "54c7886e841a8009b119f3ec8204a0dbcf1250f7bcb851218b6df6e7e20a87a1",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/camp-dirty-funds.webp": {
+    "sha256": "b2a31edc25a6537e1752947acb7c24547f1a5c98c9bd6931b028e0bc67a7a486",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/camp-viper-ruins.webp": {
+    "sha256": "3eaf30c9953c830c03e438f042d4867cce174b7b33e7f17f526879a70d766908",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-camps.webp": {
+    "sha256": "073bb47186b65a1272fcd446446d2bae1f5cfeb13d29ef0653e9b78702e25ecd",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-diagrams.webp": {
+    "sha256": "e442431675dcb648c8035fb84ea09cb7acc9616103f4c8d60edeed02953869ea",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-discoveries.webp": {
+    "sha256": "80a5d51b21e5a96d487a6545126fb0ae8b843eaa77d47a9f6319d61b0b2a1948",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-hunts.webp": {
+    "sha256": "c49b88030e211b57ea54b38b042cd6de0f8d8427df9326006f033ffe9aaec383",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-nests.webp": {
+    "sha256": "083df67866350d5cb864fc48fd8c238b6c78f2b3a672c8f0b96cbf7bb0b6bd3d",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-power.webp": {
+    "sha256": "40e80711b6cbfaf278819a52463523eca43cfc8749b09c73bb9fea306677516b",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-preparation.webp": {
+    "sha256": "70c5e345f4a681c7693f2fc6e3747f6249a7c24dd93504275e915ca6b8c9d663",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-sites.webp": {
+    "sha256": "4a8d24a1d6eb74ea8da9681146c0ae314449fa684d308ab1bf5ed00ed4514789",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-travel.webp": {
+    "sha256": "a3c1fef34c25ba660e193309184b7d767924655fd7603a4dca5471a21e6e28ec",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-treasure.webp": {
+    "sha256": "5700370e247c76f8669917eab10840dbd2fec435c17752ab7a69bca38651c88d",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/category-water.webp": {
+    "sha256": "cdaf0a78970e0b2b4aa6f462d1fad6a7d0b140b581e709766e2158339b34ec18",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/cow-pasture-warning.webp": {
+    "sha256": "64be3966c15aa753481899504f403a814bee1346c35f90f90c8532d5fec6bd2e",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/generation-prompts.json": {
+    "sha256": "6e41e923663fcefa80ae0e668faf0ebb16e3d27c5c9077c8f2992e7cee52c2be",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/grindstone-3.webp": {
+    "sha256": "a0836cb8194f0d0a870f41dea3d97d253bcbed250b03bb3c38a19dc48d4df29a",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/grindstone-4.webp": {
+    "sha256": "160b9d1fd7aea4ebf0ba92a4245e547911fd29e16efd14c5524ac262d368b764",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/grindstone-village.webp": {
+    "sha256": "a9878d164d0b969862449cc44018e1257f42690c3103dceb0ae3d8a152db2628",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/guarded-1.webp": {
+    "sha256": "518d5eeb0061f52561e65988796013540cf8f4db47e86369e4b282d7f7418f01",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/guarded-2.webp": {
+    "sha256": "eca625b63c5c4aa92fd45cfda60adccad64f0909cbd60d686cf7a4977a1f01d4",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/guarded-3.webp": {
+    "sha256": "80a90f2af9ee6e4250decbd012da5f0d5c717c0c1968fc9866f3d07a35376ecb",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/guarded-4.webp": {
+    "sha256": "f76d5e8069d85fa6a8ed24e0fcce2c9bf58c713c6eb1dede9aa3af8feeb3b43e",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/guarded-5.webp": {
+    "sha256": "7fd14ed33dd8ff8e60a0844f7fc35c169f9d810ea460939c7b33db8ea662014d",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/manifest.json": {
+    "sha256": "f86461f8dcd09f93f246e36fc54908d8b6b5490405b0c0c975d2f9517830ac3a",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/monsternest-1.webp": {
+    "sha256": "3bf0b26d50d47c1db6af1cc484059a9517b0a7fedf8a75e683032cdd467df448",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/monsternest-2.webp": {
+    "sha256": "26808fe3b696a90bbb643fd383d1a67aaba8e6be391e137ae216cb07ab9d36b5",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/monsternest-3.webp": {
+    "sha256": "1d8db8d900252c225754be5bba39eddd0d472b2cf345029d871b7a5eecbf4096",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/poi-1.webp": {
+    "sha256": "9a562e27e35eb83e7590ed285361a63f874b4c94e215179d2fc03b80d7f080b5",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/poi-4.webp": {
+    "sha256": "301a4398ff1cec05c042e39f83a8f83215984e2d65bdeb9652fc413e020d9244",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-bear.webp": {
+    "sha256": "d74379e56bd735c81dfa5be03e93b7d74f0cc20af28e43ed4c616306f03804cd",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-bridge.webp": {
+    "sha256": "9b551bd0fee45d92a1e9ae4b12a7d06e05d620c3e872077abe6e5f2c7a5d210e",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-cackler.webp": {
+    "sha256": "82d56409731ae247cce6e2aa365b8dcc7eca8a78f19f04787ed252e075efe7d8",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-cemetery.webp": {
+    "sha256": "36960f035b4f3921fb71e0072a5e79a066fbe165d6deeed425dee9597b5dc735",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-north.webp": {
+    "sha256": "4a9a5c0f26f5adc37e3d25d73a16754578cf100e0d87df5a65f57da88fb050ee",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/pop-sawmill.webp": {
+    "sha256": "f98010c19803fed9894aba04301de05ff57bff107b5fa82715d8977f2190502c",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/q-deserter.webp": {
+    "sha256": "96687d9626d21fc17da02cb9a4ca083f0d5aa52c4e2df8ac4efe0d53f9cb2d8d",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/q-dirty.webp": {
+    "sha256": "1ef6cb350f548111108257c75675bf23ca0c1e071a8e699c1c9b094181f73446",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/q-temerian.webp": {
+    "sha256": "01cddf3274f6882dfb2f0c39fa19ed2df7e1aa1d41232b07bd3be1baf388f6c8",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/scene-prompts.json": {
+    "sha256": "0ff207713294e0977159513a25a5a1fa72496afdf8032bd76b629971aea5d19e",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-1.webp": {
+    "sha256": "2c6d9aef39647f711ff3b38405792f96cc6c8a7515cbebefc4ccd616002d25a6",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-10.webp": {
+    "sha256": "355de42a9b96221658e351faa10fd10376bee6d0eff45762c2e536cd322d9357",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-2.webp": {
+    "sha256": "b68d62e2757d042f8767ebd664ca2af2db54791081f104a1c3bd9e05d1b86ef5",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-3.webp": {
+    "sha256": "6c78dcd16c8ecbe124d0684e2a3da8d98ad5b9de75d335d11e3e6b75a0b31955",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-4.webp": {
+    "sha256": "7d9921e409ddea156333d0f65684bfee1b855dee04c15db4d70356aac34325ed",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-5.webp": {
+    "sha256": "a7225c79d371d90f3883b506656a375735c73107e3bc4e65d40c51c36368df8d",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-6.webp": {
+    "sha256": "e01688a319dd315ad596496921f506989bc1895bf867d5626098a7b70db31c3f",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-7.webp": {
+    "sha256": "f544ec9b0b3f64a9e09c947c714152c7be43ac52ae4f9110100e60190354c605",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-8.webp": {
+    "sha256": "86f7dd17dbd42b98a228e9b9ce5f524875134e91af88cb75cc3c37456de42e57",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/signpost-9.webp": {
+    "sha256": "15e521647992afe30e98be2b3af3f3a35b3d618661f93d31f62c5f46e12f0274",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/smugglers-1.webp": {
+    "sha256": "625f01c82b7bb12449d4b8486a2adfe833d9c0fb2af9d4ac58564328132974d4",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/spoils-1.webp": {
+    "sha256": "43d229f8a4046096f48ff8e57a9ee06ed175327c5cdc4c8d68f1255219d60fec",
+    "mode": "100644"
+  },
+  "art-white-orchard-illustrated/style-master.png": {
+    "sha256": "e3032713dcd9d43dabca6eb206a66b2b3010463ef66067e3c9199f705e88aaa2",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/abandoned-1.webp": {
+    "sha256": "7a69195945f396e4d290f88de6f032b0e4892140dca02230d09f57fe7c3c3992",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/abandoned-2.webp": {
+    "sha256": "641344ef0f9cf30a54d581312056280a9e084408299395e65696324db4c2f362",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/banditcamp-1.webp": {
+    "sha256": "982efd7a10875407365c5048b55216d1bbba23031093c70132d826caa8ebb252",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/banditcamp-2.webp": {
+    "sha256": "41a77d79f5213a254ee330fbd0b67952b49d2ed5bc777630a48ee58af207bc26",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/banditcamp-3.webp": {
+    "sha256": "6cbfbf5c3183ed1a6c6b36c9d7350a1fe2fdf59b36d01795a240cbaf83a938d7",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/banditcamp-6.webp": {
+    "sha256": "e9f41f5fd6d1bbdd8dbd1a01925d5110b1bf657186ec26a8a958dfa977eb32a5",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/camp-dirty-funds.webp": {
+    "sha256": "9c48336d390676a2b83a85906b81f2e8e8a9b12aed3623c54225b8d2a56cca4f",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-camps.webp": {
+    "sha256": "f0a9ba22cf304c845e12a80288a5fdd545197a0b7811bcfbc772ebb485119331",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-diagrams.webp": {
+    "sha256": "7c7d8904e38aef7d062c34f621da66925654d8680576f3a9aed514105047e59a",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-nests.webp": {
+    "sha256": "b47bb6021fda075534bcd14435fed81c8038da8f6f555d281989ae1cb15a899d",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-preparation.webp": {
+    "sha256": "8a0806d5eb652655fe5b607e2017bfeafba359c3bf87921ea46cd4e0ea02e272",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-sites.webp": {
+    "sha256": "5a7c0afa0ceff111f1404ad1f7747b01db709e5284d0c02c1fabc145f0ca7e1d",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/category-water.webp": {
+    "sha256": "c2d0ba8fe21140373a4a0df302fe50268fd3c06a8f9f1684d83e9d5f51018e3c",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/cow-pasture-warning.webp": {
+    "sha256": "f24416e2bb70966a0817de5165b12addd7ac135dd9aba8c03145ddb1410c30ee",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/grindstone-village.webp": {
+    "sha256": "f05ecbb00b84dee279c4278af1834e5593025c37b465b1a42daa05a9d7a920f9",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/guarded-1.webp": {
+    "sha256": "99dd58ced33330df7a3093987d66c396878973f3c570e08ab010f1f3bee0e486",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/guarded-3.webp": {
+    "sha256": "8876a59f3de8600578ab19c132ff1a6ed9ae64863de79242f366f4d5db4b9639",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/guarded-4.webp": {
+    "sha256": "43ce239344c79945875d70086e47f8543b6e1d7466d03777a84a7f9bfc4374d3",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/guarded-5.webp": {
+    "sha256": "86571437c192f83c21be5eb99f6ae117859d625e998a7e5f4bb40aa40d70cedb",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/manifest.json": {
+    "sha256": "23f3bd9a58e641014871d745460d5b06a95b46779964b53a7758f4db5cd3dc40",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/monsternest-1.webp": {
+    "sha256": "8119a7169df454499ad399161c6f056ec040e9b417b35b9c06ebed9268e53b1c",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/monsternest-2.webp": {
+    "sha256": "508ab1939631d3ce73288d32c497446c0cbf99313711b868dfdffb2fc5bb5f2b",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/monsternest-3.webp": {
+    "sha256": "ceb5d541236095a0c4e6c2ae034fc5cf926348faf76f02235fcd79e4f609d978",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/pop-bear.webp": {
+    "sha256": "12e4d101ebce74c06bf6e65208e774f3605b186ee150a09b0ebb64b59f5c3ea1",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/pop-cemetery.webp": {
+    "sha256": "8b1ece01c94216f87d6acfc52f87c3d332275474509d5af02362c45274db9439",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/pop-sawmill.webp": {
+    "sha256": "3fe26b832509463e1528d010e06a08116a0ecb1c3e4bebdb2d23307b110042d9",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/prompts.json": {
+    "sha256": "1a2b5a51068066b9eaf35e66e9b8eb9d9476c306b5e12fdad099ca55c5a5c2e3",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/q-deserter.webp": {
+    "sha256": "43b38f8a9ac3cd45739d33fcd34fa587bc0f36b03faeb3f3f4d7f25968d2dd4a",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/q-dirty.webp": {
+    "sha256": "6708b480ebadf0b20c637161edc7054d755e4f66b9f61b1f701e9a280ef37a82",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/q-temerian.webp": {
+    "sha256": "ee57adbefee887715937ae4725f12eed0ad2911860c45535a73e99bdf7fecfb3",
+    "mode": "100644"
+  },
+  "art-white-orchard-variety/smugglers-1.webp": {
+    "sha256": "eca0b964aab09d419e5d608037d45c39e083f42ab2b4b457c1f2836fe3ddf021",
+    "mode": "100644"
+  },
+  "atlas-r14.css": {
+    "sha256": "139f2d397dae1af5eb721df6af38b5ca72374ff85e3b3dab3b9ea4c35df52b7b",
+    "mode": "100644"
+  },
+  "atlas-r14.js": {
+    "sha256": "d5185c09751ee5c7224cc861bb8d13539a9caca7763a54efde5d6ccc06fd1f95",
+    "mode": "100644"
+  },
+  "cdpr-witcher3-keyart.png": {
+    "sha256": "e94d67744479cf67fb3b72cf64f725cc6c0258ed38eeb50f64b27bdd2c1bd8f7",
+    "mode": "100644"
+  },
+  "cinzel-latin-400-normal.woff2": {
+    "sha256": "b873cdd90d6bd9ca4793c805b4175abfae00b3611ee8afccf63067133dcf1217",
+    "mode": "100644"
+  },
+  "console-art.css": {
+    "sha256": "7f9759a3ff52ca0197ea7ee3296c1db225237bd59b79adf4a819be3db285407c",
+    "mode": "100644"
+  },
+  "console-constellation-r16.svg": {
+    "sha256": "a013bf82744633456de9da5ac7b14d3178574a898b0c6f37438f060267e70a7a",
+    "mode": "100644"
+  },
+  "console-r16.css": {
+    "sha256": "737302d97dbd16cd664c8d1e3d2bfe39df8c0c12f673c861359ff1d5521c6960",
+    "mode": "100644"
+  },
+  "console-r16.js": {
+    "sha256": "185cb0f854f00b60f4c1aa9d06f8dc2c648f562d00f7f327c2450ed2c4c8798e",
+    "mode": "100644"
+  },
+  "curled-vellum-r16.webp": {
+    "sha256": "13abe2aa4021277de968849f725fa3547dc7a083ee45f6aa48ca723d1dccffa4",
+    "mode": "100644"
+  },
+  "deck-gesture.test.cjs": {
+    "sha256": "205c6dd1bd3a4778be709078a377fe9cb1d7dbb7d0c62fffd1a1a7ac7e31a83e",
+    "mode": "100644"
+  },
+  "deck-motion.js": {
+    "sha256": "286e9c52187bb2bcc406195ca98d63eb28152b1decc940db708bac1b08bdf959",
+    "mode": "100644"
+  },
+  "deck-motion.test.cjs": {
+    "sha256": "ada6b80a62dab84e7202d38fa90f8fcb3288fe2c8b5e88638d2f891ee54fb886",
+    "mode": "100644"
+  },
+  "departure-checklist.test.cjs": {
+    "sha256": "2f54279c51297791d2c0371d21b8964d7d51886a08950b8f2d5a634afa9c870c",
+    "mode": "100644"
+  },
+  "departure-render.test.cjs": {
+    "sha256": "a764eefb6145d574cff900258df7eddcf811771bba7d63952fe96a061da622e9",
+    "mode": "100644"
+  },
+  "departure.css": {
+    "sha256": "e17654ee00fd65223600e68e7b9c4aa97e5daf9c38feb553993fcc59d99d0a22",
+    "mode": "100644"
+  },
+  "departure.js": {
+    "sha256": "d180d3c4cd50309cab42ae5911aeb8e907d00724cf37ec08c7299becc7d893c4",
+    "mode": "100644"
+  },
+  "departure.test.cjs": {
+    "sha256": "ed30280d7089e38a96e35ae4ffe4b3e05e7a8b5afb49d96fe95a2da5bb03d0d1",
+    "mode": "100644"
+  },
+  "desk-r11.css": {
+    "sha256": "fcd2b91593bd7eaeb68bc8feca9da000317598da11fd810e02fbac71ef2f4cb6",
+    "mode": "100644"
+  },
+  "desk-r11.js": {
+    "sha256": "fd71aa223797deda14ccacae094468ad428af113404653854e5318822c06baaf",
+    "mode": "100644"
+  },
+  "diagrams-art.js": {
+    "sha256": "58f75c61a20ddcd8fdd6f73597dd7fbb9dc87d7a4eab7e4d4a2f7198ffd8f7bf",
+    "mode": "100644"
+  },
+  "diagrams-art.test.cjs": {
+    "sha256": "5635f78e94bec8cc7ad290aa2e11031c62dc48649d8cb8068c204c81a160f0b2",
+    "mode": "100644"
+  },
+  "diagrams-compass.js": {
+    "sha256": "fcdfbec66c53e146d42a3b791e1523f1b5807c46bccf39579771f12923b25b74",
+    "mode": "100644"
+  },
+  "diagrams-compass.test.cjs": {
+    "sha256": "1a2db06588581ec7a6319b9462361cc00c97ff69bf4027217071c3bb39d8eb75",
+    "mode": "100644"
+  },
+  "diagrams-data.js": {
+    "sha256": "16e2047d55896a544a240a0389c788c9cd130f67840389798fc9a7d114a8d69b",
+    "mode": "100644"
+  },
+  "diagrams-ui.js": {
+    "sha256": "6163f81c1f2ae6b0cbb5682cf9ff30e4025442278275f1bfe012869ad8b18d4e",
+    "mode": "100644"
+  },
+  "diagrams.css": {
+    "sha256": "4f0e0ee01b90c1ea4e2a59e2a2f63c7c9aee7d9a6d524fb25474686512a5ea62",
+    "mode": "100644"
+  },
+  "diagrams.test.cjs": {
+    "sha256": "b66ce886e1ae493e4461901d1469bb32720496083a63d5583ce7de24f5c3102c",
+    "mode": "100644"
+  },
+  "exploration-art.js": {
+    "sha256": "c804a02b1101435ca68306e94614c2b8aab7f311e16b2230c92454e4f15848dd",
+    "mode": "100644"
+  },
+  "exploration-art.test.cjs": {
+    "sha256": "fb9e5b80952721edaec69e9d87da722b53bc45e76d2969a1dcc41b5ef92ea487",
+    "mode": "100644"
+  },
+  "exploration-data.js": {
+    "sha256": "3461036e472b44ddd02d86498e6a53266e90e34ad4ed8e5c4f8daf04cf7d6c8f",
+    "mode": "100644"
+  },
+  "exploration-ui.js": {
+    "sha256": "c113fa02ea952c925eb5731162e590a6bdf75ef494fa722f166a39227ddbbba9",
+    "mode": "100644"
+  },
+  "exploration.css": {
+    "sha256": "91848ac59093184caf4d45b836fa81e07ba299af5c39a60436a5869fe67ac0e0",
+    "mode": "100644"
+  },
+  "exploration.test.cjs": {
+    "sha256": "89854a430b49017b879197242c311484d207e7ef43afd1ae246053ee938d7ddf",
+    "mode": "100644"
+  },
+  "fondamento-r16.ttf": {
+    "sha256": "ee03a7ccb3b7cdf3cd095d0cc34f9e70c16b1779cbc7c466bf9077323a6ea764",
+    "mode": "100644"
+  },
+  "fontsource-alegreya-LICENSE.txt": {
+    "sha256": "a616403914fd16d254244f482b348af457a54f7e79a7919daec24129c1bd3571",
+    "mode": "100644"
+  },
+  "fontsource-cinzel-LICENSE.txt": {
+    "sha256": "f5a242cf68ad6ebd0603b3359a74c593ca080318a681035be5296ba2c6b04ae6",
+    "mode": "100644"
+  },
+  "fontsource-im-fell-english-LICENSE.txt": {
+    "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+    "mode": "100644"
+  },
+  "guide-art-r15.css": {
+    "sha256": "81cea97f5d0f4ac94d132d914907fda5489cc1fdc20168a503a4eee6c287347f",
+    "mode": "100644"
+  },
+  "guide-art-r15.js": {
+    "sha256": "b2136096e6c73b88eb72ebd96d0c30ac7e23b198b72310db0807139439aba118",
+    "mode": "100644"
+  },
+  "guide-viewport.css": {
+    "sha256": "b69476c2d4a74370cbe8e118232a65557941b489267d7bbd8ff61a76a76684b6",
+    "mode": "100644"
+  },
+  "guide-viewport.js": {
+    "sha256": "20d5f907be826a65d9600d8300f55aed576a428a97dc266a6f0e8146ff34d180",
+    "mode": "100644"
+  },
+  "guide-viewport.test.cjs": {
+    "sha256": "d89209100cb1fbc8bb3b5628e63ce4a3c96303a3a0b1148199f9e27b00298e5f",
+    "mode": "100644"
+  },
+  "gwent-r15/MANIFEST.json": {
+    "sha256": "5ec36826f9f5b487ab55bc3700d66d6a9bf6e8e8b70eddb96902940402b928be",
+    "mode": "100644"
+  },
+  "gwent-r15/cavalry.webp": {
+    "sha256": "d35b8a2ab4a552e00a9e57f7c4183b4646df6e2faa41f2bfd90ae75a5872a395",
+    "mode": "100644"
+  },
+  "gwent-r15/gabor.webp": {
+    "sha256": "8c906799776463ecdc6417860712c5ab443d11849d7a5e2be39885439c8931a1",
+    "mode": "100644"
+  },
+  "gwent-r15/isbel.webp": {
+    "sha256": "cd4ad14eb557f40c3cc890aff7d5ac343bf955d45feb77bc806a172159ed22a3",
+    "mode": "100644"
+  },
+  "gwent-r15/ivo.webp": {
+    "sha256": "4abf793c6a5693a2a9b1b6496f3525d0515583821c4571e23dc7fccb3cc05d74",
+    "mode": "100644"
+  },
+  "gwent-r15/vysogota.webp": {
+    "sha256": "25a16d44c98190c4043321b9efa3f058d5e4b007e3a23cc6ee6207ea852e006b",
+    "mode": "100644"
+  },
+  "gwent-r15/woodland.webp": {
+    "sha256": "84a82e5c894bef4cf1bd5f681fe1e4911930a36b168c92ba65fb361316a2e15a",
+    "mode": "100644"
+  },
+  "home-candidate.test.cjs": {
+    "sha256": "ac2be27e131d9cf145595349cb17837d4f1163671bc4c6339ce5057cf7680735",
+    "mode": "100644"
+  },
+  "home-metrics.js": {
+    "sha256": "da6d41f00457ef4b5a032899cae6be0a1284ac68a03353c2719a261ce338cb96",
+    "mode": "100644"
+  },
+  "home-panel.js": {
+    "sha256": "3d70b46f912f244c14e8ed9d53a818c6324086ac15159afabfd73d3ffbdd01c3",
+    "mode": "100644"
+  },
+  "home-rebuild.css": {
+    "sha256": "481357b1e0e9858d9c8b4a7343bd0fdb6e94d5445a6a4434863b146f29e6c347",
+    "mode": "100644"
+  },
+  "home-ui.js": {
+    "sha256": "d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd",
+    "mode": "100644"
+  },
+  "im-fell-english-latin-400-normal.woff2": {
+    "sha256": "248300df1647bec49155a5cada1d65f719ae633ef48564d1f19b135a8a5b7f5f",
+    "mode": "100644"
+  },
+  "index.html": {
+    "sha256": "ac77242e557f6eae63ae319d8bec5da1a9c0a4074d140f5ddffbdd974cf482dd",
+    "mode": "100644"
+  },
+  "leaflet.css": {
+    "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6",
+    "mode": "100644"
+  },
+  "leaflet.js": {
+    "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
+    "mode": "100644"
+  },
+  "main-console.css": {
+    "sha256": "67fc2e08b30dae593e32e8b166c0c61e2153b006a531d340611e4694e0e4a793",
+    "mode": "100644"
+  },
+  "main-console.js": {
+    "sha256": "a4dcff365e74f31dbf0529b1e353540beb896c20edae01c59121339ae430ad7b",
+    "mode": "100644"
+  },
+  "main-story.test.cjs": {
+    "sha256": "59f6ecee0f817b7c00612ca0aa3f65deba7169f41f029925f1fb420407f5b370",
+    "mode": "100644"
+  },
+  "map-data.js": {
+    "sha256": "2a50337714f171514069c3be78227e7434c46609e4d2203def2f066970c09f90",
+    "mode": "100644"
+  },
+  "map-icon-abandoned.png": {
+    "sha256": "db2a24ba9b806ce4df9746c9433fef516a7d8456d96a25e240238e87b2628678",
+    "mode": "100644"
+  },
+  "map-icon-armourer.png": {
+    "sha256": "30391d5003844a6cb95ae583676bd8d6992cda34047faae165aa77ddeb6443a9",
+    "mode": "100644"
+  },
+  "map-icon-armourerstable.png": {
+    "sha256": "bbe6a74dc3278b8dc2f193fdd8cefa36041ca1eb64e2ac39c513dc674be71d57",
+    "mode": "100644"
+  },
+  "map-icon-banditcamp.png": {
+    "sha256": "fdd85a52c0a960def2f7ab193e8f9856fc42401fc200249050faf428e8745fc6",
+    "mode": "100644"
+  },
+  "map-icon-blacksmith.png": {
+    "sha256": "e85cb365aa250f68972a27ee9688a5ef98ed501c7a714559b23358769ebe8fe8",
+    "mode": "100644"
+  },
+  "map-icon-entrance.png": {
+    "sha256": "212829b35c9cc753c3ce3e5a206175c1e7fa69a5d04d6fb7060f4d624687fb15",
+    "mode": "100644"
+  },
+  "map-icon-fasttravel.png": {
+    "sha256": "44451936a1eac435ccd89d7adedd9a4fcc970f44a361dff8901dd9a980b501d0",
+    "mode": "100644"
+  },
+  "map-icon-grindstone.png": {
+    "sha256": "9c69fdf38c68267358c0e80e1763241569a28be2f1748aeeceab109bfaa4afe7",
+    "mode": "100644"
+  },
+  "map-icon-guarded.png": {
+    "sha256": "06de232964c8dedce9c761cde9f4c421a1c8170db9212438ea449e34c9e420cd",
+    "mode": "100644"
+  },
+  "map-icon-gwent.png": {
+    "sha256": "2008eeccc2c12c224e0f80d3846e729c422a446cca2dcecb4ee55b2c20f9b88b",
+    "mode": "100644"
+  },
+  "map-icon-herbalist.png": {
+    "sha256": "9b3fc0fd73875f09f1e50427cfa31e54adbd828dc7e602e29ffc30c9fe7a86ae",
+    "mode": "100644"
+  },
+  "map-icon-hidden.png": {
+    "sha256": "8a572a81ab06478354b319d3442c9bfb763939fe9063a68052d34bc71acac780",
+    "mode": "100644"
+  },
+  "map-icon-merchant.png": {
+    "sha256": "169abf0d43ff3025d32e607aa106ef85e2522e567b9f0095da928e6424cff2d0",
+    "mode": "100644"
+  },
+  "map-icon-monsternest.png": {
+    "sha256": "12942fb24bdd0294fb892101ba4978457cc205850125185b8ff82f9475c08236",
+    "mode": "100644"
+  },
+  "map-icon-notice.png": {
+    "sha256": "1bbc54cdedb46686cd39890888449b17f2b7050982086e885613c246ecab2940",
+    "mode": "100644"
+  },
+  "map-icon-poi.png": {
+    "sha256": "f3a9d673bcf7a9e038f148b75180f1d0e6cc9402327214d75eac527dac2cfdd6",
+    "mode": "100644"
+  },
+  "map-icon-pop.png": {
+    "sha256": "05ec5fd728686f8a132d4596d7085f04972bc802219750e747e136d855e18c65",
+    "mode": "100644"
+  },
+  "map-icon-sidequests.png": {
+    "sha256": "0db2e528871e42f9cfbadde224633596981227c485c2c52326d7e2040ba3df4a",
+    "mode": "100644"
+  },
+  "map-icon-smugglers.png": {
+    "sha256": "6f7a0b39f8ffb96b0dacd2e7089fda848fcecff8b0fceb5d6de10fe4b02f6dda",
+    "mode": "100644"
+  },
+  "map-icon-spoils.png": {
+    "sha256": "bde989193d2d2a2a58df5907d80abb916c55f144ee2e1b080baa31fa4c9edd96",
+    "mode": "100644"
+  },
+  "map-icon-tavern.png": {
+    "sha256": "f24b4923177b3211d0605093538b1a7b635bda9510c3efc39f0c97a1a260b68c",
+    "mode": "100644"
+  },
+  "map-icon-tempcontract.png": {
+    "sha256": "25cf10bbe636c3df1f2e10cce61759fd2aabcb46232394d332893527565a50db",
+    "mode": "100644"
+  },
+  "map-ui.js": {
+    "sha256": "83fa1e2a22ed528bc3117ca0884869faa78e6fcd56248ce0b56f6bf936ebe462",
+    "mode": "100644"
+  },
+  "medallion.js": {
+    "sha256": "84a4684ac076352fe05d6a8aaa50b3eba35dbbdf2e8565d15b4a44c6fb6f723c",
+    "mode": "100644"
+  },
+  "navigation-art-v26/constellation.webp": {
+    "sha256": "07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe",
+    "mode": "100644"
+  },
+  "navigation-art-v26/home.webp": {
+    "sha256": "b2a24aa8d59fafb8191c4aab8be4c7b5a78fd3ea7d0c792f8ced26eeb12cb38f",
+    "mode": "100644"
+  },
+  "navigation-art-v26/manifest.json": {
+    "sha256": "f003f34d0ffcd5c5175b314ee3edbb8882719a15734a40f77648d58ccbfb81f6",
+    "mode": "100644"
+  },
+  "navigation-art-v26/progress.webp": {
+    "sha256": "d3424addb93e1829c1e488e8b5dac98d8f84ccaa6bc6c161e8339a76025ac886",
+    "mode": "100644"
+  },
+  "navigation-art-v26/reference.webp": {
+    "sha256": "c680e0ffe64567642a081f9a31039ff983b0a8bc4362d5d388a624d7c3cf3528",
+    "mode": "100644"
+  },
+  "navigation-art-v26/regions.webp": {
+    "sha256": "b38c582080660131b557b4396cc919380de0c62b548d0e1cc0b3ca19cc0db1bb",
+    "mode": "100644"
+  },
+  "navigation-art-v26/warnings.webp": {
+    "sha256": "bc91b0fff7db0a62cbf2737f3fbe488ecfe21f0b0e58e39927eb1d88e690722b",
+    "mode": "100644"
+  },
+  "navigation-art.css": {
+    "sha256": "0c5f8d48e02a6b03fba938b25776ae99293a9f8e5c033b2edbd275c9f3c75e98",
+    "mode": "100644"
+  },
+  "navigation-art.js": {
+    "sha256": "2c61342c2cb653f4a46db99b592732d53513ad6d776ffb6918c5330539675eed",
+    "mode": "100644"
+  },
+  "navigation-art.test.cjs": {
+    "sha256": "f8ab15256d036ec2e78a6db2cdc9cb1915740c6bac933d0704687f95d6876c44",
+    "mode": "100644"
+  },
+  "navigation-effects.js": {
+    "sha256": "9675daa545ee8d161fdad8e743225ed81dc3402291348251d5326d6fdb8fa58e",
+    "mode": "100644"
+  },
+  "navigation-placement.test.cjs": {
+    "sha256": "bad4427305f2dd8d8c311db8d5b40c2a829a706103f2acd8548ae45ef854b8b2",
+    "mode": "100644"
+  },
+  "nearby-optional.test.cjs": {
+    "sha256": "e1f3f4ba2703a89695e5f58d5ed7311ca1de76a66af95011a39f8dd71c61a559",
+    "mode": "100644"
+  },
+  "objective-pointer-silver.svg": {
+    "sha256": "7b5a1617f61289c2b5e78bdc357dfedaf309a28df4bbaf1d8a9ac7b89541a758",
+    "mode": "100644"
+  },
+  "objective-presentation.css": {
+    "sha256": "d07539c9ad5c3c4de7add373c2d50acf7c2d0f961a19a22ae4fe93190ea4d509",
+    "mode": "100644"
+  },
+  "parchment-controls.css": {
+    "sha256": "e740cd179303f916e669b3805edf5d2fdda2245af9e6e91bb5e6aa808cb36fe8",
+    "mode": "100644"
+  },
+  "phoenix-journal.css": {
+    "sha256": "edea07edaf16768dfe1cc655a3081f83c79f21d52bc8d4b709fed7d80642b6f8",
+    "mode": "100644"
+  },
+  "progression-data.js": {
+    "sha256": "ebb676bb859ffebcdd68704d6feae0c5d4a0a1180a147af3f0698da6f4d7ad24",
+    "mode": "100644"
+  },
+  "progression-engine.js": {
+    "sha256": "08a4f8c603f554b3cab32845667073dfb1cd74b99300310075fbcce947e78469",
+    "mode": "100644"
+  },
+  "progression-ui.js": {
+    "sha256": "ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0",
+    "mode": "100644"
+  },
+  "progression.test.cjs": {
+    "sha256": "731e155d75d74fbe7eef09d1867416359128345fd22c20421223d0f999ced049",
+    "mode": "100644"
+  },
+  "quest-deck-motion.css": {
+    "sha256": "e931bb4325cfcba8430552579a5bd8a2cb3fc34491a8e21bc5d9543b441b2d5f",
+    "mode": "100644"
+  },
+  "quest-hubs.js": {
+    "sha256": "e02e19ba98f528eb3ca46263542b3b1a1134011d69698e3ccde2b9d153831b6f",
+    "mode": "100644"
+  },
+  "quest-pages.css": {
+    "sha256": "13643cfdfefa818bd5cfaf26b7d67a31653347a033b67255df40696598e22435",
+    "mode": "100644"
+  },
+  "quest-pages.js": {
+    "sha256": "43dd4397bbd463112b5512609d230b61658c79640a2d87cf71351e1d6df808cb",
+    "mode": "100644"
+  },
+  "r10-contract.svg": {
+    "sha256": "6a40493c3631d04b16914c8e5427d544887737ee18c7a840e334746b02645d43",
+    "mode": "100644"
+  },
+  "r10-haunted-scroll-concept.webp": {
+    "sha256": "1a851ed321052af6ac037cfcac0a4658a9db2c3ea8688a03917a3a2911e93921",
+    "mode": "100644"
+  },
+  "r10-map.svg": {
+    "sha256": "57c6af04c1ceecaaf91591c3d84b535076f5e7247c4247ee52da9d1496ac746d",
+    "mode": "100644"
+  },
+  "r10-metal.svg": {
+    "sha256": "5dcaace423c5f3ca40a5b6e87b62dd4a998b50d4725ac266a83909e7f1084b04",
+    "mode": "100644"
+  },
+  "r10-paper.svg": {
+    "sha256": "aee90be34140a6e91209304220128486122781e2d25005ec71fae3f40e9cf6c6",
+    "mode": "100644"
+  },
+  "r10-stone.svg": {
+    "sha256": "a5916ce0284e15be00a360465afd1d8d02044feae034d3733ddcb1151e931d96",
+    "mode": "100644"
+  },
+  "reading-pilot.css": {
+    "sha256": "a5c94a3fe763d09a8baedfe42747598beb898ad1af375a238209f7ca6914aa59",
+    "mode": "100644"
+  },
+  "reading-pilot.js": {
+    "sha256": "8f36725f37301016795bf04c91628879a84a11b27519caa5023a276c774a5e08",
+    "mode": "100644"
+  },
+  "reading-pilot.test.cjs": {
+    "sha256": "61677913acb03b5b9142e8fd83a1a52ec878871e0928becdd3f0cec1a3929db2",
+    "mode": "100644"
+  },
+  "regional-registry.js": {
+    "sha256": "2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283",
+    "mode": "100644"
+  },
+  "search-model.js": {
+    "sha256": "c76adbe27a3b1c4d1d816ee2a28d6a5fbf1ef7f37bff1e1c02c4a3551fbd5f83",
+    "mode": "100644"
+  },
+  "search-ui.css": {
+    "sha256": "6b3623b2cf03033d05cd30f43a2d63d89650d089c8373846d3077d580c238b22",
+    "mode": "100644"
+  },
+  "search-ui.js": {
+    "sha256": "2377ce3e33be4106976b2f2d58a36238b4ac8a167f6ea516f74cd888c0faa4bf",
+    "mode": "100644"
+  },
+  "search-ui.test.cjs": {
+    "sha256": "704da62a814f8f5ef3077d07f29de1ba1c70fdf336957f9b5cecd94d1a565a15",
+    "mode": "100644"
+  },
+  "search.test.cjs": {
+    "sha256": "64ff88f012fdd42e34b077deb2a8873228f49d706e875feb4c30d95204e4fb92",
+    "mode": "100644"
+  },
+  "silver-frame-r15.svg": {
+    "sha256": "689531c8d8507181ddb961597600e0812c90caafec2633488b58c188295923d4",
+    "mode": "100644"
+  },
+  "silver-rule-r15.svg": {
+    "sha256": "2967f8a47796a7de05e72241cadbc7d875fcc95de0b10fe0441b7a64edfb2182",
+    "mode": "100644"
+  },
+  "slice1-migration.test.cjs": {
+    "sha256": "1c098732d9ef6c46109918af5e607fd1cf5fa920dccd6497fcf6e8a07fda494a",
+    "mode": "100644"
+  },
+  "slice1-wo-baseline.fixture.json": {
+    "sha256": "b4c1fae4d07cef9a8383899121be8d216fd06482ddfe03d3155123179127826c",
+    "mode": "100644"
+  },
+  "slice1-wo-scenarios.cjs": {
+    "sha256": "5f7fdd79419307efc1210d1c0263d7b607deb13b3ea9b83b19b0754769f17a06",
+    "mode": "100644"
+  },
+  "slice2-cache-tags.test.cjs": {
+    "sha256": "28bc3004a2e13c0e35cf4d2b31709aef8d9868e5534712795126dbc63e671c81",
+    "mode": "100644"
+  },
+  "slice2-nilf.test.cjs": {
+    "sha256": "a9065b7580b739a8c5f9b50d018b77c771ce65542e2f18462d9eb6124fa3675e",
+    "mode": "100644"
+  },
+  "slice2-save-guard.test.cjs": {
+    "sha256": "7c25871901a986d071a98f2a6f4fe2c45fe8df0ce2a976c0f4f2b469d2b04e36",
+    "mode": "100644"
+  },
+  "storage-denied-startup.test.cjs": {
+    "sha256": "cd36e094e213d8491488f6b8452f1f7b85cb50bff326771925dfa758eac45e8c",
+    "mode": "100644"
+  },
+  "styles.css": {
+    "sha256": "b20216106746b5584b7d6ef5b2c176497e1ac68d7295b7ea96022323822a41d2",
+    "mode": "100644"
+  },
+  "swipe-boxes.css": {
+    "sha256": "03e84f27e8283f6d9e469ffe1e462564819be0e03ca1ed305cb629383052c6e2",
+    "mode": "100644"
+  },
+  "swipe-boxes.js": {
+    "sha256": "7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8",
+    "mode": "100644"
+  },
+  "swipe-boxes.test.cjs": {
+    "sha256": "360ee4be0047eb2138d82fad09cb37a7a6679efcf067df2f9d30b2508c1997d2",
+    "mode": "100644"
+  },
+  "tarot-r12.css": {
+    "sha256": "cd7e33ee80a7415f0836bf9874dc57838ebeaeb8b99742eb51300d815d759cb9",
+    "mode": "100644"
+  },
+  "typography.css": {
+    "sha256": "cffdd0d2e5e6d87c9ebc4cf904d3f183ed4421e3a6e2f2c3b69d0bc1a0ca1875",
+    "mode": "100644"
+  },
+  "typography.js": {
+    "sha256": "13c59cc8f009f4f1beb0397c82bfd0d29ee3ee86b00e1909d4acb57df54b929f",
+    "mode": "100644"
+  },
+  "velen-continuity-r19.css": {
+    "sha256": "87294d939b5368464f52cd740a27a600eb343dd2a7e8e0e74411814b0b02f0a2",
+    "mode": "100644"
+  },
+  "velen-data-r18.js": {
+    "sha256": "4b292527a495da0d2bd0dea2bb69007423debfb48e1b12ff09551c3d7d438af2",
+    "mode": "100644"
+  },
+  "velen-entry.js": {
+    "sha256": "b55a79bcd3525a3aa565e6c6374e800a282946bdd98b61d1fe36850e4558a16d",
+    "mode": "100644"
+  },
+  "velen-landscape-r18.webp": {
+    "sha256": "45ab6b94871db22feb3a3d55513ca6b7d536dffc85d8dfb5bd7d1e047e936014",
+    "mode": "100644"
+  },
+  "velen-mercy-r18.webp": {
+    "sha256": "a354329568f1b6ecb4130bcb1ba4d131699447acb83ed2a18a24ed83d6f69a47",
+    "mode": "100644"
+  },
+  "velen-migration.js": {
+    "sha256": "0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7",
+    "mode": "100644"
+  },
+  "velen-nilf-objectives.js": {
+    "sha256": "d4f64e1003ec940e074ff8ffce5768b3953ffe2822523661aebd163788b81d1c",
+    "mode": "100644"
+  },
+  "velen-nilf-progress.js": {
+    "sha256": "ee9086355206974758dbe3513c68ad6846b7fb2a793a7a92f4ac6a8db67e9888",
+    "mode": "100644"
+  },
+  "velen-nilf-ui.js": {
+    "sha256": "5d79aa4e7fb1f0d42c9071cd02a6483b2ea43eccf71b5d348b28ed73905f41b9",
+    "mode": "100644"
+  },
+  "velen-pyres-r18.webp": {
+    "sha256": "d167e0193cc53a8bb4e5530b1d7684764c5fea499a250aa8a5a4c2a2f48a3021",
+    "mode": "100644"
+  },
+  "velen-r18.css": {
+    "sha256": "f8e029673bfb463f346baec4c0f7b04fc9958fd01da3d46a09d8478c231a4356",
+    "mode": "100644"
+  },
+  "velen-r18.js": {
+    "sha256": "ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d",
+    "mode": "100644"
+  },
+  "velen-routing.js": {
+    "sha256": "25224309ea4de7adebee80080359f54560b5139b0318fe7df05b1a087168c398",
+    "mode": "100644"
+  },
+  "velen-routing.test.cjs": {
+    "sha256": "d282849a99508a581fd7976779c56345d3dcba8a565e73e1e10e03d097a40674",
+    "mode": "100644"
+  },
+  "velen-timber-r18.svg": {
+    "sha256": "cff5b19c16e3b882170097bea8959dd7e12c550c26f0aaf9794a2789f0c33df7",
+    "mode": "100644"
+  },
+  "velen-view.css": {
+    "sha256": "4b171890a5cef380db134efef891ad7518f0a0150510aed1ccdda6a8bc74e2cc",
+    "mode": "100644"
+  },
+  "velen.html": {
+    "sha256": "fe22953e14d7c3671e872014b3224f9c50c6a2647b14b632ea0e7082c976d522",
+    "mode": "100644"
+  },
+  "velen.test.cjs": {
+    "sha256": "49d581bc05bcbca5cd94a261b227e75ce10697109f9b1e693cc2b76ec122d8fc",
+    "mode": "100644"
+  },
+  "visual-art/icon-continue.svg": {
+    "sha256": "302d479a18ca1c07ac4e9ff1e9457931321c4a2540a7e9acbabb2b1653089b56",
+    "mode": "100644"
+  },
+  "visual-art/icon-map.svg": {
+    "sha256": "fe25050933d055356cd5f81ce282a2b23b79becb7e80f031e3eb0dd5f0122c20",
+    "mode": "100644"
+  },
+  "visual-art/icon-next.svg": {
+    "sha256": "a029db2804e0d7bc7a0307a70ec9e1c2281d678f06acdb8f6cd14a3d93f8bd79",
+    "mode": "100644"
+  },
+  "visual-art/icon-previous.svg": {
+    "sha256": "1a2f5d2e37c3ca41dad57f4e5dc689401c011fe1a43f75c4fe0e66411211d822",
+    "mode": "100644"
+  },
+  "visual-art/icon-return.svg": {
+    "sha256": "e6ef45fd271a4de30f30d7bab6f2b1889089100685062ba0db0413a054405302",
+    "mode": "100644"
+  },
+  "visual-art/ink-rule.svg": {
+    "sha256": "4497b0daf718233c1abca995bec356791db9f15e343597b6c452e05f249e5c77",
+    "mode": "100644"
+  },
+  "visual-art/iron-button-frame.webp": {
+    "sha256": "95b8d5969ff0ae780ef8001ea2d98784599f88ba591e1fd67f36b68336c2fcae",
+    "mode": "100644"
+  },
+  "visual-art/wolf-pointer.webp": {
+    "sha256": "cda363bd132ac5a20297794a2438405b1f5ccd000c7e335c63d846b057ca782d",
+    "mode": "100644"
+  },
+  "visual-system.css": {
+    "sha256": "9442198b4acc9b7988c6d8f00e579e589caa85968d25780aabf2ef1cd71e433d",
+    "mode": "100644"
+  },
+  "visual-system.js": {
+    "sha256": "9e37cbafe5823a3e38aed070606e3e46ab37b55ad01763250e279461cad69bb3",
+    "mode": "100644"
+  },
+  "visual-system.test.cjs": {
+    "sha256": "7af66b8f9f4fe7739b002bac82438d310a2aeac7ac4a3b7077c11a91f9e1334c",
+    "mode": "100644"
+  },
+  "warning-center.js": {
+    "sha256": "e90942f42271b592ad256744dbf92900b48062c13413e7fbdfb7772b4c85146f",
+    "mode": "100644"
+  },
+  "warning-center.test.cjs": {
+    "sha256": "ec85a0185ddcd5a9464cff74abeb600346feb972704d86579125372788e98f29",
+    "mode": "100644"
+  },
+  "warning-details.css": {
+    "sha256": "6f5bda03c23f9b372d181326c9821d566f7402ffdf935e970bc0355f8e054970",
+    "mode": "100644"
+  },
+  "warning-details.js": {
+    "sha256": "35c4b779ef6e6e96a7a56e1e4790260a2dcac4acb60e145d9ab0b04d22920ff3",
+    "mode": "100644"
+  },
+  "warning-details.test.cjs": {
+    "sha256": "b95860e2e59f2e64deb80612224f5255d7ba61f41cd3598baf0286d09767f76c",
+    "mode": "100644"
+  },
+  "weathered-r10.css": {
+    "sha256": "47de48932d1032566cae17c32f7d013976353e97d5b991fda83caab0617a9f21",
+    "mode": "100644"
+  },
+  "weathered-r10.js": {
+    "sha256": "de56d94946acb34809af9b26cbd9dd1f5c9d817ebe48108f1203adc0b380229d",
+    "mode": "100644"
+  },
+  "white-orchard-map.webp": {
+    "sha256": "d573f36bee2f8051c415757191c747613e74cbeb77b4571444a162a7a676b9f8",
+    "mode": "100644"
+  },
+  "white-orchard-scene.png": {
+    "sha256": "11508146e9ecfcbe05984de825e2a75f5304459a73ab7f4849329c3f40c26c65",
+    "mode": "100644"
+  },
+  "white-orchard-scene.webp": {
+    "sha256": "07762224f497af8e7646b0b8ba02aaa42ad49abfda605d15bb66987fb9ddece2",
+    "mode": "100644"
+  },
+  "white-orchard.js": {
+    "sha256": "2d068ea09ceff260e750baeb001782602387e90a2315968dfd0dfab2335934dc",
+    "mode": "100644"
+  },
+  "wo-save-guard.test.cjs": {
+    "sha256": "0abbc5bd89c317306dbebbd5d1f3db18680a13f77ad9f81547baa96ea05c221b",
+    "mode": "100644"
+  },
+  "wolf-dock-qa.html": {
+    "sha256": "d48df429ec1a9893b22ec14a4378d60f1bd26ab8dc8b19ea6fae3bab546f10fc",
+    "mode": "100644"
+  },
+  "wolf-medallion-silver.png": {
+    "sha256": "a4bdfaeb9df16cf42e62e02daab0f1f9db5c894028d5f3ac6de5333aefe403a8",
+    "mode": "100644"
+  },
+  "wolf-medallion.svg": {
+    "sha256": "9d6e616e869f0013ec10b265c3f008e316e646539f9fada622266936e4009ec1",
+    "mode": "100644"
+  },
+  "worn-vellum-r15.svg": {
+    "sha256": "d009e6681e5f7b966547987464f428aaa8039c5acb5ccd7b3f1e733aab38b3d3",
+    "mode": "100644"
+  }
+}

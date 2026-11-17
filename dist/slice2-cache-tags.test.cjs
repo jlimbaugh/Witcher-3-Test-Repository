@@ -135,9 +135,42 @@ test('QA6: every script/stylesheet changed or new since QA5 carries a tag distin
  }
  for(const f of ['app.js','velen-r18.js'])assert.ok(checked.includes(f),f+' changed in QA6 and must be referenced and checked');
 });
-test('QA6 release tags: app.js and velen-r18.js carry the QA6 release tag in index.html',()=>{
+// Issue #4 (shared walkthrough v1, deliberate update): app.js gained one rendering seam, so it can no longer carry the
+// QA6 release tag. The QA6 facts are kept as a pinned table instead (derived from commit 804a3a2c), and the QA6 tag
+// assertion now applies to the file that is still byte-identical to QA6 (velen-r18.js).
+const QA6_DELTA={
+  'velen-r18.js':['save-guard-qa6-v45','ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d'],
+  'app.js':['save-guard-qa6-v45','2b62272e0142cd0f7faea59930603addd231440bf9fa42d91fc64c93c44f3120'],
+};
+const QA6_REFS={...QA5_REFS,...QA6_DELTA};
+// Files changed or new since QA6 whose tag equals any earlier release tag for that file (stale for a returning browser).
+function staleAgainst(refs,dir){const out=[];for(const {html,file,tag} of refs){const now=sha(path.join(dir,file)),bases=[QA6_REFS[file],QA5_REFS[file],V45_REFS[file]].filter(Boolean);
+ if(QA6_REFS[file]&&QA6_REFS[file][1]===now)continue;if(!tag||bases.some(b=>b[0]===tag))out.push(html+': '+file+(tag?'?v='+tag:' (untagged)'));}return out;}
+test('QA6 release tags: velen-r18.js (unchanged since QA6) keeps the QA6 tag; app.js changed and left it',()=>{
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
- for(const f of ['app.js','velen-r18.js']){assert.equal(tags[f],'save-guard-qa6-v45',f);assert.notEqual(tags[f],QA5_REFS[f][0]);assert.notEqual(tags[f],V45_REFS[f][0]);}
+ assert.equal(sha(path.join(here,'velen-r18.js')),QA6_DELTA['velen-r18.js'][1]);assert.equal(tags['velen-r18.js'],'save-guard-qa6-v45');
+ assert.notEqual(sha(path.join(here,'app.js')),QA6_DELTA['app.js'][1]);assert.notEqual(tags['app.js'],'save-guard-qa6-v45');
+});
+test('candidate (issue #4): every script/stylesheet changed or new since QA6 carries a tag distinct from QA6, QA5 and v45',()=>{
+ assert.deepEqual(staleAgainst(refsOf(here),here),[]);
+ const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
+ assert.deepEqual([...new Set(changed)],['app.js','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js'],'only the reviewed files changed');
+ const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
+ for(const f of ['app.js','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
+});
+test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
+ const refs=refsOf(here).map(r=>({...r}));
+ const stale={'app.js':'save-guard-qa6-v45','medallion.js':'warnings-takeover-v44','home-ui.js':'paired-slices-1'};
+ for(const r of refs)if(stale[r.file])r.tag=stale[r.file];
+ const found=staleAgainst(refs,here);
+ for(const f of Object.keys(stale))assert.ok(found.some(x=>x.includes(': '+f+'?v=')),f+' with an old tag must fail the cache regression');
+ const untagged=refsOf(here).map(r=>r.file==='shared-walkthrough.js'?{...r,tag:''}:r);assert.ok(staleAgainst(untagged,here).some(x=>x.includes('shared-walkthrough.js (untagged)')));
+});
+test('pinned QA6 tag table matches PHOENIX_QA6_BASELINE when provided',(t)=>{
+ const dir=process.env.PHOENIX_QA6_BASELINE;if(!dir){t.skip('PHOENIX_QA6_BASELINE not set; pinned table used');return;}
+ assert.ok(fs.existsSync(dir),'PHOENIX_QA6_BASELINE does not exist: '+dir);
+ const derived={};for(const {file,tag} of refsOf(dir))derived[file]=[tag,sha(path.join(dir,file))];
+ assert.deepEqual(derived,QA6_REFS);
 });
 test('pinned QA5 tag table matches PHOENIX_QA5_BASELINE when provided',(t)=>{
  const dir=process.env.PHOENIX_QA5_BASELINE;if(!dir){t.skip('PHOENIX_QA5_BASELINE not set; pinned table used');return;}

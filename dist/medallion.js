@@ -24,12 +24,17 @@ window.createPhoenixMedallion=function(opts={}){
  function closeFan(process=true){fanOpen=false;fan.hidden=true;root.classList.remove('fan-open');navigationUI?.close();core.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-expanded','false');if(process){if(deferred){deferred=false;signalUndoAvailable();}else processQueue();}}
  function openFan(secondary=false){if(mode!=='nav'&&!secondary)return;fanOpen=true;fan.hidden=false;root.classList.add('fan-open');navToggle.setAttribute('aria-expanded','true');if(mode==='nav')core.setAttribute('aria-expanded','true');if(navigationUI)navigationUI.open();else fan.querySelector('button')?.focus();}
  function renderWarning(){warningBox.hidden=true;warningBox.replaceChildren();setMode('warning');}
+ // Issue #4 Q6 A: on shared walkthrough pages the floating wolf is navigation only. Queued warnings are kept (not
+ // acknowledged, not dropped): the wolf carries a pending mark and they stay readable in the Warnings card.
+ const navigationOnly=()=>{try{return !!opts.navigationOnly?.();}catch{return false;}};
+ function markPending(){const n=[active,...queue].filter(w=>w&&!records.some(r=>r.id===w.id&&r.text===w.text)).length;if(n&&mode==='nav'&&navigationOnly()){root.dataset.pendingWarnings=String(n);core.setAttribute('aria-label','Guide navigation. '+n+(n===1?' unread guide warning':' unread guide warnings')+' in Warnings');}else delete root.dataset.pendingWarnings;}
  function processQueue(){
   if(quickUndoActive||fanOpen||processing)return;
   if(active&&!valid(active))active=null;
   queue=queue.filter(valid);
   if(!active)active=queue.shift()||null;
-  if(active)renderWarning();else{warningBox.hidden=true;warningBox.replaceChildren();setMode('nav');}
+  if(active&&!navigationOnly())renderWarning();else{warningBox.hidden=true;warningBox.replaceChildren();setMode('nav');}
+  markPending();
  }
  function finishUndo(){clearTimers();quickUndoActive=false;quickUndo.hidden=true;processQueue();}
  function signalUndoAvailable(){if(!available())return;if(fanOpen){deferred=true;return;}clearTimers();quickUndoActive=true;quickUndo.hidden=false;quickUndo.classList.remove('fading');void quickUndo.offsetWidth;quickUndo.classList.add('fading');status.textContent='Progress updated. Quick Undo is available.';timers.push(window.setTimeout(()=>{status.textContent='Quick Undo closed. Undo remains in Story & correction controls.';finishUndo();},3000));}
@@ -40,7 +45,7 @@ window.createPhoenixMedallion=function(opts={}){
   const pending=[active,...queue].filter(w=>w&&valid(w));active=null;queue=[];
   processing=true;
   try{for(const item of pending){records.push({id:item.id||'warning-'+Date.now(),text:item.text,href:item.href||null,at:Date.now()});try{item.onAcknowledge?.();}catch{}}
-   if(pending.length)opts.onWarningHistory?.(snapshot());
+   if(pending.length){const saved=opts.onWarningHistory?.(snapshot());if(saved==='blocked'||saved==='unavailable')status.textContent='Warning acknowledged for this visit only. The saved warning history was left unchanged.';}
   }catch{status.textContent='Warning acknowledgement could not be saved.';root.classList.add('has-error');}
   finally{processing=false;}
   historyToggle.hidden=!records.length;processQueue();
@@ -65,7 +70,15 @@ window.createPhoenixMedallion=function(opts={}){
  const key=e=>{if(e.key==='Escape'){if(!historyBox.hidden)closeHistory(true);else if(fanOpen){closeFan();(navToggle.hidden?core:navToggle).focus();}}};
  document.addEventListener('click',outside);document.addEventListener('keydown',key);
  setMode('nav');seedHistory(opts.history||[]);
- return {element:root,quickUndo,isQuickUndoVisible:()=>quickUndoActive,signalUndoAvailable,enqueueWarning,seedHistory,showHistory,acknowledgeWarning,getHistory:snapshot,getMode:()=>mode,getActiveWarning:()=>active,getQueueLength:()=>queue.length,isFanOpen:()=>fanOpen,
+ return {element:root,quickUndo,isQuickUndoVisible:()=>quickUndoActive,signalUndoAvailable,enqueueWarning,seedHistory,showHistory,acknowledgeWarning,getHistory:snapshot,getMode:()=>mode,getActiveWarning:()=>active,
+  // Issue #4 Q3 B: acknowledge ONE warning from the selector wolf ("Got it"). Appends one {id,text,href,at} record to the
+  // existing history (no new storage) and acknowledges queued items with the same id. Returns the persistence result
+  // reported by opts.onWarningHistory ('saved' | 'blocked' | 'unavailable'); the in-memory record stands either way.
+  acknowledgeRecord(r){if(!r||typeof r.text!=='string'||!r.id)return 'invalid';const id=String(r.id);
+   if(!records.some(x=>x.id===id&&x.text===r.text))records.push({id,text:r.text,href:typeof r.href==='string'&&r.href.startsWith('#')?r.href:null,at:Date.now()});
+   const same=w=>w&&w.id===id,acked=[active,...queue].filter(same);if(same(active))active=null;queue=queue.filter(w=>!same(w));for(const w of acked){try{w.onAcknowledge?.();}catch{}}
+   historyToggle.hidden=!records.length;let result='unavailable';try{result=opts.onWarningHistory?.(snapshot())||'unavailable';}catch{result='unavailable';}processQueue();return result;},
+  getPendingCount:()=>(active?1:0)+queue.length,getQueueLength:()=>queue.length,isFanOpen:()=>fanOpen,
   removeWarnings(predicate){const before=records.length;records=records.filter(r=>!predicate(r));queue=queue.filter(w=>!predicate(w));if(active&&predicate(active))active=null;if(before!==records.length){historyToggle.hidden=!records.length;if(!records.length)closeHistory();else if(!historyBox.hidden)showHistory();opts.onWarningHistory?.(snapshot());}processQueue();},
   reconcileWarnings(){if(quickUndoActive&&!available())finishUndo();else processQueue();},
   dismissQuickUndo(){status.textContent='Entire progress update undone.';finishUndo();},

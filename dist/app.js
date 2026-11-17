@@ -389,6 +389,9 @@
   // Runs after the Slice 1 import; never writes phoenix.velen.arrival.v1. Guarded rollback: PhoenixVelenNilfProgress.rollbackHandover(localStorage).
   try{window.PhoenixVelenNilfProgress?.handover(localStorage);}catch{}
   window.PhoenixVelen=window.createPhoenixVelen({navigate});
+  // Issue #4 seam (rendering only): one shared walkthrough layout for the White Orchard walkthroughs and velen.nilf.
+  // It renders through the existing progress, choice and Undo controls and adds no storage of its own.
+  window.PhoenixSharedWalkthrough=window.createPhoenixSharedWalkthrough?.({state,tasks,hubs,engine:progressEngine,navigate});
   views=[...document.querySelectorAll('.view')];
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
   updateTree();render();

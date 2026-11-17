@@ -1,0 +1,48 @@
+{
+  "label": "Cmdr-authored rollback tooling; Cmdr-run checks, not independent review",
+  "results": [
+    {
+      "case": "dry run",
+      "ok": true,
+      "exit": 0,
+      "unchanged": true,
+      "output": "Verified candidate and QA6: restore 7, remove 3\n"
+    },
+    {
+      "case": "extra file refused without writes",
+      "ok": true,
+      "exit": 3,
+      "unchanged": true,
+      "output": "ABORT: starting dist does not match the pinned full candidate inventory\n"
+    },
+    {
+      "case": "changed file refused without writes",
+      "ok": true,
+      "exit": 3,
+      "unchanged": true,
+      "output": "ABORT: starting dist does not match the pinned full candidate inventory\n"
+    },
+    {
+      "case": "mode change refused without writes",
+      "ok": true,
+      "exit": 3,
+      "unchanged": true,
+      "output": "ABORT: starting dist does not match the pinned full candidate inventory\n"
+    },
+    {
+      "case": "restore complete candidate to QA6",
+      "ok": true,
+      "exit": 0,
+      "unchanged": false,
+      "output": "Verified candidate and QA6: restore 7, remove 3\nPASS: every QA6 dist byte, path and executable mode matches\n",
+      "byte_and_mode_identical": true
+    },
+    {
+      "case": "QA6 is refused as wrong starting candidate",
+      "ok": true,
+      "exit": 3,
+      "unchanged": true,
+      "output": "ABORT: starting dist does not match the pinned full candidate inventory\n"
+    }
+  ]
+}
