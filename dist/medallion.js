@@ -27,7 +27,7 @@ window.createPhoenixMedallion=function(opts={}){
  // Issue #4 Q6 A: on shared walkthrough pages the floating wolf is navigation only. Queued warnings are kept (not
  // acknowledged, not dropped): the wolf carries a pending mark and they stay readable in the Warnings card.
  const navigationOnly=()=>{try{return !!opts.navigationOnly?.();}catch{return false;}};
- function markPending(){const n=(active?1:0)+queue.length;if(n&&mode==='nav'&&navigationOnly()){root.dataset.pendingWarnings=String(n);core.setAttribute('aria-label','Guide navigation. '+n+(n===1?' unread guide warning':' unread guide warnings')+' in Warnings');}else delete root.dataset.pendingWarnings;}
+ function markPending(){const n=[active,...queue].filter(w=>w&&!records.some(r=>r.id===w.id&&r.text===w.text)).length;if(n&&mode==='nav'&&navigationOnly()){root.dataset.pendingWarnings=String(n);core.setAttribute('aria-label','Guide navigation. '+n+(n===1?' unread guide warning':' unread guide warnings')+' in Warnings');}else delete root.dataset.pendingWarnings;}
  function processQueue(){
   if(quickUndoActive||fanOpen||processing)return;
   if(active&&!valid(active))active=null;
