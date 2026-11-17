@@ -24,7 +24,10 @@ These answers are applied to the prototype and mockups.
 - **Q5: A.** Velen shows 8 required with a "Route-dependent, not counted yet" note for "Defeat the baron's men". Once the route is recorded, the total switches to 9 (fight) or 5 (straight to Heatherton), using the existing progression engine. The mockups show only the undecided-route state; the switch is not simulated here.
 - **Q6: A.** The floating wolf is navigation only, with no "Warning" label. Per-objective warnings live only on the selector wolf. The prototype's floating wolf and "Navigation" tile already match.
 
-Still awaiting Cmdr: P2 (route-choice cards) and P3 (Velen hub console).
+### Velen proposals P2 and P3 (owner, 2026-11-17: "P2 you and Cmdr can decide. B")
+
+- **P3: B, owner-decided 2026-11-17.** The Velen hub console will be redesigned later as its own slice, in the WO style. It is out of scope for issue #4.
+- **P2: LT recommends A, pending Cmdr's agreement** (the owner delegated P2 to LT and Cmdr). Under A there are no route-choice cards: the route is recorded through WO's "Story & correction controls" row, as mocked, with the Information note explaining what the inn choice changes.
 
 ### Q3 implementation note (not part of these mockups)
 
@@ -85,8 +88,8 @@ Velen renders through the same `walkthrough.js`, with no Velen-specific code pat
 
 **Velen-only features left out (proposals, need Cmdr approval):**
 - P1. Nearby activities rail. After Q2 B, its content (Funeral Pyres, At the Mercy of Strangers / John Verdun, Innkeeper, Collected notices) now appears in the shared Nearby group. Only a separate Velen rail is still a proposal.
-- P2. Route-choice cards (fight the baron's men vs go straight to Heatherton) as a separate control. The mockup uses the WO "Story & correction controls" row and an Information note instead.
-- P3. The Velen hub console / region dashboard.
+- P2. Route-choice cards (fight the baron's men vs go straight to Heatherton) as a separate control. LT recommends A (no cards): the mockup uses the WO "Story & correction controls" row and an Information note instead. This is pending Cmdr's agreement.
+- P3. The Velen hub console / region dashboard. Decided B (owner, 2026-11-17): it becomes a separate later slice in WO style, out of scope for issue #4.
 
 ## Component and data boundary (proposal)
 
@@ -125,4 +128,4 @@ Unmapped or awkward cases:
 Decided as Q3 B (see Decisions). The yellow new-warning dot stays until "Got it". Opening the panel alone does not clear it.
 
 ## Open questions
-Batches 1 and 2 were answered on 2026-11-17 (see Decisions). No design questions remain open. P2 and P3 still await Cmdr.
+Batches 1 and 2 were answered on 2026-11-17 (see Decisions). No design questions remain open. P3 is decided (B). P2 A (LT recommendation) awaits Cmdr's confirmation.
