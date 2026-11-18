@@ -1,0 +1,213 @@
+{
+ "a_afterFight": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "route": null,
+  "counts": "3 of 9 required completed"
+ },
+ "a_undo": {
+  "n": 2,
+  "vis": true,
+  "disabled": false,
+  "text": "Undo last progress change"
+ },
+ "a_afterUndo": {
+  "obj": {
+   "velen.nilf:travel": "done"
+  },
+  "choices": {},
+  "route": null,
+  "counts": "1 of 8 required completed"
+ },
+ "a_msgs": [
+  "Entire progress update undone.",
+  "Undo last update"
+ ],
+ "a_ui": {
+  "ask": [
+   false,
+   false
+  ],
+  "inn": [
+   false
+  ]
+ },
+ "a_undo2": {
+  "n": 2,
+  "vis": true,
+  "disabled": true,
+  "text": "Undo last progress change"
+ },
+ "a_afterUndo2": {
+  "obj": {
+   "velen.nilf:travel": "done"
+  },
+  "choices": {},
+  "route": null,
+  "counts": "1 of 8 required completed"
+ },
+ "b_afterPeace": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "peace",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "route": null,
+  "counts": "3 of 8 required completed"
+ },
+ "b_quick": {
+  "vis": true,
+  "owner": "velen",
+  "text": "Undo",
+  "r": [
+   16,
+   821,
+   94,
+   55
+  ]
+ },
+ "b_quickClicked": true,
+ "b_afterQuick": {
+  "obj": {
+   "velen.nilf:travel": "done"
+  },
+  "choices": {},
+  "route": null,
+  "counts": "1 of 8 required completed"
+ },
+ "c_edit": {
+  "n": 4,
+  "vis": true,
+  "disabled": false,
+  "text": "Record / review choice: Ask about the agent called Hendrik at the Inn at the Crossroads."
+ },
+ "c_sel": "select ,peace,fight",
+ "c_dlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "c_confirm": "clicked Confirm update",
+ "c_after": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "route": null,
+  "counts": "3 of 9 required completed"
+ },
+ "c_fightBox": [
+  false
+ ],
+ "c_fightDlg": [],
+ "c_afterFightObj": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done",
+   "velen.nilf:fight": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "route": null,
+  "counts": "4 of 9 required completed"
+ },
+ "d_edit": {
+  "n": 4,
+  "vis": true,
+  "disabled": false,
+  "text": "Record / review choice: Ask about the agent called Hendrik at the Inn at the Crossroads."
+ },
+ "d_sel": "select ,peace,fight",
+ "d_dlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\n1 objective marks will be removed\nDefeat the baron’s men.\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "d_confirm": "clicked Confirm update",
+ "d_after": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "peace",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "route": null,
+  "counts": "3 of 8 required completed"
+ },
+ "e_uncheckDlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\n3 objective marks will be removed\nTravel to Velen.\nGo to the Inn at the Crossroads.\nAsk about the agent called Hendrik at the Inn at the Crossroads.\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "e_afterUncheck": {
+  "obj": {},
+  "choices": {},
+  "route": null,
+  "counts": "0 of 8 required completed"
+ },
+ "f_whole": {
+  "n": 2,
+  "vis": true,
+  "disabled": false,
+  "text": "Record whole quest complete"
+ },
+ "f_dlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nWent straight to Heatherton — no inn conversation\nConsequences · Spoilers\n8 earlier required objectives\nTo mark the quest complete, include the required objectives.\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "f_after": {
+  "obj": {},
+  "choices": {},
+  "route": null,
+  "counts": "0 of 8 required completed"
+ },
+ "logs": [
+  "error: Failed to load resource: the server responded with a status of 404 ()"
+ ],
+ "g_before": [
+  "Mark complete: Follow the Trail of Treats=false"
+ ],
+ "g_after": [
+  "Completed: Follow the Trail of Treats=true"
+ ],
+ "g_storageSame": true,
+ "g_stage2": [
+  "Mark complete: Help Johnny recover his voice=false"
+ ],
+ "g_back1": [
+  "Completed: Follow the Trail of Treats=true"
+ ],
+ "g_reload": [
+  "Mark complete: Follow the Trail of Treats=false"
+ ]
+}

@@ -1,0 +1,13 @@
+Live URL: https://phoenix-wo-qa-1c91b66.krwpfbtbn8.chatgpt.site/
+Checked: 2026-11-18 14:11 CST (20:11 UTC)
+index.html (Cloudflare challenge beacon stripped) == 93a2cf9:dist/index.html sha256 ebc3c978cf76d679341b6258d90ff195633681584f8f0c31c2efdf339b9df185
+81/81 JS+CSS references in index.html fetched and byte-identical to 93a2cf9:dist (tree 54d96e5a060ad3793e5444b751b664395809dfa8)
+f3ee243f15546df6e0139b6690b989a9f6cb6e26807067040f256179b497561a  app.js
+ee9086355206974758dbe3513c68ad6846b7fb2a793a7a92f4ac6a8db67e9888  velen-nilf-progress.js
+7e1c64d1bdd8eb3a75996cfe7c493612758ea2c3e3fc2db421db82e9511c5c69  velen-nilf-ui.js
+d9fd709434335667fc1df4dd9736252e6fcb57cb281c843ba1ba6a63658c915d  velen-quest-cards.js
+37985cb2dbd2608d34706a02695449ac3d5f90f80821c2720ab7db18e0ffc42b  shared-walkthrough.js
+7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8  swipe-boxes.js
+03e84f27e8283f6d9e469ffe1e462564819be0e03ca1ed305cb629383052c6e2  swipe-boxes.css
+In-app version string: none rendered (no version element found in DOM or index.html)
+Browser: Google Chrome 156.0.8078.47 , headless=new, puppeteer-core, fresh --user-data-dir per run under /tmp
