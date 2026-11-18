@@ -158,7 +158,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
  for(const f of ['app.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
  for(const f of ['deck-jump.js','desk-r11.js','exploration-ui.js','shared-walkthrough.css','shared-walkthrough.js'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
- for(const f of ['velen-r18.js','velen-activity-decks.css'])assert.equal(tags[f],'velen-activity-decks-31',f);
+ for(const f of ['velen-r18.js','velen-activity-decks.css'])assert.equal(tags[f],'velen-page-flow-32',f);
  for(const f of ['home-ui.js'])assert.equal(tags[f],'quest-action-art-12',f);
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  for(const f of ['velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-griffin-hunt-30',f);

@@ -47,7 +47,7 @@ const activityTabs=[
 const decks=Object.fromEntries(['quests',...activityTabs.map(([id])=>id)].map(id=>[id,[]]));
 for(const [id,card] of Object.entries(deckQuests))decks[deckCategory(id,card)].push(id);
 let deckSelected=decks.quests.includes(state.selected)?state.selected:decks.quests[0];
-let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0];
+let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false,arrivalOpen=false;
 function restoreHomeDeck(){
   const saved=history.state?.velen;
   if(decks.quests.includes(saved?.selected))deckSelected=saved.selected;
@@ -101,9 +101,10 @@ function selectedPanel(id){
   return selected;
 }
 function activities(){
-  const section=el('section','velen-activities'),heading=el('h2','','Velen activities');
-  heading.id='velen-activities-heading';
-  section.setAttribute('aria-labelledby',heading.id);
+  const section=el('details','velen-activities'),heading=el('summary','','Browse Velen Activities');
+  section.id='velen-activities';
+  section.open=activitiesOpen;
+  section.append(heading);
   const tabs=el('div','velen-activity-tabs');
   tabs.setAttribute('role','tablist');
   tabs.setAttribute('aria-label','Velen activity categories');
@@ -139,31 +140,90 @@ function activities(){
     };
     tabs.append(tab);
   }
-  if(activitySelected)panel.append(carousel(activityTab,activitySelected),selectedPanel(activitySelected));
-  else panel.append(el('p','velen-activity-empty','No Velen cards are available in this category yet.'));
-  section.append(heading,tabs,panel);
-  return section;
+  function mount(){
+    if(tabs.parentNode)return;
+    if(activitySelected)panel.append(carousel(activityTab,activitySelected),selectedPanel(activitySelected));
+    else panel.append(el('p','velen-activity-empty','No Velen cards are available in this category yet.'));
+    section.append(tabs,panel);
+  }
+  section.ontoggle=()=>{
+    if(!section.isConnected)return;
+    activitiesOpen=section.open;
+    if(activitiesOpen)mount();
+  };
+  if(activitiesOpen)mount();
+  return {section,open(){
+    activitiesOpen=section.open=true;
+    mount();
+    const v=viewport();
+    const top=section.getBoundingClientRect().top-(v.reader?.getBoundingClientRect().top||0)+v.scrollY;
+    v.scrollTo(0,Math.max(0,top-12));
+    heading.focus({preventScroll:true});
+  }};
+}
+const readingKey='phoenix.velen.reading.v1';
+function resumePanel(){
+  let saved;
+  try{saved=JSON.parse(localStorage.getItem(readingKey)||'null');}catch{}
+  const id=Object.hasOwn(deckQuests,saved?.id)?saved.id:state.last?.id||'nilf';
+  const q=deckQuests[id];
+  let stage=state.stage[id]||1;
+  if(saved?.id===id&&Number.isInteger(saved.stage)&&saved.stage>=1&&saved.stage<=q.stages.length)stage=saved.stage;
+  let caption=isComplete(id)?'Quest complete':(q.stages[stage-1]?.title||'');
+  if(id==='nilf'&&nilfOwned()&&!isComplete(id)){
+    const owner=window.PhoenixVelenNilfProgress,p=owner.load(nilfStorage).progress;
+    const next=owner.engine.required(owner.QUEST,p).find(o=>p.objectives[o.id]!=='done'&&!owner.engine.closed(o,p));
+    if(next){stage=next.stage;caption='Next objective · '+next.label;}
+  }
+  const panel=scroll();
+  panel.classList.add('resume','console-continue');
+  panel.append(el('small','','Resume'),el('h2','',q.name));
+  if(caption)panel.append(el('p','',caption));
+  panel.append(link('Open walkthrough →','#quest/'+id+'/'+stage,'button-link'));
+  return panel;
+}
+function nearbyStops(id){
+  const stops=id==='nilf'?Object.values(window.PhoenixSharedWalkthroughModel?.VELEN_NEARBY||{}).flat():
+    id==='family-matters'?[{label:'Ciri’s Room',href:'#velen/lead/ciris-room',context:'Search Ciri’s room while you’re at Crow’s Perch.'}]:[];
+  if(!stops.length)return;
+  const panel=scroll('Nearby Stops');
+  for(const stop of stops){
+    panel.append(link(stop.label||quests[stop.quest].name,stop.href,'activity-link'),el('p','small-note',stop.context));
+  }
+  return panel;
 }
 function consoleView(){
   screen.append(header('Velen','No Man’s Land'));
-  const resume=scroll(),last=state.last?.id;
-  resume.classList.add('resume','console-continue');
-  resume.append(el('small','',last?'Resume last walkthrough':'Return to last hub'),link(last?quests[last].name:quests[state.lastHub].name,last?'#quest/'+last+'/'+state.stage[last]:'#hub/'+state.lastHub));
-  screen.append(resume,carousel('quests',deckSelected),selectedPanel(deckSelected));
-  const along=scroll('Along the arrival road');
-  along.append(el('p','pilot-count','Arrival pilot · '+['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
-  for(const id of ['pyres','mercy'])along.append(link((state.complete[id]?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
-  screen.append(along);
-  const explore=scroll('Explore Velen'),shortcuts=el('nav','tiles shortcuts console-tiles');
-  shortcuts.append(artTile('Regions','index.html#regions','velen-landscape-r18.webp'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
-  explore.append(shortcuts);
-  screen.append(explore,activities());
+  const activity=activities(),selected=selectedPanel(deckSelected);
+  const shortcut=el('button','velen-activities-shortcut','Activities ↓');
+  shortcut.type='button';
+  shortcut.setAttribute('aria-controls',activity.section.id);
+  shortcut.onclick=activity.open;
+  selected.append(shortcut);
+  screen.append(resumePanel(),carousel('quests',deckSelected),selected);
+  const nearby=nearbyStops(deckSelected);
+  if(nearby)screen.append(nearby);
+  screen.append(activity.section);
+  const tools=scroll('Region Tools'),shortcuts=el('nav','tiles shortcuts console-tiles');
+  shortcuts.append(artTile('Velen & Novigrad map ↗','https://www.witcher.tools/map/velen-novigrad','velen-landscape-r18.webp'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
+  const arrival=el('details','velen-arrival-checklist');
+  arrival.open=arrivalOpen;
+  arrival.ontoggle=()=>{if(arrival.isConnected)arrivalOpen=arrival.open;};
+  arrival.append(el('summary','','Arrival checklist'),el('p','pilot-count',['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
+  for(const id of ['nilf','pyres','mercy'])arrival.append(link((isComplete(id)?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
+  tools.append(shortcuts,arrival);
+  screen.append(tools);
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
 function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),link('Open walkthrough →','#quest/'+id+'/'+state.stage[id],'button-link'));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
 if(id==='nilf'){n.append(el('h3','','Side quests & encounters'));for(const other of ['pyres','mercy'])n.append(link((state.complete[other]?'✓ ':'○ ')+quests[other].name+' · open owner hub','#hub/'+other,'activity-link'));n.append(el('h3','','Services & notices'),link('Innkeeper · supplies and Gwent information','#merchants','activity-link'),link('Collected notices & deferred exploration','#deferred','activity-link'));}else n.append(link('Return to arrival quest hub','#hub/nilf','activity-link'));screen.append(n);if(id==='nilf')screen.append(nextLeads());}
 function choice(key,n){const label=el('label','choice-label',key==='inn'?'Record your inn outcome (optional)':'Record your decision (optional)'),select=el('select');select.setAttribute('aria-label',key==='inn'?'Recorded inn outcome':'Recorded John Verdun decision');select.append(new Option('Not recorded',''));const values=key==='inn'?[['peace','Settled peacefully'],['fight','Fought the soldiers']]:[['freed','Released John'],['left','Left him tied']];for(const [v,t]of values)select.append(new Option(t,v));select.value=state.choices[key]||'';select.onchange=()=>{if(!select.value){state.undo={complete:{...state.complete},choices:{...state.choices}};delete state.choices[key];}else apply(state,{kind:'choice',key,value:select.value});save();};label.append(select);n.append(label);}
-function rememberReading(id){try{localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+state.stage[id],name:quests[id].name,stageNumber:state.stage[id]}));}catch{}}
+function rememberReading(id,stage=state.stage[id]){
+  try{
+    localStorage.setItem(readingKey,JSON.stringify({id,stage}));
+    if(Object.hasOwn(quests,id))localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+stage,name:quests[id].name,stageNumber:stage}));
+  }catch{}
+}
 function readingPage(id,q,index,legacy){
   const stage=q.stages[index], page=el('div','quest-page velen-reading-page');
   const heading=el('header','page-heading r15-heading');
@@ -188,6 +248,7 @@ function questCard(id, stage){
   const card=questCards[id], lead=leads[id]||card;
   if(stage){
     const index=Math.min(card.stages.length,Number(stage)||1)-1;
+    rememberReading(id,index+1);
     readingPage(id,{...lead,...card},index,false);
     return;
   }
