@@ -133,3 +133,24 @@ html body .sw-page .reading-panel .sw-walkthrough h3,html body .sw-page .reading
 .phoenix-medallion[data-pending-warnings] .medallion-sigil{position:relative}
 .phoenix-medallion[data-pending-warnings] .medallion-sigil::after{content:"";position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#f4d36b;border:2px solid #6b4b12;box-shadow:0 0 0 2px #1b2122}
 html body .sw-page .reading-panel .sw-walkthrough .sw-warning-panel h3{margin:0 0 4px;font:400 18px/1.25 Fell,Georgia,serif;letter-spacing:0;text-transform:none}
+
+/* Velen walkthroughs share the White Orchard reading column and selector. */
+html body #velen-screen > :is(.velen-nilf-page,.velen-reading-page).sw-page {
+  width: min(100%, 800px);
+  box-sizing: border-box;
+  margin-inline: auto;
+}
+.sw-stage-no {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  min-height: 44px;
+  font-variant-numeric: tabular-nums;
+}
+@media (orientation:landscape) and (max-height:500px) {
+  html body #velen-screen > .velen-reading-page.sw-page {
+    margin-left: max(16px,calc(50% - 400px));
+    margin-right: 190px;
+    width: auto;
+  }
+}

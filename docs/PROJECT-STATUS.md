@@ -62,3 +62,7 @@ The owner approved pushing the prepared Sites commit and publishing QA6. Source 
 ## Current publication
 
 Sites version **47** is now live. The owner authorized publishing the built slices before LT’s independent QA. The QA6 notes above document the preceding release. See [the version 47 release record](RELEASE-SESSION-3-V47.md) for exact provenance, scope, checks and follow-up.
+
+## Velen walkthrough candidate
+
+All five existing Velen walkthroughs now use the shared component. Six new source-backed cards and walkthroughs cover A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp, Ladies of the Wood, and The Whispering Hillock. The Arrival denominator remains three and retains its existing owners. Reading-only cards show stage position in the shared selector. All 339 Node tests passed against the v45, QA5 and QA6 baselines. This candidate is unpublished. Responsive browser and physical Safari checks, dedicated illustrations, and full ledger coverage remain open. Sites version 47 remains live.

@@ -147,6 +147,19 @@
      return box;}};
   }
 
+  function velenReadingAdapter(page){
+   const {id,q,index,story,goStage}=root.PhoenixVelenReadingPages.get(page);
+   const rows=q.stages.map((st,i)=>({id:String(i+1),label:st.title,stage:String(i+1),required:true}));
+   const lay={primary:rows,optional:[],ownerOf:{},extras:{}};
+   function reading(n){
+    const st=q.stages[Number(n)-1],note=st.note||st.prep;
+    return {title:st.title,place:st.place||'',actions:st.actions||sentences(st.text),choices:[],why:[],info:note?[{title:'Field notes',paragraphs:[note]}]:[],links:(st.links||[]).map(([label,id])=>({label,href:'#velen/lead/'+id})),nearby:[],spoiler:st.spoiler||''};
+   }
+   return {key:'velen:'+id,region:'Velen',section:page,quest:q.name,rows,lay,reading,story,goStage,readOnly:true,
+    currentStage:()=>String(index+1),objState:()=>({done:false,disabled:false,text:''}),
+    warning(o){const text=q.stages[Number(o.stage)-1].warning;return text?{id:warningRecordId('velen.'+id,'stage-'+o.stage),short:text,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;}};
+  }
+
   // ---- shared rendering ------------------------------------------------------------------------------------------
   function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
   function render(a){
@@ -159,7 +172,7 @@
    const mem=memory.get(a.key)||{};if(mem.objective!==selected)remember(a.key,selected);
    const root_=make('section','sw-walkthrough');root_.dataset.swKey=a.key;
    // selector
-   const selector=make('section','sw-selector');selector.setAttribute('aria-label','Objectives');
+   const selector=make('section','sw-selector');selector.setAttribute('aria-label',a.readOnly?'Walkthrough stages':'Objectives');
    const warn=sel?a.warning(sel):null,acked=warn?acknowledged(history_(),warn.id,warn.short):false,open=!!(warn&&mem.warnOpen===selected);
    const wrap=make('div','sw-wolf-wrap'),wolf=make('button','sw-wolf');wolf.type='button';const wi=make('img');wi.src='visual-art/wolf-pointer.webp';wi.alt='';wolf.append(wi);
    if(warn){wolf.append(make('span','sw-wolf-badge'+(acked?' acked':' unread'),acked?'✓':'!'));wolf.setAttribute('aria-expanded',String(open));wolf.setAttribute('aria-controls','sw-warning-panel');wolf.setAttribute('aria-label',(open?'Hide':'Show')+' warning for this objective'+(acked?' (acknowledged)':' (new)'));
@@ -176,9 +189,10 @@
     if(feedback?.key===a.key&&feedback.text)panel.append(make('p','sw-ack-feedback',feedback.text));
     if(warn.sections.length){const dl=make('dl');for(const [k,v] of warn.sections)dl.append(make('dt','',k),make('dd','',v));panel.append(dl);}
     panel.append(make('p','sw-provenance','Shown for: '+sel.label+' Opening this panel does not change progress.'));selector.append(panel);}
-   const rail=make('div','sw-rail');rail.setAttribute('role','listbox');rail.setAttribute('aria-label',a.quest+' objectives. Swipe or use arrow keys to choose.');rail.tabIndex=-1;
+   const rail=make('div','sw-rail');rail.setAttribute('role','listbox');rail.setAttribute('aria-label',a.quest+(a.readOnly?' stages.':' objectives.')+' Swipe or use arrow keys to choose.');rail.tabIndex=-1;
    for(const o of a.lay.primary){const st=a.objState(o),isSel=o.id===selected,box=make('div','sw-box'+(isSel?' selected':'')+(st.done?' done':'')+(st.disabled?' unavailable':''));box.dataset.swObjective=o.id;box.setAttribute('role','option');box.setAttribute('aria-selected',String(isSel));box.tabIndex=isSel?0:-1;
-    if(isSel)box.append(checkbox(a,o,st));
+    if(a.readOnly){box.append(make('span','sw-stage-no',o.stage));}
+    else if(isSel)box.append(checkbox(a,o,st));
     else{const c=make('button','sw-check sw-check-proxy');c.type='button';c.tabIndex=-1;c.setAttribute('aria-label','Select objective: '+o.label);c.append(make('span','sw-check-mark'+(st.done?' on':'')));c.onclick=e=>{e.stopPropagation();choose(a,o.id,true);};box.append(c);}
     const name=make('div','sw-name',o.label);if(st.done||st.disabled)name.append(make('span','sw-state',st.done?'Completed':st.text));box.append(name);
     if(isSel&&!st.done&&st.text!=='Not completed')box.setAttribute('aria-description',st.text);
@@ -187,7 +201,8 @@
    let settle=0;rail.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{if(!rail.isConnected||rail.dataset.programmatic)return;const r=rail.getBoundingClientRect(),mid=r.left+r.width/2;let best=null,dist=1e9;for(const b of rail.children){const bb=b.getBoundingClientRect(),d=Math.abs(bb.left+bb.width/2-mid);if(d<dist){dist=d;best=b;}}if(best&&best.dataset.swObjective!==selected)choose(a,best.dataset.swObjective,false);},160);},{passive:true});
    selector.append(rail);
    const idx=a.lay.primary.findIndex(o=>o.id===selected)+1,done=a.lay.primary.filter(o=>a.objState(o).done).length;
-   const line=make('div','sw-status');line.append(make('span','sw-position','OBJECTIVE '+idx+' OF '+a.lay.primary.length));
+   const line=make('div','sw-status');line.append(make('span','sw-position',(a.readOnly?'STAGE ':'OBJECTIVE ')+idx+' OF '+a.lay.primary.length));
+   if(!a.readOnly){
    const nu=nextUnfinished(a.lay.primary,o=>{const st=a.objState(o);return !st.done&&!st.disabled;});
    if(nu&&nu.id!==selected){const n=make('button','sw-next','Next unfinished →');n.type='button';n.setAttribute('aria-label','Go to next unfinished objective: '+nu.label);n.onclick=()=>choose(a,nu.id,true,true);line.append(n);}
    else line.append(make('span','sw-on-next',nu?'This is your next unfinished objective':'No unfinished required objective'));
@@ -197,11 +212,12 @@
    if(cond.length)line.append(make('span','sw-route-note','Route-dependent, not counted yet: '+cond.map(o=>o.label).join(' ')));
    if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));
+   }
    selector.append(line);root_.append(selector);
    // reading
    if(sel){const r=a.reading(sel.stage),reading=make('section','sw-reading');reading.setAttribute('aria-label','Instructions for the selected objective');
     reading.append(make('h2','',r.title));if(r.place)reading.append(make('p','sw-place',r.place));reading.append(make('span','sw-ornament'));
-    const fo=make('div','sw-for');fo.append(make('span','sw-label','SELECTED OBJECTIVE'),make('strong','',sel.label));reading.append(fo);
+    const fo=make('div','sw-for');fo.append(make('span','sw-label','SELECTED OBJECTIVE'),make('strong','',sel.label));if(!a.readOnly)reading.append(fo);
     reading.append(make('h3','','WHAT TO DO'));const ol=make('ol','sw-actions');for(const x of r.actions)ol.append(make('li','',x));reading.append(ol);
     if(r.choices.length){reading.append(make('h3','','AVAILABLE CHOICES'));const ul=make('ul','sw-choices');for(const c of r.choices)ul.append(make('li','',c));reading.append(ul);}
     if(r.why.length){reading.append(make('h3','','WHY'));const ex=make('div','sw-explain');for(const x of r.why)ex.append(make('p','',x));reading.append(ex);}
@@ -214,7 +230,7 @@
     ob.append(make('h3','','NEARBY'));
     const nearbyItem=n=>{const it=make('div','sw-opt sw-near'),t=make('div'),link=make('a','sw-link',n.label+' →');link.href=n.href;if(n.optionalStop)link.dataset.optionalStop='true';t.append(make('span','sw-kind','Nearby · '+n.kind),link);if(n.status)t.append(make('span','sw-state',n.status));if(n.context)t.append(make('p','sw-context',n.context));it.append(make('span','sw-pin','◆'),t);return it;};
     for(const n of near)ob.append(nearbyItem(n));if(!near.length)ob.append(make('p','sw-empty','No nearby activity is recorded for this objective.'));
-    opt.append(ob);reading.append(opt);
+    opt.append(ob);if(optObjs.length||near.length)reading.append(opt);
     // Information: further stage detail, unmapped setup/follow-up stages, route links and spoilers.
     const inf=make('details','sw-row');inf.dataset.swRow='info';if(mem.rows?.info||(mem.rows?.info===undefined&&stage!==sel.stage))inf.open=true;/* a stage without its own objective opens here */inf.append(make('summary','','Information'));const ib=make('div','sw-row-body');let any=false;
     const para=(host,list)=>{for(const x of list)host.append(make('p','',x));};
@@ -227,14 +243,13 @@
      if(b.spoiler){const sp=make('details','sw-spoiler');sp.append(make('summary','','Consequences · Spoilers'),make('p','',b.spoiler));box.append(sp);}
      ib.append(box);any=true;}
     if(r.spoiler){const sp=make('details','sw-spoiler');sp.append(make('summary','','Consequences · Spoilers'),make('p','',r.spoiler));ib.append(sp);any=true;}
-    if(!any)ib.append(make('p','sw-empty','No further information for this objective.'));
-    inf.append(ib);reading.append(inf);
+    if(any){inf.append(ib);reading.append(inf);}
     for(const d of [opt,inf])d.addEventListener('toggle',()=>{const m=memory.get(a.key)||{};memory.set(a.key,{...m,rows:{...(m.rows||{}),[d.dataset.swRow]:d.open}});});
     root_.append(reading);}
    if(old)old.replaceWith(root_);else host.prepend(root_);
    // Story & correction controls (P2 A): existing controls, re-hosted as one quest-level row.
-   let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');if(save)save.before(story);else host.append(story);}
-   story.querySelector('.sw-row-body').replaceChildren(a.story());
+   if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources;if(anchor)anchor.before(story);else host.append(story);}
+   story.querySelector('.sw-row-body').replaceChildren(a.story());}
    // keep the selected box centred beneath the wolf without animating
    const box=rail.querySelector('.selected');if(box){rail.dataset.programmatic='1';const restore=oldRail&&old?.dataset.swKey===a.key?oldRail.scrollLeft:null;if(restore!=null)rail.scrollLeft=restore;requestAnimationFrame(()=>{if(!rail.isConnected)return;const target=box.offsetLeft-(rail.clientWidth-box.offsetWidth)/2;if(Math.abs(rail.scrollLeft-target)>1)rail.scrollTo({left:target,behavior:restore!=null&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});setTimeout(()=>{delete rail.dataset.programmatic;},restore!=null?450:60);});}
   }
@@ -251,12 +266,12 @@
   for(const q of woQuests)document.getElementById(tasks[q].view)?.classList.add('sw-page');
   function current(){const rootId=(location.hash||'#home').slice(1).split('/')[0];
    const q=woQuests.find(id=>tasks[id].view===rootId);if(q)return woAdapter(q);
-   if(rootId==='velen'){const page=document.querySelector('#velen-screen .velen-nilf-page');if(page)return velenAdapter(page);}return null;}
-  function isShowing(){const v=document.querySelector('.view:not([hidden])');return !!(v&&(v.classList.contains('sw-page')&&v.querySelector('.sw-walkthrough')||v.querySelector('#velen-screen>.velen-nilf-page.sw-page .sw-walkthrough')));}
+   if(rootId==='velen'){const page=document.querySelector('#velen-screen .velen-nilf-page');if(page)return velenAdapter(page);const reading=document.querySelector('#velen-screen>.velen-reading-page');if(reading)return velenReadingAdapter(reading);}return null;}
+  function isShowing(){const v=document.querySelector('.view:not([hidden])');return !!(v&&(v.classList.contains('sw-page')&&v.querySelector('.sw-walkthrough')||v.querySelector('#velen-screen>.sw-page .sw-walkthrough')));}
   function refresh(){const a=current();try{medallion()?.reconcileWarnings?.();}catch{}if(!a)return;const focusInRail=document.activeElement?.closest?.('.sw-rail');try{render(a);}catch(e){console.error('shared walkthrough',e);a.section.classList.remove('sw-page');return;}try{medallion()?.reconcileWarnings?.();}catch{}if(focusInRail)a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});}
   for(const ev of ['phoenix:route-rendered','phoenix:progress-committed','phoenix:progress-undone'])addEventListener(ev,()=>requestAnimationFrame(refresh));
   const velenScreen=document.getElementById('velen-screen');
-  if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>.velen-nilf-page');if(page&&!page.querySelector('.sw-walkthrough'))refresh();/* render() adds .sw-page only when the owner is active */}).observe(velenScreen,{childList:true});
+  if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>:is(.velen-nilf-page,.velen-reading-page)');if(page&&!page.querySelector('.sw-walkthrough'))refresh();/* render() adds .sw-page only when the owner is active */}).observe(velenScreen,{childList:true});
   refresh();
   return {refresh,isShowing,model};
  };
