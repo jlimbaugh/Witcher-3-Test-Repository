@@ -157,9 +157,9 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  assert.deepEqual([...new Set(changed)],['app.js','character-entry.js','character-gear.js','character-ui.js','character-vault.js','character.css','deck-jump.js','desk-r11.js','exploration-ui.js','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js','velen-nilf-ui.js','velen-quest-cards.js','velen-r18.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
  for(const f of ['app.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
- for(const f of ['deck-jump.js','desk-r11.js','exploration-ui.js','shared-walkthrough.css','velen-r18.js'])assert.equal(tags[f],'numbered-deck-jump-14',f);
+ for(const f of ['deck-jump.js','desk-r11.js','exploration-ui.js','shared-walkthrough.css','shared-walkthrough.js','velen-r18.js'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
  for(const f of ['home-ui.js'])assert.equal(tags[f],'quest-action-art-12',f);
- for(const f of ['shared-walkthrough.js','velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-contracts-15',f);
+ for(const f of ['velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-contracts-15',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
  const refs=refsOf(here).map(r=>({...r}));

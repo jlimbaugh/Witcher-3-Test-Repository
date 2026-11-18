@@ -163,7 +163,9 @@
     related.push({label:root.PHOENIX_VELEN.quests[other].name,href:'#velen/hub/'+other});
    }
    return {key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows,lay,reading,story,goStage,readOnly:true,
-    toggleStage(stage,checked){if(checked)marks.add(stage);else marks.delete(stage);memory.set(key,{...memory.get(key),stageMarks:marks});},
+    catchUp(stage){const prev=new Set(marks);for(const row of rows.slice(0,Number(stage)))marks.add(row.id);memory.set(key,{...memory.get(key),stageMarks:marks,undoCatchUp:prev});},
+    undoCatchUp(){const previous=memory.get(key)?.undoCatchUp;if(previous)memory.set(key,{...memory.get(key),stageMarks:previous,undoCatchUp:null});},
+    toggleStage(stage,checked){if(checked)marks.add(stage);else marks.delete(stage);memory.set(key,{...memory.get(key),stageMarks:marks,undoCatchUp:null});},
     currentStage:()=>String(index+1),objState:o=>({done:marks.has(o.id),disabled:false,text:'Not completed'}),
     warning(o){const text=q.stages[Number(o.stage)-1].warning;return text?{id:warningRecordId('velen.'+id,'stage-'+o.stage),short:text,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;}};
   }
@@ -240,7 +242,19 @@
    if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));
    }
-   if(a.readOnly)line.append(make('span','sw-route-note','Stage checkmarks last for this visit.'));
+   if(a.readOnly){
+    if(idx>1&&a.lay.primary.slice(0,idx).some(o=>!a.objState(o).done)){
+     const catchUp=make('button','sw-next','Mark stages 1–'+idx+' complete');catchUp.type='button';
+     catchUp.onclick=()=>{a.catchUp(selected);render(a);a.section.querySelector('.sw-undo-catchup')?.focus({preventScroll:true});};
+     line.append(catchUp);
+    }
+    if(mem.undoCatchUp){
+     const undo=make('button','sw-next sw-undo-catchup','Undo catch-up');undo.type='button';
+     undo.onclick=()=>{a.undoCatchUp();render(a);a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});};
+     line.append(undo);
+    }
+    line.append(make('span','sw-route-note','Stage checkmarks last for this visit.'));
+   }
    selector.append(line);root_.append(selector);
    // reading
    if(sel){const r=a.reading(sel.stage),reading=make('section','sw-reading');reading.setAttribute('aria-label','Instructions for the selected objective');
