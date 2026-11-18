@@ -161,4 +161,121 @@
     }
   });
 
+  const main='Main quest', side='Side quest';
+  const field='https://www.witcher.tools/quests/';
+  const guide='https://www.gamebanshee.com/thewitcher3/walkthrough/';
+  Object.assign(root.PhoenixVelenQuestCards,{
+    'king-of-the-wolves': {
+      name:'Ciri’s Story: The King of the Wolves',kind:main,place:'Riverbed near Lindenvale',
+      briefing:'Play as Ciri and help Gretka get through wolf country.',
+      start:'Hear the Baron’s first account in Bloody Baron.',
+      completion:'Defeat the Wolf King and finish the scene that brings Ciri and Gretka to Crow’s Perch.',
+      sources:[field+'ciris-story-the-king-of-the-wolves'],
+      stages:[
+        {title:'Rescue Gretka',place:'Riverbed',actions:['Follow the riverbed and defeat the wolves beneath Gretka’s tree.','Talk her down and follow her toward Lindenvale. Clear the packs along the route.']},
+        {title:'Identify the monster and prepare',place:'Body in the riverbed',actions:['Examine the victim’s chest, leg and belly. Identify the werewolf.','Gather the ingredients the quest marks. For the werewolf oil, collect three wolfsbane, two fool’s parsley, a wolf’s liver and dog tallow.']},
+        {title:'Defeat the Wolf King',place:'Beyond the cave',actions:['Follow Gretka through the cave. Draw the werewolf away from the villager and defeat it.','Finish the conversation with the survivor.'],links:[['Family Matters','family-matters'],['Ciri’s Room','ciris-room']]}
+      ]
+    },
+    'family-matters': {
+      name:'Family Matters',kind:main,place:'Crow’s Perch',
+      briefing:'Investigate the disappearance of Anna and Tamara while the Baron fills in Ciri’s story.',
+      start:'Continue the conversation after the Baron’s first Ciri flashback.',
+      completion:'Report Anna’s fate to the Baron and finish his final flashback.',
+      sources:[guide+'familymatters.php'],
+      stages:[
+        {title:'Search the rooms and consult the Pellar',place:'Crow’s Perch and Blackbough',actions:['Search Anna’s and Tamara’s rooms with Witcher Senses. Follow the scent to the talisman and ask the Baron about it.','Visit the Pellar near Blackbough. Deal with the men outside, then show him the talisman.','Find his goat and return for the augury.'],links:[['A Princess in Distress','princess']]},
+        {title:'Resolve the botchling encounter',place:'Crow’s Perch',actions:['Return to the burning keep. Help Oswin and the horses if you choose, then confront the Baron.','At the burial site, decide whether to lift the curse or kill the botchling.','To lift the curse, escort the Baron with the child, fight off wraiths, use Axii when it agitates and wait at the grave after the burial. To kill it, take its blood to the Pellar and protect the ritual while keeping the fires lit.']},
+        {title:'Follow the trail to Voytek',place:'Smokehouse and fisherman’s hut',actions:['Follow the lubberkin and inspect the smokehouse clues and dead horse, or follow the location learned through the Pellar’s ritual.','Question Voytek and report back at Crow’s Perch to hear the next part of Ciri’s story.','Visit Tamara in Oxenfurt if desired.'],links:[['Ciri’s Story: The Race','ciris-race']]},
+        {title:'Bring the Baron news of Anna',place:'Crookback Bog and Crow’s Perch',actions:['Complete the witch and Crones investigation to learn what happened to Anna.','Tell the Baron what you learned. Finish the last Ciri flashback and hear the Baron’s request.'],links:[['Ladies of the Wood','ladies-of-the-wood'],['Ciri’s Story: Out of the Shadows','out-of-the-shadows'],['Return to Crookback Bog','return-to-crookback-bog']]}
+      ]
+    },
+    'ciris-race': {
+      name:'Ciri’s Story: The Race',kind:main,place:'Abandoned Tower',
+      briefing:'Ride against the Baron during his second flashback.',
+      start:'Report to the Baron after questioning Voytek in Family Matters.',
+      completion:'Reach the tower and watch the basilisk interrupt the race.',
+      sources:[field+'ciris-story-the-race'],
+      stages:[{title:'Race to the tower',place:'Velen woodland track',actions:['Finish the wager scene and ride the marked route to the tower.','Keep to the track and use a gallop on clear stretches. Either finish order advances the story.'],links:[['Family Matters','family-matters']]}]
+    },
+    'out-of-the-shadows': {
+      name:'Ciri’s Story: Out of the Shadows',kind:main,place:'Abandoned Tower',
+      briefing:'Resume Ciri’s encounter with the basilisk and rescue the Baron.',
+      start:'Tell the Baron what happened to Anna during Family Matters.',
+      completion:'Finish the rescue and Ciri’s farewell at Crow’s Perch.',
+      sources:[field+'ciris-story-out-of-the-shadows'],
+      stages:[
+        {title:'Fight the basilisk',place:'Foot of the tower',actions:['Dodge while the basilisk is airborne. Attack when it lands and turns toward the Baron.','After it takes the Baron, approach and climb the rocks at the tower to trigger the rescue.']},
+        {title:'Finish the Baron’s account',place:'Crow’s Perch',actions:['Watch Ciri’s departure for Novigrad.','Back as Geralt, hear the Baron’s plan to return to the bog.'],links:[['Return to Crookback Bog','return-to-crookback-bog']]}
+      ]
+    },
+    'return-to-crookback-bog': {
+      name:'Return to Crookback Bog',kind:side,level:9,place:'Downwarren and Crookback Bog',
+      briefing:'Join the Baron and Tamara in their search for Anna.',
+      start:'Take up the Baron’s request after Family Matters and meet him at Downwarren.',
+      completion:'Resolve Anna’s fate and collect the reward at Crow’s Perch.',
+      sources:[guide+'returntocrookbackbog.php',field+'return-to-crookback-bog'],
+      stages:[
+        {title:'Meet the Baron and reach Anna',place:'Downwarren and orphan village',warning:'Finish this quest before starting The Isle of Mists.',actions:['Speak with the ealdorman and follow the Baron through the bog.','Help the witch hunters in the orphan village, then defend the group against the next attack, including the fiend.']},
+        {title:'Resolve Anna’s condition',place:'Orphan village',actions:['If Anna is human, let the Baron and Tamara finish the scene.','If Anna is cursed, look for Johnny near his burrow. Follow his tracks if he is gone, then search the cellar under the Crones’ tapestry.','Choose the doll with the hollyhock flower and return to Anna.'],note:'The Hillock outcome determines which route you get. The right doll gives Anna time for a farewell, but does not save her life.'},
+        {title:'Collect your payment',place:'Crow’s Perch',actions:['Return to the keep. Follow the quest marker and collect payment from the Baron or his sergeant as the outcome dictates.']}
+      ]
+    },
+    'fleeing-the-bog': {
+      name:'Ciri’s Story: Fleeing the Bog',kind:main,level:5,place:'Crookback Bog',
+      briefing:'Escape the Crones’ territory as Ciri.',
+      start:'Hear the Crones’ account near the end of Ladies of the Wood.',
+      completion:'Reach the marked escape point and return to Geralt’s conversation.',
+      sources:[field+'ciris-story-fleeing-the-bog'],
+      stages:[{title:'Run through the bog',place:'Crones’ village and escape path',actions:['As soon as you regain control, follow the quest route away from the hut.','Use Ciri’s dodge to pass enemies and keep moving until the escape scene triggers.'],links:[['Ladies of the Wood','ladies-of-the-wood']]}]
+    },
+    'keira-invitation': {
+      name:'An Invitation from Keira Metz',kind:side,place:'Keira’s cottage',
+      briefing:'Find out why Keira invited you back after the ruins.',
+      start:'After Keira’s invitation, return to her cottage near Midcopse.',
+      completion:'Accept the Fyke Isle investigation and receive the lamp and xenovox.',
+      sources:[guide+'aninvitationfromkeirametz.php'],
+      stages:[{title:'Accept the Fyke Isle investigation',place:'Keira’s cottage',actions:['Ask Keira why she invited you.','Agree to investigate Fyke Isle. Take the magic lamp and xenovox.'],links:[['A Towerful of Mice','towerful-of-mice']]}]
+    },
+    'towerful-of-mice': {
+      name:'A Towerful of Mice',kind:side,level:6,place:'Fyke Isle',
+      briefing:'Investigate the hauntings at the tower and decide how to lift the curse.',
+      start:'Accept Keira’s request at her cottage.',
+      completion:'Lift the curse and report to Keira.',
+      sources:[guide+'aninvitationfromkeirametz.php',field+'a-towerful-of-mice'],
+      stages:[
+        {title:'Cross to Fyke Isle',place:'Lake shore and island',warning:'Finish this quest before starting The Isle of Mists.',actions:['Cross to the island and head to the tower.','Equip the lamp and use it at the hauntings as you explore. Watch the looter’s haunting inside the tower before confronting Anabelle if you want evidence to challenge her.']},
+        {title:'Find the laboratory and hear Anabelle',place:'Tower upper floors',actions:['Use Witcher Senses to locate the hidden laboratory entrance and open it.','Use the lamp to speak with Anabelle and decide whether to trust her.']},
+        {title:'Lift the curse',place:'Fyke Isle and Oreton',warning:'Carrying the remains to Graham and bringing Graham to the tower lead to different outcomes.',actions:['If you accept the request, deliver Anabelle’s remains to Graham in Oreton.','If you refuse, withstand her attacks and speak with Graham. Bring him to the tower and accompany him to Anabelle.','Return to Keira after resolving the curse.'],links:[['A Favor for a Friend','favor-for-a-friend']]}
+      ]
+    },
+    'favor-for-a-friend': {
+      name:'A Favor for a Friend',kind:side,level:6,place:'Hangman’s Alley',
+      briefing:'Find Keira’s missing delivery and bring it back to her cottage.',
+      start:'Accept Keira’s request after lifting the Fyke Isle curse.',
+      completion:'Deliver the package and finish the evening with Keira.',
+      sources:[guide+'afavorforafriend.php'],
+      stages:[
+        {title:'Find the missing package',place:'Hangman’s Alley',actions:['Use Witcher Senses to follow the wagon tracks off the road.','Take Keira’s package beside the damaged wagon. Inspect the trader’s trail if you want the optional evidence.']},
+        {title:'Return to Keira',place:'Cottage and glade',actions:['Deliver the package and ride with Keira to the glade.','Finish the conversation and evening. Your answer to her invitation does not prevent the next quest.'],links:[['For the Advancement of Learning','advancement-of-learning']]}
+      ]
+    },
+    'advancement-of-learning': {
+      name:'For the Advancement of Learning',kind:side,level:8,place:'Fyke Isle tower',
+      briefing:'Find Keira with Alexander’s research and decide what happens next.',
+      start:'Follow Keira to Fyke Isle after A Favor for a Friend.',
+      completion:'Resolve the confrontation outside the tower.',
+      sources:[guide+'fortheadvancementoflearning.php',field+'for-the-advancement-of-learning'],
+      stages:[
+        {title:'Find Keira at the tower',place:'Fyke Isle',actions:['Return to the tower and speak to Keira about Alexander’s notes.']},
+        {title:'Choose Keira’s destination',place:'Tower entrance',warning:'Resolve this quest before The Isle of Mists. Sending Keira to Radovid or forcing a fight can cost her life.',actions:['If you want her help later, question her plan to approach Radovid and offer her refuge at Kaer Morhen.','Finish the conversation. Letting her leave for Radovid or provoking combat resolves the quest on a different path.']}
+      ]
+    }
+  });
+  const cards=root.PhoenixVelenQuestCards;
+  cards.baron.stages.at(-1).links.unshift(['Ciri’s Story: The King of the Wolves','king-of-the-wolves']);
+  cards.princess.stages.at(-1).links=[['Family Matters','family-matters']];
+  cards['ladies-of-the-wood'].stages.at(-1).links=[['Ciri’s Story: Fleeing the Bog','fleeing-the-bog']];
+  cards['magic-lamp'].stages.at(-1).links=[['An Invitation from Keira Metz','keira-invitation']];
+  cards['wandering-in-the-dark'].stages.at(-1).links.push(['An Invitation from Keira Metz','keira-invitation']);
 })(window);
