@@ -46,3 +46,5 @@ Work moves to commits and PRs once the verified GitHub baseline is accessible. Z
 checkpoints, no repo access, saving time/usage, or when the artifact itself is the deliverable. Every transferred
 package states its source commit, contents, exclusions and full SHA-256, as one all-inclusive ZIP (< 25 MB) or several
 with consistent, unique names.
+
+For quest or activity card work, read `docs/QUEST-CARD-ART-TEMPLATE.md` and `ART-STANDARD.md` at session start.
