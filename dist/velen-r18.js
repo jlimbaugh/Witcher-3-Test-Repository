@@ -7,7 +7,6 @@ const view=document.createElement('section');view.id='velen';view.className='vie
 const confirm=document.createElement('dialog');confirm.id='velen-confirm-progress';confirm.className='progress-dialog';confirm.setAttribute('aria-labelledby','velen-confirm-title');confirm.innerHTML='<form method="dialog"><h2 id="velen-confirm-title">Confirm recorded progress</h2><p id="velen-confirm-text"></p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="confirm">Confirm</button></div></form>';document.body.append(confirm);
 let inputMode='pointer',renderSerial=0,renderedHash=null;document.addEventListener('pointerdown',()=>inputMode='pointer',true);document.addEventListener('keydown',e=>{if(['Tab','Enter',' '].includes(e.key))inputMode='keyboard';},true);
 const {quests:legacyQuests,leads,initial,apply,unlocked}=window.PHOENIX_VELEN,key='phoenix.velen.arrival.v1';let raw={};try{raw=JSON.parse(localStorage.getItem(key)||'{}');}catch{}
-const quests={...legacyQuests,nilf:{...legacyQuests.nilf,art:'art-velen/nilf.webp',position:'center'}};
 // v45 Slice 2 QA3 save guard (owner-authorized, narrowly scoped; the only change to the legacy save writer):
 // if phoenix.velen.arrival.v1 exists but cannot be read (invalid JSON, or JSON that is not an object - the same rule
 // as the Slice 1 import's legacy-unreadable), this page session never writes that key. Browsing state lives in memory
@@ -15,6 +14,7 @@ const quests={...legacyQuests,nilf:{...legacyQuests.nilf,art:'art-velen/nilf.web
 // record is repaired. Valid or absent records are saved exactly as in v45 (same code path, same bytes).
 const legacyUnreadable=(()=>{let text;try{text=localStorage.getItem(key);}catch{return false;}if(text==null)return false;try{const v=JSON.parse(text);return !(v&&typeof v==='object'&&!Array.isArray(v));}catch{return true;}})(),legacyGuardText='Your saved Velen record could not be read, so it is kept unchanged. Changes in this visit are not saved.';const state=initial(raw),screen=document.getElementById('velen-screen'),status=document.getElementById('velen-save-status');let pending=null,swipeClickUntil=0;const dialog=document.getElementById('velen-confirm-progress');
 
+const quests={...legacyQuests,nilf:{...legacyQuests.nilf,art:'art-velen/nilf.webp',position:'center'}};
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};const link=(text,href,cls='')=>{const a=el('a',cls,text);a.href=href.startsWith('index.html#')?href.slice(10):href.startsWith('#')?routeModel.sharedHash(href):href;return a;};
 // v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
 // the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
