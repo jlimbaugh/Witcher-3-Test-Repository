@@ -17,11 +17,20 @@ window.createPhoenixExplorationUI=function({state,tasks,hubs,navigate,progressUI
   categoryRail.append(card(c.name,'#exploration-'+c.id,artFor('category-'+c.id),'Open activity deck'));
   const view=make('section',null,'view scene diagram-view exploration-deck');view.id='exploration-'+c.id;view.hidden=true;applyArt(view,artFor('category-'+c.id));
   const inner=make('div',null,'scene-inner');inner.append(categoryBack('← White Orchard'),make('p','WHITE ORCHARD / EXPLORATION','eyebrow'),make('h1',c.name),make('p',c.intro,'lead'),make('p','Suggested travel order. Open any stop; check the live threat before committing.','exploration-route-note'));
-  const jump=make('select');jump.setAttribute('aria-label','Find '+c.name.toLowerCase());jump.append(make('option','Find an activity…'));jump.firstChild.value='';for(const id of c.ids){const opt=make('option',tasks[id].name);opt.value=id;jump.append(opt);}jump.onchange=()=>{if(jump.value)navigate('#'+tasks[jump.value].view);};inner.append(jump);
+  const jump=make('select');jump.setAttribute('aria-label','Find '+c.name.toLowerCase());jump.append(make('option','Find an activity…'));jump.firstChild.value='';for(const [index,id] of c.ids.entries()){const opt=make('option',(index+1)+'. '+tasks[id].name);opt.value=id;jump.append(opt);}jump.onchange=()=>{if(jump.value)navigate('#'+tasks[jump.value].view);};inner.append(jump);
   const activeHost=make('section'),active=rail(activeHost,c.name+' route');inner.append(activeHost);
   const empty=make('p','Every listed stop is recorded complete. Reopen Completed to review or correct a mark.','exploration-empty');inner.append(empty);
   const completed=make('details',null,'exploration-completed');completed.append(make('summary','Completed'));const done=rail(completed,'completed '+c.name.toLowerCase());inner.append(completed);
   const cards=new Map();for(const [index,id] of c.ids.entries()){const e=card(tasks[id].name,'#'+tasks[id].view,artFor(id),'Route '+String(index+1).padStart(2,'0')+' · '+details[id].threat);e.dataset.explorationCard=id;cards.set(id,e);active.append(e);}
+  const numbers=window.createPhoenixDeckJump(c.ids.map(id=>tasks[id].name),0,index=>{
+   const target=cards.get(c.ids[index]);
+   if(target.parentElement===done)completed.open=true;
+   const host=target.parentElement;
+   host.scrollLeft+=target.getBoundingClientRect().left-host.getBoundingClientRect().left;
+   target.focus({preventScroll:true});
+   numbers.update(index);numbers.center(index);
+  });
+  activeHost.append(numbers.frame);
   inner.append(categoryBack('All activity categories'));view.append(inner);document.querySelector('main').append(view);decks.set(c.id,{view,active,done,completed,empty,jump,cards});
  }
  function controls(id){const d=details[id],box=make('section',null,'exploration-record'),label=make('label',null,'diagram-acquired'),check=make('input');check.type='checkbox';check.dataset.complete=id;check.setAttribute('aria-label','Mark '+tasks[id].name+' completed');label.append(check,make('span',id==='cow-pasture-warning'?'Warning reviewed':categories.find(c=>c.ids.includes(id)).id==='travel'?'Signpost discovered':categories.find(c=>c.ids.includes(id)).id==='preparation'?'Station used':'Activity completed'));box.append(label,make('p','Done means: '+d.done,'completion-meaning'));const undo=make('button','Undo last progress change');undo.type='button';undo.dataset.explorationUndo='';undo.onclick=()=>progressUI.undoLast();box.append(undo);return box;}

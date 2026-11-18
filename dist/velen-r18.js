@@ -43,18 +43,20 @@ for(const offset of [-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
-box.append(deck,footer);
+const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true));
+box.append(deck,jump.frame,footer);
 deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('.quest-card.selected').focus({preventScroll:true});}};
 let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
 function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,false);if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
 deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
-function select(id){
+function select(id,focusJump=false){
   if(!Object.hasOwn(deckQuests,id))return;
   const y=viewport().scrollY;
   deckSelected=id;
   history.replaceState({...history.state,velen:{...history.state?.velen,selected:id}},'',location.href);
   if(Object.hasOwn(quests,id))state.selected=id;
   render({y,focus:false});
+  if(focusJump)screen.querySelector('.deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
 function consoleView(){
   const id=deckSelected,q=deckQuests[id],tracked=Object.hasOwn(quests,id);

@@ -24,6 +24,10 @@
    card.onclick=e=>{e.preventDefault();selected=i;commit();location.hash=item.href;};ring.append(card);return card;
   });
   const controls=make('div','orbit-controls'),prev=make('button','','← Previous'),status=make('span'),next=make('button','','Next →'),open=make('a','tarot-open-action','Open quest hub →');prev.type=next.type='button';status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');controls.append(prev,status,next);box.append(controls,open);
+  const jump=window.createPhoenixDeckJump(items.map(item=>item.name),initial,index=>{
+   stop();motion.position=index;selected=index;commit();jump.center(index);
+  });
+  controls.before(jump.frame);
   function save(){history.replaceState({...history.state,[key]:items[selected].quest,[phaseKey]:motion.position},'',location.href);}
   function paint(){
    const front=wrap(Math.round(motion.position),items.length);
@@ -34,6 +38,7 @@
     const illustration=card.querySelector('img[data-src]');if(illustration&&near&&illustration.getAttribute('src')!==illustration.dataset.src)illustration.src=illustration.dataset.src;
     card.style.opacity=String(Math.max(0,1-Math.abs(delta)*.42));card.style.visibility=near?'visible':'hidden';card.style.pointerEvents=near?'auto':'none';card.tabIndex=front===i?0:-1;card.setAttribute('aria-hidden',String(!near));card.setAttribute('aria-pressed',String(selected===i));card.classList.toggle('front-card',front===i);
    });
+   jump.update(front);
    const text=(front+1)+' / '+items.length;if(status.textContent!==text&&!motion.velocity)status.textContent=text;
   }
   function commit(){box.dataset.selectedQuest=items[selected].quest||'';open.href=items[selected].href;save();box.dispatchEvent(new CustomEvent('phoenix:card-selected',{bubbles:true,detail:{quest:items[selected].quest}}));paint();}
