@@ -193,3 +193,7 @@ After inspecting current records, respond briefly with your role, verified sourc
 ## Quest and activity card work
 
 Before adding or reviewing cards, read the [quest and activity card art template](QUEST-CARD-ART-TEMPLATE.md) and the [approved illustration standard](../ART-STANDARD.md). Verify the card’s subject, source, and mobile crop. Keep generic regional art marked pending.
+
+## Regional deck work
+
+Use the [approved regional deck template](REGION-DECK-TEMPLATE.md) when building a regional quest or activity deck. Reuse its numbers-only wraparound strip, fixed action art, and acceptance checks.

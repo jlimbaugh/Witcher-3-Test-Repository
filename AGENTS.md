@@ -48,3 +48,5 @@ package states its source commit, contents, exclusions and full SHA-256, as one 
 with consistent, unique names.
 
 For quest or activity card work, read `docs/QUEST-CARD-ART-TEMPLATE.md` and `ART-STANDARD.md` at session start.
+
+For regional quest or activity decks, read `docs/REGION-DECK-TEMPLATE.md` before editing.
