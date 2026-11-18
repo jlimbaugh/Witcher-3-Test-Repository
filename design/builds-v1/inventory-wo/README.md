@@ -1,6 +1,15 @@
 # Filled Inventory proof with White Orchard art scheme
 
-**[View the refined proof](proof.png)**
+**[Download the current HTML proof](review.html)**
+
+On the GitHub file page, use **Download raw file**, then open the saved HTML in a browser with internet access. GitHub displays HTML source on the file page. The review file loads its artwork and fonts from a pinned GitHub commit.
+
+The palette revision uses dark stone, iron and worn silver, with a warm neutral filter on the equipment and Geralt crops. Vitality and Toxicity have been removed. Parchment stays on the Gear guide exit.
+
+- LT: Check the palette, compact slots, socket-pip legibility and gear grouping against the Xbox photos.
+- PFC: Open the proof in iPhone Safari landscape. Check art loading, normal-zoom readability, clipping, alignment and both removed readouts.
+
+[Earlier static render](proof.png)
 
 Keeps the improved landscape grouping. Fills the collection, selected-piece details,
 profile, reference meters and build controls. Reuses White Orchard's actual scene,

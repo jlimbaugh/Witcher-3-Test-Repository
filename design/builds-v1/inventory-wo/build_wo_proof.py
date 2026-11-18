@@ -4,7 +4,7 @@ root=Path(__file__).resolve().parent
 source=(root.parent/'inventory-proof/build_proof.py').read_text().split("(root/'index.html').write_text(html)")[0]
 exec(compile(source,'inventory-layout','exec'),globals())
 wo='''@font-face{font-family:Journal;src:url('../../../dist/alegreya-latin-400-normal.woff2')}@font-face{font-family:Inscription;src:url('../../../dist/cinzel-latin-400-normal.woff2')}@font-face{font-family:Title;src:url('../../../dist/im-fell-english-latin-400-normal.woff2')}.page{background:linear-gradient(90deg,rgba(12,18,20,.94),rgba(12,18,20,.78),rgba(12,18,20,.94)),url('../../../dist/white-orchard-scene.webp') center/cover}.page:after{content:'';position:absolute;inset:45px 10px 61px;border:1px solid #a6ada5;pointer-events:none}header{height:44px;background:#111a1b;font:14px Inscription,serif;letter-spacing:2px;border-bottom:2px solid #8d9a92}.nav{top:61px;left:25px;gap:10px;width:1135px;height:50px;font-family:Inscription,serif;font-size:11px}.nav span{padding:12px 12px}.nav .selected{background:#2a3633;color:#f0ecde;border:1px solid #b1b9ac;box-shadow:inset 0 0 0 3px #151e1c}.frame{border-color:#76867c;background:rgba(14,23,22,.28);box-shadow:inset 0 0 0 2px #101917}.label,.hint{font-family:Journal,serif;color:#d7dbce;font-size:12px}.inventory{left:29px;top:145px;width:330px;height:552px;border:1px solid #8b9b8d;background:linear-gradient(145deg,rgba(32,44,39,.92),rgba(13,22,20,.94));padding:16px}.inventory h3{font:18px Title,serif;margin:0}.inventory .sub{font:12px Journal,serif;margin:8px 0;color:#b7c0b4}.group-name{position:absolute;font:11px Inscription,serif;color:#c7cdbd}.detail{position:absolute;left:45px;top:452px;width:297px;border-top:1px solid #809184;padding-top:12px}.detail h2{font:22px Title,serif;margin:3px 0 9px}.detail p{font:14px Journal,serif;margin:7px 0}.detail .quiet{color:#b3bdb3;font-size:12px}.detail .line{border-top:1px solid #54675c;margin-top:12px;padding-top:9px}.profile{position:absolute;left:1090px;top:155px;width:85px;text-align:center;font:12px Journal,serif}.profile b{font:27px Title,serif;display:block;margin:8px 0 23px;color:#dbe1d0}.dock{position:absolute;left:926px;top:408px;width:153px;border-top:1px solid #76867c;padding-top:10px;font:12px Journal,serif}.dock h3{font:15px Title,serif;margin:0 0 9px}.dock .row{border-bottom:1px solid #45594d;padding:9px 0}.dock button{display:block;width:100%;margin:7px 0;font:12px Journal,serif;height:36px}.guide{position:absolute;left:30px;top:713px;width:328px;height:55px;background:url('../../../dist/r10-haunted-scroll-concept.webp') center/cover;padding:15px;text-align:center;border:1px solid #a6ac9c;color:#302921;font:17px Title,serif}.note{left:399px;top:741px;width:680px;font:10px Journal,serif;color:#c6cfc1}.bottom{height:57px;background:#10191a;border-top:2px solid #84978a;padding:9px 24px}.bottom button{font:15px Journal,serif;width:140px;height:37px;padding:8px 18px;border-color:#aab8a5;background:linear-gradient(#34423b,#17251e);color:#eceddf;line-height:18px}.bottom .wolf{position:absolute;right:24px;top:-13px;width:70px;height:70px}.bottom .caption{position:absolute;left:350px;top:20px;font:13px Journal,serif;color:#c7d0c2}.slot-focus{position:absolute;left:928px;top:152px;width:60px;height:97px;border:1px solid #d7deca;box-shadow:0 0 5px #bbd3b077}.group-name{font-size:10px}'''
-html=html.replace('</style>',wo+'</style>').replace('PHOENIX · Inventory reconstruction study','PHOENIX · THE WITCHER’S FIELD JOURNAL')
+html=html.replace('</style>',wo+'</style><link rel="stylesheet" href="palette.css">').replace('PHOENIX · Inventory reconstruction study','PHOENIX · THE WITCHER’S FIELD JOURNAL')
 html=re.sub(r'<section class="inventory">.*?</section>','<section class="inventory"><h3>Equipment collection</h3><p class="sub">Armor · Weapons · Runes & glyphs</p></section>',html,flags=re.S)
 more=''
 items=[((940,252,997,345),'Chest'),((1009,252,1066,345),'Gloves'),((940,384,997,472),'Trousers'),((1009,384,1066,472),'Boots'),((430,244,496,346),'Steel'),((519,244,581,346),'Silver'),((45,340,91,383),'Glyph'),((104,344,150,387),'Rune')]
@@ -12,13 +12,19 @@ for i,(bounds,label) in enumerate(items):
  x=49+(i%4)*73;y=218+(i//4)*112
  more+=sprite(x,y,48,71,bounds,label)+f'<span class="label" style="left:{x-4}px;top:{y+78}px;width:57px">{label}</span>'
 more+='''<div class="detail"><p class="quiet">SELECTED PIECE · ARMOR</p><h2>Feline chest armor</h2><p>Inspect the piece, change its tier or review its upgrades.</p><p class="line">Planning selection: Enhanced</p><p class="quiet">Reference level 23 · source v4.04<br>Current-version requirements unverified.</p><p class="line quiet">Combat effects and crafting totals await verification.</p></div><div class="profile">REFERENCE LEVEL<b>36</b>AVAILABLE POINTS<b>4</b></div><div class="slot-focus"></div><div class="dock"><h3>Build controls</h3><button>Inspect piece</button><button>Change tier</button><button>Runes / glyphs</button><button>Compare change</button></div><div class="guide">Open Gear guide & crafting →</div>'''
+# Replace the inherited readouts below.
 html=html.replace('left:934px;top:560px','left:934px;top:655px').replace('left:1010px;top:560px','left:934px;top:679px').replace('VITALITY</span>','Vitality: 6010 (reference)</span>').replace('TOXICITY</span>','Toxicity: 4% (reference)</span>')
-html=re.sub(r'<p class="note">.*?</p>','<p class="note">Static design review · Photo art retains its camera cast. Reference values are from the screenshot, not calculated build performance.</p>',html)
+html=re.sub(r'<span class="hint"[^>]*>(?:Vitality|Toxicity):[^<]+</span>', '', html)
+html=re.sub(r'<p class="note">.*?</p>','<p class="note">Static design review · Level and ability points are illustrative.</p>',html)
 html=re.sub(r'<footer class="bottom">.*?</footer>','<footer class="bottom"><button>Save build</button><button>Save a copy</button><span class="caption">White Orchard materials · compact game-menu layout</span><img class="wolf" src="../../../dist/wolf-medallion-silver.png" alt="Navigate"></footer>',html,flags=re.S)
 html=html.replace('</main>',more+'</main>').replace('src="inventory-reference.jpg"','src="../inventory-proof/inventory-reference.jpg"')
 (root/'index.html').write_text(html)
-from weasyprint import HTML
-HTML(filename=str(root/'index.html')).write_pdf(root/'proof.pdf')
-import fitz
-pdf=fitz.open(root/'proof.pdf');pdf[0].get_pixmap(matrix=fitz.Matrix(1.5,1.5)).save(root/'proof.png')
-print('WO Inventory proof rendered')
+import subprocess
+import tempfile
+
+with tempfile.TemporaryDirectory() as profile:
+ subprocess.run([
+  'chromium', '--headless', '--no-sandbox', '--hide-scrollbars',
+  f'--user-data-dir={profile}', '--window-size=1200,850', '--force-device-scale-factor=1',
+  f'--screenshot={root / "palette-proof.png"}', (root / 'index.html').as_uri(),
+ ], check=True)
