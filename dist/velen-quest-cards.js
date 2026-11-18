@@ -535,6 +535,41 @@
         {title:'Defeat the Red Miasmal',place:'Salt cavern',actions:['Free Reinald with Aard. Place Yrden and hit possessed Reinald with Aard while he is in the trap to weaken the possession.','When the Red Miasmal emerges, defeat it and deal with the plague victims it summons.']},
         {title:'Resolve Reinald’s fate',place:'Salt cavern',warning:'If you bring the deacon in, your dialogue can determine whether he survives.',actions:['Speak to Reinald’s spirit and decide whether to bring in the deacon.','To keep the deacon alive if you bring him in, defend him as innocent and say that he can do good without the church.'],note:'You receive the Forgotten Wolven diagrams regardless of the ending. The follow-up scavenger hunt continues in Kaer Morhen.'}
       ]
+    },
+    'thou-shalt-not-pass': {
+      name:'Thou Shalt Not Pass',kind:side,place:'Border Post bridge or Oxenfurt’s Western Gate',
+      art:'art-velen/thou-shalt-not-pass.webp',
+      briefing:'Secure a pass and show it to a Redanian guard to cross the Pontar.',
+      start:'Approach a guard at the Border Post bridge or Oxenfurt’s Western Gate.',
+      completion:'Present an accepted pass to a guard at either crossing.',
+      sources:[guide+'thoushaltnotpass.php',field+'thou-shalt-not-pass'],
+      stages:[
+        {title:'Get a pass accepted by the guards',place:'Crow’s Perch and Border Post',actions:['If you already have a pass, go straight to the guard.','For an official pass, ask the Baron before heading to see Tamara during Family Matters, or earn a Letter of Safe Conduct from the captain on a qualifying Woodland Beast route.','For a forged pass, buy one during Fake Papers.'],note:'If the Woodland Beast captain withholds your reward, use the Baron or merchant route instead. A forged pass obtained later from Gregor during A Deadly Plot also works.',links:[['Family Matters','family-matters'],['Contract: Woodland Beast','woodland-beast'],['Fake Papers','fake-papers']]},
+        {title:'Show your papers',place:'Border Post bridge or Oxenfurt’s Western Gate',actions:['Return to a Redanian guard at either crossing and show your pass.','Continue once the guard admits you and the journal records the crossing quest as complete.']}
+      ]
+    },
+    'fake-papers': {
+      name:'Fake Papers',kind:side,place:'Refugee camp south of the Border Post',
+      art:'art-velen/fake-papers.webp',
+      briefing:'Buy a forged Transit Pass from the shady merchant, with or without a discount.',
+      start:'Speak to the shady merchant on the Velen side of the Border Post.',
+      completion:'Buy the forged Transit Pass from the merchant.',
+      sources:[guide+'fakepapers.php',field+'fake-papers','https://witcher.fandom.com/wiki/Fake_Papers'],
+      stages:[
+        {title:'Choose how to buy the forged pass',place:'Border Post refugee camp',warning:'If Albin dies, reporting his death to the merchant ends the deal. Keep that dialogue closed if you still want to buy the forged pass.',actions:['Pay 100 crowns outright or ask for another option and use Axii with Delusion rank 1 to pay 50.','For the 25-crown price, help Albin in Bitter Harvest and return after he survives.','If Albin dies, skip the report about his death and buy the pass at full price if the deal is still open.'],note:'An official pass can get you across the border. Fake Papers itself completes when you buy the forged pass.',links:[['Bitter Harvest','bitter-harvest'],['Thou Shalt Not Pass','thou-shalt-not-pass']]}
+      ]
+    },
+    'bitter-harvest': {
+      name:'Bitter Harvest',kind:side,level:9,place:'Battlefield southeast of the Border Post',
+      art:'art-velen/bitter-harvest.webp',
+      briefing:'Protect Albin Hart and his scavengers while they work the battlefield.',
+      start:'Speak to Albin at the battlefield, either on your own or after meeting the merchant in Fake Papers.',
+      completion:'Defeat the necrophage waves and resolve the encounter with the surviving scavengers.',
+      sources:[guide+'bitterharvest.php','https://witcher.fandom.com/wiki/Bitter_Harvest'],
+      stages:[
+        {title:'Prepare before accepting Albin’s job',place:'Battlefield camp',warning:'Accepting starts the attack. Save beforehand if you want to retry for the Fake Papers discount. That discount requires Albin himself to survive.',actions:['Find Albin at the battlefield southeast of the checkpoint.','Prepare for ghouls and a rotfiend, then agree to defend the scavengers.']},
+        {title:'Defend the scavengers and resolve the job',place:'Battlefield',actions:['Stay near Albin and intercept the necrophages attacking the crew. Back away from the rotfiend when it is about to burst.','Once the waves are clear, speak to Albin if he survives. If he dies, see the encounter through and check the journal outcome.'],note:'If Albin lives, return to the merchant for the discount. If the whole crew dies, Bitter Harvest fails. An official pass remains available through the other quest routes.',links:[['Fake Papers','fake-papers'],['Thou Shalt Not Pass','thou-shalt-not-pass']]}
+      ]
     }
   });
 })(window);

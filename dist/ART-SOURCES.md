@@ -85,3 +85,5 @@ The second Velen contract batch uses original AI-generated portraits of the patr
 The final Velen contract batch uses original guide illustrations for the woodland Scoia’tael, the highland archgriffin, the alghouls at Honorton, and Harrisi the arachas. The linked Master Armorers and Where the Cat and Wolf Play… cards illustrate Yoana at the forge and Gaetan near his shrine. Honorton’s image depicts the first encounter before the journal handoff.
 
 The Velen side-quest batch uses four original guide illustrations: Gaetan’s stash, Reardon Manor, Letho in the trapped barn, and the Red Miasmal at Devil’s Pit.
+
+The Velen Border Post batch uses three original guide illustrations: the Redanian checkpoint, the forged-pass merchant, and Albin’s scavengers on the battlefield.
