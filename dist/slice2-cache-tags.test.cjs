@@ -156,8 +156,9 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
  assert.deepEqual([...new Set(changed)],['app.js','character-entry.js','character-gear.js','character-ui.js','character-vault.js','character.css','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js','velen-nilf-ui.js','velen-quest-cards.js','velen-r18.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
- for(const f of ['app.js','home-ui.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
- for(const f of ['shared-walkthrough.css','shared-walkthrough.js','velen-r18.js','velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-quest-art-11',f);
+ for(const f of ['app.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
+ for(const f of ['home-ui.js','velen-r18.js'])assert.equal(tags[f],'quest-action-art-12',f);
+ for(const f of ['shared-walkthrough.css','shared-walkthrough.js','velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-quest-art-11',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
  const refs=refsOf(here).map(r=>({...r}));

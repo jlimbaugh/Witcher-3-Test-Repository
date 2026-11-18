@@ -70,8 +70,8 @@ function consoleView(){
   const actions=el('nav','tiles console-tiles');
   actions.setAttribute('aria-label','Selected quest actions');
   actions.append(
-    artTile('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1),q.art,q.position),
-    artTile(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,q.art,'right center')
+    artTile('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1),'navigation-art-v26/action-walkthrough.webp'),
+    artTile(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,'navigation-art-v26/action-quest-hub.webp')
   );
   selected.append(actions);
   screen.append(selected);

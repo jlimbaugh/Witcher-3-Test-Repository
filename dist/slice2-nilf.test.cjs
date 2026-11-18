@@ -157,7 +157,7 @@ const PROTECTED={
 //   home-ui.js    v45 ..... d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd
 //                 issue #4  dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722 (passes navigationOnly; guards
 //                           warningHistory.v1 / pendingWarnings.v1: unreadable or denied saves are never written)
-const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722'};
+const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'ac7c6fa28bd63188821aa3aed12eb3d8e6854e00eb3a8782d1cde373f2a4475d'};
 test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed candidate bytes',()=>{
  for(const [f,sum] of Object.entries(CANDIDATE_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed issue #4 candidate; update CANDIDATE_PINS deliberately');
  for(const f of Object.keys(CANDIDATE_PINS))assert.ok(!Object.hasOwn(PROTECTED,f),f+' is pinned once');
@@ -168,7 +168,7 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 //   QA3 save guard ........... a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898 (owner-authorized guard in save())
 //   QA6 D4 storage guard ..... ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d (Cmdr-authorized: guarded
 //                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
-const SEAM_PINS={'velen-r18.js':'90e93eb7f1a8562f257095c45473b094c3afc24657152552ae07f4f5d261071f'};
+const SEAM_PINS={'velen-r18.js':'e6f5a56d6d989c3ab579ebf94a983aa621ae499b5c5449185745e250a6815c30'};
 test('Slice 2 seam pin: velen-r18.js matches the declared Velen card seam',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });
