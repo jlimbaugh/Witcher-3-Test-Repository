@@ -208,7 +208,22 @@
     if(isSel&&!st.done&&st.text!=='Not completed')box.setAttribute('aria-description',st.text);
     box.addEventListener('click',()=>{if(!box.classList.contains('selected'))choose(a,o.id,true);});rail.append(box);}
    rail.addEventListener('keydown',e=>{const i=a.lay.primary.findIndex(o=>o.id===selected);const n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:e.key==='Home'?0:e.key==='End'?a.lay.primary.length-1:-2;if(n<-1)return;e.preventDefault();const o=a.lay.primary[Math.max(0,Math.min(a.lay.primary.length-1,n))];if(o&&o.id!==selected)choose(a,o.id,true,true);});
-   let settle=0;rail.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{if(!rail.isConnected||rail.dataset.programmatic)return;const r=rail.getBoundingClientRect(),mid=r.left+r.width/2;let best=null,dist=1e9;for(const b of rail.children){const bb=b.getBoundingClientRect(),d=Math.abs(bb.left+bb.width/2-mid);if(d<dist){dist=d;best=b;}}if(best&&dist<r.width*.25&&best.dataset.swObjective!==selected){const from=a.lay.primary.findIndex(o=>o.id===selected),to=a.lay.primary.findIndex(o=>o.id===best.dataset.swObjective);choose(a,a.lay.primary[from+Math.sign(to-from)].id,false);}},160);},{passive:true});
+   let settle=0;
+   rail.addEventListener('scroll',()=>{
+    clearTimeout(settle);
+    if(rail.dataset.programmatic)return;
+    settle=setTimeout(()=>{
+     if(!rail.isConnected||rail.dataset.programmatic)return;
+     const frame=rail.getBoundingClientRect(),mid=frame.left+frame.width/2;
+     let closest=null,distance=Infinity;
+     for(const box of rail.children){
+      const rect=box.getBoundingClientRect(),gap=Math.abs(rect.left+rect.width/2-mid);
+      if(gap<distance){closest=box;distance=gap;}
+     }
+     const id=closest?.dataset.swObjective;
+     if(id&&id!==selected)choose(a,id,false);
+    },160);
+   },{passive:true});
    selector.append(rail);
    if(warningCaption)selector.append(warningCaption);
    if(warningPanel)selector.append(warningPanel);

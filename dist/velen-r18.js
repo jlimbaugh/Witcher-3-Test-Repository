@@ -103,7 +103,7 @@ function readingPage(id,q,index,legacy){
   tools.append(back);
   page.append(heading,panel,tools);
   const story=stage.choice?()=>{const section=el('div','sw-story');choice(stage.choice,section);return section;}:null;
-  window.PhoenixVelenReadingPages.set(page,{id,q,index,story,goStage:n=>go('#quest/'+id+'/'+n,{hubReturn:history.state?.velen?.hubReturn})});
+  window.PhoenixVelenReadingPages.set(page,{id,q,index,story,goStage:n=>go('#quest/'+id+'/'+n,{hubReturn:history.state?.velen?.hubReturn,restoreY:Math.round(viewport().scrollY)})});
   screen.append(page);
 }
 function walkthrough(id,stage){if(id==='nilf'&&nilfOwned()){apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();rememberReading(id);nilfUI.walkthrough(screen,state.stage[id]-1);return;}const q=quests[id];apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();rememberReading(id);readingPage(id,q,state.stage[id]-1,true);}
