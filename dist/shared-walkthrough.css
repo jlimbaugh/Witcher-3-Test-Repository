@@ -160,3 +160,18 @@ html body #velen-screen > :is(.velen-nilf-page,.velen-reading-page).sw-page {
 @media (orientation:landscape) and (max-height:500px) {
   .sw-rail { --sw-card-width: 56%; }
 }
+
+/* Preserve the menu footer as a vertical-scroll target. */
+.orbit-controls,
+.main-deck-controls,
+.diagram-browse,
+.quest-hub-rail-controls,
+.home-tools-browse,
+.tree-controls {
+  min-height: 48px;
+  touch-action: pan-y;
+}
+:is(.orbit-controls,.main-deck-controls,.diagram-browse,.quest-hub-rail-controls,.home-tools-browse) > button,
+.tree-controls > :is([data-earlier],[data-later]) {
+  display: none !important;
+}
