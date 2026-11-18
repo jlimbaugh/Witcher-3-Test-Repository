@@ -1048,6 +1048,37 @@
         {"title":"Clear the riverbank and read the letter","place":"Riverbank west of Gustfields Farm","actions":["Defeat the basilisk at the marker. Take the unsent letter and slightly bent key from Jeanette’s body, then read the letter."]},
         {"title":"Open the dowry chest","place":"Riverbank cache","actions":["Use Witcher Senses to locate the nearby locked chest. Open it with the slightly bent key and take the loot."]}
       ]
+    },
+    'griffin-school-gear': {
+      name:'Scavenger Hunt: Griffin School Gear',
+      kind:'Treasure hunt',
+      place:'Hindhold, Lornruk and Dragonslayer’s Grotto',
+      level:11,
+      art:'art-velen/griffin-school-gear.webp',
+      briefing:'Recover all six base Griffin diagrams from three sites in Velen.',
+      start:'Read a clue or collect a diagram at any of the three sites. You can visit them in any order.',
+      completion:'Collect both sword diagrams and all four armor diagrams, and read any notes still marked unread in the hunt.',
+      sources:['https://www.witcher.tools/quests/scavenger-hunt-griffin-school-gear','https://witcher3.th.gl/guides/griffin-school-gear-diagram-locations'],
+      stages:[
+        {
+          title:'Recover the steel sword diagram',
+          place:'Hindhold',
+          actions:['Climb the ruined tower and deal with any endregas and harpies in the way. Look behind the wooden door on the upper level.','Search the remains for the Griffin steel sword diagram and Balstick’s letter. Check the nearby container for George’s confession and read the notes you find.']
+        },
+        {
+          title:'Recover the silver sword diagram',
+          place:'Lornruk lighthouse',
+          warning:'Check your descent to the water. The rocks below the raised bridge make a blind jump dangerous.',
+          actions:['Descend to the water and swim through the submerged cave beneath the lighthouse. Surface inside and climb the ledges and ladder to the fortress side of the bridge.','Take the second ladder near the grindstone to the chest. Loot the Griffin silver sword diagram and read the craftsman’s notes.']
+        },
+        {
+          title:'Recover all four armor diagrams',
+          place:'Dragonslayer’s Grotto',
+          warning:'Wraiths, poison gas and an ekimmara guard the grotto. Stand clear if you ignite the gas.',
+          actions:['Enter the grotto, clear the wraiths and use Aard to break through the cracked wall. Move through the gas pockets after clearing them with a Sign.','Defeat the ekimmara. Loot George’s chest for the armor, gauntlets, trousers and boots diagrams, then read his notes.'],
+          note:'The base diagrams are journeyman recipes. Take the sword diagrams to a blacksmith and the armor diagrams to an armorer.'
+        }
+      ]
     }
   });
 })(window);

@@ -103,3 +103,5 @@ Four more original treasure hunt illustrations depict the Fyke Isle ruins, the H
 The third Velen treasure batch adds four original illustrations of the scaffolding stash, the haunted elven ruins, the White Eagle Fort swamp chest, and the half-sunken merchant wreck.
 
 Four original treasure hunt illustrations depict the wrecked wagon, the battlefield cache, the burned house near Condyle, and the basilisk-guarded dowry.
+
+The base Griffin scavenger hunt uses an original illustration of Griffin diagrams beside George’s tomb in Dragonslayer’s Grotto.
