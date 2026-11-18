@@ -269,11 +269,11 @@
       art:'art-velen/favor-for-a-friend.webp',
       name:'A Favor for a Friend',kind:side,level:6,place:'Hangman’s Alley',
       briefing:'Find Keira’s missing delivery and bring it back to her cottage.',
-      start:'Accept Keira’s request after lifting the Fyke Isle curse.',
+      start:'Accept Keira’s request after lifting the Fyke Isle curse. Resolve Lynch Mob first if you want to intervene at Hangman’s Alley.',
       completion:'Deliver the package and finish the evening with Keira.',
       sources:[guide+'afavorforafriend.php'],
       stages:[
-        {title:'Find the missing package',place:'Hangman’s Alley',actions:['Use Witcher Senses to follow the wagon tracks off the road.','Take Keira’s package beside the damaged wagon. Inspect the trader’s trail if you want the optional evidence.']},
+        {title:'Find the missing package',place:'Hangman’s Alley',actions:['Use Witcher Senses to follow the wagon tracks off the road.','Take Keira’s package beside the damaged wagon. Inspect the trader’s trail if you want the optional evidence.'],links:[['Lynch Mob','lynch-mob']]},
         {title:'Return to Keira',place:'Cottage and glade',actions:['Deliver the package and ride with Keira to the glade.','Finish the conversation and evening. Your answer to her invitation does not prevent the next quest.'],links:[['For the Advancement of Learning','advancement-of-learning']]}
       ]
     },
@@ -630,6 +630,64 @@
         {"title": "Attend the ritual", "place": "Fyke Isle stone circle", "actions": ["Meet the Pellar around midnight and speak to him to start the rite.", "Defeat the drowners and water hag that come to the circle."], "links": [["A Towerful of Mice", "towerful-of-mice"]]},
         {"title": "Decide whether to intervene", "place": "Fyke Isle stone circle", "actions": ["When the witch hunters arrive, step aside to end your part in the ritual or defend the Pellar.", "If you defend him, defeat the hunters and the wraiths that appear, then speak to the Pellar about Ambros."], "warning": "Stepping aside ends the quest here and costs access to the Pellar’s trading services."},
         {"title": "Lay Ambros to rest", "place": "Crookback Bog and the Pellar’s hut", "actions": ["On the defense route, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni.", "Report back to the Pellar at his hut."]}
+      ]
+    },
+    'death-by-fire': {
+      name: "Death by Fire",
+      kind: "Side quest",
+      place: "Road west of Codgers’ Quarry",
+      level: 10,
+      art: "art-velen/death-by-fire.webp",
+      briefing: "Rescue the elf trapped in a burning hut.",
+      start: "Approach the burning hut west of Codgers’ Quarry.",
+      completion: "Free the elf and speak with her.",
+      sources: ["https://www.witcher.tools/quests/death-by-fire", "https://www.gamebanshee.com/thewitcher3/walkthrough/deathbyfire.php"],
+      stages: [
+        {"title": "Intervene at the burning hut", "place": "Codgers’ Quarry road", "actions": ["Challenge the bandits and defeat them. Use Aard on the barricaded door to free the elf.", "Speak to the survivor once she’s outside."], "warning": "Handle this encounter when you find it. Walking away forfeits the rescue.", "note": "The survivor points you to an optional payment hidden in the wood behind the hut."}
+      ]
+    },
+    'lynch-mob': {
+      name: "Lynch Mob",
+      kind: "Side quest",
+      place: "Hangman’s Alley",
+      level: 7,
+      art: "art-velen/lynch-mob.webp",
+      briefing: "Decide whether to intervene when villagers threaten a captured Nilfgaardian deserter.",
+      start: "Approach the villagers near the Hangman’s Alley signpost before starting A Favor for a Friend.",
+      completion: "Resolve the encounter. If you intervene, defend the deserter and speak with him afterward.",
+      sources: ["https://www.witcher.tools/quests/lynch-mob", "https://witcher.fandom.com/wiki/Lynch_Mob"],
+      stages: [
+        {"title": "Decide the deserter’s fate", "place": "Hangman’s Alley", "actions": ["Speak to the ringleader. To intervene, demand the man’s release and stand your ground when the villagers refuse.", "Defeat the attackers and speak to the deserter. If you stand aside, the villagers hang him."], "warning": "Passing by without intervening can end the encounter. Resolve it before starting A Favor for a Friend.", "links": [["A Favor for a Friend", "favor-for-a-friend"]]}
+      ]
+    },
+    'defender-of-the-faith': {
+      name: "Defender of the Faith",
+      kind: "Side quest",
+      place: "Road between Blackbough and Crow’s Perch",
+      level: 10,
+      art: "art-velen/defender-of-the-faith.webp",
+      briefing: "Restore roadside shrines and confront the people knocking them down.",
+      start: "Speak to the woman beside the overturned shrine between Blackbough and Crow’s Perch.",
+      completion: "Restore the first two shrines and resolve the confrontation at the final shrine.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/defenderofthefaith.php", "https://www.witcher.tools/quests/defender-of-the-faith"],
+      stages: [
+        {"title": "Restore the roadside shrines", "place": "Blackbough road and marked shrines", "actions": ["Set the first shrine upright after speaking to the woman. Follow the quest markers and restore the next damaged shrine."]},
+        {"title": "Confront the vandals", "place": "Final shrine", "actions": ["Hear the students out. Insist they stop vandalizing the shrines and defeat them when they attack."], "warning": "Choosing to stay out of the dispute fails the quest. Completing it unlocks Last Rites.", "links": [["Last Rites", "last-rites"]]}
+      ]
+    },
+    'last-rites': {
+      name: "Last Rites",
+      kind: "Side quest",
+      place: "Bridge north of Blackbough",
+      level: 9,
+      art: "art-velen/last-rites.webp",
+      briefing: "Carry a wedding ring to Jackamar’s grave and return to Blackbough.",
+      start: "Complete Defender of the Faith, then find the old woman across the bridge north of Blackbough at night.",
+      completion: "Place the ring on Jackamar’s grave and speak with Lessy in Blackbough.",
+      sources: ["https://www.witcher.tools/quests/last-rites", "https://witcher.fandom.com/wiki/Last_Rites"],
+      stages: [
+        {"title": "Accept the ring", "place": "Bridge north of Blackbough", "actions": ["Speak to the woman at night and agree to deliver her wedding ring."], "links": [["Defender of the Faith", "defender-of-the-faith"]]},
+        {"title": "Find Jackamar’s grave", "place": "Cemetery near the Pellar’s hut", "actions": ["Head northwest from the bridge. Clear any ghouls and use Witcher Senses to identify Jackamar’s grave.", "Place the ring at the grave, then find Lessy outside her hut in Blackbough to finish."], "note": "If you have Keira’s Magic Lamp, use it at the grave after placing the ring to see an optional scene."}
       ]
     }
   });
