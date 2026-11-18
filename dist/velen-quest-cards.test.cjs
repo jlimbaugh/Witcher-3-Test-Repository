@@ -23,3 +23,13 @@ test('Velen reading cards have owners, sourced instructions and reachable follow
  }
  assert.deepEqual(Object.keys(legacy.quests),['nilf','pyres','mercy']);
 });
+
+test('Velen quest cards reference distinct packaged WebP illustrations',()=>{
+ const allArt=['art-velen/nilf.webp',legacy.quests.pyres.art,legacy.quests.mercy.art,...Object.values(cards).map(card=>card.art)];
+ assert.equal(new Set(allArt).size,allArt.length);
+ for(const art of allArt){
+  assert.match(art,/^(?:art-velen\/)?[a-z0-9-]+\.webp$/);
+  const bytes=readFileSync(path.join(__dirname,art));
+  assert.equal(bytes.toString('ascii',8,12),'WEBP',art);
+ }
+});

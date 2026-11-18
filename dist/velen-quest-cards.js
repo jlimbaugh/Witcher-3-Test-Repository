@@ -3,6 +3,7 @@
 (function (root) {
   root.PhoenixVelenQuestCards = {
     baron: {
+      art:'art-velen/baron.webp',
       briefing: 'Follow Hendrik’s lead to Crow’s Perch and find out what the Baron knows about Ciri.',
       completion: 'Finish the audience with the Baron. The handoff is Ciri’s Story: The King of the Wolves.',
       sources: [
@@ -41,6 +42,7 @@
       ]
     },
     witch: {
+      art:'art-velen/witch.webp',
       briefing: 'Follow the second lead from Hendrik’s notes to Midcopse and find the witch’s cottage.',
       completion: 'Finish the conversation with Keira about Ciri and the masked mage. Continue in Wandering in the Dark.',
       sources: [
@@ -89,6 +91,7 @@
   };
   Object.assign(root.PhoenixVelenQuestCards, {
     princess: {
+      art:'art-velen/princess.webp',
       name:'A Princess in Distress', kind:'Main quest', level:5, place:'Pellar’s hut near Blackbough',
       briefing:'Find Princess so the Pellar can continue the investigation into Anna and Tamara.',
       start:'Speak to the Pellar about Anna’s talisman during Family Matters.',
@@ -100,6 +103,7 @@
       ]
     },
     'ciris-room': {
+      art:'art-velen/ciris-room.webp',
       name:'Ciri’s Room', kind:'Side quest', level:5, place:'Crow’s Perch',
       briefing:'Search Ciri’s old room and speak with Gretka about her stay.',
       start:'Look for the quest after hearing the Baron’s first account of Ciri.',
@@ -111,6 +115,7 @@
       ]
     },
     'wandering-in-the-dark': {
+      art:'art-velen/wandering-in-the-dark.webp',
       name:'Wandering in the Dark', kind:'Main quest', place:'Elven ruins',
       briefing:'Explore the elven mage’s ruins with Keira and follow the Wild Hunt.',
       start:'At the end of Hunting a Witch, travel with Keira or meet her at the ruins.',
@@ -124,6 +129,7 @@
       ]
     },
     'magic-lamp': {
+      art:'art-velen/magic-lamp.webp',
       name:'Magic Lamp', kind:'Side quest', place:'Elven ruins',
       briefing:'Help Keira find the lamp promised to her by the elven mage.',
       start:'Agree to help when Keira asks at the end of Wandering in the Dark.',
@@ -136,6 +142,7 @@
       ]
     },
     'ladies-of-the-wood': {
+      art:'art-velen/ladies-of-the-wood.webp',
       name:'Ladies of the Wood', kind:'Main quest', place:'Crookback Bog',
       briefing:'Follow Ciri’s trail to the orphans and learn what the Crones know.',
       start:'Read the book Keira gives you during Wandering in the Dark.',
@@ -149,6 +156,7 @@
       ]
     },
     'whispering-hillock': {
+      art:'art-velen/whispering-hillock.webp',
       name:'The Whispering Hillock', kind:'Quest', place:'The Ancient Oak',
       briefing:'Find what lives beneath the oak and decide how to resolve the spirit’s request.',
       start:'Follow the ealdorman’s lead during Ladies of the Wood. This route assumes you visit the Hillock in that order.',
@@ -166,6 +174,7 @@
   const guide='https://www.gamebanshee.com/thewitcher3/walkthrough/';
   Object.assign(root.PhoenixVelenQuestCards,{
     'king-of-the-wolves': {
+      art:'art-velen/king-of-the-wolves.webp',
       name:'Ciri’s Story: The King of the Wolves',kind:main,place:'Riverbed near Lindenvale',
       briefing:'Play as Ciri and help Gretka get through wolf country.',
       start:'Hear the Baron’s first account in Bloody Baron.',
@@ -178,6 +187,7 @@
       ]
     },
     'family-matters': {
+      art:'art-velen/family-matters.webp',
       name:'Family Matters',kind:main,place:'Crow’s Perch',
       briefing:'Investigate the disappearance of Anna and Tamara while the Baron fills in Ciri’s story.',
       start:'Continue the conversation after the Baron’s first Ciri flashback.',
@@ -191,6 +201,7 @@
       ]
     },
     'ciris-race': {
+      art:'art-velen/ciris-race.webp',
       name:'Ciri’s Story: The Race',kind:main,place:'Abandoned Tower',
       briefing:'Ride against the Baron during his second flashback.',
       start:'Report to the Baron after questioning Voytek in Family Matters.',
@@ -199,6 +210,7 @@
       stages:[{title:'Race to the tower',place:'Velen woodland track',actions:['Finish the wager scene and ride the marked route to the tower.','Keep to the track and use a gallop on clear stretches. Either finish order advances the story.'],links:[['Family Matters','family-matters']]}]
     },
     'out-of-the-shadows': {
+      art:'art-velen/out-of-the-shadows.webp',
       name:'Ciri’s Story: Out of the Shadows',kind:main,place:'Abandoned Tower',
       briefing:'Resume Ciri’s encounter with the basilisk and rescue the Baron.',
       start:'Tell the Baron what happened to Anna during Family Matters.',
@@ -210,6 +222,7 @@
       ]
     },
     'return-to-crookback-bog': {
+      art:'art-velen/return-to-crookback-bog.webp',
       name:'Return to Crookback Bog',kind:side,level:9,place:'Downwarren and Crookback Bog',
       briefing:'Join the Baron and Tamara in their search for Anna.',
       start:'Take up the Baron’s request after Family Matters and meet him at Downwarren.',
@@ -222,6 +235,7 @@
       ]
     },
     'fleeing-the-bog': {
+      art:'art-velen/fleeing-the-bog.webp',
       name:'Ciri’s Story: Fleeing the Bog',kind:main,level:5,place:'Crookback Bog',
       briefing:'Escape the Crones’ territory as Ciri.',
       start:'Hear the Crones’ account near the end of Ladies of the Wood.',
@@ -230,6 +244,7 @@
       stages:[{title:'Run through the bog',place:'Crones’ village and escape path',actions:['As soon as you regain control, follow the quest route away from the hut.','Use Ciri’s dodge to pass enemies and keep moving until the escape scene triggers.'],links:[['Ladies of the Wood','ladies-of-the-wood']]}]
     },
     'keira-invitation': {
+      art:'art-velen/keira-invitation.webp',
       name:'An Invitation from Keira Metz',kind:side,place:'Keira’s cottage',
       briefing:'Find out why Keira invited you back after the ruins.',
       start:'After Keira’s invitation, return to her cottage near Midcopse.',
@@ -238,6 +253,7 @@
       stages:[{title:'Accept the Fyke Isle investigation',place:'Keira’s cottage',actions:['Ask Keira why she invited you.','Agree to investigate Fyke Isle. Take the magic lamp and xenovox.'],links:[['A Towerful of Mice','towerful-of-mice']]}]
     },
     'towerful-of-mice': {
+      art:'art-velen/towerful-of-mice.webp',
       name:'A Towerful of Mice',kind:side,level:6,place:'Fyke Isle',
       briefing:'Investigate the hauntings at the tower and decide how to lift the curse.',
       start:'Accept Keira’s request at her cottage.',
@@ -250,6 +266,7 @@
       ]
     },
     'favor-for-a-friend': {
+      art:'art-velen/favor-for-a-friend.webp',
       name:'A Favor for a Friend',kind:side,level:6,place:'Hangman’s Alley',
       briefing:'Find Keira’s missing delivery and bring it back to her cottage.',
       start:'Accept Keira’s request after lifting the Fyke Isle curse.',
@@ -261,6 +278,7 @@
       ]
     },
     'advancement-of-learning': {
+      art:'art-velen/advancement-of-learning.webp',
       name:'For the Advancement of Learning',kind:side,level:8,place:'Fyke Isle tower',
       briefing:'Find Keira with Alexander’s research and decide what happens next.',
       start:'Follow Keira to Fyke Isle after A Favor for a Friend.',

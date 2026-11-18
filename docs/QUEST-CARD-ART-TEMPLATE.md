@@ -16,4 +16,4 @@ A generic regional landscape means art is pending. Card and walkthrough acceptan
 
 ## Velen art pass
 
-The November 18 test build contains 21 walkthroughs. The Nilfgaardian Connection and all 18 expansion cards in the deck currently use the Velen landscape. Start their art pass with quest-specific briefs. Funeral Pyres and At the Mercy of Strangers have dedicated assets and still need subject and crop checks.
+All 21 implemented Velen walkthroughs now have distinct card illustrations. The November 18 art pass added 19 quest-specific images in `dist/art-velen/` and retained the dedicated Funeral Pyres and At the Mercy of Strangers illustrations. Portrait crop review is complete. Physical iPhone Safari review is pending. Future cards use this template before art acceptance.
