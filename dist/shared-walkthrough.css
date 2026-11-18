@@ -207,3 +207,7 @@ html body .velen-progress-dialog[open] {
 .velen-progress-dialog [data-review-impact] summary { padding-block:8px; }
 .velen-progress-dialog .dialog-actions { flex:none; margin-top:8px; gap:8px; }
 .velen-progress-dialog .dialog-actions button { min-height:44px; padding:6px 10px; }
+
+/* Let the selected objective take its position before Safari snaps. */
+.sw-rail[data-programmatic] { scroll-snap-type: none; scroll-behavior: auto; }
+.sw-rail > .sw-box { scroll-snap-stop: always; }

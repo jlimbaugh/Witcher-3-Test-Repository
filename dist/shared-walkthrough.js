@@ -173,7 +173,7 @@
   function render(a){
    const host=a.section.querySelector('.reading-panel');if(!host)return;
    a.section.classList.add('sw-page');
-   const old=host.querySelector(':scope>.sw-walkthrough');const oldRail=old?.querySelector('.sw-rail');
+   const old=host.querySelector(':scope>.sw-walkthrough');
    const pageY=viewport().scrollY;
    const stage=a.currentStage();
    let selected=selectFor({stage,remembered:remembered(a.key),primary:a.lay.primary,ownerOf:a.lay.ownerOf});
@@ -290,30 +290,27 @@
      source.href='velen-sources.html#'+a.sourceId;a.section.append(source);
     }
    }
+   rail.dataset.programmatic='1';
    if(old)old.replaceWith(root_);else host.prepend(root_);
    // Story & correction controls (P2 A): existing controls, re-hosted as one quest-level row.
    if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources;if(anchor)anchor.before(story);else host.append(story);}
    story.querySelector('.sw-row-body').replaceChildren(a.story());}
    const box=rail.querySelector('.selected');
-   if(box){
-    rail.dataset.programmatic='1';
-    const prior=a.section.dataset.swRestoreRail;
-    delete a.section.dataset.swRestoreRail;
-    const keep=prior!=null?Number(prior):old?.dataset.swKey===a.key&&old.dataset.swSelected===selected?oldRail?.scrollLeft:null;
-    if(keep!=null)rail.scrollLeft=keep;
-    requestAnimationFrame(()=>{
-     if(!rail.isConnected)return;
-     if(keep!=null){
-      rail.scrollLeft=keep;
-      if(old)viewport().scrollTo(0,pageY);
-     }else{
-      const card=box.getBoundingClientRect(),frame=rail.getBoundingClientRect();
-      rail.scrollLeft+=card.left+card.width/2-frame.left-frame.width/2;
-     }
-     setTimeout(()=>{delete rail.dataset.programmatic;},100);
-    });
-   }
+   if(!box){delete rail.dataset.programmatic;return;}
+   delete a.section.dataset.swRestoreRail;
+   const center=()=>{
+    const card=box.getBoundingClientRect(),frame=rail.getBoundingClientRect();
+    rail.scrollLeft+=card.left+card.width/2-frame.left-frame.width/2;
+   };
+   center();
+   requestAnimationFrame(()=>{
+    if(!rail.isConnected)return;
+    center();
+    if(old)viewport().scrollTo(0,pageY);
+    requestAnimationFrame(()=>{if(rail.isConnected)delete rail.dataset.programmatic;});
+   });
   }
+
   function choose(a,id,scroll,focus){
    const o=a.lay.primary.find(x=>x.id===id);if(!o)return;
    remember(a.key,id);const m=memory.get(a.key);memory.set(a.key,{...m,warnOpen:null});feedback=null;
@@ -330,7 +327,10 @@
    if(rootId==='velen'){const page=document.querySelector('#velen-screen .velen-nilf-page');if(page)return velenAdapter(page);const reading=document.querySelector('#velen-screen>.velen-reading-page');if(reading)return velenReadingAdapter(reading);}return null;}
   function isShowing(){const v=document.querySelector('.view:not([hidden])');return !!(v&&(v.classList.contains('sw-page')&&v.querySelector('.sw-walkthrough')||v.querySelector('#velen-screen>.sw-page .sw-walkthrough')));}
   function refresh(){const a=current();try{medallion()?.reconcileWarnings?.();}catch{}if(!a)return;const focusInRail=document.activeElement?.closest?.('.sw-rail');try{render(a);}catch(e){console.error('shared walkthrough',e);a.section.classList.remove('sw-page');return;}try{medallion()?.reconcileWarnings?.();}catch{}if(focusInRail)a.section.querySelector('.sw-box.selected')?.focus({preventScroll:true});}
-  for(const ev of ['phoenix:route-rendered','phoenix:progress-committed','phoenix:progress-undone'])addEventListener(ev,()=>requestAnimationFrame(refresh));
+  addEventListener('phoenix:route-rendered',e=>{
+   if(e.detail.root!=='velen')requestAnimationFrame(refresh);
+  });
+  for(const ev of ['phoenix:progress-committed','phoenix:progress-undone'])addEventListener(ev,()=>requestAnimationFrame(refresh));
   const velenScreen=document.getElementById('velen-screen');
   if(velenScreen)new MutationObserver(()=>{const page=velenScreen.querySelector(':scope>:is(.velen-nilf-page,.velen-reading-page)');if(page&&!page.querySelector('.sw-walkthrough'))refresh();/* render() adds .sw-page only when the owner is active */}).observe(velenScreen,{childList:true});
   refresh();
