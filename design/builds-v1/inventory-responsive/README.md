@@ -1,0 +1,6 @@
+# Phoenix Inventory R2
+Responsive visual proof for independent review. Open index.html offline. The three fonts and all artwork are embedded. Save and gear controls illustrate the proposed interface. The Socket key expands.
+
+IMG_2995 is the original Inventory layout reference. IMG_2996 shows Geralt, IMG_2997 the weapons and quick slots, and IMG_2998 the armor and horse gear. The remaining close-ups document Character. Level 36 is visible in IMG_3002. The four available points and the alternative slot are illustrative. The photos show 76 bolts, consumables 4/5 then 4/3, and 4 bombs. Socket counts follow the close-ups. Empty sockets are illustrated; the comparison key demonstrates both appearances.
+
+Check art and font loading offline, readable quality colors, Geralt's silhouette, the framed quick slots and all four horse items. Measure labels and control sizes at 852 and 932 CSS pixels wide. Inspect the selected-piece panel and check for cropped art, overflow and overlapping text. Record renderer, viewport and observed results. For physical Safari, capture the top and bottom at default zoom and report model, iOS version and zoom experience. Footer identifies this candidate as Inventory R2.
