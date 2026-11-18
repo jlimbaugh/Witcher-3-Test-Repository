@@ -180,4 +180,4 @@ html body #velen-screen > :is(.velen-nilf-page,.velen-reading-page).sw-page {
 .velen-view .reading-panel > details.sources[hidden] { display: none !important; }
 .sw-related-list { margin: 8px 0 0; padding-left: 1.2em; }
 .sw-related-list li + li { margin-top: 8px; }
-.sw-source-link { display: inline-block; margin-top: 8px; font-size: .9rem; }
+.sw-source-link { display: inline-block; margin-top: 12px; font-size: .9rem; text-decoration: underline; }

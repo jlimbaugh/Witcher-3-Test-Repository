@@ -266,14 +266,14 @@
    }
    if(a.sourceId){
     for(const item of host.querySelectorAll(':scope>details.sources'))item.hidden=true;
-    if(!host.querySelector(':scope>.sw-source-link')){
-     const source=make('a','sw-link sw-source-link','Sources');
-     source.href='velen-sources.html#'+a.sourceId;host.append(source);
+    if(!a.section.querySelector(':scope>.sw-source-link')){
+     const source=make('a','sw-source-link','Sources');
+     source.href='velen-sources.html#'+a.sourceId;a.section.append(source);
     }
    }
    if(old)old.replaceWith(root_);else host.prepend(root_);
    // Story & correction controls (P2 A): existing controls, re-hosted as one quest-level row.
-   if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources||host.querySelector('.sw-source-link');if(anchor)anchor.before(story);else host.append(story);}
+   if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources;if(anchor)anchor.before(story);else host.append(story);}
    story.querySelector('.sw-row-body').replaceChildren(a.story());}
    const box=rail.querySelector('.selected');
    if(box){
