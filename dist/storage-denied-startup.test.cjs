@@ -43,7 +43,7 @@ test('denied access: the White Orchard loader and persist() run to completion wi
  deny(c);
  const api=vm.runInContext(APP.slice(a,b)+';({persist})',c);
  assert.doesNotThrow(()=>{api.persist();api.persist();});
- assert.equal(msg.dataset.saveState,'storage-unavailable');assert.match(msg.textContent,/^Saving is unavailable/);assert.doesNotMatch(msg.textContent,/kept unchanged/);
+ assert.equal(msg.dataset.saveState,'storage-unavailable');assert.match(msg.textContent,/^Saved progress could not be read/);assert.doesNotMatch(msg.textContent,/kept unchanged/);
 });
 test('start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch',()=>{
  const tail=APP.slice(APP.indexOf('PhoenixVelenMigration?.importFromStorage'));

@@ -43,3 +43,9 @@ Use the established White Orchard curled parchment (`curled-vellum-r16.webp`) as
 The White Orchard selected-quest action in the accepted Lilac and Gooseberries screenshot is the template. Use the shared `home-action-tile` class and the rules in `dist/home-rebuild.css`. Fill the button with art, put the dark overlay behind the centered ivory label, and draw the silver frame with `silver-frame-r15.svg`. Stack action groups on phones. Give a lone Resume action the full content width.
 
 Use `action-walkthrough.webp` for walkthroughs and `action-quest-hub.webp` for quest hubs and cards. Use map art for map actions. Apply this pattern to primary quest destinations in regional consoles, Resume panels and quest hubs. Keep the original action's destination and accessible text.
+
+## Quest route maps and progress copy
+
+Use a separate illustrated map action on the quest card and a region route index action in Region Tools. Open the quest map at its current route step. Draw route relationships as a field sketch and use the guide’s in-game marker assets as links. Show only the quest’s own steps and the linked stops documented on its card. Distinguish route sketches from scaled terrain maps.
+
+Keep successful progress writes silent. Omit browser-storage instructions from guide templates. Show a status message only when it helps the player understand an error or resolve a problem.

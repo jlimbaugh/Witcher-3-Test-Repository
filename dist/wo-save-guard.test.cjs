@@ -63,10 +63,10 @@ function visit(src,storage,{denied=false,interact=true}={}){
 }
 const APP=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
 const V45_DIR=process.env.PHOENIX_V45_BASELINE,V45_APP=V45_DIR?fs.readFileSync(path.join(V45_DIR,'app.js'),'utf8'):null;
-const MSG={saving:'Progress and your place save in this browser.',writeFailed:'Saving is unavailable. Changes last for this visit only.',
+const MSG={saving:'',writeFailed:'Saving is unavailable. Changes last for this visit only.',
  unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',
  unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.',
- storage:'Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.'};
+ storage:'Saved progress could not be read. Changes in this visit are not saved.'};
 const v=JSON.parse(VALID);
 const DAMAGED={
  'invalid JSON (truncated)':[VALID.slice(0,Math.floor(VALID.length/2)),'unreadable'],

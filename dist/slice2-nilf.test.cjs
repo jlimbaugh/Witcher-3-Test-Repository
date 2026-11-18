@@ -139,7 +139,6 @@ const PROTECTED={
   'velen-migration.js':'0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7',
   'regional-registry.js':'2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283',
   'velen-data-r18.js':'4b292527a495da0d2bd0dea2bb69007423debfb48e1b12ff09551c3d7d438af2',
-  'velen-routing.js':'25224309ea4de7adebee80080359f54560b5139b0318fe7df05b1a087168c398',
   'console-r16.css':'737302d97dbd16cd664c8d1e3d2bfe39df8c0c12f673c861359ff1d5521c6960',
   'visual-system.js':'9e37cbafe5823a3e38aed070606e3e46ab37b55ad01763250e279461cad69bb3',
   'swipe-boxes.js':'7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8',
@@ -167,7 +166,8 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 //                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
 // Velen review: the shared console changes intentionally remove the expansion switches.
 // Illustrated action template: shared styles and hub markup deliberately updated.
-const SEAM_PINS={'velen-r18.js': '9181cdf0765f80cd665b74beb98cabfecf602106a69b3db1d0f02f74f1e572ba', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7'};
+// Velen route maps intentionally extend the region router.
+const SEAM_PINS={'velen-r18.js': '97144a6aa247599af1b9b884fdae8d79368adb2f31579dc65b7ad626cfa91499', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });

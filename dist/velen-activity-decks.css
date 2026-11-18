@@ -8,12 +8,21 @@
 .velen-activities>summary,.velen-activities-shortcut{border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#f4ecd9}
 .velen-activities[open]>summary{margin-bottom:1rem}
 .velen-activities-shortcut{min-height:44px;margin:.75rem auto 0;padding:.4rem .9rem;font:inherit;cursor:pointer}
-.velen-regional-map{margin-block:0 1rem}
-.velen-map-sketch{position:relative;min-height:420px;margin:.6rem 0 1rem;border:2px solid #766748;border-radius:4px;background:radial-gradient(ellipse at 18% 70%,#829996 0%,transparent 50%),radial-gradient(ellipse at 85% 15%,#b6ad89 0%,transparent 48%),#c3b68f url(r10-paper.svg)}
-.velen-view .velen-map-pin{position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;min-height:44px;max-width:7.5rem;padding:.2rem .4rem;background:#233031;border:2px ridge #a9ad9f;color:#fff1d5;border-radius:4px;font-size:.85rem;line-height:1.1;text-align:center;text-decoration:none}
 #velen .page-warning-history{background:#222b2d;color:#f4ecd9}
 #velen .page-warning-history summary,#velen .page-warning-history a{color:inherit}
 
 #velen .home-selected-actions{grid-template-columns:1fr}
 #velen .console-continue .home-action-tile{margin-top:.75rem}
-#velen .velen-regional-map summary.home-action-tile{cursor:pointer}
+
+.velen-route-paper .home-action-tile{margin-block:.75rem}
+.velen-route-sketch{position:relative;padding:1rem;background:#d7c7a0 url(r10-paper.svg);border:2px solid #75654a;border-radius:4px 12px;color:#271f16}
+.velen-route-sketch:before{content:'';position:absolute;inset:4px;border:1px solid #75654a75;border-radius:7px 3px;pointer-events:none}
+.velen-route-sketch>.eyebrow{text-align:center}
+.velen-view .velen-route-pin{display:flex;align-items:center;gap:.65rem;min-height:48px;padding:.45rem .55rem;color:#2b2419;text-decoration:none;border:1px solid #786951;border-radius:3px 7px;background:#efe0ba;margin:.45rem 0}
+.velen-route-pin:focus-visible,.velen-route-pin:hover{outline:2px solid #443a2a;outline-offset:2px}
+.velen-route-pin img{width:30px;height:30px;object-fit:contain;flex:none}
+.velen-route-pin small{display:block;line-height:1.25}
+.velen-route-sketch>.velen-route-pin{background:#faf0ce;border:3px double #6c5c42}
+.velen-route-branches{border-left:2px dashed #7a6955;padding:0 0 .1rem .7rem;margin-left:1rem}
+.velen-route-group{margin-block:.75rem}
+.velen-route-pin[aria-current=step]{border-width:2px}

@@ -36,7 +36,7 @@ test('the v45 loader/save excerpt used for byte comparison is the accepted v45 c
  if(base){const src=fs.readFileSync(path.join(base,'velen-r18.js'),'utf8');assert.ok(src.includes(V45_LOAD)&&src.includes(V45_SAVE));}
  const src=fs.readFileSync('velen-r18.js','utf8');
  assert.ok(src.includes(V45_LOAD),'the v45 loader line is kept verbatim');
- assert.ok(src.includes(V45_SAVE.replace("function save(){","function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */")),'save() is v45 save() behind a single guard clause');
+ assert.ok(src.includes(V45_SAVE.replace('Your Velen progress saves in this browser.','').replace("function save(){","function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */")),'save() retains the v45 write with a guard and silent success');
  assert.equal((src.match(/localStorage\.setItem\(key,/g)||[]).length,1,'save() is the only writer of the legacy key');
 });
 for(const [name,bytes] of [['invalid JSON','{"version":1,"complete":{"nilf":tru'],['JSON array','[]'],['JSON null','null'],['JSON number','42'],['JSON string','"hello"']]){
@@ -70,7 +70,7 @@ test('valid, partial and absent legacy records: every write is byte-identical to
   const va=current(a),vb=v45(b);assert.equal(va.guarded,false);
   const steps=[v=>v.save(),v=>{velen.apply(v.state,{kind:'view',id:'pyres',stage:2});v.save();},v=>{velen.apply(v.state,{kind:'complete',id:'pyres',value:true});v.save();},
    v=>{velen.apply(v.state,{kind:'choice',key:'mercy',value:'freed'});v.save();},v=>{velen.apply(v.state,{kind:'complete',id:'mercy',value:true});v.save();},v=>{velen.apply(v.state,{kind:'undo'});v.save();},v=>{velen.apply(v.state,{kind:'view',id:'mercy',stage:3});v.save();}];
-  for(const step of steps){step(va);step(vb);assert.equal(a.getItem(LEGACY),b.getItem(LEGACY),'byte-identical write for '+text);assert.equal(va.status.textContent,vb.status.textContent);}
+  for(const step of steps){step(va);step(vb);assert.equal(a.getItem(LEGACY),b.getItem(LEGACY),'byte-identical write for '+text);assert.equal(va.status.textContent,'');}
  }
 });
 test('a refused handover (newer canonical) does not affect the guard: valid legacy keeps saving, unreadable legacy is kept',()=>{

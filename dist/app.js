@@ -100,7 +100,7 @@
   }
   // QA6: one source for the save-status text, used by persist() and reflect(). A blocked state is fixed for the page
   // session; only the normal/write-failed pair follows the outcome of the last write.
-  const SAVE_MESSAGES={saving:'Progress and your place save in this browser.','write-failed':'Saving is unavailable. Changes last for this visit only.',unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.','storage-unavailable':'Saving is unavailable: this browser did not allow saved progress to be read. Changes in this visit are not saved.'};
+  const SAVE_MESSAGES={saving:'','write-failed':'Saving is unavailable. Changes last for this visit only.',unreadable:'Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved.',unsupported:'Your saved White Orchard progress is in a format this guide cannot use, so it is kept unchanged. Changes in this visit are not saved.','storage-unavailable':'Saved progress could not be read. Changes in this visit are not saved.'};
   function saveStatus() {return saveBlocked||(saveAvailable?'saving':'write-failed');}
   function showSaveStatus() {const status=saveStatus();document.querySelectorAll('[data-save-message]').forEach(el=>{el.textContent=SAVE_MESSAGES[status];el.dataset.saveState=status;});}
   function taskAnchor(id,home=false) {
