@@ -351,4 +351,59 @@
       ]
     }
   });
+  Object.assign(root.PhoenixVelenQuestCards,{
+    'patrol-gone-missing': {
+      name:'Contract: Patrol Gone Missing',kind:contract,level:7,place:'Nilfgaardian Army Group Center Camp',
+      art:'art-velen/patrol-gone-missing.webp',
+      briefing:'Find the missing Nilfgaardian scouts and track the wyvern that attacked them.',
+      start:'Read the missing soldiers notice at the army camp and speak with Quartermaster Eggebracht.',
+      completion:'Take the wyvern trophy and report to Eggebracht.',
+      sources:[guide+'contract-patrolgonemissing.php',field+'contract-patrol-gone-missing'],
+      stages:[
+        {title:'Take the assignment',place:'Nilfgaardian Army Group Center Camp',actions:['Read the notice and speak to Eggebracht in the adjacent tent.','Cross the lake to the scouts’ marked camp.']},
+        {title:'Follow the scouts’ trail',place:'Abandoned scout camp',actions:['Use Witcher Senses to examine the camp. Follow the tracks southwest.','Examine the poisoned corpse and follow the draconid evidence to the wyvern.']},
+        {title:'Kill the wyvern and report back',place:'Wyvern territory and army camp',actions:['Defeat the wyvern and loot the trophy. Use Draconid Oil if available.','Return to Eggebracht to report the patrol’s fate and resolve the reward.'],note:'Optional before returning: follow the evidence past the wyvern to the cave and inspect the bodies. This opens dialogue about the patrol’s orders and the option to refuse payment.'}
+      ]
+    },
+    'mysterious-tracks': {
+      name:'Contract: Mysterious Tracks',kind:contract,level:20,place:'Lindenvale',
+      art:'art-velen/mysterious-tracks.webp',
+      briefing:'Investigate the wolf kills and lure the Howler into its lair.',
+      start:'Take the notice in Lindenvale and speak to the hunter.',
+      completion:'Return the Howler’s trophy to the hunter and collect the reward.',
+      sources:[guide+'contract-mysterioustracks.php','https://witcher.fandom.com/wiki/Contract%3A_Mysterious_Tracks'],
+      stages:[
+        {title:'Track the creature',place:'Forest near Lindenvale',actions:['Examine the dead wolves and follow the tracks to the tree.','Inspect the fur and follow its scent to the high cave opening.']},
+        {title:'Investigate the lair',place:'Cave below the hill',actions:['Find the accessible opening farther north and drop into the cave.','Inspect the dead fiend and the signs of a fight to identify the chort.']},
+        {title:'Prepare and place the lure',place:'Hill around the cave',actions:['Make Chort Lure in Alchemy with fiend dung and two crow’s eye. Search the hill if either ingredient is missing.','Equip the lure and apply it at all four marked sites. Re-enter the cave and wait for the Howler.']},
+        {title:'Defeat the Howler',place:'Cave and Lindenvale',actions:['Defeat the chort. Relict Oil and Quen can help in the tight cave.','Loot its trophy and return to the hunter for the reward.']}
+      ]
+    },
+    'byways-murders': {
+      name:'Contract: The Mystery of the Byways Murders',kind:contract,level:22,place:'Oreton and Byways',
+      art:'art-velen/byways-murders.webp',
+      briefing:'Find the missing Nilfgaardian patrol and uncover the vampire lair beneath Byways.',
+      start:'Take the missing soldiers notice in Oreton and speak with Milan Noran.',
+      completion:'Kill Sarasti, report to Bytomir and return to Noran for payment.',
+      sources:[guide+'contract-themysteryofthebywaysmurders.php','https://www.gamesradar.com/witcher-3-contracts-list-guide/'],
+      stages:[
+        {title:'Investigate the missing patrol',place:'Oreton and Byways',actions:['Speak with Milan Noran at Oreton and travel to Byways.','Defeat the ghouls and question the villagers. Keep investigating when they blame the ghouls.']},
+        {title:'Find the entrance to the ruins',place:'Byways',actions:['Inspect the dead soldiers with Witcher Senses and follow the blood scent to the locked house.','Speak with Bytomir for the key. Examine the fur and enter the tunnels below.']},
+        {title:'Kill Sarasti and report back',place:'Elven ruins, Byways and Oreton',actions:['Fight the ekimmara Sarasti. Vampire Oil can help if available. Loot its trophy.','Tell Bytomir the threat has passed and collect the agreed fee from Noran.']}
+      ]
+    },
+    'phantom-of-the-trade-route': {
+      name:'Contract: Phantom of the Trade Route',kind:contract,level:23,place:'Benek',
+      art:'art-velen/phantom-of-the-trade-route.webp',
+      briefing:'Find Benek’s missing guides and defeat the royal wyvern guarding the trade route.',
+      start:'Speak to the refugee in Benek about the missing caravan guides.',
+      completion:'Loot the royal wyvern trophy and return to the refugee.',
+      sources:[guide+'contract-phantomofthetraderoute.php'],
+      stages:[
+        {title:'Find the missing guides',place:'Benek and the cave north of the village',actions:['Talk with the refugee and follow the quest marker to the cave.','Ask the two survivors what happened. Continue toward the nests east of the cave.']},
+        {title:'Clear the nests',place:'Wyvern nesting ground',actions:['Defeat the two wyverns guarding the area.','Destroy both marked nests with bombs. The second nest triggers the royal wyvern’s arrival.'],warning:'Prepare before destroying the second nest. It brings out the royal wyvern.'},
+        {title:'Defeat the royal wyvern',place:'Nesting ground and Benek',actions:['Kill the royal wyvern and take its trophy. Use Draconid Oil if available.','Finish the encounter with the survivors, then return to the refugee for payment.']}
+      ]
+    }
+  });
 })(window);
