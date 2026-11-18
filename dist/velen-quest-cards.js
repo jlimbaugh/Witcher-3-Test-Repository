@@ -480,8 +480,60 @@
       sources:[guide+'contract-thebeastofhonorton.php',field+'where-the-cat-and-wolf-play'],
       stages:[
         {title:'Find and speak to the survivor',place:'Honorton',actions:['Investigate the village with Witcher Senses and follow the girl’s tracks. Pick up her doll along the trail.','Give Millie the doll or use the available Axii dialogue so she can tell you what happened.']},
-        {title:'Track Gaetan and decide his fate',place:'Ritual circle and shrine',actions:['Follow the tracks east from the ritual circle to the shrine and hear Gaetan’s account.','Spare him to unlock Take What You Want, or choose to fight.'],warning:'If you fight and let Gaetan drink first, he can blind you with a bomb. Killing him closes the stash quest route.'},
+        {title:'Track Gaetan and decide his fate',place:'Ritual circle and shrine',actions:['Follow the tracks east from the ritual circle to the shrine and hear Gaetan’s account.','Spare him to unlock Take What You Want, or choose to fight.'],warning:'If you fight and let Gaetan drink first, he can blind you with a bomb. Killing him closes the stash quest route.',links:[['Take What You Want','take-what-you-want']]},
         {title:'Take Millie to Oreton',place:'Honorton and Oreton',actions:['Return to Millie and escort her to her aunt in Oreton.','Decide whether to leave money for her care. A later visit can uncover her thank-you card.']}
+      ]
+    },
+    'take-what-you-want': {
+      name:'Take What You Want',kind:side,place:'Forest Hut, north of Keira’s cottage',
+      art:'art-velen/take-what-you-want.webp',
+      briefing:'Find Gaetan’s stash and take the steel sword he left behind.',
+      start:'Spare Gaetan during Where the Cat and Wolf Play… and follow the stash lead he gives you.',
+      completion:'Open Gaetan’s stash chest and recover Teigr.',
+      sources:[field+'take-what-you-want','https://witcher.fandom.com/wiki/Take_What_You_Want'],
+      stages:[
+        {title:'Reach the stash entrance',place:'Forest Hut',warning:'This reward route is available only if Gaetan survived Honorton.',actions:['Follow the marker north of Keira’s cottage to the opening near Forest Hut.','Clear the bandits gathered around the entrance.'],links:[['Where the Cat and Wolf Play…','where-the-cat-and-wolf-play']]},
+        {title:'Collect Teigr',place:'Underground hideout',actions:['Climb into the hideout and open the chest for Teigr, the letter and the crowns.'],note:'Inspecting the trophies in the alcove is optional.'}
+      ]
+    },
+    'fall-of-the-house-of-reardon': {
+      name:'The Fall of the House of Reardon',kind:side,place:'Lindenvale and Reardon Manor',
+      art:'art-velen/fall-of-the-house-of-reardon.webp',
+      briefing:'Help Dolores reclaim her family estate and investigate what happened there.',
+      start:'Read the Lindenvale notice or speak to Dolores in the village for her lockbox key.',
+      completion:'Resolve the manor encounter and report back to Dolores in Lindenvale.',
+      sources:[guide+'thefallofthehouseofreardon.php','https://witcher.fandom.com/wiki/The_Fall_of_the_House_of_Reardon'],
+      stages:[
+        {title:'Take Dolores’s request',place:'Lindenvale',warning:'Finish this quest before starting The Isle of Mists.',actions:['Talk to Dolores about Reardon Manor and take the key to her lockbox.','Ride to the estate.']},
+        {title:'Resolve the manor encounter',place:'Reardon Manor',actions:['If wraiths occupy the grounds, clear them. Yrden helps make them vulnerable.','If the grounds are trapped and Letho is alive in your world state, use Witcher Senses to check for traps and investigate the barn. Follow Ghosts of the Past for Letho’s route.'],links:[['Ghosts of the Past','ghosts-of-the-past']]},
+        {title:'Report to Dolores',place:'Reardon Manor and Lindenvale tavern',note:'The lockbox and Humbert’s fate are optional. Find the sturdy barn key in the northwest house and investigate the writing in the barn to locate the lockbox. For Humbert, look behind the barn for the cellar stairs and break the weak wall inside.',actions:['Return to Dolores at the Lindenvale tavern. Geralt shares any discoveries you made about Humbert.']}
+      ]
+    },
+    'ghosts-of-the-past': {
+      name:'Ghosts of the Past',kind:side,level:6,place:'Reardon Manor and Lindenvale',
+      art:'art-velen/ghosts-of-the-past.webp',
+      briefing:'Help Letho deal with the bounty hunters and decide where he should go afterward.',
+      start:'Visit Reardon Manor while Letho is alive in the imported or simulated Witcher 2 world state.',
+      completion:'Resolve Letho’s pursuit and finish his final conversation if you accompany him.',
+      sources:[field+'ghosts-of-the-past','https://allthings.how/the-witcher-3-ghosts-of-the-past-every-choice-and-how-to-save-letho/'],
+      stages:[
+        {title:'Meet Letho and fend off the hunters',place:'Reardon Manor barn',warning:'Finish before The Isle of Mists. If wraiths are at the manor because Letho is dead in your world state, this quest is unavailable.',actions:['Spot and avoid or disarm the traps with Witcher Senses. Inspect the ladder in the barn to reach Letho.','Fight the bounty hunters when they arrive.'],links:[['The Fall of the House of Reardon','fall-of-the-house-of-reardon']]},
+        {title:'Follow Letho to Louis',place:'Louis’s camp',warning:'Agree to accompany Letho and stay with him on the ride if you want to see the route through and recruit him later.',actions:['Ride with Letho to Louis and defeat his men.','Learn where Arnout Vester’s group is and follow Letho to Lindenvale.']},
+        {title:'Resolve the standoff',place:'Lindenvale',warning:'Letho is feigning death. Fighting Vester’s men ruins the ruse.',actions:['To let the ruse work, say you want no trouble and tell Vester’s group to take Letho’s medallion as proof.','When Letho wakes, offer him shelter at Kaer Morhen if you want him to join the battle there.']}
+      ]
+    },
+    'eternal-fires-shadow': {
+      name:'In the Eternal Fire’s Shadow',kind:side,level:15,place:'Devil’s Pit',
+      art:'art-velen/eternal-fires-shadow.webp',
+      briefing:'Investigate the sealed mine at Devil’s Pit and free it from the Red Miasmal.',
+      start:'Talk to the Eternal Fire deacon outside Devil’s Pit. This quest was added in update 4.0.',
+      completion:'Defeat possessed Reinald and the Red Miasmal, then resolve Reinald’s final conversation.',
+      sources:['https://witcher.fandom.com/wiki/In_the_Eternal_Fire%27s_Shadow','https://www.itechguides.com/in-the-eternal-fires-shadow-walkthrough-the-witcher-3/'],
+      stages:[
+        {title:'Open the mine',place:'Devil’s Pit entrance',actions:['Speak to the deacon at the gate and enter the quarry.','Clear the deserters and use the deacon’s key at the mine doors.']},
+        {title:'Read Reinald’s trail',place:'Devil’s Pit mine',actions:['Read the letters and investigate the side passages with Witcher Senses. Look for the notes before opening the salt cavern.','If you collect the recipe and ingredients, brew Reinald’s Philter. Keep it for Geralt if you want to use it in the fight.'],note:'The letters explain what happened in the mine and how to fight the spirit. Brewing the Philter is optional.'},
+        {title:'Defeat the Red Miasmal',place:'Salt cavern',actions:['Free Reinald with Aard. Place Yrden and hit possessed Reinald with Aard while he is in the trap to weaken the possession.','When the Red Miasmal emerges, defeat it and deal with the plague victims it summons.']},
+        {title:'Resolve Reinald’s fate',place:'Salt cavern',warning:'If you bring the deacon in, your dialogue can determine whether he survives.',actions:['Speak to Reinald’s spirit and decide whether to bring in the deacon.','To keep the deacon alive if you bring him in, defend him as innocent and say that he can do good without the church.'],note:'You receive the Forgotten Wolven diagrams regardless of the ending. The follow-up scavenger hunt continues in Kaer Morhen.'}
       ]
     }
   });

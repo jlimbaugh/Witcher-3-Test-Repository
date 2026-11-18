@@ -83,3 +83,5 @@ The first four Velen contract cards use original AI-generated target portraits i
 The second Velen contract batch uses original AI-generated portraits of the patrol wyvern, Howler the chort, Sarasti the ekimmara, and the royal wyvern at the Benek nests. Source links in the corresponding walkthroughs establish the encounter and target.
 
 The final Velen contract batch uses original guide illustrations for the woodland Scoia’tael, the highland archgriffin, the alghouls at Honorton, and Harrisi the arachas. The linked Master Armorers and Where the Cat and Wolf Play… cards illustrate Yoana at the forge and Gaetan near his shrine. Honorton’s image depicts the first encounter before the journal handoff.
+
+The Velen side-quest batch uses four original guide illustrations: Gaetan’s stash, Reardon Manor, Letho in the trapped barn, and the Red Miasmal at Devil’s Pit.
