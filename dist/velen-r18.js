@@ -1,5 +1,6 @@
 'use strict';
 window.createPhoenixVelen=function({navigate}){
+const questCards=window.PhoenixVelenQuestCards||{};
 const routeModel=window.PhoenixVelenRouting,viewport=()=>window.PhoenixViewport||window;
 const view=document.createElement('section');view.id='velen';view.className='view scene main-console-view velen-view';view.hidden=true;view.setAttribute('aria-labelledby','velen-heading');view.innerHTML='<div class="scene-inner console-r16"><div class="cover" id="velen-screen"></div><p id="velen-save-status" role="status"></p></div>';document.querySelector('main').append(view);
 const confirm=document.createElement('dialog');confirm.id='velen-confirm-progress';confirm.className='progress-dialog';confirm.setAttribute('aria-labelledby','velen-confirm-title');confirm.innerHTML='<form method="dialog"><h2 id="velen-confirm-title">Confirm recorded progress</h2><p id="velen-confirm-text"></p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="confirm">Confirm</button></div></form>';document.body.append(confirm);
@@ -43,9 +44,53 @@ if(id==='nilf'){n.append(el('h3','','Side quests & encounters'));for(const other
 function choice(key,n){const label=el('label','choice-label',key==='inn'?'Record your inn outcome (optional)':'Record your decision (optional)'),select=el('select');select.setAttribute('aria-label',key==='inn'?'Recorded inn outcome':'Recorded John Verdun decision');select.append(new Option('Not recorded',''));const values=key==='inn'?[['peace','Settled peacefully'],['fight','Fought the soldiers']]:[['freed','Released John'],['left','Left him tied']];for(const [v,t]of values)select.append(new Option(t,v));select.value=state.choices[key]||'';select.onchange=()=>{if(!select.value){state.undo={complete:{...state.complete},choices:{...state.choices}};delete state.choices[key];}else apply(state,{kind:'choice',key,value:select.value});save();};label.append(select);n.append(label);}
 function rememberReading(id){try{localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+state.stage[id],name:quests[id].name,stageNumber:state.stage[id]}));}catch{}}
 function walkthrough(id,stage){if(id==='nilf'&&nilfOwned()){apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();rememberReading(id);nilfUI.walkthrough(screen,state.stage[id]-1);return;}const q=quests[id];apply(state,{kind:'view',id,stage:stage||state.stage[id]});save();const i=state.stage[id]-1,s=q.stages[i];rememberReading(id);screen.append(header(q.name,q.kind+(q.level?' · Level '+q.level:''),q.art));const n=scroll();n.append(el('p','story-intro',q.intro),stages(id),link('Return to exact hub','#hub/'+id,'back-link'));n.lastChild.dataset.returnHub='true';n.append(el('p','eyebrow',s.place),el('h2','',(i+1)+'. '+s.title));if(s.warning)n.append(el('aside','warning',s.warning));n.append(el('p','',s.text));const prep=el('details'),summary=el('summary','','Preparation & reward notes');prep.append(summary,el('p','',s.prep));n.append(prep);if(s.choice)choice(s.choice,n);if(s.spoiler){const d=el('details');d.append(el('summary','','Choice consequences — spoiler'),el('p','',s.spoiler));n.append(d);}const nav=el('nav','stage-controls');nav.setAttribute('aria-label','Walkthrough navigation');const prev=el('button','','← Previous'),next=el('button','','Next →');prev.disabled=i===0;next.disabled=i===q.stages.length-1;prev.onclick=()=>go('#quest/'+id+'/'+i,{hubReturn:history.state?.velen?.hubReturn});next.onclick=()=>go('#quest/'+id+'/'+(i+2),{hubReturn:history.state?.velen?.hubReturn});nav.append(prev,el('span','',(i+1)+' / '+q.stages.length),next);n.append(nav,el('p','small-note','Next and Previous only navigate. Mark completion separately in the owner hub.'));const src=el('details');src.append(el('summary','','Sources & pilot scope'),link('Quest reference ↗',q.source),el('p','small-note','Research-led pilot; exact rewards and Xbox field acceptance remain unverified.'));n.append(src);screen.append(n);}
+function questCard(id, stage){
+  const lead=leads[id], card=questCards[id], base='#lead/'+id;
+  const index=Math.min(card.stages.length,Number(stage)||1)-1;
+  const entry=card.stages[index];
+  screen.append(header(lead.name,'Main quest · Suggested level '+lead.level));
+  const panel=scroll(stage ? entry.title : 'At this stop');
+  if(stage){
+    panel.append(link('← Quest card',base,'back-link'),el('p','eyebrow',entry.place));
+    if(entry.warning)panel.append(el('aside','warning',entry.warning));
+    const actions=el('ol');
+    for(const action of entry.actions)actions.append(el('li','',action));
+    panel.append(actions);
+    if(entry.note){
+      const info=el('details');
+      info.append(el('summary','','More information'),el('p','',entry.note));
+      panel.append(info);
+    }
+    const nav=el('nav','stage-controls');
+    nav.setAttribute('aria-label','Walkthrough navigation');
+    if(index>0)nav.append(link('← Previous','#quest/'+id+'/'+index,'button-link'));
+    nav.append(el('span','',(index+1)+' / '+card.stages.length));
+    if(index+1<card.stages.length)nav.append(link('Next →','#quest/'+id+'/'+(index+2),'button-link'));
+    panel.append(nav);
+  }else{
+    panel.append(link('← Velen console','#velen','back-link'),el('p','eyebrow',lead.place),el('p','',card.briefing));
+    panel.append(el('p','','Start after reading Hendrik’s notes in The Nilfgaardian Connection. Both leads can be followed in either order.'));
+    panel.append(link('Open walkthrough →','#quest/'+id+'/1','button-link'));
+  }
+  const stages=el('nav','stage-ribbon');
+  stages.setAttribute('aria-label','Walkthrough stages');
+  card.stages.forEach((step,i)=>{
+    const item=link(step.title,'#quest/'+id+'/'+(i+1));
+    if(stage&&i===index)item.setAttribute('aria-current','step');
+    stages.append(item);
+  });
+  panel.append(stages,el('h3','','When the quest is complete'),el('p','',card.completion));
+  if(!stage){
+    const sources=el('details');
+    sources.append(el('summary','','Sources'));
+    card.sources.forEach((url,i)=>sources.append(link(i===0?'Quest reference ↗':'Cross-check ↗',url,'activity-link')));
+    panel.append(sources,link('← The Nilfgaardian Connection','#hub/nilf','back-link'));
+  }
+  screen.append(panel);
+}
 function info(type,id){if(type==='lead'){const l=leads[id];screen.append(header(l.name,'Next lead · Suggested level '+l.level));const n=scroll(l.place);n.append(el('p','',l.text),el('p','warning',isUnlocked()?'This lead is confirmed by your recorded main-quest completion. Its full walkthrough is not built in this pilot.':'This lead follows Hendrik’s notes. If you have already read them, record The Nilfgaardian Connection as complete in its owner hub.'),link('Return to arrival hub','#hub/nilf','button-link'));screen.append(n);return;}
 screen.append(header(type==='merchants'?'Innkeeper & notices':'Collected notices','Inn at the Crossroads'));const n=scroll(type==='merchants'?'Services at this stop':'Keep for later');if(type==='merchants'){n.append(el('p','','The innkeeper provides food, drink and a shop conversation. Check his card stock and Gwent dialogue in game; this pilot does not yet verify the named match reward or its quest-state prerequisites.'),el('p','','Quest connections: The Nilfgaardian Connection; Contract: Missing Brother. Full inventories are not tracked.'),link('Notices and deferred work','#deferred','activity-link'));}else{n.append(el('h3','','Contract: Missing Brother · level 33'),el('p','','The notice can be collected at the inn. Its combat is beyond the arrival recommendation; collecting it does not mark the contract complete.'),el('h3','','Wild at Heart'),el('p','','An inn-board lead for a separate quest cluster. Its full route is not included here; it is not labelled too high-level.'),el('h3','','Lornruk · later exploration'),el('p','','The shoreline Quen Place of Power and fortress encounter need separate guidance. Research describes level-10 drowners and a level-14 wyvern. Do not add the wyvern fight to the arrival route.'));}n.append(link('Return to The Nilfgaardian Connection hub','#hub/nilf','button-link'));screen.append(n);}
-function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads());}else hub(r.id);}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}save();const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
+function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads());}else hub(r.id);}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id))questCard(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}if(!(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id)))save();const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
 document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
 dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
 addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view};

@@ -156,9 +156,10 @@ const PROTECTED={
 //   QA3 save guard ........... a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898 (owner-authorized guard in save())
 //   QA6 D4 storage guard ..... ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d (Cmdr-authorized: guarded
 //                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
-const SEAM_PINS={'velen-r18.js':'ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d'};
-test('Slice 2 seam pin: velen-r18.js matches the reviewed QA6 bytes',()=>{
- for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed QA6 seam; update SEAM_PINS deliberately');
+// This card candidate extends the reviewed QA6 route renderer without changing its save writer.
+const SEAM_PINS={'velen-r18.js':'c0af7d93fd0cd1e3a8a14e32186e351ea1e6ef20d4845c2cd16c90d7e1d52a7f'};
+test('Slice 2 seam pin: velen-r18.js matches the declared card candidate bytes',()=>{
+ for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared card candidate; review before updating SEAM_PINS');
 });
 test('protected WO and Slice 1 files match the accepted v45 bytes (pinned sha256; optional PHOENIX_V45_BASELINE byte-compare)',()=>{
  for(const [f,sum] of Object.entries(PROTECTED))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' differs from accepted v45');

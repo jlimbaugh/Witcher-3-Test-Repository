@@ -58,3 +58,9 @@ edge caching are untested.
 ## Deployment update (Cmdr, 2026-11-17)
 
 The owner approved pushing the prepared Sites commit and publishing QA6. Source was fast-forwarded from a9d61c94 to 0ac86e3e, saved as version 46, and deployed successfully. PR #3 contains the finalized synchronization and rollback procedure; its earlier in-progress wording above is historical. No GitHub main or Pages change occurred. A raw HTTP verification attempt was blocked/timed out; it did not establish a served-asset mismatch or application failure. Physical Safari acceptance and independent live asset verification remain pending.
+
+## Session 3 Velen quest card candidate
+
+Branch `content/velen-main-quest-cards` is based on `e7b8c2d2992ca3b2ec75b77ed6cc5b54385b2327`, the QA6 work branch with approved walkthrough mockups. This candidate upgrades the Bloody Baron and Hunting a Witch lead routes with sourced cards and reading stages. It preserves the two independently selectable entry links and the three-owner Arrival denominator. New card routes render without writing Arrival progress and reuse the existing Velen shell, parchment panels and regional scene image.
+
+The renderer seam pin is intentionally updated on this branch. The legacy data and save writer, canonical owner, migration, rollback materials and reviewed QA6 release files retain their accepted bytes. The release-identity gate still targets QA6. The shared walkthrough WIP on `impl/issue-4-shared-walkthrough` remains separate. Dedicated card illustrations, map pins, tracked objectives and owner field acceptance are follow-up work. Published version remains 46.
