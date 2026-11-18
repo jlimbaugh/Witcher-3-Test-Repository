@@ -1,42 +1,37 @@
-/* White Orchard materials for the landscape Inventory proof. */
+/* White Orchard materials for the landscape Inventory proof (pass 2). */
 :root {
   --ink: #eeeadf;
   --stone: #141411;
   --iron: #25251f;
   --silver: #aaa99e;
   --edge: #77776b;
+  --pip: #ece6d4;
 }
-body {
-  background: var(--stone);
-  color: var(--ink);
-}
+body { background: var(--stone); color: var(--ink); }
+/* Scene shifted so the White Orchard villager sits outside the item columns, then darkened. */
 .page {
-  background: radial-gradient(ellipse at 61% 42%, #21201980 0%, #11110de8 75%),
-    url('../../../dist/white-orchard-scene.webp') center / cover;
+  background: linear-gradient(90deg, #11110df2 0%, #11110dc8 28%, #11110dc8 72%, #11110df2 100%),
+    url('../../../dist/white-orchard-scene.webp') 18% 40% / cover;
 }
+/* Dark stage behind the equipped columns and Geralt: feathered, no hard edge. */
+.stage { background: radial-gradient(ellipse 50% 52% at 52% 50%, #0d0d0bf0 0%, #0d0d0be6 60%, #0d0d0b00 100%); }
 .page::after { border-color: var(--edge); }
 header, .bottom {
   background: url('../../../dist/r10-stone.svg') repeat, var(--stone);
   border-color: var(--edge);
   color: var(--ink);
 }
-.inventory {
-  background: linear-gradient(150deg, #2c2c24f5, #151512f5);
-  border-color: var(--edge);
-}
-.frame {
-  background: #17171270;
-  border-color: #77766a;
-  box-shadow: inset 0 0 0 2px #161611;
-}
-.sprite img {
-  filter: grayscale(1) sepia(.22) saturate(.72) brightness(.87) contrast(1.08);
-}
-.sprite[aria-label="Geralt from the owner Inventory reference"] {
-  mask-image: radial-gradient(ellipse 61% 66% at 50% 47%, black 63%, transparent 92%);
-}
-.label, .hint, .group-name, .inventory .sub, .detail .quiet,
-.profile b, .note, .bottom .caption { color: #d6d1c3; }
+.inventory { background: linear-gradient(150deg, #2c2c24f5, #151512f5); border-color: var(--edge); }
+.frame { background: #17171299; border-color: #77766a; box-shadow: inset 0 0 0 2px #161611; }
+.tile img { filter: grayscale(1) contrast(1.15) brightness(1.08); }
+.geralt { filter: drop-shadow(0 6px 14px #000a); }
+.pip.full { background: var(--pip); box-shadow: 0 0 0 1px #0d0d0b; }
+.pip.empty { border: 1.5px solid var(--pip); background: #0d0d0bcc; box-shadow: 0 0 0 1px #0d0d0b; }
+.count { color: #f4f0e4; background: #12120f; text-shadow: 0 1px 1px #000; }
+.label, .group-label, .group-head, .inventory .sub, .detail .quiet, .profile b, .bottom .caption { color: #d6d1c3; }
+.caption, .profile small, .legend, .note { color: #b9b4a6; }
+.profile small.illus { color: #e6d9a8; border-color: #8b8160; }
+.group-head { color: #c9c4b4; }
 .detail, .detail .line, .dock { border-color: #777568; }
 .nav .selected, .dock button, .bottom button {
   background: linear-gradient(#35352d, #1a1a16);
@@ -44,7 +39,5 @@ header, .bottom {
   border: 1px solid var(--silver);
   box-shadow: inset 0 0 0 2px #171713;
 }
-.slot-focus {
-  border-color: #e3dfd1;
-  box-shadow: 0 0 7px #d5cbb966;
-}
+.slot-focus { border-color: #e3dfd1; box-shadow: 0 0 7px #d5cbb966; }
+.guide { background: url('../../../dist/r10-haunted-scroll-concept.webp') center / cover; border-color: #a6ac9c; color: #302921; }
