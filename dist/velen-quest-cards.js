@@ -810,6 +810,64 @@
         {"title":"Beat Jonah","place":"Blackbough","actions":["Arrange the bout with the bookie. Block or counter Jonah’s attacks and strike when his guard opens."]},
         {"title":"Win the Velen title","place":"Crow’s Perch","actions":["After beating the three local fighters, challenge Sergeant Ardal at Crow’s Perch and win the title."]}
       ]
+    },
+    'lost-goods': {
+      name: "Lost Goods",
+      kind: "Treasure hunt",
+      place: "North of Ferry Station",
+      art: "art-velen/lost-goods.webp",
+      briefing: "Follow a soldier’s note to a lost supply chest.",
+      start: "Search the hidden treasure marker north of Ferry Station.",
+      completion: "Open the chest near the water.",
+      sources: ["https://witcher.fandom.com/wiki/Lost_Goods"],
+      stages: [
+        {"title":"Read the soldier’s note","place":"North of Ferry Station","actions":["Loot the body at the hidden treasure marker and read the note to reveal the search area."]},
+        {"title":"Find the lost chest","place":"Water’s edge","actions":["Head to the water and clear the drowners. Use Witcher Senses in the marked area and loot the chest."]}
+      ]
+    },
+    'out-of-the-frying-pan-into-the-fire': {
+      name: "Out of the Frying Pan, into the Fire",
+      kind: "Treasure hunt",
+      place: "Mowshurst near Marauders’ Bridge",
+      art: "art-velen/out-of-the-frying-pan-into-the-fire.webp",
+      briefing: "Recover a key from the burned village and use it to open the hidden stash.",
+      start: "Search the burned village of Mowshurst near Marauders’ Bridge.",
+      completion: "Use the cellar key to open the chest beside the haystack.",
+      sources: ["https://witcher.fandom.com/wiki/Out_of_the_Frying_Pan%2C_into_the_Fire","https://wiki.eso-ui.com/index.php/Witcher_3%3AOut_of_the_Frying_Pan%2C_into_the_Fire"],
+      stages: [
+        {"title":"Recover the note and key","place":"Mowshurst cellar","actions":["Clear the ghouls and locate the cellar door with Witcher Senses. Break it open with Aard.","Search the body on the bed for the key and read the crumpled notes."]},
+        {"title":"Open the field stash","place":"Field near Mowshurst","actions":["Follow the marker and use Witcher Senses around the haystack. Open the chest with the key."]}
+      ]
+    },
+    'an-unfortunate-turn-of-events': {
+      name: "An Unfortunate Turn of Events",
+      kind: "Treasure hunt",
+      place: "Fireburst Harbor (Lovers’ Landing)",
+      level: 4,
+      art: "art-velen/an-unfortunate-turn-of-events.webp",
+      briefing: "Retrieve the case a ferryman lost in the river.",
+      start: "Search the shore east of the abandoned harbor, north of Lurtch and south of Devil’s Pit.",
+      completion: "Loot the submerged chest in the marked area.",
+      sources: ["https://witcher.fandom.com/wiki/An_Unfortunate_Turn_of_Events","https://www.gamebanshee.com/thewitcher3/walkthrough/anunfortunateturnofevents.php"],
+      stages: [
+        {"title":"Read the ferryman’s letter","place":"Fireburst Harbor shoreline","actions":["Clear the abandoned site if needed, then search the body on the east shore. Read the unsent letter."]},
+        {"title":"Recover the sunken cargo","place":"River south of the body","actions":["Dive in the marked area and use Witcher Senses to find the chest. Use the crossbow if drowners get in the way.","Loot the chest for Harvall and any other contents."]}
+      ]
+    },
+    'queen-zuleykas-treasure': {
+      name: "Queen Zuleyka’s Treasure",
+      kind: "Treasure hunt",
+      place: "Coast of Wrecks",
+      level: 4,
+      art: "art-velen/queen-zuleykas-treasure.webp",
+      briefing: "Read the pirates’ notes and recover the chest from an offshore wreck.",
+      start: "Search the pirate camp on the Coast of Wrecks.",
+      completion: "Loot Queen Zuleyka’s chest in the wreck.",
+      sources: ["https://witcher.fandom.com/wiki/Queen_Zuleyka%27s_Treasure","https://www.witcher.tools/quests/queen-zuleykas-treasure"],
+      stages: [
+        {"title":"Read the pirates’ notes","place":"Coast of Wrecks camp","actions":["Clear the pirates and search the bedding at the hidden treasure marker. Read the notes to reveal the wreck."]},
+        {"title":"Dive to the wreck","place":"Offshore northwest of the camp","actions":["Swim to the marked wreck. Dive near the stairs, swim through the opening and look right for the chest.","Use Witcher Senses to distinguish the chest from nearby loot, then open it to finish the hunt."]}
+      ]
     }
   });
 })(window);

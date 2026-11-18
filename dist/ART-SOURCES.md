@@ -95,3 +95,5 @@ The Velen roadside batch adds four original guide illustrations: the burning hut
 The village requests batch adds original guide illustrations for Lurtch’s cursed pigs, the sage of Benek, Gert Borel’s cart and the Lindenvale impostor.
 
 This Velen batch adds original guide illustrations for the Condyle search, the Nilfgaardian mother, the Crow’s Perch horse races and the regional fistfighting circuit.
+
+The first Velen treasure hunt batch uses four original guide illustrations for the lost supply chest, the Mowshurst cellar, the ferryman’s cargo and Queen Zuleyka’s wreck.
