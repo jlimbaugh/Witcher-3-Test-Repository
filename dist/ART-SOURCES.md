@@ -91,3 +91,5 @@ The Velen Border Post batch uses three original guide illustrations: the Redania
 This Velen village side-quest batch adds four original guide illustrations: the werewolf at the isolated shack, the Allgod in his cellar, the dog at Drudge, and the Pellar at the Fyke Isle ritual.
 
 The Velen roadside batch adds four original guide illustrations: the burning hut at Codgers’ Quarry, the Nilfgaardian deserter at Hangman’s Alley, the shrine vandals, and Jackamar’s grave.
+
+The village requests batch adds original guide illustrations for Lurtch’s cursed pigs, the sage of Benek, Gert Borel’s cart and the Lindenvale impostor.

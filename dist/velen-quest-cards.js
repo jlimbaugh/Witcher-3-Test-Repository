@@ -689,6 +689,64 @@
         {"title": "Accept the ring", "place": "Bridge north of Blackbough", "actions": ["Speak to the woman at night and agree to deliver her wedding ring."], "links": [["Defender of the Faith", "defender-of-the-faith"]]},
         {"title": "Find Jackamar’s grave", "place": "Cemetery near the Pellar’s hut", "actions": ["Head northwest from the bridge. Clear any ghouls and use Witcher Senses to identify Jackamar’s grave.", "Place the ring at the grave, then find Lessy outside her hut in Blackbough to finish."], "note": "If you have Keira’s Magic Lamp, use it at the grave after placing the ring to see an optional scene."}
       ]
+    },
+    'fools-gold': {
+      name: "Fools’ Gold",
+      kind: "Side quest",
+      place: "Lurtch and the hog hut",
+      level: 6,
+      art: "art-velen/fools-gold.webp",
+      briefing: "Investigate Lurtch’s curse and help Yontek return the stolen gold.",
+      start: "Speak to the bandits southeast of the Lurtch signpost. This quest comes from the free Fools’ Gold add-on.",
+      completion: "Lift the curse and decide whether to defend Yontek when the villagers turn on him.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/foolsgold.php","https://witcher.fandom.com/wiki/Fools%27_Gold"],
+      stages: [
+        {"title":"Protect Yontek and investigate the pigs","place":"Lurtch","actions":["Intervene when the bandits threaten Yontek. Defeat them and ask him about the villagers.","Examine a pig with Witcher Senses, then speak to Yontek again to get the hog hut key."],"warning":"Walking away when the bandits threaten Yontek closes the quest."},
+        {"title":"Investigate the hog hut","place":"Cave between Reardon Manor and Toderas","actions":["Clear the bandits and use Yontek’s key on the inner door.","Follow the tracks to Igor, examine the missing gold’s pedestal, and ask him about it. Return to Lurtch and drive off the wolves."]},
+        {"title":"Escort the herd and lift the curse","place":"Lurtch windmill and hog hut","actions":["Ask Yontek about the gold. Use Axii on the pigs in the huts and gather the herd at the windmill.","Mount up and escort the herd to the hog hut, clearing nekkers along the route. Gather the pigs in the circle and enter the temple to return the gold.","Once the villagers are human again, decide whether to defend Yontek or let them punish him."],"warning":"A nekker warrior joins the escort fight. Prepare before starting the escort."}
+      ]
+    },
+    'truth-is-in-the-stars': {
+      name: "The Truth Is in the Stars",
+      kind: "Side quest",
+      place: "Benek and the cave to its southeast",
+      art: "art-velen/truth-is-in-the-stars.webp",
+      briefing: "Bring a soothsayer food and dragonsroot to hear his prophecy.",
+      start: "Speak to the old sage at the roadside shrine near Benek. An Oxenfurt notice can point you there.",
+      completion: "Deliver the dragonsroot and hear the sage’s second reading.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/thetruthisinthestars.php","https://www.witcher.tools/quests/the-truth-is-in-the-stars"],
+      stages: [
+        {"title":"Hear the first reading","place":"Roadside shrine near Benek","actions":["Give the sage food. Ask about the first reading and agree to find dragonsroot."]},
+        {"title":"Collect and deliver dragonsroot","place":"Cave southeast of Benek","actions":["Clear the ghouls in the marked cave. Find dragonsroot toward the back with Witcher Senses.","Bring it to the sage for the second reading."]}
+      ]
+    },
+    'hazardous-goods': {
+      name: "Hazardous Goods",
+      kind: "Side quest",
+      place: "Road northwest of Lurtch",
+      art: "art-velen/hazardous-goods.webp",
+      briefing: "Free Gert Borel from his overturned cart and decide what to do with the cargo.",
+      start: "Find the overturned cart on the main road northwest of Lurtch. If Ghosts of the Past is active and the cart encounter is absent, finish that quest first.",
+      completion: "Resolve the encounter at the cart. Gert’s later appearance is optional.",
+      sources: ["https://witcher.fandom.com/wiki/Hazardous_Goods","https://wiki.eso-ui.com/index.php/Witcher_3%3AHazardous_Goods"],
+      stages: [
+        {"title":"Rescue Gert and resolve the cart encounter","place":"Road northwest of Lurtch","actions":["Kill the ghouls and speak to Gert Borel.","Choose whether to burn the cart and bodies. If you agree to burn them, cast Igni on the cart before leaving."],"warning":"Once the encounter starts, straying too far before resolving it can fail the quest.","note":"Several in-game weeks later, Gert can appear between Reardon Manor and Benek near the nekker nests. If you find him, you can grant or refuse his last request. The cart quest can already be complete.","links":[["Ghosts of the Past","ghosts-of-the-past"]]}
+      ]
+    },
+    'witcher-wannabe': {
+      name: "Witcher Wannabe",
+      kind: "Side quest",
+      place: "Lindenvale and its cemetery",
+      level: 10,
+      art: "art-velen/witcher-wannabe.webp",
+      briefing: "Find the man posing as a witcher and decide what to tell the villagers.",
+      start: "Complete Contract: The Merry Widow and allow at least five in-game days to pass. Speak to the ealdorman near Lindenvale’s notice board.",
+      completion: "Decide the impostor’s fate when the villagers arrive.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/witcherwannabe.php","https://witcher.fandom.com/wiki/Witcher_Wannabe"],
+      stages: [
+        {"title":"Follow the ealdorman’s lead","place":"Lindenvale","actions":["Speak to the ealdorman about the other witcher and head to the cemetery east of town."],"links":[["Contract: The Merry Widow","merry-widow"]]},
+        {"title":"Find the impostor and decide his fate","place":"Lindenvale cemetery","actions":["Defeat the ghoul. Follow the footprints behind the chapel with Witcher Senses to find the impostor.","Choose whether to expose him or cover for him. Then choose whether he leaves the village or stays to work for the ealdorman."]}
+      ]
     }
   });
 })(window);
