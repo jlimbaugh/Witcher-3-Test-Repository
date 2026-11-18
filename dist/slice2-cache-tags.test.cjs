@@ -154,11 +154,12 @@ test('Combined release: changed app and Velen scripts leave the QA6 tag',()=>{
 test('combined release: every script/stylesheet changed or new since QA6 carries a tag distinct from QA6, QA5 and v45',()=>{
  assert.deepEqual(staleAgainst(refsOf(here),here),[]);
  const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
- assert.deepEqual([...new Set(changed)],['app.js','character-entry.js','character-gear.js','character-ui.js','character-vault.js','character.css','deck-jump.js','desk-r11.js','exploration-ui.js','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js','velen-nilf-ui.js','velen-quest-cards.js','velen-r18.js'],'only the combined release assets changed');
+ assert.deepEqual([...new Set(changed)],['app.js','character-entry.js','character-gear.js','character-ui.js','character-vault.js','character.css','deck-jump.js','desk-r11.js','exploration-ui.js','home-ui.js','medallion.js','navigation-art.css','shared-walkthrough.css','shared-walkthrough.js','velen-nilf-ui.js','velen-quest-cards.js','velen-r18.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
  for(const f of ['app.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
  for(const f of ['deck-jump.js','desk-r11.js','exploration-ui.js','shared-walkthrough.css','shared-walkthrough.js','velen-r18.js'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
  for(const f of ['home-ui.js'])assert.equal(tags[f],'quest-action-art-12',f);
+ assert.equal(tags['navigation-art.css'],'wolf-menu-fit-20');
  for(const f of ['velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-border-post-19',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
