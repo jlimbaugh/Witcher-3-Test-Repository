@@ -1,5 +1,13 @@
 # PHOENIX — project status (branch `fix/wo-save-preservation`)
 
+## Inventory WO art refinement
+
+Owner accepted the improved Inventory layout and requested it filled and refined
+with the White Orchard art scheme. Latest static proof: `design/builds-v1/inventory-wo/`.
+Dark compact gear groups remain; actual WO scene/fonts/wolf and parchment guide exit
+are reused. Camera-cast source art and production asset sourcing remain unresolved.
+No production implementation or deployment is implied.
+
 ## Character game-art mockups — 2026-11-17
 
 `design/character-art-pass` contains the 19-image art review set under
