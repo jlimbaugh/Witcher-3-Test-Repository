@@ -64,7 +64,7 @@ box.dataset.velenDeck=category;
 box.setAttribute('aria-label',category==='quests'?'Choose a Velen quest':'Choose a Velen activity');
 const ids=decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
 const select=(id,focus)=>selectCard(category,id,focus);
-for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=deckQuests[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
+for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=deckQuests[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
@@ -90,6 +90,7 @@ function selectedPanel(id){
   const selected=scroll(q.name);
   selected.classList.add('selected-panel','selected-scroll');
   selected.append(el('p','',q.briefing||q.intro));
+  if(q.dlc)selected.append(el('p','eyebrow',q.dlc));
   if(q.level)selected.append(el('p','eyebrow','Suggested level '+q.level));
   const actions=el('nav','tiles console-tiles');
   actions.setAttribute('aria-label','Selected card actions');
@@ -179,7 +180,9 @@ function resumePanel(){
   panel.classList.add('resume','console-continue');
   panel.append(el('small','','Resume'),el('h2','',q.name));
   if(caption)panel.append(el('p','',caption));
-  panel.append(link('Open walkthrough →','#quest/'+id+'/'+stage,'button-link'));
+  const action=link('','#quest/'+id+'/'+stage,'velen-resume-action');
+  action.append(picture('navigation-art-v26/action-walkthrough.webp'),el('span','','Open walkthrough →'));
+  panel.append(action);
   return panel;
 }
 function nearbyStops(id){
@@ -191,6 +194,30 @@ function nearbyStops(id){
     panel.append(link(stop.label||quests[stop.quest].name,stop.href,'activity-link'),el('p','small-note',stop.context));
   }
   return panel;
+}
+function regionalMap(){
+  const details=el('details','velen-regional-map');
+  details.append(el('summary','','Velen route map'));
+  const map=el('div','velen-map-sketch');
+  map.setAttribute('role','group');
+  map.setAttribute('aria-label','Velen field map, schematic');
+  const locations=[
+    ['Lornruk',13,17,'#quest/griffin-school-gear/2'],
+    ['Border Post',53,13,'#lead/thou-shalt-not-pass'],
+    ['Inn at the Crossroads',39,35,'#merchants'],
+    ['Devil’s Pit',78,39,'#lead/eternal-fires-shadow'],
+    ['Crow’s Perch',30,58,'#lead/family-matters'],
+    ['Lindenvale',66,62,'#lead/witcher-wannabe'],
+    ['Fyke Isle',27,82,'#lead/towerful-of-mice'],
+    ['Crookback Bog',72,86,'#lead/ladies-of-the-wood']
+  ];
+  for(const [name,x,y,href] of locations){
+    const pin=link(name,href,'velen-map-pin');
+    pin.style.left=x+'%';pin.style.top=y+'%';
+    map.append(pin);
+  }
+  details.append(el('p','small-note','Selected guide stops · schematic, not to scale'),map);
+  return details;
 }
 function consoleView(){
   screen.append(header('Velen','No Man’s Land'));
@@ -205,13 +232,13 @@ function consoleView(){
   if(nearby)screen.append(nearby);
   screen.append(activity.section);
   const tools=scroll('Region Tools'),shortcuts=el('nav','tiles shortcuts console-tiles');
-  shortcuts.append(artTile('Velen & Novigrad map ↗','https://www.witcher.tools/map/velen-novigrad','velen-landscape-r18.webp'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
+  shortcuts.append(artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
   const arrival=el('details','velen-arrival-checklist');
   arrival.open=arrivalOpen;
   arrival.ontoggle=()=>{if(arrival.isConnected)arrivalOpen=arrival.open;};
   arrival.append(el('summary','','Arrival checklist'),el('p','pilot-count',['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
   for(const id of ['nilf','pyres','mercy'])arrival.append(link((isComplete(id)?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
-  tools.append(shortcuts,arrival);
+  tools.append(regionalMap(),shortcuts,arrival);
   screen.append(tools);
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
@@ -231,6 +258,7 @@ function readingPage(id,q,index,legacy){
   const seal=el('span','r15-page-seal',q.kind||'Main quest');
   seal.setAttribute('aria-hidden','true');
   heading.append(art,el('p','eyebrow','QUEST WALKTHROUGH / VELEN'),el('h1','',q.name),el('p','quest-page-facts',q.level?'Velen · Suggested level '+q.level:'Velen'),seal);
+  if(q.dlc)heading.append(el('p','quest-page-facts',q.dlc));
   const panel=el('article','reading-panel');
   const tools=el('nav','quest-tools');
   tools.setAttribute('aria-label','Quest tools');
@@ -255,6 +283,7 @@ function questCard(id, stage){
   screen.append(header(lead.name,(lead.kind||'Main quest')+(lead.level?' · Suggested level '+lead.level:''),card.art));
   const panel=scroll('At this stop');
   panel.append(link('← Velen console','#velen','back-link'),el('p','eyebrow',lead.place),el('p','',card.briefing));
+  if(card.dlc)panel.append(el('p','eyebrow',card.dlc));
   panel.append(el('p','',card.start||'Start after reading Hendrik’s notes in The Nilfgaardian Connection. Both leads can be followed in either order.'));
   panel.append(link('Open walkthrough →','#quest/'+id+'/1','button-link'));
   panel.append(el('h3','','When the quest is complete'),el('p','',card.completion));

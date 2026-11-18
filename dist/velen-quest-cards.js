@@ -434,6 +434,7 @@
       ]
     },
     'beast-of-honorton': {
+      dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Contract: The Beast of Honorton',kind:contract,level:25,place:'Honorton',
       art:'art-velen/beast-of-honorton.webp',
       briefing:'Investigate the notice from Honorton and find out why the village has gone quiet.',
@@ -472,6 +473,7 @@
       ]
     },
     'where-the-cat-and-wolf-play': {
+      dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Where the Cat and Wolf Play…',kind:side,level:25,place:'Honorton and Oreton',
       art:'art-velen/where-the-cat-and-wolf-play.webp',
       briefing:'Investigate Honorton, find the survivor and decide how to deal with Gaetan.',
@@ -485,6 +487,7 @@
       ]
     },
     'take-what-you-want': {
+      dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Take What You Want',kind:side,place:'Forest Hut, north of Keira’s cottage',
       art:'art-velen/take-what-you-want.webp',
       briefing:'Find Gaetan’s stash and take the steel sword he left behind.',
@@ -691,6 +694,7 @@
       ]
     },
     'fools-gold': {
+      dlc: 'Free DLC · Fools’ Gold',
       name: "Fools’ Gold",
       kind: "Side quest",
       place: "Lurtch and the hog hut",

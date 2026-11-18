@@ -3,7 +3,7 @@
 (()=>{
  const normalize=value=>String(value||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
  const text=value=>Array.isArray(value)?value.map(text).join(' '):typeof value==='string'?value:'';
- function buildIndex({tasks,pins=[],references=[]}){
+ function buildIndex({tasks,pins=[],references=[],velenCards={}}){
   const rows=[],seen=new Set();
   const add=row=>{if(!row.href?.startsWith('#')||seen.has(row.id))return;seen.add(row.id);rows.push({...row,expansion:row.expansion||'base',titleKey:normalize(row.title),searchKey:normalize(row.title+' '+(row.keywords||''))});};
   for(const [id,t]of Object.entries(tasks)){
@@ -13,18 +13,24 @@
    add({id,taskId:id,title:t.name,type,category:type==='quest'?'Quest':type==='diagram'?'Diagram':type==='merchant'?'Merchant / service':type==='reference'?'Reference':'Activity',region:'White Orchard',href,keywords:text([t.intro,t.why,t.requirements,t.sections])});
    for(const stage of t.stages||[])add({id:id+':step:'+stage.id,taskId:id,title:stage.title+' · '+t.name,type:'quest',category:'Quest step',region:'White Orchard',href:'#'+t.view+'/'+stage.id,keywords:text([stage.text,stage.warning])});
   }
+  for(const [id,card] of Object.entries(velenCards)){
+   if(!card.name)continue;
+   const type=/quest/i.test(card.kind)?'quest':'activity';
+   add({id:'velen:'+id,title:card.name,type,category:card.kind,region:'Velen',href:'#velen/lead/'+id,dlc:card.dlc,keywords:text([card.briefing,card.place,card.dlc])});
+  }
   for(const reference of references)add({...reference,type:'reference',category:'Reference',region:reference.region||'Guide-wide'});
   return rows;
  }
  function status(row,{tasks,state,engine}){
   const id=row.taskId;
+  if(row.region==='Velen'&&!id)return {key:'unknown',label:'Not recorded'};
   if(!id||row.type==='reference'||row.type==='merchant')return {key:'reference',label:row.type==='merchant'?'Availability not tracked':'Reference'};
   if(tasks[id]?.stages){const s=engine.status(id,state.progress);const key=s==='complete'?'completed':s==='failed'?'failed':s==='active'?'open':'unknown';return {key,label:(row.category==='Quest step'?'Quest: ':'')+(key==='completed'?'Recorded complete':key==='failed'?'Recorded failed':key==='open'?'In progress':s==='unavailable'?'Availability unknown':'Not recorded')};}
   return state.completed[id]===true?{key:'completed',label:row.type==='diagram'?'Recorded acquired':'Recorded complete'}:{key:'unknown',label:'Not recorded'};
  }
  function search(index,query,filters={},context){
   const q=normalize(String(query||'').slice(0,160)),tokens=q.split(' ').filter(Boolean);if(!tokens.length)return [];
-  return index.filter(row=>(filters.expansions||row.expansion==='base')&&(!filters.region||filters.region==='all'||row.region===filters.region)&&(!filters.type||filters.type==='all'||row.type===filters.type)).map(row=>{
+  return index.filter(row=>(!filters.region||filters.region==='all'||row.region===filters.region)&&(!filters.type||filters.type==='all'||row.type===filters.type)).map(row=>{
    const current=status(row,context);if(filters.completion&&filters.completion!=='all'&&(filters.completion==='open'?!['open','unknown'].includes(current.key):current.key!==filters.completion))return null;
    if(!tokens.every(token=>row.searchKey.includes(token)))return null;
    const score=row.titleKey===q?1000:row.titleKey.startsWith(q)?800:row.titleKey.includes(q)?600:tokens.reduce((n,t)=>n+(row.titleKey.includes(t)?30:1),0);
