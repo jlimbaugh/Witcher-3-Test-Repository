@@ -157,7 +157,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  assert.deepEqual([...new Set(changed)],['app.js','character-entry.js','character-gear.js','character-ui.js','character-vault.js','character.css','home-ui.js','medallion.js','shared-walkthrough.css','shared-walkthrough.js','velen-quest-cards.js','velen-r18.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).filter(r=>r.html==='index.html').map(r=>[r.file,r.tag]));
  for(const f of ['app.js','home-ui.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
- for(const f of ['shared-walkthrough.css','shared-walkthrough.js','velen-r18.js','velen-quest-cards.js'])assert.equal(tags[f],'velen-main-deck-2',f);
+ for(const f of ['shared-walkthrough.css','shared-walkthrough.js','velen-r18.js','velen-quest-cards.js'])assert.equal(tags[f],'velen-safari-controls-3',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
  const refs=refsOf(here).map(r=>({...r}));

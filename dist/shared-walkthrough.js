@@ -150,18 +150,21 @@
   function velenReadingAdapter(page){
    const {id,q,index,story,goStage}=root.PhoenixVelenReadingPages.get(page);
    const rows=q.stages.map((st,i)=>({id:String(i+1),label:st.title,stage:String(i+1),required:true}));
-   const lay={primary:rows,optional:[],ownerOf:{},extras:{}};
+   const lay=layout(rows,rows.map(row=>row.stage));
+   const key='velen:'+id;
+   const marks=memory.get(key)?.stageMarks||new Set();
    function reading(n){
     const st=q.stages[Number(n)-1],note=st.note||st.prep;
     return {title:st.title,place:st.place||'',actions:st.actions||sentences(st.text),choices:[],why:[],info:note?[{title:'Field notes',paragraphs:[note]}]:[],links:(st.links||[]).map(([label,id])=>({label,href:'#velen/lead/'+id})),nearby:[],spoiler:st.spoiler||''};
    }
-   return {key:'velen:'+id,region:'Velen',section:page,quest:q.name,rows,lay,reading,story,goStage,readOnly:true,
-    currentStage:()=>String(index+1),objState:()=>({done:false,disabled:false,text:''}),
+   return {key,region:'Velen',section:page,quest:q.name,rows,lay,reading,story,goStage,readOnly:true,
+    toggleStage(stage,checked){if(checked)marks.add(stage);else marks.delete(stage);memory.set(key,{...memory.get(key),stageMarks:marks});},
+    currentStage:()=>String(index+1),objState:o=>({done:marks.has(o.id),disabled:false,text:'Not completed'}),
     warning(o){const text=q.stages[Number(o.stage)-1].warning;return text?{id:warningRecordId('velen.'+id,'stage-'+o.stage),short:text,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;}};
   }
 
   // ---- shared rendering ------------------------------------------------------------------------------------------
-  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
+  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);render(a);a.section.querySelector('.sw-box.selected input')?.focus({preventScroll:true});});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
   function render(a){
    const host=a.section.querySelector('.reading-panel');if(!host)return;
    a.section.classList.add('sw-page');
@@ -191,14 +194,13 @@
     panel.append(make('p','sw-provenance','Shown for: '+sel.label+' Opening this panel does not change progress.'));selector.append(panel);}
    const rail=make('div','sw-rail');rail.setAttribute('role','listbox');rail.setAttribute('aria-label',a.quest+(a.readOnly?' stages.':' objectives.')+' Swipe or use arrow keys to choose.');rail.tabIndex=-1;
    for(const o of a.lay.primary){const st=a.objState(o),isSel=o.id===selected,box=make('div','sw-box'+(isSel?' selected':'')+(st.done?' done':'')+(st.disabled?' unavailable':''));box.dataset.swObjective=o.id;box.setAttribute('role','option');box.setAttribute('aria-selected',String(isSel));box.tabIndex=isSel?0:-1;
-    if(a.readOnly){box.append(make('span','sw-stage-no',o.stage));}
-    else if(isSel)box.append(checkbox(a,o,st));
+    if(isSel)box.append(checkbox(a,o,st));
     else{const c=make('button','sw-check sw-check-proxy');c.type='button';c.tabIndex=-1;c.setAttribute('aria-label','Select objective: '+o.label);c.append(make('span','sw-check-mark'+(st.done?' on':'')));c.onclick=e=>{e.stopPropagation();choose(a,o.id,true);};box.append(c);}
     const name=make('div','sw-name',o.label);if(st.done||st.disabled)name.append(make('span','sw-state',st.done?'Completed':st.text));box.append(name);
     if(isSel&&!st.done&&st.text!=='Not completed')box.setAttribute('aria-description',st.text);
     box.addEventListener('click',()=>{if(!box.classList.contains('selected'))choose(a,o.id,true);});rail.append(box);}
    rail.addEventListener('keydown',e=>{const i=a.lay.primary.findIndex(o=>o.id===selected);const n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:e.key==='Home'?0:e.key==='End'?a.lay.primary.length-1:-2;if(n<-1)return;e.preventDefault();const o=a.lay.primary[Math.max(0,Math.min(a.lay.primary.length-1,n))];if(o&&o.id!==selected)choose(a,o.id,true,true);});
-   let settle=0;rail.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{if(!rail.isConnected||rail.dataset.programmatic)return;const r=rail.getBoundingClientRect(),mid=r.left+r.width/2;let best=null,dist=1e9;for(const b of rail.children){const bb=b.getBoundingClientRect(),d=Math.abs(bb.left+bb.width/2-mid);if(d<dist){dist=d;best=b;}}if(best&&best.dataset.swObjective!==selected)choose(a,best.dataset.swObjective,false);},160);},{passive:true});
+   let settle=0;rail.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{if(!rail.isConnected||rail.dataset.programmatic)return;const r=rail.getBoundingClientRect(),mid=r.left+r.width/2;let best=null,dist=1e9;for(const b of rail.children){const bb=b.getBoundingClientRect(),d=Math.abs(bb.left+bb.width/2-mid);if(d<dist){dist=d;best=b;}}if(best&&dist<r.width*.25&&best.dataset.swObjective!==selected){const from=a.lay.primary.findIndex(o=>o.id===selected),to=a.lay.primary.findIndex(o=>o.id===best.dataset.swObjective);choose(a,a.lay.primary[from+Math.sign(to-from)].id,false);}},160);},{passive:true});
    selector.append(rail);
    const idx=a.lay.primary.findIndex(o=>o.id===selected)+1,done=a.lay.primary.filter(o=>a.objState(o).done).length;
    const line=make('div','sw-status');line.append(make('span','sw-position',(a.readOnly?'STAGE ':'OBJECTIVE ')+idx+' OF '+a.lay.primary.length));
@@ -213,6 +215,7 @@
    if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));
    }
+   if(a.readOnly)line.append(make('span','sw-route-note','Stage checkmarks last for this visit.'));
    selector.append(line);root_.append(selector);
    // reading
    if(sel){const r=a.reading(sel.stage),reading=make('section','sw-reading');reading.setAttribute('aria-label','Instructions for the selected objective');
@@ -251,7 +254,7 @@
    if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources;if(anchor)anchor.before(story);else host.append(story);}
    story.querySelector('.sw-row-body').replaceChildren(a.story());}
    // keep the selected box centred beneath the wolf without animating
-   const box=rail.querySelector('.selected');if(box){rail.dataset.programmatic='1';const restore=oldRail&&old?.dataset.swKey===a.key?oldRail.scrollLeft:null;if(restore!=null)rail.scrollLeft=restore;requestAnimationFrame(()=>{if(!rail.isConnected)return;const target=box.offsetLeft-(rail.clientWidth-box.offsetWidth)/2;if(Math.abs(rail.scrollLeft-target)>1)rail.scrollTo({left:target,behavior:restore!=null&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});setTimeout(()=>{delete rail.dataset.programmatic;},restore!=null?450:60);});}
+   const box=rail.querySelector('.selected');if(box){rail.dataset.programmatic='1';const restore=oldRail&&old?.dataset.swKey===a.key?oldRail.scrollLeft:null;if(restore!=null)rail.scrollLeft=restore;requestAnimationFrame(()=>{if(!rail.isConnected)return;const boxRect=box.getBoundingClientRect(),railRect=rail.getBoundingClientRect();const target=rail.scrollLeft+boxRect.left+boxRect.width/2-railRect.left-railRect.width/2;if(Math.abs(rail.scrollLeft-target)>1)rail.scrollTo({left:target,behavior:restore!=null&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});setTimeout(()=>{delete rail.dataset.programmatic;},restore!=null?450:60);});}
   }
   function choose(a,id,scroll,focus){
    const o=a.lay.primary.find(x=>x.id===id);if(!o)return;

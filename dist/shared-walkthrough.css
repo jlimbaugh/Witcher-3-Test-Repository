@@ -140,17 +140,23 @@ html body #velen-screen > :is(.velen-nilf-page,.velen-reading-page).sw-page {
   box-sizing: border-box;
   margin-inline: auto;
 }
-.sw-stage-no {
-  display: grid;
-  place-items: center;
-  flex: 0 0 44px;
-  min-height: 44px;
-  font-variant-numeric: tabular-nums;
-}
 @media (orientation:landscape) and (max-height:500px) {
   html body #velen-screen > .velen-reading-page.sw-page {
     margin-left: max(16px,calc(50% - 400px));
     margin-right: 190px;
     width: auto;
   }
+}
+
+/* Leave the side strips available for vertical scrolling on touch screens. */
+.sw-selector { margin-inline: 0; }
+.sw-rail { --sw-card-width: 68%; position: relative; margin-inline: clamp(12px, 4vw, 24px); padding-inline: 0; }
+.sw-rail::before, .sw-rail::after {
+  content: "";
+  flex: 0 0 max(0px, calc((100% - var(--sw-card-width)) / 2 - 10px));
+}
+.sw-box { flex-basis: var(--sw-card-width); box-sizing: border-box; }
+#velen .quest-selector .deck { margin-inline: clamp(16px, 5vw, 28px); touch-action: pan-y; }
+@media (orientation:landscape) and (max-height:500px) {
+  .sw-rail { --sw-card-width: 56%; }
 }
