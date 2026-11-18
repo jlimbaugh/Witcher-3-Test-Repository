@@ -1,0 +1,30 @@
+{
+ "base": "https://phoenix-wo-qa-1c91b66.krwpfbtbn8.chatgpt.site/",
+ "corrupt": {
+  "inputs": 0,
+  "notes": [
+   "Your Velen progress saves in this browser."
+  ],
+  "stored": "{\"schema\":1,\"region\":\"velen\",",
+  "hub": [
+   "Your Velen progress saves in this browser."
+  ]
+ },
+ "newer": {
+  "inputs": 0,
+  "notes": [
+   "Your Velen progress saves in this browser."
+  ],
+  "stored": "{\"schema\":99,\"region\":\"velen\",\"activities\":{}}",
+  "hub": [
+   "Your Velen progress saves in this browser."
+  ]
+ },
+ "p02_dlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\n3 objective marks will be removed\nTravel to Velen.\nGo to the Inn at the Crossroads.\nAsk about the agent called Hendrik at the Inn at the Crossroads.\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "p02_after": {
+  "obj": {},
+  "choices": {}
+ }
+}
