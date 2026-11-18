@@ -17,7 +17,8 @@
 .sw-selector{position:relative;margin:0 -8px 6px;padding:0 0 10px;border-bottom:1px solid #8b7d6188}
 .sw-wolf-wrap{display:flex;flex-direction:column;align-items:center;position:relative;z-index:2;margin-top:-6px}
 .sw-wolf{position:relative;display:grid;place-items:center;width:76px;height:64px;min-height:44px;padding:0;margin:0;border:0;background:none;box-shadow:none;cursor:pointer}
-.sw-wolf img{width:72px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 2px #0006)}
+.sw-wolf .sw-marker{width:72px;height:82px;margin-block:-9px}
+.sw-wolf.sw-wolf{opacity:1!important;overflow:visible}
 .sw-wolf[disabled]{cursor:default;opacity:1}
 .sw-wolf-badge{position:absolute;right:2px;top:4px;min-width:24px;height:24px;border-radius:12px;background:var(--sw-warn);color:#fff7ef;border:2px solid #f3e6d0;font:bold 15px/20px Georgia,serif;text-align:center;box-shadow:0 1px 3px #0007}
 .sw-wolf-badge.unread::after{content:"";position:absolute;right:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:#f4d36b;border:1px solid #6b4b12}
@@ -175,3 +176,8 @@ html body #velen-screen > :is(.velen-nilf-page,.velen-reading-page).sw-page {
 .tree-controls > :is([data-earlier],[data-later]) {
   display: none !important;
 }
+
+.velen-view .reading-panel > details.sources[hidden] { display: none !important; }
+.sw-related-list { margin: 8px 0 0; padding-left: 1.2em; }
+.sw-related-list li + li { margin-top: 8px; }
+.sw-source-link { display: inline-block; margin-top: 8px; font-size: .9rem; }

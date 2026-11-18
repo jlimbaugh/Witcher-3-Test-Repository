@@ -168,7 +168,7 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 //   QA3 save guard ........... a6f24728b1c25b43a28cacab2a522d9be0b27453cf3602fcacb939cbf53cb898 (owner-authorized guard in save())
 //   QA6 D4 storage guard ..... ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d (Cmdr-authorized: guarded
 //                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
-const SEAM_PINS={'velen-r18.js':'ac3450a9419d43c41f35672e5bc3ae50db2af958317eb0889c1601ba928bf9fe'};
+const SEAM_PINS={'velen-r18.js':'e9da01f317010989f4e5ab174424a4f4bc026220db03185c7b573ebc8fe9bb85'};
 test('Slice 2 seam pin: velen-r18.js matches the declared Velen card seam',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });

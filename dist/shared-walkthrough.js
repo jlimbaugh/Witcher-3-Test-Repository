@@ -130,7 +130,7 @@
    const stage=n=>q.stages[Number(n)-1];
    function block(n){const st=stage(n);return {title:st.title,place:st.place||'',actions:sentences(st.text),choices:[],why:st.prep?[st.prep]:[],info:st.choice==='inn'?[{title:'What the inn choice changes',paragraphs:[vd.choices.inn.outcome]}]:[],spoiler:'',links:[],
     nearby:(VELEN_NEARBY[n]||[]).map(x=>({label:x.quest?velen.quests[x.quest].name:x.label,href:x.href,kind:x.kind,context:x.context}))};}
-   return {key:'velen:nilf',region:'Velen',section:page,quest:q.name,rows,lay,stageOrder,counts,status,legacy:!!s.legacyComplete,
+   return {key:'velen:nilf',region:'Velen',section:page,quest:q.name,sourceId:'nilf',related:stageOrder.flatMap(n=>block(n).nearby),rows,lay,stageOrder,counts,status,legacy:!!s.legacyComplete,
     note:s.legacyComplete&&status==='complete'?'Saved complete — objectives unconfirmed. Review it in Story & correction controls.':s.confirmedComplete&&status==='complete'?'Confirmed complete: you recorded that you read Hendrik’s notes on the direct route.':status==='complete'?'Quest complete.':'',
     objState,
     currentStage:()=>{const m=/^#velen\/quest\/nilf\/(\d+)/.exec(location.hash);const n=m?Number(m[1]):1;return String(n>=1&&n<=q.stages.length?n:1);},
@@ -157,27 +157,33 @@
     const st=q.stages[Number(n)-1],note=st.note||st.prep;
     return {title:st.title,place:st.place||'',actions:st.actions||sentences(st.text),choices:[],why:[],info:note?[{title:'Field notes',paragraphs:[note]}]:[],links:(st.links||[]).map(([label,id])=>({label,href:'#velen/lead/'+id})),nearby:[],spoiler:st.spoiler||''};
    }
-   return {key,region:'Velen',section:page,quest:q.name,rows,lay,reading,story,goStage,readOnly:true,
+   const related=q.stages.flatMap(st=>(st.links||[]).map(([label,id])=>({label,href:'#velen/lead/'+id})));
+   if(id==='pyres'||id==='mercy'){
+    const other=id==='pyres'?'mercy':'pyres';
+    related.push({label:root.PHOENIX_VELEN.quests[other].name,href:'#velen/hub/'+other});
+   }
+   return {key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows,lay,reading,story,goStage,readOnly:true,
     toggleStage(stage,checked){if(checked)marks.add(stage);else marks.delete(stage);memory.set(key,{...memory.get(key),stageMarks:marks});},
     currentStage:()=>String(index+1),objState:o=>({done:marks.has(o.id),disabled:false,text:'Not completed'}),
     warning(o){const text=q.stages[Number(o.stage)-1].warning;return text?{id:warningRecordId('velen.'+id,'stage-'+o.stage),short:text,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;}};
   }
 
   // ---- shared rendering ------------------------------------------------------------------------------------------
-  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);render(a);a.section.querySelector('.sw-box.selected input')?.focus({preventScroll:true});});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
+  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);const box=input.closest('.sw-box');box.classList.toggle('done',input.checked);input.setAttribute('aria-label',(input.checked?'Completed: ':'Mark complete: ')+o.label);const name=box.querySelector('.sw-name');name.querySelector('.sw-state')?.remove();if(input.checked)name.append(make('span','sw-state','Completed'));});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
   function render(a){
    const host=a.section.querySelector('.reading-panel');if(!host)return;
    a.section.classList.add('sw-page');
    const old=host.querySelector(':scope>.sw-walkthrough');const oldRail=old?.querySelector('.sw-rail');
+   const pageY=viewport().scrollY;
    const stage=a.currentStage();
    let selected=selectFor({stage,remembered:remembered(a.key),primary:a.lay.primary,ownerOf:a.lay.ownerOf});
    const sel=a.lay.primary.find(o=>o.id===selected);
    const mem=memory.get(a.key)||{};if(mem.objective!==selected)remember(a.key,selected);
-   const root_=make('section','sw-walkthrough');root_.dataset.swKey=a.key;
+   const root_=make('section','sw-walkthrough');root_.dataset.swKey=a.key;root_.dataset.swSelected=selected;
    // selector
    const selector=make('section','sw-selector');selector.setAttribute('aria-label',a.readOnly?'Walkthrough stages':'Objectives');
    const warn=sel?a.warning(sel):null,acked=warn?acknowledged(history_(),warn.id,warn.short):false,open=!!(warn&&mem.warnOpen===selected);
-   const wrap=make('div','sw-wolf-wrap'),wolf=make('button','sw-wolf');wolf.type='button';const wi=make('img');wi.src='visual-art/wolf-pointer.webp';wi.alt='';wolf.append(wi);
+   const wrap=make('div','sw-wolf-wrap'),wolf=make('button','sw-wolf');wolf.type='button';const marker=make('span','wolf-pointer sw-marker'),wi=make('img','wolf-pointer-art');marker.setAttribute('aria-hidden','true');wi.src='visual-art/wolf-pointer.webp';wi.alt='';wi.draggable=false;marker.append(wi);wolf.append(marker);
    if(warn){wolf.append(make('span','sw-wolf-badge'+(acked?' acked':' unread'),acked?'✓':'!'));wolf.setAttribute('aria-expanded',String(open));wolf.setAttribute('aria-controls','sw-warning-panel');wolf.setAttribute('aria-label',(open?'Hide':'Show')+' warning for this objective'+(acked?' (acknowledged)':' (new)'));
     wolf.onclick=()=>{memory.set(a.key,{...memory.get(a.key),warnOpen:open?null:selected});feedback=null;render(a);root_.isConnected;const w=a.section.querySelector('.sw-wolf');w?.focus({preventScroll:true});};}
    else{wolf.disabled=true;wolf.setAttribute('aria-label','No warning for this objective');}
@@ -233,12 +239,12 @@
     ob.append(make('h3','','NEARBY'));
     const nearbyItem=n=>{const it=make('div','sw-opt sw-near'),t=make('div'),link=make('a','sw-link',n.label+' →');link.href=n.href;if(n.optionalStop)link.dataset.optionalStop='true';t.append(make('span','sw-kind','Nearby · '+n.kind),link);if(n.status)t.append(make('span','sw-state',n.status));if(n.context)t.append(make('p','sw-context',n.context));it.append(make('span','sw-pin','◆'),t);return it;};
     for(const n of near)ob.append(nearbyItem(n));if(!near.length)ob.append(make('p','sw-empty','No nearby activity is recorded for this objective.'));
-    opt.append(ob);if(optObjs.length||near.length)reading.append(opt);
+    opt.append(ob);if(optObjs.length||(!a.sourceId&&near.length))reading.append(opt);
     // Information: further stage detail, unmapped setup/follow-up stages, route links and spoilers.
     const inf=make('details','sw-row');inf.dataset.swRow='info';if(mem.rows?.info||(mem.rows?.info===undefined&&stage!==sel.stage))inf.open=true;/* a stage without its own objective opens here */inf.append(make('summary','','Information'));const ib=make('div','sw-row-body');let any=false;
     const para=(host,list)=>{for(const x of list)host.append(make('p','',x));};
     for(const b of r.info){ib.append(make('h3','',b.title.toUpperCase()));para(ib,b.paragraphs);any=true;}
-    if(r.links.length){ib.append(make('h3','','CONTINUE THE ROUTE'));for(const l of r.links){const x=make('a','sw-link',l.label+' →');x.href=l.href;ib.append(x);}any=true;}
+    if(r.links.length&&!a.sourceId){ib.append(make('h3','','CONTINUE THE ROUTE'));for(const l of r.links){const x=make('a','sw-link',l.label+' →');x.href=l.href;ib.append(x);}any=true;}
     for(const extra of a.lay.extras[sel.id]||[]){const b=a.extraBlock(extra.stage),box=make('section','sw-extra');box.dataset.swStage=extra.stage;box.append(make('h3','',(extra.when==='before'?'BEFORE THIS: ':'AFTERWARDS: ')+b.title.toUpperCase()));if(b.place)box.append(make('p','sw-place',b.place));
      const ol2=make('ol','sw-actions');for(const x of b.actions)ol2.append(make('li','',x));box.append(ol2);
      if(b.choices.length){const ul=make('ul','sw-choices');for(const c of b.choices)ul.append(make('li','',c));box.append(ul);}para(box,b.why);for(const d of b.info){box.append(make('h4','',d.title));para(box,d.paragraphs);}
@@ -249,12 +255,45 @@
     if(any){inf.append(ib);reading.append(inf);}
     for(const d of [opt,inf])d.addEventListener('toggle',()=>{const m=memory.get(a.key)||{};memory.set(a.key,{...m,rows:{...(m.rows||{}),[d.dataset.swRow]:d.open}});});
     root_.append(reading);}
+   if(a.related?.length){
+    const related=make('section','sw-reading sw-related'),list=make('ul','sw-related-list');
+    related.append(make('h2','','Related quests and tasks'),list);
+    for(const item of new Map(a.related.map(item=>[item.href,item])).values()){
+     const row=make('li'),link=make('a','sw-link',item.label+' →');link.href=item.href;
+     row.append(link);if(item.context)row.append(make('p','sw-context',item.context));list.append(row);
+    }
+    root_.append(related);
+   }
+   if(a.sourceId){
+    for(const item of host.querySelectorAll(':scope>details.sources'))item.hidden=true;
+    if(!host.querySelector(':scope>.sw-source-link')){
+     const source=make('a','sw-link sw-source-link','Sources');
+     source.href='velen-sources.html#'+a.sourceId;host.append(source);
+    }
+   }
    if(old)old.replaceWith(root_);else host.prepend(root_);
    // Story & correction controls (P2 A): existing controls, re-hosted as one quest-level row.
-   if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources;if(anchor)anchor.before(story);else host.append(story);}
+   if(a.story){let story=host.querySelector(':scope>.sw-story-row');if(!story){story=make('details','sw-row sw-story-row');story.append(make('summary','','Story & correction controls'));const body=make('div','sw-row-body');story.append(body);const save=host.querySelector(':scope>.save-message');const sources=[...host.querySelectorAll(':scope>details')].find(d=>d.querySelector('summary')?.textContent.startsWith('Sources'));const anchor=save||sources||host.querySelector('.sw-source-link');if(anchor)anchor.before(story);else host.append(story);}
    story.querySelector('.sw-row-body').replaceChildren(a.story());}
-   // keep the selected box centred beneath the wolf without animating
-   const box=rail.querySelector('.selected');if(box){rail.dataset.programmatic='1';const restore=oldRail&&old?.dataset.swKey===a.key?oldRail.scrollLeft:null;if(restore!=null)rail.scrollLeft=restore;requestAnimationFrame(()=>{if(!rail.isConnected)return;const boxRect=box.getBoundingClientRect(),railRect=rail.getBoundingClientRect();const target=rail.scrollLeft+boxRect.left+boxRect.width/2-railRect.left-railRect.width/2;if(Math.abs(rail.scrollLeft-target)>1)rail.scrollTo({left:target,behavior:restore!=null&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});setTimeout(()=>{delete rail.dataset.programmatic;},restore!=null?450:60);});}
+   const box=rail.querySelector('.selected');
+   if(box){
+    rail.dataset.programmatic='1';
+    const prior=a.section.dataset.swRestoreRail;
+    delete a.section.dataset.swRestoreRail;
+    const keep=prior!=null?Number(prior):old?.dataset.swKey===a.key&&old.dataset.swSelected===selected?oldRail?.scrollLeft:null;
+    if(keep!=null)rail.scrollLeft=keep;
+    requestAnimationFrame(()=>{
+     if(!rail.isConnected)return;
+     if(keep!=null){
+      rail.scrollLeft=keep;
+      if(old)viewport().scrollTo(0,pageY);
+     }else{
+      const card=box.getBoundingClientRect(),frame=rail.getBoundingClientRect();
+      rail.scrollLeft+=card.left+card.width/2-frame.left-frame.width/2;
+     }
+     setTimeout(()=>{delete rail.dataset.programmatic;},100);
+    });
+   }
   }
   function choose(a,id,scroll,focus){
    const o=a.lay.primary.find(x=>x.id===id);if(!o)return;
