@@ -988,6 +988,66 @@
         {"title":"Read the smuggler’s notes","place":"Shore west of Hangman’s Alley","actions":["Clear the drowners and search the bodies for the smuggler’s notes. Read them to mark the wreck."]},
         {"title":"Recover the merchant cargo","place":"Half-sunken ship offshore","actions":["Swim to the wreck and dive around its submerged end. Use the crossbow if drowners block the approach.","Use Witcher Senses to find the cargo chest beside the wreck and loot it for Maugrim."]}
       ]
+    },
+    'tough-luck': {
+      name: "Tough Luck",
+      kind: "Treasure hunt",
+      place: "Southeast of Devil’s Pit",
+      level: 18,
+      art: "art-velen/tough-luck.webp",
+      briefing: "Search the wrecked wagon and recover the family’s locked supplies.",
+      start: "Find the wrecked wagon southeast of the Devil’s Pit signpost, northwest of Marauders’ Bridge.",
+      completion: "Open the chest on the wagon with the small key.",
+      sources: ["https://www.witcher.tools/quests/tough-luck","https://www.neoseeker.com/the-witcher-3-wild-hunt/Tough_Luck"],
+      stages: [
+        {"title":"Recover the letter and small key","place":"Wrecked wagon","actions":["Defeat the foglet and search both bodies. Take the letter from the body propped against the wagon and the small key from the body on the ground.","Read the letter in your inventory."]},
+        {"title":"Unlock the wagon chest","place":"Wrecked wagon","actions":["Use Witcher Senses to identify the chest on the wagon. Open it with the small key and take the loot."]}
+      ]
+    },
+    'battlefield-loot': {
+      name: "Battlefield Loot",
+      kind: "Treasure hunt",
+      place: "Across the river south of Eternal Fire Chapel",
+      level: 20,
+      art: "art-velen/battlefield-loot.webp",
+      briefing: "Follow the bloody trail from an ornate key to a battlefield cache.",
+      start: "Find the hidden treasure marker across the river south of Eternal Fire Chapel.",
+      completion: "Open the locked chest behind the barrels at the ruined tower.",
+      sources: ["https://witcher.fandom.com/wiki/Battlefield_Loot","https://www.gamebanshee.com/thewitcher3/walkthrough/battlefieldloot.php"],
+      stages: [
+        {"title":"Read the crumpled notes","place":"Battlefield perimeter","actions":["Defeat the bilge hag near the bodies of the man and his dog. Loot the man for the crumpled notes and key, then read the notes."]},
+        {"title":"Reveal the cache","place":"Ruined guard tower","actions":["Follow the blood trail with Witcher Senses to the ruined wooden tower. Use Aard on the barrels at its base and unlock the chest behind them."]}
+      ]
+    },
+    'a-plea-ignored': {
+      name: "A Plea Ignored",
+      kind: "Treasure hunt",
+      place: "Peninsula far south of Condyle",
+      level: 28,
+      art: "art-velen/a-plea-ignored.webp",
+      briefing: "Recover a letter and key near a burned home and unlock the hidden valuables.",
+      start: "Follow the path down the peninsula far south of Condyle to the burned house.",
+      completion: "Open the locked chest on the west side of the burned house.",
+      sources: ["https://witcher.fandom.com/wiki/A_Plea_Ignored","https://www.gamebanshee.com/thewitcher3/walkthrough/apleaignored.php"],
+      stages: [
+        {"title":"Recover the letter and key","place":"Path beside the burned house","actions":["Deal with the grave hag if she’s present. Search the body for the crumpled letter and the key, then read the letter."]},
+        {"title":"Loot the valuables","place":"West side of the burned house","actions":["Find the chest beside the ruin with Witcher Senses and unlock it. Be ready for the grave hag if she appears after you open it."]}
+      ]
+    },
+    'dowry': {
+      name: "Dowry",
+      kind: "Treasure hunt",
+      place: "Riverbank west of Gustfields Farm",
+      level: 32,
+      art: "art-velen/dowry.webp",
+      briefing: "Recover Jeanette’s letter and use her key to open the dowry chest.",
+      start: "Find the riverbank hidden treasure marker west of Gustfields Farm and north-northeast of White Eagle Fort.",
+      completion: "Unlock and loot the dowry chest beside the body.",
+      sources: ["https://witcher.fandom.com/wiki/Dowry","https://www.gamebanshee.com/thewitcher3/walkthrough/dowry.php"],
+      stages: [
+        {"title":"Clear the riverbank and read the letter","place":"Riverbank west of Gustfields Farm","actions":["Defeat the basilisk at the marker. Take the unsent letter and slightly bent key from Jeanette’s body, then read the letter."]},
+        {"title":"Open the dowry chest","place":"Riverbank cache","actions":["Use Witcher Senses to locate the nearby locked chest. Open it with the slightly bent key and take the loot."]}
+      ]
     }
   });
 })(window);

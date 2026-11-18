@@ -101,3 +101,5 @@ The first Velen treasure hunt batch uses four original guide illustrations for t
 Four more original treasure hunt illustrations depict the Fyke Isle ruins, the Hangman’s Alley smuggler’s chest, Mettky’s rocky stash, and the grave robbers’ loot south of Duén Hen.
 
 The third Velen treasure batch adds four original illustrations of the scaffolding stash, the haunted elven ruins, the White Eagle Fort swamp chest, and the half-sunken merchant wreck.
+
+Four original treasure hunt illustrations depict the wrecked wagon, the battlefield cache, the burned house near Condyle, and the basilisk-guarded dowry.
