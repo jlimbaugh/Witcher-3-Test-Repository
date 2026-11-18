@@ -406,4 +406,83 @@
       ]
     }
   });
+  Object.assign(root.PhoenixVelenQuestCards,{
+    'woodland-beast': {
+      name:'Contract: Woodland Beast',kind:contract,level:6,place:'Border Post and north Velen woods',
+      art:'art-velen/woodland-beast.webp',
+      briefing:'Investigate attacks on Redanian transports near the Pontar crossing.',
+      start:'Read the notice at the Velen Border Post and speak with the guard captain.',
+      completion:'Resolve the Scoia’tael encounter and report back to the guard captain.',
+      sources:[guide+'contract-woodlandbeast.php'],
+      stages:[
+        {title:'Investigate the attacked transport',place:'Border Post and forest road',actions:['Take the notice and ask the captain where the transport was attacked.','Clear the alghouls at the site. Inspect the bodies and wagon with Witcher Senses to find the tracks.']},
+        {title:'Resolve the woodland encounter',place:'Scoia’tael forest camp',actions:['Follow the footprints to the elves. Yield your weapons to speak with Vernossiel or choose to fight.','If you fight, take a squirrel tail as evidence before returning. If you spare the elves, decide what to tell the captain.']},
+        {title:'Report to the captain',place:'Border Post',actions:['If you spare the elves, identify them to the captain for a pass or conceal their involvement and forgo his reward.','If you fought them, present the squirrel tail for the pass and payment.']}
+      ]
+    },
+    'griffin-from-the-highlands': {
+      name:'Contract: The Griffin from the Highlands',kind:contract,level:24,place:'Crow’s Perch and northern hills',
+      art:'art-velen/griffin-from-the-highlands.webp',
+      briefing:'Hunt the archgriffin and recover the gland Yoana needs to harden her armor.',
+      start:'Advance Master Armorers until Yoana asks for the gland, then read the griffin notice at Crow’s Perch.',
+      completion:'Hand the trophy to the quartermaster. Deliver the separate acid gland to Yoana through Master Armorers.',
+      sources:[guide+'contract-thegriffinfromthehighlands.php',guide+'masterarmorers.php'],
+      stages:[
+        {title:'Pick up Yoana’s lead',place:'Crow’s Perch',actions:['After Yoana asks for the acid gland, take the contract from the notice board.','Go to the marked attack site north of Crow’s Perch.'],links:[['Master Armorers','master-armorers']]},
+        {title:'Track and kill the archgriffin',place:'Highland nest',actions:['Use Witcher Senses to inspect the corpse and follow the blood to the nest.','Defeat the archgriffin. Hybrid Oil can help if available. Take both the trophy and the acid gland.']},
+        {title:'Turn in the trophy',place:'Crow’s Perch',actions:['Speak with the quartermaster to finish the contract.','Take the gland to Yoana to continue the armor quest.'],links:[['Master Armorers','master-armorers']]}
+      ]
+    },
+    'beast-of-honorton': {
+      name:'Contract: The Beast of Honorton',kind:contract,level:25,place:'Honorton',
+      art:'art-velen/beast-of-honorton.webp',
+      briefing:'Investigate the notice from Honorton and find out why the village has gone quiet.',
+      start:'Read the notice at Crow’s Perch and ride to Honorton.',
+      completion:'Clear the alghouls and follow the journal handoff to Where the Cat and Wolf Play…',
+      sources:[guide+'contract-thebeastofhonorton.php'],
+      stages:[
+        {title:'Follow the Honorton notice',place:'Crow’s Perch and Honorton',actions:['Collect the contract notice and ride to Honorton to find the ealdorman.','Approach the village ready to fight necrophages.']},
+        {title:'Clear the village and follow the new lead',place:'Honorton',actions:['Defeat the alghouls at the scene.','When the journal changes, continue in Where the Cat and Wolf Play…'],note:'This entry stops at the journal handoff. The next card covers the investigation and the choice. There is no second monster hunt for the same scene.',links:[['Where the Cat and Wolf Play…','where-the-cat-and-wolf-play']]}
+      ]
+    },
+    'missing-brother': {
+      name:'Contract: Missing Brother',kind:contract,level:33,place:'Inn at the Crossroads and old mine',
+      art:'art-velen/missing-brother.webp',
+      briefing:'Find Mikkel’s trail in the old mine and defeat Harrisi, the venomous arachas.',
+      start:'Read Bruno’s notice and speak with him inside the Inn at the Crossroads.',
+      completion:'Take Harrisi’s trophy and settle the payment with Bruno.',
+      sources:[guide+'contract-missingbrother.php','https://wiki.eso-ui.com/index.php/Witcher_3%3AContract%3A_Missing_Brother'],
+      stages:[
+        {title:'Find the mine and the survivor',place:'Old mine near the Inn at the Crossroads',actions:['Talk to Bruno and follow the tracks into the mine with Witcher Senses.','Find the farmer’s wife. Use the nearby lever from the south side to lower the raised bridge.']},
+        {title:'Destroy the egg clusters',place:'Inner mine tunnels',actions:['Inspect the blood, remains and eggs to identify the arachas.','Sweep the marked branches for egg clusters and destroy them with Signs before approaching the lair.'],warning:'Eggs left intact can hatch during the fight. Clear the optional egg objective first if you want fewer enemies.'},
+        {title:'Defeat Harrisi and return to Bruno',place:'Arachas lair and Inn at the Crossroads',actions:['Inspect Mikkel’s boot and prepare for Harrisi’s attack. Golden Oriole helps against her poison.','Loot the trophy and return to Bruno. Resolve his payment dispute through the dialogue you prefer.']}
+      ]
+    },
+    'master-armorers': {
+      name:'Master Armorers',kind:side,place:'Crow’s Perch and Undvik',
+      art:'art-velen/master-armorers.webp',
+      briefing:'Recover the Undvik tools and help Yoana prove her work at Crow’s Perch.',
+      start:'Ask Fergus and Yoana about master armor at Crow’s Perch.',
+      completion:'Help Yoana finish the armor and take part in the test to unlock her master armorer services.',
+      sources:[guide+'masterarmorers.php'],
+      stages:[
+        {title:'Recover the smithing tools',place:'Clan Tordarroch Forge, Undvik',actions:['Speak with Fergus and Yoana about the tools. Travel to Undvik when you can reach Skellige.','Enter the cave near the forge, deal with the ice troll and collect the tools from the chest.']},
+        {title:'Get the acid gland for Yoana',place:'Crow’s Perch and the highlands',actions:['Return the tools to Crow’s Perch and speak with Yoana about her armor.','Hunt the archgriffin and bring the gland to Yoana. The contract trophy goes separately to the quartermaster.'],links:[['Contract: The Griffin from the Highlands','griffin-from-the-highlands']]},
+        {title:'Take part in the armor test',place:'Crow’s Perch forge',actions:['Agree to wear Yoana’s armor for the comparison. Finish the scene and confirm her services are available.','Return later if Yoana offers to finish a reward piece.'],warning:'Refusing the armor test can fail this quest and block the master armorer unlock.'}
+      ]
+    },
+    'where-the-cat-and-wolf-play': {
+      name:'Where the Cat and Wolf Play…',kind:side,level:25,place:'Honorton and Oreton',
+      art:'art-velen/where-the-cat-and-wolf-play.webp',
+      briefing:'Investigate Honorton, find the survivor and decide how to deal with Gaetan.',
+      start:'Follow the journal after clearing Honorton in Contract: The Beast of Honorton.',
+      completion:'Resolve the encounter with Gaetan and escort Millie to her aunt in Oreton.',
+      sources:[guide+'contract-thebeastofhonorton.php',field+'where-the-cat-and-wolf-play'],
+      stages:[
+        {title:'Find and speak to the survivor',place:'Honorton',actions:['Investigate the village with Witcher Senses and follow the girl’s tracks. Pick up her doll along the trail.','Give Millie the doll or use the available Axii dialogue so she can tell you what happened.']},
+        {title:'Track Gaetan and decide his fate',place:'Ritual circle and shrine',actions:['Follow the tracks east from the ritual circle to the shrine and hear Gaetan’s account.','Spare him to unlock Take What You Want, or choose to fight.'],warning:'If you fight and let Gaetan drink first, he can blind you with a bomb. Killing him closes the stash quest route.'},
+        {title:'Take Millie to Oreton',place:'Honorton and Oreton',actions:['Return to Millie and escort her to her aunt in Oreton.','Decide whether to leave money for her care. A later visit can uncover her thank-you card.']}
+      ]
+    }
+  });
 })(window);

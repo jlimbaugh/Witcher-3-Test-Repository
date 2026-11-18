@@ -81,3 +81,5 @@ Image prompt: Background-extraction of the supplied silver wolf medallion; prese
 The first four Velen contract cards use original AI-generated target portraits in `art-velen/`: Shrieker (cockatrice), Jenny o’ the Woods (nightwraith), Mourntart (grave hag), and Ignis Fatuus (foglet). Their walkthrough citations identify the target and encounter. The portraits are guide illustrations.
 
 The second Velen contract batch uses original AI-generated portraits of the patrol wyvern, Howler the chort, Sarasti the ekimmara, and the royal wyvern at the Benek nests. Source links in the corresponding walkthroughs establish the encounter and target.
+
+The final Velen contract batch uses original guide illustrations for the woodland Scoia’tael, the highland archgriffin, the alghouls at Honorton, and Harrisi the arachas. The linked Master Armorers and Where the Cat and Wolf Play… cards illustrate Yoana at the forge and Gaetan near his shrine. Honorton’s image depicts the first encounter before the journal handoff.
