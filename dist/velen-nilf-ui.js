@@ -140,7 +140,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, reading
       return;
     }
     dialog.innerHTML =
-      '<h2 id="velen-progress-dialog-title">Review progress update</h2><p data-review-target></p><label class="catchup-option" data-catchup-row><input type="checkbox" data-velen-catchup> Also complete earlier required steps</label><div data-review-choices></div><div data-review-impact aria-live="polite"></div><p>Only the required steps on your selected path are included. Unchosen objectives stay untouched. One Undo reverses this whole progress update.</p><div class="dialog-actions"><button type="button" data-velen-cancel>Cancel</button><button type="button" data-velen-confirm>Confirm update</button></div>';
+      '<h2 id="velen-progress-dialog-title">Review progress update</h2><p data-review-target></p><div class="velen-review-body"><label class="catchup-option" data-catchup-row><input type="checkbox" data-velen-catchup> Also complete earlier required steps</label><div data-review-choices></div><div data-review-impact aria-live="polite"></div><p class="velen-review-undo">One Undo reverses this update.</p></div><div class="dialog-actions"><button type="button" data-velen-cancel>Cancel</button><button type="button" data-velen-confirm>Confirm update</button></div>';
     dialog.querySelector('[data-velen-cancel]').onclick = () => dialog.close();
     dialog.querySelector('[data-velen-confirm]').onclick = () => {
       const p = owner.plan(state().progress, pending, options);
@@ -183,9 +183,9 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, reading
     }
     const list = (ids) => '<ul>' + ids.map((id) => '<li>' + esc(label(id)) + '</li>').join('') + '</ul>';
     dialog.querySelector('[data-review-impact]').innerHTML =
-      (plan.catchup.length ? '<details><summary>' + plan.catchup.length + ' earlier required objectives</summary>' + list(plan.catchup) + '</details>' : '') +
+      (plan.catchup.length ? '<details><summary>' + plan.catchup.length + (plan.catchup.length===1?' earlier required objective':' earlier required objectives') + '</summary>' + list(plan.catchup) + '</details>' : '') +
       (plan.catchup.length
-        ? '<p>' + (pending.kind === 'quest' ? 'Confirming whole-quest completion requires its required objectives. Cancel to record individual objectives instead.' : 'Leave catch-up unchecked to record only the selected objective; missing prerequisites will remain unconfirmed.') + '</p>'
+        ? '<p>' + (pending.kind === 'quest' ? 'To mark the quest complete, include the required objectives.' : 'Uncheck to mark only this objective.') + '</p>'
         : '') +
       (plan.affected.length ? '<details open><summary>' + plan.affected.length + ' objective marks will be removed</summary>' + list(plan.affected) + '</details>' : '') +
       (plan.completionLosses.length ? '<div class="risk-note"><strong>Saved quest completion will be removed</strong><ul><li>' + esc(q.name) + '</li></ul></div>' : '') +

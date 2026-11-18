@@ -183,11 +183,13 @@
    // selector
    const selector=make('section','sw-selector');selector.setAttribute('aria-label',a.readOnly?'Walkthrough stages':'Objectives');
    const warn=sel?a.warning(sel):null,acked=warn?acknowledged(history_(),warn.id,warn.short):false,open=!!(warn&&mem.warnOpen===selected);
-   const wrap=make('div','sw-wolf-wrap'),wolf=make('button','sw-wolf');wolf.type='button';const marker=make('span','wolf-pointer sw-marker'),wi=make('img','wolf-pointer-art');marker.setAttribute('aria-hidden','true');wi.src='visual-art/wolf-pointer.webp';wi.alt='';wi.draggable=false;marker.append(wi);wolf.append(marker);
+   const wrap=make('div','sw-wolf-wrap scroll-wolf-cue is-on-paper'),wolf=make('button','sw-wolf');wolf.type='button';const marker=make('span','wolf-pointer sw-marker'),wi=make('img','wolf-pointer-art');marker.setAttribute('aria-hidden','true');wi.src='visual-art/wolf-pointer.webp';wi.alt='';wi.draggable=false;marker.append(wi);wolf.append(marker);
    if(warn){wolf.append(make('span','sw-wolf-badge'+(acked?' acked':' unread'),acked?'✓':'!'));wolf.setAttribute('aria-expanded',String(open));wolf.setAttribute('aria-controls','sw-warning-panel');wolf.setAttribute('aria-label',(open?'Hide':'Show')+' warning for this objective'+(acked?' (acknowledged)':' (new)'));
     wolf.onclick=()=>{memory.set(a.key,{...memory.get(a.key),warnOpen:open?null:selected});feedback=null;render(a);root_.isConnected;const w=a.section.querySelector('.sw-wolf');w?.focus({preventScroll:true});};}
    else{wolf.disabled=true;wolf.setAttribute('aria-label','No warning for this objective');}
-   wrap.append(wolf,make('p','sw-wolf-caption'+(acked?' acked':''),warn?((acked?'Warning, acknowledged':'Warning')+(open?' · tap the wolf to close':' · tap the wolf')):''));selector.append(wrap);
+   wrap.append(wolf);selector.append(wrap);
+   const warningCaption=warn?make('p','sw-wolf-caption'+(acked?' acked':''),(acked?'Warning acknowledged':'Warning')+(open?' · tap wolf to close':' · tap wolf')):null;
+   let warningPanel;
    if(warn&&open){const panel=make('div','sw-warning-panel');panel.id='sw-warning-panel';panel.setAttribute('role','region');panel.setAttribute('aria-label','Warning');panel.append(make('h3','',warn.short));
     const row=make('div','sw-ack-row');
     if(acked)row.append(make('span','sw-ack-done','✓ Acknowledged. The wolf will not mark this warning as new again unless its text changes.'));
@@ -197,7 +199,7 @@
     panel.append(row);
     if(feedback?.key===a.key&&feedback.text)panel.append(make('p','sw-ack-feedback',feedback.text));
     if(warn.sections.length){const dl=make('dl');for(const [k,v] of warn.sections)dl.append(make('dt','',k),make('dd','',v));panel.append(dl);}
-    panel.append(make('p','sw-provenance','Shown for: '+sel.label+' Opening this panel does not change progress.'));selector.append(panel);}
+    panel.append(make('p','sw-provenance','Shown for: '+sel.label+' Opening this panel does not change progress.'));warningPanel=panel;}
    const rail=make('div','sw-rail');rail.setAttribute('role','listbox');rail.setAttribute('aria-label',a.quest+(a.readOnly?' stages.':' objectives.')+' Swipe or use arrow keys to choose.');rail.tabIndex=-1;
    for(const o of a.lay.primary){const st=a.objState(o),isSel=o.id===selected,box=make('div','sw-box'+(isSel?' selected':'')+(st.done?' done':'')+(st.disabled?' unavailable':''));box.dataset.swObjective=o.id;box.setAttribute('role','option');box.setAttribute('aria-selected',String(isSel));box.tabIndex=isSel?0:-1;
     if(isSel)box.append(checkbox(a,o,st));
@@ -208,6 +210,8 @@
    rail.addEventListener('keydown',e=>{const i=a.lay.primary.findIndex(o=>o.id===selected);const n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:e.key==='Home'?0:e.key==='End'?a.lay.primary.length-1:-2;if(n<-1)return;e.preventDefault();const o=a.lay.primary[Math.max(0,Math.min(a.lay.primary.length-1,n))];if(o&&o.id!==selected)choose(a,o.id,true,true);});
    let settle=0;rail.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{if(!rail.isConnected||rail.dataset.programmatic)return;const r=rail.getBoundingClientRect(),mid=r.left+r.width/2;let best=null,dist=1e9;for(const b of rail.children){const bb=b.getBoundingClientRect(),d=Math.abs(bb.left+bb.width/2-mid);if(d<dist){dist=d;best=b;}}if(best&&dist<r.width*.25&&best.dataset.swObjective!==selected){const from=a.lay.primary.findIndex(o=>o.id===selected),to=a.lay.primary.findIndex(o=>o.id===best.dataset.swObjective);choose(a,a.lay.primary[from+Math.sign(to-from)].id,false);}},160);},{passive:true});
    selector.append(rail);
+   if(warningCaption)selector.append(warningCaption);
+   if(warningPanel)selector.append(warningPanel);
    const idx=a.lay.primary.findIndex(o=>o.id===selected)+1,done=a.lay.primary.filter(o=>a.objState(o).done).length;
    const line=make('div','sw-status');line.append(make('span','sw-position',(a.readOnly?'STAGE ':'OBJECTIVE ')+idx+' OF '+a.lay.primary.length));
    if(!a.readOnly){
