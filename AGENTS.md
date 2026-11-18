@@ -50,3 +50,5 @@ with consistent, unique names.
 For quest or activity card work, read `docs/QUEST-CARD-ART-TEMPLATE.md` and `ART-STANDARD.md` at session start.
 
 For regional quest or activity decks, read `docs/REGION-DECK-TEMPLATE.md` before editing.
+
+For any guide page, start with `docs/PAGE-TEMPLATE-INDEX.md` and follow its linked templates and acceptance checks.

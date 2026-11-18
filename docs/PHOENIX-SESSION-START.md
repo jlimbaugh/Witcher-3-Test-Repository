@@ -197,3 +197,7 @@ Before adding or reviewing cards, read the [quest and activity card art template
 ## Regional deck work
 
 Use the [approved regional deck template](REGION-DECK-TEMPLATE.md) when building a regional quest or activity deck. Reuse its numbers-only wraparound strip, fixed action art, and acceptance checks.
+
+## Page template lookup
+
+Before designing or modifying a page, use the [Phoenix page template index](PAGE-TEMPLATE-INDEX.md). Record the reference route, content and state contract, and acceptance checks. Follow the linked regional deck and card art templates where applicable.
