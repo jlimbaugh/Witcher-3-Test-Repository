@@ -93,3 +93,5 @@ This Velen village side-quest batch adds four original guide illustrations: the 
 The Velen roadside batch adds four original guide illustrations: the burning hut at Codgers’ Quarry, the Nilfgaardian deserter at Hangman’s Alley, the shrine vandals, and Jackamar’s grave.
 
 The village requests batch adds original guide illustrations for Lurtch’s cursed pigs, the sage of Benek, Gert Borel’s cart and the Lindenvale impostor.
+
+This Velen batch adds original guide illustrations for the Condyle search, the Nilfgaardian mother, the Crow’s Perch horse races and the regional fistfighting circuit.

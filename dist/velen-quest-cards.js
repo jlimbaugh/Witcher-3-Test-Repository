@@ -747,6 +747,69 @@
         {"title":"Follow the ealdorman’s lead","place":"Lindenvale","actions":["Speak to the ealdorman about the other witcher and head to the cemetery east of town."],"links":[["Contract: The Merry Widow","merry-widow"]]},
         {"title":"Find the impostor and decide his fate","place":"Lindenvale cemetery","actions":["Defeat the ghoul. Follow the footprints behind the chapel with Witcher Senses to find the impostor.","Choose whether to expose him or cover for him. Then choose whether he leaves the village or stays to work for the ealdorman."]}
       ]
+    },
+    'loves-cruel-snares': {
+      name: "Love’s Cruel Snares",
+      kind: "Side quest",
+      place: "Boatyard north of Condyle",
+      level: 10,
+      art: "art-velen/loves-cruel-snares.webp",
+      briefing: "Find out what happened to the woman’s fiancé while he was checking his snares.",
+      start: "Clear the abandoned boatyard between Refugees’ Camp and Condyle and the pirate camp on the peninsula west of it. Speak to the woman by the road.",
+      completion: "Find the missing man and report back to the woman.",
+      sources: ["https://www.witcher.tools/quests/loves-cruel-snares","https://witcher.fandom.com/wiki/Love%27s_Cruel_Snares"],
+      stages: [
+        {"title":"Follow the tracks to the snares","place":"Woods near Condyle","actions":["Agree to search. Follow the tracks with Witcher Senses, defeat the wild dogs and examine the body."],"warning":"Leaving the area after accepting the search can fail the quest."},
+        {"title":"Return with the news","place":"Road near the boatyard","actions":["Tell the woman what happened. Accept her 40 crowns or decline the money for more XP."]}
+      ]
+    },
+    'blood-ties': {
+      name: "Blood Ties",
+      kind: "Side quest",
+      place: "Nilfgaardian Army Group Center Camp and nearby swamp",
+      art: "art-velen/blood-ties.webp",
+      briefing: "Investigate what happened to a Nilfgaardian mother’s missing son.",
+      start: "Speak to the woman at the Nilfgaardian Army Group Center Camp.",
+      completion: "Find the letter that confirms her son’s fate and report back.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/bloodties.php","https://witcher.fandom.com/wiki/Blood_Ties"],
+      stages: [
+        {"title":"Question the quartermaster","place":"Nilfgaardian Army Group Center Camp","actions":["Ask Eggebracht about the missing cavalryman. Use Delusion rank 2 or pay 150 crowns to get him to talk if he withholds the lead."],"note":"Depending on how you resolved Patrol Gone Missing, asking him directly can be enough.","links":[["Contract: Patrol Gone Missing","patrol-gone-missing"]]},
+        {"title":"Find proof in the swamp","place":"Northwest of the House of Respite","actions":["Examine the dead horse and tracks. Follow the trail past the first body to the hanged men. Inspect the red-haired man and take the unsent letter beneath him."]},
+        {"title":"Report to the mother","place":"Nilfgaardian Army Group Center Camp","actions":["Return to the woman and choose whether to tell her he deserted or say he died in battle. Either answer finishes the quest."]}
+      ]
+    },
+    'races-crows-perch': {
+      name: "Races: Crow’s Perch",
+      kind: "Side quest",
+      place: "Crossroads west of Crow’s Perch",
+      art: "art-velen/races-crows-perch.webp",
+      briefing: "Win all three races to collect a saddle, saddlebags and blinders for Roach.",
+      start: "Read the Horse Races notice at Crow’s Perch or speak to Radko at the crossroads east of Blackbough.",
+      completion: "Win once against each of Radko’s three riders.",
+      sources: ["https://www.witcher.tools/quests/races-crows-perch","https://witcher.fandom.com/wiki/Races%3A_Crow%27s_Perch"],
+      stages: [
+        {"title":"Enter the races","place":"Crossroads east of Blackbough","actions":["Speak to Radko, choose a rider and place a wager. Follow the marked course and stay inside the checkpoints."],"warning":"Finish the races before The Isle of Mists if you can. The quest and Radko can temporarily disappear afterward.","note":"A win pays back double your stake plus that rider’s first-win prize."},
+        {"title":"Beat Stuttering Matko","place":"Crow’s Perch race course","actions":["Win against Matko for the Racing Saddle and 20 bonus crowns."]},
+        {"title":"Beat Iron-Arse Hans","place":"Crow’s Perch race course","actions":["Win against Hans for the Saddlebags and 30 bonus crowns."]},
+        {"title":"Beat Black Bogdan","place":"Crow’s Perch race course","actions":["Win against Bogdan for the Horse Blinders and 40 bonus crowns."]}
+      ]
+    },
+    'fists-of-fury-velen': {
+      name: "Fists of Fury: Velen",
+      kind: "Side quest",
+      place: "Inn at the Crossroads, Lindenvale, Blackbough and Crow’s Perch",
+      level: 11,
+      art: "art-velen/fists-of-fury-velen.webp",
+      briefing: "Beat three local fighters and challenge Sergeant Ardal for the Velen title.",
+      start: "Read the Fist Fights notice at Crow’s Perch or talk to a bookie at a fight venue.",
+      completion: "Defeat Smithy, Stan Fishgulper, Jonah and Sergeant Ardal.",
+      sources: ["https://www.witcher.tools/quests/fists-of-fury-velen","https://witcher.fandom.com/wiki/Fists_of_Fury%3A_Velen"],
+      stages: [
+        {"title":"Beat Smithy","place":"Inn at the Crossroads","actions":["Talk to the bookie and place a wager. Counter Smithy after his swings. The first three opponents can be beaten in any order."]},
+        {"title":"Beat Stan Fishgulper","place":"Lindenvale inn","actions":["If you want to let him win for the food prize, wager the minimum, throw the first bout and beat him in a rematch.","If you win outright, you can offer him five crowns afterward."],"warning":"Decide how much to wager before the bout. Fishgulper asks you to throw the match after your bet is placed."},
+        {"title":"Beat Jonah","place":"Blackbough","actions":["Arrange the bout with the bookie. Block or counter Jonah’s attacks and strike when his guard opens."]},
+        {"title":"Win the Velen title","place":"Crow’s Perch","actions":["After beating the three local fighters, challenge Sergeant Ardal at Crow’s Perch and win the title."]}
+      ]
     }
   });
 })(window);
