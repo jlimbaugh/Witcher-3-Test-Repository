@@ -25,6 +25,11 @@ function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}
 function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
 function scroll(title){const n=el('section','scroll scroll-r16');if(title)n.append(el('h2','',title));return n;}
 function artTile(title,href,src,pos){const a=link('',href,'art-tile console-tile');a.append(picture(src,'',pos),el('span','',title));return a;}
+function questAction(text,href,art='navigation-art-v26/action-walkthrough.webp'){
+  const action=link('',href,'home-action-tile');
+  action.append(picture(art),el('span','',text));
+  return action;
+}
 function route(){return routeModel.parse(location.hash);}
 function go(hash,extra={}){navigate(routeModel.sharedHash(hash),{velen:extra});}
 const deckQuests={...quests};
@@ -92,11 +97,11 @@ function selectedPanel(id){
   selected.append(el('p','',q.briefing||q.intro));
   if(q.dlc)selected.append(el('p','eyebrow',q.dlc));
   if(q.level)selected.append(el('p','eyebrow','Suggested level '+q.level));
-  const actions=el('nav','tiles console-tiles');
+  const actions=el('nav','home-selected-actions');
   actions.setAttribute('aria-label','Selected card actions');
   actions.append(
-    artTile('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1),'navigation-art-v26/action-walkthrough.webp'),
-    artTile(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,'navigation-art-v26/action-quest-hub.webp')
+    questAction('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1)),
+    questAction(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,'navigation-art-v26/action-quest-hub.webp')
   );
   selected.append(actions);
   return selected;
@@ -180,9 +185,7 @@ function resumePanel(){
   panel.classList.add('resume','console-continue');
   panel.append(el('small','','Resume'),el('h2','',q.name));
   if(caption)panel.append(el('p','',caption));
-  const action=link('','#quest/'+id+'/'+stage,'velen-resume-action');
-  action.append(picture('navigation-art-v26/action-walkthrough.webp'),el('span','','Open walkthrough →'));
-  panel.append(action);
+  panel.append(questAction('Open walkthrough','#quest/'+id+'/'+stage));
   return panel;
 }
 function nearbyStops(id){
@@ -197,7 +200,9 @@ function nearbyStops(id){
 }
 function regionalMap(){
   const details=el('details','velen-regional-map');
-  details.append(el('summary','','Velen route map'));
+  const summary=el('summary','home-action-tile');
+  summary.append(picture('r10-map.svg'),el('span','','Velen route map'));
+  details.append(summary);
   const map=el('div','velen-map-sketch');
   map.setAttribute('role','group');
   map.setAttribute('aria-label','Velen field map, schematic');
@@ -242,7 +247,7 @@ function consoleView(){
   screen.append(tools);
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
-function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),link('Open walkthrough →','#quest/'+id+'/'+state.stage[id],'button-link'));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
+function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),questAction('Open walkthrough','#quest/'+id+'/'+state.stage[id]));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
 if(id==='nilf'){n.append(el('h3','','Side quests & encounters'));for(const other of ['pyres','mercy'])n.append(link((state.complete[other]?'✓ ':'○ ')+quests[other].name+' · open owner hub','#hub/'+other,'activity-link'));n.append(el('h3','','Services & notices'),link('Innkeeper · supplies and Gwent information','#merchants','activity-link'),link('Collected notices & deferred exploration','#deferred','activity-link'));}else n.append(link('Return to arrival quest hub','#hub/nilf','activity-link'));screen.append(n);if(id==='nilf')screen.append(nextLeads());}
 function choice(key,n){const label=el('label','choice-label',key==='inn'?'Record your inn outcome (optional)':'Record your decision (optional)'),select=el('select');select.setAttribute('aria-label',key==='inn'?'Recorded inn outcome':'Recorded John Verdun decision');select.append(new Option('Not recorded',''));const values=key==='inn'?[['peace','Settled peacefully'],['fight','Fought the soldiers']]:[['freed','Released John'],['left','Left him tied']];for(const [v,t]of values)select.append(new Option(t,v));select.value=state.choices[key]||'';select.onchange=()=>{if(!select.value){state.undo={complete:{...state.complete},choices:{...state.choices}};delete state.choices[key];}else apply(state,{kind:'choice',key,value:select.value});save();};label.append(select);n.append(label);}
 function rememberReading(id,stage=state.stage[id]){
@@ -285,7 +290,7 @@ function questCard(id, stage){
   panel.append(link('← Velen console','#velen','back-link'),el('p','eyebrow',lead.place),el('p','',card.briefing));
   if(card.dlc)panel.append(el('p','eyebrow',card.dlc));
   panel.append(el('p','',card.start||'Start after reading Hendrik’s notes in The Nilfgaardian Connection. Both leads can be followed in either order.'));
-  panel.append(link('Open walkthrough →','#quest/'+id+'/1','button-link'));
+  panel.append(questAction('Open walkthrough','#quest/'+id+'/1'));
   panel.append(el('h3','','When the quest is complete'),el('p','',card.completion));
   panel.append(link('Sources','velen-sources.html#'+id,'sw-source-link'));
   screen.append(panel);

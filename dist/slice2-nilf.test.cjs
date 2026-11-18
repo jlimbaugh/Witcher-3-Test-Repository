@@ -135,7 +135,6 @@ const PROTECTED={
   'progression-engine.js':'08a4f8c603f554b3cab32845667073dfb1cd74b99300310075fbcce947e78469',
   'progression-data.js':'ebb676bb859ffebcdd68704d6feae0c5d4a0a1180a147af3f0698da6f4d7ad24',
   'progression-ui.js':'ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0',
-  'quest-hubs.js':'e02e19ba98f528eb3ca46263542b3b1a1134011d69698e3ccde2b9d153831b6f',
   'quest-pages.js':'43dd4397bbd463112b5512609d230b61658c79640a2d87cf71351e1d6df808cb',
   'velen-migration.js':'0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7',
   'regional-registry.js':'2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283',
@@ -144,7 +143,6 @@ const PROTECTED={
   'console-r16.css':'737302d97dbd16cd664c8d1e3d2bfe39df8c0c12f673c861359ff1d5521c6960',
   'visual-system.js':'9e37cbafe5823a3e38aed070606e3e46ab37b55ad01763250e279461cad69bb3',
   'swipe-boxes.js':'7c8db40da453fc023fba2a769bbd763e8950ced57e3a10113499dbff089c40a8',
-  'home-rebuild.css':'481357b1e0e9858d9c8b4a7343bd0fdb6e94d5445a6a4434863b146f29e6c347',
   'guide-viewport.css':'b69476c2d4a74370cbe8e118232a65557941b489267d7bbd8ff61a76a76684b6',
 };
 // Issue #4 (shared walkthrough v1): two protected v45 files were edited intentionally, listed in
@@ -168,7 +166,8 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 //   QA6 D4 storage guard ..... ef05afb54503496f6982ab106116a36a96ac779624207b31eab9cfebbfb3d94d (Cmdr-authorized: guarded
 //                              localStorage acquisition for the Nilfgaardian owner at line 19 only; see docs/QA6-REVIEW.md)
 // Velen review: the shared console changes intentionally remove the expansion switches.
-const SEAM_PINS={'velen-r18.js': '74dcf0c56c536c11ef5d06767bceb9d87c70a1c08111f9e3d6f1564efcf27ca6', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a'};
+// Illustrated action template: shared styles and hub markup deliberately updated.
+const SEAM_PINS={'velen-r18.js': '9181cdf0765f80cd665b74beb98cabfecf602106a69b3db1d0f02f74f1e572ba', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });

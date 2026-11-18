@@ -533,8 +533,10 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, reading
     const paper = make('article', 'quest-hub-paper'),
       risk = make('p', 'quest-hub-risk');
     risk.hidden = true;
-    const resume = link('', '#quest/nilf/' + stage, 'quest-hub-continue');
-    resume.append(make('strong', '', hasReading() ? 'Continue walkthrough' : 'Start walkthrough'), make('span', '', 'Step ' + stage + ' · ' + q.stages[stage - 1].title));
+    const resume = link('', '#quest/nilf/' + stage, 'home-action-tile');
+    const label = make('span', '', hasReading() ? 'Continue walkthrough' : 'Start walkthrough');
+    label.append(make('small', '', 'Step ' + stage + ' · ' + q.stages[stage - 1].title));
+    resume.append(picture('navigation-art-v26/action-walkthrough.webp'), label);
     const tools = make('nav', 'quest-hub-tools');
     tools.setAttribute('aria-label', q.name + ' hub tools');
     tools.append(link('Quest cards', '#velen'), link('Regions', 'index.html#regions'));

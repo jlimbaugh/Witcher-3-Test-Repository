@@ -8,10 +8,12 @@
 .velen-activities>summary,.velen-activities-shortcut{border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#f4ecd9}
 .velen-activities[open]>summary{margin-bottom:1rem}
 .velen-activities-shortcut{min-height:44px;margin:.75rem auto 0;padding:.4rem .9rem;font:inherit;cursor:pointer}
-.velen-view .velen-resume-action{display:flex;align-items:center;gap:.8rem;width:fit-content;min-height:48px;margin:.8rem auto 0;padding:.2rem .85rem .2rem .2rem;background:#242d32 url(r10-metal.svg);border:3px double #a4b0ba;border-radius:5px;color:#fff4da;text-decoration:none}
-.velen-resume-action img{width:70px;height:48px;object-fit:cover;border-radius:2px}
 .velen-regional-map{margin-block:0 1rem}
 .velen-map-sketch{position:relative;min-height:420px;margin:.6rem 0 1rem;border:2px solid #766748;border-radius:4px;background:radial-gradient(ellipse at 18% 70%,#829996 0%,transparent 50%),radial-gradient(ellipse at 85% 15%,#b6ad89 0%,transparent 48%),#c3b68f url(r10-paper.svg)}
 .velen-view .velen-map-pin{position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;min-height:44px;max-width:7.5rem;padding:.2rem .4rem;background:#233031;border:2px ridge #a9ad9f;color:#fff1d5;border-radius:4px;font-size:.85rem;line-height:1.1;text-align:center;text-decoration:none}
 #velen .page-warning-history{background:#222b2d;color:#f4ecd9}
 #velen .page-warning-history summary,#velen .page-warning-history a{color:inherit}
+
+#velen .home-selected-actions{grid-template-columns:1fr}
+#velen .console-continue .home-action-tile{margin-top:.75rem}
+#velen .velen-regional-map summary.home-action-tile{cursor:pointer}

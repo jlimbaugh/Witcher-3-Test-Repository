@@ -38,6 +38,8 @@ Use the established White Orchard curled parchment (`curled-vellum-r16.webp`) as
 ### Shared parchment controls — approved site-wide
 `parchment-controls.css` is the canonical shared control treatment. Apply outlined parchment tabs with slate/silver embossed plus/minus markers to disclosures on paper surfaces; use framed stamp-box checkboxes and bordered paper selectors. Covers quest hubs and walkthroughs, Progress, diagram and exploration records, merchant/reference disclosures, map paper controls and parchment confirmation dialogs. Scope by material rather than route, so future paper sections inherit it automatically. Keep native controls, keyboard focus, disabled states and confirmation behavior. Dark chrome, the wolf overlay, illustrated card decks and Constellation controls retain their existing treatments. Reserve warning red for risks.
 
-## Quest and activity card art
+## Primary quest and map actions
 
-Match each card illustration to its verified quest subject, enemy, object, or site. Use the [card art template](docs/QUEST-CARD-ART-TEMPLATE.md) for category requirements and acceptance checks.
+The White Orchard selected-quest action in the accepted Lilac and Gooseberries screenshot is the template. Use the shared `home-action-tile` class and the rules in `dist/home-rebuild.css`. Fill the button with art, put the dark overlay behind the centered ivory label, and draw the silver frame with `silver-frame-r15.svg`. Stack action groups on phones. Give a lone Resume action the full content width.
+
+Use `action-walkthrough.webp` for walkthroughs and `action-quest-hub.webp` for quest hubs and cards. Use map art for map actions. Apply this pattern to primary quest destinations in regional consoles, Resume panels and quest hubs. Keep the original action's destination and accessible text.
