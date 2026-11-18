@@ -48,5 +48,7 @@ test('denied access: the White Orchard loader and persist() run to completion wi
 test('start-up order is unchanged and createPhoenixVelen() is not wrapped in a blanket catch',()=>{
  const tail=APP.slice(APP.indexOf('PhoenixVelenMigration?.importFromStorage'));
  assert.match(tail,/^PhoenixVelenMigration\?\.importFromStorage\(localStorage\);\}catch\{\}/);
- assert.match(APP,/\n  window\.PhoenixVelen=window\.createPhoenixVelen\(\{navigate\}\);\n  views=\[\.\.\.document\.querySelectorAll\('\.view'\)\];\n  addEventListener\('phoenix:views-ready',\(\)=>render\(\{mode:'initial'\}\)\);\n  updateTree\(\);render\(\);\n\}\)\(\);/,'unrelated init errors still surface');
+ // Issue #4 (shared walkthrough v1): exactly one rendering seam (comment + one optional-call line) is allowed between
+ // createPhoenixVelen() and the views list; it is not wrapped in a catch either.
+ assert.match(APP,/\n  window\.PhoenixVelen=window\.createPhoenixVelen\(\{navigate\}\);\n(?:  \/\/ Issue #4 seam[^\n]*\n  \/\/ [^\n]*\n  window\.PhoenixSharedWalkthrough=window\.createPhoenixSharedWalkthrough\?\.\(\{state,tasks,hubs,engine:progressEngine,navigate\}\);\n)?  views=\[\.\.\.document\.querySelectorAll\('\.view'\)\];\n  addEventListener\('phoenix:views-ready',\(\)=>render\(\{mode:'initial'\}\)\);\n  updateTree\(\);render\(\);\n\}\)\(\);/,'unrelated init errors still surface');
 });

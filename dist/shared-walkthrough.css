@@ -1,0 +1,135 @@
+/* Issue #4 shared walkthrough layout (White Orchard template; WO walkthroughs and velen.nilf).
+   Ported from the approved mockups at design/issue-4/prototype/walkthrough.css (7ffd7fc). Every rule is scoped to
+   .sw-page so non-walkthrough pages are unaffected. Fonts, vellum panel and page heading art are the shipped ones. */
+.sw-page{--sw-ink:#2a211b;--sw-ink-soft:#4a3d31;--sw-silver:#b8bfb4;--sw-silver-2:#7f887b;--sw-warn:#8c2a1e;--sw-warn-soft:#f3d7c8;--sw-focus:#f4d36b}
+/* Legacy reading surfaces replaced by the component. Their data and controls remain owned by the existing modules. */
+.sw-page .reading-panel>.stage-panel,.sw-page .reading-panel>.quest-step-nav,.sw-page .reading-panel>.risk-note,
+.sw-page .reading-panel>.action-group-title,.sw-page .quest-record-host>.quest-progress,
+.sw-page .quest-record-host [data-progress-hub]{display:none!important}
+/* 1. Compact illustrated heading (same artwork, shallower). */
+.sw-page .page-heading.r15-heading{min-height:104px;padding:12px 14px 10px}
+.sw-page .page-heading.r15-heading .lead{display:none}
+.sw-page .page-heading.r15-heading h1{margin:4px 0 2px;font-size:26px;line-height:1.15}
+.sw-page .page-heading.r15-heading .eyebrow{margin:0;font-size:12px}
+.sw-page .page-heading.r15-heading .quest-page-facts{margin:0;font-size:15px}
+/* 2. Objective selector: first thing inside the panel, scrolls with the page. */
+.sw-walkthrough{color:var(--sw-ink)}
+.sw-selector{position:relative;margin:0 -8px 6px;padding:0 0 10px;border-bottom:1px solid #8b7d6188}
+.sw-wolf-wrap{display:flex;flex-direction:column;align-items:center;position:relative;z-index:2;margin-top:-6px}
+.sw-wolf{position:relative;display:grid;place-items:center;width:76px;height:64px;min-height:44px;padding:0;margin:0;border:0;background:none;box-shadow:none;cursor:pointer}
+.sw-wolf img{width:72px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 2px #0006)}
+.sw-wolf[disabled]{cursor:default;opacity:1}
+.sw-wolf-badge{position:absolute;right:2px;top:4px;min-width:24px;height:24px;border-radius:12px;background:var(--sw-warn);color:#fff7ef;border:2px solid #f3e6d0;font:bold 15px/20px Georgia,serif;text-align:center;box-shadow:0 1px 3px #0007}
+.sw-wolf-badge.unread::after{content:"";position:absolute;right:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:#f4d36b;border:1px solid #6b4b12}
+.sw-wolf-badge.acked{background:#4f5d58}
+.sw-wolf-caption{font-size:14px;color:var(--sw-warn);margin:-2px 0 0;min-height:20px;text-align:center}
+.sw-wolf-caption.acked{color:#3f4a46}
+.sw-warning-panel{margin:6px 12px 8px;border:2px solid var(--sw-warn);border-radius:4px;background:var(--sw-warn-soft);padding:10px 12px;position:relative;color:#2a1a14}
+.sw-warning-panel::before{content:"";position:absolute;top:-9px;left:calc(50% - 8px);width:14px;height:14px;background:var(--sw-warn-soft);border-left:2px solid var(--sw-warn);border-top:2px solid var(--sw-warn);transform:rotate(45deg)}
+.sw-warning-panel h3{margin:0 0 4px;font:400 18px/1.25 Fell,Georgia,serif;color:#5d1a10;letter-spacing:0;text-transform:none}
+.sw-warning-panel p{margin:4px 0;font-size:16px;line-height:1.4}
+.sw-warning-panel dl{margin:0}
+.sw-warning-panel dt{font:13px/1.2 Cinzel,serif;letter-spacing:.05em;color:#5d1a10;margin-top:8px}
+.sw-warning-panel dd{margin:2px 0 0;font-size:16px;line-height:1.4}
+.sw-provenance{font-size:12px!important;color:#6a4a3c;margin-top:8px!important}
+.sw-ack-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:10px 0 4px}
+.sw-ack-btn{min-height:44px;min-width:96px;padding:0 16px;border-radius:4px;border:1px solid #c9c2b0;background:linear-gradient(#2c3634,#1b2322);color:#f3ecdc;font:inherit;font-size:16px;cursor:pointer}
+.sw-ack-hint{font-size:13.5px;color:#5a2a22;flex:1 1 150px}
+.sw-ack-done{font-size:15px;color:#22402c;flex:1 1 100%}
+.sw-ack-feedback{font-size:14.5px!important;color:#5a1d14;border-left:3px solid var(--sw-warn);padding-left:8px}
+.sw-rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 16% 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+.sw-rail::-webkit-scrollbar{display:none}
+.sw-box{flex:0 0 68%;scroll-snap-align:center;display:flex;gap:8px;align-items:flex-start;min-height:84px;padding:10px 10px 10px 8px;border:2px solid var(--sw-silver-2);border-radius:4px 2px;background:linear-gradient(#f3e7c8,#e8d6ac);box-shadow:inset 0 0 0 1px #fff6,0 1px 3px #0003;opacity:.72;transition:opacity .2s,transform .2s;cursor:pointer;color:var(--sw-ink)}
+.sw-box.selected{opacity:1;border:3px solid #5f6a66;outline:1px solid #c9d0c6;outline-offset:2px;transform:translateY(-2px);box-shadow:inset 0 0 0 1px #fff8,0 4px 10px #0004}
+.sw-box:focus-visible{outline:3px solid var(--sw-focus);outline-offset:2px}
+.sw-check{position:relative;flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;border:0;background:none;box-shadow:none;padding:0;margin:0;min-height:44px;cursor:pointer}
+.sw-check input{position:absolute;inset:0;width:44px;height:44px;margin:0;opacity:0;cursor:pointer}
+.sw-check input:disabled{cursor:not-allowed}
+.sw-check-mark{width:28px;height:28px;border:2px solid #5f6a66;border-radius:3px;background:#fbf4e2;box-shadow:inset 0 1px 2px #0003;display:grid;place-items:center;font:bold 20px/1 Georgia,serif;color:#2f4a2b;pointer-events:none}
+.sw-check input:checked+.sw-check-mark::before,.sw-check-mark.on::before{content:"✓"}
+.sw-check input:checked+.sw-check-mark,.sw-check-mark.on{background:#d9e2cf;border-color:#3e5a3a}
+.sw-check input:disabled+.sw-check-mark{background:#e3dccb;border-style:dashed}
+.sw-check input:focus-visible+.sw-check-mark{outline:3px solid var(--sw-focus);outline-offset:3px}
+.sw-name{font-size:16.5px;line-height:1.28;padding-top:9px;overflow-wrap:break-word;min-width:0}
+.sw-box.done .sw-name{color:#3d4a37}
+.sw-state{display:block;font-size:13px;color:#3e5a3a;margin-top:2px}
+.sw-status{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;margin:6px 4px 0;font-size:15px}
+.sw-position{font:13px/1.3 Cinzel,serif;letter-spacing:.05em;color:var(--sw-ink-soft)}
+.sw-progress{flex:1 1 100%;display:flex;align-items:center;gap:8px;font-size:15px}
+.sw-bar{flex:1;height:8px;border:1px solid #6b6b5d;border-radius:4px;background:#f6ecd2;overflow:hidden}
+.sw-bar i{display:block;height:100%;background:linear-gradient(90deg,#55705a,#7d9a80)}
+.sw-next{min-height:44px;padding:8px 14px;border:1px solid #11161766;border-radius:3px;background:linear-gradient(#3a4244,#22282a);color:#f1ead8;box-shadow:inset 0 0 0 1px #c9d0c633;font-size:15px;cursor:pointer}
+.sw-on-next{font-size:14px;color:var(--sw-ink-soft);min-height:44px;display:flex;align-items:center}
+.sw-route-note{flex-basis:100%;font-size:14px;color:#4a3f30;font-style:italic}
+/* 3. Reading layout: identical for every objective in every region. */
+.sw-reading h2{margin:10px 0 2px;font:400 26px/1.2 Fell,Georgia,serif;color:var(--sw-ink)}
+.sw-place{margin:0 0 6px;font-size:15px;color:var(--sw-ink-soft)}
+.sw-ornament{display:block;margin:2px auto 8px;width:120px;height:10px;border-top:1px solid #8b7d61;opacity:.7}
+.sw-walkthrough h3,.sw-story-row h3{margin:12px 0 4px;font:13px/1.3 Cinzel,serif;letter-spacing:.06em;color:var(--sw-ink-soft)}
+.sw-for{margin:10px 0 2px;padding:8px 10px;border-left:3px solid #6f7b77;background:#efe3c6aa}
+.sw-label{display:block;font-size:12.5px;letter-spacing:.08em;color:var(--sw-ink-soft)}
+.sw-for strong{font-weight:normal;font-size:18px;color:#1f1a14}
+.sw-actions{margin:0;padding-left:26px}
+.sw-actions li{margin:4px 0;padding-left:2px}
+.sw-choices{margin:6px 0 0;padding-left:26px;list-style:"◇ "}
+.sw-explain p{margin:4px 0;font-size:17px;line-height:1.45;color:#3a2f26}
+.sw-page details.sw-row{margin:12px 0;border:2px solid #a6a99a;border-radius:3px;background:linear-gradient(#f3e8cb,#ead9b2);box-shadow:inset 0 0 0 1px #fff7,0 1px 2px #0002;color:var(--sw-ink);padding:0}
+.sw-page details.sw-row>summary{list-style:none;position:relative;min-height:54px;padding:13px 52px 13px 13px;font-size:17.6px;cursor:pointer}
+.sw-page details.sw-row>summary::-webkit-details-marker{display:none}
+.sw-page details.sw-row>summary::after{content:"+";position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#56615b,#25302e 75%);color:#eef0e8;display:grid;place-items:center;font:20px/1 Georgia,serif;box-shadow:0 0 0 2px #c9d0c6}
+.sw-page details.sw-row[open]>summary::after{content:"−"}
+.sw-row-body{padding:0 13px 12px;font-size:16.5px;line-height:1.45}
+.sw-row-body p{margin:6px 0}
+.sw-count{font-size:14px;color:var(--sw-ink-soft)}
+.sw-opt{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px dashed #a6997b}
+.sw-row-body h3+.sw-opt{border-top:0}
+.sw-opt .sw-check-mark{width:24px;height:24px}
+.sw-kind{display:block;font-size:13px;color:var(--sw-ink-soft)}
+.sw-pin{flex:0 0 44px;height:44px;display:grid;place-items:center;color:#5f6a66;font-size:14px}
+.sw-context{margin:2px 0 0!important;font-size:14.5px;line-height:1.35;color:var(--sw-ink-soft)}
+.sw-walkthrough a.sw-link,.sw-story-row a{display:inline-flex;align-items:center;min-height:44px;padding:4px 0;color:#3b2b1f;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.sw-row-body>a.sw-link{display:flex}
+.sw-empty{font-size:15px;color:var(--sw-ink-soft);font-style:italic}
+.sw-skip{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px;margin-top:4px}
+.sw-skip select,.sw-story select{min-height:44px}
+.sw-extra{margin:10px 0;padding-top:6px;border-top:1px dashed #a6997b}
+.sw-extra h4{margin:8px 0 2px;font:400 16px/1.3 Fell,Georgia,serif}
+.sw-spoiler{margin:8px 0}
+.sw-spoiler>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-style:italic}
+.sw-story{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.sw-story button{min-height:44px}
+.sw-story .sw-choice{margin:0;display:flex;flex-direction:column;gap:2px}
+.sw-story label{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+/* Landscape phones: keep the reading column clear of the fixed floating navigation on the right. */
+@media (orientation:landscape) and (max-height:500px){
+ .sw-page .page-heading.r15-heading{min-height:84px}.sw-page .page-heading.r15-heading h1{font-size:23px}
+ .sw-rail{padding-inline:22%}.sw-box{flex-basis:56%;min-height:80px}
+}
+@media (prefers-reduced-motion:reduce){.sw-box{transition:none}.sw-rail{scroll-behavior:auto}}
+/* Shipped global control styling (guide-art-r15 buttons, visual-system .phoenix-action, parchment labels) is meant
+   for action buttons. The wolf pointer and the checkboxes are not action buttons, so it is reset here. */
+html body .sw-page .sw-wolf.sw-wolf,html body .sw-page .sw-check.sw-check{background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;margin:0!important;min-width:0!important;min-height:44px!important;width:44px;height:44px;outline-offset:2px;filter:none!important;transform:none!important}
+html body .sw-page .sw-wolf.sw-wolf{width:76px;height:64px}
+html body .sw-page .sw-wolf.sw-wolf::before,html body .sw-page .sw-wolf.sw-wolf::after,html body .sw-page .sw-check.sw-check::before,html body .sw-page .sw-check.sw-check::after{content:none!important;display:none!important}
+html body .sw-page .sw-wolf.sw-wolf:focus-visible,html body .sw-page .sw-check.sw-check:focus-visible{outline:3px solid var(--sw-focus)}
+html body .sw-page .reading-panel label.sw-check{display:grid!important;flex:0 0 44px}
+/* Heading: shipped artwork and frame, mockup dimensions. The kind seal sits inline after the facts. */
+html body .sw-page .page-heading.r15-heading{display:block!important;min-height:104px!important;padding:12px 14px 10px!important;margin:8px 0 12px!important}
+html body .sw-page .page-heading.r15-heading .quest-page-facts{display:inline}
+html body .sw-page .page-heading.r15-heading .r15-page-seal{position:relative!important;inset:auto!important;display:inline-block!important;vertical-align:2px;margin:0 0 0 8px!important;transform:none!important}
+@media (orientation:landscape) and (max-height:500px){html body .sw-page .page-heading.r15-heading{min-height:84px!important}}
+html body .sw-page .sw-wolf.sw-wolf{align-self:center!important}
+/* guide-art-r15 forces one ink colour on .reading-panel text; the component keeps the mockup's semantic colours. */
+html body .sw-page .reading-panel .sw-wolf-caption{color:var(--sw-warn)!important}
+html body .sw-page .reading-panel .sw-wolf-caption.acked{color:#3f4a46!important}
+html body .sw-page .reading-panel .sw-warning-panel h3,html body .sw-page .reading-panel .sw-warning-panel dt{color:#5d1a10!important}
+html body .sw-page .reading-panel .sw-warning-panel p,html body .sw-page .reading-panel .sw-warning-panel dd{color:#2a1a14!important}
+html body .sw-page .reading-panel .sw-provenance{color:#6a4a3c!important}
+html body .sw-page .reading-panel .sw-ack-feedback{color:#5a1d14!important}
+html body .sw-page .reading-panel .sw-walkthrough h3,html body .sw-page .reading-panel .sw-story-row h3,html body .sw-page .reading-panel .sw-place,html body .sw-page .reading-panel .sw-context,html body .sw-page .reading-panel .sw-empty{color:var(--sw-ink-soft)!important}
+/* Landscape phones: the column stays clear of the fixed floating navigation (mockup: margin-right 190px). */
+@media (orientation:landscape) and (max-height:500px){html body .sw-page>.scene-inner,html body #velen-screen>.velen-nilf-page.sw-page{margin-left:max(16px,calc(50% - 400px))!important;margin-right:190px!important;max-width:none!important;width:auto!important}}
+/* Q6 A: navigation-only floating wolf keeps queued global warnings visible as a pending mark (read them in Warnings). */
+.phoenix-medallion[data-pending-warnings] .medallion-sigil{position:relative}
+.phoenix-medallion[data-pending-warnings] .medallion-sigil::after{content:"";position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#f4d36b;border:2px solid #6b4b12;box-shadow:0 0 0 2px #1b2122}
+html body .sw-page .reading-panel .sw-walkthrough .sw-warning-panel h3{margin:0 0 4px;font:400 18px/1.25 Fell,Georgia,serif;letter-spacing:0;text-transform:none}

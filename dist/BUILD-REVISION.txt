@@ -1,2 +1,7 @@
-Application revision: 26a2dc9b841ae75b3cbb22ff95eed056dab8de16
-Exact tested application source: a853e8b6a6f3ffbe7d053f8bcd69d8376c311da3
+Phoenix Session 3 combined release
+QA6 rollback baseline (Sites): 0ac86e3e5932d1b37da1dcd7ab0899407e2a1438
+Shared walkthrough: 311ae00530b9fe5163bcd39450326f00f87335f7
+Character foundation and Gear Reference: 677017e85c0cb0b3a608ddd58999dfcf220ac69b
+Velen’s first two new quest cards: 41e8bacead88341a303ba5235657adbcf4efd1fd
+Standalone Inventory preview: 21ab2904fee7301494d74c89f75bbacfbbeb094c
+Independent QA and physical Safari acceptance pending.

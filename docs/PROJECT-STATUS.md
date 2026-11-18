@@ -58,3 +58,7 @@ edge caching are untested.
 ## Deployment update (Cmdr, 2026-11-17)
 
 The owner approved pushing the prepared Sites commit and publishing QA6. Source was fast-forwarded from a9d61c94 to 0ac86e3e, saved as version 46, and deployed successfully. PR #3 contains the finalized synchronization and rollback procedure; its earlier in-progress wording above is historical. No GitHub main or Pages change occurred. A raw HTTP verification attempt was blocked/timed out; it did not establish a served-asset mismatch or application failure. Physical Safari acceptance and independent live asset verification remain pending.
+
+## Current publication
+
+Sites version **47** is now live. The owner authorized publishing the built slices before LT’s independent QA. The QA6 notes above document the preceding release. See [the version 47 release record](RELEASE-SESSION-3-V47.md) for exact provenance, scope, checks and follow-up.
