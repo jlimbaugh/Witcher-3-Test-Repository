@@ -77,3 +77,5 @@ Image prompt: Background-extraction of the supplied silver wolf medallion; prese
 ## Velen quest card illustrations
 
 `art-velen/` contains 19 original AI-generated guide illustrations commissioned for the November 18 Velen art pass. Filenames match their card IDs. The Nilfgaardian Connection illustration depicts Hendrik’s evidence and replaces the landscape in the card, hub and walkthrough. Each of the 18 story cards has a separate quest-specific scene or subject. The existing Funeral Pyres and At the Mercy of Strangers illustrations are retained. None of the new illustrations is a gameplay screenshot or an official game asset.
+
+The first four Velen contract cards use original AI-generated target portraits in `art-velen/`: Shrieker (cockatrice), Jenny o’ the Woods (nightwraith), Mourntart (grave hag), and Ignis Fatuus (foglet). Their walkthrough citations identify the target and encounter. The portraits are guide illustrations.

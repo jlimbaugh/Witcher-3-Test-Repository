@@ -296,4 +296,59 @@
   cards['ladies-of-the-wood'].stages.at(-1).links=[['Ciri’s Story: Fleeing the Bog','fleeing-the-bog']];
   cards['magic-lamp'].stages.at(-1).links=[['An Invitation from Keira Metz','keira-invitation']];
   cards['wandering-in-the-dark'].stages.at(-1).links.push(['An Invitation from Keira Metz','keira-invitation']);
+  const contract='Witcher contract';
+  Object.assign(root.PhoenixVelenQuestCards,{
+    shrieker: {
+      name:'Contract: Shrieker',kind:contract,level:8,place:'Crow’s Perch',
+      art:'art-velen/shrieker.webp',
+      briefing:'Track the cockatrice that killed Borzoy outside Crow’s Perch.',
+      start:'Read the notice at Crow’s Perch, then speak with Chet and Symko.',
+      completion:'Take the cockatrice trophy back to Chet and settle the payment.',
+      sources:[guide+'contract-shrieker.php'],
+      stages:[
+        {title:'Interview Chet and Symko',place:'Crow’s Perch',actions:['Take the contract from the notice board.','Speak with Chet about the fee and ask Symko what he saw.']},
+        {title:'Track the wounded cockatrice',place:'Fields outside Crow’s Perch',actions:['Use Witcher Senses at the attack site to find the blood and tracks.','Follow the trail to the cave. Equip a Samum, Grapeshot or Dancing Star before entering.']},
+        {title:'Drive it out and take the trophy',place:'Cave and surrounding fields',actions:['Throw a bomb toward the ledge to flush the cockatrice from the cave.','Exit the cave, follow the creature and defeat it. Loot the trophy, then return to Chet.'],note:'Draconid Oil is useful if you have it. Choose whether to accept or waive Chet’s fee.'}
+      ]
+    },
+    'jenny-o-the-woods': {
+      name:'Contract: Jenny o’ the Woods',kind:contract,level:10,place:'Midcopse',
+      art:'art-velen/jenny-o-the-woods.webp',
+      briefing:'Investigate the haunting north of Midcopse and put Zula’s spirit to rest.',
+      start:'Take the notice from the Midcopse board and find Ealdorman Bolko.',
+      completion:'Collect the nightwraith trophy and return to Bolko.',
+      sources:[guide+'contract-jennyothewoods.php','https://witchersaga.com/quests/contract-jenny-o-the-woods/'],
+      stages:[
+        {title:'Talk to the witnesses',place:'Midcopse',actions:['Speak to Bolko about the contract and question Agneta.','Head to the marked fields and find the cloth scrap and tracks with Witcher Senses.']},
+        {title:'Identify the nightwraith',place:'Fields north of Midcopse',actions:['Follow the tracks to the blood and knife, then follow the drag marks to the shallow grave.','Read Zula’s letter. Return to Bolko and ask about the names and where the lovers met.']},
+        {title:'Summon and defeat Jenny',place:'Lovers’ meeting spot',actions:['At night, interact with the fire to burn the letter and the dried blood from the knife.','Use Yrden and Specter Oil if available. Dispatch the summoned copies quickly to limit her healing.','Loot the trophy and collect the reward from Bolko.']}
+      ]
+    },
+    'merry-widow': {
+      name:'Contract: The Merry Widow',kind:contract,level:10,place:'Lindenvale',
+      art:'art-velen/merry-widow.webp',
+      briefing:'Investigate disturbed graves and the disappearance of the miller’s son.',
+      start:'Take the cemetery notice at Lindenvale and speak with the gravedigger.',
+      completion:'Bring the grave hag trophy back to the gravedigger.',
+      sources:[guide+'contract-themerrywidow.php',field+'contract-the-merry-widow'],
+      stages:[
+        {title:'Search the cemetery',place:'Lindenvale cemetery',actions:['Ask the gravedigger about the missing child and agree on a fee.','Clear the creatures at the cemetery. Inspect the graves with Witcher Senses and follow the cadaverine scent.']},
+        {title:'Find a way to lure the grave hag',place:'Abandoned cottage',actions:['Search the cottage and examine the tools, pot and skulls.','Take the quest-marked skulls and set them at the cemetery altar. Wait until nightfall.']},
+        {title:'Defeat Mourntart',place:'Lindenvale cemetery',actions:['Kill the grave hag and take her trophy. Necrophage Oil can help if you have it.','Return to the gravedigger to report the outcome and collect the fee.']}
+      ]
+    },
+    'swamp-thing': {
+      name:'Contract: Swamp Thing',kind:contract,level:12,place:'Downwarren and Crookback Bog',
+      art:'art-velen/swamp-thing.webp',
+      briefing:'Follow Leslav’s lead to the foglet behind the disappearances in the bog.',
+      start:'Read the swamp monster notice at Downwarren or speak to Leslav at his marked bog camp.',
+      completion:'Take the foglet trophy to Leslav and resolve his payment.',
+      sources:[guide+'contract-swampthing.php',field+'contract-swamp-thing'],
+      stages:[
+        {title:'Interview Leslav and inspect the trail',place:'Crookback Bog',actions:['Speak with Leslav about the fog and agree on the fee.','Use Witcher Senses on the marked bodies to identify the foglet. Keep moving through the hazardous mist.']},
+        {title:'Enter the foglet’s cave',place:'Bog cave entrances',actions:['Use the Eye of Nehaleni to dispel the false rocks if you have it.','If you do not have the Eye, follow the alternative entrance to the west.'],links:[['Wandering in the Dark','wandering-in-the-dark']]},
+        {title:'Kill Ignis Fatuus and collect the fee',place:'Foglet cave and Leslav’s camp',actions:['Clear the lesser foglet if encountered. Fight Ignis Fatuus, watch for attacks from the mist, and use Quen or Necrophage Oil if needed.','Take the trophy and return to Leslav. If he asks for a week to raise the payment, decide whether to wait and collect later.']}
+      ]
+    }
+  });
 })(window);
