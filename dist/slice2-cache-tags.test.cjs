@@ -159,7 +159,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['app.js','medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
  for(const f of ['deck-jump.js','desk-r11.js','exploration-ui.js','shared-walkthrough.css','shared-walkthrough.js','velen-r18.js'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
  for(const f of ['home-ui.js'])assert.equal(tags[f],'quest-action-art-12',f);
- assert.equal(tags['navigation-art.css'],'wolf-menu-fit-20');
+ assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  for(const f of ['velen-quest-cards.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-border-post-19',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
