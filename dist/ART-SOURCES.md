@@ -99,3 +99,5 @@ This Velen batch adds original guide illustrations for the Condyle search, the N
 The first Velen treasure hunt batch uses four original guide illustrations for the lost supply chest, the Mowshurst cellar, the ferryman’s cargo and Queen Zuleyka’s wreck.
 
 Four more original treasure hunt illustrations depict the Fyke Isle ruins, the Hangman’s Alley smuggler’s chest, Mettky’s rocky stash, and the grave robbers’ loot south of Duén Hen.
+
+The third Velen treasure batch adds four original illustrations of the scaffolding stash, the haunted elven ruins, the White Eagle Fort swamp chest, and the half-sunken merchant wreck.

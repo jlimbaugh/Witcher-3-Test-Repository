@@ -928,6 +928,66 @@
         {"title":"Take the notes and common key","place":"Deserter camp south of Duén Hen","actions":["Defeat the deserters and search their bodies for the marauder’s notes and common key. Read the notes."]},
         {"title":"Open the grave robbers’ chest","place":"Higher ground east of the camp","actions":["Go inland and uphill to the east. Deal with any remaining deserters and use Witcher Senses to locate the chest.","Open it with the key to recover Ultimatum and the other loot."]}
       ]
+    },
+    'the-things-men-do-for-coin': {
+      name: "The Things Men Do for Coin…",
+      kind: "Treasure hunt",
+      place: "West of the Border Post",
+      level: 12,
+      art: "art-velen/the-things-men-do-for-coin.webp",
+      briefing: "Follow the scavenger’s trail to a locked stash.",
+      start: "Find the body at the hidden treasure marker west of the Border Post.",
+      completion: "Use the treasure key to open the stash near the scaffolding.",
+      sources: ["https://witcher.fandom.com/wiki/The_Things_Men_Do_For_Coin...","https://www.gamebanshee.com/thewitcher3/walkthrough/thethingsmendoforcoin.php"],
+      stages: [
+        {"title":"Take the letter and key","place":"West of the Border Post","actions":["Search the body for the letter and treasure key. Read the letter."]},
+        {"title":"Follow the trail to the stash","place":"Scaffolding south of the body","actions":["Use Witcher Senses to follow the trail south. Defeat the nekkers, then search the debris by the wooden scaffolding for the locked box. Open it with the key."]}
+      ]
+    },
+    'dont-play-with-the-gods': {
+      name: "Don’t Play with the Gods",
+      kind: "Treasure hunt",
+      place: "Elven ruins north of Byways",
+      level: 15,
+      art: "art-velen/dont-play-with-the-gods.webp",
+      briefing: "Recover the thieves’ key and find the chest in the haunted ruins.",
+      start: "Travel to the elven ruins southeast of Duén Hen and north of Byways.",
+      completion: "Loot the locked chest and recover the Quebrith formula.",
+      sources: ["https://www.witcher.tools/quests/dont-play-with-the-gods","https://witcher.fandom.com/wiki/Don%27t_Play_with_the_Gods"],
+      stages: [
+        {"title":"Find the thieves’ letter and key","place":"Elven ruins","actions":["Watch for wraiths. A noonwraith or nightwraith can appear on the platform depending on the time of day. Yrden helps make specters vulnerable.","Search the bodies for Edgar’s letter and the chest key. Read the letter."]},
+        {"title":"Open the stash","place":"Elven ruins","actions":["Use Witcher Senses to find the chest among the ruins, then unlock and loot it."]}
+      ]
+    },
+    'blood-gold': {
+      name: "Blood Gold",
+      kind: "Treasure hunt",
+      place: "Swamp northwest of White Eagle Fort",
+      level: 18,
+      art: "art-velen/blood-gold.webp",
+      briefing: "Follow a wounded deserter’s trail to his hidden chest.",
+      start: "Find the hidden treasure marker in the swamp northwest of White Eagle Fort.",
+      completion: "Read the deserter’s document and loot the chest at the end of the trail.",
+      sources: ["https://www.witcher.tools/quests/blood-gold","https://witcher.fandom.com/wiki/Blood_Gold"],
+      stages: [
+        {"title":"Recover the document and key","place":"Swamp northwest of White Eagle Fort","actions":["Clear the drowners. Search the body leaning against a table for the bloodstained document and key. Read the document."]},
+        {"title":"Follow the blood trail","place":"Swamp shelter north of the body","actions":["Trace the blood with Witcher Senses. Use Aard to scatter the barrels hiding the chest, then unlock and loot it for Headhunter and the other contents."],"warning":"Follow the trail and clear the barrels before looting. Opening the chest early can leave the hunt unfinished."}
+      ]
+    },
+    'a-costly-mistake': {
+      name: "A Costly Mistake",
+      kind: "Treasure hunt",
+      place: "Shore west of Hangman’s Alley",
+      level: 18,
+      art: "art-velen/a-costly-mistake.webp",
+      briefing: "Use the smuggler’s notes to find the cargo of a half-sunken ship.",
+      start: "Follow the road west from Hangman’s Alley to the hidden treasure marker at the shore.",
+      completion: "Loot the cargo chest beside the submerged end of the ship.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/acostlymistake.php","https://witcher.fandom.com/wiki/A_Costly_Mistake"],
+      stages: [
+        {"title":"Read the smuggler’s notes","place":"Shore west of Hangman’s Alley","actions":["Clear the drowners and search the bodies for the smuggler’s notes. Read them to mark the wreck."]},
+        {"title":"Recover the merchant cargo","place":"Half-sunken ship offshore","actions":["Swim to the wreck and dive around its submerged end. Use the crossbow if drowners block the approach.","Use Witcher Senses to find the cargo chest beside the wreck and loot it for Maugrim."]}
+      ]
     }
   });
 })(window);
