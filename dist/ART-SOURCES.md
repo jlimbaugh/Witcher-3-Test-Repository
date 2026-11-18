@@ -97,3 +97,5 @@ The village requests batch adds original guide illustrations for Lurtch’s curs
 This Velen batch adds original guide illustrations for the Condyle search, the Nilfgaardian mother, the Crow’s Perch horse races and the regional fistfighting circuit.
 
 The first Velen treasure hunt batch uses four original guide illustrations for the lost supply chest, the Mowshurst cellar, the ferryman’s cargo and Queen Zuleyka’s wreck.
+
+Four more original treasure hunt illustrations depict the Fyke Isle ruins, the Hangman’s Alley smuggler’s chest, Mettky’s rocky stash, and the grave robbers’ loot south of Duén Hen.

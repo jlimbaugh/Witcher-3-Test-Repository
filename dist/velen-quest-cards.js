@@ -868,6 +868,66 @@
         {"title":"Read the pirates’ notes","place":"Coast of Wrecks camp","actions":["Clear the pirates and search the bedding at the hidden treasure marker. Read the notes to reveal the wreck."]},
         {"title":"Dive to the wreck","place":"Offshore northwest of the camp","actions":["Swim to the marked wreck. Dive near the stairs, swim through the opening and look right for the chest.","Use Witcher Senses to distinguish the chest from nearby loot, then open it to finish the hunt."]}
       ]
+    },
+    'sunken-chest': {
+      name: "Sunken Chest",
+      kind: "Treasure hunt",
+      place: "Small island southwest of Fyke Isle",
+      level: 4,
+      art: "art-velen/sunken-chest.webp",
+      briefing: "Follow blood-smeared notes to a chest in the submerged brick ruins.",
+      start: "Search the ruined camp on the small island southwest of the Fyke Isle signpost.",
+      completion: "Open the marked chest beneath the ruins to recover Deithwen.",
+      sources: ["https://www.witcher.tools/quests/sunken-chest","https://witcher-games.fandom.com/wiki/Sunken_Chest"],
+      stages: [
+        {"title":"Read the blood-smeared notes","place":"Island southwest of Fyke Isle","actions":["Clear the drowners and drowned dead around the camp. Search the body and read the blood-smeared notes."]},
+        {"title":"Find the chest in the submerged ruins","place":"Water east of the small island","actions":["Dive east of the island and use Witcher Senses among the brick ruins. Use the crossbow if the drowners block your approach.","Loot the marked chest for Deithwen. Several other containers in the ruins are optional."]}
+      ]
+    },
+    'sunken-treasure': {
+      name: "Sunken Treasure",
+      kind: "Treasure hunt",
+      place: "Shore northwest of Hangman’s Alley",
+      level: 4,
+      art: "art-velen/sunken-treasure.webp",
+      briefing: "Read the smuggler’s letter and recover his cargo from the water.",
+      start: "Look for the body at the hidden treasure marker northwest of the Hangman’s Alley signpost.",
+      completion: "Loot the smuggler’s sunken chest.",
+      sources: ["https://www.witcher.tools/quests/sunken-treasure","https://witcher.fandom.com/wiki/Sunken_Treasure"],
+      stages: [
+        {"title":"Read the water-damaged letter","place":"Shore northwest of Hangman’s Alley","actions":["Search the body for the water-damaged letter addressed to Molke and read it."]},
+        {"title":"Recover the smuggler’s chest","place":"Water north of the body","actions":["Swim north from the body to the marked area. Dive and use Witcher Senses to find the chest.","Use the crossbow if drowners get in the way. Open the chest to finish the hunt."]}
+      ]
+    },
+    'hidden-from-the-world': {
+      name: "Hidden from the World",
+      kind: "Treasure hunt",
+      place: "Southeast of Marauders’ Bridge",
+      level: 7,
+      art: "art-velen/hidden-from-the-world.webp",
+      briefing: "Follow a deserter’s letter to a stash concealed among rocks.",
+      start: "Find the deserter camp at the hidden treasure marker southeast of Marauders’ Bridge.",
+      completion: "Open the stash on the rocky hill across the path.",
+      sources: ["https://witcher.fandom.com/wiki/Hidden_from_the_World","https://wiki.eso-ui.com/index.php/Witcher_3%3AHidden_from_the_World"],
+      stages: [
+        {"title":"Recover the letter","place":"Deserter camp southeast of Marauders’ Bridge","actions":["Defeat the deserters and search them for Mettky’s letter to Drabik. Read it to mark the search area."]},
+        {"title":"Find the hidden stash","place":"Rocky hill south of the camp","actions":["Cross the path to the south-southwest. Use Witcher Senses among the rocks and foliage, then loot the hidden container."]}
+      ]
+    },
+    'the-dead-have-no-defense': {
+      name: "The Dead Have No Defense",
+      kind: "Treasure hunt",
+      place: "South of Duén Hen toward Byways",
+      level: 9,
+      art: "art-velen/the-dead-have-no-defense.webp",
+      briefing: "Take the grave robbers’ notes and use their key to claim the stash uphill.",
+      start: "Find the deserters at the hidden treasure marker south of Duén Hen.",
+      completion: "Open the locked chest uphill from the camp.",
+      sources: ["https://witcher.fandom.com/wiki/The_Dead_Have_No_Defense","https://www.witcher.tools/quests/the-dead-have-no-defense"],
+      stages: [
+        {"title":"Take the notes and common key","place":"Deserter camp south of Duén Hen","actions":["Defeat the deserters and search their bodies for the marauder’s notes and common key. Read the notes."]},
+        {"title":"Open the grave robbers’ chest","place":"Higher ground east of the camp","actions":["Go inland and uphill to the east. Deal with any remaining deserters and use Witcher Senses to locate the chest.","Open it with the key to recover Ultimatum and the other loot."]}
+      ]
     }
   });
 })(window);
