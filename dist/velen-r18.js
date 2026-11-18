@@ -31,52 +31,125 @@ const deckQuests={...quests};
 for(const [id,card] of Object.entries(questCards)){
   deckQuests[id]={kind:'Main quest',art:'velen-landscape-r18.webp',...leads[id],...card};
 }
-const deckIds=Object.keys(deckQuests);
-let deckSelected=state.selected;
+function deckCategory(id,card){
+  if(card.kind==='Witcher contract')return 'contracts';
+  if(card.kind==='Monster nest')return 'nests';
+  if(card.kind==='Encounter'||['death-by-fire','lynch-mob','hazardous-goods'].includes(id))return 'encounters';
+  if(card.kind==='Competition'||/^(races-|fists-of-fury-|gwent-)/.test(id))return 'competitions';
+  if(card.kind==='Gear hunt'||/^Scavenger Hunt:/i.test(card.name))return 'gear';
+  if(card.kind==='Treasure hunt')return 'treasure';
+  return 'quests';
+ }
+const activityTabs=[
+  ['contracts','Contracts'],['treasure','Treasure'],['gear','Gear Hunts'],
+  ['nests','Monster Nests'],['encounters','Roadside Encounters'],['competitions','Competitions']
+];
+const decks=Object.fromEntries(['quests',...activityTabs.map(([id])=>id)].map(id=>[id,[]]));
+for(const [id,card] of Object.entries(deckQuests))decks[deckCategory(id,card)].push(id);
+let deckSelected=decks.quests.includes(state.selected)?state.selected:decks.quests[0];
+let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0];
 function restoreHomeDeck(){
-  const id=history.state?.velen?.selected;
-  if(Object.hasOwn(deckQuests,id))deckSelected=id;
+  const saved=history.state?.velen;
+  if(decks.quests.includes(saved?.selected))deckSelected=saved.selected;
+  activityTab=activityTabs.some(([id])=>id===saved?.activityTab)?saved.activityTab:activityTabs[0][0];
+  activitySelected=decks[activityTab].includes(saved?.activitySelected)?saved.activitySelected:decks[activityTab][0];
+}
+function recordDeckView(){
+  history.replaceState({...history.state,velen:{...history.state?.velen,selected:deckSelected,activityTab,activitySelected}},'',location.href);
 }
 function header(title,sub,art='velen-landscape-r18.webp'){const n=el('header','scene-banner');n.append(picture(art),el('p','eyebrow',sub),el('h1','',title));return n;}
-function carousel(){const box=el('section','quest-selector desk-carousel');box.setAttribute('aria-label','Choose a Velen quest');const ids=deckIds,idx=ids.indexOf(deckSelected),deck=el('div','deck');
-for(const offset of [-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=deckQuests[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
+function carousel(category,selectedId){
+const box=el('section','quest-selector desk-carousel');
+box.dataset.velenDeck=category;
+box.setAttribute('aria-label',category==='quests'?'Choose a Velen quest':'Choose a Velen activity');
+const ids=decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
+const select=(id,focus)=>selectCard(category,id,focus);
+for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=deckQuests[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
 const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true));
 box.append(deck,jump.frame,footer);
-deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('.quest-card.selected').focus({preventScroll:true});}};
+deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
 let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
 function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,false);if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
 deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
-function select(id,focusJump=false){
-  if(!Object.hasOwn(deckQuests,id))return;
+function selectCard(category,id,focusJump=false){
+  if(!decks[category].includes(id))return;
   const y=viewport().scrollY;
-  deckSelected=id;
-  history.replaceState({...history.state,velen:{...history.state?.velen,selected:id}},'',location.href);
-  if(Object.hasOwn(quests,id))state.selected=id;
+  if(category==='quests'){
+    deckSelected=id;
+    if(Object.hasOwn(quests,id))state.selected=id;
+  }else activitySelected=id;
+  recordDeckView();
   render({y,focus:false});
-  if(focusJump)screen.querySelector('.deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
+  if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
-function consoleView(){
-  const id=deckSelected,q=deckQuests[id],tracked=Object.hasOwn(quests,id);
-  screen.append(header('Velen','No Man’s Land'));
-  const resume=scroll(),last=state.last?.id;
-  resume.classList.add('resume','console-continue');
-  resume.append(el('small','',last?'Resume last walkthrough':'Return to last hub'),link(last?quests[last].name:quests[state.lastHub].name,last?'#quest/'+last+'/'+state.stage[last]:'#hub/'+state.lastHub));
-  screen.append(resume,carousel());
+function selectedPanel(id){
+  const q=deckQuests[id],tracked=Object.hasOwn(quests,id);
   const selected=scroll(q.name);
   selected.classList.add('selected-panel','selected-scroll');
   selected.append(el('p','',q.briefing||q.intro));
   if(q.level)selected.append(el('p','eyebrow','Suggested level '+q.level));
   const actions=el('nav','tiles console-tiles');
-  actions.setAttribute('aria-label','Selected quest actions');
+  actions.setAttribute('aria-label','Selected card actions');
   actions.append(
     artTile('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1),'navigation-art-v26/action-walkthrough.webp'),
     artTile(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,'navigation-art-v26/action-quest-hub.webp')
   );
   selected.append(actions);
-  screen.append(selected);
+  return selected;
+}
+function activities(){
+  const section=el('section','velen-activities'),heading=el('h2','','Velen activities');
+  heading.id='velen-activities-heading';
+  section.setAttribute('aria-labelledby',heading.id);
+  const tabs=el('div','velen-activity-tabs');
+  tabs.setAttribute('role','tablist');
+  tabs.setAttribute('aria-label','Velen activity categories');
+  const panel=el('div');
+  panel.id='velen-activity-panel';
+  panel.setAttribute('role','tabpanel');
+  panel.setAttribute('aria-labelledby','velen-tab-'+activityTab);
+  function choose(id){
+    if(id===activityTab)return;
+    const y=viewport().scrollY;
+    activityTab=id;
+    activitySelected=decks[id][0];
+    recordDeckView();
+    render({y,focus:false});
+    screen.querySelector('#velen-tab-'+id)?.focus({preventScroll:true});
+  }
+  for(const [index,[id,label]] of activityTabs.entries()){
+    const tab=el('button','',label);
+    tab.id='velen-tab-'+id;
+    tab.type='button';
+    tab.setAttribute('role','tab');
+    tab.setAttribute('aria-selected',String(id===activityTab));
+    tab.setAttribute('aria-controls',panel.id);
+    tab.tabIndex=id===activityTab?0:-1;
+    tab.onclick=()=>choose(id);
+    tab.onkeydown=e=>{
+      const keys=['ArrowLeft','ArrowRight','Home','End'];
+      if(!keys.includes(e.key))return;
+      e.preventDefault();
+      const last=activityTabs.length-1;
+      const next=e.key==='Home'?0:e.key==='End'?last:(index+(e.key==='ArrowLeft'?last:1))%activityTabs.length;
+      choose(activityTabs[next][0]);
+    };
+    tabs.append(tab);
+  }
+  if(activitySelected)panel.append(carousel(activityTab,activitySelected),selectedPanel(activitySelected));
+  else panel.append(el('p','velen-activity-empty','No Velen cards are available in this category yet.'));
+  section.append(heading,tabs,panel);
+  return section;
+}
+function consoleView(){
+  screen.append(header('Velen','No Man’s Land'));
+  const resume=scroll(),last=state.last?.id;
+  resume.classList.add('resume','console-continue');
+  resume.append(el('small','',last?'Resume last walkthrough':'Return to last hub'),link(last?quests[last].name:quests[state.lastHub].name,last?'#quest/'+last+'/'+state.stage[last]:'#hub/'+state.lastHub));
+  screen.append(resume,carousel('quests',deckSelected),selectedPanel(deckSelected));
   const along=scroll('Along the arrival road');
   along.append(el('p','pilot-count','Arrival pilot · '+['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
   for(const id of ['pyres','mercy'])along.append(link((state.complete[id]?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
@@ -84,7 +157,7 @@ function consoleView(){
   const explore=scroll('Explore Velen'),shortcuts=el('nav','tiles shortcuts console-tiles');
   shortcuts.append(artTile('Regions','index.html#regions','velen-landscape-r18.webp'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
   explore.append(shortcuts);
-  screen.append(explore);
+  screen.append(explore,activities());
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
 function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),link('Open walkthrough →','#quest/'+id+'/'+state.stage[id],'button-link'));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
