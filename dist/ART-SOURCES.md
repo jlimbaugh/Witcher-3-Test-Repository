@@ -87,3 +87,5 @@ The final Velen contract batch uses original guide illustrations for the woodlan
 The Velen side-quest batch uses four original guide illustrations: Gaetan’s stash, Reardon Manor, Letho in the trapped barn, and the Red Miasmal at Devil’s Pit.
 
 The Velen Border Post batch uses three original guide illustrations: the Redanian checkpoint, the forged-pass merchant, and Albin’s scavengers on the battlefield.
+
+This Velen village side-quest batch adds four original guide illustrations: the werewolf at the isolated shack, the Allgod in his cellar, the dog at Drudge, and the Pellar at the Fyke Isle ritual.

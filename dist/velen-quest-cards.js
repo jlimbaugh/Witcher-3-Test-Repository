@@ -570,6 +570,67 @@
         {title:'Prepare before accepting Albin’s job',place:'Battlefield camp',warning:'Accepting starts the attack. Save beforehand if you want to retry for the Fake Papers discount. That discount requires Albin himself to survive.',actions:['Find Albin at the battlefield southeast of the checkpoint.','Prepare for ghouls and a rotfiend, then agree to defend the scavengers.']},
         {title:'Defend the scavengers and resolve the job',place:'Battlefield',actions:['Stay near Albin and intercept the necrophages attacking the crew. Back away from the rotfiend when it is about to burst.','Once the waves are clear, speak to Albin if he survives. If he dies, see the encounter through and check the journal outcome.'],note:'If Albin lives, return to the merchant for the discount. If the whole crew dies, Bitter Harvest fails. An official pass remains available through the other quest routes.',links:[['Fake Papers','fake-papers'],['Thou Shalt Not Pass','thou-shalt-not-pass']]}
       ]
+    },
+    'wild-at-heart': {
+      name: "Wild at Heart",
+      kind: "Side quest",
+      place: "Blackbough",
+      art: "art-velen/wild-at-heart.webp",
+      briefing: "Investigate Hanna’s disappearance and decide how far to pursue the trail.",
+      start: "Read the Missing Wife notice or speak to Niellen in Blackbough.",
+      completion: "Resolve Hanna’s disappearance by reporting back to Niellen or resolving the confrontation in his lair.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/wildatheart.php", "https://witcher.fandom.com/wiki/Wild_at_Heart"],
+      level: 7,
+      stages: [
+        {"title": "Speak with Niellen", "place": "Blackbough", "actions": ["Agree to look for Hanna. Ask the villagers what they saw, then search the woods northwest of Blackbough."]},
+        {"title": "Respond to Margrit’s offer", "place": "Woods near Blackbough", "actions": ["Defeat the wolves. Margrit will offer to pay you to stop looking.", "For the short route, take the offer and report Hanna dead to Niellen. To learn what happened, stay in the woods and inspect the body, claw marks and tracks."], "warning": "Reporting back to Niellen on Margrit’s terms ends the quest early."},
+        {"title": "Resolve the confrontation", "place": "Cave below the isolated shack", "actions": ["On the investigation route, follow the clues to the shack and read the notes. Enter the cave beneath it at night.", "Fight the werewolf. When Margrit intervenes, choose whether to protect her or let Niellen take revenge."], "note": "Cursed Oil and Moon Dust help against a werewolf. If you let Niellen take revenge, follow him outside afterward to resolve the quest."}
+      ]
+    },
+    'a-greedy-god': {
+      name: "A Greedy God",
+      kind: "Side quest",
+      place: "Ruins south of Wastrel Manor",
+      art: "art-velen/a-greedy-god.webp",
+      briefing: "Find out why the Allgod refuses the villagers’ offerings.",
+      start: "Speak to Dagmar and Preben at the ruins. Bring the Eye of Nehaleni from Wandering in the Dark.",
+      completion: "Decide what to do with the sylvan and report back to the villagers.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/greedygod.php", "https://witcher.fandom.com/wiki/A_Greedy_God"],
+      level: 7,
+      stages: [
+        {"title": "Investigate the altar", "place": "Wastrel Manor ruins", "actions": ["Speak to the villagers and address the Allgod at the altar.", "Use Witcher Senses to find the bottle and follow its scent to the illusory rubble. Dispel it with the Eye of Nehaleni."], "links": [["Wandering in the Dark", "wandering-in-the-dark"]]},
+        {"title": "Resolve the offerings dispute", "place": "Hidden cellar and altar", "actions": ["Enter the cellar. Convince the sylvan to accept poorer offerings, leave him to his demands, or fight him.", "Return to Dagmar and Preben. If the sylvan lives, decide whether to tell them about the cellar."]}
+      ]
+    },
+    'a-dogs-life': {
+      name: "A Dog’s Life",
+      kind: "Side quest",
+      place: "Road near Drudge and the village",
+      art: "art-velen/a-dogs-life.webp",
+      briefing: "Rescue a dog and follow it to the house it is trying to reach.",
+      start: "Find the dog being attacked by wolves on the road near Drudge.",
+      completion: "Find and take Druzus the Hermit’s Notes from the hidden container.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/adogslife.php"],
+      stages: [
+        {"title": "Rescue and follow the dog", "place": "Road to Drudge", "actions": ["Drive off the wolves and examine the dog for the key it carries.", "Follow the dog to the house in Drudge and defeat the bandits there."]},
+        {"title": "Open the hidden container", "place": "House in Drudge", "actions": ["Search the house with Witcher Senses. Check the loose floorboards and open the container with the dog’s key.", "Take Druzus the Hermit’s Notes to finish the quest."]}
+      ]
+    },
+    'forefathers-eve': {
+      name: "Forefathers’ Eve",
+      kind: "Side quest",
+      place: "Fyke Isle and Crookback Bog",
+      art: "art-velen/forefathers-eve.webp",
+      briefing: "Protect the Pellar’s ritual and decide how to respond when the witch hunters interrupt.",
+      start: "After A Towerful of Mice, speak to the Pellar near Keira’s cottage or by the forge at Crow’s Perch, depending on Family Matters progress.",
+      completion: "Resolve the interruption, then lay Ambros to rest and report back if you chose to defend the Pellar.",
+      sources: ["https://www.gamebanshee.com/thewitcher3/walkthrough/forefatherseve.php", "https://witcher.fandom.com/wiki/Forefathers%27_Eve"],
+      level: 7,
+      stages: [
+        {"title": "Attend the ritual", "place": "Fyke Isle stone circle", "actions": ["Meet the Pellar around midnight and speak to him to start the rite.", "Defeat the drowners and water hag that come to the circle."], "links": [["A Towerful of Mice", "towerful-of-mice"]]},
+        {"title": "Decide whether to intervene", "place": "Fyke Isle stone circle", "actions": ["When the witch hunters arrive, step aside to end your part in the ritual or defend the Pellar.", "If you defend him, defeat the hunters and the wraiths that appear, then speak to the Pellar about Ambros."], "warning": "Stepping aside ends the quest here and costs access to the Pellar’s trading services."},
+        {"title": "Lay Ambros to rest", "place": "Crookback Bog and the Pellar’s hut", "actions": ["On the defense route, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni.", "Report back to the Pellar at his hut."]}
+      ]
     }
   });
 })(window);
