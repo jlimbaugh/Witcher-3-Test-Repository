@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner passed Batch 1 (7cbeaf2). Batch 2 covers The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. Each story choice counts once regardless of outcome. The race counts either finish order.
+
 Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.
 
 Owner approved the card-edge gesture build 03abe77. Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.

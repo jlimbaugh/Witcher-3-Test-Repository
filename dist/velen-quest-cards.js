@@ -188,6 +188,7 @@
       ]
     },
     'whispering-hillock': {
+      objectiveIds:['reach-spirit', 'resolve-spirit'],
       art:'art-velen/whispering-hillock.webp',
       name:'The Whispering Hillock', kind:'Quest', place:'The Ancient Oak',
       briefing:'Find what lives beneath the oak and decide how to resolve the spirit’s request.',
@@ -206,6 +207,7 @@
   const guide='https://www.gamebanshee.com/thewitcher3/walkthrough/';
   Object.assign(root.PhoenixVelenQuestCards,{
     'king-of-the-wolves': {
+      objectiveIds:['rescue-gretka', 'prepare-for-wolf-king', 'defeat-wolf-king'],
       art:'art-velen/king-of-the-wolves.webp',
       name:'Ciri’s Story: The King of the Wolves',kind:main,place:'Riverbed near Lindenvale',
       briefing:'Play as Ciri and help Gretka get through wolf country.',
@@ -219,6 +221,7 @@
       ]
     },
     'family-matters': {
+      objectiveIds:['consult-pellar', 'resolve-botchling', 'follow-trail-to-voytek', 'report-annas-fate'],
       art:'art-velen/family-matters.webp',
       name:'Family Matters',kind:main,place:'Crow’s Perch',
       briefing:'Investigate the disappearance of Anna and Tamara while the Baron fills in Ciri’s story.',
@@ -233,6 +236,7 @@
       ]
     },
     'ciris-race': {
+      objectiveIds:['finish-race'],
       art:'art-velen/ciris-race.webp',
       name:'Ciri’s Story: The Race',kind:main,place:'Abandoned Tower',
       briefing:'Ride against the Baron during his second flashback.',
@@ -242,6 +246,7 @@
       stages:[{title:'Race to the tower',place:'Velen woodland track',actions:['Finish the wager scene and ride the marked route to the tower.','Keep to the track and use a gallop on clear stretches. Either finish order advances the story.'],links:[['Family Matters','family-matters']]}]
     },
     'out-of-the-shadows': {
+      objectiveIds:['rescue-baron', 'hear-barons-account'],
       art:'art-velen/out-of-the-shadows.webp',
       name:'Ciri’s Story: Out of the Shadows',kind:main,place:'Abandoned Tower',
       briefing:'Resume Ciri’s encounter with the basilisk and rescue the Baron.',

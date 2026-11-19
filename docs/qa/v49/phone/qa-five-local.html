@@ -13,7 +13,8 @@ async function boot(hash,width=390,height=844,mode='normal',seed={}){
 const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{const x=one(s);check(x,s);x.click()};
 const cases=[['princess',2],['ciris-room',2],['wandering-in-the-dark',4],['magic-lamp',3],['ladies-of-the-wood',4]];
 let seed={};
-for(const [id,total] of cases)await test(id,async()=>{
+const secondBatch=[['whispering-hillock',2],['king-of-the-wolves',3],['family-matters',4],['ciris-race',1],['out-of-the-shadows',2]];
+for(const [id,total] of [...cases,...secondBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);

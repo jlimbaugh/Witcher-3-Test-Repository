@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 1 (7cbeaf2). Batch 2 covers The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. Each story choice counts once regardless of outcome. The race counts either finish order.
+
 Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.
 
 Planning inventory against application 1690b41. The Velen console supplies the deck and selected-card pattern. The Nilfgaardian Connection supplies the complete walkthrough pattern. The 75 entries below are the current implementation inventory. Regional discoveries, services and other unregistered tasks still require reconciliation.
