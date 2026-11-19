@@ -21,6 +21,17 @@ for(const hash of ['#velen/quest/nilf/1','#velen/quest/baron/1','#quest-lilac','
   check(menu.compareDocumentPosition(source)&4,'menu before sources');
   if(hash.startsWith('#velen'))check(w.getComputedStyle(view).paddingBottom==='0px','banner gap');
  }
+ const deck=menu.querySelector('.deck'),front=card(),side=menu.querySelector('.quest-card.right');
+ const style=w.getComputedStyle(deck);
+ check(parseFloat(style.marginLeft)>=24&&style.touchAction.includes('pan-y'),'vertical gutter '+style.marginLeft+' '+style.touchAction);
+ function drag(target,dx,dy){
+  for(const [type,x,y] of [['pointerdown',100,100],['pointerup',100+dx,100+dy]])
+   target.dispatchEvent(new w.PointerEvent(type,{bubbles:true,isPrimary:true,button:0,pointerId:41,clientX:x,clientY:y}));
+ }
+ const initial=front.dataset.tool;
+ drag(side,-72,6);drag(front,10,82);check(card().dataset.tool===initial,'side or vertical drag turned deck');
+ drag(front,-75,4);check(card().dataset.tool!==initial,'middle swipe failed');await wait(420);
+ menu.querySelector('.quest-card.left').click();
  const keys=[];
  for(let i=0;i<8;i++){
   keys.push(card().dataset.tool);
