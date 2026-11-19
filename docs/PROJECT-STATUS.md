@@ -66,3 +66,7 @@ Sites version **47** is now live. The owner authorized publishing the built slic
 ## Velen walkthrough candidate
 
 All five existing Velen walkthroughs now use the shared component. Six new source-backed cards and walkthroughs cover A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp, Ladies of the Wood, and The Whispering Hillock. The Arrival denominator remains three and retains its existing owners. Reading-only cards show stage position in the shared selector. All 339 Node tests passed against the v45, QA5 and QA6 baselines. This candidate is unpublished. Responsive browser and physical Safari checks, dedicated illustrations, and full ledger coverage remain open. Sites version 47 remains live.
+
+### Nilfgaardian Connection forged-framing pilot
+
+The owner approved the framing mockups and requested a runtime QA pilot on the Nilfgaardian Connection hub and walkthrough. The review candidate starts at framing proof commit `4fede4818f7f88df3efcbcd8272c7cec8625162c`. See the [pilot review notes](framing-review/NILF-RUNTIME-QA.md). The candidate is unpublished.

@@ -1,0 +1,16 @@
+# Nilfgaardian Connection framing pilot
+
+Baseline: `4fede4818f7f88df3efcbcd8272c7cec8625162c` on `velen/white-orchard-walkthroughs`. This review applies the approved framing to the actual guide pages. The fixed hub and walkthrough variants use the B1 and B2 references respectively. The perimeter, centered brace, and staggered vine ornaments were drawn for the runtime panels from the approved references. Existing illustrated actions, quest artwork, parchment copy, objective selector, and game-progress owners are reused.
+
+## Review the pilot
+
+Serve `dist/` with a static server and use `/#velen/hub/nilf`. Open the illustrated walkthrough action, then use Return to hub. Direct walkthrough entry is `/#velen/quest/nilf/1`. Use an isolated site origin or browser profile for progress checks.
+
+- Compare the briefing, parchment panels, side rail stagger, and steel depth at 390 × 844 and 844 × 390. Check horizontal clearance and text wrapping.
+- Confirm each standard text button follows its page's silhouette and that peer navigation buttons are the same size. Check keyboard focus, pressed state, and the progress confirmation dialog.
+- Browse the objective selector and open a related task. Check return navigation, reload, and an objective mark followed immediately by Undo.
+- On physical iPhone Safari, repeat the two orientations and verify touch targets around the rails and fixed wolf control.
+
+## Author verification
+
+The complete Node suite passed 340/340 with the v45, QA5, and QA6 baseline worktrees configured. That includes the save-protection and cache-tag gates. The application diff is limited to one stylesheet reference, the scoped stylesheet, and two decorative SVGs. Local Chromium failed to launch because process-singleton socket creation was denied. Browser rendering, returning-browser checks, physical Safari acceptance, and independent QA are pending. The live guide was not updated for this review.
