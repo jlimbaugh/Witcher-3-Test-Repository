@@ -11,9 +11,13 @@ Serve `dist/` with a static server and use `/#velen/hub/nilf`. Open the illustra
 - Browse the objective selector and open a related task. Check return navigation, reload, and an objective mark followed immediately by Undo.
 - On physical iPhone Safari, repeat the two orientations and verify touch targets around the rails and fixed wolf control.
 
-## Author verification
+## Initial pilot verification (historical)
 
 The complete Node suite passed 340/340 with the v45, QA5, and QA6 baseline worktrees configured. That includes the save-protection and cache-tag gates. The application diff is limited to one stylesheet reference, the scoped stylesheet, and two decorative SVGs. Local Chromium failed to launch because process-singleton socket creation was denied. Browser rendering, returning-browser checks, physical Safari acceptance, and independent QA are pending. The live guide was not updated for this review.
+
+## Current v49 verification
+
+Use the [v49 release record](../RELEASE-VELEN-V49.md) and [LT QA checklist](../LT-QA-VELEN-V49.md) for the active candidate, author browser evidence, and independent review. The screenshot corrections below were included in v49.
 
 ## Owner screenshot correction pass
 

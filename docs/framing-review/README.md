@@ -1,5 +1,7 @@
 # Phoenix framing review
 
+For shipped examples and remaining implementation scope, see the [Nilf runtime QA notes](NILF-RUNTIME-QA.md) and [v49 release record](../RELEASE-VELEN-V49.md). The gallery preserves the approved visual references.
+
 The owner approved the enlarged [number strip](number-strip.jpg) as the framing direction on November 18, 2026. See the [art standard](../../ART-STANDARD.md) for the production rules. The render's wolf is illustrative. Production uses the existing shared wolf pointer.
 
 ## Review concepts

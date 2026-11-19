@@ -52,7 +52,7 @@ Keep successful progress writes silent. Omit browser-storage instructions from g
 
 ## Forged steel framing
 
-Owner-approved direction, November 18, 2026. Use the [number strip reference](docs/framing-review/number-strip.jpg) as the material and scale reference. The [other framing concepts](docs/framing-review/README.md) are for visual review.
+Owner-approved direction, November 18, 2026. Use the [number strip reference](docs/framing-review/number-strip.jpg) as the material and scale reference. The [framing gallery](docs/framing-review/README.md) records approved variants and their references. [V49 runtime examples](docs/framing-review/NILF-RUNTIME-QA.md) are scoped to the Nilf hub and walkthrough.
 
 - Use physically dimensional hammered silver and blackened steel, with broad primary bands, thinner interlaced blue-steel bands, bevel highlights, and deep shadows at overlaps.
 - Recess petrol-blue and muted jade inlays into selected spans. Keep silver and steel dominant. Avoid gold and brass.
@@ -69,10 +69,10 @@ Use a fixed A–J rotation in display order for repeated boxes, wrapping to A. A
 
 Use an asymmetrical pair of forged steel rails. Stagger ornaments at different heights and retain stretches of plain steel between them. Keep vines and leaves close to the rail and clear of the content and touch targets. Scale the ornament density to the height and width of the frame.
 
-Both the [original forged pairs V1–V3](docs/framing-review/README.md#vertical-side-rails) and the [vine pairs V4–V9](docs/framing-review/README.md#vine-inspired-vertical-rails) are approved for use. The rotation interleaves them: V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1. Assign the two rails as a pair, independently of the A–J bottom flourish rotation. Keep the pair with its box through filtering, reordering, and reload.
+Both the [original forged pairs V1–V3](docs/framing-review/README.md#vertical-side-rails) and the [vine pairs V4–V9](docs/framing-review/README.md#vine-inspired-vertical-rails) are approved for use. The rotation interleaves them: V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1. Assign the two rails as a pair, independently of the A–J bottom flourish rotation. Assign one rail style per page and keep its pair together through filtering, reordering, and reload.
 
 ### Standard text-only buttons
 
-Use a dark hammered-steel face with centered ivory text and compact silver end details. Keep ornament clear of the text and focus indicator. Scale the bezel to the button height and leave enough room for long labels. Use optional blue and jade inlays sparingly.
+Use a dark hammered-steel face with centered ivory text and compact silver end details. Keep ornament clear of the text and focus indicator. Scale the bezel to the button height and leave enough room for long labels. The forged rim forms the visible silhouette, with a bevel and close contact shadow against the page. Keep the space beyond the rim transparent. Use optional blue and jade inlays sparingly.
 
 All ten standard text-only button variants (B1–B10) are owner-approved. Rotate the variants between pages in the initial template order, then wrap from B10 to B1. Assign one variant to each stable page identity and use it for every standard text-only button on that page, including standard buttons in its panels. Retain the assignment across navigation, reload, filtering, and reordering. Match the dimensions of peer actions in a group. Preserve the assigned style through hover, focus, pressed, and disabled states, and retain the semantic treatments for warnings, confirmations, and destructive actions. See the [approved text-only button designs](docs/framing-review/README.md#standard-text-only-buttons).

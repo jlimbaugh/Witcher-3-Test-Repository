@@ -12,7 +12,7 @@ This file records adopted operating policy. It does not prove that repository re
 
 The user’s current instructions govern task scope. This file is not blanket authorization to publish, change site access, send external messages, or modify unrelated work. Honor active release holds.
 
-Read [session calibration](SESSION-CALIBRATION.md) at startup. It links the accepted template decisions and defines how to verify each item in a batch before QA handoff.
+Read [Project Status](PROJECT-STATUS.md) for the current release, active review and open work. Read [session calibration](SESSION-CALIBRATION.md) at startup. It links the accepted template decisions and defines how to verify each item in a batch before QA handoff.
 
 ## 1. Start every session
 

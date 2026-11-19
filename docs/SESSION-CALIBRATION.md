@@ -1,6 +1,6 @@
 # Phoenix session calibration
 
-Read at session start alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For Velen v49, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.
+Read [Project Status](PROJECT-STATUS.md) first, then use this page alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For Velen v49, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.
 
 ## Carry decisions through the build
 

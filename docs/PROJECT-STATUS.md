@@ -1,4 +1,19 @@
-# PHOENIX — project status (branch `fix/wo-save-preservation`)
+# Phoenix project status
+
+## Current release and review
+
+| Item | Current state |
+|---|---|
+| Public guide | **Velen v49**, published November 19, 2026. [Release and rollback record](RELEASE-VELEN-V49.md) |
+| Application candidate | `ba59252cb65800225a68297b6ce7068d3b91ff9b`, [draft PR #24](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/24) |
+| Independent review | LT is reviewing v49 against v48. [QA checklist](LT-QA-VELEN-V49.md) |
+| Author checks | 340 Node tests passed. Author Chromium and served-file checks are recorded in the release notes. Physical Safari and independent acceptance remain open. |
+| Release scope | Velen deck, walkthrough and content expansion, number strip, regional tools, and Nilf framing pilot. Approved mockups and remaining runtime rollout are tracked separately. |
+| Open work | LT findings, physical iPhone Safari, guide-wide legacy citation cleanup, forged framing beyond Nilf, and the top-to-bottom Nilf hub review. [Session calibration](SESSION-CALIBRATION.md) |
+
+## Historical QA6 and v47 checkpoints
+
+The following sections retain the original engineering and release notes for comparison. Use the current release table above for startup and QA.
 
 Last updated: 2026-11-17 (America/Chicago) by LT, in a docs-only commit on top of QA6 `804a3a2c83529fdc707ca5278fb3bcf39d50d771`.
 This commit changes no application or rollback file. The QA6 application candidate is still `804a3a2c…`. This branch is the D2
@@ -59,14 +74,14 @@ edge caching are untested.
 
 The owner approved pushing the prepared Sites commit and publishing QA6. Source was fast-forwarded from a9d61c94 to 0ac86e3e, saved as version 46, and deployed successfully. PR #3 contains the finalized synchronization and rollback procedure; its earlier in-progress wording above is historical. No GitHub main or Pages change occurred. A raw HTTP verification attempt was blocked/timed out; it did not establish a served-asset mismatch or application failure. Physical Safari acceptance and independent live asset verification remain pending.
 
-## Current publication
+### Historical publication of v47
 
 Sites version **47** is now live. The owner authorized publishing the built slices before LT’s independent QA. The QA6 notes above document the preceding release. See [the version 47 release record](RELEASE-SESSION-3-V47.md) for exact provenance, scope, checks and follow-up.
 
-## Velen walkthrough candidate
+### Historical pre-v49 walkthrough candidate
 
 All five existing Velen walkthroughs now use the shared component. Six new source-backed cards and walkthroughs cover A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp, Ladies of the Wood, and The Whispering Hillock. The Arrival denominator remains three and retains its existing owners. Reading-only cards show stage position in the shared selector. All 339 Node tests passed against the v45, QA5 and QA6 baselines. This candidate is unpublished. Responsive browser and physical Safari checks, dedicated illustrations, and full ledger coverage remain open. Sites version 47 remains live.
 
-### Nilfgaardian Connection forged-framing pilot
+### Historical unpublished framing pilot
 
 The owner approved the framing mockups and requested a runtime QA pilot on the Nilfgaardian Connection hub and walkthrough. The review candidate starts at framing proof commit `4fede4818f7f88df3efcbcd8272c7cec8625162c`. See the [pilot review notes](framing-review/NILF-RUNTIME-QA.md). The candidate is unpublished.

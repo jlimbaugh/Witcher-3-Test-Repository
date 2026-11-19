@@ -14,6 +14,16 @@ Before assigning art, record the card ID, verified subject and location, gamepla
 
 A generic regional landscape means art is pending. Card and walkthrough acceptance do not clear that pending art check.
 
-## Velen art pass
+## Velen v49 asset examples
 
-All 21 implemented Velen walkthroughs now have distinct card illustrations. The November 18 art pass added 19 quest-specific images in `dist/art-velen/` and retained the dedicated Funeral Pyres and At the Mercy of Strangers illustrations. Portrait crop review is complete. Physical iPhone Safari review is pending. Future cards use this template before art acceptance.
+The v49 registry contains 72 entries with 72 distinct existing artwork paths, plus three Arrival quests with dedicated art. This verifies asset coverage and uniqueness. Physical iPhone Safari crop and independent visual acceptance remain open.
+
+| Use | Shipped example |
+|---|---|
+| Main quest briefing and header | [Hendrik’s evidence for Nilf](../dist/art-velen/nilf.webp) |
+| Contract target | [Shrieker cockatrice](../dist/art-velen/shrieker.webp) |
+| Quest character | [Bloody Baron](../dist/art-velen/baron.webp) |
+| Treasure setting | [Queen Zuleyka’s wreck](../dist/art-velen/queen-zuleykas-treasure.webp) |
+| Gear hunt | [Griffin School Gear at George’s tomb](../dist/art-velen/griffin-school-gear.webp) |
+
+Compare the [runtime card registry](../dist/velen-quest-cards.js) and [art provenance](../dist/ART-SOURCES.md) when adding or replacing examples. See the [framing gallery](framing-review/README.md) for mockups and approval status.
