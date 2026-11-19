@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.
+
 Owner approved the card-edge gesture build 03abe77. Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
 
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.

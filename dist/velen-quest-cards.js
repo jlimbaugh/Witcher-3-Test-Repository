@@ -118,6 +118,7 @@
   };
   Object.assign(root.PhoenixVelenQuestCards, {
     princess: {
+      objectiveIds:['find-princess', 'return-to-pellar'],
       art:'art-velen/princess.webp',
       name:'A Princess in Distress', kind:'Main quest', level:5, place:'Pellar’s hut near Blackbough',
       briefing:'Find Princess so the Pellar can continue the investigation into Anna and Tamara.',
@@ -130,6 +131,7 @@
       ]
     },
     'ciris-room': {
+      objectiveIds:['search-room', 'return-spinning-top'],
       art:'art-velen/ciris-room.webp',
       name:'Ciri’s Room', kind:'Side quest', level:5, place:'Crow’s Perch',
       briefing:'Search Ciri’s old room and speak with Gretka about her stay.',
@@ -142,6 +144,7 @@
       ]
     },
     'wandering-in-the-dark': {
+      objectiveIds:['regroup-with-keira', 'trace-signs', 'survive-white-frost', 'clear-exit'],
       art:'art-velen/wandering-in-the-dark.webp',
       name:'Wandering in the Dark', kind:'Main quest', place:'Elven ruins',
       briefing:'Explore the elven mage’s ruins with Keira and follow the Wild Hunt.',
@@ -156,6 +159,7 @@
       ]
     },
     'magic-lamp': {
+      objectiveIds:['read-inscription', 'open-door', 'leave-with-keira'],
       art:'art-velen/magic-lamp.webp',
       name:'Magic Lamp', kind:'Side quest', place:'Elven ruins',
       briefing:'Help Keira find the lamp promised to her by the elven mage.',
@@ -169,6 +173,7 @@
       ]
     },
     'ladies-of-the-wood': {
+      objectiveIds:['follow-treats', 'restore-johnnys-voice', 'hear-request', 'return-with-outcome'],
       art:'art-velen/ladies-of-the-wood.webp',
       name:'Ladies of the Wood', kind:'Main quest', place:'Crookback Bog',
       briefing:'Follow Ciri’s trail to the orphans and learn what the Crones know.',

@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8"><title>Phoenix isolated phone checks</title><pre id="report">Running…</pre><script type="module">
+const output=document.querySelector('pre'), results=[],wait=ms=>new Promise(r=>setTimeout(r,ms));
+const html=await (await fetch('index.html')).text();
+let frame,w,d;
+const check=(v,msg)=>{if(!v)throw Error(msg)};
+async function test(id,fn){const filter=new URLSearchParams(location.search).get('check');if(filter&&!id.startsWith(filter))return;try{let data=await fn();results.push(['PASS',id,data])}catch(e){results.push(['FAIL',id,String(e)])}output.textContent=JSON.stringify(results,null,1)}
+async function boot(hash,width=390,height=844,mode='normal',seed={}){
+ frame?.remove();frame=document.createElement('iframe');frame.style.cssText='border:0;width:'+width+'px;height:'+height+'px';frame.src='qa-blank-local.html';await new Promise(resolve=>{frame.onload=resolve;document.body.append(frame)});
+ // Load the normal entry point in a disposable test frame on this origin.
+ const template=html.replace('<head>', '<head><base href="'+location.origin+'/"><script>history.replaceState(null,"","/index.html'+hash+'");const records=new Map(Object.entries('+JSON.stringify(seed)+'));Object.defineProperty(window,"localStorage",{get(){if('+JSON.stringify(mode)+'==="denied")throw Error("denied");return {getItem:k=>records.get(k)??null,setItem:(k,v)=>{if('+JSON.stringify(mode)+'==="quota")throw Error("quota");records.set(k,String(v))},removeItem:k=>records.delete(k)}}});window.qaRecords=records;<\/script>');
+ frame.contentDocument.open();frame.contentDocument.write(template);frame.contentDocument.close();w=frame.contentWindow;d=frame.contentDocument;for(let i=0;i<375&&!w.PhoenixVelen;i++)await wait(80);await wait(230);check(w.PhoenixVelen,'startup failed');
+}
+const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{const x=one(s);check(x,s);x.click()};
+const cases=[['princess',2],['ciris-room',2],['wandering-in-the-dark',4],['magic-lamp',3],['ladies-of-the-wood',4]];
+let seed={};
+for(const [id,total] of cases)await test(id,async()=>{
+ const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
+ const progress=()=>one('#velen-screen .sw-walkthrough');
+ await boot(base+'1',390,844,'normal',seed);
+ for(let n=1;n<=total;n++){
+  check(w.location.hash===base+n,'stage '+n);
+  check(progress().textContent.includes((n-1)+' of '+total),'prior count');
+  progress().querySelector('.selected input').click();
+  if(n<total){progress().querySelector('.sw-next').click();await wait(250);}
+ }
+ check(progress().textContent.includes('Quest complete.'),'complete');
+ await boot(base+total,390,844,'normal',Object.fromEntries(w.qaRecords));
+ check(progress().textContent.includes(total+' of '+total),'reload');
+ one('.sw-story-row summary').click();one('.sw-story-row button').click();
+ check(progress().textContent.includes((total-1)+' of '+total),'Undo');
+ for(const [k,v] of Object.entries(seed))if(k.includes('.objectives.v1')&&k!==key)check(w.qaRecords.get(k)===v,'isolated progress');
+ seed=Object.fromEntries(w.qaRecords);return total;
+});
+output.dataset.finished='yes';
+</script>
