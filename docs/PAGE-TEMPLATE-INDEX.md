@@ -1,6 +1,6 @@
 # Phoenix page templates
 
-Baseline: published v48 plus the owner-approved regional deck and number strip at `011b00563067ff192313338c3bce88d2089f90e4`. White Orchard is the presentation reference. Velen supplies the approved regional deck and walkthrough refinements. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.
+Baseline: published v48 plus the owner-approved regional deck and number strip at `011b00563067ff192313338c3bce88d2089f90e4`. Velen is the canonical reference for regional decks and supplies the approved walkthrough refinements. White Orchard remains a reference for its existing presentation and behavior. Preserve the White Orchard implementation and consider individual elements for incorporation with explicit owner approval. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.
 
 Companion requirements: [Regional decks](REGION-DECK-TEMPLATE.md), [Quest and activity artwork](QUEST-CARD-ART-TEMPLATE.md), [Illustration standard](../ART-STANDARD.md).
 
