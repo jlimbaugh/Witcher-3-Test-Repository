@@ -26,3 +26,19 @@
 .velen-route-branches{border-left:2px dashed #7a6955;padding:0 0 .1rem .7rem;margin-left:1rem}
 .velen-route-group{margin-block:.75rem}
 .velen-route-pin[aria-current=step]{border-width:2px}
+
+.velen-section-jump select,.regional-search-bar input,.regional-search-bar button{min-height:44px;font:inherit}
+.velen-section-jump{margin:.5rem 0;text-align:center}
+.regional-search-bar{display:flex;align-items:center;gap:.4rem;margin:1rem auto 0;max-width:32rem;border-bottom:1px solid #94988e;background:#182224;padding-inline:.65rem}
+.regional-search-bar input{flex:1;min-width:0}
+#velen .regional-search-bar :is(input,button){border:0;border-radius:0;background:transparent;color:#f4ead7;box-shadow:none;font-size:1rem}
+#velen .regional-search-bar input::placeholder{color:#d6ccba}
+.guide-search-splash{padding:1rem}
+.guide-search-splash>h1,.guide-search-splash>.guide-search-paper{max-width:44rem;margin-inline:auto}
+.guide-search-splash>.guide-search-paper{height:auto;min-height:50vh}
+.guide-search-splash .guide-search-results{overflow:visible}
+.guide-search-splash header[hidden]{display:none}
+
+.velen-tools-section{width:100%;min-width:0}
+.velen-tools-section>h2{text-align:center;color:#f5ead3;text-shadow:0 2px 4px #111}
+.guide-search-splash .guide-search-paper button:is(.guide-search-result,.guide-search-recent-query){background:#f0e0be url(worn-vellum-r15.svg)!important;color:#30271f!important}

@@ -16,3 +16,7 @@ Start at the [private Nilf hub](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatg
 | ACC-01/02 | Updated the candlestick instruction. Direct-to-Heatherton journal status stays unconfirmed. | Verify on a fresh in-game route. Xbox is for game facts and art only. |
 
 343 Node tests passed with all three historical baseline directories set. Author phone-size checks ran in Chromium. Physical iPhone Safari and VoiceOver remain open. To reproduce the isolated checks, copy the two adjacent HTML fixtures into a disposable copy of dist, serve that directory as the site root and open qa-phone-local.html. Each check uses disposable records in an iframe.
+
+## Regional tools deck update
+
+The new QA target replaces the nine-tile layout above. Eight tools use the quest-card renderer, and Search has its own field after the tools. The five global destinations retain their original routes. Run qa-menu-local.html alongside the original phone fixture in a disposable web root. Author checks at 390 × 844 (Velen console) and 844 × 390 (Nilf walkthrough) verified section focus, eight-card wrap, matching action art, absence of the tools number strip, search for Hendrik, opening the result, Return to Search and Back. Physical Safari touch, appearance and VoiceOver are pending.
