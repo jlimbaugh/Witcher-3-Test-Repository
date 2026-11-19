@@ -16,3 +16,13 @@ The owner approved the enlarged [number strip](number-strip.jpg) as the framing 
 | [Item and diagram](item-and-diagram.jpg) | Gear, inventory, diagram, merchant, and compact reference tiles | Reduce the width and density of the interlace to fit small cards. |
 
 These are visual concepts. Controls, labels, and behavior in the guide follow the page templates. Review and approve each frame before using it in the application.
+
+## Box flourishes and staggered side details
+
+![Three forged box-frame variations](box-flourishes.jpg)
+
+- **A** uses an upward-opening curled brace with a pointed drop.
+- **B** uses split leaves with a central diamond.
+- **C** uses a broad interlaced knot with a spearpoint.
+
+The side rails show alternating curls, knots, collars, and inlaid lozenges at irregular heights. These are fixed compositions for review. Blue and jade are the current accents and may change.
