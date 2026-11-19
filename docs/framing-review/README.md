@@ -144,3 +144,13 @@ The same ten approved box-framing references carry forward. Each proof adds the 
 | A Favor for a Friend | V1 | [05 · bottom](velen-vertical-batch-02/sheet-05.jpg) |
 
 Review the outer side ornament only. These layered proofs retain the earlier concept renders below the rails, including any incidental inner-side detail. Application sizing and clearance around controls still need iPhone testing. The text-button pass follows vertical approval.
+
+### Vertical framing with parchment reading text
+
+These proofs supersede the empty-panel sheets for review. The hub shows the existing briefing and quest-start text. The walkthrough shows the existing first stage title and instructions. Both use the same rail assignment as above. The parchment overlays illustrate the reading area and do not represent the full runtime layout.
+
+- [A Princess in Distress and Ciri’s Room](velen-vertical-batch-02/reading-01.jpg)
+- [Magic Lamp and The Whispering Hillock](velen-vertical-batch-02/reading-02.jpg)
+- [Ciri’s Story: The King of the Wolves and Return to Crookback Bog](velen-vertical-batch-02/reading-03.jpg)
+- [Ciri’s Story: Fleeing the Bog and An Invitation from Keira Metz](velen-vertical-batch-02/reading-04.jpg)
+- [A Towerful of Mice and A Favor for a Friend](velen-vertical-batch-02/reading-05.jpg)
