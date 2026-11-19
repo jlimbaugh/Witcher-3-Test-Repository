@@ -1,5 +1,8 @@
 # Phoenix project status
 
+Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+
+
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
 The owner approved the Velen walkthrough Regional Tools deck. PR #26 now shares it on Home, Regions, regional consoles and walkthroughs. Home and Regions follow the selected region for local tools. Physical iPhone Safari acceptance remains open.

@@ -1,5 +1,8 @@
 # Phoenix session calibration
 
+Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+
+
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
 Read [Project Status](PROJECT-STATUS.md) first, then use this page alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For Velen v49, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.

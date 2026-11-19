@@ -1,5 +1,8 @@
 # Velen iPhone QA candidate
 
+Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](../../../REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+
+
 Start at the [private Nilf hub](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/hub/nilf). Published v49 is recorded in the [release history](../../../RELEASE-VELEN-V49.md). LT's original findings are in PR #25 and the previous implementation evidence is in [lt-fixes](../lt-fixes/).
 
 | Item | Author verification | Remaining acceptance |

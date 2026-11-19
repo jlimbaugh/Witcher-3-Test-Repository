@@ -1,5 +1,8 @@
 # Phoenix page templates
 
+Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+
+
 Current implementation reference is [Velen v49](RELEASE-VELEN-V49.md). See the [v49 QA checklist](LT-QA-VELEN-V49.md) for open runtime checks. Velen is the canonical reference for regional decks and supplies the approved walkthrough refinements. White Orchard remains a reference for its existing presentation and behavior. Preserve the White Orchard implementation and consider individual elements for incorporation with explicit owner approval. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.
 
 Companion requirements: [Regional decks](REGION-DECK-TEMPLATE.md), [Quest and activity artwork](QUEST-CARD-ART-TEMPLATE.md), [Illustration standard](../ART-STANDARD.md).
