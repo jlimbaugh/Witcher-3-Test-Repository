@@ -1,0 +1,74 @@
+{
+ "wolf": [
+  {
+   "label": "Home",
+   "href": null,
+   "hash": "#home",
+   "h": [
+    "The Path",
+    "Choose your region"
+   ]
+  },
+  {
+   "label": "Regions",
+   "href": null,
+   "hash": "#regions",
+   "h": [
+    "Regions",
+    "Choose your region"
+   ]
+  },
+  {
+   "label": "Field Reference",
+   "href": null,
+   "hash": "#field-reference",
+   "h": [
+    "Field Reference"
+   ]
+  },
+  {
+   "label": "Progress",
+   "href": null,
+   "hash": "#progress",
+   "h": [
+    "Progress",
+    "Recorded journey"
+   ]
+  },
+  {
+   "label": "Constellation",
+   "href": null,
+   "hash": "#whiteorchard-constellation",
+   "h": [
+    "The Continent · Constellation"
+   ]
+  }
+ ],
+ "v48": {
+  "#velen": [
+   "Open walkthrough→#velen/quest/nilf/1",
+   "Open quest hub→#velen/hub/nilf"
+  ],
+  "#velen/quest/nilf/3": null
+ },
+ "warnOpen": {
+  "cls": "phoenix-medallion fan-open",
+  "controls": [
+   "← Return",
+   "Yennefer’s crystal skull",
+   "Review activity completion",
+   "Twisted Firestarter",
+   "Open quest progress",
+   "Missing in Action",
+   "Open quest progress",
+   "On Death’s Bed",
+   "Open quest progress",
+   "Navigate"
+  ]
+ },
+ "warnAfterCoreTap": {
+  "cls": "phoenix-medallion",
+  "hash": "#velen/quest/nilf/3",
+  "top": 2309
+ }
+}
