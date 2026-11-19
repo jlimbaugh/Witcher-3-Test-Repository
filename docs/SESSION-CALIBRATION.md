@@ -84,3 +84,5 @@ Open for owner review. A and B are options. Custom answers are welcome. Record t
 | 19 | When you have several copies of a Gwent card, how should the deck builder show them? | One card with owned and in-deck counts | A separate card for each copy | Open |
 | 20 | When two quests match a search term, which result should come first? | The quest in the current region | The quest you most recently opened | Open |
 | 21 | When reviewing a batch of ten approved quest designs, what should the QA handoff open with? | A contact sheet linking to each playable page | A playable quest list with visual references beside each entry | Open |
+
+The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the entire deck, action and quiet search field. The illustrated cards retain their individual frames. The wolf is independent.

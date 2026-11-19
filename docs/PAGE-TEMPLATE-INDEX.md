@@ -67,3 +67,5 @@ Velen coverage, Gwent, advanced build simulation, crafting and other incomplete 
 ### Nilf quest hub · approved for the next build
 
 On iPhone, fit the banner, short briefing and full Start/Continue action on the first screen at the approved reading size. Below Quest Cards, place Quest Progress before Preparation & Quest Details. When collapsed, progress shows the count and a short next-objective line. [Owner selections](SESSION-CALIBRATION.md#future-build-questions--round-1).
+
+The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the entire deck, action and quiet search field. The illustrated cards retain their individual frames. The wolf is independent.
