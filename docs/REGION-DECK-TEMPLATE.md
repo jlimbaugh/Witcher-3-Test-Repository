@@ -1,6 +1,6 @@
 # Phoenix regional deck template
 
-Owner approved the Velen and White Orchard numbered strip on November 18, 2026. The reference implementation is commit `11871564b5b51dc65ffd16fc502572aa9ab098c3`. Use White Orchard for the existing card and walkthrough presentation. Use the approved Velen deck for the numbered jump strip and selected-card actions.
+Owner approved the Velen and White Orchard numbered strip on November 18, 2026. The reference implementation is commit `11871564b5b51dc65ffd16fc502572aa9ab098c3`. The approved Velen deck is the canonical template for new and revised regional decks, including card presentation, the numbered jump strip, and selected-card actions. Preserve the existing White Orchard implementation. Evaluate individual White Orchard elements for incorporation into the shared template with explicit owner approval.
 
 ## Required regions pattern
 
