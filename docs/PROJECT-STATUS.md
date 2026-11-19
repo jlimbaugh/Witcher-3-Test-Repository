@@ -2,7 +2,7 @@
 
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
-The deployed private candidate on PR #26 includes Velen section jumps, a Regional Tools quest-style deck and a dedicated search results page. Physical iPhone Safari acceptance remains open.
+The owner approved the Velen walkthrough Regional Tools deck. PR #26 now shares it on Home, Regions, regional consoles and walkthroughs. Home and Regions follow the selected region for local tools. Physical iPhone Safari acceptance remains open.
 
 ## Current release and review
 

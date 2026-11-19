@@ -8,7 +8,7 @@ const LINK_RULE="a.href=href.startsWith('index.html#')?href.slice(10):href.start
 const resolve=href=>href.startsWith('index.html#')?href.slice(10):href.startsWith('#')?model.sharedHash(href):href;
 test('RT-01: Region Tools guide-wide tiles keep their own destinations instead of collapsing to #velen',()=>{
  const r18=read('velen-r18.js');assert.ok(r18.includes(LINK_RULE),'link() resolution rule unchanged');
- const tools=r18.slice(r18.indexOf('function regionTools()'),r18.indexOf('function consoleView()'));
+ const tools=r18.slice(r18.indexOf('function regionTools('),r18.indexOf('function consoleView()'));
  assert.match(tools,/href:item\.href\?'index\.html'\+item\.href:null/,'navigation entries pass through the index.html# prefix');
  const hrefs=[...read('navigation-art.js').matchAll(/href:'(#[^']+)'/g)].map(m=>m[1]);
  assert.deepEqual(hrefs,['#home','#regions','#field-reference','#progress','#whiteorchard-constellation']);
@@ -26,7 +26,7 @@ test('NILF-01 / NILF-02 / BTN-01: hub type keeps the v48 scale, hub rails sit on
 });
 test('Region Tools reuses the quest deck and approved destination art, with search below the cards',()=>{
  const src=read('velen-r18.js');
- assert.match(src,/carousel\('tools',key,\{catalogue,select\}\)/);
+ assert.match(src,/carousel\('tools',key,\{catalogue,select,host\}\)/);
  assert.match(src,/if\(!tools\)\{const jump=window.createPhoenixDeckJump/);
  assert.match(src,/tools.append\(host,search\)/);
  const art=[...read('navigation-art.js').matchAll(/src:'([^']+)'/g)].map(m=>m[1]);

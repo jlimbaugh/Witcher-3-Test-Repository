@@ -1,5 +1,8 @@
 # Operation Phoenix — universal session start
 
+The approved walkthrough Regional Tools deck is the shared page template. Use the [template index](PAGE-TEMPLATE-INDEX.md) when changing a regional tools section. The floating wolf has its own navigation.
+
+
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
 Version 1.1 · Adopted November 16, 2026; coordination updated November 17, 2026 (America/Chicago)

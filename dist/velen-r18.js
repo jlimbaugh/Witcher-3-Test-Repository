@@ -78,7 +78,7 @@ box.append(deck);
 if(!tools){const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true),{selectOnSettle:true});
 box.append(jump.frame);}
 box.append(footer);
-deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
+deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);(tools?.host||screen).querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
 let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
 function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,false);if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
 deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
@@ -276,10 +276,10 @@ function regionalMap(id,requested){
   paper.append(tools);
   screen.append(paper);
 }
-function regionTools(){
+function regionTools(context){
   const tools=el('section','velen-tools-section');
   tools.append(el('h2','','Region Tools'));
-  tools.id='velen-region-tools';
+  tools.id=context?context.id+'-region-tools':'velen-region-tools';
   const catalogue={};
   for(const item of window.PhoenixNavigationArt.entries){
     catalogue[item.key]={name:item.label,art:item.src,kind:'Regional tool',href:item.href?'index.html'+item.href:null};
@@ -290,21 +290,51 @@ function regionTools(){
   function select(key,remember=true){
     const item=catalogue[key];
     if(remember)history.replaceState({...history.state,regionalTool:key},'',location.href);
-    const deck=carousel('tools',key,{catalogue,select});
+    const deck=carousel('tools',key,{catalogue,select,host});
     const actions=el('nav','home-selected-actions');
     actions.setAttribute('aria-label','Selected tool actions');
     const label='Open '+item.name;
-    if(item.href)actions.append(questAction(label,item.href,item.art));
+    if(item.href){
+      const action=questAction(label,item.href,item.art);
+      actions.append(action);
+      function updateDestination(){
+        const region=context?.region()||'velen';
+        if(key!=='maps'&&key!=='merchants')return;
+        if(region==='unbuilt'){
+          action.removeAttribute('href');action.setAttribute('aria-disabled','true');
+          action.querySelector('span').textContent=item.name+' · Region not built yet';return;
+        }
+        action.removeAttribute('aria-disabled');action.querySelector('span').textContent=label;
+        if(key==='maps')action.href=region==='velen'?'#velen/map':'#whiteorchard-map';
+        if(key==='merchants')action.href=region==='velen'?'#velen/merchants':'#economy-merchants';
+      }
+      updateDestination();
+      tools.onRegionChange=updateDestination;
+    }
     else{
       const button=el('button','home-action-tile');
       button.type='button';
       button.append(picture(item.art),el('span','',label));
-      button.onclick=()=>window.dispatchEvent(new CustomEvent('phoenix:warning-menu-return'));
-      actions.append(button);
+      const list=el('section','regional-warning-list');
+      list.id=tools.id+'-warnings';list.hidden=true;list.setAttribute('aria-label','Unresolved warnings');
+      button.setAttribute('aria-controls',list.id);button.setAttribute('aria-expanded','false');
+      button.onclick=()=>{
+        list.hidden=!list.hidden;button.setAttribute('aria-expanded',String(!list.hidden));
+        if(list.hidden)return;
+        list.replaceChildren();
+        const items=window.PhoenixWarningCenter?.get().items||[];
+        if(!items.length)list.append(el('p','','No unresolved warnings recorded.'));
+        for(const risk of items){
+          const detail=el('button','',risk.name+' · '+risk.status);
+          detail.type='button';detail.onclick=()=>window.PhoenixWarnings.open(risk.id,detail);
+          list.append(detail);
+        }
+      };
+      actions.append(button,list);
     }
     host.replaceChildren(deck,actions);
   }
-  select(Object.hasOwn(catalogue,history.state?.regionalTool)?history.state.regionalTool:'home',false);
+  select((!context||location.hash.split('/')[0]==='#'+context.id)&&Object.hasOwn(catalogue,history.state?.regionalTool)?history.state.regionalTool:'home',false);
   const search=el('form','regional-search-bar');
   search.setAttribute('role','search');
   const input=document.createElement('input');
@@ -319,6 +349,22 @@ function regionTools(){
   tools.append(host,search);
   return tools;
 }
+function mountRegionalTools(mount){
+  const view=mount.closest('.view');
+  const orbit=view.querySelector('.main-region-orbit');
+  function region(){
+    if(!orbit)return 'whiteorchard';
+    const route=orbit.querySelector('[tabindex="0"]')?.getAttribute('href');
+    if(route==='#velen')return 'velen';
+    return route==='#whiteorchard-console'?'whiteorchard':'unbuilt';
+  }
+  const section=regionTools({id:view.id,region});
+  mount.classList.add('regional-tools-host','velen-view');
+  const shell=el('div','console-r16 regional-tools-shell');
+  shell.append(section);mount.append(shell);
+  if(orbit)new MutationObserver(()=>section.onRegionChange?.()).observe(orbit,{subtree:true,attributes:true,attributeFilter:['tabindex']});
+}
+for(const mount of document.querySelectorAll('[data-regional-tools]'))mountRegionalTools(mount);
 function sectionJump(items){
   const nav=el('nav','velen-section-jump');
   nav.setAttribute('aria-label','Section jumps');
@@ -423,5 +469,5 @@ function render(options={}){renderedHash=routeModel.sharedHash(location.hash);co
 }const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
 document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
 dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
-addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, nilfState: () => nilfUI?.state()};
+addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, mountRegionalTools, nilfState: () => nilfUI?.state()};
 };

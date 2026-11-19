@@ -297,6 +297,12 @@
     }
     root_.append(related);
    }
+   if(a.region==='White Orchard'&&!a.section.querySelector('[data-regional-tools]')){
+    const mount=make('div');mount.dataset.regionalTools='whiteorchard';
+    const footer=a.section.querySelector('.sw-source-link');
+    if(footer)footer.before(mount);else a.section.append(mount);
+    root.PhoenixVelen.mountRegionalTools(mount);
+   }
    if(a.sourceId){
     for(const item of host.querySelectorAll(':scope>details.sources'))item.hidden=true;
     if(!a.section.querySelector(':scope>.sw-source-link')){

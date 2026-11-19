@@ -20,3 +20,9 @@ Start at the [private Nilf hub](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatg
 ## Regional tools deck update
 
 The new QA target replaces the nine-tile layout above. Eight tools use the quest-card renderer, and Search has its own field after the tools. The five global destinations retain their original routes. Run qa-menu-local.html alongside the original phone fixture in a disposable web root. Author checks at 390 × 844 (Velen console) and 844 × 390 (Nilf walkthrough) verified section focus, eight-card wrap, matching action art, absence of the tools number strip, search for Hendrik, opening the result, Return to Search and Back. Physical Safari touch, appearance and VoiceOver are pending.
+
+## Shared Regional Tools
+
+The owner approved the Nilf walkthrough card menu as the guide-wide Regional Tools template. Home's old Progress and Field Reference tiles and Search button now use this menu. Regions, both built regional consoles and their shared walkthroughs use the same renderer. On Home and Regions, the front region card determines the local map and merchant destination. Unbuilt regions show local tools as unavailable. White Orchard's Character and Gear shortcuts are in Preparation & departure.
+
+Author browser QA exercised six routes at 390 × 844 and 844 × 390. Each rendered one eight-card menu with a matching illustrated action and the quiet search field. Card size, typeface, action minimum height and deck height matched the Nilf walkthrough at each viewport. Tests exercised wrap, local map routing, switching the selected region, opening warnings, opening and closing the floating wolf independently, search results and Back. The reproducible fixture is qa-regions-local.html next to the original fixture. Add ?landscape=1 for the landscape run. Physical iPhone review of the newly converted pages remains open.

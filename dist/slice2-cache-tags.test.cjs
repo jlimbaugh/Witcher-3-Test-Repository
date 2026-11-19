@@ -158,14 +158,15 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  const tags=Object.fromEntries(refsOf(here).map(r=>[r.file,r.tag]));
  for(const f of ['medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
  for(const f of ['desk-r11.js', 'shared-walkthrough.css'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
- for(const f of ['home-rebuild.css', 'quest-hubs.js'])assert.equal(tags[f],'illustrated-actions-34',f);
- for(const f of ['home-ui.js'])assert.equal(tags[f],'quest-action-art-12',f);
+ for(const f of ['quest-hubs.js'])assert.equal(tags[f],'illustrated-actions-34',f);
+
  for(const f of ['velen-routing.js'])assert.equal(tags[f],'quest-route-maps-35',f);
  for(const f of ['app.js', 'character-ui.js', 'departure.js', 'diagrams-ui.js', 'exploration-ui.js', 'map-ui.js', 'nilf-forged.css', 'progression-ui.js', 'velen-nilf-objectives.js'])assert.equal(tags[f],'v49-phone-fixes-1',f);
- for(const f of ['velen-nilf-ui.js','shared-walkthrough.js'])assert.equal(tags[f],'v49-phone-fixes-2',f);
+ for(const f of ['velen-nilf-ui.js'])assert.equal(tags[f],'v49-phone-fixes-2',f);
+ for(const f of ['main-console.js', 'home-ui.js', 'shared-walkthrough.js', 'velen-r18.js', 'home-rebuild.css', 'velen-activity-decks.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');
- for(const f of ['velen-r18.js', 'search-model.js', 'search-ui.js', 'velen-activity-decks.css'])assert.equal(tags[f],'v49-tools-deck-1',f);
+ for(const f of ['search-model.js', 'search-ui.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
  for(const f of ['deck-jump.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
  assert.equal(tags['nilf-forged.css'],'v49-phone-fixes-1');
  for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-review-33',f);
