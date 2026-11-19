@@ -1,5 +1,7 @@
 # Operation Phoenix — universal session start
 
+**Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
+
 Version 1.1 · Adopted November 16, 2026; coordination updated November 17, 2026 (America/Chicago)
 Applies to Cmdr (ChatGPT), LT (Grok), and PFC (Claude).
 Project owner and final field acceptance: CaptDrunk / Jess Limbaugh.

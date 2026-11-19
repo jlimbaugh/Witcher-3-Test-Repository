@@ -37,7 +37,47 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
   const memory = { hub: { prep: false, progress: false }, walk: { prep: false, progress: true } };
 
   // ---- canonical state ----------------------------------------------------------------------------
+  const persistent = storage;
+  let visitNotice = '';
+  function startVisit(reason) {
+    const records = new Map();
+    const memoryStorage = {
+      getItem: key => records.get(key) ?? null,
+      setItem: (key, value) => records.set(key, String(value)),
+      removeItem: key => records.delete(key)
+    };
+    for (const key of [owner.KEY, owner.LEGACY_KEY]) {
+      try {
+        const value = persistent.getItem(key);
+        if (value !== null) memoryStorage.setItem(key, value);
+      } catch { /* Reading is unavailable in this visit. */ }
+    }
+    if (!owner.load(memoryStorage).owned) {
+      if (reason === 'canonical-unreadable' || reason === 'newer-canonical') records.clear();
+      window.PhoenixVelenMigration.importFromStorage(memoryStorage);
+      if (!owner.load(memoryStorage).owned && owner.handover(memoryStorage).status !== 'handed-over') {
+        records.clear();
+        owner.handover(memoryStorage);
+      }
+    }
+    storage = memoryStorage;
+    visitNotice = reason === 'canonical-unreadable' || reason === 'newer-canonical' || reason === 'legacy-not-imported'
+      ? 'Your saved Velen progress could not be loaded. The existing save is protected. Objective changes last for this visit only.'
+      : 'Saving is unavailable. Objective changes last for this visit only.';
+  }
+  const initialState = owner.load(persistent);
+  if (!initialState.owned) startVisit(initialState.status === 'absent' && (() => {
+    try { const raw = persistent.getItem(owner.LEGACY_KEY); if(raw === null) return false; const value=JSON.parse(raw); return !value || typeof value !== 'object' || Array.isArray(value); } catch { return true; }
+  })() ? 'legacy-not-imported' : initialState.status);
   const state = () => owner.load(storage);
+  function writeProgress(write) {
+    let result = write();
+    if (!visitNotice && ['save-unavailable','storage-unavailable'].includes(result.status)) {
+      startVisit(result.status);
+      result = write();
+    }
+    return result;
+  }
   function owned() {
     return state().owned;
   }
@@ -109,7 +149,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
       e.preventDefault();
       e.stopImmediatePropagation();
       endQuick();
-      const ok = owner.undo(storage).status === 'saved';
+      const ok = writeProgress(() => owner.undo(storage)).status === 'saved';
       announce(ok ? 'Entire progress update undone.' : 'Undo could not be completed. Review Story & correction controls.');
       if (ok) refreshAfterWrite();
     },
@@ -133,6 +173,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
       action.kind === 'objective' &&
       !plan.catchup.length &&
       !plan.affected.length &&
+      !(s.progress.choices.inn && !plan.progress.choices.inn) &&
       !plan.missingChoices.length &&
       !plan.completionLosses.length
     ) {
@@ -171,7 +212,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
             .filter(([v]) => !(v === c.routeValue && data.objectiveIndex[pending.id]?.route === 'inn'))
             .map(([v, t]) => '<option value="' + v + '">' + esc(t) + '</option>')
             .join('') +
-          '</select><details><summary>Consequences · Spoilers</summary><p>' + esc(c.outcome) + '</p><p><a href="' + c.routeSource + '" target="_blank" rel="noopener noreferrer">Route source ↗</a></p></details>';
+          '</select><details><summary>Consequences · Spoilers</summary><p>' + esc(c.outcome) + '</p></details>';
         dialog.querySelector('[data-review-choices]').append(wrapper);
         select = wrapper.querySelector('select');
         select.onchange = () => {
@@ -188,6 +229,8 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
         ? '<p>' + (pending.kind === 'quest' ? 'To mark the quest complete, include the required objectives.' : 'Uncheck to mark only this objective.') + '</p>'
         : '') +
       (plan.affected.length ? '<details open><summary>' + plan.affected.length + ' objective marks will be removed</summary>' + list(plan.affected) + '</details>' : '') +
+      (state().progress.choices.inn && !plan.progress.choices.inn
+        ? '<p class="risk-note">This also clears your recorded inn route: ' + esc(data.choices.inn.options.find(([value]) => value === state().progress.choices.inn)?.[1] || state().progress.choices.inn) + '.</p>' : '') +
       (plan.completionLosses.length ? '<div class="risk-note"><strong>Saved quest completion will be removed</strong><ul><li>' + esc(q.name) + '</li></ul></div>' : '') +
       (plan.confirmedCompletion // QA4: direct-route whole-quest confirmation
         ? '<p data-velen-confirmation>You read Hendrik’s notes, which finishes the quest. This records the whole quest as complete without marking any objective and without an inn outcome. Objectives you have not recorded stay unmarked; “Go to the Inn at the Crossroads.” stays unconfirmed.</p>'
@@ -207,7 +250,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
   }
   function commit(plan) {
     busy = true;
-    const result = owner.commit(storage, plan.progress);
+    const result = writeProgress(() => owner.commit(storage, plan.progress));
     if (dialog.open) dialog.close();
     pending = null;
     busy = false;
@@ -217,7 +260,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
   }
   function undoLast() {
     endQuick();
-    if (owner.undo(storage).status === 'saved') {
+    if (writeProgress(() => owner.undo(storage)).status === 'saved') {
       announce('Entire progress update undone.');
       refreshAfterWrite();
     }
@@ -535,14 +578,18 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
     resume.append(picture('navigation-art-v26/action-walkthrough.webp'), label);
     const tools = make('nav', 'quest-hub-tools');
     tools.setAttribute('aria-label', q.name + ' hub tools');
-    tools.append(link('Quest cards', '#velen'), link('Regions', 'index.html#regions'));
+    tools.append(link('Quest cards', '#velen'));
     const prepHost = make('div', 'quest-hub-preparation'),
       progressHost = make('div', 'quest-hub-progress'),
       prep = preparation(),
       parts = progressDeck(s);
     prepHost.append(prep);
+    if (!s.complete && engine.status(Q, s.progress) !== 'failed') {
+      const next = objectives[nextIndex(s.progress)];
+      parts.deck.querySelector('summary').append(make('small', 'nilf-next-objective', next.label));
+    }
     progressHost.append(parts.deck);
-    paper.append(make('p', 'quest-hub-description', q.intro), risk, resume, tools, prepHost, progressHost);
+    paper.append(make('p', 'quest-hub-description', q.intro), risk, resume, tools, progressHost, prepHost);
     const nearby = make('section', 'quest-hub-nearby');
     nearby.append(make('h2', '', 'Nearby activities'));
     const rails = new Map();
@@ -658,5 +705,5 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
     screen.append(root);
     return mount('walk', index + 1, root, { ...parts, prep, rails: new Map() });
   }
-  return { owned, complete, hub, walkthrough, capture, request, undoLast };
+  return { owned, complete, hub, walkthrough, capture, request, undoLast, notice: () => visitNotice };
 };

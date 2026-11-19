@@ -213,6 +213,25 @@ html body #velen-screen .deck-jump-rail > button {
   font-size: 1.2rem;
 }
 
+html body #velen-screen .deck-jump-rail > button[aria-current="true"] {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  outline: 2px solid currentColor;
+  outline-offset: -5px;
+}
+
+@media (max-width: 600px) {
+  #velen-screen [data-velen-nilf="hub"] > .quest-hub-briefing {
+    min-height: clamp(124px, 24svh, 190px);
+    padding-block: 18px 12px;
+  }
+}
+#velen-screen .nilf-next-objective {
+  display: block;
+  font-size: .95em;
+}
+#velen-screen details[open] > summary .nilf-next-objective { display: none; }
+
 #velen-screen .velen-region-tools {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

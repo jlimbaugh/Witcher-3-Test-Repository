@@ -110,7 +110,7 @@
     optionalControls(o){if(!o.optional)return null;const label=make('label','sw-skip','Optional status ');const select=make('select');select.dataset.objectiveSkip=o.id;for(const [v,txt] of [['open','Not skipped'],['skipped','Skipped']]){const op=make('option','',txt);op.value=v;select.append(op);}select.value=p.objectives[o.id]==='skipped'?'skipped':'open';label.append(select);return label;},
     story(){const box=make('div','progress-actions sw-story');
      const b=(text,attr,val='')=>{const x=make('button','',text);x.type='button';x.setAttribute(attr,val);return x;};
-     box.append(b('Update story progress','data-story-update'),b('Undo last progress change','data-undo-deck'));
+     box.append(b('Update story progress','data-story-update'),b(state.progressUndo?.label?'Undo · '+state.progressUndo.label:'Undo last progress change','data-undo-deck'));
      if(p.legacy?.[q])box.append(b('Review saved completion','data-reconcile-legacy',q));
      const label=make('label','','Quest status '),sel=make('select');sel.dataset.questState=q;for(const [v,txt] of [['active','Not complete'],['failed','Failed']]){const op=make('option','',txt);op.value=v;sel.append(op);}sel.value=status==='failed'?'failed':'active';label.append(sel);box.append(label);
      for(const o of rows.filter(r=>r.choice)){const row=make('p','sw-choice');const btn=b('Record / review choice: '+o.label,'data-edit-choice',o.id);row.append(btn);const v=p.choices[o.choice];if(v){const opt=data.choices[o.choice]?.options.find(x=>x[0]===v);row.append(make('span','quiet',' Recorded: '+(opt?opt[1]:v)));}box.append(row);}

@@ -170,7 +170,8 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 // Previous progression-ui.js pin: ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0.
 // v49 LT fixes (Cmdr fix list on PR #25): 1 RT-01 Region Tools global tiles bypass sharedHash (velen-r18.js).
 // v49 LT fixes: 3 RT-02/RT-03 Search and Route maps tiles use original code-drawn art (velen-r18.js).
-const SEAM_PINS={'progression-ui.js': 'e6ed44acfd06034d02b7a8a75c39c637fa588a01135769a81dd48ba2ec5839d1', 'velen-r18.js': '60b2825a9ad492b362f968eb70b2ca5b3222c9f834b54e2c619764d70d7cab70', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
+// v49 phone candidate updates Undo labels, source footers and save status.
+const SEAM_PINS={'progression-ui.js': 'e07aabe7be166324c0bcf0d261db98f0eb60388d9ac04b4dfe28c0fc1488e123', 'velen-r18.js': 'dea89e0bf14de2ad9d5f35cea62398997e6f085889081c0246354df485f1e5d3', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });
