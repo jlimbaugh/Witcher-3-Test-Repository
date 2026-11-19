@@ -86,3 +86,9 @@ B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and s
 | B8 | Fluted fan caps |
 | B9 | Beveled shields with blue enamel rivets |
 | B10 | Folded chevrons with jade channels |
+
+## The Nilfgaardian Connection box framing pilot
+
+![Quest hub and walkthrough box-framing concepts](nilf-box-framing.jpg)
+
+Box framing pass for owner review. Both iPhone concepts frame every visible content box, with curled-brace A on each main panel and lighter trim on smaller boxes. The illustration and simplified content are mockup material. Vertical side ornament and standard text-only button treatments have their own review passes, in that order after box framing.
