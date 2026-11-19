@@ -19,7 +19,7 @@ Review a representative of each family before filling it out. Use the accepted [
 
 | Family | Required behavior |
 | --- | --- |
-| Regional console and decks | Category decks for quests, contracts, treasure hunts and activities in suggested play order. The Velen numbers-only strip wraps either way. Browsing leaves the selected card in place. Tapping a number selects the card without changing progress. |
+| Regional console and decks | Category decks for quests, contracts, treasure hunts and activities in suggested play order. The Velen numbers-only strip wraps either way. When scrolling settles, the centered number selects the card and refreshes its briefing and actions. Tapping a number also selects the card. Both interactions leave quest progress alone. |
 | Cards, hubs and walkthroughs | Include every quest with a step in Velen. Show the full quest in order, with Velen steps expanded by default and other regions' steps easy to open. Share one progress record across regions. Flag DLC content. |
 | Quest routes and regional map | Keep the quest sketch distinct from the interactive in-guide Velen map. Regional pins are verified, filterable by category, and link to their cards. |
 | Discoveries and activities | Cover local stops and exploration with verified locations and explicit completion rules. |
