@@ -79,9 +79,36 @@ if(!tools){const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].na
 box.append(jump.frame);}
 box.append(footer);
 deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);(tools?.host||screen).querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
-let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0&&e.target.closest('.quest-card.selected'))start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
-function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,false);if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
-deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
+let start=null;
+deck.onpointerdown=e=>{
+  if(!e.isPrimary||e.button!==0){start=null;return;}
+  const card=deck.querySelector('.quest-card.selected').getBoundingClientRect();
+  const edge=6;
+  const horizontal=e.clientX>=card.left-edge&&e.clientX<=card.right+edge&&
+    e.clientY>=card.top-edge&&e.clientY<=card.bottom+edge;
+  start={id:e.pointerId,x:e.clientX,y:e.clientY,horizontal,axis:null,scrollY:viewport().scrollY};
+};
+function move(e){
+  if(!start||start.id!==e.pointerId)return;
+  const dx=e.clientX-start.x,dy=e.clientY-start.y;
+  if(!start.axis&&Math.max(Math.abs(dx),Math.abs(dy))>=8){
+    start.axis=start.horizontal&&Math.abs(dx)>Math.abs(dy)*1.3?'horizontal':'vertical';
+    if(e.isTrusted&&e.type==='pointermove')deck.setPointerCapture(e.pointerId);
+  }
+  if(!start.axis)return;
+  swipeClickUntil=performance.now()+400;
+  if(start.axis==='vertical'&&e.pointerType==='touch')viewport().scrollTo(0,start.scrollY-dy*.8);
+}
+deck.onpointermove=move;
+deck.onpointerup=e=>{
+  if(!start||start.id!==e.pointerId)return;
+  move(e);
+  const direction=start.axis==='horizontal'&&window.PhoenixSwipeBoxModel.swipeDirection(e.clientX-start.x,e.clientY-start.y,false);
+  start=null;
+  if(direction){e.preventDefault();select(ids[(idx+direction+ids.length)%ids.length]);}
+};
+deck.onpointercancel=()=>{start=null;};
+deck.ondragstart=e=>e.preventDefault();return box;}
 function selectCard(category,id,focusJump=false){
   if(!decks[category].includes(id))return;
   const y=viewport().scrollY;

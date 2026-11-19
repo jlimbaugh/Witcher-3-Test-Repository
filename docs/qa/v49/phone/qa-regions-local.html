@@ -23,14 +23,18 @@ for(const hash of ['#velen/quest/nilf/1','#velen/quest/baron/1','#quest-lilac','
  }
  const deck=menu.querySelector('.deck'),front=card(),side=menu.querySelector('.quest-card.right');
  const style=w.getComputedStyle(deck);
- check(parseFloat(style.marginLeft)>=24&&style.touchAction.includes('pan-y'),'vertical gutter '+style.marginLeft+' '+style.touchAction);
- function drag(target,dx,dy){
-  for(const [type,x,y] of [['pointerdown',100,100],['pointerup',100+dx,100+dy]])
-   target.dispatchEvent(new w.PointerEvent(type,{bubbles:true,isPrimary:true,button:0,pointerId:41,clientX:x,clientY:y}));
+ check(parseFloat(style.marginLeft)<=12,'oversized margin');
+ front.scrollIntoView({block:'center'});
+ const rect=front.getBoundingClientRect(),mid=rect.top+rect.height/2;
+ function drag(x,dx,dy){
+  for(const [type,cx,cy] of [['pointerdown',x,mid],['pointermove',x+dx,mid+dy],['pointerup',x+dx,mid+dy]])
+   deck.dispatchEvent(new w.PointerEvent(type,{bubbles:true,isPrimary:true,pointerType:'touch',button:0,pointerId:41,clientX:cx,clientY:cy}));
  }
- const initial=front.dataset.tool;
- drag(side,-72,6);drag(front,10,82);check(card().dataset.tool===initial,'side or vertical drag turned deck');
- drag(front,-75,4);check(card().dataset.tool!==initial,'middle swipe failed');await wait(420);
+ const initial=front.dataset.tool,reader=w.PhoenixViewport,y=reader.scrollY;
+ drag(rect.right+10,-72,0);drag(rect.left+30,6,-50);
+ check(card().dataset.tool===initial&&Math.abs(reader.scrollY-y-40)<2,'side guard or vertical speed');
+ front.scrollIntoView({block:'center'});
+ drag(rect.right+4,-75,4);check(card().dataset.tool!==initial,'edge swipe failed');await wait(420);
  menu.querySelector('.quest-card.left').click();
  const keys=[];
  for(let i=0;i<8;i++){

@@ -1,6 +1,6 @@
 # Phoenix regional deck template
 
-Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts on the middle card. Side cards can still be tapped to center them. The responsive gutter is 7% of viewport width per side, bounded at 20–36 CSS px.
+Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
 
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
 

@@ -84,12 +84,8 @@
 .view:has(.sw-walkthrough) .scene-inner:has(.sw-walkthrough) { padding-bottom: .5rem; }
 .quest-page > .regional-search-bar, .sw-page > .regional-search-bar { margin-bottom: .75rem; }
 
-/* Leave thumb room beside each Velen quest, activity and Regional Tools deck. */
-[data-velen-deck] {
-  --swipe-gutter: clamp(20px, 7vw, 36px);
-}
 html body [data-velen-deck] .deck.phoenix-horizontal-box[data-swipe-engine=custom],
 html body [data-velen-deck] .deck .quest-card {
-  touch-action: pan-y pinch-zoom !important;
+  touch-action: pinch-zoom !important;
   overscroll-behavior-y: auto;
 }
