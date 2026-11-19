@@ -61,9 +61,9 @@ Open for owner review. A and B are options. Custom answers are welcome. Record t
 
 | # | Question | A | B | Owner answer |
 |---|---|---|---|---|
-| 1 | On the first iPhone screen of the Nilf hub, what should fit below the banner and briefing? | The full Start/Continue button | The button and the Quest Cards link | Open |
-| 2 | After you resume a quest, which section should come first beneath those actions? | Quest progress | Preparation and quest details | Open |
-| 3 | With Quest Progress collapsed, what should its summary show? | Count and next objective | Count only | Open |
+| 1 | On the first iPhone screen of the Nilf hub, what should fit below the banner and briefing? | The full Start/Continue button | The button and the Quest Cards link | A — Show through the full Start/Continue button at the approved reading size. |
+| 2 | After you resume a quest, which section should come first beneath those actions? | Quest progress | Preparation and quest details | A — Quest Progress first, then Preparation & Quest Details. |
+| 3 | With Quest Progress collapsed, what should its summary show? | Count and next objective | Count only | A — Show count and a short next-objective line while collapsed. |
 | 4 | When you expand Preparation mid-quest, which advice should appear first? | What matters at the current step | The original pre-quest checklist | Open |
 | 5 | If several nearby activities are available, which should lead the list after time-sensitive warnings? | Activities at your current quest stop | Activities closest to your level | Open |
 | 6 | After Hendrik’s notes, what would help you choose between Bloody Baron and Hunting a Witch? | One short line under each card explaining the lead | Title and artwork alone | Open |
