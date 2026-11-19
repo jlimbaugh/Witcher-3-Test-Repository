@@ -22,4 +22,12 @@ Start with the [page template index](PAGE-TEMPLATE-INDEX.md) for any page work, 
 | Quest reading and sources | Preserve objective position on mark, keep related optional tasks beneath the reading content, and use the existing progress owner. Put citations on the central Sources page and use one quiet Sources link at the end of the reading page. Guide-wide legacy citation cleanup is open. |
 | Shared copy and content | Include DLC content with its label. Remove expansion toggles and routine browser-save instructions from the template. Record any leftover instances as defects. |
 
-Record future template approvals in the relevant template and link them from the page template index and this calibration page. Record scope and verification state so approval of a mockup does not get reported as acceptance of the running guide. The top-to-bottom Nilf hub design review and physical iPhone Safari acceptance are still open.
+Record future template approvals in the relevant template and link them from the page template index and this calibration page. Record scope and verification state so approval of a mockup does not get reported as acceptance of the running guide. Physical iPhone Safari acceptance remains open.
+
+## Nilf hub review · approved top section
+
+- Shorten the full-width illustration banner so the briefing and walkthrough action sit higher on iPhone.
+- Keep a short quest briefing above Start or Continue walkthrough.
+- Keep Quest Cards below the walkthrough action. Regions is available through the wolf menu.
+
+These are approved design choices for the next Nilf hub build. Exact banner height and the remaining hub sections are open for review.
