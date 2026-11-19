@@ -6,7 +6,7 @@ Owner approved the Velen and White Orchard numbered strip on November 18, 2026. 
 
 1. Preserve the regional card deck, its artwork, and its existing touch and keyboard interaction. Show the current card and its region-specific title.
 2. Place a compact, numbers-only strip directly beneath the card deck. Visually join it to the deck with a matching border and centered marker. Preserve vertical-scroll space beneath the horizontal controls.
-3. The number strip scrolls freely and wraps from the last number to the first and back. Browsing numbers leaves the quest card in place. Tapping a number selects that card and updates the briefing and actions. The strip adds no quest-name picker or extra visible row. Each number has a quest or task name in its accessible label.
+3. The number strip scrolls freely and wraps from the last number to the first and back. When scrolling settles, the centered number selects its card and updates the briefing and actions. Tapping a number also selects its card. Use 54 × 48 CSS px minimum number blocks in Velen. The strip adds no quest-name picker or extra visible row. Each number has a quest or task name in its accessible label.
 4. Use fixed artwork for repeated navigation actions. The field journal and quill mean Open Walkthrough. The crossroads signpost and lantern mean Open Quest Hub or Open Quest Card. Each quest or activity card uses art of its actual subject. See the [card art template](QUEST-CARD-ART-TEMPLATE.md).
 5. New walkthroughs reuse the shared presentation, related quest and task links, and a compact Sources link. Keep selection and browsing separate from progress. Opening a card or using the number strip must never award a completion mark.
 
@@ -19,7 +19,7 @@ Owner approved the Velen and White Orchard numbered strip on November 18, 2026. 
 
 ## Acceptance
 
-On iPhone Safari, scroll across both wrap boundaries, confirm browsing leaves the selected card in place, jump from the first number to a late number, then open its walkthrough and hub. Confirm vertical scrolling below the strip, stable focus or an accessible equivalent, legible targets, and no horizontal page overflow. Repeat on a short deck and a long deck. Check keyboard reachability and accessible names separately. Confirm the existing card gesture and saved progress still behave as before.
+On iPhone Safari, scroll across both wrap boundaries, confirm the centered number selects the card and updates its briefing after settling, jump from the first number to a late number, then open its walkthrough and hub. Confirm vertical scrolling below the strip, stable focus or an accessible equivalent, legible targets, and no horizontal page overflow. Repeat on a short deck and a long deck. Check keyboard reachability and accessible names separately. Confirm the existing card gesture and saved progress still behave as before.
 
 ## Next Velen content pass
 
