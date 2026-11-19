@@ -1,0 +1,141 @@
+{
+ "375-hub": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 387-462",
+   "R x 337-348 y 558-633"
+  ],
+  "hits": [
+   "L: \"Start walkthroughStep 1 · Arrival\" (home-action-tile) x-overlap 4.0px",
+   "L: \"Reference tools\" (action-group-title) x-overlap 4.0px",
+   "R: \"Preparation & quest details\" () x-overlap 4.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px"
+  ]
+ },
+ "375-wt": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 633-708",
+   "R x 337-348 y 1355-1430"
+  ],
+  "hits": [
+   "brace: \"Velen · Suggested level 5.\" () x-overlap 112.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px",
+   "brace: \"Progress actions\" (action-group-title) x-overlap 112.0px"
+  ]
+ },
+ "390-hub": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 387-462",
+   "R x 352-363 y 558-633"
+  ],
+  "hits": [
+   "L: \"Start walkthroughStep 1 · Arrival\" (home-action-tile) x-overlap 4.0px",
+   "L: \"Reference tools\" (action-group-title) x-overlap 4.0px",
+   "R: \"Preparation & quest details\" () x-overlap 4.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px"
+  ]
+ },
+ "390-wt": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 607-682",
+   "R x 352-363 y 1280-1355"
+  ],
+  "hits": [
+   "brace: \"Velen · Suggested level 5.\" () x-overlap 112.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px",
+   "brace: \"Progress actions\" (action-group-title) x-overlap 112.0px"
+  ]
+ },
+ "430-hub": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 387-462",
+   "R x 392-403 y 558-633"
+  ],
+  "hits": [
+   "L: \"Start walkthroughStep 1 · Arrival\" (home-action-tile) x-overlap 4.0px",
+   "L: \"Reference tools\" (action-group-title) x-overlap 4.0px",
+   "R: \"Preparation & quest details\" () x-overlap 4.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px"
+  ]
+ },
+ "430-wt": {
+  "border": [
+   36,
+   22,
+   36,
+   22
+  ],
+  "rails": [
+   "L x 27-38 y 589-664",
+   "R x 392-403 y 1227-1302"
+  ],
+  "hits": [
+   "brace: \"Velen · Suggested level 5.\" () x-overlap 112.0px",
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px",
+   "brace: \"Progress actions\" (action-group-title) x-overlap 112.0px"
+  ]
+ },
+ "852-hub": {
+  "border": [
+   40,
+   40,
+   40,
+   40
+  ],
+  "rails": [
+   "L x 73-84 y 393-468",
+   "R x 768-779 y 566-641"
+  ],
+  "hits": [
+   "L: \"Start walkthroughStep 1 · Arrival\" (home-action-tile) x-overlap 0.0px",
+   "L: \"Reference tools\" (action-group-title) x-overlap 0.0px",
+   "R: \"Preparation & quest details\" () x-overlap 0.0px",
+   "brace: \"2. Road — Open each nearby activit\" () x-overlap 112.0px"
+  ]
+ },
+ "852-wt": {
+  "border": [
+   40,
+   40,
+   40,
+   40
+  ],
+  "rails": [
+   "L x 89-100 y 552-627",
+   "R x 578-589 y 1127-1202"
+  ],
+  "hits": [
+   "brace: \"1. Arrival — Check equipment condi\" () x-overlap 112.0px",
+   "brace: \"Progress actions\" (action-group-title) x-overlap 112.0px"
+  ]
+ }
+}
