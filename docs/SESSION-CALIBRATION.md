@@ -31,3 +31,11 @@ Record future template approvals in the relevant template and link them from the
 - Keep Quest Cards below the walkthrough action. Regions is available through the wolf menu.
 
 These are approved design choices for the next Nilf hub build. Exact banner height and the remaining hub sections are open for review.
+
+### Questions and selected answers
+
+| Question | Selected answer |
+|---|---|
+| How should the quest illustration and title fit at the top of the hub on iPhone? | **Shorter banner.** Keep the full-width illustration and bring the briefing and walkthrough action higher. |
+| What should the parchment show before Start or Continue walkthrough? | **Short briefing.** Keep a one- or two-sentence quest setup above the action. |
+| Where should Quest Cards and Regions sit on the hub? | **Keep Quest Cards only.** Give the hub a direct return to its quest deck and use the wolf menu for Regions. |
