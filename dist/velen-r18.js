@@ -285,7 +285,8 @@ function regionTools(){
     return button;
   }
   for(const item of window.PhoenixNavigationArt.entries){
-    if(item.href)cards.append(artTile(item.label,item.href,item.src));
+    // LT49-RT-01: guide-wide destinations bypass the Velen sub-route rewrite (link() honours the index.html# prefix).
+    if(item.href)cards.append(artTile(item.label,'index.html'+item.href,item.src));
     else if(item.key==='warnings')cards.append(actionTile(item.label,item.src,()=>{
       window.dispatchEvent(new CustomEvent('phoenix:warning-menu-return'));
     }));
