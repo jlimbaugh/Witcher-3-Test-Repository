@@ -16,3 +16,11 @@ test('RT-01: Region Tools guide-wide tiles keep their own destinations instead o
  // Velen-local tools still route inside Velen.
  assert.equal(resolve('#map'),'#velen/map');assert.equal(resolve('#merchants'),'#velen/merchants');
 });
+test('NILF-01 / NILF-02 / BTN-01: hub type keeps the v48 scale, hub rails sit on the border, forged plates are full size',()=>{
+ const css=read('nilf-forged.css');
+ assert.ok(!/quest-hub-briefing h1\s*\{/.test(css),'no Nilf override of the hub title size (v48: 32px at 390)');
+ assert.ok(!/quest-hub-description/.test(css),'no Nilf override of the hub briefing size (v48: 17.6px at 390)');
+ assert.match(css,/\[data-velen-nilf="hub"\] > \.quest-hub-paper::before,\s*#velen-screen \[data-velen-nilf="hub"\] > \.quest-hub-paper::after \{\s*left: -15px;\s*right: -15px;/);
+ const vs=read('visual-system.css');assert.match(vs,/\.phoenix-action\[data-button-purpose\]:not\(\[data-button-purpose=plain\]\):before\{[^}]*width:27px;height:24px/,'the icon rule this fix neutralises still exists');
+ assert.match(css,/\.phoenix-action\[data-button-purpose\]:not\(\[data-button-purpose=plain\][^)]*\)::before \{\s*width: auto;\s*height: auto;/);
+});

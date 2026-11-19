@@ -16,15 +16,14 @@
   color: #2a211b;
 }
 
-#velen-screen [data-velen-nilf="hub"] :is(.quest-hub-description, .quest-hub-group p, .quest-hub-group .quiet),
+/* NILF-01 (v49 LT fixes): the hub briefing keeps its accepted v48 scale; only the group notes are raised to 1rem. */
+#velen-screen [data-velen-nilf="hub"] :is(.quest-hub-group p, .quest-hub-group .quiet),
 #velen-screen:has(> [data-velen-nilf="hub"]) > .scroll-r16 .small-note {
   font-size: 1rem;
   line-height: 1.5;
 }
 
-#velen-screen [data-velen-nilf="hub"] .quest-hub-briefing h1 {
-  font-size: clamp(1.65rem, 5vw, 2.4rem);
-}
+/* NILF-01 (v49 LT fixes): the hub title override was removed so the accepted v48 title scale applies. */
 
 #velen-screen [data-velen-nilf="hub"] .quest-hub-paper .quiet {
   color: #4b392d;
@@ -55,6 +54,14 @@
   background-position: left 65%;
   background-size: 11px 75px;
   transform: scaleX(-1);
+}
+
+/* NILF-02 (v49 LT fixes): on the hub the parchment border is 22px; move both vine rails out onto it so they clear
+   Start walkthrough, Reference tools and Preparation (rail 11px wide, now ending 4px outside the content box). */
+#velen-screen [data-velen-nilf="hub"] > .quest-hub-paper::before,
+#velen-screen [data-velen-nilf="hub"] > .quest-hub-paper::after {
+  left: -15px;
+  right: -15px;
 }
 
 #velen-screen [data-velen-nilf] > :is(.quest-hub-briefing, .page-heading),
@@ -122,6 +129,15 @@ html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-
     var(--nilf-button-end) right 3px center / 5px 42% no-repeat,
     repeating-linear-gradient(116deg, #ffffff12 0 1px, transparent 1px 5px),
     linear-gradient(#e2ebe6, #87989c 12%, #c5d1ce 17%, #56646b 39%, #a5b1b0 49%, #4b585f 65%, #838e91 94%, #303b40);
+}
+
+/* BTN-01 (v49 LT fixes): visual-system.css sizes the purpose-icon ::before of .phoenix-action[data-button-purpose] at
+   27x24 (display:block; flex:none). On forged plates that ::before is the steel plate, so restore its full size.
+   The purpose icon is deliberately dropped here: the forged Nilf buttons are text-only (B1/B2). */
+html body #velen-screen [data-velen-nilf] .phoenix-action[data-button-purpose]:not([data-button-purpose=plain], .sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow)::before {
+  width: auto;
+  height: auto;
+  margin: 0;
 }
 
 /* Legacy illustrated plates use a separate pseudo-element behind the control. */

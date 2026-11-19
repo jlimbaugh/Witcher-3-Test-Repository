@@ -164,7 +164,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'nilf-qa-fixes-2');
  assert.equal(tags['velen-r18.js'],'v49-lt-fixes-1');
- for(const f of ['nilf-forged.css','deck-jump.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
+ for(const f of ['deck-jump.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
+ assert.equal(tags['nilf-forged.css'],'v49-lt-fixes-2');
  for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-review-33',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
