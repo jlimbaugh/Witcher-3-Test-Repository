@@ -2,7 +2,7 @@
 
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
-The next private candidate on PR #26 adds Velen section jumps, a Regional Tools quest-style deck and a dedicated search results page. Physical iPhone Safari acceptance remains open.
+The deployed private candidate on PR #26 includes Velen section jumps, a Regional Tools quest-style deck and a dedicated search results page. Physical iPhone Safari acceptance remains open.
 
 ## Current release and review
 
@@ -10,7 +10,7 @@ The next private candidate on PR #26 adds Velen section jumps, a Regional Tools 
 |---|---|
 | Public guide | **Velen v49**, published November 19, 2026. [Release and rollback record](RELEASE-VELEN-V49.md) |
 | Published application source | `ba59252cb65800225a68297b6ce7068d3b91ff9b`, [draft PR #24](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/24) |
-| Private iPhone QA candidate | [Open Nilf hub](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/hub/nilf) · [draft PR #26](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/26) · application `fa04086a1dc85d97a180923d84a9a35461a919b5`. 343 regression tests passed. [Item-level checks and open device QA](qa/v49/phone/README.md). |
+| Private iPhone QA candidate | [Open Velen tools QA](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · [draft PR #26](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/26) · application `fc7dbf2070a99bd95a6f10e2521b9c4b41a34a26`. 343 regression tests passed. [Item-level checks and open device QA](qa/v49/phone/README.md). |
 | Independent review | LT delivered [v49 findings and evidence](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25). The [fix assignment](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25#issuecomment-7014957770) calls for a separate candidate and preview for independent retest. [QA checklist](LT-QA-VELEN-V49.md) |
 | Author checks | 340 Node tests passed. Author Chromium and served-file checks are recorded in the release notes. Physical Safari and independent acceptance remain open. |
 | Release scope | Velen deck, walkthrough and content expansion, number strip, regional tools, and Nilf framing pilot. Approved mockups and remaining runtime rollout are tracked separately. |
