@@ -1,6 +1,6 @@
 # Phoenix page templates
 
-Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
 Current implementation reference is [Velen v49](RELEASE-VELEN-V49.md). See the [v49 QA checklist](LT-QA-VELEN-V49.md) for open runtime checks. Velen is the canonical reference for regional decks and supplies the approved walkthrough refinements. White Orchard remains a reference for its existing presentation and behavior. Preserve the White Orchard implementation and consider individual elements for incorporation with explicit owner approval. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.

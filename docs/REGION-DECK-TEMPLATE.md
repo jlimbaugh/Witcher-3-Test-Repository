@@ -1,5 +1,7 @@
 # Phoenix regional deck template
 
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+
 Owner PASS · November 19, 2026. All future regions use the Regional Tools menu from candidate 1690b41: eight illustrated quest-style cards, matching selected action, quiet search field opening the search page, and no numbered jump strip. Use the shared forged silver perimeter, staggered side rails and centered lower brace. Keep the floating wolf independent.
 
 

@@ -1,6 +1,6 @@
 # Velen iPhone QA candidate
 
-Owner accepted the Regional Tools design on November 19, 2026. Use the [locked regional template](../../../REGION-DECK-TEMPLATE.md) for every region. The broader device and accessibility checks remain open.
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
 Start at the [private Nilf hub](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/hub/nilf). Published v49 is recorded in the [release history](../../../RELEASE-VELEN-V49.md). LT's original findings are in PR #25 and the previous implementation evidence is in [lt-fixes](../lt-fixes/).
