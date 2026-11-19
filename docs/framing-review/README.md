@@ -41,4 +41,16 @@ The side rails show alternating curls, knots, collars, and inlaid lozenges at ir
 | I | Folded wings and three-pronged drop |
 | J | Three-lobed knot and flat pendant |
 
-The proposed rotation uses A–J in that order, wrapping to A. Vertical rail design is the next review.
+The approved rotation uses A–J in that order, wrapping to A.
+
+## Vertical side rails
+
+![Three paired vertical rail concepts](vertical-side-rails.jpg)
+
+| Concept | Side details |
+| --- | --- |
+| V1 | Compact interlacing knots and wrapped steel collars |
+| V2 | Recessed lozenges and angled steel splints |
+| V3 | Raised curls and folded leaves |
+
+For review: compare how the staggered ornaments read against the quieter lengths of forged steel. Keep the left and right ornaments at different heights and allow room for the framed content. Blue and jade remain adjustable accents.
