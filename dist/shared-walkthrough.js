@@ -120,7 +120,7 @@
   // ---- Velen adapter (The Nilfgaardian Connection) -----------------------------------------------------------------
   function velenAdapter(page){
    const owner=root.PhoenixVelenNilfProgress,Q=owner.QUEST,vd=owner.data,eng=owner.engine,velen=root.PHOENIX_VELEN,q=velen.quests.nilf;
-   let s;try{s=owner.load(localStorage);}catch{s=null;}
+   const s=root.PhoenixVelen?.nilfState();
    if(!s||!s.owned)return null;
    const p=s.progress,required=new Set(eng.required(Q,p).map(o=>o.id)),status=eng.status(Q,p),counts=eng.counts(Q,p);
    const rows=vd.quests[Q].objectives.map(o=>({id:o.id,key:o.id.split(':')[1],label:o.label,optional:o.optional===true,required:required.has(o.id),stage:String(o.stage),choice:o.choice||null,raw:o}));

@@ -705,5 +705,5 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
     screen.append(root);
     return mount('walk', index + 1, root, { ...parts, prep, rails: new Map() });
   }
-  return { owned, complete, hub, walkthrough, capture, request, undoLast, notice: () => visitNotice };
+  return { state, owned, complete, hub, walkthrough, capture, request, undoLast, notice: () => visitNotice };
 };

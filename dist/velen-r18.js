@@ -178,7 +178,7 @@ function resumePanel(){
   if(saved?.id===id&&Number.isInteger(saved.stage)&&saved.stage>=1&&saved.stage<=q.stages.length)stage=saved.stage;
   let caption=isComplete(id)?'Quest complete':(q.stages[stage-1]?.title||'');
   if(id==='nilf'&&nilfOwned()&&!isComplete(id)){
-    const owner=window.PhoenixVelenNilfProgress,p=owner.load(nilfStorage).progress;
+    const owner=window.PhoenixVelenNilfProgress,p=nilfUI.state().progress;
     const next=owner.engine.required(owner.QUEST,p).find(o=>p.objectives[o.id]!=='done'&&!owner.engine.closed(o,p));
     if(next){stage=next.stage;caption='Next objective · '+next.label;}
   }
@@ -205,7 +205,7 @@ function nearbyStops(id){
 function routeStage(id,q,requested){
   if(requested)return Math.min(q.stages.length,Number(requested));
   if(id==='nilf'&&nilfOwned()&&!isComplete(id)){
-    const owner=window.PhoenixVelenNilfProgress,p=owner.load(nilfStorage).progress;
+    const owner=window.PhoenixVelenNilfProgress,p=nilfUI.state().progress;
     const next=owner.engine.required(owner.QUEST,p).find(o=>p.objectives[o.id]!=='done'&&!owner.engine.closed(o,p));
     if(next)return next.stage;
   }
@@ -376,5 +376,5 @@ function render(options={}){renderedHash=routeModel.sharedHash(location.hash);co
 }const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
 document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
 dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
-addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view};
+addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, nilfState: () => nilfUI?.state()};
 };
