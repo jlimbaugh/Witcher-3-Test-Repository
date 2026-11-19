@@ -14,3 +14,13 @@ Serve `dist/` with a static server and use `/#velen/hub/nilf`. Open the illustra
 ## Author verification
 
 The complete Node suite passed 340/340 with the v45, QA5, and QA6 baseline worktrees configured. That includes the save-protection and cache-tag gates. The application diff is limited to one stylesheet reference, the scoped stylesheet, and two decorative SVGs. Local Chromium failed to launch because process-singleton socket creation was denied. Browser rendering, returning-browser checks, physical Safari acceptance, and independent QA are pending. The live guide was not updated for this review.
+
+## Owner screenshot correction pass
+
+| Check | Expected result |
+|---|---|
+| Hub layout and legibility | The earlier parchment, sizing and spacing carry the new steel frame. The next-lead text is dark on parchment. |
+| Sources | Objective controls contain no citation link. Nilf hub and walkthrough each end with one quiet Sources link to the shared index. White Orchard objective citations live in that index. |
+| Button consistency | Text navigation, progress actions, and Previous/Next share the page silhouette, including disabled controls. |
+| Button depth | The steel outline is the final perimeter. No rectangular plate appears beneath it. The bevel and contact shadow are visible. |
+| Progress and navigation | Hub to walkthrough, return, objective marking, Undo and reload behave as before. |

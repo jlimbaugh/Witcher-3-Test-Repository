@@ -4,17 +4,35 @@
   --nilf-frame-shadow: inset 0 0 0 1px #263137, inset 0 0 0 3px #9fa7a43b, 0 5px 10px #0007;
 }
 
+/* Keep the existing parchment border-image and layout. Frame it from the outside. */
 #velen-screen [data-velen-nilf] > :is(.quest-hub-paper, .quest-hub-nearby, .reading-panel),
 #velen-screen:has(> [data-velen-nilf="hub"]) > [data-velen-nilf] + .scroll-r16 {
-  position: relative;
-  border: 3px solid var(--nilf-steel-edge);
-  border-radius: 6px;
-  border-top-color: #cad4d2;
-  border-bottom-color: #59656b;
-  box-shadow: var(--nilf-frame-shadow);
-  padding-inline: max(14px, 3%);
-  margin-bottom: 24px;
-  overflow: visible;
+  outline: 2px solid var(--nilf-steel-edge);
+  outline-offset: -2px;
+}
+
+#velen-screen:has(> [data-velen-nilf="hub"]) > [data-velen-nilf] + .scroll-r16 {
+  background-color: #e5d4aa;
+  color: #2a211b;
+}
+
+#velen-screen [data-velen-nilf="hub"] :is(.quest-hub-description, .quest-hub-group p, .quest-hub-group .quiet),
+#velen-screen:has(> [data-velen-nilf="hub"]) > .scroll-r16 .small-note {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#velen-screen [data-velen-nilf="hub"] .quest-hub-briefing h1 {
+  font-size: clamp(1.65rem, 5vw, 2.4rem);
+}
+
+#velen-screen [data-velen-nilf="hub"] .quest-hub-paper .quiet {
+  color: #4b392d;
+}
+
+#velen-screen :is(.nilf-hub-sources, [data-velen-nilf="walk"] > .sw-source-link) {
+  color: #e3dac6;
+  padding: 12px 4px;
 }
 
 #velen-screen [data-velen-nilf] > :is(.quest-hub-paper, .reading-panel)::before,
@@ -66,22 +84,23 @@ body:has(#velen-screen > [data-velen-nilf="walk"]) {
   --nilf-button-cut: polygon(6px 0, calc(100% - 6px) 0, calc(100% - 6px) 17%, 100% 27%, 100% 73%, calc(100% - 6px) 83%, calc(100% - 6px) 100%, 6px 100%, 6px 83%, 0 73%, 0 27%, 6px 17%);
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow, .quest-hub-rail-controls > button, .objective-controls > button), .quest-hub-tools > a, .quest-page-tools > a),
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a),
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]) {
   position: relative;
   isolation: isolate;
   min-height: 44px;
   box-sizing: border-box;
   padding: 7px 16px;
-  border: 0;
+  border: 0 !important;
+  border-image: none !important;
   border-radius: 0;
-  background: none;
-  box-shadow: none;
+  background: transparent !important;
+  box-shadow: none !important;
   color: #f1f4ee;
   text-align: center;
   text-shadow: 0 1px 2px #000;
   text-decoration: none;
-  filter: drop-shadow(0 3px 2px #090d10b3);
+  filter: drop-shadow(0 1px 0 #fff3) drop-shadow(0 4px 2px #090d10c9) drop-shadow(0 7px 5px #090d106b);
 }
 
 html body #velen-screen [data-velen-nilf] :is(.quest-hub-tools, .quest-page-tools) > a {
@@ -89,7 +108,7 @@ html body #velen-screen [data-velen-nilf] :is(.quest-hub-tools, .quest-page-tool
   place-items: center;
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow, .quest-hub-rail-controls > button, .objective-controls > button), .quest-hub-tools > a, .quest-page-tools > a)::before,
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a)::before,
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm])::before {
   position: absolute;
   z-index: -1;
@@ -103,6 +122,21 @@ html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-
     var(--nilf-button-end) right 3px center / 5px 42% no-repeat,
     repeating-linear-gradient(116deg, #ffffff12 0 1px, transparent 1px 5px),
     linear-gradient(#e2ebe6, #87989c 12%, #c5d1ce 17%, #56646b 39%, #a5b1b0 49%, #4b585f 65%, #838e91 94%, #303b40);
+}
+
+/* Legacy illustrated plates use a separate pseudo-element behind the control. */
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta), .quest-hub-tools > a, .quest-page-tools > a)::after {
+  content: none !important;
+}
+
+#velen-screen [data-velen-nilf] :is(.objective-controls, .quest-hub-rail-controls) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+#velen-screen [data-velen-nilf] :is(.objective-controls, .quest-hub-rail-controls) > button {
+  width: 100%;
+  min-width: 0;
 }
 
 html body #velen-screen [data-velen-nilf] :is(button, .quest-hub-tools > a, .quest-page-tools > a):focus-visible,

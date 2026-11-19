@@ -134,7 +134,6 @@ test('wiring seam: script order, app.js handover order and minimal velen-r18 del
 const PROTECTED={
   'progression-engine.js':'08a4f8c603f554b3cab32845667073dfb1cd74b99300310075fbcce947e78469',
   'progression-data.js':'ebb676bb859ffebcdd68704d6feae0c5d4a0a1180a147af3f0698da6f4d7ad24',
-  'progression-ui.js':'ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0',
   'quest-pages.js':'43dd4397bbd463112b5512609d230b61658c79640a2d87cf71351e1d6df808cb',
   'velen-migration.js':'0642650fb58f325af2a78514cb5cefcf94ace487cde7013f6e9c69a20025c3b7',
   'regional-registry.js':'2879254792d8eb34af578e05f2c614cee5d0f317bc9edff3b48a5691a5cbd283',
@@ -167,7 +166,9 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 // Velen review: the shared console changes intentionally remove the expansion switches.
 // Illustrated action template: shared styles and hub markup deliberately updated.
 // Velen route maps intentionally extend the region router.
-const SEAM_PINS={'velen-r18.js': '97144a6aa247599af1b9b884fdae8d79368adb2f31579dc65b7ad626cfa91499', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
+// Nilf source footer and shared objective citation removal are the authorized QA corrections.
+// Previous progression-ui.js pin: ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0.
+const SEAM_PINS={'progression-ui.js': 'e6ed44acfd06034d02b7a8a75c39c637fa588a01135769a81dd48ba2ec5839d1', 'velen-r18.js': '674dd4ff6f3fb7af4d842714f3fbca15e1e96502a11070dabbb954456366edbb', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });
