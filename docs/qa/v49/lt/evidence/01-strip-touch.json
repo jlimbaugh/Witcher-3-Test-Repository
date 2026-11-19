@@ -1,0 +1,93 @@
+{
+ "start": {
+  "sl": 5313,
+  "x": 195,
+  "y": 366,
+  "readerTop": 693,
+  "cur": "1",
+  "sel": "Select quest: The Nilfgaardian Connection",
+  "actions": [
+   "#velen/quest/nilf/1",
+   "#velen/hub/nilf",
+   "#velen/map/nilf"
+  ]
+ },
+ "verticalDragUp300": {
+  "sl": 5313,
+  "x": 195,
+  "y": -24,
+  "readerTop": 1083,
+  "cur": "1",
+  "sel": "Select quest: The Nilfgaardian Connection",
+  "actions": [
+   "#velen/quest/nilf/1",
+   "#velen/hub/nilf",
+   "#velen/map/nilf"
+  ]
+ },
+ "verticalDragDown300": {
+  "sl": 5313,
+  "x": 195,
+  "y": -24,
+  "readerTop": 1083,
+  "cur": "1",
+  "sel": "Select quest: The Nilfgaardian Connection",
+  "actions": [
+   "#velen/quest/nilf/1",
+   "#velen/hub/nilf",
+   "#velen/map/nilf"
+  ]
+ },
+ "dragLeft150": {
+  "sl": 5449,
+  "x": 195,
+  "y": 366,
+  "readerTop": 693,
+  "cur": "3",
+  "sel": "Select quest: Bloody Baron",
+  "actions": [
+   "#velen/quest/baron/1",
+   "#velen/lead/baron",
+   "#velen/map/baron"
+  ]
+ },
+ "dragRight350": {
+  "sl": 7693,
+  "x": 195,
+  "y": 366,
+  "readerTop": 693,
+  "cur": "36",
+  "sel": "Select quest: Fools’ Gold",
+  "actions": [
+   "#velen/quest/fools-gold/1",
+   "#velen/lead/fools-gold",
+   "#velen/map/fools-gold"
+  ]
+ },
+ "dragRight350b": {
+  "sl": 7217,
+  "x": 195,
+  "y": 366,
+  "readerTop": 693,
+  "cur": "29",
+  "sel": "Select quest: Bitter Harvest",
+  "actions": [
+   "#velen/quest/bitter-harvest/1",
+   "#velen/lead/bitter-harvest",
+   "#velen/map/bitter-harvest"
+  ]
+ },
+ "dragLeft700": {
+  "sl": 5381,
+  "x": 195,
+  "y": 366,
+  "readerTop": 693,
+  "cur": "2",
+  "sel": "Select quest: Funeral Pyres",
+  "actions": [
+   "#velen/quest/pyres/1",
+   "#velen/hub/pyres",
+   "#velen/map/pyres"
+  ]
+ }
+}
