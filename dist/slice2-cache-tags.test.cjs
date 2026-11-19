@@ -164,7 +164,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['app.js', 'character-ui.js', 'departure.js', 'diagrams-ui.js', 'exploration-ui.js', 'map-ui.js', 'nilf-forged.css', 'progression-ui.js', 'velen-nilf-objectives.js'])assert.equal(tags[f],'v49-phone-fixes-1',f);
  for(const f of ['velen-nilf-ui.js'])assert.equal(tags[f],'v49-phone-fixes-2',f);
  for(const f of ['main-console.js', 'home-ui.js', 'home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
- assert.equal(tags['shared-walkthrough.js'],'regional-tap-1');
+ assert.equal(tags['shared-walkthrough.js'],'baron-objectives-1');
  assert.equal(tags['velen-r18.js'],'card-edge-1');
  assert.equal(tags['velen-activity-decks.css'],'card-edge-1');
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
@@ -172,7 +172,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['search-model.js', 'search-ui.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
  for(const f of ['deck-jump.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
  assert.equal(tags['nilf-forged.css'],'v49-phone-fixes-1');
- for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-review-33',f);
+ for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'baron-objectives-1',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
  const refs=refsOf(here).map(r=>({...r}));

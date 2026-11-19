@@ -99,3 +99,7 @@ These are runtime stage counts, not verified in-game objective counts. The imple
 | A Plea Ignored | Treasure hunt | 2 | Registry card |
 | Dowry | Treasure hunt | 2 | Registry card |
 | Scavenger Hunt: Griffin School Gear | Treasure hunt | 3 | Registry card |
+
+## Bloody Baron walkthrough pilot
+
+The three common milestones are reaching Crow’s Perch, entering the keep by either available route, and speaking with the Baron. The walkthrough now persists each check, computes Next unfinished and the completion count, and retains one Undo across reload. Ciri’s Room and the two alternative entry routes have no separate completion requirement. This pilot covers the walkthrough; hub and regional totals remain open. Verify the milestone wording against the game during field QA. In a 390 × 844 browser check, all three marks, navigation, completion, reload, Undo and malformed-record protection passed. See qa/v49/phone/qa-baron-local.html.

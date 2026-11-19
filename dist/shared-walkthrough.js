@@ -162,6 +162,24 @@
     const other=id==='pyres'?'mercy':'pyres';
     related.push({label:root.PHOENIX_VELEN.quests[other].name,href:'#velen/hub/'+other});
    }
+   if(id==='baron'){
+    const tracker=root.createBloodyBaronTracker();
+    const objectives=rows.map((row,i)=>({...row,id:tracker.objectiveIds[i]}));
+    function change(update){tracker.change(update);render(adapter);}
+    const adapter={key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows:objectives,
+     lay:layout(objectives,rows.map(row=>row.stage)),reading,goStage,currentStage:()=>String(index+1),
+     get counts(){return {done:tracker.record.marks.length,total:objectives.length};},
+     get note(){return tracker.notice||(tracker.record.marks.length===objectives.length?'Quest complete.':'');},
+     objState:o=>({done:tracker.record.marks.includes(o.id),disabled:!tracker.editable,text:tracker.notice||'Not completed'}),
+     warning(o){const short=q.stages[Number(o.stage)-1].warning;return short?{id:warningRecordId(key,'stage-'+o.stage),short,sections:[],href:'#velen/quest/baron/'+o.stage}:null;},
+     markObjective(o,checked){change(old=>old.marks.includes(o.id)===checked?null:{
+      marks:checked?[...old.marks,o.id]:old.marks.filter(mark=>mark!==o.id),undo:old.marks});},
+     story(){const box=make('div','progress-actions sw-story'),undo=make('button','','Undo last progress change');
+      undo.type='button';undo.disabled=!tracker.editable||tracker.record.undo===null;
+      undo.onclick=()=>change(old=>old.undo===null?null:{marks:old.undo,undo:null});box.append(undo);return box;}
+    };
+    return adapter;
+   }
    return {key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows,lay,reading,story,goStage,readOnly:true,
     catchUp(stage){const prev=new Set(marks);for(const row of rows.slice(0,Number(stage)))marks.add(row.id);memory.set(key,{...memory.get(key),stageMarks:marks,undoCatchUp:prev});},
     undoCatchUp(){const previous=memory.get(key)?.undoCatchUp;if(previous)memory.set(key,{...memory.get(key),stageMarks:previous,undoCatchUp:null});},
@@ -171,7 +189,7 @@
   }
 
   // ---- shared rendering ------------------------------------------------------------------------------------------
-  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);const box=input.closest('.sw-box');box.classList.toggle('done',input.checked);input.setAttribute('aria-label',(input.checked?'Completed: ':'Mark complete: ')+o.label);const name=box.querySelector('.sw-name');name.querySelector('.sw-state')?.remove();if(input.checked)name.append(make('span','sw-state','Completed'));});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
+  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.markObjective){input.onchange=()=>a.markObjective(o,input.checked);}else if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);const box=input.closest('.sw-box');box.classList.toggle('done',input.checked);input.setAttribute('aria-label',(input.checked?'Completed: ':'Mark complete: ')+o.label);const name=box.querySelector('.sw-name');name.querySelector('.sw-state')?.remove();if(input.checked)name.append(make('span','sw-state','Completed'));});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
   function render(a){
    const host=a.section.querySelector('.reading-panel');if(!host)return;
    a.section.classList.add('sw-page');

@@ -1,6 +1,31 @@
 'use strict';
 
 (function (root) {
+  root.createBloodyBaronTracker=function(){
+    const objectiveIds=['reach-crows-perch','enter-keep','speak-to-baron'];
+    const valid=marks=>Array.isArray(marks)&&marks.every(mark=>objectiveIds.includes(mark))&&new Set(marks).size===marks.length;
+    const storageKey='phoenix.velen.baron.objectives.v1';
+    let record={marks:[],undo:null},notice='',editable=true;
+    function load(){
+     try{
+      const raw=root.localStorage.getItem(storageKey);
+      const saved=raw===null?{marks:[],undo:null}:JSON.parse(raw);
+      if(!saved||!valid(saved.marks)||(saved.undo!==null&&!valid(saved.undo)))throw Error();
+      record=saved;editable=true;notice='';
+     }catch{editable=false;notice='Stored objectives are unavailable. Your existing record is protected.';}
+    }
+    load();
+    function change(update){
+     load();
+     if(editable){
+      const next=update(record);
+      if(next)try{root.localStorage.setItem(storageKey,JSON.stringify(next));record=next;}
+      catch{notice='This change could not be saved.';}
+     }
+
+    }
+    return {objectiveIds,change,get record(){return record;},get notice(){return notice;},get editable(){return editable;}};
+  };
   root.PhoenixVelenQuestCards = {
     baron: {
       art:'art-velen/baron.webp',
