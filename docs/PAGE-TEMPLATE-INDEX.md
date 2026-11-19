@@ -4,6 +4,8 @@ Baseline: published v48 plus the owner-approved regional deck and number strip a
 
 Companion requirements: [Regional decks](REGION-DECK-TEMPLATE.md), [Quest and activity artwork](QUEST-CARD-ART-TEMPLATE.md), [Illustration standard](../ART-STANDARD.md).
 
+The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) governs new framing work. See the [framing review gallery](framing-review/README.md) for surface-specific concepts awaiting approval.
+
 ## Shared page contract
 
 - Reuse the region shell, typography, scroll treatment, steel and silver controls, and the existing white-space rhythm. Follow saved font, appearance and reduced-motion preferences. Desktop changes must not remove mobile touch targets.

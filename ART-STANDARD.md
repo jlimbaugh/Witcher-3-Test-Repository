@@ -49,3 +49,12 @@ Use `action-walkthrough.webp` for walkthroughs and `action-quest-hub.webp` for q
 Use a separate illustrated map action on the quest card and a region route index action in Region Tools. Open the quest map at its current route step. Draw route relationships as a field sketch and use the guide’s in-game marker assets as links. Show only the quest’s own steps and the linked stops documented on its card. Distinguish route sketches from scaled terrain maps.
 
 Keep successful progress writes silent. Omit browser-storage instructions from guide templates. Show a status message only when it helps the player understand an error or resolve a problem.
+
+## Forged steel framing
+
+Owner-approved direction, November 18, 2026. Use the [number strip reference](docs/framing-review/number-strip.jpg) as the material and scale reference. The [other framing concepts](docs/framing-review/README.md) are for visual review.
+
+- Use physically dimensional hammered silver and blackened steel, with broad primary bands, thinner interlaced blue-steel bands, bevel highlights, and deep shadows at overlaps.
+- Recess petrol-blue and muted jade inlays into selected spans. Keep silver and steel dominant. Avoid gold and brass.
+- Give the number strip a substantial frame on all four sides and an upward-opening forged flourish around the count. Enlarge the assembly and number targets together. Keep the shared wolf pointer artwork at `dist/visual-art/wolf-pointer.webp`, preserving its proportions and sizing it per control. The concept wolf is a placeholder.
+- Adjust band depth, inlay coverage, and ornament scale to the framed content and available space. Keep reading space, touch targets, and existing artwork legible. Review one surface at a time before implementation.

@@ -24,3 +24,7 @@ On iPhone Safari, scroll across both wrap boundaries, confirm the centered numbe
 ## Next Velen content pass
 
 The approved candidate contains 25 Velen walkthroughs, including four contracts with target-specific art. Continue with the remaining ledger contracts. Verify target, starting location, completion conditions and ownership before adding each entry. The numbered strip derives its range from the deck, so added cards require no hard-coded count.
+
+## Approved framing direction
+
+Use the [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) and the [approved number strip concept](framing-review/number-strip.jpg). Size the relief and inlays to the deck without crowding the number controls. Use the shared wolf artwork and keep the count inside the upward-opening flourish. The reference is a visual standard for implementation and iPhone review.
