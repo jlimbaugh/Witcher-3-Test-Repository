@@ -74,4 +74,15 @@ The proposed sequence is V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 →
 
 ![Six forged text-only button styles](text-only-buttons.jpg)
 
-B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and stepped steel cap. The same sample label makes it easier to compare readability and ornament size. The proposed rotation applies to repeated peer actions with stable assignments. These concepts await visual approval.
+B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and stepped steel cap. The same sample label makes it easier to compare readability and ornament size. The template rotates B1–B10 across repeated peer actions and keeps assignments stable. The artwork is available for visual review.
+
+### Four additional button variants
+
+![Text-only button variants B7 through B10](text-only-buttons-b7-b10.jpg)
+
+| Variant | End detail |
+| --- | --- |
+| B7 | Crossed steel splints |
+| B8 | Fluted fan caps |
+| B9 | Beveled shields with blue enamel rivets |
+| B10 | Folded chevrons with jade channels |
