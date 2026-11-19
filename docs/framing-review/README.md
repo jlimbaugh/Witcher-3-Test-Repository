@@ -147,10 +147,29 @@ Review the outer side ornament only. These layered proofs retain the earlier con
 
 ### Vertical framing with parchment reading text
 
-These proofs supersede the empty-panel sheets for review. The hub shows the existing briefing and quest-start text. The walkthrough shows the existing first stage title and instructions. Both use the same rail assignment as above. The parchment overlays illustrate the reading area and do not represent the full runtime layout.
+Owner approved these parchment reading proofs for the vertical framing pass. They supersede the empty-panel sheets. The hub shows the existing briefing and quest-start text. The walkthrough shows the existing first stage title and instructions. Both use the same rail assignment as above. The parchment overlays illustrate the reading area and do not represent the full runtime layout.
 
 - [A Princess in Distress and Ciri’s Room](velen-vertical-batch-02/reading-01.jpg)
 - [Magic Lamp and The Whispering Hillock](velen-vertical-batch-02/reading-02.jpg)
 - [Ciri’s Story: The King of the Wolves and Return to Crookback Bog](velen-vertical-batch-02/reading-03.jpg)
 - [Ciri’s Story: Fleeing the Bog and An Invitation from Keira Metz](velen-vertical-batch-02/reading-04.jpg)
 - [A Towerful of Mice and A Favor for a Friend](velen-vertical-batch-02/reading-05.jpg)
+
+## Velen text-only buttons, batch 2
+
+The same ten quests retain their parchment briefings, first-stage walkthrough text, and approved vertical framing. Each page shows two equally sized sample controls in its assigned B style. The hub and walkthrough count as separate pages. The rotation wraps to B1 after B10 and remains fixed to page identity.
+
+| Quest | Hub | Walkthrough | Review sheet |
+| --- | --- | --- | --- |
+| A Princess in Distress | B1 | B2 | [01 · top](velen-buttons-batch-02/reading-01.jpg) |
+| Ciri’s Room | B3 | B4 | [01 · bottom](velen-buttons-batch-02/reading-01.jpg) |
+| Magic Lamp | B5 | B6 | [02 · top](velen-buttons-batch-02/reading-02.jpg) |
+| The Whispering Hillock | B7 | B8 | [02 · bottom](velen-buttons-batch-02/reading-02.jpg) |
+| Ciri’s Story: The King of the Wolves | B9 | B10 | [03 · top](velen-buttons-batch-02/reading-03.jpg) |
+| Return to Crookback Bog | B1 | B2 | [03 · bottom](velen-buttons-batch-02/reading-03.jpg) |
+| Ciri’s Story: Fleeing the Bog | B3 | B4 | [04 · top](velen-buttons-batch-02/reading-04.jpg) |
+| An Invitation from Keira Metz | B5 | B6 | [04 · bottom](velen-buttons-batch-02/reading-04.jpg) |
+| A Towerful of Mice | B7 | B8 | [05 · top](velen-buttons-batch-02/reading-05.jpg) |
+| A Favor for a Friend | B9 | B10 | [05 · bottom](velen-buttons-batch-02/reading-05.jpg) |
+
+These are static proofs. The example control labels communicate page-wide consistency. Existing illustrated navigation actions retain their own treatment in production. Physical iPhone testing still needs to verify text size, touch targets, and wrapping.
