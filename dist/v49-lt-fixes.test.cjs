@@ -24,3 +24,17 @@ test('NILF-01 / NILF-02 / BTN-01: hub type keeps the v48 scale, hub rails sit on
  const vs=read('visual-system.css');assert.match(vs,/\.phoenix-action\[data-button-purpose\]:not\(\[data-button-purpose=plain\]\):before\{[^}]*width:27px;height:24px/,'the icon rule this fix neutralises still exists');
  assert.match(css,/\.phoenix-action\[data-button-purpose\]:not\(\[data-button-purpose=plain\][^)]*\)::before \{\s*width: auto;\s*height: auto;/);
 });
+test('RT-02 / RT-03: button tiles take the Merchant frame; Search and Route maps have distinct, labelled original art',()=>{
+ const css=read('nilf-forged.css');
+ const rule=(css.match(/html body #velen-screen \.velen-region-tools > button\.art-tile\.art-tile \{([^}]*)\}/)||[])[1];
+ assert.ok(rule,'button tile frame override present');
+ for(const d of ['border: 3px solid #98a497 !important','border-image: none !important','background: #18282c !important','box-shadow: 0 5px 8px #0009 !important'])assert.ok(rule.includes(d),d);
+ const vv=(read('velen-view.css').match(/\.velen-view \.art-tile\{([^}]*)\}/)||[])[1]||'';for(const d of ['background:#18282c','box-shadow:0 5px 8px #0009','border:3px solid #98a497','border-radius:4px'])assert.ok(vv.includes(d),'Merchant (link) tile frame it mirrors: '+d);
+ const r18=read('velen-r18.js');
+ assert.ok(r18.includes("actionTile('Search','visual-art/region-tools/search.svg'"));
+ assert.ok(r18.includes("artTile('Route maps','#map','visual-art/region-tools/route-maps.svg')"));
+ const srcs=[...read('navigation-art.js').matchAll(/src:'([^']+)'/g)].map(m=>m[1]).concat(['visual-art/region-tools/search.svg','visual-art/region-tools/route-maps.svg','gwent-r15/gabor.webp']);
+ assert.equal(new Set(srcs).size,srcs.length,'no Region Tools tile reuses another tile\'s art');
+ for(const f of ['visual-art/region-tools/search.svg','visual-art/region-tools/route-maps.svg']){const svg=read(f);assert.match(svg,/not official|Not CD PROJEKT RED/i,f+' labelled');assert.ok(!/<script|href=/.test(svg),f+' has no script or external refs');}
+ assert.match(read('ART-SOURCES.md'),/region-tools\/search\.svg[\s\S]*not\*{0,2}\s+official/i);
+});

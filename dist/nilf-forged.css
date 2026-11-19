@@ -230,6 +230,20 @@ html body #velen-screen .deck-jump-rail > button {
 }
 #velen-screen .velen-region-tools > button.art-tile { padding: 0; }
 
+/* LT49-RT-02 (v49 LT fixes): Warnings and Search are buttons, so visual-system.css gives them the iron
+   phoenix-action frame. Match the Merchant link tile frame (velen-view.css .art-tile + console-r16 tile) instead. */
+html body #velen-screen .velen-region-tools > button.art-tile.art-tile {
+  padding: 0 !important;
+  border: 3px solid #98a497 !important;
+  border-image: none !important;
+  border-radius: 4px;
+  background: #18282c !important;
+  box-shadow: 0 5px 8px #0009 !important;
+  color: #f4ead6 !important;
+  line-height: inherit;
+  overflow-wrap: anywhere;
+}
+
 #velen-screen [data-velen-nilf="hub"] > .quest-hub-nearby {
   padding: 5px;
 }

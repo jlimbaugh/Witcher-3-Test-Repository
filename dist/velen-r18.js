@@ -291,8 +291,9 @@ function regionTools(){
       window.dispatchEvent(new CustomEvent('phoenix:warning-menu-return'));
     }));
   }
-  cards.append(actionTile('Search','navigation-art-v26/reference.webp',button=>window.PhoenixSearch?.open(button)));
-  cards.append(artTile('Route maps','#map','velen-route-map-art.svg'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
+  // LT49-RT-03: Search and Route maps get their own original code-drawn art (labelled in ART-SOURCES.md).
+  cards.append(actionTile('Search','visual-art/region-tools/search.svg',button=>window.PhoenixSearch?.open(button)));
+  cards.append(artTile('Route maps','#map','visual-art/region-tools/route-maps.svg'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
   tools.append(cards);
   return tools;
 }
