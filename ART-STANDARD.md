@@ -58,3 +58,9 @@ Owner-approved direction, November 18, 2026. Use the [number strip reference](do
 - Recess petrol-blue and muted jade inlays into selected spans. Keep silver and steel dominant. Avoid gold and brass.
 - Give the number strip a substantial frame on all four sides and an upward-opening forged flourish around the count. Enlarge the assembly and number targets together. Keep the shared wolf pointer artwork at `dist/visual-art/wolf-pointer.webp`, preserving its proportions and sizing it per control. The concept wolf is a placeholder.
 - Adjust band depth, inlay coverage, and ornament scale to the framed content and available space. Keep reading space, touch targets, and existing artwork legible. Review one surface at a time before implementation.
+
+### Box-frame bottom flourishes
+
+Use a single centered forged flourish on the lower rail of a framed box where there is clearance. Scale its depth and width to the box and keep the motif clear of the contents and controls. Blue and jade are the current adjustable accents.
+
+Use a fixed A–J rotation in display order for repeated boxes, wrapping to A. Assign the initial sequence once per collection and keep each variant with its box through filtering, reordering, and reload. Keep a single box's assignment stable across visits. Use A–C as the approved references and review D–J before they enter the production rotation. See the [flourish gallery](docs/framing-review/README.md#seven-additional-bottom-flourishes).

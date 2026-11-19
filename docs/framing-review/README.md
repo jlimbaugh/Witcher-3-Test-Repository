@@ -26,3 +26,19 @@ These are visual concepts. Controls, labels, and behavior in the guide follow th
 - **C** uses a broad interlaced knot with a spearpoint.
 
 The side rails show alternating curls, knots, collars, and inlaid lozenges at irregular heights. These are fixed compositions for review. Blue and jade are the current accents and may change.
+
+## Seven additional bottom flourishes
+
+![Bottom flourish variants D through J](bottom-flourishes-d-j.jpg)
+
+| Variant | Motif |
+| --- | --- |
+| D | Stacked chevrons and open diamond |
+| E | Chain links around a circular inlay |
+| F | Crossed hooks and pointed drop |
+| G | Crescent with a split arrowhead |
+| H | Stepped shoulders and faceted shield |
+| I | Folded wings and three-pronged drop |
+| J | Three-lobed knot and flat pendant |
+
+The proposed rotation uses A–J in that order, wrapping to A. Vertical rail design is the next review.
