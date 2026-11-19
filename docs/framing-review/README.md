@@ -54,3 +54,24 @@ The approved rotation uses A–J in that order, wrapping to A.
 | V3 | Raised curls and folded leaves |
 
 For review: compare how the staggered ornaments read against the quieter lengths of forged steel. Keep the left and right ornaments at different heights and allow room for the framed content. Blue and jade remain adjustable accents.
+
+## Vine-inspired vertical rails
+
+![Six forged vine rail pairs, V4 through V9](vine-side-rails.jpg)
+
+| Pair | Motif |
+| --- | --- |
+| V4 | Broad ivy leaves |
+| V5 | Twining tendrils and slender leaves |
+| V6 | Hooked briar and inset bud |
+| V7 | Grapevine coils and lobed leaves |
+| V8 | Fern fronds and fiddleheads |
+| V9 | Bare winter vine and forked tips |
+
+The proposed sequence is V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9, then back to V1. The side-rail pair stays with its box. The bottom flourish has its own rotation.
+
+## Standard text-only buttons
+
+![Six forged text-only button styles](text-only-buttons.jpg)
+
+B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and stepped steel cap. The same sample label makes it easier to compare readability and ornament size. The proposed rotation applies to repeated peer actions with stable assignments. These concepts await visual approval.

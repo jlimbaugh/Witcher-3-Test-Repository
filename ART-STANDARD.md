@@ -64,3 +64,15 @@ Owner-approved direction, November 18, 2026. Use the [number strip reference](do
 Use a single centered forged flourish on the lower rail of a framed box where there is clearance. Scale its depth and width to the box and keep the motif clear of the contents and controls. Blue and jade are the current adjustable accents.
 
 Use a fixed A–J rotation in display order for repeated boxes, wrapping to A. Assign the initial sequence once per collection and keep each variant with its box through filtering, reordering, and reload. Keep a single box's assignment stable across visits. All ten bottom-flourish designs (A–J) are approved for this rotation. See the [flourish gallery](docs/framing-review/README.md#seven-additional-bottom-flourishes).
+
+### Vertical side rails
+
+Use an asymmetrical pair of forged steel rails. Stagger ornaments at different heights and retain stretches of plain steel between them. Keep vines and leaves close to the rail and clear of the content and touch targets. Scale the ornament density to the height and width of the frame.
+
+The review rotation interleaves the three original pairs with six vine pairs: V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1. Assign the two rails as a pair, independently of the A–J bottom flourish rotation. Keep the pair with its box through filtering, reordering, and reload. The [vertical rail concepts](docs/framing-review/README.md#vine-inspired-vertical-rails) are pending visual approval before implementation.
+
+### Standard text-only buttons
+
+For review, use a dark hammered-steel face with centered ivory text and compact silver end details. Keep ornament clear of the text and focus indicator. Scale the bezel to the button height and leave enough room for long labels. Use optional blue and jade inlays sparingly.
+
+The proposed B1–B6 rotation applies to groups of repeated peer actions. Keep each assignment stable across reload and filtering. Use the same width and height for peer buttons, and keep the same variant through hover, focus, pressed, and disabled states. Keep semantic styles for warnings, confirmations, and destructive actions. See the [text-only button concepts](docs/framing-review/README.md#standard-text-only-buttons).
