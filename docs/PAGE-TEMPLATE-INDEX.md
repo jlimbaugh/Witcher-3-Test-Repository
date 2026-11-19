@@ -4,7 +4,9 @@ Baseline: published v48 plus the owner-approved regional deck and number strip a
 
 Companion requirements: [Regional decks](REGION-DECK-TEMPLATE.md), [Quest and activity artwork](QUEST-CARD-ART-TEMPLATE.md), [Illustration standard](../ART-STANDARD.md).
 
-The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) governs new framing work. See the [framing review gallery](framing-review/README.md) for surface-specific concepts awaiting approval.
+The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) governs new framing work. See the [framing review gallery](framing-review/README.md) for approved variants and the status of individual review passes.
+
+Use [session calibration](SESSION-CALIBRATION.md#template-decision-lookup) for the consolidated decision summary and record new approvals in the relevant template as part of the same change.
 
 ## Shared page contract
 
