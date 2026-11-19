@@ -91,4 +91,18 @@ B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and s
 
 ![Quest hub and walkthrough box-framing concepts](nilf-box-framing.jpg)
 
-Box framing pass for owner review. Both iPhone concepts frame every visible content box, with curled-brace A on each main panel and lighter trim on smaller boxes. The illustration and simplified content are mockup material. Vertical side ornament and standard text-only button treatments have their own review passes, in that order after box framing.
+Box framing passed owner review. Both iPhone concepts frame every visible content box, with curled-brace A on each main panel and lighter trim on smaller boxes. The illustration and simplified content are mockup material. Vertical side ornament and standard text-only button treatments have their own review passes, in that order after box framing.
+
+## Velen box framing, batch 1
+
+Five quest hub and walkthrough pairs extend the approved Nilfgaardian Connection treatment for review. The pilot uses A. This batch continues with B–F on the main panels, with lighter trim on secondary boxes.
+
+| Quest | Setting | Main flourish | Source art |
+| --- | --- | --- | --- |
+| [Bloody Baron](velen-box-batch-01/baron.jpg) | Crow’s Perch | B · Split leaf | `dist/art-velen/baron.webp` |
+| [Family Matters](velen-box-batch-01/family-matters.jpg) | Crow’s Perch | C · Interlaced knot | `dist/art-velen/family-matters.webp` |
+| [Hunting a Witch](velen-box-batch-01/witch.jpg) | Midcopse | D · Stacked chevrons | `dist/art-velen/witch.webp` |
+| [Wandering in the Dark](velen-box-batch-01/wandering-in-the-dark.jpg) | Elven ruins | E · Chain links and circular inlay | `dist/art-velen/wandering-in-the-dark.webp` |
+| [Ladies of the Wood](velen-box-batch-01/ladies-of-the-wood.jpg) | Crookback Bog | F · Crossed hooks | `dist/art-velen/ladies-of-the-wood.webp` |
+
+The images capture visual reference for frame weight, scale, and motif placement. Quest artwork guided the concepts. Rendered illustrations and sample labels are mockup material. Omit incidental generated labels such as “Lost in the Ruins” from production. Use the existing quest data and original art files in implementation. Review this batch before starting the next five. Vertical ornament and button styles are separate passes.
