@@ -292,34 +292,32 @@ function regionTools(context){
     const item=catalogue[key];
     if(remember)history.replaceState({...history.state,regionalTool:key},'',location.href);
     const deck=carousel('tools',key,{catalogue,select,host});
-    const actions=el('nav','home-selected-actions');
-    actions.setAttribute('aria-label','Selected tool actions');
-    const label='Open '+item.name;
+    const button=deck.querySelector('.quest-card.selected');
+    button.removeAttribute('aria-pressed');
+    button.setAttribute('aria-label','Open '+item.name);
+    host.replaceChildren(deck);
+    tools.onRegionChange=null;
     if(item.href){
-      const action=questAction(label,item.href,item.art);
-      actions.append(action);
       function updateDestination(){
         const region=context?.region()||'velen';
-        if(key!=='maps'&&key!=='merchants')return;
-        if(region==='unbuilt'){
-          action.removeAttribute('href');action.setAttribute('aria-disabled','true');
-          action.querySelector('span').textContent=item.name+' · Region not built yet';return;
-        }
-        action.removeAttribute('aria-disabled');action.querySelector('span').textContent=label;
-        if(key==='maps')action.href=region==='velen'?'#velen/map':'#whiteorchard-map';
-        if(key==='merchants')action.href=region==='velen'?'#velen/merchants':'#economy-merchants';
+        const local=key==='maps'||key==='merchants';
+        const unavailable=local&&region==='unbuilt';
+        button.setAttribute('aria-disabled',String(unavailable));
+        button.setAttribute('aria-label','Open '+item.name+(unavailable?' · Region not built yet':''));
+        let href=item.href.slice('index.html'.length);
+        if(key==='maps')href=region==='velen'?'#velen/map':'#whiteorchard-map';
+        if(key==='merchants')href=region==='velen'?'#velen/merchants':'#economy-merchants';
+        button.onclick=()=>{if(!unavailable&&performance.now()>=swipeClickUntil)navigate(href);};
       }
       updateDestination();
       tools.onRegionChange=updateDestination;
     }
     else{
-      const button=el('button','home-action-tile');
-      button.type='button';
-      button.append(picture(item.art),el('span','',label));
       const list=el('section','regional-warning-list');
       list.id=tools.id+'-warnings';list.hidden=true;list.setAttribute('aria-label','Unresolved warnings');
       button.setAttribute('aria-controls',list.id);button.setAttribute('aria-expanded','false');
       button.onclick=()=>{
+        if(performance.now()<swipeClickUntil)return;
         list.hidden=!list.hidden;button.setAttribute('aria-expanded',String(!list.hidden));
         if(list.hidden)return;
         list.replaceChildren();
@@ -331,9 +329,9 @@ function regionTools(context){
           list.append(detail);
         }
       };
-      actions.append(button,list);
+      host.append(list);
     }
-    host.replaceChildren(deck,actions);
+
   }
   select((!context||location.hash.split('/')[0]==='#'+context.id)&&Object.hasOwn(catalogue,history.state?.regionalTool)?history.state.regionalTool:'home',false);
   const search=el('form','regional-search-bar');

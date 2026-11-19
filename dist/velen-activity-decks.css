@@ -31,8 +31,8 @@
 .velen-section-jump{margin:.5rem 0;text-align:center}
 .regional-search-bar{display:flex;align-items:center;gap:.4rem;margin:1rem auto 0;max-width:32rem;border-bottom:1px solid #94988e;background:#182224;padding-inline:.65rem}
 .regional-search-bar input{flex:1;min-width:0}
-.velen-tools-section .regional-search-bar :is(input,button){border:0;border-radius:0;background:transparent;color:#f4ead7;box-shadow:none;font-size:1rem}
-.velen-tools-section .regional-search-bar input::placeholder{color:#d6ccba}
+.regional-search-bar :is(input,button){border:0;border-radius:0;background:transparent;color:#f4ead7;box-shadow:none;font-size:1rem}
+.regional-search-bar input::placeholder{color:#d6ccba}
 .guide-search-splash{padding:1rem}
 .guide-search-splash>h1,.guide-search-splash>.guide-search-paper{max-width:44rem;margin-inline:auto}
 .guide-search-splash>.guide-search-paper{height:auto;min-height:50vh}
@@ -78,3 +78,8 @@
   background-size: 8px 64px;
   transform: scaleX(-1);
 }
+
+/* Walkthrough footer: search, tool cards, source, credits. */
+#velen[data-velen-view="quest"].main-console-view { padding-bottom: 0 !important; }
+.view:has(.sw-walkthrough) .scene-inner:has(.sw-walkthrough) { padding-bottom: .5rem; }
+.quest-page > .regional-search-bar, .sw-page > .regional-search-bar { margin-bottom: .75rem; }

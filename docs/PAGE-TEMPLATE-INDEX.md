@@ -1,5 +1,7 @@
 # Phoenix page templates
 
+Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
+
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
@@ -71,4 +73,4 @@ Velen coverage, Gwent, advanced build simulation, crafting and other incomplete 
 
 On iPhone, fit the banner, short briefing and full Start/Continue action on the first screen at the approved reading size. Below Quest Cards, place Quest Progress before Preparation & Quest Details. When collapsed, progress shows the count and a short next-objective line. [Owner selections](SESSION-CALIBRATION.md#future-build-questions--round-1).
 
-The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the entire deck, action and quiet search field. The illustrated cards retain their individual frames. The wolf is independent.
+The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the card deck. The illustrated cards retain their individual frames. The wolf is independent.

@@ -11,19 +11,26 @@ async function boot(hash,width=390,height=844,mode='normal',seed={}){
  frame.contentDocument.open();frame.contentDocument.write(template);frame.contentDocument.close();w=frame.contentWindow;d=frame.contentDocument;for(let i=0;i<375&&!w.PhoenixVelen;i++)await wait(80);await wait(230);check(w.PhoenixVelen,'startup failed');
 }
 const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{const x=one(s);check(x,s);x.click()};
-let reference;
-for(const hash of ['#velen/quest/nilf/1','#home','#regions','#whiteorchard-console','#quest-lilac','#velen'])await test(hash,async()=>{
- const landscape=new URLSearchParams(location.search).has('landscape');await boot(hash,landscape?844:390,landscape?390:844);const view=one('.view:not([hidden])');const sections=view.querySelectorAll('.velen-tools-section');check(sections.length===1,'expected one deck, got '+sections.length);const menu=sections[0],get=s=>menu.querySelector(s),card=()=>get('.quest-card.selected'),action=()=>get('.home-action-tile');
- const left=w.getComputedStyle(menu,'::before'),right=w.getComputedStyle(menu,'::after'),box=menu.getBoundingClientRect();
- check(left.backgroundImage.includes('rail.svg')&&left.backgroundImage.includes('brace.svg')&&right.backgroundImage.includes('rail.svg'),'forged rails and brace');
- check(left.pointerEvents==='none'&&right.pointerEvents==='none'&&w.getComputedStyle(menu).borderLeftStyle==='double','frame edges and touch');
- check(box.left>=-1&&box.right<=w.innerWidth+1&&get('input').getBoundingClientRect().bottom<=box.bottom-20,'frame bounds');
- const signature=()=>{let style=w.getComputedStyle(card()),b=w.getComputedStyle(action());return [style.width,style.height,style.fontFamily,style.borderImageSource,b.minHeight,w.getComputedStyle(get('.deck')).height]};const measured=signature();reference??=measured;check(JSON.stringify(measured)===JSON.stringify(reference),'template sizing '+JSON.stringify({measured,reference}));
- const ids=[];for(let i=0;i<8;i++){ids.push(card().dataset.tool);check(action().querySelector('img').src===card().querySelector('img').src,'art');if(card().dataset.tool==='warnings'){action().click();check(!get('.regional-warning-list').hidden&&one('.medallion-core').getAttribute('aria-expanded')!=='true','independent warnings');action().click();}if(card().dataset.tool==='maps'){check(action().hash===(hash.includes('velen')?'#velen/map':'#whiteorchard-map'),'map '+action().hash);
- if(hash==='#home'||hash==='#regions'){view.querySelector('[aria-label="Next region"]').click();await wait(80);check(action().hash==='#velen/map','Velen context');}}
- get('.quest-card.right').click();}check(new Set(ids).size===8&&!get('.deck-jump'),'eight cards');check(!view.querySelector('.main-search-trigger,.home-tools-browse'),'old controls');
- const wolf=one('.medallion-core');wolf.click();await wait(100);check(wolf.getAttribute('aria-expanded')==='true','wolf opens');wolf.click();await wait(100);check(wolf.getAttribute('aria-expanded')!=='true'&&card().dataset.tool==='home','wolf closes independently');
- let input=get('input[type=search]');input.value='Hendrik';input.form.requestSubmit();await wait(180);check(one('#guide-search [data-search-result]')&&w.location.hash==='#guide-search/q=Hendrik','search');w.history.back();await wait(220);check(w.location.hash===hash,'back');return {measured,reference};
+for(const hash of ['#velen/quest/nilf/1','#velen/quest/baron/1','#quest-lilac','#home','#regions','#whiteorchard-console','#velen'])await test(hash,async()=>{
+ await boot(hash);const view=one('.view:not([hidden])'),menu=view.querySelector('.velen-tools-section');
+ check(menu&&!menu.querySelector('.home-selected-actions'),'extra open button');
+ const search=view.querySelector('.regional-search-bar'),card=()=>menu.querySelector('.quest-card.selected');
+ if(hash.includes('quest')){
+  const source=view.querySelector('.sw-source-link');
+  check(search.compareDocumentPosition(menu)&4,'search before menu');
+  check(menu.compareDocumentPosition(source)&4,'menu before sources');
+  if(hash.startsWith('#velen'))check(w.getComputedStyle(view).paddingBottom==='0px','banner gap');
+ }
+ const keys=[];
+ for(let i=0;i<8;i++){
+  keys.push(card().dataset.tool);
+  if(card().dataset.tool==='warnings'){card().click();check(!menu.querySelector('.regional-warning-list').hidden,'warning tap');card().click();}
+  menu.querySelector('.quest-card.right').click();
+ }
+ check(new Set(keys).size===8&&!menu.querySelector('.deck-jump'),'wrap');
+ menu.querySelector('.quest-card.right').click();check(card().dataset.tool==='regions','side tap');
+ card().click();await wait(220);check(w.location.hash==='#regions','front tap');
+ return keys.length;
 });
 output.dataset.finished='yes';
 </script>

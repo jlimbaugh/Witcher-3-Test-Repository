@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
+
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
@@ -88,4 +90,4 @@ Open for owner review. A and B are options. Custom answers are welcome. Record t
 | 20 | When two quests match a search term, which result should come first? | The quest in the current region | The quest you most recently opened | Open |
 | 21 | When reviewing a batch of ten approved quest designs, what should the QA handoff open with? | A contact sheet linking to each playable page | A playable quest list with visual references beside each entry | Open |
 
-The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the entire deck, action and quiet search field. The illustrated cards retain their individual frames. The wolf is independent.
+The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the card deck. The illustrated cards retain their individual frames. The wolf is independent.

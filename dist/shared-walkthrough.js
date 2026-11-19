@@ -310,6 +310,12 @@
      source.href='velen-sources.html#'+a.sourceId;a.section.append(source);
     }
    }
+   const toolsMenu=a.section.querySelector('.velen-tools-section');
+   const search=toolsMenu?.querySelector('.regional-search-bar');
+   if(search){
+    const container=toolsMenu.closest('[data-regional-tools]')||toolsMenu;
+    container.before(search);
+   }
    rail.dataset.programmatic='1';
    if(old)old.replaceWith(root_);else host.prepend(root_);
    // Story & correction controls (P2 A): existing controls, re-hosted as one quest-level row.
