@@ -1,0 +1,78 @@
+{
+ "dialog": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\n2 earlier required objectives\nUncheck to mark only this obj"
+ ],
+ "sel": "select ,peace,fight",
+ "confirm": "clicked Confirm update",
+ "afterMark": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": "fight"
+  },
+  "counts": "3 of 9 required completed",
+  "rail": {
+   "present": true,
+   "boxes": 9,
+   "railInViewport": true,
+   "railTop": 324
+  },
+  "status": [
+   "Progress updated. Quick Undo is available.",
+   "Undo last update"
+  ]
+ },
+ "afterReload": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": "fight"
+  },
+  "counts": "3 of 9 required completed"
+ },
+ "undo1": "tapped",
+ "afterUndo": {
+  "obj": {},
+  "choices": {},
+  "counts": "0 of 8 required completed",
+  "msgs": [
+   "Entire progress update undone."
+  ]
+ },
+ "undo2": "disabled",
+ "afterUndo2": {
+  "obj": {},
+  "choices": {}
+ },
+ "afterUndoReload": {
+  "obj": {},
+  "choices": {},
+  "counts": "0 of 8 required completed"
+ },
+ "dlgTravel": [],
+ "afterTravel": {
+  "obj": {
+   "velen.nilf:travel": "done"
+  },
+  "choices": {},
+  "rail": {
+   "present": true,
+   "boxes": 8,
+   "railInViewport": true,
+   "railTop": 324
+  }
+ },
+ "hub": {
+  "counts": [
+   "Quest progress · 1/8"
+  ],
+  "cont": "Continue walkthrough Step 1 · Arrival"
+ },
+ "logs": []
+}

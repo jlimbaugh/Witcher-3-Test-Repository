@@ -1,0 +1,122 @@
+{
+ "a": {
+  "q-lilac:ghouls": "done"
+ },
+ "hashB": "#quest-beast | The Beast of White Orchard · Witcher Field Guide",
+ "dlgB": [
+  "Review progress update\nThe Beast of White Orchard\nAlso complete earlier required steps\nI have also left White Orchard for Vizima.\n4 earlier required objectives\nLeave catch-up unchecked to record only the selected objective; missing prerequisites will remain unconfirmed.\nConfirm story milestones\nAccepted the griffin contract\nOnly the required steps on your selected path are included. Optional and u"
+ ],
+ "b": {
+  "q-lilac:ghouls": "done",
+  "q-lilac:ride": "done",
+  "q-lilac:inn": "done",
+  "q-lilac:ask": "done",
+  "q-lilac:garrison": "done",
+  "q-beast:herbalist": "done"
+ },
+ "hashA": "#quest-lilac | Lilac and Gooseberries · Witcher Field Guide",
+ "btns": [
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": ""
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": "quest-lilac"
+  },
+  {
+   "vis": true,
+   "dis": false,
+   "label": null,
+   "quest": "quest-lilac"
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": "quest-beast"
+  },
+  {
+   "vis": false,
+   "dis": false,
+   "label": null,
+   "quest": "quest-beast"
+  }
+ ],
+ "undoTarget": {
+  "label": null,
+  "text": "Undo last progress change",
+  "ctx": "Story & correction controls Progress actions Update story progress Undo last progress change Quest status Not complete Failed"
+ },
+ "afterUndo": {
+  "q-lilac:ghouls": "done"
+ },
+ "msgs": [
+  "Entire progress update undone.",
+  "Entire update undone.Undo last update"
+ ]
+}

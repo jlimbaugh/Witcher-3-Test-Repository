@@ -1,0 +1,5 @@
+const H=require('./h.cjs');
+(async()=>{for(const base of ['http://localhost:8748/',H.BASE]){const {p,close}=await H.launch({mobile:true,w:390,h:844});await p.goto(base+'#quest-lilac',{waitUntil:'networkidle2'});await H.sleep(1500);
+const r=await p.evaluate(()=>{const vis=e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0;};const a=[...document.querySelectorAll('a[href^="http"]')].filter(vis).filter(a=>!a.closest('footer'));const first=a[0];return {n:a.length,ctx:first?.parentElement?.innerText.slice(0,200),cls:first?.parentElement?.className,anyWOsources:[...document.querySelectorAll('a')].filter(x=>/velen-sources\.html#(q-|white)/.test(x.getAttribute('href')||'')).length};});
+console.log(base,JSON.stringify(r));if(base===H.BASE){await p.evaluate(()=>{const a=[...document.querySelectorAll('a[href^="http"]')].find(a=>a.getBoundingClientRect().width>0&&!a.closest('footer'));a.scrollIntoView({block:'center'});});await H.sleep(400);await p.screenshot({path:'/workspace/qa49/docs/qa/v49/lt/evidence/05-wo-lilac-inline-sources-v49-390.jpg',type:'jpeg',quality:50});}
+await close();}})();

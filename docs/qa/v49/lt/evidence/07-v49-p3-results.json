@@ -1,0 +1,200 @@
+{
+ "lilacRail": [
+  "q-lilac:ghouls",
+  "q-lilac:ride",
+  "q-lilac:inn",
+  "q-lilac:ask",
+  "q-lilac:garrison",
+  "q-lilac:contract",
+  "q-lilac:ready",
+  "q-lilac:leave"
+ ],
+ "n1_dlgA": [
+  "Review progress update\nLilac and Gooseberries\nAlso complete earlier required steps\nI have also left White Orchard for Vizima.\nConfirm story milestones\nArrived in White Orchard\nOnly the required steps on your selected path are included. Optional and unchosen objectives stay untouched. One Undo reverses this whole progress update.\nCancel\nConfirm update"
+ ],
+ "n1_afterA": {
+  "obj": {
+   "q-lilac:ghouls": "done"
+  },
+  "undo": [
+   "progress",
+   "completed",
+   "routeUpdates"
+  ]
+ },
+ "beastRail": [
+  "q-lilac:ghouls",
+  "q-lilac:ride",
+  "q-lilac:inn",
+  "q-lilac:ask",
+  "q-lilac:garrison",
+  "q-lilac:contract",
+  "q-lilac:ready",
+  "q-lilac:leave",
+  "q-beast:herbalist",
+  "q-beast:buckthorn",
+  "q-beast:ask",
+  "q-beast:follow",
+  "q-beast:site",
+  "q-beast:tracks",
+  "q-beast:nest",
+  "q-beast:vesemir",
+  "q-beast:prepare",
+  "q-beast:field",
+  "q-beast:kill",
+  "q-beast:trophy",
+  "q-beast:reward"
+ ],
+ "n1_dlgB": [
+  "Review progress update\nLilac and Gooseberries\nAlso complete earlier required steps\nI have also left White Orchard for Vizima.\nStory milestones will be removed: Arrived in White Orchard.\n1 objective marks will be removed\nLilac and Gooseberries — Kill the ghouls.\nOnly the required steps on your selected path are included. Optional and unchosen objectives stay untouched. One Undo reverses this whole progress update.\nCancel\nConfirm update"
+ ],
+ "n1_afterB": {
+  "obj": {},
+  "undo": [
+   "progress",
+   "completed",
+   "routeUpdates"
+  ]
+ },
+ "n1_undoBtn": {
+  "n": 15,
+  "disabled": true,
+  "text": "Undo last progress change",
+  "ctx": "Story & correction controls Progress actions Update story progress Undo last progress change Quest status Not complete Failed"
+ },
+ "n1_afterUndoOnA": {
+  "obj": {
+   "q-lilac:ghouls": "done"
+  },
+  "undo": null
+ },
+ "n1_msgs": [
+  "Entire progress update undone.",
+  "Entire update undone.Undo last update"
+ ],
+ "x_nilf1": {
+  "obj": {
+   "velen.nilf:travel": "done"
+  },
+  "choices": {}
+ },
+ "x_woAfter": {
+  "obj": {},
+  "undo": [
+   "progress",
+   "completed",
+   "routeUpdates"
+  ]
+ },
+ "x_quick": {
+  "vis": true,
+  "owner": null
+ },
+ "x_velenUndo": {
+  "n": 2,
+  "disabled": false,
+  "text": "Undo last progress change",
+  "ctx": "Story & correction controls Progress actions Record whole quest complete Undo last progress change Record / review choice: Ask about the agent called Hendrik at the Inn at the Crossroads. Record / review choice: Look for the agent called Hendrik in the village of Heatherton."
+ },
+ "x_afterVelenUndo": {
+  "nilf": {
+   "obj": {},
+   "choices": {}
+  },
+  "wo": {
+   "obj": {},
+   "undo": [
+    "progress",
+    "completed",
+    "routeUpdates"
+   ]
+  }
+ },
+ "u_before": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "peace",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  }
+ },
+ "u_dlg": [
+  "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\n3 objective marks will be removed\nTravel to Velen.\nGo to the Inn at the Crossroads.\nAsk about the agent called Hendrik at the Inn at the Crossroads.\nOne Undo reverses this update.\nCancel\nConfirm update"
+ ],
+ "u_after": {
+  "obj": {},
+  "choices": {}
+ },
+ "u_choiceUI": [
+  "Arrival · 1/9Travel to Velen.Not completedRoad · 2/9Go to the Inn at the Crossroads.Not completedThe Inn · 3/9 · VIA THE INNAsk about the agent called Hendrik at the Inn at the Crossroads.Not complete",
+  "Arrival · 1/9Travel to Velen.Not completedRoad · 2/9Go to the Inn at the Crossroads.Not completedThe Inn · 3/9 · VIA THE INNAsk about the agent called Hendrik at the Inn at the Crossroads.Not complete"
+ ],
+ "u_undo": {
+  "n": 2,
+  "disabled": false,
+  "text": "Undo last progress change",
+  "ctx": "Story & correction controls Progress actions Record whole quest complete Undo last progress change Record / review choice: Ask about the agent called Hendrik at the Inn at the Crossroads. Record / review choice: Look for the agent called Hendrik in the village of Heatherton."
+ },
+ "u_afterUndo": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "peace",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  }
+ },
+ "py_dlg": [
+  "Confirm recorded progress\nConfirm that you resolved this activity in the game. Other activities remain unchanged.\nCancel\nConfirm"
+ ],
+ "py_after": {
+  "version": 1,
+  "selected": "pyres",
+  "lastHub": "pyres",
+  "complete": {
+   "nilf": false,
+   "pyres": true,
+   "mercy": false
+  },
+  "stage": {
+   "nilf": 1,
+   "pyres": 1,
+   "mercy": 1
+  },
+  "choices": {},
+  "last": {
+   "id": "nilf"
+  },
+  "undo": {
+   "complete": {
+    "nilf": false,
+    "pyres": false,
+    "mercy": false
+   },
+   "choices": {}
+  }
+ },
+ "py_nilfSame": true,
+ "py_reloadChecked": [
+  "Mark Funeral Pyres resolved=true"
+ ],
+ "py_progressPage": "",
+ "logs": [],
+ "cw_#home": [],
+ "cw_#quest-lilac": [
+  "Your saved White Orchard progress could not be read, so it is kept unchanged. Changes in this visit are not saved."
+ ],
+ "cw_#whiteorchard": [],
+ "cw_#progress": []
+}
