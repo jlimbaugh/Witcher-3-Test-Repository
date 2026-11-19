@@ -162,16 +162,17 @@
     const other=id==='pyres'?'mercy':'pyres';
     related.push({label:root.PHOENIX_VELEN.quests[other].name,href:'#velen/hub/'+other});
    }
-   if(id==='baron'){
-    const tracker=root.createBloodyBaronTracker();
-    const objectives=rows.map((row,i)=>({...row,id:tracker.objectiveIds[i]}));
+   if(q.objectiveIds){
+    const tracker=root.createVelenQuestTracker(id,q.objectiveIds);
+    const objectives=rows.map((row,i)=>({...row,id:tracker.objectiveIds[i],required:!q.optionalObjectives?.includes(tracker.objectiveIds[i])}));
+    const required=objectives.filter(row=>row.required);
     function change(update){tracker.change(update);render(adapter);}
     const adapter={key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows:objectives,
-     lay:layout(objectives,rows.map(row=>row.stage)),reading,goStage,currentStage:()=>String(index+1),
-     get counts(){return {done:tracker.record.marks.length,total:objectives.length};},
-     get note(){return tracker.notice||(tracker.record.marks.length===objectives.length?'Quest complete.':'');},
+     lay:{...layout(rows,rows.map(row=>row.stage)),primary:objectives,ownerOf:Object.fromEntries(objectives.map(o=>[o.stage,o.id]))},reading,goStage,currentStage:()=>String(index+1),
+     get counts(){return {done:required.filter(o=>tracker.record.marks.includes(o.id)).length,total:required.length};},
+     get note(){return tracker.notice||(required.every(o=>tracker.record.marks.includes(o.id))?'Quest complete.':!objectives[index].required?'Optional lead · You can go directly to the cottage.':'');},
      objState:o=>({done:tracker.record.marks.includes(o.id),disabled:!tracker.editable,text:tracker.notice||'Not completed'}),
-     warning(o){const short=q.stages[Number(o.stage)-1].warning;return short?{id:warningRecordId(key,'stage-'+o.stage),short,sections:[],href:'#velen/quest/baron/'+o.stage}:null;},
+     warning(o){const short=q.stages[Number(o.stage)-1].warning;return short?{id:warningRecordId(key,'stage-'+o.stage),short,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;},
      markObjective(o,checked){change(old=>old.marks.includes(o.id)===checked?null:{
       marks:checked?[...old.marks,o.id]:old.marks.filter(mark=>mark!==o.id),undo:old.marks});},
      story(){const box=make('div','progress-actions sw-story'),undo=make('button','','Undo last progress change');
@@ -250,12 +251,12 @@
    const idx=a.lay.primary.findIndex(o=>o.id===selected)+1,done=a.lay.primary.filter(o=>a.objState(o).done).length;
    const line=make('div','sw-status');line.append(make('span','sw-position',(a.readOnly?'STAGE ':'OBJECTIVE ')+idx+' OF '+a.lay.primary.length));
    if(!a.readOnly){
-   const nu=nextUnfinished(a.lay.primary,o=>{const st=a.objState(o);return !st.done&&!st.disabled;});
+   const nu=nextUnfinished(a.lay.primary,o=>{const st=a.objState(o);return o.required&&!st.done&&!st.disabled;});
    if(nu&&nu.id!==selected){const n=make('button','sw-next','Next unfinished →');n.type='button';n.setAttribute('aria-label','Go to next unfinished objective: '+nu.label);n.onclick=()=>choose(a,nu.id,true,true);line.append(n);}
    else line.append(make('span','sw-on-next',nu?'This is your next unfinished objective':'No unfinished required objective'));
    const pr=make('div','sw-progress');const bar=make('span','sw-bar');bar.setAttribute('aria-hidden','true');const fill=make('i');fill.style.width=(a.counts.total?100*a.counts.done/a.counts.total:0)+'%';bar.append(fill);
    pr.append(make('span','',a.counts.done+' of '+a.counts.total+' required completed'),bar);line.append(pr);
-   const off=a.rows.filter(o=>!o.required&&!o.optional&&o.stage),closed=off.filter(o=>a.objState(o).closed),cond=off.filter(o=>!a.objState(o).closed);
+   const off=a.rows.filter(o=>!a.markObjective&&!o.required&&!o.optional&&o.stage),closed=off.filter(o=>a.objState(o).closed),cond=off.filter(o=>!a.objState(o).closed);
    if(cond.length)line.append(make('span','sw-route-note','Route-dependent, not counted yet: '+cond.map(o=>o.label).join(' ')));
    if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));

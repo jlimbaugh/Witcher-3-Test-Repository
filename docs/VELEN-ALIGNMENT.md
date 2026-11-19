@@ -103,3 +103,7 @@ These are runtime stage counts, not verified in-game objective counts. The imple
 ## Bloody Baron walkthrough pilot
 
 The three common milestones are reaching Crow’s Perch, entering the keep by either available route, and speaking with the Baron. The walkthrough now persists each check, computes Next unfinished and the completion count, and retains one Undo across reload. Ciri’s Room and the two alternative entry routes have no separate completion requirement. This pilot covers the walkthrough; hub and regional totals remain open. Verify the milestone wording against the game during field QA. In a 390 × 844 browser check, all three marks, navigation, completion, reload, Undo and malformed-record protection passed. See qa/v49/phone/qa-baron-local.html.
+
+## Hunting a Witch walkthrough pilot
+
+Owner passed the Bloody Baron walkthrough pilot at e1ceeab. Hunting a Witch uses the same saved checklist and Undo. The existing guide allows riding directly to the cottage, so Midcopse directions remain an optional reading stage. Three milestones count toward completion: reach the cottage, investigate it and enter the portal, then speak to Keira. Next unfinished skips the optional directions. The 390 × 844 browser fixture checked direct-route completion, reload, Undo and isolation from Bloody Baron. Physical Safari review remains open. Scope is the walkthrough.

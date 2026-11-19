@@ -30,5 +30,22 @@ await test('Invalid Baron record',async()=>{
  await boot('#velen/quest/baron/1',390,844,'normal',{[key]:'invalid'});
  check(one('.sw-box.selected input').disabled&&w.qaRecords.get(key)==='invalid','protect bytes');
 });
+await test('Hunting a Witch direct route',async()=>{
+ const seed={marks:['enter-keep'],undo:[]};
+ await boot('#velen/quest/witch/1',390,844,'normal',{[key]:JSON.stringify(seed)});
+ const root=()=>one('#velen-screen .sw-walkthrough');
+ check(root().textContent.includes('Optional lead'),'optional guidance');
+ root().querySelector('.sw-next').click();await wait(250);
+ for(let stage=2;stage<=4;stage++){
+  check(w.location.hash.endsWith('/'+stage),'required stage');
+  root().querySelector('.selected input').click();
+  if(stage<4){root().querySelector('.sw-next').click();await wait(250);}
+ }
+ check(root().textContent.includes('3 of 3')&&root().textContent.includes('Quest complete.'),'completion without directions');
+ await boot('#velen/quest/witch/4',390,844,'normal',Object.fromEntries(w.qaRecords));
+ one('.sw-story-row summary').click();one('.sw-story-row button').click();
+ check(root().textContent.includes('2 of 3'),'undo after reload');
+ check(w.qaRecords.get(key)===JSON.stringify(seed),'Baron isolated');
+});
 output.dataset.finished='yes';
 </script>

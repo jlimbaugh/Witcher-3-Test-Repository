@@ -1,10 +1,9 @@
 'use strict';
 
 (function (root) {
-  root.createBloodyBaronTracker=function(){
-    const objectiveIds=['reach-crows-perch','enter-keep','speak-to-baron'];
+  root.createVelenQuestTracker=function(id,objectiveIds){
     const valid=marks=>Array.isArray(marks)&&marks.every(mark=>objectiveIds.includes(mark))&&new Set(marks).size===marks.length;
-    const storageKey='phoenix.velen.baron.objectives.v1';
+    const storageKey='phoenix.velen.'+id+'.objectives.v1';
     let record={marks:[],undo:null},notice='',editable=true;
     function load(){
      try{
@@ -28,6 +27,7 @@
   };
   root.PhoenixVelenQuestCards = {
     baron: {
+      objectiveIds:['reach-crows-perch','enter-keep','speak-to-baron'],
       art:'art-velen/baron.webp',
       briefing: 'Follow Hendrik’s lead to Crow’s Perch and find out what the Baron knows about Ciri.',
       completion: 'Finish the audience with the Baron. The handoff is Ciri’s Story: The King of the Wolves.',
@@ -67,6 +67,8 @@
       ]
     },
     witch: {
+      objectiveIds:['midcopse-lead','reach-cottage','open-portal','speak-to-keira'],
+      optionalObjectives:['midcopse-lead'],
       art:'art-velen/witch.webp',
       briefing: 'Follow the second lead from Hendrik’s notes to Midcopse and find the witch’s cottage.',
       completion: 'Finish the conversation with Keira about Ciri and the masked mage. Continue in Wandering in the Dark.',
