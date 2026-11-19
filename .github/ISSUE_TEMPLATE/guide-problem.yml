@@ -1,0 +1,25 @@
+name: Report a guide problem
+description: Report one problem or several observations from the same guide page.
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Which page were you on?
+      placeholder: The Nilfgaardian Connection quest hub
+    validations:
+      required: true
+  - type: textarea
+    id: observations
+    attributes:
+      label: What happened, and what did you expect?
+      description: A short note is enough. Number your observations if you found several on this page.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Attach any screenshots here. You can submit the report without one.
+  - type: markdown
+    attributes:
+      value: LT or Cmdr will add the route, build, reproduction steps, and related finding IDs during review.
