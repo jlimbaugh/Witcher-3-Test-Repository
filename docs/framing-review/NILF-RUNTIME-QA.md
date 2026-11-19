@@ -24,3 +24,9 @@ The complete Node suite passed 340/340 with the v45, QA5, and QA6 baseline workt
 | Button consistency | Text navigation, progress actions, and Previous/Next share the page silhouette, including disabled controls. |
 | Button depth | The steel outline is the final perimeter. No rectangular plate appears beneath it. The bevel and contact shadow are visible. |
 | Progress and navigation | Hub to walkthrough, return, objective marking, Undo and reload behave as before. |
+
+## Number strip and Region Tools
+
+- Velen number targets are 68 × 64 CSS px minimum. The strip uses the approved selector wolf artwork and updates the featured quest, briefing, and destination when the horizontal strip settles or a number is tapped.
+- The Region Tools grid reuses the wolf menu destinations and its Search and Warnings actions. Velen maps and merchants sit in the same illustrated card format. The floating medallion artwork stays in its existing component.
+- The Nilf nearby and next-lead panels use compact dimensions and a 4–5 px framing allowance. Verify on physical Safari in both orientations.

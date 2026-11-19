@@ -1,6 +1,6 @@
 'use strict';
 
-window.createPhoenixDeckJump=function(names,current,onJump){
+window.createPhoenixDeckJump=function(names,current,onJump,{selectOnSettle=false}={}){
  const count=names.length, copies=5, middleCopy=2;
  const frame=document.createElement('nav');
  frame.className='deck-jump';
@@ -16,7 +16,7 @@ window.createPhoenixDeckJump=function(names,current,onJump){
    button.textContent=String(index+1);
    button.setAttribute('aria-label',(index+1)+'. '+name);
    if(copy!==middleCopy){button.tabIndex=-1;button.setAttribute('aria-hidden','true');}
-   button.onclick=()=>onJump(index);
+   button.onclick=()=>{clearTimeout(settle);onJump(index);};
    rail.append(button);
    buttons.push(button);
   }
@@ -37,8 +37,17 @@ window.createPhoenixDeckJump=function(names,current,onJump){
  function normalize(){
   const width=rail.clientWidth;
   const span=buttons[count]?.offsetLeft-buttons[0]?.offsetLeft;
-  if(!width||!span)return;
+  if(!rail.isConnected||!width||!span)return;
   const midpoint=rail.scrollLeft+width/2,start=buttons[middleCopy*count].offsetLeft;
+  if(selectOnSettle){
+   let nearest=buttons[0],distance=Infinity;
+   for(const button of buttons){
+    const delta=Math.abs(button.offsetLeft+button.offsetWidth/2-midpoint);
+    if(delta<distance){nearest=button;distance=delta;}
+   }
+   const index=buttons.indexOf(nearest)%count;
+   if(index!==active){onJump(index);return;}
+  }
   const offset=((midpoint-start)%span+span)%span;
   const next=start+offset-width/2;
   if(Math.abs(next-rail.scrollLeft)>1)rail.scrollLeft=next;
@@ -47,7 +56,7 @@ window.createPhoenixDeckJump=function(names,current,onJump){
   clearTimeout(settle);
   settle=setTimeout(normalize,150);
  },{passive:true});
- rail.addEventListener('scrollend',normalize);
+ rail.addEventListener('scrollend',()=>{clearTimeout(settle);normalize();});
  update(current);
  requestAnimationFrame(()=>center(current));
  return {frame,update,center};

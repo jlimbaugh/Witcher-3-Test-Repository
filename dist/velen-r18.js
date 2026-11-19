@@ -19,7 +19,7 @@ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className
 // v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
 // the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
 // velen.pyres/velen.mercy owners. If the handover is unavailable (e.g. newer canonical data), nilf falls back to the v45 legacy hub.
-/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
+/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,regionTools,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
 const nilfOwned=()=>!!nilfUI&&nilfUI.owned(),isComplete=id=>id==='nilf'&&nilfOwned()?nilfUI.complete():state.complete[id]===true,isUnlocked=()=>isComplete('nilf');
 function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */try{localStorage.setItem(key,JSON.stringify(state));status.textContent='';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
 function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
@@ -73,7 +73,7 @@ for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
-const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true));
+const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true),{selectOnSettle:true});
 box.append(deck,jump.frame,footer);
 deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
 let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
@@ -273,6 +273,28 @@ function regionalMap(id,requested){
   paper.append(tools);
   screen.append(paper);
 }
+function regionTools(){
+  const tools=scroll('Region Tools');
+  const cards=el('nav','tiles console-tiles velen-region-tools');
+  cards.setAttribute('aria-label','Region Tools');
+  function actionTile(label,src,action){
+    const button=el('button','art-tile console-tile');
+    button.type='button';
+    button.append(picture(src),el('span','',label));
+    button.onclick=event=>{event.stopPropagation();action(button);};
+    return button;
+  }
+  for(const item of window.PhoenixNavigationArt.entries){
+    if(item.href)cards.append(artTile(item.label,item.href,item.src));
+    else if(item.key==='warnings')cards.append(actionTile(item.label,item.src,()=>{
+      window.dispatchEvent(new CustomEvent('phoenix:warning-menu-return'));
+    }));
+  }
+  cards.append(actionTile('Search','navigation-art-v26/reference.webp',button=>window.PhoenixSearch?.open(button)));
+  cards.append(artTile('Route maps','#map','velen-route-map-art.svg'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
+  tools.append(cards);
+  return tools;
+}
 function consoleView(){
   screen.append(header('Velen','No Man’s Land'));
   const activity=activities(),selected=selectedPanel(deckSelected);
@@ -285,14 +307,13 @@ function consoleView(){
   const nearby=nearbyStops(deckSelected);
   if(nearby)screen.append(nearby);
   screen.append(activity.section);
-  const tools=scroll('Region Tools'),shortcuts=el('nav','tiles shortcuts console-tiles');
-  shortcuts.append(artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
+  const tools=regionTools();
   const arrival=el('details','velen-arrival-checklist');
   arrival.open=arrivalOpen;
   arrival.ontoggle=()=>{if(arrival.isConnected)arrivalOpen=arrival.open;};
   arrival.append(el('summary','','Arrival checklist'),el('p','pilot-count',['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
   for(const id of ['nilf','pyres','mercy'])arrival.append(link((isComplete(id)?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
-  tools.append(questAction('Open Velen route maps','#map','velen-route-map-art.svg'),shortcuts,arrival);
+  tools.append(arrival);
   screen.append(tools);
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
@@ -319,7 +340,7 @@ function readingPage(id,q,index,legacy){
   const back=link(legacy?'Return to hub':'Return to quest card',legacy?'#hub/'+id:'#lead/'+id);
   if(legacy)back.dataset.returnHub='true';
   tools.append(back);
-  page.append(heading,panel,tools);
+  page.append(heading,panel,tools,regionTools());
   const story=stage.choice?()=>{const section=el('div','sw-story');choice(stage.choice,section);return section;}:null;
   window.PhoenixVelenReadingPages.set(page,{id,q,index,story,goStage:n=>go('#quest/'+id+'/'+n,{hubReturn:history.state?.velen?.hubReturn,restoreY:Math.round(viewport().scrollY)})});
   screen.append(page);

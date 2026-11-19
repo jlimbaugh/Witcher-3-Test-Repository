@@ -64,7 +64,7 @@
 }
 
 #velen-screen [data-velen-nilf] :is(.sw-selector, .quest-hub-group) {
-  padding-inline: 8px;
+  padding-inline: 4px;
 }
 
 #velen-screen [data-velen-nilf] .quest-hub-tools,
@@ -84,7 +84,7 @@ body:has(#velen-screen > [data-velen-nilf="walk"]) {
   --nilf-button-cut: polygon(6px 0, calc(100% - 6px) 0, calc(100% - 6px) 17%, 100% 27%, 100% 73%, calc(100% - 6px) 83%, calc(100% - 6px) 100%, 6px 100%, 6px 83%, 0 73%, 0 27%, 6px 17%);
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a),
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a),
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]) {
   position: relative;
   isolation: isolate;
@@ -108,7 +108,7 @@ html body #velen-screen [data-velen-nilf] :is(.quest-hub-tools, .quest-page-tool
   place-items: center;
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a)::before,
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a)::before,
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm])::before {
   position: absolute;
   z-index: -1;
@@ -125,7 +125,7 @@ html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-
 }
 
 /* Legacy illustrated plates use a separate pseudo-element behind the control. */
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-cta), .quest-hub-tools > a, .quest-page-tools > a)::after {
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta), .quest-hub-tools > a, .quest-page-tools > a)::after {
   content: none !important;
 }
 
@@ -168,4 +168,64 @@ html body:has(#velen-screen > [data-velen-nilf]) [data-velen-confirm]::before {
   body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]) {
     border: 1px solid ButtonText;
   }
+}
+
+/* Velen uses the existing selector wolf; the floating navigation wolf is independent. */
+#velen-screen .deck-jump {
+  margin-top: 12px;
+  border: 2px solid #8f9b9e;
+  border-top-color: #cad4d2;
+  box-shadow: inset 0 0 0 2px #263137, 0 4px 8px #0008;
+}
+
+#velen-screen .deck-jump::before {
+  inset: -20px auto auto 50%;
+  width: 48px;
+  height: 46px;
+  transform: translateX(-50%);
+  background: url("visual-art/wolf-pointer.webp") center / contain no-repeat;
+}
+
+#velen-screen .deck-jump-rail {
+  padding-block: 22px 6px;
+}
+
+html body #velen-screen .deck-jump-rail > button {
+  flex-basis: 68px;
+  min-width: 68px;
+  min-height: 64px;
+  font-size: 1.2rem;
+}
+
+#velen-screen .velen-region-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+#velen-screen .velen-region-tools > .art-tile {
+  width: 100%;
+  min-height: 0;
+  max-height: 132px;
+  aspect-ratio: 1.2;
+  margin: 0;
+}
+#velen-screen .velen-region-tools > button.art-tile { padding: 0; }
+
+#velen-screen [data-velen-nilf="hub"] > .quest-hub-nearby {
+  padding: 5px;
+}
+
+#velen-screen [data-velen-nilf="hub"] + .scroll-r16 .tiles {
+  gap: 10px;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+#velen-screen [data-velen-nilf="hub"] + .scroll-r16 .art-tile {
+  min-height: 0;
+  max-height: 142px;
+  aspect-ratio: 1.15;
 }
