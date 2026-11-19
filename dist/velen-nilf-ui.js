@@ -4,7 +4,7 @@
    State: progress is read from and written to the canonical owner (PhoenixVelenNilfProgress) through the shared
    progression engine's plan(); reading position stays with velen-r18.js. Velen-specific data attributes
    (data-velen-*) keep WO's document-wide progress listeners from ever seeing these cards. */
-window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, readingStage, hasReading, activityComplete, rerender }) {
+window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionTools, readingStage, hasReading, activityComplete, rerender }) {
   const owner = window.PhoenixVelenNilfProgress,
     data = owner.data,
     engine = owner.engine,
@@ -395,11 +395,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, reading
       deck.append(make('p', 'quiet velen-confirmed-note', 'Confirmed complete: you recorded that you read Hendrik’s notes on the direct route. Individual objective marks are kept separately; unrecorded objectives stay unmarked and “Go to the Inn at the Crossroads.” stays unconfirmed.'));
     if (s.legacyComplete)
       deck.append(make('p', 'quiet velen-legacy-note', 'Saved complete from your earlier Velen record. Its individual objectives were not recorded, so they stay unconfirmed until you record them.'));
-    const source = make('a', '', 'Objective reference ↗');
-    source.href = data.source;
-    source.target = '_blank';
-    source.rel = 'noopener noreferrer';
-    deck.append(find, correct, make('p', 'quiet', 'Record completed in-game objectives. These marks stay separate from your reading position.'), source);
+    deck.append(find, correct, make('p', 'quiet', 'Record completed in-game objectives. These marks stay separate from your reading position.'));
     return { deck, rail, find, correct, position: () => scrollCard(deck, nextIndex(p)) };
   }
   document.addEventListener('change', (e) => {
@@ -652,27 +648,15 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, reading
       prep = preparation(),
       parts = progressDeck(s);
     host.append(prep, parts.deck);
-    const sources = make('details', 'sources');
-    sources.append(make('summary', '', 'Sources & verification'));
-    for (const [text, href] of [['Walkthrough · gamebanshee.com ↗', q.source], ['Journal objectives · witcher.tools ↗', data.source], ['Direct-Heatherton route · Witcher Wiki objectives ↗', data.routeSource], ['Same list · archived snapshot ↗', data.routeArchive]]) {
-      const p = make('p'),
-        a = make('a', '', text);
-      a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      p.append(a);
-      sources.append(p);
-    }
-    sources.append(make('p', '', 'Research-led pilot; exact rewards and Xbox field acceptance remain unverified. This page records neither game state nor automatic completion.'));
-    panel.append(stagePanel, nav, host, sources);
+    panel.append(stagePanel, nav, host);
     const tools = make('nav', 'stage-links quest-page-tools');
     tools.setAttribute('aria-label', 'Quest tools');
     const back = link('Return to hub', '#hub/nilf');
     back.dataset.returnHub = 'true';
     tools.append(back, link('Quest cards', '#velen'));
-    root.append(heading, panel, tools);
+    root.append(heading, panel, tools, regionTools(), link('Sources', 'velen-sources.html#nilf', 'sw-source-link'));
     screen.append(root);
-    return mount('walk', index + 1, root, { ...parts, prep, sources, rails: new Map() });
+    return mount('walk', index + 1, root, { ...parts, prep, rails: new Map() });
   }
   return { owned, complete, hub, walkthrough, capture, request, undoLast };
 };

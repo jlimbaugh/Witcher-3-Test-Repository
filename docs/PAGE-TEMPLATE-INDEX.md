@@ -1,10 +1,12 @@
 # Phoenix page templates
 
-Baseline: published v48 plus the owner-approved regional deck and number strip at `011b00563067ff192313338c3bce88d2089f90e4`. Velen is the canonical reference for regional decks and supplies the approved walkthrough refinements. White Orchard remains a reference for its existing presentation and behavior. Preserve the White Orchard implementation and consider individual elements for incorporation with explicit owner approval. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.
+Current implementation reference is [Velen v49](RELEASE-VELEN-V49.md). See the [v49 QA checklist](LT-QA-VELEN-V49.md) for open runtime checks. Velen is the canonical reference for regional decks and supplies the approved walkthrough refinements. White Orchard remains a reference for its existing presentation and behavior. Preserve the White Orchard implementation and consider individual elements for incorporation with explicit owner approval. Use the table to choose the template before building. A prototype or planned surface requires its own acceptance before becoming a standard.
 
 Companion requirements: [Regional decks](REGION-DECK-TEMPLATE.md), [Quest and activity artwork](QUEST-CARD-ART-TEMPLATE.md), [Illustration standard](../ART-STANDARD.md).
 
-The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) governs new framing work. See the [framing review gallery](framing-review/README.md) for surface-specific concepts awaiting approval.
+The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) governs new framing work. See the [framing review gallery](framing-review/README.md) for approved variants and the status of individual review passes.
+
+Use [session calibration](SESSION-CALIBRATION.md#template-decision-lookup) for the consolidated decision summary and record new approvals in the relevant template as part of the same change.
 
 ## Shared page contract
 
@@ -60,3 +62,7 @@ The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) gov
 4. Record any owner-approved change here or in the linked template and update session-start guidance when the workflow changes.
 
 Velen coverage, Gwent, advanced build simulation, crafting and other incomplete systems must be scoped from their implemented baseline and outstanding requirements. This index is the standard for extending an accepted page family. It does not certify every listed behavior as shipped or tested.
+
+### Nilf quest hub · approved for the next build
+
+On iPhone, fit the banner, short briefing and full Start/Continue action on the first screen at the approved reading size. Below Quest Cards, place Quest Progress before Preparation & Quest Details. When collapsed, progress shows the count and a short next-objective line. [Owner selections](SESSION-CALIBRATION.md#future-build-questions--round-1).

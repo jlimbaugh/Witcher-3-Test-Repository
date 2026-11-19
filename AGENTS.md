@@ -6,6 +6,7 @@ Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary o
 ## 1. Start of session (in this order)
 1. **Read `docs/PROJECT-STATUS.md` first.** It names the accepted build, the current candidate, open blockers and
    who owns what. If it disagrees with what you were told, stop and ask; do not guess.
+   Read [session calibration](docs/SESSION-CALIBRATION.md) and choose the applicable [page template](docs/PAGE-TEMPLATE-INDEX.md) before drafting the work checklist.
 2. **Verify repository access** for what you need (read, and write if you are the author). Record the repository,
    branch and full commit SHA you are working from. If access or an execution environment is missing, say so and stop
    that step; do not route around authentication.

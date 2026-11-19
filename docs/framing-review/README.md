@@ -1,5 +1,7 @@
 # Phoenix framing review
 
+For shipped examples and remaining implementation scope, see the [Nilf runtime QA notes](NILF-RUNTIME-QA.md) and [v49 release record](../RELEASE-VELEN-V49.md). The gallery preserves the approved visual references.
+
 The owner approved the enlarged [number strip](number-strip.jpg) as the framing direction on November 18, 2026. See the [art standard](../../ART-STANDARD.md) for the production rules. The render's wolf is illustrative. Production uses the existing shared wolf pointer.
 
 ## Review concepts
@@ -53,7 +55,7 @@ The approved rotation uses A–J in that order, wrapping to A.
 | V2 | Recessed lozenges and angled steel splints |
 | V3 | Raised curls and folded leaves |
 
-For review: compare how the staggered ornaments read against the quieter lengths of forged steel. Keep the left and right ornaments at different heights and allow room for the framed content. Blue and jade remain adjustable accents.
+The owner approved all three original forged pairs for use on November 19, 2026. Keep quieter lengths of forged steel between the staggered ornaments. Keep the left and right ornaments at different heights and allow room for the framed content. Blue and jade remain adjustable accents.
 
 ## Vine-inspired vertical rails
 
@@ -68,7 +70,7 @@ For review: compare how the staggered ornaments read against the quieter lengths
 | V8 | Fern fronds and fiddleheads |
 | V9 | Bare winter vine and forked tips |
 
-The proposed sequence is V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9, then back to V1. The side-rail pair stays with its box. The bottom flourish has its own rotation.
+The approved rail rotation is V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9, then back to V1. The side-rail pair stays with its box. The bottom flourish has its own rotation.
 
 ## Standard text-only buttons
 
