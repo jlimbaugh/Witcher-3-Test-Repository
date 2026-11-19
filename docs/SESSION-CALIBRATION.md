@@ -39,3 +39,18 @@ These are approved design choices for the next Nilf hub build. Exact banner heig
 | How should the quest illustration and title fit at the top of the hub on iPhone? | **Shorter banner.** Keep the full-width illustration and bring the briefing and walkthrough action higher. |
 | What should the parchment show before Start or Continue walkthrough? | **Short briefing.** Keep a one- or two-sentence quest setup above the action. |
 | Where should Quest Cards and Regions sit on the hub? | **Keep Quest Cards only.** Give the hub a direct return to its quest deck and use the wolf menu for Regions. |
+
+## Capture a decision or test result
+
+Use the existing task PR or issue for working notes. Keep screenshots, test scripts and results together in the candidate’s evidence folder and link them by finding ID. For a reusable design decision, record the owner’s answer in the applicable template and link to it here. For a one-page decision, the question-and-answer table above is an example.
+
+| Record | Copy these fields into the relevant thread or document |
+|---|---|
+| Decision | Question · owner’s answer · affected pages · approved example or screenshot · template link · open details |
+| Defect | Finding ID · build and device · page/route · steps · expected · observed · evidence |
+| Fix and retest | Finding ID · candidate SHA and preview · original steps retried · result (pass/fail/untested) · tester and environment · evidence · remaining checks |
+| Session handoff | Active task link · last verified commit · what changed · unresolved items · next action and owner |
+
+Example: **LT49-RT-01** — five Region Tools tiles led to Velen. The [original report](https://github.com/jlimbaugh/Witcher-3-Test-Repository/blob/af5213244960a91f239554ecb5549ab5f8ca8a60/docs/qa/v49/lt/SUMMARY.md) holds the reproduction and evidence. The [implementation assignment](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25#issuecomment-7014957770) names the two entry points to retest. Append candidate results to the fix PR under that same ID.
+
+When work moves to a new PR or a release goes live, update the current-work links in [Project Status](PROJECT-STATUS.md) and the [repository front page](https://github.com/jlimbaugh/Witcher-3-Test-Repository/blob/main/README.md). A preview, a published build, and physical-device acceptance each get their own evidence.
