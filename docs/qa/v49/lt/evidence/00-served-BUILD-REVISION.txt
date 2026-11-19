@@ -1,0 +1,6 @@
+Phoenix Velen regional release
+GitHub candidate: ba59252cb65800225a68297b6ce7068d3b91ff9b
+Previous Sites release: v48
+Previous Sites source: 2d14fa6e75c4b1d5b1991564fe8fd75edd075177
+Previous GitHub application baseline: 93a2cf9
+Owner authorized publication before independent LT QA.
