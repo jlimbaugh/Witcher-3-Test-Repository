@@ -54,3 +54,31 @@ Use the existing task PR or issue for working notes. Keep screenshots, test scri
 Example: **LT49-RT-01** — five Region Tools tiles led to Velen. The [original report](https://github.com/jlimbaugh/Witcher-3-Test-Repository/blob/af5213244960a91f239554ecb5549ab5f8ca8a60/docs/qa/v49/lt/SUMMARY.md) holds the reproduction and evidence. The [implementation assignment](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25#issuecomment-7014957770) names the two entry points to retest. Append candidate results to the fix PR under that same ID.
 
 When work moves to a new PR or a release goes live, update the current-work links in [Project Status](PROJECT-STATUS.md) and the [repository front page](https://github.com/jlimbaugh/Witcher-3-Test-Repository/blob/main/README.md). A preview, a published build, and physical-device acceptance each get their own evidence.
+
+## Future build questions · round 1
+
+Open for owner review. A and B are options. Custom answers are welcome. Record the selected answer in the last column, then carry approved shared decisions into the applicable template.
+
+| # | Question | A | B | Owner answer |
+|---|---|---|---|---|
+| 1 | On the first iPhone screen of the Nilf hub, what should fit below the banner and briefing? | The full Start/Continue button | The button and the Quest Cards link | Open |
+| 2 | After you resume a quest, which section should come first beneath those actions? | Quest progress | Preparation and quest details | Open |
+| 3 | With Quest Progress collapsed, what should its summary show? | Count and next objective | Count only | Open |
+| 4 | When you expand Preparation mid-quest, which advice should appear first? | What matters at the current step | The original pre-quest checklist | Open |
+| 5 | If several nearby activities are available, which should lead the list after time-sensitive warnings? | Activities at your current quest stop | Activities closest to your level | Open |
+| 6 | After Hendrik’s notes, what would help you choose between Bloody Baron and Hunting a Witch? | One short line under each card explaining the lead | Title and artwork alone | Open |
+| 7 | When you finish a quest and revisit its hub, what should the main button do? | Open the next-leads section | Reopen the completed walkthrough | Open |
+| 8 | If two stops on a quest map overlap at phone scale, what should a tap do? | Open a small list of the stops | Zoom in until the pins separate | Open |
+| 9 | For an underground objective, what should the first map view show? | The surface entrance | The objective floor, with an entrance link | Open |
+| 10 | If you open a merchant from a quest, what should appear first? | The service relevant to this quest | The merchant’s full service list | Open |
+| 11 | When several craftsmen qualify for an item, which should the guide list first? | One near the current quest | One the player has already unlocked | Open |
+| 12 | For a verified crafting price that varies, what helps most? | A range with the reason it varies | One observed price with its conditions | Open |
+| 13 | If you return to a region after leaving it, what should its console lead with? | Unfinished local opportunities | The last quest you viewed there | Open |
+| 14 | When a quest continues outside Velen, what should the regional summary say? | “Velen steps complete” with the next region named | The next objective and region together | Open |
+| 15 | If you discard an unsaved build comparison, where should you land? | The saved build you started from | The list of saved builds | Open |
+| 16 | When two builds have a long comparison, which stats should appear first? | Stats that changed most | Your pinned stats | Open |
+| 17 | In a crafting plan, how should you expand a missing crafted component? | Show its ingredients inline | Open its recipe with a return link | Open |
+| 18 | For a Gwent opponent with several possible rewards, what belongs on the route card? | A short reward category; reveal cards on tap | The possible cards up front | Open |
+| 19 | When you have several copies of a Gwent card, how should the deck builder show them? | One card with owned and in-deck counts | A separate card for each copy | Open |
+| 20 | When two quests match a search term, which result should come first? | The quest in the current region | The quest you most recently opened | Open |
+| 21 | When reviewing a batch of ten approved quest designs, what should the QA handoff open with? | A contact sheet linking to each playable page | A playable quest list with visual references beside each entry | Open |
