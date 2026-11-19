@@ -69,7 +69,7 @@ Use a fixed A–J rotation in display order for repeated boxes, wrapping to A. A
 
 Use an asymmetrical pair of forged steel rails. Stagger ornaments at different heights and retain stretches of plain steel between them. Keep vines and leaves close to the rail and clear of the content and touch targets. Scale the ornament density to the height and width of the frame.
 
-The review rotation interleaves the three original pairs with six vine pairs: V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1. Assign the two rails as a pair, independently of the A–J bottom flourish rotation. Keep the pair with its box through filtering, reordering, and reload. The [vertical rail concepts](docs/framing-review/README.md#vine-inspired-vertical-rails) are approved for the Nilfgaardian Connection pilot.
+Both the [original forged pairs V1–V3](docs/framing-review/README.md#vertical-side-rails) and the [vine pairs V4–V9](docs/framing-review/README.md#vine-inspired-vertical-rails) are approved for use. The rotation interleaves them: V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1. Assign the two rails as a pair, independently of the A–J bottom flourish rotation. Keep the pair with its box through filtering, reordering, and reload.
 
 ### Standard text-only buttons
 
