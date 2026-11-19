@@ -2,6 +2,14 @@
 
 Planning inventory against application 1690b41. The Velen console supplies the deck and selected-card pattern. The Nilfgaardian Connection supplies the complete walkthrough pattern. The 75 entries below are the current implementation inventory. Regional discoveries, services and other unregistered tasks still require reconciliation.
 
+## First review group · private QA
+
+The shared registry now remembers a separate reading stage for each quest, contract and treasure hunt. The selected card on a deck, its own detail page and the default quest map use that stage. Reading position is independent of completion. Older single-quest bookmarks are recognized when available.
+
+At 390 × 844 in Chromium, the hub or card reopened the expected stage and the quest map rendered for Nilf, Funeral Pyres, At the Mercy of Strangers, Bloody Baron, Hunting a Witch, Contract: Shrieker and Lost Goods. Mercy has one stage. The six other samples reopened stage two. The [browser fixture](qa/v49/phone/qa-alignment-local.html) reproduces the checks. All 344 Node tests passed with the historical baselines.
+
+Still open: the 72 registry walkthroughs use a read-only objective adapter. Their bookmarks do not supply a verified completion model. Compare objective ownership and branching before enabling completion or Next unfinished. Finish the per-entry art, content and task coverage review in the scheduled batches. Physical iPhone Safari acceptance of this first group is pending.
+
 ## Work order
 
 1. Compare the full player journey for Bloody Baron, Funeral Pyres, one contract and one treasure hunt against Nilf. Capture the deck, hub, walkthrough, quest map and return on iPhone. Include At the Mercy of Strangers to check optional decisions and existing saves.
