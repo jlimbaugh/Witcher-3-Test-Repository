@@ -8,6 +8,8 @@ The [forged steel framing standard](../ART-STANDARD.md#forged-steel-framing) gov
 
 ## Shared page contract
 
+- Apply one [standard text-only button design](../ART-STANDARD.md#standard-text-only-buttons) to every standard button on a page. Rotate B1–B10 between pages and keep the assignment stable on return or reload.
+
 - Reuse the region shell, typography, scroll treatment, steel and silver controls, and the existing white-space rhythm. Follow saved font, appearance and reduced-motion preferences. Desktop changes must not remove mobile touch targets.
 - Preserve Home, Regions, and wolf navigation where the shell provides them. Give the page one clear title and predictable return actions. A deep link, direct entry, reload, or Back/Forward must resolve the same logical owner and stage. Preserve returning scroll and focus where the existing flow supports them.
 - Identify the actual quest, task, location or item with a stable ID. Routes and cross-references use those IDs. Keep sourced facts, estimates, spoilers and unverified details distinguishable. A card uses subject-specific art. Repeated actions use stable icons or illustrations.

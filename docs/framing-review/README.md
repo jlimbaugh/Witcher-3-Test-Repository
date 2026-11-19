@@ -74,7 +74,7 @@ The proposed sequence is V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 →
 
 ![Six forged text-only button styles](text-only-buttons.jpg)
 
-B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and stepped steel cap. The same sample label makes it easier to compare readability and ornament size. The template rotates B1–B10 across repeated peer actions and keeps assignments stable. The artwork is available for visual review.
+B1–B6 explore a knot, wrapped collar, inlaid diamond, ivy leaf, tendril, and stepped steel cap. The same sample label makes it easier to compare readability and ornament size. All ten variants are approved. Rotate B1–B10 across pages. Every standard text-only button on a page uses that page’s assigned variant.
 
 ### Four additional button variants
 
