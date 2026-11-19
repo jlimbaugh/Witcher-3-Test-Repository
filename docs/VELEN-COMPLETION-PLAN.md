@@ -40,4 +40,12 @@ Keep approved slices in the private preview. Publish one complete regional candi
 
 Choose the next large section at closeout after reviewing the checklist and template proof. Inventory remains paused.
 
-**Next action:** Verify the private preview's source and prepare The Nilfgaardian Connection for the pilot review. This plan records approval of the direction. Pilot acceptance and public release approval are separate gates.
+## Pilot checkpoint
+
+Private Safari version 34 is deployed from Sites commit `bdf9705f48ba21e7a9b7f04fb6c0873089493e83`, based on private version 33 (`ae0f0db0c0a62983428e4b71c479f665bda30251`). The deployed code is in the Sites source repository. GitHub's design branch has separate history. Automated checks: 339 passed, 3 skipped for unavailable historical baseline checkouts. Physical Safari review and independent review are pending.
+
+**Next action:** Review the complete Nilfgaardian Connection pilot on iPhone Safari. Pilot acceptance and public release approval are separate gates.
+
+## Parking lot
+
+Review a compact “On this page” group of quiet text links to major headings on longer multi-section pages during page-family review. Section jumps should leave progress and quest resume alone. Placement and style are open for visual review.
