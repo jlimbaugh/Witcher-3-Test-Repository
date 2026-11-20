@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner approved hub batch 2 (bbc84c0). Hub batch 3 adds saved walkthrough counts to the quest cards and selected panels for Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Ten milestones. Phone approval pending.
+
 Owner passed hub batch 1 (0ef49bf). Hub batch 2 adds saved walkthrough counts to the quest cards and selected panels for The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. iPhone approval pending.
 
 Owner passed Batch 14 (933a571), completing approval of all 70 batched walkthroughs. Hub progress batch 1 brings the first five Batch 1 quest cards and their Velen selected panels into sync with saved walkthrough milestones. Regional aggregate counts and the remaining hubs are pending.

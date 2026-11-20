@@ -120,7 +120,7 @@ function selectCard(category,id,focusJump=false){
   render({y,focus:false});
   if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
-const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood','whispering-hillock','king-of-the-wolves','family-matters','ciris-race','out-of-the-shadows']);
+const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood','whispering-hillock','king-of-the-wolves','family-matters','ciris-race','out-of-the-shadows','return-to-crookback-bog','fleeing-the-bog','keira-invitation','towerful-of-mice','favor-for-a-friend']);
 function appendHubProgress(panel,id){
   if(!hubProgressQuests.has(id))return;
   const card=questCards[id];
