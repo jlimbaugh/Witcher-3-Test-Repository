@@ -12,3 +12,9 @@
 - Returning iPhone Safari upgrade from v49 with a disposable existing-save profile, including caching, retained progress, and Undo. Prior batch passes are quest-page acceptance evidence.
 - Verify v49 rollback against progress written by this candidate without changing the public deployment. The saved rollback version is available; a complete rehearsal remains open.
 - Record the bounded release decision and publish only after these checks. The public site still serves v49.
+
+## Cross-version storage rehearsal
+
+The public build marker still identifies v49 application commit `ba59252cb65800225a68297b6ce7068d3b91ff9b`. Using the exact v49 and v50 source modules with disposable storage, v49 created an existing Nilf record, v50 read it and recorded progress, and v49 read and undid the v50 write for the peace, fight, and direct routes. The legacy Arrival record remained byte-for-byte identical. A new Griffin School Gear objective record remained in storage during the v49 module rollback and was visible again in v50. v49 does not display that new tracker.
+
+This completes the targeted storage rehearsal for those paths. It leaves the returning-browser cache and interaction checks, physical Safari upgrade, and independent candidate retest open. No public release or rollback was performed.
