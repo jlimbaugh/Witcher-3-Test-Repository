@@ -400,6 +400,7 @@
   });
   Object.assign(root.PhoenixVelenQuestCards,{
     'patrol-gone-missing': {
+      objectiveIds:['take-assignment', 'follow-scouts', 'report-wyvern'],
       name:'Contract: Patrol Gone Missing',kind:contract,level:7,place:'Nilfgaardian Army Group Center Camp',
       art:'art-velen/patrol-gone-missing.webp',
       briefing:'Find the missing Nilfgaardian scouts and track the wyvern that attacked them.',
@@ -413,6 +414,7 @@
       ]
     },
     'mysterious-tracks': {
+      objectiveIds:['track-creature', 'investigate-lair', 'place-lure', 'defeat-howler'],
       name:'Contract: Mysterious Tracks',kind:contract,level:20,place:'Lindenvale',
       art:'art-velen/mysterious-tracks.webp',
       briefing:'Investigate the wolf kills and lure the Howler into its lair.',
@@ -427,6 +429,7 @@
       ]
     },
     'byways-murders': {
+      objectiveIds:['investigate-patrol', 'find-ruins', 'report-sarasti'],
       name:'Contract: The Mystery of the Byways Murders',kind:contract,level:22,place:'Oreton and Byways',
       art:'art-velen/byways-murders.webp',
       briefing:'Find the missing Nilfgaardian patrol and uncover the vampire lair beneath Byways.',
@@ -440,6 +443,7 @@
       ]
     },
     'phantom-of-the-trade-route': {
+      objectiveIds:['find-guides', 'clear-nests', 'defeat-royal-wyvern'],
       name:'Contract: Phantom of the Trade Route',kind:contract,level:23,place:'Benek',
       art:'art-velen/phantom-of-the-trade-route.webp',
       briefing:'Find Benek’s missing guides and defeat the royal wyvern guarding the trade route.',
@@ -455,6 +459,7 @@
   });
   Object.assign(root.PhoenixVelenQuestCards,{
     'woodland-beast': {
+      objectiveIds:['investigate-transport', 'resolve-encounter', 'report-to-captain'],
       name:'Contract: Woodland Beast',kind:contract,level:6,place:'Border Post and north Velen woods',
       art:'art-velen/woodland-beast.webp',
       briefing:'Investigate attacks on Redanian transports near the Pontar crossing.',

@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 4 (9eb7b72). Batch 5 covers Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Review sixteen walkthrough milestones together. Woodland Beast tracks the encounter and the report for either outcome.
+
 Owner passed Batch 3 (e6104a7). Batch 4 covers For the Advancement of Learning and four contracts: Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Review fourteen walkthrough milestones together. Keira’s possible endings and contract payment choices each share their respective final milestone.
 
 Owner passed Batch 2 (082ebe6). Batch 3 covers Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Review their ten walkthrough milestones together.

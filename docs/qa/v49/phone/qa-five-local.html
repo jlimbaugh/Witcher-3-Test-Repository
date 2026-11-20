@@ -16,7 +16,8 @@ let seed={};
 const secondBatch=[['whispering-hillock',2],['king-of-the-wolves',3],['family-matters',4],['ciris-race',1],['out-of-the-shadows',2]];
 const thirdBatch=[['return-to-crookback-bog',3],['fleeing-the-bog',1],['keira-invitation',1],['towerful-of-mice',3],['favor-for-a-friend',2]];
 const fourthBatch=[['advancement-of-learning', 2], ['shrieker', 3], ['jenny-o-the-woods', 3], ['merry-widow', 3], ['swamp-thing', 3]];
-for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch])await test(id,async()=>{
+const fifthBatch=[['patrol-gone-missing', 3], ['mysterious-tracks', 4], ['byways-murders', 3], ['phantom-of-the-trade-route', 3], ['woodland-beast', 3]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);
