@@ -1,0 +1,857 @@
+{
+ "v48-390-hub": {
+  "scrollHeight": 3009,
+  "mainBox": [
+   12,
+   12,
+   366
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @32px",
+   "0/8 completed @23.2px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 146x165 href=#velen/lead/baron",
+   "Hunting a Witch 146x165 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px",
+   "Confirm the preceding choice t 13px"
+  ]
+ },
+ "v48-390-wt": {
+  "scrollHeight": 2640,
+  "mainBox": [
+   12,
+   12,
+   366
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v48-375-hub": {
+  "scrollHeight": 3009,
+  "mainBox": [
+   12,
+   12,
+   351
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @32px",
+   "0/8 completed @23.2px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 138x165 href=#velen/lead/baron",
+   "Hunting a Witch 138x165 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px",
+   "Confirm the preceding choice t 13px"
+  ]
+ },
+ "v48-375-wt": {
+  "scrollHeight": 2711,
+  "mainBox": [
+   12,
+   12,
+   351
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v48-430-hub": {
+  "scrollHeight": 2971,
+  "mainBox": [
+   12,
+   12,
+   406
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @32px",
+   "0/8 completed @24.94px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 166x165 href=#velen/lead/baron",
+   "Hunting a Witch 166x165 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px",
+   "Confirm the preceding choice t 13px"
+  ]
+ },
+ "v48-430-wt": {
+  "scrollHeight": 2521,
+  "mainBox": [
+   12,
+   12,
+   406
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v48-852-hub": {
+  "scrollHeight": 2951,
+  "mainBox": [
+   40,
+   40,
+   772
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @42.6px",
+   "0/8 completed @29.6px",
+   "Nearby activities @34.08px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @34.08px"
+  ],
+  "leads": [
+   "Bloody Baron 328x200 href=#velen/lead/baron",
+   "Hunting a Witch 328x200 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px",
+   "Confirm the preceding choice t 13px"
+  ]
+ },
+ "v48-852-wt": {
+  "scrollHeight": 2332,
+  "mainBox": [
+   56,
+   230,
+   566
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @34.08px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v48-desk-hub": {
+  "scrollHeight": 2954,
+  "mainBox": [
+   123,
+   138,
+   1020
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @56px",
+   "0/8 completed @29.6px",
+   "Nearby activities @36.8px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @36.8px"
+  ],
+  "leads": [
+   "Bloody Baron 452x200 href=#velen/lead/baron",
+   "Hunting a Witch 452x200 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px",
+   "Confirm the preceding choice t 13px"
+  ]
+ },
+ "v48-desk-wt": {
+  "scrollHeight": 2156,
+  "mainBox": [
+   233,
+   248,
+   800
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @38.4px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v49-390-hub": {
+  "scrollHeight": 3017,
+  "mainBox": [
+   12,
+   12,
+   366
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @26.4px",
+   "0/8 completed @23.2px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 163x142 href=#velen/lead/baron",
+   "Hunting a Witch 163x142 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Step 1 · Arrival 13.44px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px"
+  ]
+ },
+ "v49-390-wt": {
+  "scrollHeight": 3480,
+  "mainBox": [
+   12,
+   12,
+   366
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px",
+   "Region Tools @25.6px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v49-375-hub": {
+  "scrollHeight": 3041,
+  "mainBox": [
+   12,
+   12,
+   351
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @26.4px",
+   "0/8 completed @23.2px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 163x142 href=#velen/lead/baron",
+   "Hunting a Witch 163x142 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Step 1 · Arrival 13.44px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px"
+  ]
+ },
+ "v49-375-wt": {
+  "scrollHeight": 3596,
+  "mainBox": [
+   12,
+   12,
+   351
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px",
+   "Region Tools @25.6px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v49-430-hub": {
+  "scrollHeight": 2979,
+  "mainBox": [
+   12,
+   12,
+   406
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @26.4px",
+   "0/8 completed @24.94px",
+   "Nearby activities @25.6px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @25.6px"
+  ],
+  "leads": [
+   "Bloody Baron 163x142 href=#velen/lead/baron",
+   "Hunting a Witch 163x142 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Step 1 · Arrival 13.44px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px"
+  ]
+ },
+ "v49-430-wt": {
+  "scrollHeight": 3361,
+  "mainBox": [
+   12,
+   12,
+   406
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @27.2px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px",
+   "Region Tools @25.6px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v49-852-hub": {
+  "scrollHeight": 2974,
+  "mainBox": [
+   40,
+   40,
+   772
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @38.4px",
+   "0/8 completed @29.6px",
+   "Nearby activities @34.08px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @34.08px"
+  ],
+  "leads": [
+   "Bloody Baron 163x142 href=#velen/lead/baron",
+   "Hunting a Witch 163x142 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Step 1 · Arrival 12.8px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px"
+  ]
+ },
+ "v49-852-wt": {
+  "scrollHeight": 3179,
+  "mainBox": [
+   56,
+   230,
+   566
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @34.08px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px",
+   "Region Tools @34.08px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ },
+ "v49-desk-hub": {
+  "scrollHeight": 2962,
+  "mainBox": [
+   123,
+   138,
+   1020
+  ],
+  "nilfAttr": "hub",
+  "pCount": 37,
+  "pFontMin": 12,
+  "pFontMedian": 13,
+  "overflowX": [
+   "objective-card",
+   "eyebrow",
+   "objective-check",
+   "SPAN",
+   "P",
+   "objective-card",
+   "eyebrow",
+   "objective-check"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @38.4px",
+   "0/8 completed @29.6px",
+   "Nearby activities @36.8px",
+   "Side quests & encounters @20.8px",
+   "Services & notices @20.8px",
+   "After Hendrik’s notes @36.8px"
+  ],
+  "leads": [
+   "Bloody Baron 163x142 href=#velen/lead/baron",
+   "Hunting a Witch 163x142 href=#velen/lead/witch"
+  ],
+  "smallText": [
+   "VELEN · SUGGESTED LEVEL 5 13.6px",
+   "Step 1 · Arrival 12.8px",
+   "Reading position never records 13px",
+   "Arrival · 1/9 12px",
+   "Not completed 13px",
+   "Road · 2/9 12px",
+   "Not completed 13px",
+   "The Inn · 3/9 · VIA THE INN 12px",
+   "Not completed 13px",
+   "The Inn · 4/9 · IF YOU FOUGHT 12px"
+  ]
+ },
+ "v49-desk-wt": {
+  "scrollHeight": 3006,
+  "mainBox": [
+   233,
+   248,
+   800
+  ],
+  "nilfAttr": "walk",
+  "pCount": 25,
+  "pFontMin": 12,
+  "pFontMedian": 16,
+  "overflowX": [
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name",
+   "sw-box",
+   "sw-check sw-check-proxy phoenix-action",
+   "sw-check-mark",
+   "sw-name"
+  ],
+  "clipped": [],
+  "heads": [
+   "The Nilfgaardian Connection @38.4px",
+   "Arrival @26px",
+   "WHAT TO DO @13px",
+   "WHY @13px",
+   "Related quests and tasks @26px",
+   "Region Tools @36.8px"
+  ],
+  "leads": [],
+  "smallText": [
+   "QUEST WALKTHROUGH / VELEN 12px",
+   "Main quest 10.4px",
+   "OBJECTIVE 1 OF 8 13px",
+   "SELECTED OBJECTIVE 12.5px",
+   "Reading position never records 13px"
+  ]
+ }
+}

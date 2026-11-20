@@ -1,0 +1,147 @@
+{
+ "1": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Arrival",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Arrival\n\nHanged Man’s Tree\n\nSELECTED OBJECTIVE\nTravel to Velen.\nWHAT TO DO\nAfter Imperial Audience, travel to Velen.\nFrom the Hanged Man’s Tree signpost, follow The Nilfgaardian Connection toward the Inn at the Crossroads.\nWHY\n\nCheck equipment condition and replenish supplies before taking the road."
+ },
+ "2": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Road",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Road\n\nMulbrydale approach\n\nSELECTED OBJECTIVE\nGo to the Inn at the Crossroads.\nWHAT TO DO\nFollow the quest route through Mulbrydale and toward the inn.\nThe priest west of Mulbrydale offers Funeral Pyres.\nJohn Verdun’s encounter is along the riverbank on this approach.\nTheir guides remain separate activities.\nWHY\n\nOpen each nearby activity’s owner hub below. Taking a detour does not advance or complete the main quest."
+ },
+ "3": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "The Inn",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "The Inn\n\nInn at the Crossroads\n\nSELECTED OBJECTIVE\nAsk about the agent called Hendrik at the Inn at the Crossroads.\nWHAT TO DO\nAsk the innkeeper about Hendrik.\nResolve the interruption by the Baron’s men, then finish the conversation with the innkeeper to learn where to look next.\nWHY\n\nYou can read the notice board and inspect the innkeeper’s services while at this stop. Collecting a notice is not completing its contract.\n\nInformation"
+ },
+ "4": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Heatherton",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Heatherton\n\nHendrik’s hut\n\nSELECTED OBJECTIVE\nLook for the agent called Hendrik in the village of Heatherton.\nWHAT TO DO\nDeal with the rabid dogs and speak to the survivor.\nSearch Hendrik’s body, including his boots, for the key.\nExamine the animal-skin rug—or move it with Aard—to reveal the cellar entrance.\nBelow, examine the candlestick to reveal the hidden compartment and read Hendrik’s notes.\nWHY\n\nReading the notes finishes this quest and provides two investigative leads. Mark completion separately in the owner hub when you have done this in the game."
+ },
+ "5": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Arrival",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Arrival\n\nHanged Man’s Tree\n\nSELECTED OBJECTIVE\nTravel to Velen.\nWHAT TO DO\nAfter Imperial Audience, travel to Velen.\nFrom the Hanged Man’s Tree signpost, follow The Nilfgaardian Connection toward the Inn at the Crossroads.\nWHY\n\nCheck equipment condition and replenish supplies before taking the road."
+ },
+ "6": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Arrival",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Arrival\n\nHanged Man’s Tree\n\nSELECTED OBJECTIVE\nTravel to Velen.\nWHAT TO DO\nAfter Imperial Audience, travel to Velen.\nFrom the Hanged Man’s Tree signpost, follow The Nilfgaardian Connection toward the Inn at the Crossroads.\nWHY\n\nCheck equipment condition and replenish supplies before taking the road."
+ },
+ "7": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Arrival",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Arrival\n\nHanged Man’s Tree\n\nSELECTED OBJECTIVE\nTravel to Velen.\nWHAT TO DO\nAfter Imperial Audience, travel to Velen.\nFrom the Hanged Man’s Tree signpost, follow The Nilfgaardian Connection toward the Inn at the Crossroads.\nWHY\n\nCheck equipment condition and replenish supplies before taking the road."
+ },
+ "8": {
+  "h": [
+   "The Nilfgaardian Connection",
+   "Arrival",
+   "Related quests and tasks"
+  ],
+  "objs": [
+   "velen.nilf:travel: Travel to Velen.",
+   "velen.nilf:inn: Go to the Inn at the Crossroads.",
+   "velen.nilf:ask: Ask about the agent called Hendrik at the Inn at the Crossroads.",
+   "velen.nilf:finish: Finish talking to the innkeep about the agent called Hendrik.",
+   "velen.nilf:look: Look for the agent called Hendrik in the village of Heatherton.",
+   "velen.nilf:survivor: Talk to the survivor and learn what happened in the village.",
+   "velen.nilf:find: Find the agent called Hendrik.",
+   "velen.nilf:search: Search the agent’s hut using your Witcher Senses."
+  ],
+  "reading": "Arrival\n\nHanged Man’s Tree\n\nSELECTED OBJECTIVE\nTravel to Velen.\nWHAT TO DO\nAfter Imperial Audience, travel to Velen.\nFrom the Hanged Man’s Tree signpost, follow The Nilfgaardian Connection toward the Inn at the Crossroads.\nWHY\n\nCheck equipment condition and replenish supplies before taking the road."
+ },
+ "hub": "VELEN · SUGGESTED LEVEL 5\n\nThe Nilfgaardian Connection\n\nFollow the imperial agent’s trail through a country broken by war.\n\nContinue walkthrough\nStep 4 · Heatherton\n\nReference tools\n\nQuest cards\nRegions\nPreparation & quest details\n\nFollow the imperial agent’s trail through a country broken by war.\n\nVelen · Suggested level 5.\n\n1. Arrival — Check equipment condition and replenish supplies before taking the road.\n\n2. Road — Open each nearby activity’s owner hub below. Taking a detour does not advance or complete the main quest.\n\n3. The Inn — You can read the notice board and inspect the innkeeper’s services while at this stop. Collecting a notice is not completing its contract.\n\n4. Heatherton — Reading the notes finishes this quest and provides two investigative leads. Mark completion separately in the owner hub when you have done this in the game.\n\nReading position never records progress. Record in-game objectives in Quest progress.\n\nQuest progress · 0/8\n0/8 completed\n\nArrival\n\nARRIVAL · 1/9\n\nTravel to Velen.\n\nNot completed\n\nROAD · 2/9\n\nGo to the Inn at the Crossroads.\n\nNot completed\n\nTHE INN · 3/9 · VIA THE INN\n\nAsk about the agent called Hendrik at the Inn at the Crossroads.\n\nNot completed\n\nRecord / review choice\n\nTHE INN · 4/9 · IF YOU FOUGHT\n\nDefeat the baron’s men.\n\nConfirm the preceding choice to establish this path.\n\nTHE INN · 5/9 · VIA THE INN\n\nFinish talking to the innkeep about the agent called Hendrik.\n\nNot completed\n\nHEATHERTON · 6/9\n\nLook for the agent called Hendrik in the village of Heatherton.\n\nNot completed\n\nRecord / review choice\n\nHEATHERTON · 7/9\n\nTalk to the survivor and learn what happened in the village.\n\nNot completed\n\nHEATHERTON · 8/9\n\nFind the agent called Hendrik.\n\nNot completed\n\nHEATHERTON · 9/9\n\nSearch the agent’s hut using your Witcher Senses.\n\nNot completed\n\nIncludes finding the hidden ledger and reading Hendrik’s notes, which finishes the quest.\n\nPrevious\nSwipe objectives\nNext\nFind an objective\nFind an objective\nJump to chapter or objective\nTravel to Velen.\nGo to the Inn at the Crossroads.\nAsk about the agent called Hendrik at the Inn at the Crossroads.\nDefeat the baron’s men.\nFinish talking to the innkeep about the agent called Hendrik.\nLook for the agent called Hendrik in the village of Heatherton.\nTalk to the survivor and learn what happened in the village.\nFind the agent called Hendrik.\nSearch the agent’s hut using your Witcher Senses.\nStory & correction controls\n\nProgress actions\n\nRecord whole quest complete\nUndo last progress change\n\nRecord completed in-game objectives. These marks stay separate from your reading position.\n\nNearby activities\nSide quests & encounters\nFuneral Pyres\nOpen Entry\n\nFits the road: the priest west of Mulbrydale offers it. Completion is recorded in its own hub.\n\nAt the Mercy of Strangers\nOpen Entry\n\nFits the road: the riverbank on the approach to the inn. Its decision is recorded in its own hub.\n\nSwipe to browse\nServices & notices\nInnkeeper\nOpen Entry\n\nAt the Inn at the Crossroads: food, drink and a shop conversation.\n\nCollected notices\nOpen Entry\n\nNotices from the inn board, kept for later. Collecting a notice is not completing it.\n\nSwipe to browse\nAfter Hendrik’s notes\n\nNext leads · record the finished main quest in its hub when you have read the notes in game.\n\nBloody Baron\nHunting a Witch\nSources"
+}

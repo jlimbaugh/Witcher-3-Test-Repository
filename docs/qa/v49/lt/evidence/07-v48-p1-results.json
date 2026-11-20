@@ -1,0 +1,361 @@
+{
+ "t1_afterTravel": {
+  "act": {
+   "id": "velen.nilf",
+   "legacy": "nilf",
+   "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection",
+   "requires": [],
+   "objectives": {
+    "velen.nilf:travel": "done"
+   },
+   "complete": false,
+   "legacyComplete": false,
+   "failed": false,
+   "undo": {
+    "objectives": {},
+    "legacyComplete": false,
+    "failed": false,
+    "choice": null,
+    "route": null
+   }
+  },
+  "ui": [
+   true,
+   true
+  ],
+  "counts": "1 of 8 required completed"
+ },
+ "t1_afterReload": {
+  "act": {
+   "velen.nilf:travel": "done"
+  },
+  "ui": [
+   true,
+   true
+  ],
+  "counts": "1 of 8 required completed",
+  "hash": "#velen/quest/nilf/1"
+ },
+ "t1_back": {
+  "hash": "#velen/quest/nilf/1",
+  "ui": [
+   true,
+   true
+  ]
+ },
+ "t1_fwd": {
+  "hash": "#velen/quest/nilf/4"
+ },
+ "t4_dialog": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\n1 earlier required objective\nUncheck to mark only this objective.\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t4_afterCancel": {
+  "same": true,
+  "ui": [
+   false,
+   false
+  ]
+ },
+ "t2_sel": "select ,peace,fight",
+ "t2_dialogAfterSel": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\n1 earlier required objective\nUncheck to mark only this objective.\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t2_confirm": "clicked Confirm update",
+ "t2_after": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "counts": "3 of 9 required completed",
+  "status": [
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Progress and your place save in this browser.",
+   "Your Velen progress saves in this browser.",
+   "Progress updated. Quick Undo is available.",
+   "Undo last update"
+  ]
+ },
+ "t2_undoBtn": {
+  "disabled": false,
+  "text": "Undo last progress change",
+  "ctx": "Record whole quest completeUndo last progress change"
+ },
+ "t2_undoClickErr": "Node is either not clickable or not an Element",
+ "t2_afterUndo": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "counts": "3 of 9 required completed",
+  "ui": {
+   "ask": [
+    true,
+    true
+   ],
+   "travel": [
+    true
+   ]
+  },
+  "msgs": []
+ },
+ "t3_dialog": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\n2 earlier required objectives\nUncheck to mark only this objective.\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t3_catch": false,
+ "t3_sel": "none",
+ "t3_dialog2": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\n2 earlier required objectives\nUncheck to mark only this objective.\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t3_confirm": "clicked Confirm update",
+ "t3_after": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done",
+   "velen.nilf:look": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "counts": "4 of 9 required completed"
+ },
+ "t3_reload": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done",
+   "velen.nilf:look": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  }
+ },
+ "t5_editBtn": "Record / review choice",
+ "t5_editDialog": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t5_sel": "select ,peace,fight",
+ "t5_dialog2": [
+  {
+   "id": "",
+   "text": "Review progress update\nThe Nilfgaardian Connection\nAlso complete earlier required steps\nWhat happened at the Inn at the Crossroads?\nChoose what happened…\nSettled peacefully with the baron’s men\nFought the baron’s men\nConsequences · Spoilers\nOne Undo reverses this update.\nCancel\nConfirm update",
+   "buttons": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "value": "on",
+     "name": "",
+     "text": "Also complete earlier required steps"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Cancel"
+    },
+    {
+     "tag": "BUTTON",
+     "type": "button",
+     "value": "",
+     "name": "",
+     "text": "Confirm update"
+    }
+   ]
+  }
+ ],
+ "t5_confirm": "clicked Confirm update",
+ "t5_after": {
+  "obj": {
+   "velen.nilf:travel": "done",
+   "velen.nilf:inn": "done",
+   "velen.nilf:ask": "done",
+   "velen.nilf:look": "done"
+  },
+  "choices": {
+   "inn": {
+    "activity": "velen.nilf",
+    "value": "fight",
+    "source": "https://www.witcher.tools/quests/the-nilfgaardian-connection"
+   }
+  },
+  "counts": "4 of 9 required completed"
+ },
+ "logs": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "strip": {
+  "role": "navigation",
+  "name": "Jump to a numbered card",
+  "childCount": 40,
+  "first": [
+   {
+    "role": "button",
+    "backendNodeId": 18273,
+    "loaderId": "12EBC6B88380C9174F4BD0AB31058C3F",
+    "name": "1. The Nilfgaardian Connection"
+   },
+   {
+    "role": "button",
+    "backendNodeId": 18274,
+    "loaderId": "12EBC6B88380C9174F4BD0AB31058C3F",
+    "name": "2. Funeral Pyres"
+   },
+   {
+    "role": "button",
+    "backendNodeId": 18275,
+    "loaderId": "12EBC6B88380C9174F4BD0AB31058C3F",
+    "name": "3. Bloody Baron"
+   }
+  ],
+  "current": []
+ },
+ "counterLive": "polite",
+ "#velen/hub/nilf": {
+  "count": 21,
+  "unnamed": [],
+  "sample": [
+   "link: PHOENIX",
+   "heading: The Nilfgaardian Connection",
+   "link: Start walkthrough Step 1 · Arrival",
+   "link: Quest cards",
+   "link: Regions",
+   "heading: Nearby activities",
+   "heading: Side quests & encounters",
+   "link: Funeral Pyres Open Entry",
+   "link: At the Mercy of Strangers Open Entry",
+   "heading: Services & notices",
+   "link: Innkeeper Open Entry",
+   "link: Collected notices Open Entry",
+   "heading: After Hendrik’s notes",
+   "link: Bloody Baron",
+   "link: Hunting a Witch",
+   "link: Sources",
+   "link: A&D image credits",
+   "link: Official media ↗",
+   "link: GWENT art ↗",
+   "link: Skip to content",
+   "button: Guide navigation"
+  ]
+ },
+ "#velen/quest/nilf/1": {
+  "count": 37,
+  "unnamed": [],
+  "sample": [
+   "link: PHOENIX",
+   "heading: The Nilfgaardian Connection",
+   "button: No warning for this objective [disabled]",
+   "checkbox: Mark complete: Travel to Velen. checked=false",
+   "button: Select objective: Go to the Inn at the Crossroads.",
+   "button: Select objective: Ask about the agent called Hendr",
+   "button: Select objective: Finish talking to the innkeep ab",
+   "button: Select objective: Look for the agent called Hendri",
+   "button: Select objective: Talk to the survivor and learn w",
+   "button: Select objective: Find the agent called Hendrik.",
+   "button: Select objective: Search the agent’s hut using you",
+   "heading: Arrival",
+   "heading: WHAT TO DO",
+   "heading: WHY",
+   "heading: Related quests and tasks",
+   "link: Funeral Pyres →",
+   "link: At the Mercy of Strangers →",
+   "link: Innkeeper →",
+   "link: Collected notices →",
+   "link: Return to hub",
+   "link: Quest cards",
+   "heading: Region Tools",
+   "link: Home",
+   "link: Regions",
+   "link: Field Reference",
+   "link: Progress",
+   "link: Constellation",
+   "button: Warnings",
+   "button: Search",
+   "link: Route maps",
+   "link: Merchants",
+   "link: Sources",
+   "link: A&D image credits",
+   "link: Official media ↗",
+   "link: GWENT art ↗",
+   "link: Skip to content",
+   "button: Guide navigation"
+  ]
+ }
+}

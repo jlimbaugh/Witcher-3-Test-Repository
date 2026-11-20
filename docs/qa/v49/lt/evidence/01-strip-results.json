@@ -1,0 +1,583 @@
+{
+ "375": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "40",
+    "1",
+    "2"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0.3,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "154.75px",
+    "frameCenter": 187.5,
+    "railCenter": 187.5
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "390": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "40",
+    "1",
+    "2"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "430": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "39",
+    "40",
+    "1",
+    "2",
+    "3"
+   ],
+   "partlyVisible": 7,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "179.5px",
+    "frameCenter": 215,
+    "railCenter": 215
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "852-landscape": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "37",
+    "38",
+    "39",
+    "40",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "partlyVisible": 11,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "356px",
+    "frameCenter": 426,
+    "railCenter": 426
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "932-landscape": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "partlyVisible": 13,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "396px",
+    "frameCenter": 466,
+    "railCenter": 466
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "desktop-1280": {
+  "initial": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "partlyVisible": 15,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "480px",
+    "frameCenter": 632.5,
+    "railCenter": 632.5
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": null,
+   "scrollY": 0
+  }
+ },
+ "names": [
+  "1. The Nilfgaardian Connection",
+  "2. Funeral Pyres",
+  "3. Bloody Baron",
+  "4. Hunting a Witch",
+  "5. A Princess in Distress",
+  "6. Ciri’s Room",
+  "7. Wandering in the Dark",
+  "8. Magic Lamp",
+  "9. Ladies of the Wood",
+  "10. The Whispering Hillock",
+  "11. Ciri’s Story: The King of the Wolves",
+  "12. Family Matters",
+  "13. Ciri’s Story: The Race",
+  "14. Ciri’s Story: Out of the Shadows",
+  "15. Return to Crookback Bog",
+  "16. Ciri’s Story: Fleeing the Bog",
+  "17. An Invitation from Keira Metz",
+  "18. A Towerful of Mice",
+  "19. A Favor for a Friend",
+  "20. For the Advancement of Learning",
+  "21. Master Armorers",
+  "22. Where the Cat and Wolf Play…",
+  "23. Take What You Want",
+  "24. The Fall of the House of Reardon",
+  "25. Ghosts of the Past",
+  "26. In the Eternal Fire’s Shadow",
+  "27. Thou Shalt Not Pass",
+  "28. Fake Papers",
+  "29. Bitter Harvest",
+  "30. Wild at Heart",
+  "31. A Greedy God",
+  "32. A Dog’s Life",
+  "33. Forefathers’ Eve",
+  "34. Defender of the Faith",
+  "35. Last Rites",
+  "36. Fools’ Gold",
+  "37. The Truth Is in the Stars",
+  "38. Witcher Wannabe",
+  "39. Love’s Cruel Snares",
+  "40. Blood Ties"
+ ],
+ "wrapBack": {
+  "tap": "tapped",
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "39",
+    "40",
+    "1"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "40. Blood Ties",
+   "centeredNumber": "40",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "40 / 40",
+   "selected": "Blood Ties",
+   "selectedArtAlt": "art-velen/blood-ties.webp",
+   "panelTitle": "Blood Ties",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/blood-ties/1",
+    "#velen/lead/blood-ties",
+    "#velen/map/blood-ties"
+   ],
+   "focused": "40. Blood Ties",
+   "scrollY": 0
+  }
+ },
+ "wrapFwd": {
+  "tap": "tapped",
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "40",
+    "1",
+    "2"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "1. The Nilfgaardian Connection",
+   "centeredNumber": "1",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "1 / 40",
+   "selected": "The Nilfgaardian Connection",
+   "selectedArtAlt": "art-velen/nilf.webp",
+   "panelTitle": "The Nilfgaardian Connection",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/nilf/1",
+    "#velen/hub/nilf",
+    "#velen/map/nilf"
+   ],
+   "focused": "1. The Nilfgaardian Connection",
+   "scrollY": 0
+  }
+ },
+ "scrollBack3": {
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "37",
+    "38",
+    "39"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "38. Witcher Wannabe",
+   "centeredNumber": "38",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "38 / 40",
+   "selected": "Witcher Wannabe",
+   "selectedArtAlt": "art-velen/witcher-wannabe.webp",
+   "panelTitle": "Witcher Wannabe",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/witcher-wannabe/1",
+    "#velen/lead/witcher-wannabe",
+    "#velen/map/witcher-wannabe"
+   ],
+   "focused": "38. Witcher Wannabe",
+   "scrollY": 0
+  }
+ },
+ "scrollFwd5": {
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "2",
+    "3",
+    "4"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "3. Bloody Baron",
+   "centeredNumber": "3",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "3 / 40",
+   "selected": "Bloody Baron",
+   "selectedArtAlt": "art-velen/baron.webp",
+   "panelTitle": "Bloody Baron",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/baron/1",
+    "#velen/lead/baron",
+    "#velen/map/baron"
+   ],
+   "focused": "3. Bloody Baron",
+   "scrollY": 0
+  }
+ },
+ "lateJump": {
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "39",
+    "40",
+    "1"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "40. Blood Ties",
+   "centeredNumber": "40",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "40 / 40",
+   "selected": "Blood Ties",
+   "selectedArtAlt": "art-velen/blood-ties.webp",
+   "panelTitle": "Blood Ties",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/blood-ties/1",
+    "#velen/lead/blood-ties",
+    "#velen/map/blood-ties"
+   ],
+   "focused": "40. Blood Ties",
+   "scrollY": 0
+  }
+ },
+ "touchSwipeLeft200": {
+  "after": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "39",
+    "40",
+    "1"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "40. Blood Ties",
+   "centeredNumber": "40",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "40 / 40",
+   "selected": "Blood Ties",
+   "selectedArtAlt": "art-velen/blood-ties.webp",
+   "panelTitle": "Blood Ties",
+   "actions": [
+    "#quest-lilac",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/blood-ties/1",
+    "#velen/lead/blood-ties",
+    "#velen/map/blood-ties"
+   ],
+   "focused": "40. Blood Ties",
+   "scrollY": 0
+  }
+ },
+ "verticalOverStrip": {
+  "before": 0,
+  "after": 0
+ },
+ "progressNeutral": true,
+ "lsKeys": [
+  "phoenix.region.velen.v1",
+  "phoenix.velen.arrival.v1",
+  "phoenix.whiteorchard.interaction.v1",
+  "phoenix.whiteorchard.pendingWarnings.v1"
+ ],
+ "openFromLate": {
+  "selected": "Blood Ties",
+  "actions": [
+   "#quest-lilac",
+   "#whiteorchard-tree/hub-arrival/q-lilac",
+   "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+   "#velen/quest/blood-ties/1",
+   "#velen/lead/blood-ties",
+   "#velen/map/blood-ties"
+  ],
+  "walkthrough": {
+   "hash": "#quest-lilac",
+   "h1": [
+    "Velen",
+    "The Nilfgaardian Connection",
+    "Blood Ties"
+   ]
+  },
+  "back": {
+   "count": 40,
+   "btn": "68x64",
+   "fullyVisible": [
+    "39",
+    "40",
+    "1"
+   ],
+   "partlyVisible": 5,
+   "ariaCurrent": "40. Blood Ties",
+   "centeredNumber": "40",
+   "centerOffsetPx": 0.5,
+   "pointer": {
+    "w": "48px",
+    "h": "46px",
+    "left": "161.5px",
+    "frameCenter": 195,
+    "railCenter": 195
+   },
+   "counter": "40 / 40",
+   "selected": "Blood Ties",
+   "selectedArtAlt": "art-velen/blood-ties.webp",
+   "panelTitle": "Blood Ties",
+   "actions": [
+    "#quest-lilac/1",
+    "#whiteorchard-tree/hub-arrival/q-lilac",
+    "#whiteorchard-map/cluster/hub-arrival/q-lilac",
+    "#velen/quest/blood-ties/1",
+    "#velen/lead/blood-ties",
+    "#velen/map/blood-ties"
+   ],
+   "focused": null,
+   "scrollY": 0
+  },
+  "hub": {
+   "hash": "#whiteorchard-tree/hub-arrival/q-lilac",
+   "h1": [
+    "Velen",
+    "The Nilfgaardian Connection",
+    "Blood Ties"
+   ]
+  }
+ },
+ "keyboard": {
+  "focusable": 40,
+  "hidden": 160
+ },
+ "logs": [
+  "error: Failed to load resource: the server responded with a status of 404 ()"
+ ]
+}

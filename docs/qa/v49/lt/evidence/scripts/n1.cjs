@@ -1,0 +1,12 @@
+const H=require('./h.cjs');const fs=require('fs');const EV='/workspace/qa49/docs/qa/v49/lt/evidence/';
+const base=process.argv[2]||H.BASE, tag=process.argv[3]||'v49';
+(async()=>{const {p,close}=await H.launch({mobile:true,w:390,h:844});
+await p.goto(base+'#velen',{waitUntil:'networkidle2'});await H.sleep(2000);
+const info=await p.evaluate(()=>{const f=document.querySelector('#velen-screen .deck-jump');if(!f)return {none:true,hash:location.hash,h1:[...document.querySelectorAll('h1,h2')].map(h=>h.textContent).slice(0,8)};
+const r=f.querySelector('.deck-jump-rail');const bs=[...r.children];const vis=bs.filter(b=>{const x=b.getBoundingClientRect(),rr=r.getBoundingClientRect();return x.right>rr.left+2&&x.left<rr.right-2;});
+const cs=getComputedStyle(f,'::before');const fr=f.getBoundingClientRect();
+return {count:bs.length/5,first:bs[0].getBoundingClientRect().width+'x'+bs[0].getBoundingClientRect().height,visible:vis.filter(b=>!b.hasAttribute('aria-hidden')||1).map(b=>b.textContent).join(','),cur:r.querySelector('[aria-current]:not([aria-hidden])')?.getAttribute('aria-label'),pointer:{bg:cs.backgroundImage,w:cs.width,h:cs.height,top:cs.top},frame:[fr.x,fr.y,fr.width,fr.height],sel:document.querySelector('[data-velen-deck=quests] .quest-card.selected')?.getAttribute('aria-label'),panel:document.querySelector('.selected-panel h2,.selected-panel h3')?.textContent,hash:location.hash};});
+console.log(JSON.stringify(info,null,1));
+await p.evaluate(()=>document.querySelector('#velen-screen .deck-jump')?.scrollIntoView({block:'center'}));await H.sleep(500);
+await p.screenshot({path:EV+'recon-'+tag+'-390.jpg',type:'jpeg',quality:60});
+console.log(p._logs.filter(l=>/error/i.test(l)).slice(0,5));await close();})();

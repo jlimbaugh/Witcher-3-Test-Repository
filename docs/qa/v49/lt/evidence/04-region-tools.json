@@ -1,0 +1,844 @@
+{
+ "console": {
+  "tiles": [
+   {
+    "t": "Home",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/home.webp"
+   },
+   {
+    "t": "Regions",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/regions.webp"
+   },
+   {
+    "t": "Field Reference",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/reference.webp"
+   },
+   {
+    "t": "Progress",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/progress.webp"
+   },
+   {
+    "t": "Constellation",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/constellation.webp"
+   },
+   {
+    "t": "Warnings",
+    "tag": "BUTTON",
+    "href": null,
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/warnings.webp"
+   },
+   {
+    "t": "Search",
+    "tag": "BUTTON",
+    "href": null,
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/reference.webp"
+   },
+   {
+    "t": "Route maps",
+    "tag": "A",
+    "href": "#velen/map",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "velen-route-map-art.svg"
+   },
+   {
+    "t": "Merchants",
+    "tag": "A",
+    "href": "#velen/merchants",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "gwent-r15/gabor.webp"
+   }
+  ],
+  "results": [
+   {
+    "tile": "Home",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 0
+    }
+   },
+   {
+    "tile": "Regions",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 0
+    }
+   },
+   {
+    "tile": "Field Reference",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 0
+    }
+   },
+   {
+    "tile": "Progress",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 0
+    }
+   },
+   {
+    "tile": "Constellation",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 0
+    }
+   },
+   {
+    "tile": "Warnings",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": [
+      "phoenix-medallion fan-open"
+     ]
+    },
+    "returned": {
+     "closeBtn": null,
+     "afterEscape": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2617
+    }
+   },
+   {
+    "tile": "Search",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [
+      "guide-search-dialog: Search the guide Close × Search Filters Search covers White Orchard, Velen and "
+     ],
+     "overlays": []
+    },
+    "returned": {
+     "closeBtn": "Close ×",
+     "afterEscape": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2617
+    }
+   },
+   {
+    "tile": "Route maps",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen/map",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen route maps",
+      "Browse quest routes"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2617
+    }
+   },
+   {
+    "tile": "Merchants",
+    "from": "#velen",
+    "readerBefore": 2617,
+    "opened": {
+     "hash": "#velen/merchants",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Innkeeper & notices",
+      "Services at this stop"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "Velen",
+       "The Nilfgaardian Connection",
+       "The Nilfgaardian Connection"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2617
+    }
+   }
+  ]
+ },
+ "walkthrough": {
+  "tiles": [
+   {
+    "t": "Home",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/home.webp"
+   },
+   {
+    "t": "Regions",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/regions.webp"
+   },
+   {
+    "t": "Field Reference",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/reference.webp"
+   },
+   {
+    "t": "Progress",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/progress.webp"
+   },
+   {
+    "t": "Constellation",
+    "tag": "A",
+    "href": "#velen",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/constellation.webp"
+   },
+   {
+    "t": "Warnings",
+    "tag": "BUTTON",
+    "href": null,
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "navigation-art-v26/warnings.webp"
+   },
+   {
+    "t": "Search",
+    "tag": "BUTTON",
+    "href": null,
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "navigation-art-v26/reference.webp"
+   },
+   {
+    "t": "Route maps",
+    "tag": "A",
+    "href": "#velen/map",
+    "w": 152,
+    "h": 132,
+    "x": 200,
+    "img": "velen-route-map-art.svg"
+   },
+   {
+    "t": "Merchants",
+    "tag": "A",
+    "href": "#velen/merchants",
+    "w": 152,
+    "h": 132,
+    "x": 38,
+    "img": "gwent-r15/gabor.webp"
+   }
+  ],
+  "results": [
+   {
+    "tile": "Home",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Regions",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Field Reference",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Progress",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Constellation",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen",
+      "The Nilfgaardian Connection",
+      "The Nilfgaardian Connection"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Warnings",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen/quest/nilf/3",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "The Nilfgaardian Connection",
+      "The Inn",
+      "Related quests and tasks"
+     ],
+     "dialogs": [],
+     "overlays": [
+      "phoenix-medallion fan-open"
+     ]
+    },
+    "returned": {
+     "closeBtn": null,
+     "afterEscape": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Search",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen/quest/nilf/3",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "The Nilfgaardian Connection",
+      "The Inn",
+      "Related quests and tasks"
+     ],
+     "dialogs": [
+      "guide-search-dialog: Search the guide Close × Search Filters Search covers White Orchard, Velen and "
+     ],
+     "overlays": []
+    },
+    "returned": {
+     "closeBtn": "Close ×",
+     "afterEscape": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Route maps",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen/map",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Velen route maps",
+      "Browse quest routes"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   },
+   {
+    "tile": "Merchants",
+    "from": "#velen/quest/nilf/3",
+    "readerBefore": 2309,
+    "opened": {
+     "hash": "#velen/merchants",
+     "screens": [
+      "velen",
+      "velen-screen"
+     ],
+     "h": [
+      "Innkeeper & notices",
+      "Services at this stop"
+     ],
+     "dialogs": [],
+     "overlays": []
+    },
+    "returned": {
+     "afterBack": {
+      "hash": "#velen/quest/nilf/3",
+      "screens": [
+       "velen",
+       "velen-screen"
+      ],
+      "h": [
+       "The Nilfgaardian Connection",
+       "The Inn",
+       "Related quests and tasks"
+      ],
+      "dialogs": [],
+      "overlays": []
+     },
+     "readerTop": 2309
+    }
+   }
+  ]
+ },
+ "wolf": {
+  "wolf": "medallion-core Close guide navigation",
+  "items": [
+   "Search the guide…",
+   "Home◆",
+   "Regions◆",
+   "Field Reference◆",
+   "Progress◆",
+   "Constellation◆",
+   "4FINALWarnings◆"
+  ]
+ }
+}

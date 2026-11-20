@@ -1,0 +1,81 @@
+{
+ "v49 hub .quest-hub-description": {
+  "color": "rgb(42, 33, 27)",
+  "fs": "16px",
+  "text": "Follow the imperial agent’s trail throug",
+  "approxContrast": "9.81"
+ },
+ "v49 hub .quest-hub-paper .quiet": {
+  "color": "rgb(75, 57, 45)",
+  "fs": "13px",
+  "text": "Reading position never records progress.",
+  "approxContrast": "5.1"
+ },
+ "v49 hub .nilf-hub-sources, .quest-hub-sources, a[href*=\"velen-sources\"]": {
+  "color": "rgb(227, 218, 198)",
+  "fs": "14.4px",
+  "text": "Sources",
+  "approxContrast": "1.83"
+ },
+ "v49 hub .quest-hub-briefing h1": {
+  "color": "rgb(244, 230, 207)",
+  "fs": "26.4px",
+  "text": "The Nilfgaardian Connection",
+  "approxContrast": "10.25"
+ },
+ "v49 wt .sw-reading p": {
+  "color": "rgb(74, 61, 49)",
+  "fs": "15px",
+  "text": "Hanged Man’s Tree",
+  "approxContrast": "7.21"
+ },
+ "v49 wt .sw-reading li": {
+  "color": "rgb(42, 33, 27)",
+  "fs": "20px",
+  "text": "After Imperial Audience, travel to Velen",
+  "approxContrast": "11.33"
+ },
+ "v49 wt .sw-source-link, a[href*=\"velen-sources\"]": {
+  "color": "rgb(227, 218, 198)",
+  "fs": "14.4px",
+  "text": "Sources",
+  "approxContrast": "4.06"
+ },
+ "v48 hub .quest-hub-description": {
+  "color": "rgb(42, 33, 27)",
+  "fs": "17.6px",
+  "text": "Follow the imperial agent’s trail throug",
+  "approxContrast": "9.88"
+ },
+ "v48 hub .quest-hub-paper .quiet": {
+  "color": "rgb(81, 72, 59)",
+  "fs": "13px",
+  "text": "Reading position never records progress.",
+  "approxContrast": "4.91"
+ },
+ "v48 hub .nilf-hub-sources, .quest-hub-sources, a[href*=\"velen-sources\"]": "not found",
+ "v48 hub .quest-hub-briefing h1": {
+  "color": "rgb(244, 230, 207)",
+  "fs": "32px",
+  "text": "The Nilfgaardian Connection",
+  "approxContrast": "7.04"
+ },
+ "v48 wt .sw-reading p": {
+  "color": "rgb(74, 61, 49)",
+  "fs": "15px",
+  "text": "Hanged Man’s Tree",
+  "approxContrast": "5.85"
+ },
+ "v48 wt .sw-reading li": {
+  "color": "rgb(42, 33, 27)",
+  "fs": "20px",
+  "text": "After Imperial Audience, travel to Velen",
+  "approxContrast": "11.36"
+ },
+ "v48 wt .sw-source-link, a[href*=\"velen-sources\"]": {
+  "color": "rgb(244, 236, 217)",
+  "fs": "14.4px",
+  "text": "Sources",
+  "approxContrast": "8.59"
+ }
+}
