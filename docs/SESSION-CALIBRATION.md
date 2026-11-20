@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner approved hub batch 4 (df94197). Hub batch 5 adds saved walkthrough counts to the quest cards and selected panels for Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Sixteen milestones. Phone approval pending.
+
 Owner approved hub batch 3 (ef88c18). Hub batch 4 adds saved walkthrough counts to the quest cards and selected panels for For the Advancement of Learning, Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Fourteen milestones. Phone approval pending.
 
 Owner approved hub batch 2 (bbc84c0). Hub batch 3 adds saved walkthrough counts to the quest cards and selected panels for Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Ten milestones. Phone approval pending.
