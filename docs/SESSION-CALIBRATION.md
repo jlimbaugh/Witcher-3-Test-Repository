@@ -1,6 +1,8 @@
 # Phoenix session calibration
 
-Owner passed hub batch 12 (3591de8). Hub batch 13 adds saved walkthrough counts to the quest cards and selected panels for The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt has two required milestones, one for its clue and one for its treasure. Phone approval pending.
+Owner passed hub batch 13 (7169c62). Hub batch 14 closes the 70-entry hub progress review with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven required milestones. The four Griffin armor diagrams share one milestone. Phone approval pending.
+
+Owner passed hub batch 12 (3591de8). Hub batch 13 adds saved walkthrough counts to the quest cards and selected panels for The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt has two required milestones, one for its clue and one for its treasure.
 
 Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure.
 
