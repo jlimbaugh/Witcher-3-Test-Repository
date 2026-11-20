@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 2 (082ebe6). Batch 3 covers Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Review their ten walkthrough milestones together.
+
 Owner passed Batch 1 (7cbeaf2). Batch 2 covers The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. Each story choice counts once regardless of outcome. The race counts either finish order.
 
 Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.

@@ -14,7 +14,8 @@ const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{cons
 const cases=[['princess',2],['ciris-room',2],['wandering-in-the-dark',4],['magic-lamp',3],['ladies-of-the-wood',4]];
 let seed={};
 const secondBatch=[['whispering-hillock',2],['king-of-the-wolves',3],['family-matters',4],['ciris-race',1],['out-of-the-shadows',2]];
-for(const [id,total] of [...cases,...secondBatch])await test(id,async()=>{
+const thirdBatch=[['return-to-crookback-bog',3],['fleeing-the-bog',1],['keira-invitation',1],['towerful-of-mice',3],['favor-for-a-friend',2]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);

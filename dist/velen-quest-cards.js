@@ -259,6 +259,7 @@
       ]
     },
     'return-to-crookback-bog': {
+      objectiveIds:['reach-anna', 'resolve-annas-condition', 'collect-payment'],
       art:'art-velen/return-to-crookback-bog.webp',
       name:'Return to Crookback Bog',kind:side,level:9,place:'Downwarren and Crookback Bog',
       briefing:'Join the Baron and Tamara in their search for Anna.',
@@ -272,6 +273,7 @@
       ]
     },
     'fleeing-the-bog': {
+      objectiveIds:['reach-escape-point'],
       art:'art-velen/fleeing-the-bog.webp',
       name:'Ciri’s Story: Fleeing the Bog',kind:main,level:5,place:'Crookback Bog',
       briefing:'Escape the Crones’ territory as Ciri.',
@@ -281,6 +283,7 @@
       stages:[{title:'Run through the bog',place:'Crones’ village and escape path',actions:['As soon as you regain control, follow the quest route away from the hut.','Use Ciri’s dodge to pass enemies and keep moving until the escape scene triggers.'],links:[['Ladies of the Wood','ladies-of-the-wood']]}]
     },
     'keira-invitation': {
+      objectiveIds:['accept-fyke-isle-investigation'],
       art:'art-velen/keira-invitation.webp',
       name:'An Invitation from Keira Metz',kind:side,place:'Keira’s cottage',
       briefing:'Find out why Keira invited you back after the ruins.',
@@ -290,6 +293,7 @@
       stages:[{title:'Accept the Fyke Isle investigation',place:'Keira’s cottage',actions:['Ask Keira why she invited you.','Agree to investigate Fyke Isle. Take the magic lamp and xenovox.'],links:[['A Towerful of Mice','towerful-of-mice']]}]
     },
     'towerful-of-mice': {
+      objectiveIds:['reach-fyke-isle', 'hear-anabelle', 'lift-curse'],
       art:'art-velen/towerful-of-mice.webp',
       name:'A Towerful of Mice',kind:side,level:6,place:'Fyke Isle',
       briefing:'Investigate the hauntings at the tower and decide how to lift the curse.',
@@ -303,6 +307,7 @@
       ]
     },
     'favor-for-a-friend': {
+      objectiveIds:['find-package', 'return-to-keira'],
       art:'art-velen/favor-for-a-friend.webp',
       name:'A Favor for a Friend',kind:side,level:6,place:'Hangman’s Alley',
       briefing:'Find Keira’s missing delivery and bring it back to her cottage.',
