@@ -154,7 +154,7 @@ test('Combined release: changed app and Velen scripts leave the QA6 tag',()=>{
 test('combined release: every script/stylesheet changed or new since QA6 carries a tag distinct from QA6, QA5 and v45',()=>{
  assert.deepEqual(staleAgainst(refsOf(here),here),[]);
  const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
- assert.deepEqual([...new Set(changed)],['app.js', 'character-entry.js', 'character-gear.js', 'character-ui.js', 'character-vault.js', 'character.css', 'deck-jump.js', 'departure.js', 'desk-r11.js', 'diagrams-ui.js', 'exploration-ui.js', 'home-rebuild.css', 'home-ui.js', 'main-console.js', 'map-ui.js', 'medallion.js', 'navigation-art.css', 'nilf-forged.css', 'progress-star-chart.css', 'progress-star-chart.js', 'progression-ui.js', 'quest-hubs.js', 'search-model.js', 'search-ui.js', 'shared-walkthrough.css', 'shared-walkthrough.js', 'velen-activity-decks.css', 'velen-nilf-objectives.js', 'velen-nilf-ui.js', 'velen-quest-cards.js', 'velen-r18.js', 'velen-routing.js'],'only the combined release assets changed');
+ assert.deepEqual([...new Set(changed)],['app.js', 'character-entry.js', 'character-gear.js', 'character-ui.js', 'character-vault.js', 'character.css', 'deck-jump.js', 'departure.js', 'desk-r11.js', 'diagrams-ui.js', 'exploration-ui.js', 'home-rebuild.css', 'home-ui.js', 'main-console.js', 'map-ui.js', 'medallion.js', 'navigation-art.css', 'nilf-forged.css', 'progress-star-chart.css', 'progress-star-chart.js', 'progression-ui.js', 'quest-hubs.js', 'search-model.js', 'search-ui.js', 'shared-walkthrough.css', 'shared-walkthrough.js', 'velen-activity-decks.css', 'velen-nilf-map.css', 'velen-nilf-map.js', 'velen-nilf-objectives.js', 'velen-nilf-ui.js', 'velen-quest-cards.js', 'velen-r18.js', 'velen-routing.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).map(r=>[r.file,r.tag]));
  for(const f of ['medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
  for(const f of ['desk-r11.js', 'shared-walkthrough.css'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
@@ -165,7 +165,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['velen-nilf-ui.js'])assert.equal(tags[f],'v49-phone-fixes-2',f);
  for(const f of ['home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
  assert.equal(tags['shared-walkthrough.js'],'witch-objectives-1');
- for(const f of ['velen-r18.js','main-console.js','home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
+ for(const f of ['main-console.js','home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
+ for(const f of ['velen-r18.js','velen-nilf-map.js','velen-nilf-map.css'])assert.equal(tags[f],'nilf-area-map-1',f);
  assert.equal(tags['velen-activity-decks.css'],'footer-checklist-1');
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');

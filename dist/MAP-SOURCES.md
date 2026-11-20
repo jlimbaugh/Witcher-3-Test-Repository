@@ -52,3 +52,13 @@ Flags now live in `map-data.js` under explicit pin IDs, each with a source URL s
 - shopkeeper-1: Bram and Elsa's shared card stock since patch 1.04 — https://witcher-games.fandom.com/wiki/Elsa
 
 These are compact flags and conditions, not a full inventory or a claim that an already-purchased card remains in stock. The card facts were also cross-checked against https://www.gamerguides.com/the-witcher-3-wild-hunt/database/gwent/special-cards-2 and https://www.gamebanshee.com/thewitcher3/walkthrough/collectemall.php.
+
+## Velen · Nilfgaardian Connection quest-area pilot
+
+The terrain uses the same credited CD PROJEKT RED game map source described above. Fifteen Velen tiles from zoom 4, columns 3–7 and TMS rows 7–9, were joined in their source layout and encoded to WebP. A CSS parchment tint changes the palette while preserving geometry. In the upstream simple coordinate system, the crop spans latitude 112–160 and longitude 48–128. No roads or waterways were drawn from imagination.
+
+The four named references come from the Velen marker data at https://github.com/witcher3map/witcher3map/blob/master/assets/scripts/custom/mapdata-velen.js. The inn marker uses the innkeeper position as a building reference. Gamer Guides corroborates the innkeeper location at https://www.gamerguides.com/the-witcher-3-wild-hunt/database/world_markers/merchants-and-craftsmen/innkeep/. A signpost represents each of the other three named locations. Heatherton uses the village signpost as its anchor; it does not claim to pinpoint Hendrik’s hut.
+
+The shaded area is a broad planning approximation between the Inn at the Crossroads and Mulbrydale. It is neither an NPC coordinate nor a quest search boundary from the game. Gamer Guides documents both linked encounters between those landmarks at https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/velen/the-niflgaardian-connection/. Neoseeker and Witcher Wiki corroborate the priest west of Mulbrydale; ESO's guide corroborates John Verdun west of Mulbrydale on the riverbank. Exact encounter positions and the map’s geometry remain open for Xbox field confirmation.
+
+The Current stop scope uses the guide’s existing walkthrough-stage recommendations. Road includes Funeral Pyres and At the Mercy of Strangers. The Inn includes the innkeeper and collected notices at the same location. Base signposts are geographic context, independent of quest recommendations.
