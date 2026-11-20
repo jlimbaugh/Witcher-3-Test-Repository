@@ -11,7 +11,7 @@ async function boot(hash,width=390,height=844,mode='normal',seed={}){
  frame.contentDocument.open();frame.contentDocument.write(template);frame.contentDocument.close();w=frame.contentWindow;d=frame.contentDocument;for(let i=0;i<375&&!w.PhoenixVelen;i++)await wait(80);await wait(230);check(w.PhoenixVelen,'startup failed');
 }
 const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{const x=one(s);check(x,s);x.click()};
-const cases=[['princess',2],['ciris-room',2],['wandering-in-the-dark',4],['magic-lamp',3],['ladies-of-the-wood',4]];
+const cases=[['princess',2],['ciris-room',2],['wandering-in-the-dark',4],['magic-lamp',3],['ladies-of-the-wood',4],['whispering-hillock',2],['king-of-the-wolves',3],['family-matters',4],['ciris-race',1],['out-of-the-shadows',2]];
 for(const [id,total] of cases)await test(id,async()=>{
  const card='#velen/lead/'+id,walk='#velen/quest/'+id+'/1',key='phoenix.velen.'+id+'.objectives.v1';
  const count=n=>check(one('#velen-screen .velen-hub-progress')?.textContent==='Quest progress · '+n+' of '+total,'card count '+n);
