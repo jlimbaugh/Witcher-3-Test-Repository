@@ -120,11 +120,22 @@ function selectCard(category,id,focusJump=false){
   render({y,focus:false});
   if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
+const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood']);
+function appendHubProgress(panel,id){
+  if(!hubProgressQuests.has(id))return;
+  const card=questCards[id];
+  const tracker=window.createVelenQuestTracker(id,card.objectiveIds);
+  const required=card.objectiveIds.filter(key=>!card.optionalObjectives?.includes(key));
+  const done=required.filter(key=>tracker.record.marks.includes(key)).length;
+  const message=tracker.editable?'Quest progress · '+done+' of '+required.length:tracker.notice;
+  panel.append(el('p','velen-hub-progress',message));
+}
 function selectedPanel(id){
   const q=deckQuests[id],tracked=Object.hasOwn(quests,id);
   const selected=scroll(q.name);
   selected.classList.add('selected-panel','selected-scroll');
   selected.append(el('p','',q.briefing||q.intro));
+  appendHubProgress(selected,id);
   if(q.dlc)selected.append(el('p','eyebrow',q.dlc));
   if(q.level)selected.append(el('p','eyebrow','Suggested level '+q.level));
   const actions=el('nav','home-selected-actions');
@@ -485,6 +496,7 @@ function questCard(id, stage){
   panel.append(link('← Velen console','#velen','back-link'),el('p','eyebrow',lead.place),el('p','',card.briefing));
   if(card.dlc)panel.append(el('p','eyebrow',card.dlc));
   panel.append(el('p','',card.start||'Start after reading Hendrik’s notes in The Nilfgaardian Connection. Both leads can be followed in either order.'));
+  appendHubProgress(panel,id);
   panel.append(questAction('Open walkthrough','#quest/'+id+'/'+readingStage(id)));
   panel.append(questAction('Open this quest’s route map','#map/'+id,'velen-route-map-art.svg'));
   panel.append(el('h3','','When the quest is complete'),el('p','',card.completion));

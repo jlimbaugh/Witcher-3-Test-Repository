@@ -165,7 +165,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['velen-nilf-ui.js'])assert.equal(tags[f],'v49-phone-fixes-2',f);
  for(const f of ['main-console.js', 'home-ui.js', 'home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
  assert.equal(tags['shared-walkthrough.js'],'witch-objectives-1');
- assert.equal(tags['velen-r18.js'],'footer-checklist-1');
+ assert.equal(tags['velen-r18.js'],'hub-progress-1');
  assert.equal(tags['velen-activity-decks.css'],'footer-checklist-1');
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');

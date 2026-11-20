@@ -1,6 +1,8 @@
 # Velen quest and task alignment plan
 
-Owner passed Batch 13 (f9c3834). Batch 14 closes the current list of walkthrough batches with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven milestones. The four Griffin armor diagrams share one milestone. Batch 14 awaits owner approval; hub totals and broader regional task coverage remain separate work.
+Owner passed Batch 14 (933a571), completing approval of all 70 batched walkthroughs. Hub progress batch 1 brings the first five Batch 1 quest cards and their Velen selected panels into sync with saved walkthrough milestones. Regional aggregate counts and the remaining hubs are pending.
+
+Owner passed Batch 13 (f9c3834). Batch 14 closes the current list of walkthrough batches with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven milestones. The four Griffin armor diagrams share one milestone. Hub totals and regional task coverage are tracked separately.
 
 Owner passed Batch 12 (5e2a292). Batch 13 covers The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt tracks two milestones, securing its clue and recovering its treasure.
 
