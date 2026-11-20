@@ -1009,6 +1009,7 @@
       ]
     },
     'the-dead-have-no-defense': {
+      objectiveIds:['take-notes-and-key', 'open-grave-robbers-chest'],
       name: "The Dead Have No Defense",
       kind: "Treasure hunt",
       place: "South of Duén Hen toward Byways",
@@ -1024,6 +1025,7 @@
       ]
     },
     'the-things-men-do-for-coin': {
+      objectiveIds:['take-letter-and-key', 'loot-stash'],
       name: "The Things Men Do for Coin…",
       kind: "Treasure hunt",
       place: "West of the Border Post",
@@ -1039,6 +1041,7 @@
       ]
     },
     'dont-play-with-the-gods': {
+      objectiveIds:['find-letter-and-key', 'open-ruins-stash'],
       name: "Don’t Play with the Gods",
       kind: "Treasure hunt",
       place: "Elven ruins north of Byways",
@@ -1054,6 +1057,7 @@
       ]
     },
     'blood-gold': {
+      objectiveIds:['recover-document-and-key', 'loot-shelter-chest'],
       name: "Blood Gold",
       kind: "Treasure hunt",
       place: "Swamp northwest of White Eagle Fort",
@@ -1069,6 +1073,7 @@
       ]
     },
     'a-costly-mistake': {
+      objectiveIds:['read-smugglers-notes', 'recover-merchant-cargo'],
       name: "A Costly Mistake",
       kind: "Treasure hunt",
       place: "Shore west of Hangman’s Alley",

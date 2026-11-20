@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 12 (5e2a292). Batch 13 covers The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt tracks two milestones, securing its clue and recovering its treasure.
+
 Owner passed Batch 11 (8a201b3). Batch 12 covers An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each treasure hunt tracks its clue and its treasure separately, for ten required milestones.
 
 Owner passed Batch 10 (3ccc006). Batch 11 covers Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is available to read; each rider win counts once.
