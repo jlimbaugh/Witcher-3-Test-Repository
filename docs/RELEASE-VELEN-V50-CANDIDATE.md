@@ -22,3 +22,9 @@ This completes the targeted storage rehearsal for those paths. It leaves the ret
 ## Owner iPhone acceptance
 
 The owner reported PASS on all four requested device checks against the private v50 preview: Region Tools destinations and Safari Back; deck touch interaction, Warnings and Search; Nilf portrait/landscape layout and framed controls; and the number strip and VoiceOver checklist. These owner checks are closed. This records the owner's overall result for each checklist row. The same-origin v49-to-v50 upgrade and independent finding-by-finding retest remain open.
+
+## Same-origin Safari rehearsal
+
+Private rehearsal origin: https://phoenix-v50-upgrade-qa.krwpfbtbn8.chatgpt.site. v49 baseline source `762ac596b1215aa1189071eb0b052a07058976d2` deployed successfully as `appgdep_6affceddd5ec8191beea3079a154da0e`. The application is the v49 GitHub baseline with a rehearsal build marker. Frozen v50 application files are staged in rehearsal source commit `b86737112f6d66dda2791efb354231b3096d281a`, pending a v49 sample save on the owner's iPhone. The public guide and existing private review preview were untouched.
+
+Local preflight: every changed script and stylesheet linked in both v49 and v50 entry pages received a different URL. The actual frozen Region Tools click handlers, executed with a minimal DOM stand-in, dispatched Home, Regions, Field Reference, Progress, and Constellation correctly. Source inspection confirmed console and Nilf walkthrough reuse those handlers. This complements the owner's Safari navigation pass. It does not close independent reviewer sign-off or measure Safari cache behavior.
