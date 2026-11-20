@@ -1,6 +1,8 @@
 # Velen quest and task alignment plan
 
-Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure. Phone approval pending.
+Owner passed hub batch 12 (3591de8). Hub batch 13 adds saved walkthrough counts to the quest cards and selected panels for The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt has two required milestones, one for its clue and one for its treasure. Phone approval pending.
+
+Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure.
 
 Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once.
 
