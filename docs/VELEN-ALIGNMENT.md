@@ -1,6 +1,8 @@
 # Velen quest and task alignment plan
 
-Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones. Phone approval pending.
+Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone. Phone approval pending.
+
+Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones.
 
 Owner approved hub batch 7 (7188e33). Hub batch 8 adds saved walkthrough counts to the quest cards and selected panels for Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone. Phone approval pending.
 
