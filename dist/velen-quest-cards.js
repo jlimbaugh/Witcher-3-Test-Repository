@@ -929,6 +929,7 @@
       ]
     },
     'an-unfortunate-turn-of-events': {
+      objectiveIds:['read-ferrymans-letter', 'recover-cargo'],
       name: "An Unfortunate Turn of Events",
       kind: "Treasure hunt",
       place: "Fireburst Harbor (Lovers’ Landing)",
@@ -944,6 +945,7 @@
       ]
     },
     'queen-zuleykas-treasure': {
+      objectiveIds:['read-pirates-notes', 'loot-wreck'],
       name: "Queen Zuleyka’s Treasure",
       kind: "Treasure hunt",
       place: "Coast of Wrecks",
@@ -959,6 +961,7 @@
       ]
     },
     'sunken-chest': {
+      objectiveIds:['read-blood-smeared-notes', 'loot-submerged-ruins'],
       name: "Sunken Chest",
       kind: "Treasure hunt",
       place: "Small island southwest of Fyke Isle",
@@ -974,6 +977,7 @@
       ]
     },
     'sunken-treasure': {
+      objectiveIds:['read-water-damaged-letter', 'recover-smugglers-chest'],
       name: "Sunken Treasure",
       kind: "Treasure hunt",
       place: "Shore northwest of Hangman’s Alley",
@@ -989,6 +993,7 @@
       ]
     },
     'hidden-from-the-world': {
+      objectiveIds:['recover-letter', 'find-hidden-stash'],
       name: "Hidden from the World",
       kind: "Treasure hunt",
       place: "Southeast of Marauders’ Bridge",

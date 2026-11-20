@@ -23,7 +23,8 @@ const eighthBatch=[['fake-papers', 1], ['bitter-harvest', 2], ['wild-at-heart', 
 const ninthBatch=[['forefathers-eve', 3], ['death-by-fire', 1], ['lynch-mob', 1], ['defender-of-the-faith', 2], ['last-rites', 2]];
 const tenthBatch=[['fools-gold', 3], ['truth-is-in-the-stars', 2], ['hazardous-goods', 1], ['witcher-wannabe', 2], ['loves-cruel-snares', 2]];
 const eleventhBatch=[['blood-ties', 3], ['races-crows-perch', 3], ['fists-of-fury-velen', 4], ['lost-goods', 2], ['out-of-the-frying-pan-into-the-fire', 2]];
-for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch,...tenthBatch,...eleventhBatch])await test(id,async()=>{
+const twelfthBatch=[['an-unfortunate-turn-of-events', 2], ['queen-zuleykas-treasure', 2], ['sunken-chest', 2], ['sunken-treasure', 2], ['hidden-from-the-world', 2]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch,...tenthBatch,...eleventhBatch,...twelfthBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);
