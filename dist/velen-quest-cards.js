@@ -689,6 +689,7 @@
       ]
     },
     'forefathers-eve': {
+      objectiveIds:['attend-ritual', 'resolve-interruption', 'finish-ritual-route'],
       name: "Forefathers’ Eve",
       kind: "Side quest",
       place: "Fyke Isle and Crookback Bog",
@@ -701,10 +702,11 @@
       stages: [
         {"title": "Attend the ritual", "place": "Fyke Isle stone circle", "actions": ["Meet the Pellar around midnight and speak to him to start the rite.", "Defeat the drowners and water hag that come to the circle."], "links": [["A Towerful of Mice", "towerful-of-mice"]]},
         {"title": "Decide whether to intervene", "place": "Fyke Isle stone circle", "actions": ["When the witch hunters arrive, step aside to end your part in the ritual or defend the Pellar.", "If you defend him, defeat the hunters and the wraiths that appear, then speak to the Pellar about Ambros."], "warning": "Stepping aside ends the quest here and costs access to the Pellar’s trading services."},
-        {"title": "Lay Ambros to rest", "place": "Crookback Bog and the Pellar’s hut", "actions": ["On the defense route, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni.", "Report back to the Pellar at his hut."]}
+        {"title": "Finish your ritual route", "place": "Fyke Isle or Crookback Bog and the Pellar’s hut", "actions": ["If you stepped aside, your route ends at the circle. Record this final milestone there.", "If you defended the Pellar, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni, then report back to the Pellar at his hut."]}
       ]
     },
     'death-by-fire': {
+      objectiveIds:['rescue-elf'],
       name: "Death by Fire",
       kind: "Side quest",
       place: "Road west of Codgers’ Quarry",
@@ -719,6 +721,7 @@
       ]
     },
     'lynch-mob': {
+      objectiveIds:['resolve-deserter'],
       name: "Lynch Mob",
       kind: "Side quest",
       place: "Hangman’s Alley",
@@ -733,6 +736,7 @@
       ]
     },
     'defender-of-the-faith': {
+      objectiveIds:['restore-shrines', 'stop-vandals'],
       name: "Defender of the Faith",
       kind: "Side quest",
       place: "Road between Blackbough and Crow’s Perch",
@@ -748,6 +752,7 @@
       ]
     },
     'last-rites': {
+      objectiveIds:['accept-ring', 'deliver-ring-and-report'],
       name: "Last Rites",
       kind: "Side quest",
       place: "Bridge north of Blackbough",
