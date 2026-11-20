@@ -1,6 +1,8 @@
 # Phoenix session calibration
 
-Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once. Phone approval pending.
+Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure. Phone approval pending.
+
+Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once.
 
 Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone.
 
