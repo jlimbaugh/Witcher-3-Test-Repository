@@ -847,6 +847,7 @@
       ]
     },
     'blood-ties': {
+      objectiveIds:['question-quartermaster', 'find-letter', 'report-to-mother'],
       name: "Blood Ties",
       kind: "Side quest",
       place: "Nilfgaardian Army Group Center Camp and nearby swamp",
@@ -862,6 +863,8 @@
       ]
     },
     'races-crows-perch': {
+      objectiveIds:['enter-races', 'beat-matko', 'beat-hans', 'beat-bogdan'],
+      optionalObjectives:['enter-races'],
       name: "Races: Crow’s Perch",
       kind: "Side quest",
       place: "Crossroads west of Crow’s Perch",
@@ -878,6 +881,7 @@
       ]
     },
     'fists-of-fury-velen': {
+      objectiveIds:['beat-smithy', 'beat-stan', 'beat-jonah', 'beat-ardal'],
       name: "Fists of Fury: Velen",
       kind: "Side quest",
       place: "Inn at the Crossroads, Lindenvale, Blackbough and Crow’s Perch",
@@ -895,6 +899,7 @@
       ]
     },
     'lost-goods': {
+      objectiveIds:['read-soldiers-note', 'find-chest'],
       name: "Lost Goods",
       kind: "Treasure hunt",
       place: "North of Ferry Station",
@@ -909,6 +914,7 @@
       ]
     },
     'out-of-the-frying-pan-into-the-fire': {
+      objectiveIds:['recover-key', 'open-field-stash'],
       name: "Out of the Frying Pan, into the Fire",
       kind: "Treasure hunt",
       place: "Mowshurst near Marauders’ Bridge",

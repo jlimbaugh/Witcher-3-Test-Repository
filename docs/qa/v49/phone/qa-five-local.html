@@ -22,12 +22,14 @@ const seventhBatch=[['take-what-you-want', 2], ['fall-of-the-house-of-reardon', 
 const eighthBatch=[['fake-papers', 1], ['bitter-harvest', 2], ['wild-at-heart', 3], ['a-greedy-god', 2], ['a-dogs-life', 2]];
 const ninthBatch=[['forefathers-eve', 3], ['death-by-fire', 1], ['lynch-mob', 1], ['defender-of-the-faith', 2], ['last-rites', 2]];
 const tenthBatch=[['fools-gold', 3], ['truth-is-in-the-stars', 2], ['hazardous-goods', 1], ['witcher-wannabe', 2], ['loves-cruel-snares', 2]];
-for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch,...tenthBatch])await test(id,async()=>{
+const eleventhBatch=[['blood-ties', 3], ['races-crows-perch', 3], ['fists-of-fury-velen', 4], ['lost-goods', 2], ['out-of-the-frying-pan-into-the-fire', 2]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch,...tenthBatch,...eleventhBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);
+ if(id==='races-crows-perch'){progress().querySelector('.sw-next').click();await wait(250);}
  for(let n=1;n<=total;n++){
-  const stage=['missing-brother','eternal-fires-shadow'].includes(id) && n>=2 ? n+1 : n;
+  const stage=id==='races-crows-perch' ? n+1 : ['missing-brother','eternal-fires-shadow'].includes(id) && n>=2 ? n+1 : n;
   check(w.location.hash===base+stage,'stage '+stage);
   check(progress().textContent.includes((n-1)+' of '+total),'prior count');
   progress().querySelector('.selected input').click();

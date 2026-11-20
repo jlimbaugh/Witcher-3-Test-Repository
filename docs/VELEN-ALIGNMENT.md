@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 10 (3ccc006). Batch 11 covers Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is available to read; each rider win counts once.
+
 Owner passed Batch 9 (285192a). Batch 10 covers Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either decision about the impostor satisfies the last Witcher Wannabe milestone.
 
 Owner passed Batch 8 (1acb87e). Batch 9 covers Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine milestones. The Forefathers’ Eve final stage describes the endpoint for either route. Defender of the Faith and Last Rites retain separate progress.
