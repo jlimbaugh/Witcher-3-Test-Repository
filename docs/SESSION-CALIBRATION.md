@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner approved hub batch 6 (fda07b2). Hub batch 7 adds saved walkthrough counts to the quest cards and selected panels for Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is optional. Phone approval pending.
+
 Owner approved hub batch 5 (f1d2d52). Hub batch 6 adds saved walkthrough counts to the quest cards and selected panels for The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones. Destroying eggs in Missing Brother is optional. Phone approval pending.
 
 Owner approved hub batch 4 (df94197). Hub batch 5 adds saved walkthrough counts to the quest cards and selected panels for Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Sixteen milestones. Phone approval pending.
