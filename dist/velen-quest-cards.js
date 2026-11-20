@@ -320,6 +320,7 @@
       ]
     },
     'advancement-of-learning': {
+      objectiveIds:['find-keira', 'resolve-confrontation'],
       art:'art-velen/advancement-of-learning.webp',
       name:'For the Advancement of Learning',kind:side,level:8,place:'Fyke Isle tower',
       briefing:'Find Keira with Alexander’s research and decide what happens next.',
@@ -341,6 +342,7 @@
   const contract='Witcher contract';
   Object.assign(root.PhoenixVelenQuestCards,{
     shrieker: {
+      objectiveIds:['interview-witnesses', 'track-cockatrice', 'return-with-trophy'],
       name:'Contract: Shrieker',kind:contract,level:8,place:'Crow’s Perch',
       art:'art-velen/shrieker.webp',
       briefing:'Track the cockatrice that killed Borzoy outside Crow’s Perch.',
@@ -354,6 +356,7 @@
       ]
     },
     'jenny-o-the-woods': {
+      objectiveIds:['interview-witnesses', 'identify-nightwraith', 'defeat-jenny-and-report'],
       name:'Contract: Jenny o’ the Woods',kind:contract,level:10,place:'Midcopse',
       art:'art-velen/jenny-o-the-woods.webp',
       briefing:'Investigate the haunting north of Midcopse and put Zula’s spirit to rest.',
@@ -367,6 +370,7 @@
       ]
     },
     'merry-widow': {
+      objectiveIds:['search-cemetery', 'lure-grave-hag', 'defeat-mourntart-and-report'],
       name:'Contract: The Merry Widow',kind:contract,level:10,place:'Lindenvale',
       art:'art-velen/merry-widow.webp',
       briefing:'Investigate disturbed graves and the disappearance of the miller’s son.',
@@ -380,6 +384,7 @@
       ]
     },
     'swamp-thing': {
+      objectiveIds:['inspect-trail', 'enter-cave', 'resolve-payment'],
       name:'Contract: Swamp Thing',kind:contract,level:12,place:'Downwarren and Crookback Bog',
       art:'art-velen/swamp-thing.webp',
       briefing:'Follow Leslav’s lead to the foglet behind the disappearances in the bog.',
