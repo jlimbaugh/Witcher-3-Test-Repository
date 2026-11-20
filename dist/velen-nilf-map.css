@@ -1,13 +1,12 @@
 .nilf-area-map { margin: 0 0 1rem; color: #eee5d5; }
-.nilf-area-canvas { height: clamp(320px, 57dvh, 620px); border: 2px solid #999ca4; border-radius: 5px; background: #403b33; z-index: 0; }
-.nilf-area-recenter { display: block; min-height: 44px; margin: .55rem auto; border: 1px solid #8f959f; border-radius: 4px; background: #20232a; color: #f5ecdc; padding: .4rem .9rem; }
+.nilf-area-canvas { width: 100%; max-width: 520px; aspect-ratio: 1; margin-inline: auto; outline: 2px solid #999ca4; border-radius: 5px; background: #403b33; z-index: 0; }
 .nilf-area-terrain { filter: sepia(.42) saturate(.84) contrast(1.06); }
 .nilf-map-seal { display: grid; place-items: center; width: 44px; height: 44px; box-sizing: border-box; border: 3px double #c8cbd0; border-radius: 50%; background: #272a31; box-shadow: 0 2px 5px #16191c; }
 .nilf-map-seal img { width: 26px; height: 26px; object-fit: contain; }
 .nilf-map-seal.is-current, .nilf-map-seal.is-selected { outline: 2px solid #fff3db; outline-offset: 2px; }
 .nilf-map-seal.is-current { box-shadow: 0 0 10px #fff3db; }
-.nilf-map-popup .leaflet-popup-content-wrapper, .nilf-map-popup .leaflet-popup-tip { background: #22242b; color: #fff9ed; }
-.nilf-map-popup .leaflet-popup-content { margin: 0 .65rem; width: max-content !important; max-width: 190px; }
-.nilf-map-popup-content { text-align: center; }
-.nilf-map-popup .nilf-map-label { display: grid; align-items: center; min-height: 44px; color: #fff9ed; font: 600 .9rem/1.2 system-ui, sans-serif; }
+.nilf-map-popup-content { position: absolute; z-index: 650; transform: translateX(-50%); width: max-content; max-width: min(190px, calc(100% - 8px)); box-sizing: border-box; padding: 0 .65rem; border: 1px solid #a9abb0; border-radius: 8px; background: #22242b; text-align: center; }
+.nilf-map-label { display: grid; align-items: center; min-height: 44px; color: #fff9ed; font: 600 .9rem/1.2 system-ui, sans-serif; }
+.nilf-area-canvas [hidden] { display: none !important; }
 .nilf-map-popup-content small { display: block; padding-bottom: .45rem; color: #e6d6bc; }
+.nilf-area-canvas.leaflet-container { touch-action: pan-y; }
