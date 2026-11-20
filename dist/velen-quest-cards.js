@@ -473,6 +473,7 @@
       ]
     },
     'griffin-from-the-highlands': {
+      objectiveIds:['take-griffin-contract', 'hunt-archgriffin', 'deliver-trophy'],
       name:'Contract: The Griffin from the Highlands',kind:contract,level:24,place:'Crow’s Perch and northern hills',
       art:'art-velen/griffin-from-the-highlands.webp',
       briefing:'Hunt the archgriffin and recover the gland Yoana needs to harden her armor.',
@@ -486,6 +487,7 @@
       ]
     },
     'beast-of-honorton': {
+      objectiveIds:['follow-notice', 'clear-village'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Contract: The Beast of Honorton',kind:contract,level:25,place:'Honorton',
       art:'art-velen/beast-of-honorton.webp',
@@ -499,6 +501,8 @@
       ]
     },
     'missing-brother': {
+      objectiveIds:['find-survivor', 'destroy-eggs', 'report-harrisi'],
+      optionalObjectives:['destroy-eggs'],
       name:'Contract: Missing Brother',kind:contract,level:33,place:'Inn at the Crossroads and old mine',
       art:'art-velen/missing-brother.webp',
       briefing:'Find Mikkel’s trail in the old mine and defeat Harrisi, the venomous arachas.',
@@ -512,6 +516,7 @@
       ]
     },
     'master-armorers': {
+      objectiveIds:['recover-tools', 'deliver-gland', 'test-armor'],
       name:'Master Armorers',kind:side,place:'Crow’s Perch and Undvik',
       art:'art-velen/master-armorers.webp',
       briefing:'Recover the Undvik tools and help Yoana prove her work at Crow’s Perch.',
@@ -525,6 +530,7 @@
       ]
     },
     'where-the-cat-and-wolf-play': {
+      objectiveIds:['find-millie', 'resolve-gaetan', 'escort-millie'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Where the Cat and Wolf Play…',kind:side,level:25,place:'Honorton and Oreton',
       art:'art-velen/where-the-cat-and-wolf-play.webp',

@@ -1,6 +1,8 @@
 # Velen quest and task alignment plan
 
-Guide-wide footer rule: the last section flows directly into the credits. Regional Tools omits the duplicate Arrival checklist and its section jump. The quest deck and Activities retain access to all three arrival quests. Batch 5 remains in owner review.
+Owner passed Batch 5 and the footer/checklist correction (1d6fa40). Batch 6 covers The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones count across five walkthroughs. Destroying the eggs in Missing Brother is optional. Linked quests retain separate progress.
+
+Guide-wide footer rule: the last section flows directly into the credits. Regional Tools omits the duplicate Arrival checklist and its section jump. The quest deck and Activities retain access to all three arrival quests.
 
 Owner passed Batch 4 (9eb7b72). Batch 5 covers Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Review sixteen walkthrough milestones together. Woodland Beast tracks the encounter and the report for either outcome.
 

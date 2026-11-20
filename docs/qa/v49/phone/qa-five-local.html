@@ -17,18 +17,20 @@ const secondBatch=[['whispering-hillock',2],['king-of-the-wolves',3],['family-ma
 const thirdBatch=[['return-to-crookback-bog',3],['fleeing-the-bog',1],['keira-invitation',1],['towerful-of-mice',3],['favor-for-a-friend',2]];
 const fourthBatch=[['advancement-of-learning', 2], ['shrieker', 3], ['jenny-o-the-woods', 3], ['merry-widow', 3], ['swamp-thing', 3]];
 const fifthBatch=[['patrol-gone-missing', 3], ['mysterious-tracks', 4], ['byways-murders', 3], ['phantom-of-the-trade-route', 3], ['woodland-beast', 3]];
-for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch])await test(id,async()=>{
+const sixthBatch=[['griffin-from-the-highlands', 3], ['beast-of-honorton', 2], ['missing-brother', 2], ['master-armorers', 3], ['where-the-cat-and-wolf-play', 3]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);
  for(let n=1;n<=total;n++){
-  check(w.location.hash===base+n,'stage '+n);
+  const stage=id==='missing-brother' && n===2 ? 3 : n;
+  check(w.location.hash===base+stage,'stage '+stage);
   check(progress().textContent.includes((n-1)+' of '+total),'prior count');
   progress().querySelector('.selected input').click();
   if(n<total){progress().querySelector('.sw-next').click();await wait(250);}
  }
  check(progress().textContent.includes('Quest complete.'),'complete');
- await boot(base+total,390,844,'normal',Object.fromEntries(w.qaRecords));
+ await boot(w.location.hash,390,844,'normal',Object.fromEntries(w.qaRecords));
  check(progress().textContent.includes(total+' of '+total),'reload');
  one('.sw-story-row summary').click();one('.sw-story-row button').click();
  check(progress().textContent.includes((total-1)+' of '+total),'Undo');
