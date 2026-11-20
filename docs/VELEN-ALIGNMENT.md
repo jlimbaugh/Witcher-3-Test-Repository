@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner passed Batch 13 (f9c3834). Batch 14 closes the current list of walkthrough batches with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven milestones. The four Griffin armor diagrams share one milestone. Batch 14 awaits owner approval; hub totals and broader regional task coverage remain separate work.
+
 Owner passed Batch 12 (5e2a292). Batch 13 covers The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt tracks two milestones, securing its clue and recovering its treasure.
 
 Owner passed Batch 11 (8a201b3). Batch 12 covers An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each treasure hunt tracks its clue and its treasure separately, for ten required milestones.

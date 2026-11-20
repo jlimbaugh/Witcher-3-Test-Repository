@@ -1089,6 +1089,7 @@
       ]
     },
     'tough-luck': {
+      objectiveIds:['recover-letter-and-key', 'unlock-wagon-chest'],
       name: "Tough Luck",
       kind: "Treasure hunt",
       place: "Southeast of Devil’s Pit",
@@ -1104,6 +1105,7 @@
       ]
     },
     'battlefield-loot': {
+      objectiveIds:['read-crumpled-notes', 'open-tower-cache'],
       name: "Battlefield Loot",
       kind: "Treasure hunt",
       place: "Across the river south of Eternal Fire Chapel",
@@ -1119,6 +1121,7 @@
       ]
     },
     'a-plea-ignored': {
+      objectiveIds:['recover-letter-and-key', 'loot-valuables'],
       name: "A Plea Ignored",
       kind: "Treasure hunt",
       place: "Peninsula far south of Condyle",
@@ -1134,6 +1137,7 @@
       ]
     },
     'dowry': {
+      objectiveIds:['read-unsent-letter', 'open-dowry-chest'],
       name: "Dowry",
       kind: "Treasure hunt",
       place: "Riverbank west of Gustfields Farm",
@@ -1149,6 +1153,7 @@
       ]
     },
     'griffin-school-gear': {
+      objectiveIds:['recover-steel-diagram', 'recover-silver-diagram', 'recover-armor-diagrams'],
       name:'Scavenger Hunt: Griffin School Gear',
       kind:'Treasure hunt',
       place:'Hindhold, Lornruk and Dragonslayer’s Grotto',
