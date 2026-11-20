@@ -121,14 +121,46 @@ function selectCard(category,id,focusJump=false){
   if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
 const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood','whispering-hillock','king-of-the-wolves','family-matters','ciris-race','out-of-the-shadows','return-to-crookback-bog','fleeing-the-bog','keira-invitation','towerful-of-mice','favor-for-a-friend','advancement-of-learning','shrieker','jenny-o-the-woods','merry-widow','swamp-thing','patrol-gone-missing','mysterious-tracks','byways-murders','phantom-of-the-trade-route','woodland-beast','griffin-from-the-highlands','beast-of-honorton','missing-brother','master-armorers','where-the-cat-and-wolf-play','take-what-you-want','fall-of-the-house-of-reardon','ghosts-of-the-past','eternal-fires-shadow','thou-shalt-not-pass','fake-papers','bitter-harvest','wild-at-heart','a-greedy-god','a-dogs-life','forefathers-eve','death-by-fire','lynch-mob','defender-of-the-faith','last-rites','fools-gold','truth-is-in-the-stars','hazardous-goods','witcher-wannabe','loves-cruel-snares','blood-ties','races-crows-perch','fists-of-fury-velen','lost-goods','out-of-the-frying-pan-into-the-fire','an-unfortunate-turn-of-events','queen-zuleykas-treasure','sunken-chest','sunken-treasure','hidden-from-the-world','the-dead-have-no-defense','the-things-men-do-for-coin','dont-play-with-the-gods','blood-gold','a-costly-mistake','tough-luck','battlefield-loot','a-plea-ignored','dowry','griffin-school-gear']);
+function trackedQuestProgress(id,card){
+  const tracker=window.createVelenQuestTracker(id,card.objectiveIds);
+  if(!tracker.editable)return {status:'unavailable',notice:tracker.notice};
+  const required=card.objectiveIds.filter(key=>!card.optionalObjectives?.includes(key));
+  const done=required.filter(key=>tracker.record.marks.includes(key)).length,total=required.length;
+  return {done,total,status:total&&done===total?'complete':done?'active':'open'};
+}
 function appendHubProgress(panel,id){
   if(!hubProgressQuests.has(id))return;
-  const card=questCards[id];
-  const tracker=window.createVelenQuestTracker(id,card.objectiveIds);
-  const required=card.objectiveIds.filter(key=>!card.optionalObjectives?.includes(key));
-  const done=required.filter(key=>tracker.record.marks.includes(key)).length;
-  const message=tracker.editable?'Quest progress · '+done+' of '+required.length:tracker.notice;
-  panel.append(el('p','velen-hub-progress',message));
+  const row=trackedQuestProgress(id,questCards[id]);
+  panel.append(el('p','velen-hub-progress',row.notice||'Quest progress · '+row.done+' of '+row.total));
+}
+function regionalProgress(){
+  const entries=Object.entries(questCards).filter(([,card])=>card.objectiveIds?.length).map(([id,card])=>({
+    name:card.name||deckQuests[id].name,
+    kind:deckQuests[id].kind,
+    category:deckCategory(id,deckQuests[id]),
+    dlc:card.dlc,
+    href:'#velen/lead/'+id,
+    ...trackedQuestProgress(id,card)
+  }));
+  const canonical=nilfUI.state();
+  for(const [id,quest] of Object.entries(quests)){
+    let result;
+    if(id==='nilf'&&canonical.owned){
+      const owner=window.PhoenixVelenNilfProgress;
+      const status=owner.engine.status(owner.QUEST,canonical.progress);
+      const {done,total}=owner.engine.counts(owner.QUEST,canonical.progress);
+      result={done,total,status:status==='not started'?'open':status};
+    }else{
+      // The arrival hubs own the legacy completion flags. A reading bookmark is never progress.
+      const unavailable=legacyUnreadable||storageUnavailableForLedger()||(id==='nilf'&&!["absent","not-handed-over"].includes(canonical.status));
+      result={status:unavailable?'unavailable':isComplete(id)?'complete':'open'};
+    }
+    entries.push({name:quest.name,kind:quest.kind,category:deckCategory(id,quest),href:'#velen/hub/'+id,...result});
+  }
+  return entries;
+}
+function storageUnavailableForLedger(){
+  try{nilfStorage.getItem(key);return false;}catch{return true;}
 }
 function selectedPanel(id){
   const q=deckQuests[id],tracked=Object.hasOwn(quests,id);
@@ -517,5 +549,5 @@ function render(options={}){renderedHash=routeModel.sharedHash(location.hash);co
 }const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
 document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
 dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
-addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, mountRegionalTools, nilfState: () => nilfUI?.state()};
+addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, mountRegionalTools, regionalProgress, nilfState: () => nilfUI?.state()};
 };

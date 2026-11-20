@@ -47,17 +47,59 @@
  const subjects=[['Economy','Earning, buying and merchants','gwent-r15/gabor.webp','#economy'],['Character','Builds, gear and crafting','gwent-r15/ivo.webp'],['Combat','Swords, Signs and Bestiary','art-r13/q-beast-card.webp'],['Alchemy','Recipes, effects and ingredients','art-r13/q-death-card.webp'],['Gwent','Cards, decks and opponents','gwent-r15/isbel.webp']];
  const refRail=make('nav',null,'reference-rail');refRail.setAttribute('aria-label','Field Reference subjects');subjects.forEach(([a,b,c,d])=>refRail.append(tile(a,b,c,d)));ref.inner.append(refRail);const tools=make('div',null,'main-deck-controls'),rp=make('button','← Previous'),rn=make('button','Next →');rp.type=rn.type='button';rp.setAttribute('aria-label','Previous reference subjects');rn.setAttribute('aria-label','Next reference subjects');rp.onclick=()=>refRail.scrollBy({left:-210,behavior:'auto'});rn.onclick=()=>refRail.scrollBy({left:210,behavior:'auto'});tools.append(rp,make('span','Swipe to browse'),rn);ref.inner.append(tools);
  const eco=frame('economy','Economy','Make every crown count.');const eg=make('nav',null,'main-entry-grid');eg.append(tile('Merchants','Locations and services','gwent-r15/gabor.webp','#economy-merchants'),tile('Earning & selling','','gwent-r15/cavalry.webp'),tile('Buying & saving','','art-r13/q-viper-card.webp'),tile('Loot & materials','','art-r13/q-deserter-card.webp'));eco.inner.append(eg,link('← Field Reference','#field-reference','main-back'));
- const progress=frame('progress','Progress','Your journey, gathered in one place.');const progressExisting=parchment('Recorded journey');progress.inner.append(progressExisting);const future=parchment('The complete ledger');future.append(make('p','Regional and activity views, calibration and the general journal.'));const placeholder=make('button','Journal · Not built yet','main-disabled');placeholder.disabled=true;future.append(placeholder);progress.inner.append(future);
+ const progress=frame('progress','Progress','Your journey, gathered in one place.');
+ const progressExisting=parchment('Recorded journey');
+ const velenLedger=make('details',null,'home-hud console-group');
+ const velenSummary=make('summary','Velen');
+ const velenBody=make('div');
+ velenLedger.append(velenSummary,velenBody);
+ progressExisting.append(velenLedger);
+ progress.inner.append(progressExisting);
+ function refreshVelenProgress(){
+  const rows=window.PhoenixVelen?.regionalProgress();
+  if(!rows)return;
+  const complete=rows.filter(row=>row.status==='complete').length;
+  velenSummary.textContent='Velen · '+complete+' of '+rows.length+' tracked entries complete';
+  const openSections=new Set([...velenBody.querySelectorAll('details[open]')].map(section=>section.dataset.progressGroup));
+  const groups=new Map();
+  const categories={contracts:'Contracts',treasure:'Treasure hunts',encounters:'Encounters',gear:'Gear hunts',competitions:'Competitions'};
+  for(const row of rows){
+   const group=['failed','unavailable'].includes(row.status)?'Unresolved':(categories[row.category]||(row.kind==='Main quest'?'Main story':'Side quests'));
+   if(!groups.has(group))groups.set(group,[]);
+   groups.get(group).push(row);
+  }
+  const sections=[];
+  for(const group of ['Main story','Side quests','Contracts','Treasure hunts','Gear hunts','Encounters','Competitions','Unresolved']){
+   const items=groups.get(group);
+   if(!items?.length)continue;
+   const section=make('details');
+   section.dataset.progressGroup=group;
+   section.open=openSections.has(group);
+   const count=items.filter(row=>row.status==='complete').length;
+   section.append(make('summary',group+' · '+(group==='Unresolved'?items.length:count+' of '+items.length+' complete')));
+   const list=make('ul');
+   for(const row of items){
+    const item=make('li');
+    const status={complete:'Complete',active:'In progress',open:'Open',failed:'Failed',unavailable:'Progress unavailable'}[row.status];
+    const count=row.total>0&&row.status!=='unavailable'?' · '+row.done+' / '+row.total+' required':'';
+    item.append(link(row.name,row.href),make('span',' · '+status+count+(row.dlc?' · '+row.dlc:'')));
+    list.append(item);
+   }
+   section.append(list);
+   sections.push(section);
+  }
+  velenBody.replaceChildren(make('p','Covers Velen entries with progress tracking.'),...sections);
+ }
  // Header destinations now describe the whole guide.
  const header=document.querySelector('.guide-bar nav');header.replaceChildren(...navigationCards.map(([label,href])=>link(label,href)));
  function decorateNavigation(context){return window.PhoenixNavigationArt.decorate(context);}
  function recordWalkthrough(href,name,stageNumber){try{localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href,name,stageNumber}));}catch{}}
  function attach({state,tasks,navigate}){
   // Move the existing summary to its single shared landing; preserve local quest counts.
-  const hud=document.querySelector('#whiteorchard-console .home-hud');if(hud){progressExisting.append(hud);hud.open=true;}
+  const hud=document.querySelector('#whiteorchard-console .home-hud');if(hud){progressExisting.prepend(hud);hud.open=false;}
   document.querySelector('#whiteorchard-console .home-selected')?.after(link('Whole-game progress →','#progress','regional-progress-link'));
   function refresh(){let shared=null;try{shared=JSON.parse(localStorage.getItem('phoenix.guide.resume.v1')||'null');}catch{}if(shared&&typeof shared.name==='string'&&typeof shared.href==='string'&&window.PhoenixVelenRouting.resumeHref(shared.href,window.PHOENIX_VELEN.quests)){resume.href=window.PhoenixVelenRouting.resumeHref(shared.href,window.PHOENIX_VELEN.quests);resume.querySelector('small').textContent='CONTINUE YOUR JOURNEY';resume.querySelector('strong').textContent=shared.name;resume.querySelector('span').textContent='Resume · Stage '+shared.stageNumber+' →';return;}const t=Object.values(tasks).find(t=>t.stages&&t.view===state.lastWalkthroughView);if(t){const stage=state.stageByView[t.view]||t.stages[0].id;resume.href='#'+t.view+'/'+stage;resume.querySelector('small').textContent='CONTINUE YOUR JOURNEY';resume.querySelector('strong').textContent=t.name;resume.querySelector('span').textContent='Resume · Stage '+(t.stages.findIndex(s=>s.id===stage)+1)+' →';}else{resume.href='#regions';resume.querySelector('small').textContent='YOUR NEXT STEP';resume.querySelector('strong').textContent='Choose your starting region';resume.querySelector('span').textContent='Start here, or join an existing playthrough →';}}
-  addEventListener('phoenix:route-rendered',e=>{refresh();if(e.detail.root==='home')homeDeck.restore();if(e.detail.root==='regions')regionsDeck.restore();document.querySelectorAll('.guide-bar nav a').forEach(a=>{const active=a.hash==='#'+e.detail.root;if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});});refresh();
+  addEventListener('phoenix:route-rendered',e=>{refresh();if(e.detail.root==='progress')refreshVelenProgress();if(e.detail.root==='home')homeDeck.restore();if(e.detail.root==='regions')regionsDeck.restore();document.querySelectorAll('.guide-bar nav a').forEach(a=>{const active=a.hash==='#'+e.detail.root;if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});});refresh();
  }
  window.PhoenixConsole={navigationCards,regions,attach,decorateNavigation,recordWalkthrough};
 })();
