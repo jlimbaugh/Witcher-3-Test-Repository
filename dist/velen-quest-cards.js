@@ -545,6 +545,7 @@
       ]
     },
     'take-what-you-want': {
+      objectiveIds:['reach-stash', 'collect-teigr'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Take What You Want',kind:side,place:'Forest Hut, north of Keira’s cottage',
       art:'art-velen/take-what-you-want.webp',
@@ -558,6 +559,7 @@
       ]
     },
     'fall-of-the-house-of-reardon': {
+      objectiveIds:['accept-request', 'resolve-manor', 'report-to-dolores'],
       name:'The Fall of the House of Reardon',kind:side,place:'Lindenvale and Reardon Manor',
       art:'art-velen/fall-of-the-house-of-reardon.webp',
       briefing:'Help Dolores reclaim her family estate and investigate what happened there.',
@@ -571,6 +573,7 @@
       ]
     },
     'ghosts-of-the-past': {
+      objectiveIds:['meet-letho', 'ride-to-louis', 'resolve-standoff'],
       name:'Ghosts of the Past',kind:side,level:6,place:'Reardon Manor and Lindenvale',
       art:'art-velen/ghosts-of-the-past.webp',
       briefing:'Help Letho deal with the bounty hunters and decide where he should go afterward.',
@@ -584,6 +587,8 @@
       ]
     },
     'eternal-fires-shadow': {
+      objectiveIds:['open-mine', 'investigate-trail', 'defeat-miasmal', 'resolve-reinald'],
+      optionalObjectives:['investigate-trail'],
       name:'In the Eternal Fire’s Shadow',kind:side,level:15,place:'Devil’s Pit',
       art:'art-velen/eternal-fires-shadow.webp',
       briefing:'Investigate the sealed mine at Devil’s Pit and free it from the Red Miasmal.',
@@ -598,6 +603,7 @@
       ]
     },
     'thou-shalt-not-pass': {
+      objectiveIds:['obtain-pass', 'show-papers'],
       name:'Thou Shalt Not Pass',kind:side,place:'Border Post bridge or Oxenfurt’s Western Gate',
       art:'art-velen/thou-shalt-not-pass.webp',
       briefing:'Secure a pass and show it to a Redanian guard to cross the Pontar.',
