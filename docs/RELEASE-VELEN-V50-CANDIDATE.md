@@ -42,3 +42,13 @@ Use the exact application candidate `e8b818492bbc71450453a69686bf1a7f0d3042ac`, 
 3. Record the remaining visual, Sources and accuracy findings by ID (**NUM**, **NILF**, **BTN**, **SRC**, **ACC**). Ground explicit deferrals in the original severity and evidence. Treat the owner’s device pass and local checks as supporting evidence.
 
 Independent sign-off is pending. The public release decision follows recorded disposition of the remaining findings.
+
+## Public release · November 20, 2026 (America/Chicago)
+
+Published Sites v50 on owner authorization after the owner accepted the iPhone checks and elected to proceed with LT's retest incomplete and PFC's partial emulation results recorded. This supersedes earlier pending release status. Uncompleted findings remain open.
+
+- Public URL: https://phoenix-wo-qa-1c91b66.krwpfbtbn8.chatgpt.site/#velen
+- Frozen GitHub application: `e8b818492bbc71450453a69686bf1a7f0d3042ac`. All 588 files matched that source before the public build marker was added.
+- Sites source: `bcc83936e7a830ccc4ca87c71c1ab14314a18546`. Deployment: `appgdep_6affe300bbc88191a6c41527e22dd9f5` (succeeded). Archive: `sha256:4283ebff0be38d439e40edbeb817fc05f5ae212e83b3249f2ebb7e6cc133136b`.
+- Live checks: build marker and versioned Velen script matched release bytes. Chrome loaded the Nilf deep link, marked Travel to Velen, retained it through reload, and returned to the Velen console via Quest cards.
+- Rollback target: saved public v49, source `02daa30f3799a45cd5b01433e777c1ac39d0b804`. The owner's existing public iPhone save was not used in the Chrome smoke test.
