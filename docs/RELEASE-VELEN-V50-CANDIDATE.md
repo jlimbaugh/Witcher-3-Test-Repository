@@ -18,3 +18,7 @@
 The public build marker still identifies v49 application commit `ba59252cb65800225a68297b6ce7068d3b91ff9b`. Using the exact v49 and v50 source modules with disposable storage, v49 created an existing Nilf record, v50 read it and recorded progress, and v49 read and undid the v50 write for the peace, fight, and direct routes. The legacy Arrival record remained byte-for-byte identical. A new Griffin School Gear objective record remained in storage during the v49 module rollback and was visible again in v50. v49 does not display that new tracker.
 
 This completes the targeted storage rehearsal for those paths. It leaves the returning-browser cache and interaction checks, physical Safari upgrade, and independent candidate retest open. No public release or rollback was performed.
+
+## Owner iPhone acceptance
+
+The owner reported PASS on all four requested device checks against the private v50 preview: Region Tools destinations and Safari Back; deck touch interaction, Warnings and Search; Nilf portrait/landscape layout and framed controls; and the number strip and VoiceOver checklist. These owner checks are closed. This records the owner's overall result for each checklist row. The same-origin v49-to-v50 upgrade and independent finding-by-finding retest remain open.
