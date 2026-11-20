@@ -28,3 +28,17 @@ The owner reported PASS on all four requested device checks against the private 
 Private rehearsal origin: https://phoenix-v50-upgrade-qa.krwpfbtbn8.chatgpt.site. v49 baseline source `762ac596b1215aa1189071eb0b052a07058976d2` deployed successfully as `appgdep_6affceddd5ec8191beea3079a154da0e`. The application is the v49 GitHub baseline with a rehearsal build marker. Frozen v50 application files are staged in rehearsal source commit `b86737112f6d66dda2791efb354231b3096d281a`, pending a v49 sample save on the owner's iPhone. The public guide and existing private review preview were untouched.
 
 Local preflight: every changed script and stylesheet linked in both v49 and v50 entry pages received a different URL. The actual frozen Region Tools click handlers, executed with a minimal DOM stand-in, dispatched Home, Regions, Field Reference, Progress, and Constellation correctly. Source inspection confirmed console and Nilf walkthrough reuse those handlers. This complements the owner's Safari navigation pass. It does not close independent reviewer sign-off or measure Safari cache behavior.
+
+### Owner returning Safari result
+
+The owner reported PASS after the same private origin was switched from v49 to frozen v50. The requested check covered the retained Travel to Velen mark, new Regional Tools deck with Search, and a second mark surviving reload and being undone without removing the original mark. Private v50 rehearsal deployment: `appgdep_6affcf6ee8608191bc1aee5add7c257c`. Public v49 was not changed.
+
+## Independent retest handoff
+
+Use the exact application candidate `e8b818492bbc71450453a69686bf1a7f0d3042ac`, the [private v50 preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen), and the [original findings](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25). For baseline comparisons, use public v49 and the original v48 evidence when applicable. Log pass, fail or explicit deferral against each finding ID in [draft PR #26](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/26), with route, device and observed result.
+
+1. Start with **LT49-RT-01**. On both the Velen console and Nilf walkthrough, activate all five shared destinations and exercise Back. Check **RT-02/03** for the approved deck and Search treatment.
+2. Retest **PRG-01 through PRG-04 and N1** with disposable saves. Cover unreadable/denied storage feedback, choice correction and Undo ownership. Use the exact original reproductions in PR #25 and its linked v48 reports.
+3. Record the remaining visual, Sources and accuracy findings by ID (**NUM**, **NILF**, **BTN**, **SRC**, **ACC**). Ground explicit deferrals in the original severity and evidence. Treat the owner’s device pass and local checks as supporting evidence.
+
+Independent sign-off is pending. The public release decision follows recorded disposition of the remaining findings.
