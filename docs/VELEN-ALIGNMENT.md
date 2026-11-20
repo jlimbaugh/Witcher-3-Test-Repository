@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner approved hub batch 3 (ef88c18). Hub batch 4 adds saved walkthrough counts to the quest cards and selected panels for For the Advancement of Learning, Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Fourteen milestones. Phone approval pending.
+
 Owner approved hub batch 2 (bbc84c0). Hub batch 3 adds saved walkthrough counts to the quest cards and selected panels for Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Ten milestones. Phone approval pending.
 
 Owner passed hub batch 1 (0ef49bf). Hub batch 2 adds saved walkthrough counts to the quest cards and selected panels for The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. iPhone approval pending.
