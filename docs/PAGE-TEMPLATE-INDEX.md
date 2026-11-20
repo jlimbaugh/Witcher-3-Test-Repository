@@ -1,5 +1,7 @@
 # Phoenix page templates
 
+The [Progress star chart decision report](PROGRESS-STAR-CHART-DECISIONS.md) records the new direction for whole-game Progress. Follow the [build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md) for the Velen pilot. The star chart becomes a reusable page standard after the owner accepts it.
+
 Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
 
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
