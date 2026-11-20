@@ -305,7 +305,7 @@ function regionalMap(id,requested){
     detachNilfMap=window.PhoenixNilfAreaMap.mount(screen,{
       stage:routeStage(id,q,requested),
       nearby:window.PhoenixSharedWalkthroughModel.VELEN_NEARBY,
-      quests,completed:isComplete,open:go
+      quests,open:go
     });
     return;
   }

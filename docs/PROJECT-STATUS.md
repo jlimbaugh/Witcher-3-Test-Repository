@@ -4,7 +4,7 @@
 
 - [Private Inn at the Crossroads preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map/nilf/3) · application `3d7c35b63e730b51cf2d6070cbc75189c555fff0` · private deployment `appgdep_6b00cdb5ce5c8191a0dd0dd0396d4243`. Public v50 remains the release baseline.
 - The pilot uses assembled game-map tiles with a parchment tint, sourced location anchors and an approximate Mulbrydale approach area. See [map provenance](../dist/MAP-SOURCES.md#velen--nilfgaardian-connection-quest-area-pilot). The exact Funeral Pyres and At the Mercy of Strangers encounter positions await Xbox confirmation. World Map layer synchronization is future work.
-- Review: open Quest Route from the walkthrough, check the inn’s shared seal, switch to All linked stops, open a linked activity, and use Safari Back. Check camera and scope restoration, label overlap, and pinch/recenter on iPhone. Capt ran 341 passing regressions with three historical-baseline checks skipped, and a simulated DOM interaction check. Device acceptance is open.
+- Updated pilot: the map opens centered on the walkthrough objective with icons only. Tap a seal to reveal one guide link, then tap the link to open its page. Safari Back should restore the camera and open label. Check that the two approach seals are easy to select, that either highlights the approximate encounter area, and that pinch and Recenter work in portrait and landscape. Physical iPhone Safari acceptance remains open.
 
 ## Active work · Progress star chart
 
