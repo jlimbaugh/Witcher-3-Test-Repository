@@ -52,7 +52,7 @@ const activityTabs=[
 const decks=Object.fromEntries(['quests',...activityTabs.map(([id])=>id)].map(id=>[id,[]]));
 for(const [id,card] of Object.entries(deckQuests))decks[deckCategory(id,card)].push(id);
 let deckSelected=decks.quests.includes(state.selected)?state.selected:decks.quests[0];
-let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false,arrivalOpen=false;
+let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false;
 function restoreHomeDeck(){
   const saved=history.state?.velen;
   if(decks.quests.includes(saved?.selected))deckSelected=saved.selected;
@@ -419,16 +419,10 @@ function consoleView(){
   if(nearby)screen.append(nearby);
   screen.append(activity.section);
   const tools=regionTools();
-  const arrival=el('details','velen-arrival-checklist');
-  arrival.open=arrivalOpen;
-  arrival.ontoggle=()=>{if(arrival.isConnected)arrivalOpen=arrival.open;};
-  arrival.append(el('summary','','Arrival checklist'),el('p','pilot-count',['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
-  for(const id of ['nilf','pyres','mercy'])arrival.append(link((isComplete(id)?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
-  tools.insertBefore(arrival,tools.querySelector('.regional-search-bar'));
   screen.append(tools);
   screen.firstElementChild.after(sectionJump([
     ['Quest cards',()=>screen.querySelector('[data-velen-deck="quests"]')],
-    ['Activities',()=>activity.section],['Region Tools',()=>tools],['Arrival checklist',()=>arrival]
+    ['Activities',()=>activity.section],['Region Tools',()=>tools]
   ]));
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
