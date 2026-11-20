@@ -768,6 +768,7 @@
       ]
     },
     'fools-gold': {
+      objectiveIds:['protect-yontek', 'investigate-hog-hut', 'lift-curse'],
       dlc: 'Free DLC · Fools’ Gold',
       name: "Fools’ Gold",
       kind: "Side quest",
@@ -785,6 +786,7 @@
       ]
     },
     'truth-is-in-the-stars': {
+      objectiveIds:['hear-first-reading', 'deliver-dragonsroot'],
       name: "The Truth Is in the Stars",
       kind: "Side quest",
       place: "Benek and the cave to its southeast",
@@ -799,6 +801,7 @@
       ]
     },
     'hazardous-goods': {
+      objectiveIds:['resolve-cart'],
       name: "Hazardous Goods",
       kind: "Side quest",
       place: "Road northwest of Lurtch",
@@ -812,6 +815,7 @@
       ]
     },
     'witcher-wannabe': {
+      objectiveIds:['follow-lead', 'resolve-impostor'],
       name: "Witcher Wannabe",
       kind: "Side quest",
       place: "Lindenvale and its cemetery",
@@ -827,6 +831,7 @@
       ]
     },
     'loves-cruel-snares': {
+      objectiveIds:['find-missing-man', 'report-back'],
       name: "Love’s Cruel Snares",
       kind: "Side quest",
       place: "Boatyard north of Condyle",

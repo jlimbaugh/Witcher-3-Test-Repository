@@ -1,5 +1,7 @@
 # Phoenix session calibration
 
+Owner passed Batch 9 (285192a). Batch 10 covers Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either decision about the impostor satisfies the last Witcher Wannabe milestone.
+
 Owner passed Batch 8 (1acb87e). Batch 9 covers Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine milestones. The Forefathers’ Eve final stage describes the endpoint for either route. Defender of the Faith and Last Rites retain separate progress.
 
 Owner passed Batch 7 (6d1b53e). Batch 8 covers Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone.

@@ -21,7 +21,8 @@ const sixthBatch=[['griffin-from-the-highlands', 3], ['beast-of-honorton', 2], [
 const seventhBatch=[['take-what-you-want', 2], ['fall-of-the-house-of-reardon', 3], ['ghosts-of-the-past', 3], ['eternal-fires-shadow', 3], ['thou-shalt-not-pass', 2]];
 const eighthBatch=[['fake-papers', 1], ['bitter-harvest', 2], ['wild-at-heart', 3], ['a-greedy-god', 2], ['a-dogs-life', 2]];
 const ninthBatch=[['forefathers-eve', 3], ['death-by-fire', 1], ['lynch-mob', 1], ['defender-of-the-faith', 2], ['last-rites', 2]];
-for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch])await test(id,async()=>{
+const tenthBatch=[['fools-gold', 3], ['truth-is-in-the-stars', 2], ['hazardous-goods', 1], ['witcher-wannabe', 2], ['loves-cruel-snares', 2]];
+for(const [id,total] of [...cases,...secondBatch,...thirdBatch,...fourthBatch,...fifthBatch,...sixthBatch,...seventhBatch,...eighthBatch,...ninthBatch,...tenthBatch])await test(id,async()=>{
  const base='#velen/quest/'+id+'/',key='phoenix.velen.'+id+'.objectives.v1';
  const progress=()=>one('#velen-screen .sw-walkthrough');
  await boot(base+'1',390,844,'normal',seed);
