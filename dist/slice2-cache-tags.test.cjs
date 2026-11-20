@@ -172,7 +172,7 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['search-model.js', 'search-ui.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
  for(const f of ['deck-jump.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
  assert.equal(tags['nilf-forged.css'],'v49-phone-fixes-1');
- for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-five-7',f);
+ for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-five-8',f);
 });
 test('candidate stale-tag regression: deliberately stale tags are detected',()=>{
  const refs=refsOf(here).map(r=>({...r}));

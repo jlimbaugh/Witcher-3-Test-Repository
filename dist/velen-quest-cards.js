@@ -616,6 +616,7 @@
       ]
     },
     'fake-papers': {
+      objectiveIds:['buy-forged-pass'],
       name:'Fake Papers',kind:side,place:'Refugee camp south of the Border Post',
       art:'art-velen/fake-papers.webp',
       briefing:'Buy a forged Transit Pass from the shady merchant, with or without a discount.',
@@ -627,6 +628,7 @@
       ]
     },
     'bitter-harvest': {
+      objectiveIds:['accept-job', 'defend-scavengers'],
       name:'Bitter Harvest',kind:side,level:9,place:'Battlefield southeast of the Border Post',
       art:'art-velen/bitter-harvest.webp',
       briefing:'Protect Albin Hart and his scavengers while they work the battlefield.',
@@ -639,6 +641,7 @@
       ]
     },
     'wild-at-heart': {
+      objectiveIds:['meet-niellen', 'answer-margrit', 'resolve-disappearance'],
       name: "Wild at Heart",
       kind: "Side quest",
       place: "Blackbough",
@@ -650,11 +653,12 @@
       level: 7,
       stages: [
         {"title": "Speak with Niellen", "place": "Blackbough", "actions": ["Agree to look for Hanna. Ask the villagers what they saw, then search the woods northwest of Blackbough."]},
-        {"title": "Respond to Margrit’s offer", "place": "Woods near Blackbough", "actions": ["Defeat the wolves. Margrit will offer to pay you to stop looking.", "For the short route, take the offer and report Hanna dead to Niellen. To learn what happened, stay in the woods and inspect the body, claw marks and tracks."], "warning": "Reporting back to Niellen on Margrit’s terms ends the quest early."},
-        {"title": "Resolve the confrontation", "place": "Cave below the isolated shack", "actions": ["On the investigation route, follow the clues to the shack and read the notes. Enter the cave beneath it at night.", "Fight the werewolf. When Margrit intervenes, choose whether to protect her or let Niellen take revenge."], "note": "Cursed Oil and Moon Dust help against a werewolf. If you let Niellen take revenge, follow him outside afterward to resolve the quest."}
+        {"title": "Respond to Margrit’s offer", "place": "Woods near Blackbough", "actions": ["Defeat the wolves. Margrit will offer to pay you to stop looking.", "For the short route, accept the offer. To learn what happened, stay in the woods and inspect the body, claw marks and tracks."], "warning": "Reporting back to Niellen on Margrit’s terms ends the quest early."},
+        {"title": "Resolve Hanna’s disappearance", "place": "Blackbough or the cave below the isolated shack", "actions": ["If you accepted Margrit’s offer, report back to Niellen in Blackbough to finish.", "On the investigation route, follow the clues to the shack and read the notes. Enter the cave beneath it at night.", "Fight the werewolf. When Margrit intervenes, choose whether to protect her or let Niellen take revenge."], "note": "Cursed Oil and Moon Dust help against a werewolf. If you let Niellen take revenge, follow him outside afterward to resolve the quest."}
       ]
     },
     'a-greedy-god': {
+      objectiveIds:['investigate-altar', 'resolve-offerings'],
       name: "A Greedy God",
       kind: "Side quest",
       place: "Ruins south of Wastrel Manor",
@@ -670,6 +674,7 @@
       ]
     },
     'a-dogs-life': {
+      objectiveIds:['rescue-dog', 'open-container'],
       name: "A Dog’s Life",
       kind: "Side quest",
       place: "Road near Drudge and the village",
