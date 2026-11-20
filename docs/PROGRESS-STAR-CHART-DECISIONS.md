@@ -37,3 +37,7 @@ The first iPhone review follows Progress → Velen → The Nilfgaardian Connecti
 A source record that cannot be read should retain its stored bytes and surface an unavailable status. Any unverified quest dependency remains unconnected in the prototype. The exact planet scale, orbit spacing, label density, withdrawal motion, and camera behavior will be developed with the owner on the phone, one review at a time.
 
 [Build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md)
+
+## Progress splash emblems · approved direction
+
+Jess selected **A · Forged seals** on November 20, 2026. Use raised cold-silver relief on dark stone. White Orchard uses an apple blossom over orchard ridges. Velen uses a bare tree over a broken road. Keep both silhouettes readable when adjacent cards only peek into the iPhone viewport. Render the region name and live progress counts in the interface. The mockup counts are illustrative. This decision covers the splash emblems. The region interior can evolve independently.
