@@ -1,6 +1,8 @@
 # Velen quest and task alignment plan
 
-Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone. Phone approval pending.
+Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once. Phone approval pending.
+
+Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone.
 
 Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones.
 
