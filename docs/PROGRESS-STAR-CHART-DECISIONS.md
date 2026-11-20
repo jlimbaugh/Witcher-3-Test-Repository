@@ -41,3 +41,9 @@ A source record that cannot be read should retain its stored bytes and surface a
 ## Progress splash emblems · approved direction
 
 Jess selected **A · Forged seals** on November 20, 2026. Use raised cold-silver relief on dark stone. White Orchard uses an apple blossom over orchard ridges. Velen uses a bare tree over a broken road. Keep both silhouettes readable when adjacent cards only peek into the iPhone viewport. Render the region name and live progress counts in the interface. The mockup counts are illustrative. This decision covers the splash emblems. The region interior can evolve independently.
+
+## Regional quest tree · selected prototype direction
+
+Jess selected **A · Story spine** for the first regional quest-tree prototype. Use a vertical story path. Stack Bloody Baron and Hunting a Witch under the same Nilf fork with full-width rows. Selecting a quest reveals only its own linked activities immediately below it. Use a larger illustrated plaque for the selected row and compact thumbnails with full titles for other rows. On a fresh region entry, land at the active or next story quest with its fork nearby. Use a compact sticky bottom action with the selected quest title and a single quest hub or card link.
+
+The two-state mockup shows Nilf selected with Funeral Pyres and At the Mercy of Strangers, then Bloody Baron selected with Ciri’s Room. The refined prototype should use reduced illustrative row heights for unselected quests and cold silver for the selected outline. Treat the mockup glow, spacing, and large bottom panel as concept artwork. The new direction revises the original orbit-map treatment for the region interior. Build and field acceptance remain open.
