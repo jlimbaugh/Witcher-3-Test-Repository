@@ -1,5 +1,7 @@
 # Velen quest and task alignment plan
 
+Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones. Phone approval pending.
+
 Owner approved hub batch 7 (7188e33). Hub batch 8 adds saved walkthrough counts to the quest cards and selected panels for Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone. Phone approval pending.
 
 Owner approved hub batch 6 (fda07b2). Hub batch 7 adds saved walkthrough counts to the quest cards and selected panels for Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is optional. Phone approval pending.
