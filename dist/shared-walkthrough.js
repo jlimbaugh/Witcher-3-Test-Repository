@@ -110,7 +110,7 @@
     optionalControls(o){if(!o.optional)return null;const label=make('label','sw-skip','Optional status ');const select=make('select');select.dataset.objectiveSkip=o.id;for(const [v,txt] of [['open','Not skipped'],['skipped','Skipped']]){const op=make('option','',txt);op.value=v;select.append(op);}select.value=p.objectives[o.id]==='skipped'?'skipped':'open';label.append(select);return label;},
     story(){const box=make('div','progress-actions sw-story');
      const b=(text,attr,val='')=>{const x=make('button','',text);x.type='button';x.setAttribute(attr,val);return x;};
-     box.append(b('Update story progress','data-story-update'),b('Undo last progress change','data-undo-deck'));
+     box.append(b('Update story progress','data-story-update'),b(state.progressUndo?.label?'Undo · '+state.progressUndo.label:'Undo last progress change','data-undo-deck'));
      if(p.legacy?.[q])box.append(b('Review saved completion','data-reconcile-legacy',q));
      const label=make('label','','Quest status '),sel=make('select');sel.dataset.questState=q;for(const [v,txt] of [['active','Not complete'],['failed','Failed']]){const op=make('option','',txt);op.value=v;sel.append(op);}sel.value=status==='failed'?'failed':'active';label.append(sel);box.append(label);
      for(const o of rows.filter(r=>r.choice)){const row=make('p','sw-choice');const btn=b('Record / review choice: '+o.label,'data-edit-choice',o.id);row.append(btn);const v=p.choices[o.choice];if(v){const opt=data.choices[o.choice]?.options.find(x=>x[0]===v);row.append(make('span','quiet',' Recorded: '+(opt?opt[1]:v)));}box.append(row);}
@@ -120,7 +120,7 @@
   // ---- Velen adapter (The Nilfgaardian Connection) -----------------------------------------------------------------
   function velenAdapter(page){
    const owner=root.PhoenixVelenNilfProgress,Q=owner.QUEST,vd=owner.data,eng=owner.engine,velen=root.PHOENIX_VELEN,q=velen.quests.nilf;
-   let s;try{s=owner.load(localStorage);}catch{s=null;}
+   const s=root.PhoenixVelen?.nilfState();
    if(!s||!s.owned)return null;
    const p=s.progress,required=new Set(eng.required(Q,p).map(o=>o.id)),status=eng.status(Q,p),counts=eng.counts(Q,p);
    const rows=vd.quests[Q].objectives.map(o=>({id:o.id,key:o.id.split(':')[1],label:o.label,optional:o.optional===true,required:required.has(o.id),stage:String(o.stage),choice:o.choice||null,raw:o}));
@@ -162,6 +162,25 @@
     const other=id==='pyres'?'mercy':'pyres';
     related.push({label:root.PHOENIX_VELEN.quests[other].name,href:'#velen/hub/'+other});
    }
+   if(q.objectiveIds){
+    const tracker=root.createVelenQuestTracker(id,q.objectiveIds);
+    const objectives=rows.map((row,i)=>({...row,id:tracker.objectiveIds[i],required:!q.optionalObjectives?.includes(tracker.objectiveIds[i])}));
+    const required=objectives.filter(row=>row.required);
+    function change(update){tracker.change(update);render(adapter);}
+    const adapter={key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows:objectives,
+     lay:{...layout(rows,rows.map(row=>row.stage)),primary:objectives,ownerOf:Object.fromEntries(objectives.map(o=>[o.stage,o.id]))},reading,goStage,currentStage:()=>String(index+1),
+     get counts(){return {done:required.filter(o=>tracker.record.marks.includes(o.id)).length,total:required.length};},
+     get note(){return tracker.notice||(required.every(o=>tracker.record.marks.includes(o.id))?'Quest complete.':!objectives[index].required?'Optional lead · You can go directly to the cottage.':'');},
+     objState:o=>({done:tracker.record.marks.includes(o.id),disabled:!tracker.editable,text:tracker.notice||'Not completed'}),
+     warning(o){const short=q.stages[Number(o.stage)-1].warning;return short?{id:warningRecordId(key,'stage-'+o.stage),short,sections:[],href:'#velen/quest/'+id+'/'+o.stage}:null;},
+     markObjective(o,checked){change(old=>old.marks.includes(o.id)===checked?null:{
+      marks:checked?[...old.marks,o.id]:old.marks.filter(mark=>mark!==o.id),undo:old.marks});},
+     story(){const box=make('div','progress-actions sw-story'),undo=make('button','','Undo last progress change');
+      undo.type='button';undo.disabled=!tracker.editable||tracker.record.undo===null;
+      undo.onclick=()=>change(old=>old.undo===null?null:{marks:old.undo,undo:null});box.append(undo);return box;}
+    };
+    return adapter;
+   }
    return {key,region:'Velen',section:page,quest:q.name,sourceId:id,related,rows,lay,reading,story,goStage,readOnly:true,
     catchUp(stage){const prev=new Set(marks);for(const row of rows.slice(0,Number(stage)))marks.add(row.id);memory.set(key,{...memory.get(key),stageMarks:marks,undoCatchUp:prev});},
     undoCatchUp(){const previous=memory.get(key)?.undoCatchUp;if(previous)memory.set(key,{...memory.get(key),stageMarks:previous,undoCatchUp:null});},
@@ -171,7 +190,7 @@
   }
 
   // ---- shared rendering ------------------------------------------------------------------------------------------
-  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);const box=input.closest('.sw-box');box.classList.toggle('done',input.checked);input.setAttribute('aria-label',(input.checked?'Completed: ':'Mark complete: ')+o.label);const name=box.querySelector('.sw-name');name.querySelector('.sw-state')?.remove();if(input.checked)name.append(make('span','sw-state','Completed'));});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
+  function checkbox(a,o,st){const label=make('label','sw-check');const input=make('input');input.type='checkbox';if(a.markObjective){input.onchange=()=>a.markObjective(o,input.checked);}else if(a.readOnly){input.addEventListener('change',()=>{a.toggleStage(o.id,input.checked);const box=input.closest('.sw-box');box.classList.toggle('done',input.checked);input.setAttribute('aria-label',(input.checked?'Completed: ':'Mark complete: ')+o.label);const name=box.querySelector('.sw-name');name.querySelector('.sw-state')?.remove();if(input.checked)name.append(make('span','sw-state','Completed'));});}else input.setAttribute(a.checkAttr,o.id);input.checked=st.done;input.disabled=st.disabled;input.setAttribute('aria-label',(st.done?'Completed: ':'Mark complete: ')+o.label);label.append(input,make('span','sw-check-mark'));return label;}
   function render(a){
    const host=a.section.querySelector('.reading-panel');if(!host)return;
    a.section.classList.add('sw-page');
@@ -232,12 +251,12 @@
    const idx=a.lay.primary.findIndex(o=>o.id===selected)+1,done=a.lay.primary.filter(o=>a.objState(o).done).length;
    const line=make('div','sw-status');line.append(make('span','sw-position',(a.readOnly?'STAGE ':'OBJECTIVE ')+idx+' OF '+a.lay.primary.length));
    if(!a.readOnly){
-   const nu=nextUnfinished(a.lay.primary,o=>{const st=a.objState(o);return !st.done&&!st.disabled;});
+   const nu=nextUnfinished(a.lay.primary,o=>{const st=a.objState(o);return o.required&&!st.done&&!st.disabled;});
    if(nu&&nu.id!==selected){const n=make('button','sw-next','Next unfinished →');n.type='button';n.setAttribute('aria-label','Go to next unfinished objective: '+nu.label);n.onclick=()=>choose(a,nu.id,true,true);line.append(n);}
    else line.append(make('span','sw-on-next',nu?'This is your next unfinished objective':'No unfinished required objective'));
    const pr=make('div','sw-progress');const bar=make('span','sw-bar');bar.setAttribute('aria-hidden','true');const fill=make('i');fill.style.width=(a.counts.total?100*a.counts.done/a.counts.total:0)+'%';bar.append(fill);
    pr.append(make('span','',a.counts.done+' of '+a.counts.total+' required completed'),bar);line.append(pr);
-   const off=a.rows.filter(o=>!o.required&&!o.optional&&o.stage),closed=off.filter(o=>a.objState(o).closed),cond=off.filter(o=>!a.objState(o).closed);
+   const off=a.rows.filter(o=>!a.markObjective&&!o.required&&!o.optional&&o.stage),closed=off.filter(o=>a.objState(o).closed),cond=off.filter(o=>!a.objState(o).closed);
    if(cond.length)line.append(make('span','sw-route-note','Route-dependent, not counted yet: '+cond.map(o=>o.label).join(' ')));
    if(closed.length)line.append(make('span','sw-route-note','Not on your recorded route, not counted: '+closed.map(o=>o.label).join(' ')));
    if(a.note)line.append(make('span','sw-route-note sw-quest-note',a.note));
@@ -297,12 +316,24 @@
     }
     root_.append(related);
    }
+   if(a.region==='White Orchard'&&!a.section.querySelector('[data-regional-tools]')){
+    const mount=make('div');mount.dataset.regionalTools='whiteorchard';
+    const footer=a.section.querySelector('.sw-source-link');
+    if(footer)footer.before(mount);else a.section.append(mount);
+    root.PhoenixVelen.mountRegionalTools(mount);
+   }
    if(a.sourceId){
     for(const item of host.querySelectorAll(':scope>details.sources'))item.hidden=true;
     if(!a.section.querySelector(':scope>.sw-source-link')){
      const source=make('a','sw-source-link','Sources');
      source.href='velen-sources.html#'+a.sourceId;a.section.append(source);
     }
+   }
+   const toolsMenu=a.section.querySelector('.velen-tools-section');
+   const search=toolsMenu?.querySelector('.regional-search-bar');
+   if(search){
+    const container=toolsMenu.closest('[data-regional-tools]')||toolsMenu;
+    container.before(search);
    }
    rail.dataset.programmatic='1';
    if(old)old.replaceWith(root_);else host.prepend(root_);

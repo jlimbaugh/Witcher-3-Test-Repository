@@ -83,7 +83,7 @@ window.createPhoenixDeparture=function({state,tasks,engine,medallion,navigate}){
   if(v.completed.length){const resolved=make('details','','departure-resolved');resolved.append(make('summary','Resolved ('+v.completed.length+')'));v.completed.forEach(r=>resolved.append(row(r)));resolved.open=resolvedOpen;host.append(resolved);}
   host.append(make('p','You may continue freely. Reviewing or acknowledging a warning does not complete, fail, or acquire anything.'));
   // Sources retained
-  let sources=section.querySelector('[data-departure-sources]');if(!sources){sources=make('details');sources.dataset.departureSources='';sources.append(make('summary','Departure sources & verification'));for(const [name,href]of Object.entries(model.sources)){const a=link(name==='cutoff'?'Quest cutoff table':name==='skull'?'Crystal skull acquisition and cutoff':'Returnable White Orchard activities',href);a.target='_blank';a.rel='noopener noreferrer';sources.append(a);}panel.append(sources);}
+  if(!section.querySelector('.sw-source-link'))panel.append(link('Sources','velen-sources.html#departure-review'));
   // Warning eligibility includes unrecorded quests. Signature uses warningEligible, not knownOpen alone.
   const eligible=v.warningEligible;
   const signature='departure-risk:'+eligible.map(r=>r.id).join(',');queued=new Set([...queued].filter(id=>id===signature));

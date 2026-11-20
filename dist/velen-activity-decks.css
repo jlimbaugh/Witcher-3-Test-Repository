@@ -4,7 +4,7 @@
 .velen-activity-tabs button{min-height:44px;padding:.4rem .75rem;border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#e2e9ee;font:1rem/1.2 var(--body,Georgia);cursor:pointer}
 .velen-activity-tabs button[aria-selected=true]{border-color:#e4d4a8;background:#384745;color:#fff4da}
 .velen-activity-empty{text-align:center;padding:1rem}
-.velen-activities>summary,.velen-arrival-checklist>summary{min-height:44px;padding:.65rem;cursor:pointer}
+.velen-activities>summary{min-height:44px;padding:.65rem;cursor:pointer}
 .velen-activities>summary,.velen-activities-shortcut{border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#f4ecd9}
 .velen-activities[open]>summary{margin-bottom:1rem}
 .velen-activities-shortcut{min-height:44px;margin:.75rem auto 0;padding:.4rem .9rem;font:inherit;cursor:pointer}
@@ -26,3 +26,66 @@
 .velen-route-branches{border-left:2px dashed #7a6955;padding:0 0 .1rem .7rem;margin-left:1rem}
 .velen-route-group{margin-block:.75rem}
 .velen-route-pin[aria-current=step]{border-width:2px}
+
+.velen-section-jump select,.regional-search-bar input,.regional-search-bar button{min-height:44px;font:inherit}
+.velen-section-jump{margin:.5rem 0;text-align:center}
+.regional-search-bar{display:flex;align-items:center;gap:.4rem;margin:1rem auto 0;max-width:32rem;border-bottom:1px solid #94988e;background:#182224;padding-inline:.65rem}
+.regional-search-bar input{flex:1;min-width:0}
+.regional-search-bar :is(input,button){border:0;border-radius:0;background:transparent;color:#f4ead7;box-shadow:none;font-size:1rem}
+.regional-search-bar input::placeholder{color:#d6ccba}
+.guide-search-splash{padding:1rem}
+.guide-search-splash>h1,.guide-search-splash>.guide-search-paper{max-width:44rem;margin-inline:auto}
+.guide-search-splash>.guide-search-paper{height:auto;min-height:50vh}
+.guide-search-splash .guide-search-results{overflow:visible}
+.guide-search-splash header[hidden]{display:none}
+
+.velen-tools-section{width:100%;min-width:0}
+.velen-tools-section>h2{text-align:center;color:#f5ead3;text-shadow:0 2px 4px #111}
+.guide-search-splash .guide-search-paper button:is(.guide-search-result,.guide-search-recent-query){background:#f0e0be url(worn-vellum-r15.svg)!important;color:#30271f!important}
+
+.regional-tools-host.velen-view{background:transparent;padding:0;margin:1rem auto;width:100%;min-width:0}
+.regional-tools-shell .home-selected-actions{grid-template-columns:1fr}
+.regional-warning-list[hidden]{display:none}
+.regional-warning-list button{display:block;min-height:44px;width:100%;margin:.35rem 0}
+.velen-view .console-r16 .velen-tools-section .deck{height:calc(296px * var(--guide-type-scale,1) + 22px)}
+
+/* Frame the complete tools menu. Keep the forged work clear of the swipe surface. */
+.velen-tools-section {
+  position: relative;
+  box-sizing: border-box;
+  border: 3px double #9ca9a8;
+  border-radius: 4px;
+  background: linear-gradient(#152025eb, #111b1ff5), url(r10-metal.svg);
+  box-shadow: inset 0 0 0 1px #293539, 0 4px 8px #090d1073;
+  padding: .65rem 8px 24px;
+}
+.velen-tools-section::before,
+.velen-tools-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+.velen-tools-section::before {
+  background-image: url(visual-art/nilf-forged/rail.svg), url(visual-art/nilf-forged/brace.svg);
+  background-position: left 22%, center bottom;
+  background-size: 8px 64px, 112px 20px;
+}
+.velen-tools-section::after {
+  background-image: url(visual-art/nilf-forged/rail.svg);
+  background-position: left 65%;
+  background-size: 8px 64px;
+  transform: scaleX(-1);
+}
+
+/* Walkthrough footer: search, tool cards, source, credits. */
+.main-console-view { padding-bottom: 0 !important; }
+.view:has(.sw-walkthrough) .scene-inner:has(.sw-walkthrough) { padding-bottom: .5rem; }
+.quest-page > .regional-search-bar, .sw-page > .regional-search-bar { margin-bottom: .75rem; }
+
+html body [data-velen-deck] .deck.phoenix-horizontal-box[data-swipe-engine=custom],
+html body [data-velen-deck] .deck .quest-card {
+  touch-action: pinch-zoom !important;
+  overscroll-behavior-y: auto;
+}

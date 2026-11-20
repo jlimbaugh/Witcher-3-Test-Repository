@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" role="img" aria-label="Route maps: inked route on an unrolled map (original code-drawn guide art, not official)">
+  <!-- Original code-drawn guide art for the Region Tools "Route maps" tile (LT, v49 fixes). Generic terrain, not a
+       depiction of in-game Velen geography and not CD PROJEKT RED artwork. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="#3d3526"/><stop offset=".6" stop-color="#1c1d19"/><stop offset="1" stop-color="#0b0e0f"/></radialGradient>
+    <linearGradient id="map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e1cf9f"/><stop offset=".55" stop-color="#cbb47f"/><stop offset="1" stop-color="#9a8053"/></linearGradient>
+    <linearGradient id="roll" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0e2bb"/><stop offset=".5" stop-color="#b59a66"/><stop offset="1" stop-color="#6e5634"/></linearGradient>
+    <radialGradient id="vig" cx="50%" cy="45%" r="70%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".75"/></radialGradient>
+  </defs>
+  <rect width="480" height="400" fill="url(#bg)"/>
+  <!-- unrolled sheet -->
+  <path d="M44 70h392v268H44z" fill="url(#map)" stroke="#5a4528" stroke-width="3"/>
+  <rect x="30" y="56" width="420" height="28" rx="14" fill="url(#roll)" stroke="#5a4528" stroke-width="3"/>
+  <rect x="30" y="326" width="420" height="28" rx="14" fill="url(#roll)" stroke="#5a4528" stroke-width="3"/>
+  <!-- swamp river, forest and hills -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 252q60-30 110 4t112-6q48-30 96 6t74-4" stroke="#4f6b6a" stroke-width="9" opacity=".75"/>
+    <path d="M44 252q60-30 110 4t112-6q48-30 96 6t74-4" stroke="#8fb1aa" stroke-width="3" opacity=".7"/>
+    <g stroke="#5b4c33" stroke-width="3"><path d="M330 150l22-36 22 34m-30 2l26-44 28 40"/><path d="M80 140l18-30 18 28m-24 2l20-34 22 32"/></g>
+    <g fill="#55633f" stroke="#3b4530" stroke-width="2"><path d="M180 128l12-24 12 24z"/><path d="M200 140l12-24 12 24z"/><path d="M168 150l12-24 12 24z"/><path d="M218 122l12-24 12 24z"/></g>
+    <g stroke="#7a6a48" stroke-width="2" opacity=".7"><path d="M96 300q10-6 20 0m10 0q10-6 20 0M300 300q10-6 20 0m10 0q10-6 20 0"/></g>
+    <!-- inked route with stops -->
+    <path d="M84 206q50-40 104-12t96 4q44-26 76-70t50-18" stroke="#7d1f1a" stroke-width="5" stroke-dasharray="2 12"/>
+  </g>
+  <g fill="#7d1f1a" stroke="#2a1410" stroke-width="2"><circle cx="84" cy="206" r="9"/><circle cx="188" cy="194" r="9"/><circle cx="284" cy="198" r="9"/></g>
+  <path d="M410 104l-14 26 14 26 14-26z" fill="#7d1f1a" stroke="#2a1410" stroke-width="2"/>
+  <!-- compass rose -->
+  <g transform="translate(392 272)" stroke="#3a2d1d" stroke-width="2"><circle r="30" fill="none"/><path d="M0-40l8 40-8 40-8-40z" fill="#3a2d1d"/><path d="M-40 0l40-7 40 7-40 7z" fill="#cdb784"/></g>
+  <rect width="480" height="400" fill="url(#vig)"/>
+</svg>

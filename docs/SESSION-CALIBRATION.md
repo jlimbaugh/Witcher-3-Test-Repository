@@ -1,5 +1,74 @@
 # Phoenix session calibration
 
+Owner passed hub batch 14 (b139a79), completing iPhone review of the 70 batched Velen hub progress entries. Next: reconcile regional progress totals with the existing quest and activity owners, then close the remaining regional coverage gaps.
+
+Owner passed hub batch 13 (7169c62). Hub batch 14 closes the 70-entry hub progress review with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven required milestones. The four Griffin armor diagrams share one milestone.
+
+Owner passed hub batch 12 (3591de8). Hub batch 13 adds saved walkthrough counts to the quest cards and selected panels for The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt has two required milestones, one for its clue and one for its treasure.
+
+Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure.
+
+Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once.
+
+Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone.
+
+Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones.
+
+Owner approved hub batch 7 (7188e33). Hub batch 8 adds saved walkthrough counts to the quest cards and selected panels for Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone. Phone approval pending.
+
+Owner approved hub batch 6 (fda07b2). Hub batch 7 adds saved walkthrough counts to the quest cards and selected panels for Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is optional. Phone approval pending.
+
+Owner approved hub batch 5 (f1d2d52). Hub batch 6 adds saved walkthrough counts to the quest cards and selected panels for The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones. Destroying eggs in Missing Brother is optional. Phone approval pending.
+
+Owner approved hub batch 4 (df94197). Hub batch 5 adds saved walkthrough counts to the quest cards and selected panels for Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Sixteen milestones. Phone approval pending.
+
+Owner approved hub batch 3 (ef88c18). Hub batch 4 adds saved walkthrough counts to the quest cards and selected panels for For the Advancement of Learning, Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Fourteen milestones. Phone approval pending.
+
+Owner approved hub batch 2 (bbc84c0). Hub batch 3 adds saved walkthrough counts to the quest cards and selected panels for Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Ten milestones. Phone approval pending.
+
+Owner passed hub batch 1 (0ef49bf). Hub batch 2 adds saved walkthrough counts to the quest cards and selected panels for The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. iPhone approval pending.
+
+Owner passed Batch 14 (933a571), completing approval of all 70 batched walkthroughs. Hub progress batch 1 brings the first five Batch 1 quest cards and their Velen selected panels into sync with saved walkthrough milestones. Regional aggregate counts and the remaining hubs are pending.
+
+Owner passed Batch 13 (f9c3834). Batch 14 closes the current list of walkthrough batches with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven milestones. The four Griffin armor diagrams share one milestone. Hub totals and regional task coverage are tracked separately.
+
+Owner passed Batch 12 (5e2a292). Batch 13 covers The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt tracks two milestones, securing its clue and recovering its treasure.
+
+Owner passed Batch 11 (8a201b3). Batch 12 covers An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each treasure hunt tracks its clue and its treasure separately, for ten required milestones.
+
+Owner passed Batch 10 (3ccc006). Batch 11 covers Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is available to read; each rider win counts once.
+
+Owner passed Batch 9 (285192a). Batch 10 covers Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either decision about the impostor satisfies the last Witcher Wannabe milestone.
+
+Owner passed Batch 8 (1acb87e). Batch 9 covers Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine milestones. The Forefathers’ Eve final stage describes the endpoint for either route. Defender of the Faith and Last Rites retain separate progress.
+
+Owner passed Batch 7 (6d1b53e). Batch 8 covers Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone.
+
+Owner passed Batch 6 (3ffd5aa). Batch 7 covers Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is available as an optional reading stage. Reardon Manor tracks either encounter under the same milestone.
+
+Owner passed Batch 5 and the footer/checklist correction (1d6fa40). Batch 6 covers The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones count across five walkthroughs. Destroying the eggs in Missing Brother is optional. Linked quests retain separate progress.
+
+Guide-wide footer rule: the last section flows directly into the credits. Regional Tools omits the duplicate Arrival checklist and its section jump. The quest deck and Activities retain access to all three arrival quests.
+
+Owner passed Batch 4 (9eb7b72). Batch 5 covers Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Review sixteen walkthrough milestones together. Woodland Beast tracks the encounter and the report for either outcome.
+
+Owner passed Batch 3 (e6104a7). Batch 4 covers For the Advancement of Learning and four contracts: Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Review fourteen walkthrough milestones together. Keira’s possible endings and contract payment choices each share their respective final milestone.
+
+Owner passed Batch 2 (082ebe6). Batch 3 covers Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Review their ten walkthrough milestones together.
+
+Owner passed Batch 1 (7cbeaf2). Batch 2 covers The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. Each story choice counts once regardless of outcome. The race counts either finish order.
+
+Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.
+
+Owner approved the card-edge gesture build 03abe77. Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
+
+Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
+
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+
+
+**Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
+
 Read [Project Status](PROJECT-STATUS.md) first, then use this page alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For Velen v49, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.
 
 ## Carry decisions through the build
@@ -18,7 +87,7 @@ Start with the [page template index](PAGE-TEMPLATE-INDEX.md) for any page work, 
 | Regional deck | Velen is the canonical deck template. Numbers only, wrap both ways, select on tap or scroll settle, and update the featured quest and its actions. Preserve vertical scroll and use the approved silver selector wolf. In v49, Velen number targets are at least 68 × 64 CSS px. |
 | Framing and scale | Keep the accepted parchment, legibility, scale and layout. Add only the clearance needed for forged trim. Box flourishes A–J and original and vine rail pairs V1–V9 are approved. Use one rail style per page. The runtime forged-frame pilot covers the Nilf hub and walkthrough. |
 | Buttons | Pick one stable standard text-button variant per page from B1–B10. Peer controls align. The forged rim forms the visible outer perimeter, with bevel and contact shadow and clear space around the silhouette. Illustrated hub and walkthrough actions use their approved fixed artwork. |
-| Region Tools and maps | Match the wolf menu's choices and use the illustrated Merchant tile treatment across regional tools. Preserve the floating wolf artwork. The map for a quest shows its pertinent listed locations, and Region Tools opens the regional overview. |
+| Region Tools and maps | Use the approved Nilf walkthrough Regional Tools component wherever the guide shows regional shortcuts. The floating wolf has independent controls and selection. Use the quest card deck with destination-specific illustrated actions, omit the numbered strip on tools, and place a quiet search bar below it that submits to the Search page. Preserve the floating wolf artwork. The map for a quest shows its pertinent listed locations, and Region Tools opens the regional overview. |
 | Quest reading and sources | Preserve objective position on mark, keep related optional tasks beneath the reading content, and use the existing progress owner. Put citations on the central Sources page and use one quiet Sources link at the end of the reading page. Guide-wide legacy citation cleanup is open. |
 | Shared copy and content | Include DLC content with its label. Remove expansion toggles and routine browser-save instructions from the template. Record any leftover instances as defects. |
 
@@ -82,3 +151,5 @@ Open for owner review. A and B are options. Custom answers are welcome. Record t
 | 19 | When you have several copies of a Gwent card, how should the deck builder show them? | One card with owned and in-deck counts | A separate card for each copy | Open |
 | 20 | When two quests match a search term, which result should come first? | The quest in the current region | The quest you most recently opened | Open |
 | 21 | When reviewing a batch of ten approved quest designs, what should the QA handoff open with? | A contact sheet linking to each playable page | A playable quest list with visual references beside each entry | Open |
+
+The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the card deck. The illustrated cards retain their individual frames. The wolf is independent.

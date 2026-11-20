@@ -105,3 +105,11 @@ The third Velen treasure batch adds four original illustrations of the scaffoldi
 Four original treasure hunt illustrations depict the wrecked wagon, the battlefield cache, the burned house near Condyle, and the basilisk-guarded dowry.
 
 The base Griffin scavenger hunt uses an original illustration of Griffin diagrams beside George’s tomb in Dragonslayer’s Grotto.
+
+## Region Tools tile art (v49 LT fixes, PR #25 RT-03)
+`visual-art/region-tools/search.svg` (lens over a field journal) and `visual-art/region-tools/route-maps.svg` (inked
+route on an unrolled map) are original code-drawn SVGs made by LT for the Velen Region Tools grid. They are **not
+official** CD PROJEKT RED art, the map is generic terrain and not a depiction of in-game Velen geography, and they were
+not generated from or traced over any game asset. They replace the reused Field Reference painting (Search) and the
+plain `velen-route-map-art.svg` line drawing (Route maps) on that grid only; `velen-route-map-art.svg` is still used
+elsewhere.

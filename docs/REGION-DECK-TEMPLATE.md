@@ -1,5 +1,14 @@
 # Phoenix regional deck template
 
+Owner approved the card-edge gesture build 03abe77. Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
+
+Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
+
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+
+Owner PASS · November 19, 2026. All future regions use the Regional Tools menu from candidate 1690b41: eight illustrated quest-style cards with direct tap activation, quiet search field opening the search page, and no numbered jump strip. Use the shared forged silver perimeter, staggered side rails and centered lower brace. Keep the floating wolf independent.
+
+
 Owner approved the Velen and White Orchard numbered strip on November 18, 2026. The initial shared implementation was `11871564b5b51dc65ffd16fc502572aa9ab098c3`. Use [Velen v49](RELEASE-VELEN-V49.md) for the taller Velen implementation. The approved Velen deck is the canonical template for new and revised regional decks, including card presentation, the numbered jump strip, and selected-card actions. Preserve the existing White Orchard implementation. Evaluate individual White Orchard elements for incorporation into the shared template with explicit owner approval.
 
 ## Required regions pattern

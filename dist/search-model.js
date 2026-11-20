@@ -3,7 +3,7 @@
 (()=>{
  const normalize=value=>String(value||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
  const text=value=>Array.isArray(value)?value.map(text).join(' '):typeof value==='string'?value:'';
- function buildIndex({tasks,pins=[],references=[],velenCards={}}){
+ function buildIndex({tasks,pins=[],references=[],velenCards={},velenQuests={}}){
   const rows=[],seen=new Set();
   const add=row=>{if(!row.href?.startsWith('#')||seen.has(row.id))return;seen.add(row.id);rows.push({...row,expansion:row.expansion||'base',titleKey:normalize(row.title),searchKey:normalize(row.title+' '+(row.keywords||''))});};
   for(const [id,t]of Object.entries(tasks)){
@@ -12,6 +12,10 @@
    const href=t.stages?'#whiteorchard-tree/'+t.home+'/'+id:service?'#economy-merchants/'+service.id:'#'+t.view;
    add({id,taskId:id,title:t.name,type,category:type==='quest'?'Quest':type==='diagram'?'Diagram':type==='merchant'?'Merchant / service':type==='reference'?'Reference':'Activity',region:'White Orchard',href,keywords:text([t.intro,t.why,t.requirements,t.sections])});
    for(const stage of t.stages||[])add({id:id+':step:'+stage.id,taskId:id,title:stage.title+' · '+t.name,type:'quest',category:'Quest step',region:'White Orchard',href:'#'+t.view+'/'+stage.id,keywords:text([stage.text,stage.warning])});
+  }
+  for(const [id,quest] of Object.entries(velenQuests)){
+   add({id:'velen:'+id,title:quest.name,type:/quest/i.test(quest.kind)?'quest':'activity',category:quest.kind,region:'Velen',href:'#velen/hub/'+id,
+    keywords:text([quest.intro,...quest.stages.map(stage=>[stage.title,stage.place,stage.text])])});
   }
   for(const [id,card] of Object.entries(velenCards)){
    if(!card.name)continue;

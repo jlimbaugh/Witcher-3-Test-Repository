@@ -1,11 +1,21 @@
 # Phoenix project status
 
+Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
+
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+
+
+**Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
+
+The owner approved the Velen walkthrough Regional Tools deck. PR #26 now shares it on Home, Regions, regional consoles and walkthroughs. Home and Regions follow the selected region for local tools. Physical iPhone Safari acceptance remains open.
+
 ## Current release and review
 
 | Item | Current state |
 |---|---|
 | Public guide | **Velen v49**, published November 19, 2026. [Release and rollback record](RELEASE-VELEN-V49.md) |
-| Application candidate | `ba59252cb65800225a68297b6ce7068d3b91ff9b`, [draft PR #24](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/24) |
+| Published application source | `ba59252cb65800225a68297b6ce7068d3b91ff9b`, [draft PR #24](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/24) |
+| Private iPhone QA candidate | [Open Home tools QA](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#home) · [draft PR #26](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/26) · Regional Tools build `regional-tools-frame-1`. 343 regression tests passed. [Item-level checks and open device QA](qa/v49/phone/README.md). |
 | Independent review | LT delivered [v49 findings and evidence](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25). The [fix assignment](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/25#issuecomment-7014957770) calls for a separate candidate and preview for independent retest. [QA checklist](LT-QA-VELEN-V49.md) |
 | Author checks | 340 Node tests passed. Author Chromium and served-file checks are recorded in the release notes. Physical Safari and independent acceptance remain open. |
 | Release scope | Velen deck, walkthrough and content expansion, number strip, regional tools, and Nilf framing pilot. Approved mockups and remaining runtime rollout are tracked separately. |

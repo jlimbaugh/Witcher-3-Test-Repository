@@ -52,7 +52,7 @@ const activityTabs=[
 const decks=Object.fromEntries(['quests',...activityTabs.map(([id])=>id)].map(id=>[id,[]]));
 for(const [id,card] of Object.entries(deckQuests))decks[deckCategory(id,card)].push(id);
 let deckSelected=decks.quests.includes(state.selected)?state.selected:decks.quests[0];
-let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false,arrivalOpen=false;
+let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false;
 function restoreHomeDeck(){
   const saved=history.state?.velen;
   if(decks.quests.includes(saved?.selected))deckSelected=saved.selected;
@@ -63,22 +63,52 @@ function recordDeckView(){
   history.replaceState({...history.state,velen:{...history.state?.velen,selected:deckSelected,activityTab,activitySelected}},'',location.href);
 }
 function header(title,sub,art='velen-landscape-r18.webp'){const n=el('header','scene-banner');n.append(picture(art),el('p','eyebrow',sub),el('h1','',title));return n;}
-function carousel(category,selectedId){
+function carousel(category,selectedId,tools=null){
 const box=el('section','quest-selector desk-carousel');
 box.dataset.velenDeck=category;
-box.setAttribute('aria-label',category==='quests'?'Choose a Velen quest':'Choose a Velen activity');
-const ids=decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
-const select=(id,focus)=>selectCard(category,id,focus);
-for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=deckQuests[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';b.dataset.quest=id;b.setAttribute('aria-label','Select quest: '+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
+box.setAttribute('aria-label',tools?'Choose a regional tool':category==='quests'?'Choose a Velen quest':'Choose a Velen activity');
+const catalogue=tools?.catalogue||deckQuests;
+const ids=tools?Object.keys(catalogue):decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
+const select=(id,focus)=>tools?tools.select(id):selectCard(category,id,focus);
+for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=catalogue[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';if(tools)b.dataset.tool=id;else b.dataset.quest=id;b.setAttribute('aria-label',(tools?'Select tool: ':'Select quest: ')+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
-const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true),{selectOnSettle:true});
-box.append(deck,jump.frame,footer);
-deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);screen.querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
-let start=null;deck.onpointerdown=e=>{if(e.isPrimary&&e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY};};deck.onpointermove=e=>{if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3)swipeClickUntil=performance.now()+400;if(Math.abs(dx)>=8&&Math.abs(dx)>Math.abs(dy)*1.3&&!deck.hasPointerCapture(e.pointerId))deck.setPointerCapture(e.pointerId);};
-function finishSwipe(e,cancelled){if(!start||start.id!==e.pointerId)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(deck.hasPointerCapture(e.pointerId))deck.releasePointerCapture(e.pointerId);if(cancelled)return;const direction=window.PhoenixSwipeBoxModel.swipeDirection(dx,dy,false);if(direction){e.preventDefault();swipeClickUntil=performance.now()+400;select(ids[(idx+direction+ids.length)%ids.length]);}}
-deck.onpointerup=e=>finishSwipe(e,false);deck.onpointercancel=e=>finishSwipe(e,true);deck.ondragstart=e=>e.preventDefault();return box;}
+box.append(deck);
+if(!tools){const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true),{selectOnSettle:true});
+box.append(jump.frame);}
+box.append(footer);
+deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);(tools?.host||screen).querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
+let start=null;
+deck.onpointerdown=e=>{
+  if(!e.isPrimary||e.button!==0){start=null;return;}
+  const card=deck.querySelector('.quest-card.selected').getBoundingClientRect();
+  const edge=6;
+  const horizontal=e.clientX>=card.left-edge&&e.clientX<=card.right+edge&&
+    e.clientY>=card.top-edge&&e.clientY<=card.bottom+edge;
+  start={id:e.pointerId,x:e.clientX,y:e.clientY,horizontal,axis:null,scrollY:viewport().scrollY};
+};
+function move(e){
+  if(!start||start.id!==e.pointerId)return;
+  const dx=e.clientX-start.x,dy=e.clientY-start.y;
+  if(!start.axis&&Math.max(Math.abs(dx),Math.abs(dy))>=8){
+    start.axis=start.horizontal&&Math.abs(dx)>Math.abs(dy)*1.3?'horizontal':'vertical';
+    if(e.isTrusted&&e.type==='pointermove')deck.setPointerCapture(e.pointerId);
+  }
+  if(!start.axis)return;
+  swipeClickUntil=performance.now()+400;
+  if(start.axis==='vertical'&&e.pointerType==='touch')viewport().scrollTo(0,start.scrollY-dy*.8);
+}
+deck.onpointermove=move;
+deck.onpointerup=e=>{
+  if(!start||start.id!==e.pointerId)return;
+  move(e);
+  const direction=start.axis==='horizontal'&&window.PhoenixSwipeBoxModel.swipeDirection(e.clientX-start.x,e.clientY-start.y,false);
+  start=null;
+  if(direction){e.preventDefault();select(ids[(idx+direction+ids.length)%ids.length]);}
+};
+deck.onpointercancel=()=>{start=null;};
+deck.ondragstart=e=>e.preventDefault();return box;}
 function selectCard(category,id,focusJump=false){
   if(!decks[category].includes(id))return;
   const y=viewport().scrollY;
@@ -90,17 +120,28 @@ function selectCard(category,id,focusJump=false){
   render({y,focus:false});
   if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
 }
+const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood','whispering-hillock','king-of-the-wolves','family-matters','ciris-race','out-of-the-shadows','return-to-crookback-bog','fleeing-the-bog','keira-invitation','towerful-of-mice','favor-for-a-friend','advancement-of-learning','shrieker','jenny-o-the-woods','merry-widow','swamp-thing','patrol-gone-missing','mysterious-tracks','byways-murders','phantom-of-the-trade-route','woodland-beast','griffin-from-the-highlands','beast-of-honorton','missing-brother','master-armorers','where-the-cat-and-wolf-play','take-what-you-want','fall-of-the-house-of-reardon','ghosts-of-the-past','eternal-fires-shadow','thou-shalt-not-pass','fake-papers','bitter-harvest','wild-at-heart','a-greedy-god','a-dogs-life','forefathers-eve','death-by-fire','lynch-mob','defender-of-the-faith','last-rites','fools-gold','truth-is-in-the-stars','hazardous-goods','witcher-wannabe','loves-cruel-snares','blood-ties','races-crows-perch','fists-of-fury-velen','lost-goods','out-of-the-frying-pan-into-the-fire','an-unfortunate-turn-of-events','queen-zuleykas-treasure','sunken-chest','sunken-treasure','hidden-from-the-world','the-dead-have-no-defense','the-things-men-do-for-coin','dont-play-with-the-gods','blood-gold','a-costly-mistake','tough-luck','battlefield-loot','a-plea-ignored','dowry','griffin-school-gear']);
+function appendHubProgress(panel,id){
+  if(!hubProgressQuests.has(id))return;
+  const card=questCards[id];
+  const tracker=window.createVelenQuestTracker(id,card.objectiveIds);
+  const required=card.objectiveIds.filter(key=>!card.optionalObjectives?.includes(key));
+  const done=required.filter(key=>tracker.record.marks.includes(key)).length;
+  const message=tracker.editable?'Quest progress · '+done+' of '+required.length:tracker.notice;
+  panel.append(el('p','velen-hub-progress',message));
+}
 function selectedPanel(id){
   const q=deckQuests[id],tracked=Object.hasOwn(quests,id);
   const selected=scroll(q.name);
   selected.classList.add('selected-panel','selected-scroll');
   selected.append(el('p','',q.briefing||q.intro));
+  appendHubProgress(selected,id);
   if(q.dlc)selected.append(el('p','eyebrow',q.dlc));
   if(q.level)selected.append(el('p','eyebrow','Suggested level '+q.level));
   const actions=el('nav','home-selected-actions');
   actions.setAttribute('aria-label','Selected card actions');
   actions.append(
-    questAction('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:1)),
+    questAction('Open walkthrough','#quest/'+id+'/'+(tracked?state.stage[id]:readingStage(id))),
     questAction(tracked?'Open quest hub':'Open quest card',(tracked?'#hub/':'#lead/')+id,'navigation-art-v26/action-quest-hub.webp')
   );
   actions.append(questAction('Open this quest’s route map','#map/'+id,'velen-route-map-art.svg'));
@@ -178,7 +219,7 @@ function resumePanel(){
   if(saved?.id===id&&Number.isInteger(saved.stage)&&saved.stage>=1&&saved.stage<=q.stages.length)stage=saved.stage;
   let caption=isComplete(id)?'Quest complete':(q.stages[stage-1]?.title||'');
   if(id==='nilf'&&nilfOwned()&&!isComplete(id)){
-    const owner=window.PhoenixVelenNilfProgress,p=owner.load(nilfStorage).progress;
+    const owner=window.PhoenixVelenNilfProgress,p=nilfUI.state().progress;
     const next=owner.engine.required(owner.QUEST,p).find(o=>p.objectives[o.id]!=='done'&&!owner.engine.closed(o,p));
     if(next){stage=next.stage;caption='Next objective · '+next.label;}
   }
@@ -204,8 +245,9 @@ function nearbyStops(id){
 }
 function routeStage(id,q,requested){
   if(requested)return Math.min(q.stages.length,Number(requested));
+  if(Object.hasOwn(questCards,id))return readingStage(id);
   if(id==='nilf'&&nilfOwned()&&!isComplete(id)){
-    const owner=window.PhoenixVelenNilfProgress,p=owner.load(nilfStorage).progress;
+    const owner=window.PhoenixVelenNilfProgress,p=nilfUI.state().progress;
     const next=owner.engine.required(owner.QUEST,p).find(o=>p.objectives[o.id]!=='done'&&!owner.engine.closed(o,p));
     if(next)return next.stage;
   }
@@ -273,54 +315,148 @@ function regionalMap(id,requested){
   paper.append(tools);
   screen.append(paper);
 }
-function regionTools(){
-  const tools=scroll('Region Tools');
-  const cards=el('nav','tiles console-tiles velen-region-tools');
-  cards.setAttribute('aria-label','Region Tools');
-  function actionTile(label,src,action){
-    const button=el('button','art-tile console-tile');
-    button.type='button';
-    button.append(picture(src),el('span','',label));
-    button.onclick=event=>{event.stopPropagation();action(button);};
-    return button;
-  }
+function regionTools(context){
+  const tools=el('section','velen-tools-section');
+  tools.append(el('h2','','Region Tools'));
+  tools.id=context?context.id+'-region-tools':'velen-region-tools';
+  const catalogue={};
   for(const item of window.PhoenixNavigationArt.entries){
-    if(item.href)cards.append(artTile(item.label,item.href,item.src));
-    else if(item.key==='warnings')cards.append(actionTile(item.label,item.src,()=>{
-      window.dispatchEvent(new CustomEvent('phoenix:warning-menu-return'));
-    }));
+    catalogue[item.key]={name:item.label,art:item.src,kind:'Regional tool',href:item.href?'index.html'+item.href:null};
   }
-  cards.append(actionTile('Search','navigation-art-v26/reference.webp',button=>window.PhoenixSearch?.open(button)));
-  cards.append(artTile('Route maps','#map','velen-route-map-art.svg'),artTile('Merchants','#merchants','gwent-r15/gabor.webp'));
-  tools.append(cards);
+  catalogue.maps={name:'Route maps',art:'visual-art/region-tools/route-maps.svg',kind:'Regional tool',href:'#map'};
+  catalogue.merchants={name:'Merchants',art:'gwent-r15/gabor.webp',kind:'Regional tool',href:'#merchants'};
+  const host=el('div','velen-tools-menu');
+  function select(key,remember=true){
+    const item=catalogue[key];
+    if(remember)history.replaceState({...history.state,regionalTool:key},'',location.href);
+    const deck=carousel('tools',key,{catalogue,select,host});
+    const button=deck.querySelector('.quest-card.selected');
+    button.removeAttribute('aria-pressed');
+    button.setAttribute('aria-label','Open '+item.name);
+    host.replaceChildren(deck);
+    tools.onRegionChange=null;
+    if(item.href){
+      function updateDestination(){
+        const region=context?.region()||'velen';
+        const local=key==='maps'||key==='merchants';
+        const unavailable=local&&region==='unbuilt';
+        button.setAttribute('aria-disabled',String(unavailable));
+        button.setAttribute('aria-label','Open '+item.name+(unavailable?' · Region not built yet':''));
+        let href=item.href.slice('index.html'.length);
+        if(key==='maps')href=region==='velen'?'#velen/map':'#whiteorchard-map';
+        if(key==='merchants')href=region==='velen'?'#velen/merchants':'#economy-merchants';
+        button.onclick=()=>{if(!unavailable&&performance.now()>=swipeClickUntil)navigate(href);};
+      }
+      updateDestination();
+      tools.onRegionChange=updateDestination;
+    }
+    else{
+      const list=el('section','regional-warning-list');
+      list.id=tools.id+'-warnings';list.hidden=true;list.setAttribute('aria-label','Unresolved warnings');
+      button.setAttribute('aria-controls',list.id);button.setAttribute('aria-expanded','false');
+      button.onclick=()=>{
+        if(performance.now()<swipeClickUntil)return;
+        list.hidden=!list.hidden;button.setAttribute('aria-expanded',String(!list.hidden));
+        if(list.hidden)return;
+        list.replaceChildren();
+        const items=window.PhoenixWarningCenter?.get().items||[];
+        if(!items.length)list.append(el('p','','No unresolved warnings recorded.'));
+        for(const risk of items){
+          const detail=el('button','',risk.name+' · '+risk.status);
+          detail.type='button';detail.onclick=()=>window.PhoenixWarnings.open(risk.id,detail);
+          list.append(detail);
+        }
+      };
+      host.append(list);
+    }
+
+  }
+  select((!context||location.hash.split('/')[0]==='#'+context.id)&&Object.hasOwn(catalogue,history.state?.regionalTool)?history.state.regionalTool:'home',false);
+  const search=el('form','regional-search-bar');
+  search.setAttribute('role','search');
+  const input=document.createElement('input');
+  input.type='search';input.placeholder='Search the guide';input.setAttribute('aria-label','Search the guide');
+  input.enterKeyHint='search';input.maxLength=160;
+  const submit=el('button','','Search');submit.type='submit';
+  search.append(input,submit);
+  search.onsubmit=event=>{
+    event.preventDefault();
+    navigate('#guide-search/'+new URLSearchParams({q:input.value.trim()}));
+  };
+  tools.append(host,search);
   return tools;
+}
+function mountRegionalTools(mount){
+  const view=mount.closest('.view');
+  const orbit=view.querySelector('.main-region-orbit');
+  function region(){
+    if(!orbit)return 'whiteorchard';
+    const route=orbit.querySelector('[tabindex="0"]')?.getAttribute('href');
+    if(route==='#velen')return 'velen';
+    return route==='#whiteorchard-console'?'whiteorchard':'unbuilt';
+  }
+  const section=regionTools({id:view.id,region});
+  mount.classList.add('regional-tools-host','velen-view');
+  const shell=el('div','console-r16 regional-tools-shell');
+  shell.append(section);mount.append(shell);
+  if(orbit)new MutationObserver(()=>section.onRegionChange?.()).observe(orbit,{subtree:true,attributes:true,attributeFilter:['tabindex']});
+}
+for(const mount of document.querySelectorAll('[data-regional-tools]'))mountRegionalTools(mount);
+function sectionJump(items){
+  const nav=el('nav','velen-section-jump');
+  nav.setAttribute('aria-label','Section jumps');
+  const picker=document.createElement('select');
+  picker.setAttribute('aria-label','Jump to section');
+  picker.add(new Option('Jump to section…',''));
+  for(const [name] of items)picker.add(new Option(name,name));
+  picker.onchange=()=>{
+    const entry=items.find(([name])=>name===picker.value);
+    picker.selectedIndex=0;
+    const target=entry?.[1]();
+    if(!target)return;
+    if(target.tagName==='DETAILS')target.open=true;
+    const title=target.querySelector('summary,h1,h2,h3')||target;
+    if(!title.hasAttribute('tabindex'))title.tabIndex=-1;
+    title.focus({preventScroll:true});
+    target.scrollIntoView({block:'start',behavior:'auto'});
+  };
+  nav.append(picker);return nav;
 }
 function consoleView(){
   screen.append(header('Velen','No Man’s Land'));
   const activity=activities(),selected=selectedPanel(deckSelected);
-  const shortcut=el('button','velen-activities-shortcut','Activities ↓');
-  shortcut.type='button';
-  shortcut.setAttribute('aria-controls',activity.section.id);
-  shortcut.onclick=activity.open;
-  selected.append(shortcut);
   screen.append(resumePanel(),carousel('quests',deckSelected),selected);
   const nearby=nearbyStops(deckSelected);
   if(nearby)screen.append(nearby);
   screen.append(activity.section);
   const tools=regionTools();
-  const arrival=el('details','velen-arrival-checklist');
-  arrival.open=arrivalOpen;
-  arrival.ontoggle=()=>{if(arrival.isConnected)arrivalOpen=arrival.open;};
-  arrival.append(el('summary','','Arrival checklist'),el('p','pilot-count',['nilf','pyres','mercy'].filter(isComplete).length+' / 3 activities resolved'));
-  for(const id of ['nilf','pyres','mercy'])arrival.append(link((isComplete(id)?'✓ ':'○ ')+quests[id].name,'#hub/'+id,'activity-link'));
-  tools.append(arrival);
   screen.append(tools);
+  screen.firstElementChild.after(sectionJump([
+    ['Quest cards',()=>screen.querySelector('[data-velen-deck="quests"]')],
+    ['Activities',()=>activity.section],['Region Tools',()=>tools]
+  ]));
 }
 function nextLeads(){const n=scroll('After Hendrik’s notes');n.append(el('p','small-note',isUnlocked()?'Notes recorded · choose your next lead.':'Next leads · record the finished main quest in its hub when you have read the notes in game.'));const tiles=el('div','tiles');for(const [id,l] of Object.entries(leads))tiles.append(artTile(l.name,'#lead/'+id,deckQuests[id].art));n.append(tiles);return n;}
 function hub(id){const q=quests[id];screen.append(header(q.name,q.kind+' · Permanent owner hub',q.art));const n=scroll('At this stop');n.append(link('← Velen console','#velen','back-link'),questAction('Open walkthrough','#quest/'+id+'/'+state.stage[id]));const label=el('label','completion'),check=el('input');check.type='checkbox';check.checked=state.complete[id];check.setAttribute('aria-label','Mark '+q.name+' resolved');check.onchange=()=>{check.checked=state.complete[id];pending={kind:'complete',id,value:!state.complete[id]};document.getElementById('velen-confirm-text').textContent=id==='nilf'?(state.complete[id]?'Remove the recorded completion? The two next-lead summaries return to an unconfirmed state. Other activities remain unchanged.':'Confirm that you finished this quest and read Hendrik’s notes in game. This records only this quest and confirms the two next leads. It does not complete side activities.'):(state.complete[id]?'Remove this activity’s recorded completion?':'Confirm that you resolved this activity in the game. Other activities remain unchanged.');dialog.showModal();};label.append(check,el('span','',state.complete[id]?'Resolved — recorded':'Mark resolved in game'));n.append(label);if(state.undo){const undo=el('button','','Undo last progress change');undo.onclick=()=>{apply(state,{kind:'undo'});save();render({focus:false,y:viewport().scrollY});};n.append(undo);}n.append(el('p','small-note','Stage navigation never marks completion. A reference elsewhere uses this same mark.'));
 if(id==='nilf'){n.append(el('h3','','Side quests & encounters'));for(const other of ['pyres','mercy'])n.append(link((state.complete[other]?'✓ ':'○ ')+quests[other].name+' · open owner hub','#hub/'+other,'activity-link'));n.append(el('h3','','Services & notices'),link('Innkeeper · supplies and Gwent information','#merchants','activity-link'),link('Collected notices & deferred exploration','#deferred','activity-link'));}else n.append(link('Return to arrival quest hub','#hub/nilf','activity-link'));screen.append(n);if(id==='nilf')screen.append(nextLeads());}
 function choice(key,n){const label=el('label','choice-label',key==='inn'?'Record your inn outcome (optional)':'Record your decision (optional)'),select=el('select');select.setAttribute('aria-label',key==='inn'?'Recorded inn outcome':'Recorded John Verdun decision');select.append(new Option('Not recorded',''));const values=key==='inn'?[['peace','Settled peacefully'],['fight','Fought the soldiers']]:[['freed','Released John'],['left','Left him tied']];for(const [v,t]of values)select.append(new Option(t,v));select.value=state.choices[key]||'';select.onchange=()=>{if(!select.value){state.undo={complete:{...state.complete},choices:{...state.choices}};delete state.choices[key];}else apply(state,{kind:'choice',key,value:select.value});save();};label.append(select);n.append(label);}
+const readingBookmarks=new Map();
+function readingStage(id){
+  let stage=readingBookmarks.get(id);
+  if(stage===undefined){
+    try{
+      const bookmark=localStorage.getItem(readingKey+'.'+id);
+      const last=bookmark===null?JSON.parse(localStorage.getItem(readingKey)):null;
+      stage=bookmark===null?(last?.id===id?last.stage:1):Number(bookmark);
+    }catch{}
+  }
+  return Number.isInteger(stage)&&stage>=1&&stage<=questCards[id].stages.length?stage:1;
+}
 function rememberReading(id,stage=state.stage[id]){
+  if(Object.hasOwn(questCards,id)){
+    readingBookmarks.set(id,stage);
+    try{localStorage.setItem(readingKey+'.'+id,String(stage));}catch{}
+  }
   try{
     localStorage.setItem(readingKey,JSON.stringify({id,stage}));
     if(Object.hasOwn(quests,id))localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+stage,name:quests[id].name,stageNumber:stage}));
@@ -360,7 +496,8 @@ function questCard(id, stage){
   panel.append(link('← Velen console','#velen','back-link'),el('p','eyebrow',lead.place),el('p','',card.briefing));
   if(card.dlc)panel.append(el('p','eyebrow',card.dlc));
   panel.append(el('p','',card.start||'Start after reading Hendrik’s notes in The Nilfgaardian Connection. Both leads can be followed in either order.'));
-  panel.append(questAction('Open walkthrough','#quest/'+id+'/1'));
+  appendHubProgress(panel,id);
+  panel.append(questAction('Open walkthrough','#quest/'+id+'/'+readingStage(id)));
   panel.append(questAction('Open this quest’s route map','#map/'+id,'velen-route-map-art.svg'));
   panel.append(el('h3','','When the quest is complete'),el('p','',card.completion));
   panel.append(link('Sources','velen-sources.html#'+id,'sw-source-link'));
@@ -368,8 +505,17 @@ function questCard(id, stage){
 }
 function info(type,id){if(type==='lead'){const l=leads[id];screen.append(header(l.name,'Next lead · Suggested level '+l.level));const n=scroll(l.place);n.append(el('p','',l.text),el('p','warning',isUnlocked()?'This lead is confirmed by your recorded main-quest completion. Its full walkthrough is not built in this pilot.':'This lead follows Hendrik’s notes. If you have already read them, record The Nilfgaardian Connection as complete in its owner hub.'),link('Return to arrival hub','#hub/nilf','button-link'));screen.append(n);return;}
 screen.append(header(type==='merchants'?'Innkeeper & notices':'Collected notices','Inn at the Crossroads'));const n=scroll(type==='merchants'?'Services at this stop':'Keep for later');if(type==='merchants'){n.append(el('p','','The innkeeper provides food, drink and a shop conversation. Check his card stock and Gwent dialogue in game; this pilot does not yet verify the named match reward or its quest-state prerequisites.'),el('p','','Quest connections: The Nilfgaardian Connection; Contract: Missing Brother. Full inventories are not tracked.'),link('Notices and deferred work','#deferred','activity-link'));}else{n.append(el('h3','','Contract: Missing Brother · level 33'),el('p','','The notice can be collected at the inn. Its combat is beyond the arrival recommendation; collecting it does not mark the contract complete.'),el('h3','','Wild at Heart'),el('p','','An inn-board lead for a separate quest cluster. Its full route is not included here; it is not labelled too high-level.'),el('h3','','Lornruk · later exploration'),el('p','','The shoreline Quen Place of Power and fortress encounter need separate guidance. Research describes level-10 drowners and a level-14 wyvern. Do not add the wyvern fight to the arrival route.'));}n.append(link('Return to The Nilfgaardian Connection hub','#hub/nilf','button-link'));screen.append(n);}
-function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads(),link('Sources','velen-sources.html#nilf','sw-source-link nilf-hub-sources'));}else hub(r.id);}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id))questCard(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else if(r.type==='map')regionalMap(r.id,r.stage);else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}if(r.type!=='map'&&!(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id)))save();if(options.railX!=null&&screen.firstElementChild?.classList.contains('velen-nilf-page'))screen.firstElementChild.dataset.swRestoreRail=String(options.railX);const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
+function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads(),link('Sources','velen-sources.html#nilf','sw-source-link nilf-hub-sources'));}else {hub(r.id);screen.append(link('Sources','velen-sources.html#'+r.id,'sw-source-link'));}}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id))questCard(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else if(r.type==='map')regionalMap(r.id,r.stage);else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}if(r.type!=='map'&&!(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id)))save();if(options.railX!=null&&screen.firstElementChild?.classList.contains('velen-nilf-page'))screen.firstElementChild.dataset.swRestoreRail=String(options.railX);if(nilfUI?.notice() && r.id==='nilf'){
+ const notice=el('p','risk-note',nilfUI.notice());notice.setAttribute('role','status');
+ screen.querySelector('header')?.after(notice);
+}if(r.type==='quest' && screen.querySelector('#velen-region-tools')){
+ const page=screen.querySelector('.velen-nilf-page,.velen-reading-page');
+ page?.querySelector(':scope > .page-heading')?.after(sectionJump([
+   ['Walkthrough',()=>page.querySelector('.sw-walkthrough,.reading-panel')],
+   ['Region Tools',()=>page.querySelector('#velen-region-tools')]
+ ]));
+}const heading=screen.querySelector('h1');if(heading)heading.id='velen-heading';window.PhoenixVisuals?.enhance();window.PhoenixSwipeBoxes?.enhance();requestAnimationFrame(()=>{if(view.hidden||serial!==renderSerial)return;if(options.y!==undefined)viewport().scrollTo(0,options.y);if(options.focus===true&&heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}});}
 document.addEventListener('click',e=>{const a=e.target.closest('#velen a[href^="#velen"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();const href=a.getAttribute('href'),target=routeModel.parse(href),r=route();let extra={};if(r.type==='hub'&&target.type==='quest'){extra.hubReturn={id:r.id,y:viewport().scrollY,ui:r.id==='nilf'&&nilfOwned()?nilfUI.capture():undefined};}else if(r.type==='quest'&&target.type==='quest')extra.hubReturn=history.state?.velen?.hubReturn;if(a.dataset.returnHub){const origin=history.state?.velen?.hubReturn;go('#hub/'+(origin?.id||r.id),{restoreY:origin?.y||0,restoreUI:origin?.ui});return;}go(href,extra);},true);
 dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm'&&pending){apply(state,pending);save();render({focus:false,y:viewport().scrollY});status.textContent=legacyUnreadable?legacyGuardText:'Progress updated. Undo is available in the owner hub.';/* QA3 save guard */requestAnimationFrame(()=>screen.querySelector('.completion input')?.focus({preventScroll:true}));}pending=null;});
-addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view};
+addEventListener('phoenix:route-rendered',event=>{if(event.detail.root!=='velen')return;const focus=routeModel.shouldFocus(event.detail.mode,inputMode);if(renderedHash===routeModel.sharedHash(location.hash)){const current=route();if(current.type==='quest'&&quests[current.id])rememberReading(current.id);if(focus){const heading=screen.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}return;}render({focus});});render({focus:false});return {view, mountRegionalTools, nilfState: () => nilfUI?.state()};
 };

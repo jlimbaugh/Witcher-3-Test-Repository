@@ -34,7 +34,7 @@
     const links='<div class="stage-links"><a href="#whiteorchard-tree" data-return-hub>Return to exact hub</a><a href="#whiteorchard-map'+('/'+esc(id))+'">Regional map</a></div>';
     const locationLink=task.locationMap?'<a class="map-location-link" href="#whiteorchard-map/'+esc(id)+'">Show location on our map →</a>':'';
     const stageHTML=task.stages?'<nav class="stage-nav quest-step-nav" aria-label="Walkthrough steps"><button type="button" data-stage-prev aria-label="Previous walkthrough step">Previous</button><label class="quest-step-picker"><span>Step <span data-stage-count aria-live="polite"></span></span><select data-stage-select aria-label="Choose walkthrough stage">'+task.stages.map(st=>'<option value="'+esc(st.id)+'">'+esc(st.title)+'</option>').join('')+'</select></label><button type="button" data-stage-next aria-label="Next walkthrough step">Next</button></nav><div class="stage-panel" id="'+task.view+'-panel">'+task.stages.map(st=>'<section class="walk-stage" data-stage="'+esc(st.id)+'" hidden><div class="stage-content"><h2>'+esc(st.title)+'</h2>'+(st.warning?'<p class="risk-note"><strong>Before this step:</strong> '+esc(st.warning)+'</p>':'')+para(st.text)+stepExtras(st)+(st.spoiler?'<details><summary>Consequences · Spoilers</summary>'+para(st.spoiler)+'</details>':'')+'</div></section>').join('')+'</div><nav class="stage-links quest-page-tools" aria-label="Quest tools"><a href="#whiteorchard-tree" data-return-hub>Return to hub</a><a href="#whiteorchard-map/cluster/'+esc(task.home)+'/'+esc(id)+'">Map</a></nav><div class="quest-record-host"></div>':links+locationLink+task.sections.map(([title,text])=>'<h2>'+esc(title)+'</h2>'+para(text)).join('');
-    section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p>'+'</div><article class="reading-panel">'+completionMeaning+meta+sharedMark+stageHTML+questRewards(task)+'<details class="sources"><summary>Sources & route notes</summary>'+(task.verification?para(task.verification):'')+task.sources.map((url,i)=>'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Source '+(i+1)+' · '+esc(new URL(url).hostname.replace(/^www\./,''))+' ↗</a></p>').join('')+'<p>Route grouping is editorial guidance. Encounter levels, availability and rewards still need Xbox field acceptance. This page records neither game state nor automatic completion.</p></details><p class="save-message" data-save-message aria-live="polite"></p></article></div>';
+    section.innerHTML='<div class="scene-inner"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Console</a><span>/</span><a href="#whiteorchard-tree">Quests</a><span>/</span><a href="#whiteorchard-tree/'+esc(task.home)+'">Quest hub</a></nav><div class="page-heading"><p class="eyebrow">'+(task.stages?'QUEST WALKTHROUGH':'FIELD NOTE')+' / WHITE ORCHARD</p><h1 id="'+task.view+'-title">'+esc(task.name)+'</h1><p class="lead">'+esc(task.intro)+'</p>'+'</div><article class="reading-panel">'+completionMeaning+meta+sharedMark+stageHTML+questRewards(task)+(task.verification?para(task.verification):'')+'<p class="save-message" data-save-message aria-live="polite"></p></article><a class="sw-source-link" href="velen-sources.html#'+esc(id)+'">Sources</a></div>';
     const prior=document.getElementById(task.view);if(prior)prior.replaceWith(section);else document.querySelector('main').append(section);
   });
   const placeIndex=document.querySelector('#whiteorchard-pois .reading-panel');
@@ -330,6 +330,19 @@
     reflect();persist();requestAnimationFrame(drawConnections);
     lastRenderedURL=location.href;
     dispatchEvent(new CustomEvent('phoenix:route-rendered',{detail:{root:currentRoot,hub:state.selectedHub,previousRoot:before,mode}}));
+    if (['home','whiteorchard-console','progress'].includes(currentRoot)) {
+      let notice=target.querySelector('[data-wo-save-notice]');
+      if (!notice) {
+        notice=document.createElement('p');
+        notice.className='save-message';
+        notice.dataset.woSaveNotice='';
+        notice.dataset.saveMessage='';
+        notice.setAttribute('role','status');
+        target.prepend(notice);
+      }
+      notice.hidden=saveStatus()==='saving';
+      showSaveStatus();
+    }
     document.title=target.querySelector('h1').innerText.replace(/\s+/g,' ').trim()+' · Witcher Field Guide';
     requestAnimationFrame(()=>requestAnimationFrame(()=>{
       if(currentRoot!==target.id||generation!==renderSerial)return;

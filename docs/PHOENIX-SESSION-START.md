@@ -1,5 +1,10 @@
 # Operation Phoenix — universal session start
 
+The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+
+
+**Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
+
 Version 1.1 · Adopted November 16, 2026; coordination updated November 17, 2026 (America/Chicago)
 Applies to Cmdr (ChatGPT), LT (Grok), and PFC (Claude).
 Project owner and final field acceptance: CaptDrunk / Jess Limbaugh.

@@ -33,3 +33,26 @@ test('Velen quest cards reference distinct packaged WebP illustrations',()=>{
   assert.equal(bytes.toString('ascii',8,12),'WEBP',art);
  }
 });
+
+test('reading bookmarks retain separate stages across quests and reloads, including old or unavailable storage',()=>{
+ const source=readFileSync(path.join(__dirname,'velen-r18.js'),'utf8');
+ const functions=source.slice(source.indexOf('const readingBookmarks='),source.indexOf('function readingPage('));
+ const records=new Map();
+ const storage={getItem:k=>records.get(k)??null,setItem:(k,v)=>records.set(k,v)};
+ const boot=(localStorage=storage)=>runInNewContext(functions+';({readingStage,rememberReading})',{
+   questCards:cards,quests:legacy.quests,localStorage,readingKey:'reading'
+ });
+ records.set('reading',JSON.stringify({id:'baron',stage:2}));
+ let reader=boot();
+ assert.equal(reader.readingStage('baron'),2);
+ reader.rememberReading('baron',3);
+ reader.rememberReading('witch',2);
+ reader=boot();
+ assert.equal(reader.readingStage('baron'),3);
+ assert.equal(reader.readingStage('witch'),2);
+ records.set('reading.baron','999');
+ assert.equal(boot().readingStage('baron'),1);
+ const denied=boot({getItem(){throw Error()},setItem(){throw Error()}});
+ denied.rememberReading('baron',2);
+ assert.equal(denied.readingStage('baron'),2);
+});

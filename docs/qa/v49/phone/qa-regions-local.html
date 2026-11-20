@@ -1,0 +1,51 @@
+<!doctype html><meta charset="utf-8"><title>Phoenix isolated phone checks</title><pre id="report">Running…</pre><script type="module">
+const output=document.querySelector('pre'), results=[],wait=ms=>new Promise(r=>setTimeout(r,ms));
+const html=await (await fetch('index.html')).text();
+let frame,w,d;
+const check=(v,msg)=>{if(!v)throw Error(msg)};
+async function test(id,fn){const filter=new URLSearchParams(location.search).get('check');if(filter&&!id.startsWith(filter))return;try{let data=await fn();results.push(['PASS',id,data])}catch(e){results.push(['FAIL',id,String(e)])}output.textContent=JSON.stringify(results,null,1)}
+async function boot(hash,width=390,height=844,mode='normal',seed={}){
+ frame?.remove();frame=document.createElement('iframe');frame.style.cssText='border:0;width:'+width+'px;height:'+height+'px';frame.src='qa-blank-local.html';await new Promise(resolve=>{frame.onload=resolve;document.body.append(frame)});
+ // Load the normal entry point in a disposable test frame on this origin.
+ const template=html.replace('<head>', '<head><base href="'+location.origin+'/"><script>history.replaceState(null,"","/index.html'+hash+'");const records=new Map(Object.entries('+JSON.stringify(seed)+'));Object.defineProperty(window,"localStorage",{get(){if('+JSON.stringify(mode)+'==="denied")throw Error("denied");return {getItem:k=>records.get(k)??null,setItem:(k,v)=>{if('+JSON.stringify(mode)+'==="quota")throw Error("quota");records.set(k,String(v))},removeItem:k=>records.delete(k)}}});window.qaRecords=records;<\/script>');
+ frame.contentDocument.open();frame.contentDocument.write(template);frame.contentDocument.close();w=frame.contentWindow;d=frame.contentDocument;for(let i=0;i<375&&!w.PhoenixVelen;i++)await wait(80);await wait(230);check(w.PhoenixVelen,'startup failed');
+}
+const one=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)],click=s=>{const x=one(s);check(x,s);x.click()};
+for(const hash of ['#velen/quest/nilf/1','#velen/quest/baron/1','#quest-lilac','#home','#regions','#whiteorchard-console','#velen'])await test(hash,async()=>{
+ await boot(hash);const view=one('.view:not([hidden])'),menu=view.querySelector('.velen-tools-section');
+ check(menu&&!menu.querySelector('.home-selected-actions'),'extra open button');
+ const search=view.querySelector('.regional-search-bar'),card=()=>menu.querySelector('.quest-card.selected');
+ if(hash.includes('quest')){
+  const source=view.querySelector('.sw-source-link');
+  check(search.compareDocumentPosition(menu)&4,'search before menu');
+  check(menu.compareDocumentPosition(source)&4,'menu before sources');
+  if(hash.startsWith('#velen'))check(w.getComputedStyle(view).paddingBottom==='0px','banner gap');
+ }
+ const deck=menu.querySelector('.deck'),front=card(),side=menu.querySelector('.quest-card.right');
+ const style=w.getComputedStyle(deck);
+ check(parseFloat(style.marginLeft)<=12,'oversized margin');
+ front.scrollIntoView({block:'center'});
+ const rect=front.getBoundingClientRect(),mid=rect.top+rect.height/2;
+ function drag(x,dx,dy){
+  for(const [type,cx,cy] of [['pointerdown',x,mid],['pointermove',x+dx,mid+dy],['pointerup',x+dx,mid+dy]])
+   deck.dispatchEvent(new w.PointerEvent(type,{bubbles:true,isPrimary:true,pointerType:'touch',button:0,pointerId:41,clientX:cx,clientY:cy}));
+ }
+ const initial=front.dataset.tool,reader=w.PhoenixViewport,y=reader.scrollY;
+ drag(rect.right+10,-72,0);drag(rect.left+30,6,-50);
+ check(card().dataset.tool===initial&&Math.abs(reader.scrollY-y-40)<2,'side guard or vertical speed');
+ front.scrollIntoView({block:'center'});
+ drag(rect.right+4,-75,4);check(card().dataset.tool!==initial,'edge swipe failed');await wait(420);
+ menu.querySelector('.quest-card.left').click();
+ const keys=[];
+ for(let i=0;i<8;i++){
+  keys.push(card().dataset.tool);
+  if(card().dataset.tool==='warnings'){card().click();check(!menu.querySelector('.regional-warning-list').hidden,'warning tap');card().click();}
+  menu.querySelector('.quest-card.right').click();
+ }
+ check(new Set(keys).size===8&&!menu.querySelector('.deck-jump'),'wrap');
+ menu.querySelector('.quest-card.right').click();check(card().dataset.tool==='regions','side tap');
+ card().click();await wait(220);check(w.location.hash==='#regions','front tap');
+ return keys.length;
+});
+output.dataset.finished='yes';
+</script>

@@ -1,5 +1,7 @@
 # Velen completion and regional template plan
 
+[Current quest and task inventory and alignment work order](VELEN-ALIGNMENT.md).
+
 Owner decisions recorded November 18, 2026. [Velen is the canonical regional deck template](REGION-DECK-TEMPLATE.md). Keep White Orchard as implemented. Show specific White Orchard elements alongside Velen screenshots for individual approval before incorporating them.
 
 ## 1. Prove the complete quest flow

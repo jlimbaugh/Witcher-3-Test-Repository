@@ -1,0 +1,2490 @@
+{
+ "before": {
+  "375": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "390": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "430": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "852": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "932": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "desktop": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "8px solid rgba(0, 0, 0, 0) / img iron / bg rgb(32, 37, 37) / r 10px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "velen-route-map-art.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  }
+ },
+ "after": {
+  "375": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 193,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      145,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "390": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 200,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      152,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "430": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 220,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      172,
+      132
+     ],
+     "x": 38,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "852": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 431,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 206,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 344,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 119,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "932": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 471,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 246,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 389,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 164,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  },
+  "desktop": {
+   "console": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "walkthrough": [
+    {
+     "t": "Home",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/home.webp"
+    },
+    {
+     "t": "Regions",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/regions.webp"
+    },
+    {
+     "t": "Field Reference",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/reference.webp"
+    },
+    {
+     "t": "Progress",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/progress.webp"
+    },
+    {
+     "t": "Constellation",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "navigation-art-v26/constellation.webp"
+    },
+    {
+     "t": "Warnings",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "navigation-art-v26/warnings.webp"
+    },
+    {
+     "t": "Search",
+     "tag": "BUTTON",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "visual-art/region-tools/search.svg"
+    },
+    {
+     "t": "Route maps",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 638,
+     "img": "visual-art/region-tools/route-maps.svg"
+    },
+    {
+     "t": "Merchants",
+     "tag": "A",
+     "frame": "3px solid rgb(152, 164, 151) / img none / bg rgb(24, 40, 44) / r 4px",
+     "size": [
+      215,
+      132
+     ],
+     "x": 413,
+     "img": "gwent-r15/gabor.webp"
+    }
+   ],
+   "searchOpen": true,
+   "routeMaps": "#velen/map",
+   "errors": []
+  }
+ }
+}

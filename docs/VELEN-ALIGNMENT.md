@@ -1,0 +1,169 @@
+# Velen quest and task alignment plan
+
+Owner passed hub batch 14 (b139a79), completing iPhone review of the 70 batched Velen hub progress entries. Next: reconcile regional progress totals with the existing quest and activity owners, then close the remaining regional coverage gaps.
+
+Owner passed hub batch 13 (7169c62). Hub batch 14 closes the 70-entry hub progress review with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven required milestones. The four Griffin armor diagrams share one milestone.
+
+Owner passed hub batch 12 (3591de8). Hub batch 13 adds saved walkthrough counts to the quest cards and selected panels for The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt has two required milestones, one for its clue and one for its treasure.
+
+Owner passed hub batch 11 (f980658). Hub batch 12 adds saved walkthrough counts to the quest cards and selected panels for An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each hunt has two required milestones, one for its clue and one for its treasure.
+
+Owner passed hub batch 10 (a8ea72b). Hub batch 11 adds saved walkthrough counts to the quest cards and selected panels for Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is optional, and each rider win counts once.
+
+Owner passed hub batch 9 (2eac146). Hub batch 10 adds saved walkthrough counts to the quest cards and selected panels for Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either outcome for the impostor satisfies the same final milestone.
+
+Owner approved hub batch 8 (f9b2001). Hub batch 9 adds saved walkthrough counts to the quest cards and selected panels for Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine required milestones.
+
+Owner approved hub batch 7 (7188e33). Hub batch 8 adds saved walkthrough counts to the quest cards and selected panels for Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone. Phone approval pending.
+
+Owner approved hub batch 6 (fda07b2). Hub batch 7 adds saved walkthrough counts to the quest cards and selected panels for Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is optional. Phone approval pending.
+
+Owner approved hub batch 5 (f1d2d52). Hub batch 6 adds saved walkthrough counts to the quest cards and selected panels for The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones. Destroying eggs in Missing Brother is optional. Phone approval pending.
+
+Owner approved hub batch 4 (df94197). Hub batch 5 adds saved walkthrough counts to the quest cards and selected panels for Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Sixteen milestones. Phone approval pending.
+
+Owner approved hub batch 3 (ef88c18). Hub batch 4 adds saved walkthrough counts to the quest cards and selected panels for For the Advancement of Learning, Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Fourteen milestones. Phone approval pending.
+
+Owner approved hub batch 2 (bbc84c0). Hub batch 3 adds saved walkthrough counts to the quest cards and selected panels for Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Ten milestones. Phone approval pending.
+
+Owner passed hub batch 1 (0ef49bf). Hub batch 2 adds saved walkthrough counts to the quest cards and selected panels for The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. iPhone approval pending.
+
+Owner passed Batch 14 (933a571), completing approval of all 70 batched walkthroughs. Hub progress batch 1 brings the first five Batch 1 quest cards and their Velen selected panels into sync with saved walkthrough milestones. Regional aggregate counts and the remaining hubs are pending.
+
+Owner passed Batch 13 (f9c3834). Batch 14 closes the current list of walkthrough batches with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven milestones. The four Griffin armor diagrams share one milestone. Hub totals and regional task coverage are tracked separately.
+
+Owner passed Batch 12 (5e2a292). Batch 13 covers The Dead Have No Defense, The Things Men Do for Coin…, Don’t Play with the Gods, Blood Gold and A Costly Mistake. Each hunt tracks two milestones, securing its clue and recovering its treasure.
+
+Owner passed Batch 11 (8a201b3). Batch 12 covers An Unfortunate Turn of Events, Queen Zuleyka’s Treasure, Sunken Chest, Sunken Treasure and Hidden from the World. Each treasure hunt tracks its clue and its treasure separately, for ten required milestones.
+
+Owner passed Batch 10 (3ccc006). Batch 11 covers Blood Ties, Races: Crow’s Perch, Fists of Fury: Velen, Lost Goods and Out of the Frying Pan, into the Fire. Fourteen required milestones. The race introduction is available to read; each rider win counts once.
+
+Owner passed Batch 9 (285192a). Batch 10 covers Fools’ Gold, The Truth Is in the Stars, Hazardous Goods, Witcher Wannabe and Love’s Cruel Snares. Ten required milestones. Gert’s later appearance stays optional, and either decision about the impostor satisfies the last Witcher Wannabe milestone.
+
+Owner passed Batch 8 (1acb87e). Batch 9 covers Forefathers’ Eve, Death by Fire, Lynch Mob, Defender of the Faith and Last Rites. Nine milestones. The Forefathers’ Eve final stage describes the endpoint for either route. Defender of the Faith and Last Rites retain separate progress.
+
+Owner passed Batch 7 (6d1b53e). Batch 8 covers Fake Papers, Bitter Harvest, Wild at Heart, A Greedy God and A Dog’s Life. Ten required milestones. Either Wild at Heart ending satisfies its final milestone.
+
+Owner passed Batch 6 (3ffd5aa). Batch 7 covers Take What You Want, The Fall of the House of Reardon, Ghosts of the Past, In the Eternal Fire’s Shadow and Thou Shalt Not Pass. Thirteen required milestones. Investigating Reinald’s trail is available as an optional reading stage. Reardon Manor tracks either encounter under the same milestone.
+
+Owner passed Batch 5 and the footer/checklist correction (1d6fa40). Batch 6 covers The Griffin from the Highlands, The Beast of Honorton, Missing Brother, Master Armorers and Where the Cat and Wolf Play. Thirteen required milestones count across five walkthroughs. Destroying the eggs in Missing Brother is optional. Linked quests retain separate progress.
+
+Guide-wide footer rule: the last section flows directly into the credits. Regional Tools omits the duplicate Arrival checklist and its section jump. The quest deck and Activities retain access to all three arrival quests.
+
+Owner passed Batch 4 (9eb7b72). Batch 5 covers Patrol Gone Missing, Mysterious Tracks, The Mystery of the Byways Murders, Phantom of the Trade Route and Woodland Beast. Review sixteen walkthrough milestones together. Woodland Beast tracks the encounter and the report for either outcome.
+
+Owner passed Batch 3 (e6104a7). Batch 4 covers For the Advancement of Learning and four contracts: Shrieker, Jenny o’ the Woods, The Merry Widow and Swamp Thing. Review fourteen walkthrough milestones together. Keira’s possible endings and contract payment choices each share their respective final milestone.
+
+Owner passed Batch 2 (082ebe6). Batch 3 covers Return to Crookback Bog, Fleeing the Bog, An Invitation from Keira Metz, A Towerful of Mice and A Favor for a Friend. Review their ten walkthrough milestones together.
+
+Owner passed Batch 1 (7cbeaf2). Batch 2 covers The Whispering Hillock, The King of the Wolves, Family Matters, The Race and Out of the Shadows. Each story choice counts once regardless of outcome. The race counts either finish order.
+
+Owner passed Hunting a Witch (6037d08). Review subsequent walkthrough changes in groups of five, with one owner approval per batch. The first group covers A Princess in Distress, Ciri’s Room, Wandering in the Dark, Magic Lamp and Ladies of the Wood.
+
+Planning inventory against application 1690b41. The Velen console supplies the deck and selected-card pattern. The Nilfgaardian Connection supplies the complete walkthrough pattern. The 75 entries below are the current implementation inventory. Regional discoveries, services and other unregistered tasks still require reconciliation.
+
+## First review group · private QA
+
+The shared registry now remembers a separate reading stage for each quest, contract and treasure hunt. The selected card on a deck, its own detail page and the default quest map use that stage. Reading position is independent of completion. Older single-quest bookmarks are recognized when available.
+
+At 390 × 844 in Chromium, the hub or card reopened the expected stage and the quest map rendered for Nilf, Funeral Pyres, At the Mercy of Strangers, Bloody Baron, Hunting a Witch, Contract: Shrieker and Lost Goods. Mercy has one stage. The six other samples reopened stage two. The [browser fixture](qa/v49/phone/qa-alignment-local.html) reproduces the checks. All 344 Node tests passed with the historical baselines.
+
+Still open: the 72 registry walkthroughs use a read-only objective adapter. Their bookmarks do not supply a verified completion model. Compare objective ownership and branching before enabling completion or Next unfinished. Finish the per-entry art, content and task coverage review in the scheduled batches. Physical iPhone Safari acceptance of this first group is pending.
+
+## Work order
+
+1. Compare the full player journey for Bloody Baron, Funeral Pyres, one contract and one treasure hunt against Nilf. Capture the deck, hub, walkthrough, quest map and return on iPhone. Include At the Mercy of Strangers to check optional decisions and existing saves.
+2. Fix shared page differences once. Registry cards currently open at step one from the card page. Audit resume, next unfinished objective, progress ownership, warnings before consequential steps, chapter navigation, Sources at the bottom and matching action artwork. Verify each behavior separately for tracked and reading-only entries.
+3. Reconcile all Velen tasks against sourced regional coverage. Include encounters, notice-board leads, discoveries and places of power, merchants and services, Gwent, exploration and departure checks. Record location, unlock conditions, what counts as done, who owns progress, route stops and missing artwork. Link shared activities to their existing owner. Mark genuinely inapplicable walkthrough features explicitly.
+4. Start the first review group with Nilf as reference, both Arrival activities, Bloody Baron and Hunting a Witch. Then review the remaining entries in groups of ten, keeping related quest chains together. Use the existing deck categories and flag DLC and cross-region steps.
+5. For each entry, verify subject art at both crops, briefing, objective order, branch warnings, completion condition, relevant map stops, source destination and return. Exercise mark, reload and Undo wherever supported. Record each result against the candidate commit. Carry unresolved evidence forward to physical Safari and in-game review.
+
+## Current playable entries
+
+These are runtime stage counts, not verified in-game objective counts. The implementation column identifies the starting point for review.
+
+| Entry | Kind | Stages | Implementation |
+|---|---|---:|---|
+| The Nilfgaardian Connection | Main quest | 4 | Template |
+| Funeral Pyres | Side quest | 3 | Arrival hub |
+| At the Mercy of Strangers | Encounter | 1 | Arrival hub |
+| Bloody Baron | Main quest | 3 | Registry card |
+| Hunting a Witch | Main quest | 4 | Registry card |
+| A Princess in Distress | Main quest | 2 | Registry card |
+| Ciri’s Room | Side quest | 2 | Registry card |
+| Wandering in the Dark | Main quest | 4 | Registry card |
+| Magic Lamp | Side quest | 3 | Registry card |
+| Ladies of the Wood | Main quest | 4 | Registry card |
+| The Whispering Hillock | Quest | 2 | Registry card |
+| Ciri’s Story: The King of the Wolves | Main quest | 3 | Registry card |
+| Family Matters | Main quest | 4 | Registry card |
+| Ciri’s Story: The Race | Main quest | 1 | Registry card |
+| Ciri’s Story: Out of the Shadows | Main quest | 2 | Registry card |
+| Return to Crookback Bog | Side quest | 3 | Registry card |
+| Ciri’s Story: Fleeing the Bog | Main quest | 1 | Registry card |
+| An Invitation from Keira Metz | Side quest | 1 | Registry card |
+| A Towerful of Mice | Side quest | 3 | Registry card |
+| A Favor for a Friend | Side quest | 2 | Registry card |
+| For the Advancement of Learning | Side quest | 2 | Registry card |
+| Contract: Shrieker | Witcher contract | 3 | Registry card |
+| Contract: Jenny o’ the Woods | Witcher contract | 3 | Registry card |
+| Contract: The Merry Widow | Witcher contract | 3 | Registry card |
+| Contract: Swamp Thing | Witcher contract | 3 | Registry card |
+| Contract: Patrol Gone Missing | Witcher contract | 3 | Registry card |
+| Contract: Mysterious Tracks | Witcher contract | 4 | Registry card |
+| Contract: The Mystery of the Byways Murders | Witcher contract | 3 | Registry card |
+| Contract: Phantom of the Trade Route | Witcher contract | 3 | Registry card |
+| Contract: Woodland Beast | Witcher contract | 3 | Registry card |
+| Contract: The Griffin from the Highlands | Witcher contract | 3 | Registry card |
+| Contract: The Beast of Honorton | Witcher contract | 2 | Registry card |
+| Contract: Missing Brother | Witcher contract | 3 | Registry card |
+| Master Armorers | Side quest | 3 | Registry card |
+| Where the Cat and Wolf Play… | Side quest | 3 | Registry card |
+| Take What You Want | Side quest | 2 | Registry card |
+| The Fall of the House of Reardon | Side quest | 3 | Registry card |
+| Ghosts of the Past | Side quest | 3 | Registry card |
+| In the Eternal Fire’s Shadow | Side quest | 4 | Registry card |
+| Thou Shalt Not Pass | Side quest | 2 | Registry card |
+| Fake Papers | Side quest | 1 | Registry card |
+| Bitter Harvest | Side quest | 2 | Registry card |
+| Wild at Heart | Side quest | 3 | Registry card |
+| A Greedy God | Side quest | 2 | Registry card |
+| A Dog’s Life | Side quest | 2 | Registry card |
+| Forefathers’ Eve | Side quest | 3 | Registry card |
+| Death by Fire | Side quest | 1 | Registry card |
+| Lynch Mob | Side quest | 1 | Registry card |
+| Defender of the Faith | Side quest | 2 | Registry card |
+| Last Rites | Side quest | 2 | Registry card |
+| Fools’ Gold | Side quest | 3 | Registry card |
+| The Truth Is in the Stars | Side quest | 2 | Registry card |
+| Hazardous Goods | Side quest | 1 | Registry card |
+| Witcher Wannabe | Side quest | 2 | Registry card |
+| Love’s Cruel Snares | Side quest | 2 | Registry card |
+| Blood Ties | Side quest | 3 | Registry card |
+| Races: Crow’s Perch | Side quest | 4 | Registry card |
+| Fists of Fury: Velen | Side quest | 4 | Registry card |
+| Lost Goods | Treasure hunt | 2 | Registry card |
+| Out of the Frying Pan, into the Fire | Treasure hunt | 2 | Registry card |
+| An Unfortunate Turn of Events | Treasure hunt | 2 | Registry card |
+| Queen Zuleyka’s Treasure | Treasure hunt | 2 | Registry card |
+| Sunken Chest | Treasure hunt | 2 | Registry card |
+| Sunken Treasure | Treasure hunt | 2 | Registry card |
+| Hidden from the World | Treasure hunt | 2 | Registry card |
+| The Dead Have No Defense | Treasure hunt | 2 | Registry card |
+| The Things Men Do for Coin… | Treasure hunt | 2 | Registry card |
+| Don’t Play with the Gods | Treasure hunt | 2 | Registry card |
+| Blood Gold | Treasure hunt | 2 | Registry card |
+| A Costly Mistake | Treasure hunt | 2 | Registry card |
+| Tough Luck | Treasure hunt | 2 | Registry card |
+| Battlefield Loot | Treasure hunt | 2 | Registry card |
+| A Plea Ignored | Treasure hunt | 2 | Registry card |
+| Dowry | Treasure hunt | 2 | Registry card |
+| Scavenger Hunt: Griffin School Gear | Treasure hunt | 3 | Registry card |
+
+## Bloody Baron walkthrough pilot
+
+The three common milestones are reaching Crow’s Perch, entering the keep by either available route, and speaking with the Baron. The walkthrough now persists each check, computes Next unfinished and the completion count, and retains one Undo across reload. Ciri’s Room and the two alternative entry routes have no separate completion requirement. This pilot covers the walkthrough; hub and regional totals remain open. Verify the milestone wording against the game during field QA. In a 390 × 844 browser check, all three marks, navigation, completion, reload, Undo and malformed-record protection passed. See qa/v49/phone/qa-baron-local.html.
+
+## Hunting a Witch walkthrough pilot
+
+Owner passed the Bloody Baron walkthrough pilot at e1ceeab. Hunting a Witch uses the same saved checklist and Undo. The existing guide allows riding directly to the cottage, so Midcopse directions remain an optional reading stage. Three milestones count toward completion: reach the cottage, investigate it and enter the portal, then speak to Keira. Next unfinished skips the optional directions. The 390 × 844 browser fixture checked direct-route completion, reload, Undo and isolation from Bloody Baron. Physical Safari review remains open. Scope is the walkthrough.

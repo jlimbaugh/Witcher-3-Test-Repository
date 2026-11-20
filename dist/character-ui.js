@@ -35,7 +35,7 @@
  function openReference(item){if(!item){catalogue();$('reference-body').prepend(make('p','That gear entry was not found. Choose an available entry below.'));return;}
   $('reference-title').textContent=item.name;const host=$('reference-body');host.replaceChildren(make('p',item.content+' · Feline set · '+title(item.tier)),make('p',G.requirement(item,draft.level).text));
   host.append(make('p','Reference data: v'+item.provenance.version+', retrieved '+item.provenance.retrieved+'. Current Remastered verification pending.'),make('p','Combat stats, crafting costs and acquisition guidance are not yet verified for this entry.'));
-  const a=make('a','Inspect source catalogue');a.href=item.source;a.target='_blank';a.rel='noopener noreferrer';const back=make('button','Browse all supported gear');back.onclick=()=>referenceRoute('#gear');host.append(a,back);}
+  const a=make('a','Sources');a.className='sw-source-link';a.href='velen-sources.html#feline-gear';const back=make('button','Browse all supported gear');back.onclick=()=>referenceRoute('#gear');host.append(back,a);}
  $('catalogue-open').onclick=()=>referenceRoute('#gear');
  $('gear-reference').onclick=()=>{const item=piece(draft,selected);if(item)referenceRoute('#gear/'+item.id);};
  function routeReference(){const match=/^#gear(?:\/(.*))?$/.exec(location.hash);if(match){if(match[1])openReference(G.items[match[1]]);else catalogue();if(!$('reference').open)$('reference').showModal();}else if($('reference').open)$('reference').close();}

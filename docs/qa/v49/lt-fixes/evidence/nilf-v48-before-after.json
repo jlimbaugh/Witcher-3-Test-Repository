@@ -1,0 +1,8432 @@
+{
+ "v48": {
+  "375": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       307,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       151,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       151,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       80
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       80
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       307,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       307,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       257,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       257,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       229,
+       111
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       229,
+       111
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       172,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       172,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      307,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      151,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      151,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      80
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      80
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      307,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      307,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  },
+  "390": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       322,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       159,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       159,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       218,
+       80
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       218,
+       80
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       322,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       322,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       272,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       272,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       244,
+       90
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       244,
+       90
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       179,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       179,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      322,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      159,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      159,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      218,
+      80
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      218,
+      80
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      322,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      322,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  },
+  "430": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       362,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       179,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       179,
+       48
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       362,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       362,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       304,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       304,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       276,
+       90
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       276,
+       90
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       199,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       199,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      362,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      179,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      179,
+      48
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      362,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      362,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  },
+  "852": {
+   "hub": {
+    "h1": 42.6,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       684,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       338,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       338,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       279,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       255,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       420,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       420,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       392,
+       70
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       392,
+       70
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       279,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       279,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      684,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      338,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      338,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      279,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      255,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  },
+  "932": {
+   "hub": {
+    "h1": 46.6,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       764,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       378,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       378,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       279,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       255,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       490,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       490,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       462,
+       70
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       462,
+       70
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       314,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       314,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      764,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      378,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      378,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      279,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      255,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  },
+  "desktop": {
+   "hub": {
+    "h1": 56,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "auto",
+     "bgPos": "0% 0%",
+     "bgSize": "auto",
+     "afterPos": "0% 0%",
+     "afterInset": "auto"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [],
+    "buttons": [
+     {
+      "t": "Start walkthroughStep 1 · Arri",
+      "purpose": "continue",
+      "el": [
+       932,
+       104
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       462,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       462,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       223,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       68,
+       66
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       279,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       255,
+       54
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       654,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       654,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       626,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       626,
+       49
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       396,
+       76
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       396,
+       76
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Continue walkthroughStep 1 · A",
+     "purpose": "continue",
+     "el": [
+      932,
+      104
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      462,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      462,
+      49
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      223,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      68,
+      66
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      279,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      255,
+      54
+     ],
+     "plate": [
+      "auto",
+      "auto"
+     ],
+     "clip": false
+    }
+   ],
+   "errors": []
+  }
+ },
+ "before": {
+  "375": {
+   "hub": {
+    "h1": 26.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       27,
+       38
+      ],
+      "y": [
+       387,
+       462
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       337,
+       348
+      ],
+      "y": [
+       558,
+       633
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       150,
+       44
+      ],
+      "plate": [
+       "149.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       150,
+       44
+      ],
+      "plate": [
+       "149.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       64
+      ],
+      "plate": [
+       "203px",
+       "64px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       64
+      ],
+      "plate": [
+       "203px",
+       "64px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       83,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       83,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       307,
+       44
+      ],
+      "plate": [
+       "307px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       307,
+       44
+      ],
+      "plate": [
+       "307px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       257,
+       44
+      ],
+      "plate": [
+       "257px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       257,
+       44
+      ],
+      "plate": [
+       "257px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       229,
+       74
+      ],
+      "plate": [
+       "229px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       229,
+       74
+      ],
+      "plate": [
+       "229px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       172,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       172,
+       44
+      ],
+      "plate": [
+       "171.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       145,
+       132
+      ],
+      "plate": [
+       "146.5px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       145,
+       132
+      ],
+      "plate": [
+       "146.5px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      150,
+      44
+     ],
+     "plate": [
+      "149.5px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      150,
+      44
+     ],
+     "plate": [
+      "149.5px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      64
+     ],
+     "plate": [
+      "203px",
+      "64px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      64
+     ],
+     "plate": [
+      "203px",
+      "64px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      83,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      83,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      307,
+      44
+     ],
+     "plate": [
+      "307px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      307,
+      44
+     ],
+     "plate": [
+      "307px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "390": {
+   "hub": {
+    "h1": 26.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       27,
+       38
+      ],
+      "y": [
+       387,
+       462
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       352,
+       363
+      ],
+      "y": [
+       558,
+       633
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       157,
+       44
+      ],
+      "plate": [
+       "157px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       157,
+       44
+      ],
+      "plate": [
+       "157px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       91,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       91,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       322,
+       44
+      ],
+      "plate": [
+       "322px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       322,
+       44
+      ],
+      "plate": [
+       "322px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "272px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "272px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       244,
+       74
+      ],
+      "plate": [
+       "244px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       244,
+       74
+      ],
+      "plate": [
+       "244px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       179,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       179,
+       44
+      ],
+      "plate": [
+       "179px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       152,
+       132
+      ],
+      "plate": [
+       "154px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       152,
+       132
+      ],
+      "plate": [
+       "154px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      157,
+      44
+     ],
+     "plate": [
+      "157px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      157,
+      44
+     ],
+     "plate": [
+      "157px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      91,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      91,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      322,
+      44
+     ],
+     "plate": [
+      "322px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      322,
+      44
+     ],
+     "plate": [
+      "322px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "430": {
+   "hub": {
+    "h1": 26.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       27,
+       38
+      ],
+      "y": [
+       387,
+       462
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       392,
+       403
+      ],
+      "y": [
+       558,
+       633
+      ],
+      "nearest": {
+       "gap": -4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       177,
+       44
+      ],
+      "plate": [
+       "177px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       177,
+       44
+      ],
+      "plate": [
+       "177px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       111,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       111,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       362,
+       44
+      ],
+      "plate": [
+       "362px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       362,
+       44
+      ],
+      "plate": [
+       "362px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       304,
+       44
+      ],
+      "plate": [
+       "304px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       304,
+       44
+      ],
+      "plate": [
+       "304px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       276,
+       74
+      ],
+      "plate": [
+       "276px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       276,
+       74
+      ],
+      "plate": [
+       "276px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       199,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       199,
+       44
+      ],
+      "plate": [
+       "199px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       172,
+       132
+      ],
+      "plate": [
+       "174px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       172,
+       132
+      ],
+      "plate": [
+       "174px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      177,
+      44
+     ],
+     "plate": [
+      "177px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      177,
+      44
+     ],
+     "plate": [
+      "177px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      111,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      111,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      362,
+      44
+     ],
+     "plate": [
+      "362px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      362,
+      44
+     ],
+     "plate": [
+      "362px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "852": {
+   "hub": {
+    "h1": 38.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       73,
+       84
+      ],
+      "y": [
+       393,
+       468
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       768,
+       779
+      ],
+      "y": [
+       566,
+       641
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       338,
+       44
+      ],
+      "plate": [
+       "338px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       338,
+       44
+      ],
+      "plate": [
+       "338px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       420,
+       44
+      ],
+      "plate": [
+       "420px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       420,
+       44
+      ],
+      "plate": [
+       "420px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       392,
+       54
+      ],
+      "plate": [
+       "392px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       392,
+       54
+      ],
+      "plate": [
+       "392px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       279,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       279,
+       44
+      ],
+      "plate": [
+       "279px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      338,
+      44
+     ],
+     "plate": [
+      "338px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      338,
+      44
+     ],
+     "plate": [
+      "338px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      272,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      272,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "932": {
+   "hub": {
+    "h1": 38.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       73,
+       84
+      ],
+      "y": [
+       393,
+       468
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       848,
+       859
+      ],
+      "y": [
+       566,
+       641
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       378,
+       44
+      ],
+      "plate": [
+       "378px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       378,
+       44
+      ],
+      "plate": [
+       "378px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       312,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       312,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       490,
+       44
+      ],
+      "plate": [
+       "490px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       490,
+       44
+      ],
+      "plate": [
+       "490px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       462,
+       54
+      ],
+      "plate": [
+       "462px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       462,
+       54
+      ],
+      "plate": [
+       "462px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       314,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       314,
+       44
+      ],
+      "plate": [
+       "314px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      378,
+      44
+     ],
+     "plate": [
+      "378px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      378,
+      44
+     ],
+     "plate": [
+      "378px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      312,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      312,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "desktop": {
+   "hub": {
+    "h1": 38.4,
+    "briefing": 16,
+    "railCSS": {
+     "inset": "0px -7px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -7px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       156,
+       167
+      ],
+      "y": [
+       393,
+       468
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       1099,
+       1110
+      ],
+      "y": [
+       566,
+       641
+      ],
+      "nearest": {
+       "gap": 0,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       462,
+       44
+      ],
+      "plate": [
+       "462px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       462,
+       44
+      ],
+      "plate": [
+       "462px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       654,
+       44
+      ],
+      "plate": [
+       "654px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       654,
+       44
+      ],
+      "plate": [
+       "654px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       626,
+       44
+      ],
+      "plate": [
+       "626px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       626,
+       44
+      ],
+      "plate": [
+       "626px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "27px",
+       "24px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "396px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      462,
+      44
+     ],
+     "plate": [
+      "462px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      462,
+      44
+     ],
+     "plate": [
+      "462px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      396,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      396,
+      44
+     ],
+     "plate": [
+      "27px",
+      "24px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  }
+ },
+ "after": {
+  "375": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       19,
+       30
+      ],
+      "y": [
+       417,
+       492
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       345,
+       356
+      ],
+      "y": [
+       592,
+       667
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       150,
+       44
+      ],
+      "plate": [
+       "149.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       150,
+       44
+      ],
+      "plate": [
+       "149.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       64
+      ],
+      "plate": [
+       "203px",
+       "64px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       203,
+       64
+      ],
+      "plate": [
+       "203px",
+       "64px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       83,
+       44
+      ],
+      "plate": [
+       "83.4688px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       83,
+       44
+      ],
+      "plate": [
+       "83.4688px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       307,
+       44
+      ],
+      "plate": [
+       "307px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       307,
+       44
+      ],
+      "plate": [
+       "307px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       257,
+       44
+      ],
+      "plate": [
+       "257px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       257,
+       44
+      ],
+      "plate": [
+       "257px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       229,
+       74
+      ],
+      "plate": [
+       "229px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       229,
+       74
+      ],
+      "plate": [
+       "229px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       172,
+       44
+      ],
+      "plate": [
+       "171.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       172,
+       44
+      ],
+      "plate": [
+       "171.5px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       145,
+       132
+      ],
+      "plate": [
+       "146.5px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       145,
+       132
+      ],
+      "plate": [
+       "146.5px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      150,
+      44
+     ],
+     "plate": [
+      "149.5px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      150,
+      44
+     ],
+     "plate": [
+      "149.5px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      64
+     ],
+     "plate": [
+      "203px",
+      "64px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      203,
+      64
+     ],
+     "plate": [
+      "203px",
+      "64px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      83,
+      44
+     ],
+     "plate": [
+      "83.4688px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      83,
+      44
+     ],
+     "plate": [
+      "83.4688px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      307,
+      44
+     ],
+     "plate": [
+      "307px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      307,
+      44
+     ],
+     "plate": [
+      "307px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "390": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       19,
+       30
+      ],
+      "y": [
+       417,
+       492
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       360,
+       371
+      ],
+      "y": [
+       592,
+       667
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       157,
+       44
+      ],
+      "plate": [
+       "157px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       157,
+       44
+      ],
+      "plate": [
+       "157px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       91,
+       44
+      ],
+      "plate": [
+       "90.9688px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       91,
+       44
+      ],
+      "plate": [
+       "90.9688px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       322,
+       44
+      ],
+      "plate": [
+       "322px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       322,
+       44
+      ],
+      "plate": [
+       "322px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "272px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "272px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       244,
+       74
+      ],
+      "plate": [
+       "244px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       244,
+       74
+      ],
+      "plate": [
+       "244px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       179,
+       44
+      ],
+      "plate": [
+       "179px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       179,
+       44
+      ],
+      "plate": [
+       "179px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       152,
+       132
+      ],
+      "plate": [
+       "154px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       152,
+       132
+      ],
+      "plate": [
+       "154px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      157,
+      44
+     ],
+     "plate": [
+      "157px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      157,
+      44
+     ],
+     "plate": [
+      "157px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      91,
+      44
+     ],
+     "plate": [
+      "90.9688px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      91,
+      44
+     ],
+     "plate": [
+      "90.9688px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      322,
+      44
+     ],
+     "plate": [
+      "322px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      322,
+      44
+     ],
+     "plate": [
+      "322px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "430": {
+   "hub": {
+    "h1": 32,
+    "briefing": 17.6,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     36,
+     22,
+     36,
+     22
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       19,
+       30
+      ],
+      "y": [
+       389,
+       464
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       400,
+       411
+      ],
+      "y": [
+       564,
+       639
+      ],
+      "nearest": {
+       "gap": 4,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       177,
+       44
+      ],
+      "plate": [
+       "177px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       177,
+       44
+      ],
+      "plate": [
+       "177px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       111,
+       44
+      ],
+      "plate": [
+       "110.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       111,
+       44
+      ],
+      "plate": [
+       "110.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       362,
+       44
+      ],
+      "plate": [
+       "362px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       362,
+       44
+      ],
+      "plate": [
+       "362px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       304,
+       44
+      ],
+      "plate": [
+       "304px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       304,
+       44
+      ],
+      "plate": [
+       "304px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       276,
+       74
+      ],
+      "plate": [
+       "276px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       276,
+       74
+      ],
+      "plate": [
+       "276px",
+       "74.3906px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       199,
+       44
+      ],
+      "plate": [
+       "199px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       199,
+       44
+      ],
+      "plate": [
+       "199px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       172,
+       132
+      ],
+      "plate": [
+       "174px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       172,
+       132
+      ],
+      "plate": [
+       "174px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      177,
+      44
+     ],
+     "plate": [
+      "177px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      177,
+      44
+     ],
+     "plate": [
+      "177px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      111,
+      44
+     ],
+     "plate": [
+      "110.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      111,
+      44
+     ],
+     "plate": [
+      "110.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      362,
+      44
+     ],
+     "plate": [
+      "362px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      362,
+      44
+     ],
+     "plate": [
+      "362px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "852": {
+   "hub": {
+    "h1": 42.6,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       65,
+       76
+      ],
+      "y": [
+       400,
+       475
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       776,
+       787
+      ],
+      "y": [
+       576,
+       651
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       338,
+       44
+      ],
+      "plate": [
+       "338px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       338,
+       44
+      ],
+      "plate": [
+       "338px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "271.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       272,
+       44
+      ],
+      "plate": [
+       "271.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       420,
+       44
+      ],
+      "plate": [
+       "420px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       420,
+       44
+      ],
+      "plate": [
+       "420px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       392,
+       54
+      ],
+      "plate": [
+       "392px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       392,
+       54
+      ],
+      "plate": [
+       "392px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       279,
+       44
+      ],
+      "plate": [
+       "279px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       279,
+       44
+      ],
+      "plate": [
+       "279px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      338,
+      44
+     ],
+     "plate": [
+      "338px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      338,
+      44
+     ],
+     "plate": [
+      "338px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      272,
+      44
+     ],
+     "plate": [
+      "271.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      272,
+      44
+     ],
+     "plate": [
+      "271.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "932": {
+   "hub": {
+    "h1": 46.6,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       65,
+       76
+      ],
+      "y": [
+       404,
+       479
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       856,
+       867
+      ],
+      "y": [
+       581,
+       656
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       378,
+       44
+      ],
+      "plate": [
+       "378px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       378,
+       44
+      ],
+      "plate": [
+       "378px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       312,
+       44
+      ],
+      "plate": [
+       "311.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       312,
+       44
+      ],
+      "plate": [
+       "311.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       490,
+       44
+      ],
+      "plate": [
+       "490px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       490,
+       44
+      ],
+      "plate": [
+       "490px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       462,
+       54
+      ],
+      "plate": [
+       "462px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       462,
+       54
+      ],
+      "plate": [
+       "462px",
+       "53.5938px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       314,
+       44
+      ],
+      "plate": [
+       "314px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       314,
+       44
+      ],
+      "plate": [
+       "314px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      378,
+      44
+     ],
+     "plate": [
+      "378px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      378,
+      44
+     ],
+     "plate": [
+      "378px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      312,
+      44
+     ],
+     "plate": [
+      "311.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      312,
+      44
+     ],
+     "plate": [
+      "311.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  },
+  "desktop": {
+   "hub": {
+    "h1": 56,
+    "briefing": 19.2,
+    "railCSS": {
+     "inset": "0px -15px -19px",
+     "bgPos": "0% 22%, 50% 100%",
+     "bgSize": "11px 75px, 112px 20px",
+     "afterPos": "0% 65%",
+     "afterInset": "0px -15px -19px"
+    },
+    "paperBorder": [
+     40,
+     40,
+     40,
+     40
+    ],
+    "rails": [
+     {
+      "side": "left",
+      "x": [
+       148,
+       159
+      ],
+      "y": [
+       415,
+       490
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Start walkthroughStep 1 · Arrival"
+      }
+     },
+     {
+      "side": "right",
+      "x": [
+       1107,
+       1118
+      ],
+      "y": [
+       591,
+       666
+      ],
+      "nearest": {
+       "gap": 8,
+       "el": "Preparation & quest details"
+      }
+     }
+    ],
+    "buttons": [
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       462,
+       44
+      ],
+      "plate": [
+       "462px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Regions",
+      "purpose": "plain",
+      "el": [
+       462,
+       44
+      ],
+      "plate": [
+       "462px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice",
+      "purpose": "plain",
+      "el": [
+       207,
+       44
+      ],
+      "plate": [
+       "207.406px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Previous",
+      "purpose": "previous",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "395.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Next",
+      "purpose": "next",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "395.969px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       263,
+       44
+      ],
+      "plate": [
+       "263.094px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       239,
+       44
+      ],
+      "plate": [
+       "238.531px",
+       "44px"
+      ],
+      "clip": true
+     }
+    ]
+   },
+   "readShots": 4,
+   "walk": {
+    "h1": null,
+    "briefing": null,
+    "buttons": [
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       76,
+       74
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "",
+      "purpose": "plain",
+      "el": [
+       44,
+       44
+      ],
+      "plate": [
+       "auto",
+       "auto"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Record whole quest complete",
+      "purpose": "plain",
+      "el": [
+       654,
+       44
+      ],
+      "plate": [
+       "654px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Undo last progress change",
+      "purpose": "plain",
+      "el": [
+       654,
+       44
+      ],
+      "plate": [
+       "654px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Ask ab",
+      "purpose": "plain",
+      "el": [
+       626,
+       44
+      ],
+      "plate": [
+       "626px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Record / review choice: Look f",
+      "purpose": "plain",
+      "el": [
+       626,
+       44
+      ],
+      "plate": [
+       "626px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Return to hub",
+      "purpose": "return",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "396px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Quest cards",
+      "purpose": "plain",
+      "el": [
+       396,
+       44
+      ],
+      "plate": [
+       "396px",
+       "44px"
+      ],
+      "clip": true
+     },
+     {
+      "t": "Warnings",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     },
+     {
+      "t": "Search",
+      "purpose": "plain",
+      "el": [
+       215,
+       132
+      ],
+      "plate": [
+       "217px",
+       "134px"
+      ],
+      "clip": false
+     }
+    ]
+   },
+   "hubButtons": [
+    {
+     "t": "Quest cards",
+     "purpose": "plain",
+     "el": [
+      462,
+      44
+     ],
+     "plate": [
+      "462px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Regions",
+     "purpose": "plain",
+     "el": [
+      462,
+      44
+     ],
+     "plate": [
+      "462px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record / review choice",
+     "purpose": "plain",
+     "el": [
+      207,
+      44
+     ],
+     "plate": [
+      "207.406px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Previous",
+     "purpose": "previous",
+     "el": [
+      396,
+      44
+     ],
+     "plate": [
+      "395.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Next",
+     "purpose": "next",
+     "el": [
+      396,
+      44
+     ],
+     "plate": [
+      "395.969px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Record whole quest complete",
+     "purpose": "plain",
+     "el": [
+      263,
+      44
+     ],
+     "plate": [
+      "263.094px",
+      "44px"
+     ],
+     "clip": true
+    },
+    {
+     "t": "Undo last progress change",
+     "purpose": "plain",
+     "el": [
+      239,
+      44
+     ],
+     "plate": [
+      "238.531px",
+      "44px"
+     ],
+     "clip": true
+    }
+   ],
+   "errors": []
+  }
+ }
+}

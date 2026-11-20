@@ -152,7 +152,7 @@ const PROTECTED={
 //   home-ui.js    v45 ..... d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd
 //                 issue #4  dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722 (passes navigationOnly; guards
 //                           warningHistory.v1 / pendingWarnings.v1: unreadable or denied saves are never written)
-const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'ac7c6fa28bd63188821aa3aed12eb3d8e6854e00eb3a8782d1cde373f2a4475d'};
+const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'adfa566c993d1a0cdd77712c6b0107cc09bb665f9fcc17a4ebf327331027d03b'};
 test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed candidate bytes',()=>{
  for(const [f,sum] of Object.entries(CANDIDATE_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed issue #4 candidate; update CANDIDATE_PINS deliberately');
  for(const f of Object.keys(CANDIDATE_PINS))assert.ok(!Object.hasOwn(PROTECTED,f),f+' is pinned once');
@@ -168,7 +168,10 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 // Velen route maps intentionally extend the region router.
 // Nilf source footer and shared objective citation removal are the authorized QA corrections.
 // Previous progression-ui.js pin: ca0bd046387960ca4ea4cb59729719a14f3f4a92dd1f49e3fd3a621119c59cf0.
-const SEAM_PINS={'progression-ui.js': 'e6ed44acfd06034d02b7a8a75c39c637fa588a01135769a81dd48ba2ec5839d1', 'velen-r18.js': '819dd2ea48a2acb59d68f21e3724b283fb283ecb698f1d3e6ebc3a3821402c37', 'main-console.js': '8eff3220ed78da1980534d465a7f651edf0dc419ca19c3f9760bc6563ff2880a', 'home-rebuild.css': '1c83a26281dabe99ae84ee3de63901274f69855bf53e356bc0796de006364320', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
+// v49 LT fixes (Cmdr fix list on PR #25): 1 RT-01 Region Tools global tiles bypass sharedHash (velen-r18.js).
+// v49 LT fixes: 3 RT-02/RT-03 Search and Route maps tiles use original code-drawn art (velen-r18.js).
+// v49 phone candidate updates Undo labels, source footers and save status.
+const SEAM_PINS={'progression-ui.js': 'e07aabe7be166324c0bcf0d261db98f0eb60388d9ac04b4dfe28c0fc1488e123', 'velen-r18.js': 'f4b1f7324e130aca1f1ec48b5101769270e055d819dd9cb79736972071cba85f', 'main-console.js': '649912f36bb45e8257cff360bd267f4950007679c031e595725b4a9bac99de34', 'home-rebuild.css': '9fb5a35f378ae7af893a39a0453ca280aa5379393bedaa2445140bd150c7760c', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });

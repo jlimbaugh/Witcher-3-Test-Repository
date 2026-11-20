@@ -1,8 +1,33 @@
 'use strict';
 
 (function (root) {
+  root.createVelenQuestTracker=function(id,objectiveIds){
+    const valid=marks=>Array.isArray(marks)&&marks.every(mark=>objectiveIds.includes(mark))&&new Set(marks).size===marks.length;
+    const storageKey='phoenix.velen.'+id+'.objectives.v1';
+    let record={marks:[],undo:null},notice='',editable=true;
+    function load(){
+     try{
+      const raw=root.localStorage.getItem(storageKey);
+      const saved=raw===null?{marks:[],undo:null}:JSON.parse(raw);
+      if(!saved||!valid(saved.marks)||(saved.undo!==null&&!valid(saved.undo)))throw Error();
+      record=saved;editable=true;notice='';
+     }catch{editable=false;notice='Stored objectives are unavailable. Your existing record is protected.';}
+    }
+    load();
+    function change(update){
+     load();
+     if(editable){
+      const next=update(record);
+      if(next)try{root.localStorage.setItem(storageKey,JSON.stringify(next));record=next;}
+      catch{notice='This change could not be saved.';}
+     }
+
+    }
+    return {objectiveIds,change,get record(){return record;},get notice(){return notice;},get editable(){return editable;}};
+  };
   root.PhoenixVelenQuestCards = {
     baron: {
+      objectiveIds:['reach-crows-perch','enter-keep','speak-to-baron'],
       art:'art-velen/baron.webp',
       briefing: 'Follow Hendrik’s lead to Crow’s Perch and find out what the Baron knows about Ciri.',
       completion: 'Finish the audience with the Baron. The handoff is Ciri’s Story: The King of the Wolves.',
@@ -42,6 +67,8 @@
       ]
     },
     witch: {
+      objectiveIds:['midcopse-lead','reach-cottage','open-portal','speak-to-keira'],
+      optionalObjectives:['midcopse-lead'],
       art:'art-velen/witch.webp',
       briefing: 'Follow the second lead from Hendrik’s notes to Midcopse and find the witch’s cottage.',
       completion: 'Finish the conversation with Keira about Ciri and the masked mage. Continue in Wandering in the Dark.',
@@ -91,6 +118,7 @@
   };
   Object.assign(root.PhoenixVelenQuestCards, {
     princess: {
+      objectiveIds:['find-princess', 'return-to-pellar'],
       art:'art-velen/princess.webp',
       name:'A Princess in Distress', kind:'Main quest', level:5, place:'Pellar’s hut near Blackbough',
       briefing:'Find Princess so the Pellar can continue the investigation into Anna and Tamara.',
@@ -103,6 +131,7 @@
       ]
     },
     'ciris-room': {
+      objectiveIds:['search-room', 'return-spinning-top'],
       art:'art-velen/ciris-room.webp',
       name:'Ciri’s Room', kind:'Side quest', level:5, place:'Crow’s Perch',
       briefing:'Search Ciri’s old room and speak with Gretka about her stay.',
@@ -115,6 +144,7 @@
       ]
     },
     'wandering-in-the-dark': {
+      objectiveIds:['regroup-with-keira', 'trace-signs', 'survive-white-frost', 'clear-exit'],
       art:'art-velen/wandering-in-the-dark.webp',
       name:'Wandering in the Dark', kind:'Main quest', place:'Elven ruins',
       briefing:'Explore the elven mage’s ruins with Keira and follow the Wild Hunt.',
@@ -129,6 +159,7 @@
       ]
     },
     'magic-lamp': {
+      objectiveIds:['read-inscription', 'open-door', 'leave-with-keira'],
       art:'art-velen/magic-lamp.webp',
       name:'Magic Lamp', kind:'Side quest', place:'Elven ruins',
       briefing:'Help Keira find the lamp promised to her by the elven mage.',
@@ -142,6 +173,7 @@
       ]
     },
     'ladies-of-the-wood': {
+      objectiveIds:['follow-treats', 'restore-johnnys-voice', 'hear-request', 'return-with-outcome'],
       art:'art-velen/ladies-of-the-wood.webp',
       name:'Ladies of the Wood', kind:'Main quest', place:'Crookback Bog',
       briefing:'Follow Ciri’s trail to the orphans and learn what the Crones know.',
@@ -156,6 +188,7 @@
       ]
     },
     'whispering-hillock': {
+      objectiveIds:['reach-spirit', 'resolve-spirit'],
       art:'art-velen/whispering-hillock.webp',
       name:'The Whispering Hillock', kind:'Quest', place:'The Ancient Oak',
       briefing:'Find what lives beneath the oak and decide how to resolve the spirit’s request.',
@@ -174,6 +207,7 @@
   const guide='https://www.gamebanshee.com/thewitcher3/walkthrough/';
   Object.assign(root.PhoenixVelenQuestCards,{
     'king-of-the-wolves': {
+      objectiveIds:['rescue-gretka', 'prepare-for-wolf-king', 'defeat-wolf-king'],
       art:'art-velen/king-of-the-wolves.webp',
       name:'Ciri’s Story: The King of the Wolves',kind:main,place:'Riverbed near Lindenvale',
       briefing:'Play as Ciri and help Gretka get through wolf country.',
@@ -187,6 +221,7 @@
       ]
     },
     'family-matters': {
+      objectiveIds:['consult-pellar', 'resolve-botchling', 'follow-trail-to-voytek', 'report-annas-fate'],
       art:'art-velen/family-matters.webp',
       name:'Family Matters',kind:main,place:'Crow’s Perch',
       briefing:'Investigate the disappearance of Anna and Tamara while the Baron fills in Ciri’s story.',
@@ -201,6 +236,7 @@
       ]
     },
     'ciris-race': {
+      objectiveIds:['finish-race'],
       art:'art-velen/ciris-race.webp',
       name:'Ciri’s Story: The Race',kind:main,place:'Abandoned Tower',
       briefing:'Ride against the Baron during his second flashback.',
@@ -210,6 +246,7 @@
       stages:[{title:'Race to the tower',place:'Velen woodland track',actions:['Finish the wager scene and ride the marked route to the tower.','Keep to the track and use a gallop on clear stretches. Either finish order advances the story.'],links:[['Family Matters','family-matters']]}]
     },
     'out-of-the-shadows': {
+      objectiveIds:['rescue-baron', 'hear-barons-account'],
       art:'art-velen/out-of-the-shadows.webp',
       name:'Ciri’s Story: Out of the Shadows',kind:main,place:'Abandoned Tower',
       briefing:'Resume Ciri’s encounter with the basilisk and rescue the Baron.',
@@ -222,6 +259,7 @@
       ]
     },
     'return-to-crookback-bog': {
+      objectiveIds:['reach-anna', 'resolve-annas-condition', 'collect-payment'],
       art:'art-velen/return-to-crookback-bog.webp',
       name:'Return to Crookback Bog',kind:side,level:9,place:'Downwarren and Crookback Bog',
       briefing:'Join the Baron and Tamara in their search for Anna.',
@@ -235,6 +273,7 @@
       ]
     },
     'fleeing-the-bog': {
+      objectiveIds:['reach-escape-point'],
       art:'art-velen/fleeing-the-bog.webp',
       name:'Ciri’s Story: Fleeing the Bog',kind:main,level:5,place:'Crookback Bog',
       briefing:'Escape the Crones’ territory as Ciri.',
@@ -244,6 +283,7 @@
       stages:[{title:'Run through the bog',place:'Crones’ village and escape path',actions:['As soon as you regain control, follow the quest route away from the hut.','Use Ciri’s dodge to pass enemies and keep moving until the escape scene triggers.'],links:[['Ladies of the Wood','ladies-of-the-wood']]}]
     },
     'keira-invitation': {
+      objectiveIds:['accept-fyke-isle-investigation'],
       art:'art-velen/keira-invitation.webp',
       name:'An Invitation from Keira Metz',kind:side,place:'Keira’s cottage',
       briefing:'Find out why Keira invited you back after the ruins.',
@@ -253,6 +293,7 @@
       stages:[{title:'Accept the Fyke Isle investigation',place:'Keira’s cottage',actions:['Ask Keira why she invited you.','Agree to investigate Fyke Isle. Take the magic lamp and xenovox.'],links:[['A Towerful of Mice','towerful-of-mice']]}]
     },
     'towerful-of-mice': {
+      objectiveIds:['reach-fyke-isle', 'hear-anabelle', 'lift-curse'],
       art:'art-velen/towerful-of-mice.webp',
       name:'A Towerful of Mice',kind:side,level:6,place:'Fyke Isle',
       briefing:'Investigate the hauntings at the tower and decide how to lift the curse.',
@@ -266,6 +307,7 @@
       ]
     },
     'favor-for-a-friend': {
+      objectiveIds:['find-package', 'return-to-keira'],
       art:'art-velen/favor-for-a-friend.webp',
       name:'A Favor for a Friend',kind:side,level:6,place:'Hangman’s Alley',
       briefing:'Find Keira’s missing delivery and bring it back to her cottage.',
@@ -278,6 +320,7 @@
       ]
     },
     'advancement-of-learning': {
+      objectiveIds:['find-keira', 'resolve-confrontation'],
       art:'art-velen/advancement-of-learning.webp',
       name:'For the Advancement of Learning',kind:side,level:8,place:'Fyke Isle tower',
       briefing:'Find Keira with Alexander’s research and decide what happens next.',
@@ -299,6 +342,7 @@
   const contract='Witcher contract';
   Object.assign(root.PhoenixVelenQuestCards,{
     shrieker: {
+      objectiveIds:['interview-witnesses', 'track-cockatrice', 'return-with-trophy'],
       name:'Contract: Shrieker',kind:contract,level:8,place:'Crow’s Perch',
       art:'art-velen/shrieker.webp',
       briefing:'Track the cockatrice that killed Borzoy outside Crow’s Perch.',
@@ -312,6 +356,7 @@
       ]
     },
     'jenny-o-the-woods': {
+      objectiveIds:['interview-witnesses', 'identify-nightwraith', 'defeat-jenny-and-report'],
       name:'Contract: Jenny o’ the Woods',kind:contract,level:10,place:'Midcopse',
       art:'art-velen/jenny-o-the-woods.webp',
       briefing:'Investigate the haunting north of Midcopse and put Zula’s spirit to rest.',
@@ -325,6 +370,7 @@
       ]
     },
     'merry-widow': {
+      objectiveIds:['search-cemetery', 'lure-grave-hag', 'defeat-mourntart-and-report'],
       name:'Contract: The Merry Widow',kind:contract,level:10,place:'Lindenvale',
       art:'art-velen/merry-widow.webp',
       briefing:'Investigate disturbed graves and the disappearance of the miller’s son.',
@@ -338,6 +384,7 @@
       ]
     },
     'swamp-thing': {
+      objectiveIds:['inspect-trail', 'enter-cave', 'resolve-payment'],
       name:'Contract: Swamp Thing',kind:contract,level:12,place:'Downwarren and Crookback Bog',
       art:'art-velen/swamp-thing.webp',
       briefing:'Follow Leslav’s lead to the foglet behind the disappearances in the bog.',
@@ -353,6 +400,7 @@
   });
   Object.assign(root.PhoenixVelenQuestCards,{
     'patrol-gone-missing': {
+      objectiveIds:['take-assignment', 'follow-scouts', 'report-wyvern'],
       name:'Contract: Patrol Gone Missing',kind:contract,level:7,place:'Nilfgaardian Army Group Center Camp',
       art:'art-velen/patrol-gone-missing.webp',
       briefing:'Find the missing Nilfgaardian scouts and track the wyvern that attacked them.',
@@ -366,6 +414,7 @@
       ]
     },
     'mysterious-tracks': {
+      objectiveIds:['track-creature', 'investigate-lair', 'place-lure', 'defeat-howler'],
       name:'Contract: Mysterious Tracks',kind:contract,level:20,place:'Lindenvale',
       art:'art-velen/mysterious-tracks.webp',
       briefing:'Investigate the wolf kills and lure the Howler into its lair.',
@@ -380,6 +429,7 @@
       ]
     },
     'byways-murders': {
+      objectiveIds:['investigate-patrol', 'find-ruins', 'report-sarasti'],
       name:'Contract: The Mystery of the Byways Murders',kind:contract,level:22,place:'Oreton and Byways',
       art:'art-velen/byways-murders.webp',
       briefing:'Find the missing Nilfgaardian patrol and uncover the vampire lair beneath Byways.',
@@ -393,6 +443,7 @@
       ]
     },
     'phantom-of-the-trade-route': {
+      objectiveIds:['find-guides', 'clear-nests', 'defeat-royal-wyvern'],
       name:'Contract: Phantom of the Trade Route',kind:contract,level:23,place:'Benek',
       art:'art-velen/phantom-of-the-trade-route.webp',
       briefing:'Find Benek’s missing guides and defeat the royal wyvern guarding the trade route.',
@@ -408,6 +459,7 @@
   });
   Object.assign(root.PhoenixVelenQuestCards,{
     'woodland-beast': {
+      objectiveIds:['investigate-transport', 'resolve-encounter', 'report-to-captain'],
       name:'Contract: Woodland Beast',kind:contract,level:6,place:'Border Post and north Velen woods',
       art:'art-velen/woodland-beast.webp',
       briefing:'Investigate attacks on Redanian transports near the Pontar crossing.',
@@ -421,6 +473,7 @@
       ]
     },
     'griffin-from-the-highlands': {
+      objectiveIds:['take-griffin-contract', 'hunt-archgriffin', 'deliver-trophy'],
       name:'Contract: The Griffin from the Highlands',kind:contract,level:24,place:'Crow’s Perch and northern hills',
       art:'art-velen/griffin-from-the-highlands.webp',
       briefing:'Hunt the archgriffin and recover the gland Yoana needs to harden her armor.',
@@ -434,6 +487,7 @@
       ]
     },
     'beast-of-honorton': {
+      objectiveIds:['follow-notice', 'clear-village'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Contract: The Beast of Honorton',kind:contract,level:25,place:'Honorton',
       art:'art-velen/beast-of-honorton.webp',
@@ -447,6 +501,8 @@
       ]
     },
     'missing-brother': {
+      objectiveIds:['find-survivor', 'destroy-eggs', 'report-harrisi'],
+      optionalObjectives:['destroy-eggs'],
       name:'Contract: Missing Brother',kind:contract,level:33,place:'Inn at the Crossroads and old mine',
       art:'art-velen/missing-brother.webp',
       briefing:'Find Mikkel’s trail in the old mine and defeat Harrisi, the venomous arachas.',
@@ -460,6 +516,7 @@
       ]
     },
     'master-armorers': {
+      objectiveIds:['recover-tools', 'deliver-gland', 'test-armor'],
       name:'Master Armorers',kind:side,place:'Crow’s Perch and Undvik',
       art:'art-velen/master-armorers.webp',
       briefing:'Recover the Undvik tools and help Yoana prove her work at Crow’s Perch.',
@@ -473,6 +530,7 @@
       ]
     },
     'where-the-cat-and-wolf-play': {
+      objectiveIds:['find-millie', 'resolve-gaetan', 'escort-millie'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Where the Cat and Wolf Play…',kind:side,level:25,place:'Honorton and Oreton',
       art:'art-velen/where-the-cat-and-wolf-play.webp',
@@ -487,6 +545,7 @@
       ]
     },
     'take-what-you-want': {
+      objectiveIds:['reach-stash', 'collect-teigr'],
       dlc: 'Free DLC · Where the Cat and Wolf Play…',
       name:'Take What You Want',kind:side,place:'Forest Hut, north of Keira’s cottage',
       art:'art-velen/take-what-you-want.webp',
@@ -500,6 +559,7 @@
       ]
     },
     'fall-of-the-house-of-reardon': {
+      objectiveIds:['accept-request', 'resolve-manor', 'report-to-dolores'],
       name:'The Fall of the House of Reardon',kind:side,place:'Lindenvale and Reardon Manor',
       art:'art-velen/fall-of-the-house-of-reardon.webp',
       briefing:'Help Dolores reclaim her family estate and investigate what happened there.',
@@ -513,6 +573,7 @@
       ]
     },
     'ghosts-of-the-past': {
+      objectiveIds:['meet-letho', 'ride-to-louis', 'resolve-standoff'],
       name:'Ghosts of the Past',kind:side,level:6,place:'Reardon Manor and Lindenvale',
       art:'art-velen/ghosts-of-the-past.webp',
       briefing:'Help Letho deal with the bounty hunters and decide where he should go afterward.',
@@ -526,6 +587,8 @@
       ]
     },
     'eternal-fires-shadow': {
+      objectiveIds:['open-mine', 'investigate-trail', 'defeat-miasmal', 'resolve-reinald'],
+      optionalObjectives:['investigate-trail'],
       name:'In the Eternal Fire’s Shadow',kind:side,level:15,place:'Devil’s Pit',
       art:'art-velen/eternal-fires-shadow.webp',
       briefing:'Investigate the sealed mine at Devil’s Pit and free it from the Red Miasmal.',
@@ -540,6 +603,7 @@
       ]
     },
     'thou-shalt-not-pass': {
+      objectiveIds:['obtain-pass', 'show-papers'],
       name:'Thou Shalt Not Pass',kind:side,place:'Border Post bridge or Oxenfurt’s Western Gate',
       art:'art-velen/thou-shalt-not-pass.webp',
       briefing:'Secure a pass and show it to a Redanian guard to cross the Pontar.',
@@ -552,6 +616,7 @@
       ]
     },
     'fake-papers': {
+      objectiveIds:['buy-forged-pass'],
       name:'Fake Papers',kind:side,place:'Refugee camp south of the Border Post',
       art:'art-velen/fake-papers.webp',
       briefing:'Buy a forged Transit Pass from the shady merchant, with or without a discount.',
@@ -563,6 +628,7 @@
       ]
     },
     'bitter-harvest': {
+      objectiveIds:['accept-job', 'defend-scavengers'],
       name:'Bitter Harvest',kind:side,level:9,place:'Battlefield southeast of the Border Post',
       art:'art-velen/bitter-harvest.webp',
       briefing:'Protect Albin Hart and his scavengers while they work the battlefield.',
@@ -575,6 +641,7 @@
       ]
     },
     'wild-at-heart': {
+      objectiveIds:['meet-niellen', 'answer-margrit', 'resolve-disappearance'],
       name: "Wild at Heart",
       kind: "Side quest",
       place: "Blackbough",
@@ -586,11 +653,12 @@
       level: 7,
       stages: [
         {"title": "Speak with Niellen", "place": "Blackbough", "actions": ["Agree to look for Hanna. Ask the villagers what they saw, then search the woods northwest of Blackbough."]},
-        {"title": "Respond to Margrit’s offer", "place": "Woods near Blackbough", "actions": ["Defeat the wolves. Margrit will offer to pay you to stop looking.", "For the short route, take the offer and report Hanna dead to Niellen. To learn what happened, stay in the woods and inspect the body, claw marks and tracks."], "warning": "Reporting back to Niellen on Margrit’s terms ends the quest early."},
-        {"title": "Resolve the confrontation", "place": "Cave below the isolated shack", "actions": ["On the investigation route, follow the clues to the shack and read the notes. Enter the cave beneath it at night.", "Fight the werewolf. When Margrit intervenes, choose whether to protect her or let Niellen take revenge."], "note": "Cursed Oil and Moon Dust help against a werewolf. If you let Niellen take revenge, follow him outside afterward to resolve the quest."}
+        {"title": "Respond to Margrit’s offer", "place": "Woods near Blackbough", "actions": ["Defeat the wolves. Margrit will offer to pay you to stop looking.", "For the short route, accept the offer. To learn what happened, stay in the woods and inspect the body, claw marks and tracks."], "warning": "Reporting back to Niellen on Margrit’s terms ends the quest early."},
+        {"title": "Resolve Hanna’s disappearance", "place": "Blackbough or the cave below the isolated shack", "actions": ["If you accepted Margrit’s offer, report back to Niellen in Blackbough to finish.", "On the investigation route, follow the clues to the shack and read the notes. Enter the cave beneath it at night.", "Fight the werewolf. When Margrit intervenes, choose whether to protect her or let Niellen take revenge."], "note": "Cursed Oil and Moon Dust help against a werewolf. If you let Niellen take revenge, follow him outside afterward to resolve the quest."}
       ]
     },
     'a-greedy-god': {
+      objectiveIds:['investigate-altar', 'resolve-offerings'],
       name: "A Greedy God",
       kind: "Side quest",
       place: "Ruins south of Wastrel Manor",
@@ -606,6 +674,7 @@
       ]
     },
     'a-dogs-life': {
+      objectiveIds:['rescue-dog', 'open-container'],
       name: "A Dog’s Life",
       kind: "Side quest",
       place: "Road near Drudge and the village",
@@ -620,6 +689,7 @@
       ]
     },
     'forefathers-eve': {
+      objectiveIds:['attend-ritual', 'resolve-interruption', 'finish-ritual-route'],
       name: "Forefathers’ Eve",
       kind: "Side quest",
       place: "Fyke Isle and Crookback Bog",
@@ -632,10 +702,11 @@
       stages: [
         {"title": "Attend the ritual", "place": "Fyke Isle stone circle", "actions": ["Meet the Pellar around midnight and speak to him to start the rite.", "Defeat the drowners and water hag that come to the circle."], "links": [["A Towerful of Mice", "towerful-of-mice"]]},
         {"title": "Decide whether to intervene", "place": "Fyke Isle stone circle", "actions": ["When the witch hunters arrive, step aside to end your part in the ritual or defend the Pellar.", "If you defend him, defeat the hunters and the wraiths that appear, then speak to the Pellar about Ambros."], "warning": "Stepping aside ends the quest here and costs access to the Pellar’s trading services."},
-        {"title": "Lay Ambros to rest", "place": "Crookback Bog and the Pellar’s hut", "actions": ["On the defense route, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni.", "Report back to the Pellar at his hut."]}
+        {"title": "Finish your ritual route", "place": "Fyke Isle or Crookback Bog and the Pellar’s hut", "actions": ["If you stepped aside, your route ends at the circle. Record this final milestone there.", "If you defended the Pellar, search the marked swamp with Witcher Senses. Examine Ambros’s body and burn it with Igni, then report back to the Pellar at his hut."]}
       ]
     },
     'death-by-fire': {
+      objectiveIds:['rescue-elf'],
       name: "Death by Fire",
       kind: "Side quest",
       place: "Road west of Codgers’ Quarry",
@@ -650,6 +721,7 @@
       ]
     },
     'lynch-mob': {
+      objectiveIds:['resolve-deserter'],
       name: "Lynch Mob",
       kind: "Side quest",
       place: "Hangman’s Alley",
@@ -664,6 +736,7 @@
       ]
     },
     'defender-of-the-faith': {
+      objectiveIds:['restore-shrines', 'stop-vandals'],
       name: "Defender of the Faith",
       kind: "Side quest",
       place: "Road between Blackbough and Crow’s Perch",
@@ -679,6 +752,7 @@
       ]
     },
     'last-rites': {
+      objectiveIds:['accept-ring', 'deliver-ring-and-report'],
       name: "Last Rites",
       kind: "Side quest",
       place: "Bridge north of Blackbough",
@@ -694,6 +768,7 @@
       ]
     },
     'fools-gold': {
+      objectiveIds:['protect-yontek', 'investigate-hog-hut', 'lift-curse'],
       dlc: 'Free DLC · Fools’ Gold',
       name: "Fools’ Gold",
       kind: "Side quest",
@@ -711,6 +786,7 @@
       ]
     },
     'truth-is-in-the-stars': {
+      objectiveIds:['hear-first-reading', 'deliver-dragonsroot'],
       name: "The Truth Is in the Stars",
       kind: "Side quest",
       place: "Benek and the cave to its southeast",
@@ -725,6 +801,7 @@
       ]
     },
     'hazardous-goods': {
+      objectiveIds:['resolve-cart'],
       name: "Hazardous Goods",
       kind: "Side quest",
       place: "Road northwest of Lurtch",
@@ -738,6 +815,7 @@
       ]
     },
     'witcher-wannabe': {
+      objectiveIds:['follow-lead', 'resolve-impostor'],
       name: "Witcher Wannabe",
       kind: "Side quest",
       place: "Lindenvale and its cemetery",
@@ -753,6 +831,7 @@
       ]
     },
     'loves-cruel-snares': {
+      objectiveIds:['find-missing-man', 'report-back'],
       name: "Love’s Cruel Snares",
       kind: "Side quest",
       place: "Boatyard north of Condyle",
@@ -768,6 +847,7 @@
       ]
     },
     'blood-ties': {
+      objectiveIds:['question-quartermaster', 'find-letter', 'report-to-mother'],
       name: "Blood Ties",
       kind: "Side quest",
       place: "Nilfgaardian Army Group Center Camp and nearby swamp",
@@ -783,6 +863,8 @@
       ]
     },
     'races-crows-perch': {
+      objectiveIds:['enter-races', 'beat-matko', 'beat-hans', 'beat-bogdan'],
+      optionalObjectives:['enter-races'],
       name: "Races: Crow’s Perch",
       kind: "Side quest",
       place: "Crossroads west of Crow’s Perch",
@@ -799,6 +881,7 @@
       ]
     },
     'fists-of-fury-velen': {
+      objectiveIds:['beat-smithy', 'beat-stan', 'beat-jonah', 'beat-ardal'],
       name: "Fists of Fury: Velen",
       kind: "Side quest",
       place: "Inn at the Crossroads, Lindenvale, Blackbough and Crow’s Perch",
@@ -816,6 +899,7 @@
       ]
     },
     'lost-goods': {
+      objectiveIds:['read-soldiers-note', 'find-chest'],
       name: "Lost Goods",
       kind: "Treasure hunt",
       place: "North of Ferry Station",
@@ -830,6 +914,7 @@
       ]
     },
     'out-of-the-frying-pan-into-the-fire': {
+      objectiveIds:['recover-key', 'open-field-stash'],
       name: "Out of the Frying Pan, into the Fire",
       kind: "Treasure hunt",
       place: "Mowshurst near Marauders’ Bridge",
@@ -844,6 +929,7 @@
       ]
     },
     'an-unfortunate-turn-of-events': {
+      objectiveIds:['read-ferrymans-letter', 'recover-cargo'],
       name: "An Unfortunate Turn of Events",
       kind: "Treasure hunt",
       place: "Fireburst Harbor (Lovers’ Landing)",
@@ -859,6 +945,7 @@
       ]
     },
     'queen-zuleykas-treasure': {
+      objectiveIds:['read-pirates-notes', 'loot-wreck'],
       name: "Queen Zuleyka’s Treasure",
       kind: "Treasure hunt",
       place: "Coast of Wrecks",
@@ -874,6 +961,7 @@
       ]
     },
     'sunken-chest': {
+      objectiveIds:['read-blood-smeared-notes', 'loot-submerged-ruins'],
       name: "Sunken Chest",
       kind: "Treasure hunt",
       place: "Small island southwest of Fyke Isle",
@@ -889,6 +977,7 @@
       ]
     },
     'sunken-treasure': {
+      objectiveIds:['read-water-damaged-letter', 'recover-smugglers-chest'],
       name: "Sunken Treasure",
       kind: "Treasure hunt",
       place: "Shore northwest of Hangman’s Alley",
@@ -904,6 +993,7 @@
       ]
     },
     'hidden-from-the-world': {
+      objectiveIds:['recover-letter', 'find-hidden-stash'],
       name: "Hidden from the World",
       kind: "Treasure hunt",
       place: "Southeast of Marauders’ Bridge",
@@ -919,6 +1009,7 @@
       ]
     },
     'the-dead-have-no-defense': {
+      objectiveIds:['take-notes-and-key', 'open-grave-robbers-chest'],
       name: "The Dead Have No Defense",
       kind: "Treasure hunt",
       place: "South of Duén Hen toward Byways",
@@ -934,6 +1025,7 @@
       ]
     },
     'the-things-men-do-for-coin': {
+      objectiveIds:['take-letter-and-key', 'loot-stash'],
       name: "The Things Men Do for Coin…",
       kind: "Treasure hunt",
       place: "West of the Border Post",
@@ -949,6 +1041,7 @@
       ]
     },
     'dont-play-with-the-gods': {
+      objectiveIds:['find-letter-and-key', 'open-ruins-stash'],
       name: "Don’t Play with the Gods",
       kind: "Treasure hunt",
       place: "Elven ruins north of Byways",
@@ -964,6 +1057,7 @@
       ]
     },
     'blood-gold': {
+      objectiveIds:['recover-document-and-key', 'loot-shelter-chest'],
       name: "Blood Gold",
       kind: "Treasure hunt",
       place: "Swamp northwest of White Eagle Fort",
@@ -979,6 +1073,7 @@
       ]
     },
     'a-costly-mistake': {
+      objectiveIds:['read-smugglers-notes', 'recover-merchant-cargo'],
       name: "A Costly Mistake",
       kind: "Treasure hunt",
       place: "Shore west of Hangman’s Alley",
@@ -994,6 +1089,7 @@
       ]
     },
     'tough-luck': {
+      objectiveIds:['recover-letter-and-key', 'unlock-wagon-chest'],
       name: "Tough Luck",
       kind: "Treasure hunt",
       place: "Southeast of Devil’s Pit",
@@ -1009,6 +1105,7 @@
       ]
     },
     'battlefield-loot': {
+      objectiveIds:['read-crumpled-notes', 'open-tower-cache'],
       name: "Battlefield Loot",
       kind: "Treasure hunt",
       place: "Across the river south of Eternal Fire Chapel",
@@ -1024,6 +1121,7 @@
       ]
     },
     'a-plea-ignored': {
+      objectiveIds:['recover-letter-and-key', 'loot-valuables'],
       name: "A Plea Ignored",
       kind: "Treasure hunt",
       place: "Peninsula far south of Condyle",
@@ -1039,6 +1137,7 @@
       ]
     },
     'dowry': {
+      objectiveIds:['read-unsent-letter', 'open-dowry-chest'],
       name: "Dowry",
       kind: "Treasure hunt",
       place: "Riverbank west of Gustfields Farm",
@@ -1054,6 +1153,7 @@
       ]
     },
     'griffin-school-gear': {
+      objectiveIds:['recover-steel-diagram', 'recover-silver-diagram', 'recover-armor-diagrams'],
       name:'Scavenger Hunt: Griffin School Gear',
       kind:'Treasure hunt',
       place:'Hindhold, Lornruk and Dragonslayer’s Grotto',

@@ -30,7 +30,7 @@ const rows=[
  ['look','Look for the agent called Hendrik in the village of Heatherton.','Heatherton',4,[],{choice:'inn',conditionalRequires:{inn:{peace:[Q+':finish'],fight:[Q+':finish'],direct:[Q+':travel']}},routeSource:ROUTE_SOURCE}],
  ['survivor','Talk to the survivor and learn what happened in the village.','Heatherton',4,['look']],
  ['find','Find the agent called Hendrik.','Heatherton',4,['survivor']],
- ['search','Search the agent’s hut using your Witcher Senses.','Heatherton',4,['find'],{note:'Includes finding the hidden ledger and reading Hendrik’s notes, which finishes the quest.'}]
+ ['search','Search the agent’s hut using your Witcher Senses.','Heatherton',4,['find'],{note:'Examine the candlestick in the cellar to open the hidden compartment and read Hendrik’s notes. Reading them finishes the quest.'}]
 ];
 const objectives=rows.map(([key,label,chapter,stage,requires,extra={}])=>({id:Q+':'+key,label,chapter,stage,requires:requires.map(r=>Q+':'+r),quest:Q,region:'velen',source:SOURCE,...extra}));
 const quests={[Q]:{region:'velen',level:5,source:SOURCE,objectives}};
