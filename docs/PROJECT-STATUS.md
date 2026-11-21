@@ -4,6 +4,8 @@
 
 [Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
 
+[Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `7ea9c8f99eea9b12e5b957c7676ebec67e280469` · private deployment `appgdep_6b0200e97414819181ef324bad5ee3c2`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. Physical iPhone review is open.
+
 ## Previous iPhone review · Nilf quest-area map
 
 - [Private Inn at the Crossroads preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map/nilf/3) · application `c9b36cb3cd1c7f6779443273dbd190878c0feb4d` · private deployment `appgdep_6b01fc00cee08191b7c5751b5bedf63b`. Public v50 remains the release baseline.
