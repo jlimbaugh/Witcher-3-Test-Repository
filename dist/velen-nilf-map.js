@@ -2,11 +2,27 @@
 (() => {
   const bounds = [[98, 29], [166, 150]];
   const stampSize = 56;
+  const tapSize = 44;
+  const gap = 5;
+
+  function freePosition(x, y, width, height, canvas, occupied) {
+    const clamp = (value, max) => Math.max(2, Math.min(value, max - 2));
+    const columns = [x, ...occupied.flatMap(box => [box.x - width - gap, box.x + box.width + gap])];
+    const rows = [y, ...occupied.flatMap(box => [box.y - height - gap, box.y + box.height + gap])];
+    const choices = columns.flatMap(left => rows.map(top => ({
+      x: clamp(left, canvas.clientWidth - width),
+      y: clamp(top, canvas.clientHeight - height)
+    })));
+    return choices.sort((a, b) => Math.hypot(a.x - x, a.y - y) - Math.hypot(b.x - x, b.y - y))
+      .find(candidate => occupied.every(box =>
+        candidate.x + width + gap <= box.x || box.x + box.width + gap <= candidate.x ||
+        candidate.y + height + gap <= box.y || box.y + box.height + gap <= candidate.y));
+  }
   const stops = [
-    { name: 'Hanged Man’s Tree', point: [137.906, 121.516], icon: 'fasttravel' },
-    { name: 'Mulbrydale approach', point: [129.016, 116.984], icon: 'fasttravel' },
+    { name: 'Hanged Man’s Tree', point: [137.906, 121.516] },
+    { name: 'Mulbrydale approach', point: [129.016, 116.984] },
     { name: 'Inn at the Crossroads', point: [128.141, 95.516], icon: 'tavern' },
-    { name: 'Heatherton', point: [126.828, 57.891], icon: 'fasttravel' }
+    { name: 'Heatherton', point: [126.828, 57.891] }
   ];
   // A broad planning area between sourced landmarks, not a game quest boundary or NPC position.
   const approach = [[126, 99], [132, 116]];
@@ -47,23 +63,29 @@
       if (location.hash === route) history.replaceState({ ...history.state, nilfArea: { selected } }, '');
     }
     function positionLabel(entry) {
-      const pin = map.latLngToContainerPoint(entry.point);
-      const x = pin.x + entry.shownOffset[0];
-      const y = pin.y + entry.shownOffset[1];
-      const halfWidth = labelBox.offsetWidth / 2;
-      const left = Math.max(halfWidth + 4, Math.min(x, canvas.clientWidth - halfWidth - 4));
-      labelBox.style.left = left + 'px';
-      const above = y - 26 - labelBox.offsetHeight;
-      labelBox.style.top = (above >= 4 ? above : y + 26) + 'px';
+      canvas.append(labelBox);
+      labelBox.classList.remove('is-below-stamp');
+      const width = labelBox.offsetWidth;
+      const height = labelBox.offsetHeight;
+      const bounds = entry.tapBounds;
+      const position = freePosition(bounds.x + (tapSize - width) / 2, bounds.y - height - gap,
+        width, height, canvas, [...pins.values()].filter(pin => pin.visible).map(pin => pin.tapBounds));
+      if (!position) {
+        canvas.after(labelBox);
+        labelBox.classList.add('is-below-stamp');
+        return;
+      }
+      labelBox.style.left = position.x + 'px';
+      labelBox.style.top = position.y + 'px';
     }
     function select(id, focusLabel = true) {
       selected = pins.get(id)?.visible ? id : null;
       labelBox.replaceChildren();
       labelBox.hidden = !selected;
-      for (const [key, { seal, pin }] of pins) {
+      for (const [key, { button }] of pins) {
         const active = key === selected;
-        seal.classList.toggle('is-selected', active);
-        pin.getElement()?.setAttribute('aria-expanded', String(active));
+        button.classList.toggle('is-selected', active);
+        button.setAttribute('aria-expanded', String(active));
       }
       const entry = pins.get(selected);
       area.setStyle({ fillOpacity: entry?.approximate ? .32 : 0 });
@@ -84,44 +106,49 @@
       remember();
     }
     function marker(id, stop, { href, current = false, approximate = false, offset = [0, 0] } = {}) {
-      const seal = node('span', '', 'nilf-map-seal');
-      if (current) seal.classList.add('is-current');
-      const img = node('img');
-      img.src = 'map-icon-' + stop.icon + '.png';
-      img.alt = '';
-      seal.append(img);
-      const pin = L.marker(stop.point, {
-        alt: stop.name, autoPanOnFocus: false, bubblingMouseEvents: false, zIndexOffset: current ? 100 : 0,
-        icon: L.divIcon({ className: 'nilf-map-pin', html: seal, iconSize: [44, 44], iconAnchor: [22 - offset[0], 22 - offset[1]] })
-      }).addTo(map);
-      pins.set(id, { ...stop, pin, seal, href, approximate, offset });
-      const element = pin.getElement();
-      element.setAttribute('aria-label', stop.name + (current ? ', current objective' : '') +
+      const button = node('button', '', 'nilf-map-seal');
+      button.type = 'button';
+      button.dataset.seal = current ? 'objective' : (stop.seal || 'waypoint');
+      button.setAttribute('aria-label', stop.name + (current ? ', current objective' : '') +
         (approximate ? ', approximate area' : ''));
-      element.addEventListener('keydown', event => {
-        if (event.key !== ' ') return;
-        event.preventDefault();
-        select(id);
-      });
-      pin.on('click', () => select(id));
+      const art = node('span', '', 'nilf-map-seal-art');
+      if (stop.icon && !current && !stop.seal) {
+        button.dataset.seal = stop.icon;
+        const img = node('img');
+        img.src = 'map-icon-' + stop.icon + '.png';
+        img.alt = '';
+        art.append(img);
+      }
+      button.append(art);
+      button.addEventListener('click', () => select(id));
+      L.DomEvent.disableClickPropagation(button);
+      const pin = L.marker(stop.point, {
+        interactive: false, keyboard: false,
+        icon: L.divIcon({ className: 'nilf-map-pin', html: button, iconSize: [tapSize, tapSize] })
+      }).addTo(map);
+      pins.set(id, { ...stop, pin, button, href, current, approximate, offset });
     }
     function frameStamp() {
       if (!canvas.clientWidth || !canvas.clientHeight) return;
       map.invalidateSize({ pan: false });
       map.setView(objective.point, Math.log2(canvas.clientWidth / stampSize), { animate: false });
-      for (const entry of pins.values()) {
+      const occupied = [];
+      const entries = [...pins.values()].sort((a, b) => Number(b.current) - Number(a.current));
+      for (const entry of entries) {
         const [lat, lng] = entry.point;
         const anchorInside = Math.abs(lat - objective.point[0]) <= stampSize / 2 &&
           Math.abs(lng - objective.point[1]) <= stampSize / 2;
         const point = map.latLngToContainerPoint(entry.point);
-        const x = point.x + entry.offset[0], y = point.y + entry.offset[1];
-        const clamp = (value, size) => Math.max(23, Math.min(value, size - 23));
-        entry.visible = anchorInside;
-        entry.shownOffset = [clamp(x, canvas.clientWidth) - point.x, clamp(y, canvas.clientHeight) - point.y];
+        const position = anchorInside && freePosition(point.x + entry.offset[0] - tapSize / 2,
+          point.y + entry.offset[1] - tapSize / 2, tapSize, tapSize, canvas, occupied);
         const element = entry.pin.getElement();
+        entry.visible = Boolean(position);
         element.hidden = !entry.visible;
-        element.style.marginLeft = (entry.shownOffset[0] - 22) + 'px';
-        element.style.marginTop = (entry.shownOffset[1] - 22) + 'px';
+        if (!position) continue;
+        entry.tapBounds = { ...position, width: tapSize, height: tapSize };
+        occupied.push(entry.tapBounds);
+        element.style.marginLeft = (position.x - point.x) + 'px';
+        element.style.marginTop = (position.y - point.y) + 'px';
       }
       if (pins.size) select(selected, false);
     }
@@ -138,7 +165,7 @@
       (nearby[2] || []).forEach((item, index) => marker(item.quest, {
         name: item.label || quests[item.quest].name,
         point: areaCenter,
-        icon: index === 0 ? 'sidequests' : 'poi'
+        seal: index === 0 ? 'flame' : 'shackle'
       }, { href: item.href, approximate: true, offset: [index === 0 ? -24 : 24, -42] }));
       (nearby[3] || []).forEach((item, index) => marker(item.kind, {
         name: item.label,
@@ -149,9 +176,9 @@
       frameStamp();
       resize.observe(canvas);
       map.on('click', () => select(null));
-      canvas.addEventListener('keydown', event => {
+      shell.addEventListener('keydown', event => {
         if (event.key !== 'Escape' || !selected) return;
-        const element = pins.get(selected).pin.getElement();
+        const element = pins.get(selected).button;
         select(null);
         element.focus({ preventScroll: true });
       });
