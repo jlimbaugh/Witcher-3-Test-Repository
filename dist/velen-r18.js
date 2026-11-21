@@ -19,7 +19,7 @@ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className
 // v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
 // the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
 // velen.pyres/velen.mercy owners. If the handover is unavailable (e.g. newer canonical data), nilf falls back to the v45 legacy hub.
-/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,regionTools,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
+/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,regionTools,showOnMap,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
 const nilfOwned=()=>!!nilfUI&&nilfUI.owned(),isComplete=id=>id==='nilf'&&nilfOwned()?nilfUI.complete():state.complete[id]===true,isUnlocked=()=>isComplete('nilf');
 function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */try{localStorage.setItem(key,JSON.stringify(state));status.textContent='';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
 function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
@@ -300,15 +300,19 @@ function mapPin(label,href,icon,detail){
 let detachNilfMap;
 function regionalMap(id,requested){
   const q=Object.hasOwn(deckQuests,id)?deckQuests[id]:null;
-  screen.append(header(q?q.name:'Velen route maps',q?'Quest route map':'Region Tools'));
-  if(id==='nilf'&&window.PhoenixNilfAreaMap){
-    detachNilfMap=window.PhoenixNilfAreaMap.mount(screen,{
-      stage:routeStage(id,q,requested),
-      nearby:window.PhoenixSharedWalkthroughModel.VELEN_NEARBY,
-      quests,open:go
+  if ((!id || id === 'nilf') && window.PhoenixNilfAreaMap) {
+    const stage = q ? routeStage(id, q, requested) : null;
+    screen.append(header('Velen Map', 'No Man’s Land'));
+    detachNilfMap = window.PhoenixNilfAreaMap.mount(screen, {
+      stage, nearby: window.PhoenixSharedWalkthroughModel.VELEN_NEARBY,
+      quests, open: go, complete: isComplete,
+      back: () => {
+        if (history.state?.velen?.mapFromWalkthrough) history.back();
+        else go(stage ? '#quest/nilf/' + stage : '#velen');
+      }
     });
     return;
-  }
+  } else screen.append(header(q ? q.name : 'Velen route maps', q ? 'Quest route map' : 'Region Tools'));
   const paper=scroll(q?'Quest stops':'Browse quest routes');
   paper.classList.add('velen-route-paper');
   if(!q){
@@ -364,7 +368,7 @@ function regionTools(context){
   for(const item of window.PhoenixNavigationArt.entries){
     catalogue[item.key]={name:item.label,art:item.src,kind:'Regional tool',href:item.href?'index.html'+item.href:null};
   }
-  catalogue.maps={name:'Route maps',art:'visual-art/region-tools/route-maps.svg',kind:'Regional tool',href:'#map'};
+  catalogue.maps={name:'Velen Map',art:'visual-art/region-tools/route-maps.svg',kind:'Regional tool',href:'#map'};
   catalogue.merchants={name:'Merchants',art:'gwent-r15/gabor.webp',kind:'Regional tool',href:'#merchants'};
   const host=el('div','velen-tools-menu');
   function select(key,remember=true){
@@ -503,6 +507,16 @@ function rememberReading(id,stage=state.stage[id]){
     if(Object.hasOwn(quests,id))localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+stage,name:quests[id].name,stageNumber:stage}));
   }catch{}
 }
+function showOnMap(stage){
+  const href='#map/nilf/'+stage;
+  const action=link('Show on Map',href,'button-link nilf-show-on-map');
+  action.onclick=event=>{
+    if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    go(href,{mapFromWalkthrough:true});
+  };
+  return action;
+}
 function readingPage(id,q,index,legacy){
   const stage=q.stages[index], page=el('div','quest-page velen-reading-page');
   const heading=el('header','page-heading r15-heading');
@@ -512,6 +526,7 @@ function readingPage(id,q,index,legacy){
   heading.append(art,el('p','eyebrow','QUEST WALKTHROUGH / VELEN'),el('h1','',q.name),el('p','quest-page-facts',q.level?'Velen · Suggested level '+q.level:'Velen'),seal);
   if(q.dlc)heading.append(el('p','quest-page-facts',q.dlc));
   const panel=el('article','reading-panel');
+  if(id==='nilf')panel.append(showOnMap(index+1));
   const tools=el('nav','quest-tools');
   tools.setAttribute('aria-label','Quest tools');
   const back=link(legacy?'Return to hub':'Return to quest card',legacy?'#hub/'+id:'#lead/'+id);
