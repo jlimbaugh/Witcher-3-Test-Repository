@@ -1,0 +1,35 @@
+.progress-chart [hidden], #progress .main-parchment[hidden] { display: none !important; }
+.progress-chart-overview { color: #eee6d8; }
+.progress-chart-overview > h2 { text-align: center; }
+.progress-chart-deck { display: flex; position: relative; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 12% 10px; }
+.progress-chart-system { flex: 0 0 100%; min-width: 0; min-height: 220px; display: grid; align-content: end; gap: 8px; scroll-snap-align: center; color: #fff6e8; border: 2px solid #979ca7; border-radius: 8px; background-color: #171b24; background-size: cover; background-position: center; box-shadow: inset 0 -170px 110px -35px #0e111b; text-align: left; padding: 16px; }
+.progress-chart-system strong { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+.progress-chart-system ul { display: flex; flex-wrap: wrap; gap: .35rem .9rem; margin: 0; padding: 0; list-style: none; font-size: .92rem; }
+.progress-chart-deck-controls { display: flex; justify-content: center; gap: 10px; padding: 8px; }
+.progress-chart-screen { position: fixed; inset: 0; z-index: 900; isolation: isolate; color: #f4eee6; background: #10131e; }
+.progress-chart-field { position: absolute; inset: 0; overflow: hidden; touch-action: none; user-select: none; background: radial-gradient(ellipse at 47% 44%, #373845 0%, #1a1e2d 42%, #0a0c13 82%); }
+.progress-chart-field::before { position: absolute; inset: 0; content: ""; pointer-events: none; opacity: .52; background-image: radial-gradient(circle, #c5ccdc 0 1px, transparent 1.3px), radial-gradient(circle, #919db1 0 1px, transparent 1.3px); background-size: 69px 71px, 119px 137px; background-position: 13px 37px, 43px 19px; }
+.progress-chart-world { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-origin: 0 0; }
+.progress-chart-route { position: absolute; height: 1px; background: #bdc6d7; box-shadow: 0 0 7px #b7c5e6; transform-origin: 0 0; opacity: .6; pointer-events: none; }
+.progress-chart-planet, .progress-chart-moon { position: absolute; transform: translate(-50%,-50%); z-index: 1; }
+.progress-chart-planet { display: grid; justify-items: center; gap: 5px; width: 145px; padding: 0; border: 0; color: #fff5e8; background: none; cursor: pointer; }
+.progress-chart-orb { display: grid; place-items: end end; width: 66px; height: 66px; border-radius: 50%; border: 2px solid #b5c2d9; background-position: center; background-size: cover; box-shadow: 0 0 16px #a6b9d370; }
+.progress-chart-planet[aria-pressed="true"] .progress-chart-orb { outline: 2px solid #f0e3c3; outline-offset: 5px; }
+.progress-chart-planet[data-status="active"] .progress-chart-orb { border-style: dashed; }
+.progress-chart-planet[data-status="complete"] .progress-chart-orb { border-style: double; border-width: 4px; }
+.progress-chart-planet[data-status="failed"] .progress-chart-orb, .progress-chart-planet[data-status="unavailable"] .progress-chart-orb { border-style: dotted; }
+.progress-chart-symbol { background: #1b202c; border-radius: 50%; padding: 2px 6px; }
+.progress-chart-name { font-size: .93rem; line-height: 1.15; text-align: center; background: #141722ed; padding: 3px 6px; border-radius: 4px; }
+.progress-chart-moon { display: grid; place-items: center; width: 105px; min-height: 44px; text-align: center; font-size: .76rem; }
+.progress-chart-moon::before { content: "◌"; color: #c7d2e7; }
+.progress-chart-title { position: absolute; top: calc(env(safe-area-inset-top) + 52px); margin: 0; left: 16px; pointer-events: none; font-size: 1.4rem; }
+.progress-chart-controls { display: flex; gap: 8px; position: absolute; top: env(safe-area-inset-top); left: 0; right: 0; padding: 7px 12px; justify-content: space-between; }
+.progress-chart-controls button, .progress-chart-action, .progress-chart-deck-controls button, .progress-chart-filters button { min-height: 44px; color: #f6efe3; background: #202535; border: 1px solid #8691a6; border-radius: 5px; padding: 5px 12px; }
+.progress-chart-action { display: inline-grid; align-items: center; text-decoration: none; }
+.progress-chart-detail, .progress-chart-filters { position: absolute; background: #181d2aee; border: 1px solid #8995ac; border-radius: 7px; padding: 10px 14px; }
+.progress-chart-detail { left: max(10px,env(safe-area-inset-left)); bottom: max(10px,env(safe-area-inset-bottom)); right: max(10px,env(safe-area-inset-right)); max-width: 380px; }
+.progress-chart-detail h2, .progress-chart-detail p, .progress-chart-filters h2 { margin: 0 0 5px; }
+.progress-chart-detail h2, .progress-chart-filters h2 { font-size: 1.12rem; }
+.progress-chart-filters { top: calc(env(safe-area-inset-top) + 57px); right: max(10px,env(safe-area-inset-right)); z-index: 2; max-height: 66dvh; overflow: auto; }
+.progress-chart-filter { display: flex; align-items: center; gap: 9px; min-height: 44px; }
+.progress-chart-empty { position: absolute; transform: translate(-50%,-50%); width: 220px; text-align: center; }

@@ -19,7 +19,7 @@ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className
 // v45 Slice 2 seam: The Nilfgaardian Connection (velen.nilf) is rendered by velen-nilf-ui.js and its progress is owned by
 // the canonical Velen region record via velen-nilf-progress.js (this file never reads that key itself). This file keeps routing, the console, reading position, Continue records and the
 // velen.pyres/velen.mercy owners. If the handover is unavailable (e.g. newer canonical data), nilf falls back to the v45 legacy hub.
-/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,regionTools,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
+/* QA6 D4: read the localStorage getter once, guarded. A browser that denies storage access throws here; the Nilfgaardian owner then gets a stand-in whose calls throw that same error, which it already reports as storage-unavailable, so start-up continues. */const nilfStorage=(()=>{try{return localStorage;}catch(error){const denied=()=>{throw error;};return {getItem:denied,setItem:denied,removeItem:denied};}})();const nilfUI=window.createPhoenixVelenNilfUI&&window.PhoenixVelenNilfProgress?window.createPhoenixVelenNilfUI({storage:nilfStorage,quests,link,go,regionTools,showOnMap,readingStage:()=>state.stage.nilf,hasReading:()=>state.last?.id==='nilf'||state.stage.nilf>1,activityComplete:id=>state.complete[id]===true,rerender:()=>{const rail=screen.querySelector('.sw-rail');render({focus:false,y:viewport().scrollY,railX:rail?.scrollLeft});}}):null;
 const nilfOwned=()=>!!nilfUI&&nilfUI.owned(),isComplete=id=>id==='nilf'&&nilfOwned()?nilfUI.complete():state.complete[id]===true,isUnlocked=()=>isComplete('nilf');
 function save(){if(legacyUnreadable){status.textContent=legacyGuardText;return;}/* QA3 save guard */try{localStorage.setItem(key,JSON.stringify(state));status.textContent='';}catch{status.textContent='Saving is unavailable. Progress lasts for this visit only.';}}
 function picture(src,cls,position){const im=el('img',cls);im.src=src;im.alt='';im.decoding='async';if(position)im.style.objectPosition=position;return im;}
@@ -297,9 +297,22 @@ function mapPin(label,href,icon,detail){
   pin.append(picture('map-icon-'+icon+'.png'),body);
   return pin;
 }
+let detachNilfMap;
 function regionalMap(id,requested){
   const q=Object.hasOwn(deckQuests,id)?deckQuests[id]:null;
-  screen.append(header(q?q.name:'Velen route maps',q?'Quest route map':'Region Tools'));
+  if ((!id || id === 'nilf') && window.PhoenixNilfAreaMap) {
+    const stage = q ? routeStage(id, q, requested) : null;
+    screen.append(header('Velen Map', 'No Man’s Land'));
+    detachNilfMap = window.PhoenixNilfAreaMap.mount(screen, {
+      stage, nearby: window.PhoenixSharedWalkthroughModel.VELEN_NEARBY,
+      quests, open: go, complete: isComplete,
+      back: () => {
+        if (history.state?.velen?.mapFromWalkthrough) history.back();
+        else go(stage ? '#quest/nilf/' + stage : '#velen');
+      }
+    });
+    return;
+  } else screen.append(header(q ? q.name : 'Velen route maps', q ? 'Quest route map' : 'Region Tools'));
   const paper=scroll(q?'Quest stops':'Browse quest routes');
   paper.classList.add('velen-route-paper');
   if(!q){
@@ -355,7 +368,7 @@ function regionTools(context){
   for(const item of window.PhoenixNavigationArt.entries){
     catalogue[item.key]={name:item.label,art:item.src,kind:'Regional tool',href:item.href?'index.html'+item.href:null};
   }
-  catalogue.maps={name:'Route maps',art:'visual-art/region-tools/route-maps.svg',kind:'Regional tool',href:'#map'};
+  catalogue.maps={name:'Velen Map',art:'visual-art/region-tools/route-maps.svg',kind:'Regional tool',href:'#map'};
   catalogue.merchants={name:'Merchants',art:'gwent-r15/gabor.webp',kind:'Regional tool',href:'#merchants'};
   const host=el('div','velen-tools-menu');
   function select(key,remember=true){
@@ -494,6 +507,16 @@ function rememberReading(id,stage=state.stage[id]){
     if(Object.hasOwn(quests,id))localStorage.setItem('phoenix.guide.resume.v1',JSON.stringify({href:'#velen/quest/'+id+'/'+stage,name:quests[id].name,stageNumber:stage}));
   }catch{}
 }
+function showOnMap(stage){
+  const href='#map/nilf/'+stage;
+  const action=link('Show on Map',href,'button-link nilf-show-on-map');
+  action.onclick=event=>{
+    if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    go(href,{mapFromWalkthrough:true});
+  };
+  return action;
+}
 function readingPage(id,q,index,legacy){
   const stage=q.stages[index], page=el('div','quest-page velen-reading-page');
   const heading=el('header','page-heading r15-heading');
@@ -503,6 +526,7 @@ function readingPage(id,q,index,legacy){
   heading.append(art,el('p','eyebrow','QUEST WALKTHROUGH / VELEN'),el('h1','',q.name),el('p','quest-page-facts',q.level?'Velen · Suggested level '+q.level:'Velen'),seal);
   if(q.dlc)heading.append(el('p','quest-page-facts',q.dlc));
   const panel=el('article','reading-panel');
+  if(id==='nilf')panel.append(showOnMap(index+1));
   const tools=el('nav','quest-tools');
   tools.setAttribute('aria-label','Quest tools');
   const back=link(legacy?'Return to hub':'Return to quest card',legacy?'#hub/'+id:'#lead/'+id);
@@ -537,7 +561,7 @@ function questCard(id, stage){
 }
 function info(type,id){if(type==='lead'){const l=leads[id];screen.append(header(l.name,'Next lead · Suggested level '+l.level));const n=scroll(l.place);n.append(el('p','',l.text),el('p','warning',isUnlocked()?'This lead is confirmed by your recorded main-quest completion. Its full walkthrough is not built in this pilot.':'This lead follows Hendrik’s notes. If you have already read them, record The Nilfgaardian Connection as complete in its owner hub.'),link('Return to arrival hub','#hub/nilf','button-link'));screen.append(n);return;}
 screen.append(header(type==='merchants'?'Innkeeper & notices':'Collected notices','Inn at the Crossroads'));const n=scroll(type==='merchants'?'Services at this stop':'Keep for later');if(type==='merchants'){n.append(el('p','','The innkeeper provides food, drink and a shop conversation. Check his card stock and Gwent dialogue in game; this pilot does not yet verify the named match reward or its quest-state prerequisites.'),el('p','','Quest connections: The Nilfgaardian Connection; Contract: Missing Brother. Full inventories are not tracked.'),link('Notices and deferred work','#deferred','activity-link'));}else{n.append(el('h3','','Contract: Missing Brother · level 33'),el('p','','The notice can be collected at the inn. Its combat is beyond the arrival recommendation; collecting it does not mark the contract complete.'),el('h3','','Wild at Heart'),el('p','','An inn-board lead for a separate quest cluster. Its full route is not included here; it is not labelled too high-level.'),el('h3','','Lornruk · later exploration'),el('p','','The shoreline Quen Place of Power and fortress encounter need separate guidance. Research describes level-10 drowners and a level-14 wyvern. Do not add the wyvern fight to the arrival route.'));}n.append(link('Return to The Nilfgaardian Connection hub','#hub/nilf','button-link'));screen.append(n);}
-function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads(),link('Sources','velen-sources.html#nilf','sw-source-link nilf-hub-sources'));}else {hub(r.id);screen.append(link('Sources','velen-sources.html#'+r.id,'sw-source-link'));}}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id))questCard(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else if(r.type==='map')regionalMap(r.id,r.stage);else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}if(r.type!=='map'&&!(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id)))save();if(options.railX!=null&&screen.firstElementChild?.classList.contains('velen-nilf-page'))screen.firstElementChild.dataset.swRestoreRail=String(options.railX);if(nilfUI?.notice() && r.id==='nilf'){
+function render(options={}){renderedHash=routeModel.sharedHash(location.hash);const serial=++renderSerial,r=route();view.dataset.velenView=r.type; if(r.type==='velen')restoreHomeDeck();detachNilfMap?.();detachNilfMap=null;screen.replaceChildren();if(r.type==='hub'&&quests[r.id]){state.selected=r.id;state.lastHub=r.id;if(r.id==='nilf'&&nilfOwned()){nilfUI.hub(screen);screen.append(nextLeads(),link('Sources','velen-sources.html#nilf','sw-source-link nilf-hub-sources'));}else {hub(r.id);screen.append(link('Sources','velen-sources.html#'+r.id,'sw-source-link'));}}else if(r.type==='quest'&&quests[r.id])walkthrough(r.id,r.stage);else if(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id))questCard(r.id,r.stage);else if(r.type==='lead'&&leads[r.id])info('lead',r.id);else if(['merchants','deferred'].includes(r.type))info(r.type);else if(r.type==='velen')consoleView();else if(r.type==='map')regionalMap(r.id,r.stage);else{screen.append(header('The trail is unclear','Unknown pilot link'));const n=scroll();n.append(link('Return to Velen','#velen','button-link'));screen.append(n);}if(r.type!=='map'&&!(['lead','quest'].includes(r.type)&&Object.hasOwn(questCards,r.id)))save();if(options.railX!=null&&screen.firstElementChild?.classList.contains('velen-nilf-page'))screen.firstElementChild.dataset.swRestoreRail=String(options.railX);if(nilfUI?.notice() && r.id==='nilf'){
  const notice=el('p','risk-note',nilfUI.notice());notice.setAttribute('role','status');
  screen.querySelector('header')?.after(notice);
 }if(r.type==='quest' && screen.querySelector('#velen-region-tools')){

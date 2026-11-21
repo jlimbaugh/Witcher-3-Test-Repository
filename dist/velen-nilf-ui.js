@@ -4,7 +4,7 @@
    State: progress is read from and written to the canonical owner (PhoenixVelenNilfProgress) through the shared
    progression engine's plan(); reading position stays with velen-r18.js. Velen-specific data attributes
    (data-velen-*) keep WO's document-wide progress listeners from ever seeing these cards. */
-window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionTools, readingStage, hasReading, activityComplete, rerender }) {
+window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionTools, showOnMap, readingStage, hasReading, activityComplete, rerender }) {
   const owner = window.PhoenixVelenNilfProgress,
     data = owner.data,
     engine = owner.engine,
@@ -645,7 +645,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
       else w.append(make('strong', '', 'Warning: '), document.createTextNode(st.warning));
       content.append(w);
     }
-    content.append(make('p', '', st.text));
+    content.append(showOnMap(index + 1), make('p', '', st.text));
     const detail = make('details', 'quest-step-detail');
     detail.append(make('summary', '', 'Preparation for this step'), make('p', '', st.prep));
     content.append(detail);

@@ -1,5 +1,29 @@
 # Phoenix project status
 
+## Active work · Shared Velen map
+
+[Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
+
+[Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `708732bddad26bb2588989924be2692c61f7f33b` · private deployment `appgdep_6b0203e4e5588191b697de257588d969`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. The owner passed navigation and asked for the button in the visible walkthrough. Show on Map now sits next to the step’s location and instructions. The owner’s placement check is open.
+
+## Previous iPhone review · Nilf quest-area map
+
+- [Private Inn at the Crossroads preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map/nilf/3) · application `c9b36cb3cd1c7f6779443273dbd190878c0feb4d` · private deployment `appgdep_6b01fc00cee08191b7c5751b5bedf63b`. Public v50 remains the release baseline.
+- The pilot uses assembled game-map tiles with a parchment tint, sourced location anchors and an approximate Mulbrydale approach area. See [map provenance](../dist/MAP-SOURCES.md#velen--nilfgaardian-connection-quest-area-pilot). The exact Funeral Pyres and At the Mercy of Strangers encounter positions await Xbox confirmation. World Map layer synchronization is future work.
+- Fixed stamp pilot: each walkthrough stop opens on a 56 × 56 map-unit square. Tap a seal to reveal one guide link, then tap the link to open its page. Safari Back should restore the label. The square keeps the same geographic extent across orientations. Check tap spacing, page scrolling over the stamp, and that swipe, pinch and double-tap leave its view fixed. The seals now keep their 44-pixel tap targets apart, and the selected label uses clear space in or immediately below the stamp. The objective, flame, broken shackle and signpost have distinct engraved silhouettes. Physical iPhone Safari acceptance is open.
+
+## Active work · Progress star chart
+
+- Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
+- Private reference: the 75-entry Velen ledger at `7d2a80f263e8228dd6d7c544319cf9ef12d10fb4`. [Private Progress preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress).
+- Current assignment: Jess reviews the first Velen star-chart pilot on physical iPhone Safari. [Private Progress pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress) · [Draft PR #27](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/27).
+- Pilot application `1d0bad1c8e614ace1e5082625455fb561d3f352f`, private deployment `appgdep_6affebef70bc8191962214887bac6bc1`. The prototype covers 3 quest planets and 4 linked moons. Current filter behavior withdraws unmatched bodies and keeps a parent visible when it has a matching moon. White Orchard opens the existing ledger.
+- Local checks: 341 Node passes, zero failures, three historical-baseline checks skipped. A simulated DOM exercise verified deck counts, card activation, map branches, moon routing, camera-state restore, and withdrawal. Chromium could not launch in the local execution environment. Physical pan, pinch, layout, and Back remain for iPhone field review.
+- iPhone review: Swipe to Velen, enter, pan and pinch, select Nilf, tap Funeral Pyres, and go Back. Confirm the same selection, moons, zoom and pan return. Repeat through Bloody Baron and Hunting a Witch, then use the map Back control to return to Velen’s centered system card.
+- [Owner decisions](PROGRESS-STAR-CHART-DECISIONS.md) · [Build stages and acceptance gates](PROGRESS-STAR-CHART-BUILD-PLAN.md).
+
+## Earlier Velen design and QA context
+
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
 
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
@@ -9,7 +33,7 @@ The owner approved two complete page templates on November 19, 2026, using QA bu
 
 The owner approved the Velen walkthrough Regional Tools deck. PR #26 now shares it on Home, Regions, regional consoles and walkthroughs. Home and Regions follow the selected region for local tools. Physical iPhone Safari acceptance remains open.
 
-## Current release and review
+## Historical v49 release and review
 
 | Item | Current state |
 |---|---|

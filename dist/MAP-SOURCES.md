@@ -52,3 +52,13 @@ Flags now live in `map-data.js` under explicit pin IDs, each with a source URL s
 - shopkeeper-1: Bram and Elsa's shared card stock since patch 1.04 — https://witcher-games.fandom.com/wiki/Elsa
 
 These are compact flags and conditions, not a full inventory or a claim that an already-purchased card remains in stock. The card facts were also cross-checked against https://www.gamerguides.com/the-witcher-3-wild-hunt/database/gwent/special-cards-2 and https://www.gamebanshee.com/thewitcher3/walkthrough/collectemall.php.
+
+## Velen · Nilfgaardian Connection quest-area pilot
+
+The terrain uses the same credited CD PROJEKT RED game map source described above. Forty-five Velen tiles from zoom 4, columns 1–9 and TMS rows 6–10, were joined in their source layout, cropped to the terrain needed by the four stamps, and encoded to WebP. A CSS parchment tint changes the palette while preserving geometry. In the upstream simple coordinate system, the crop spans latitude 98–166 and longitude 29–150. No roads or waterways were drawn from imagination.
+
+The four named references come from the Velen marker data at https://github.com/witcher3map/witcher3map/blob/master/assets/scripts/custom/mapdata-velen.js. The inn marker uses the innkeeper position as a building reference. Gamer Guides corroborates the innkeeper location at https://www.gamerguides.com/the-witcher-3-wild-hunt/database/world_markers/merchants-and-craftsmen/innkeep/. A signpost represents each of the other three named locations. Heatherton uses the village signpost as its anchor; it does not claim to pinpoint Hendrik’s hut.
+
+The shaded area is a broad planning approximation between the Inn at the Crossroads and Mulbrydale. It is neither an NPC coordinate nor a quest search boundary from the game. Gamer Guides documents both linked encounters between those landmarks at https://www.gamerguides.com/the-witcher-3-wild-hunt/guide/walkthrough/velen/the-niflgaardian-connection/. Neoseeker and Witcher Wiki corroborate the priest west of Mulbrydale; ESO's guide corroborates John Verdun west of Mulbrydale on the riverbank. Exact encounter positions and the map’s geometry remain open for Xbox field confirmation.
+
+Each pilot stamp is a fixed 56 × 56 map-unit square centered on the requested walkthrough stop. It displays the guide-linked activities whose anchors fall inside the square. Each seal reveals its own link. Road encounters share an approximate area anchor and the innkeeper and notices share the inn anchor. Screen-space offsets separate these seals for tapping. The offsets do not represent encounter coordinates.
