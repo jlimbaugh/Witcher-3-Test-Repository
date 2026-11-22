@@ -13,6 +13,7 @@
 | Selected map marker surrounds | [Approved selection surrounds](framing-review/map-marker-surrounds/README.md) |
 | Map location card frames | [Approved location card frames](framing-review/map-location-cards/README.md) |
 | Map route lines | [Approved route line patterns](framing-review/map-route-lines/README.md) |
+| Map compass roses | [Approved compass rose designs](framing-review/map-compass-roses/README.md) |
 | Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
 
 The catalog links to the approved reference for each family. Present proposed additions in sets of six per background shade for owner review. When dark, parchment, and light are in scope, present six on each background for 18 options total. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
