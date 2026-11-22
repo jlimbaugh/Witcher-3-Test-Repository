@@ -1,5 +1,8 @@
 # Operation Phoenix — approved illustration standard
 
+**Locked default for simple buttons.** Use the [six approved two-metal designs](docs/approved-art/simple-buttons/set-01-two-metal-review.webp) as the guide-wide material reference. Use brushed blue-gray steel for faces and structural rails, polished silver for raised ornament, and centered ivory labels. Keep the two metals visually distinct at phone size. The [original dark sheet](docs/approved-art/simple-buttons/set-01-review.webp) sets the darkest permitted treatment. Review placement on the Nilf Inn test page after the three asset sets are assembled.
+
+
 **Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
 
 **Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](docs/framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.

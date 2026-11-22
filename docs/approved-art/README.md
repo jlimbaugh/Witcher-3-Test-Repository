@@ -1,5 +1,8 @@
 # Phoenix default art
 
+**Locked default for simple buttons.** Use the [six approved two-metal designs](simple-buttons/set-01-two-metal-review.webp) as the guide-wide material reference. Use brushed blue-gray steel for faces and structural rails, polished silver for raised ornament, and centered ivory labels. Keep the two metals visually distinct at phone size. The [original dark sheet](simple-buttons/set-01-review.webp) sets the darkest permitted treatment. Review placement on the Nilf Inn test page after the three asset sets are assembled.
+
+
 This folder is the source for the new default art moving forward. Preserve each region's illustrations and draw on White Orchard and Velen for shared treatments.
 
 | Batch | Asset | State |
