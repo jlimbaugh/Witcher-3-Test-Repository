@@ -4,7 +4,7 @@
 
 The owner passed Velen map formatting. Velen polish connects all 185 walkthrough steps to the existing map shell and aligns primary actions on the arrival hubs and registry cards. Four stages use sourced anchors, two use a documented approximate roadside area, and the other 179 open the coverage overview with route notes. All 75 registered quest and activity images were checked for distinct paths and successful decoding. The next review compares Velen and White Orchard after Velen’s phone review, then selects and applies one template before guide-wide map work.
 
-[Art and map review](VELEN-POLISH-REVIEW.md)
+[Art and map review](VELEN-POLISH-REVIEW.md) · [Private Velen polish preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `051116a2de75b0330badd6c85713952ea8e1eac3` · private deployment `appgdep_6b0258bd463c8191a2deff741ddfacce`. Regression checks passed 341 tests, with three skipped. Simulated DOM checks exercised all 185 walkthrough map links and 15 Leaflet geometry cases. iPhone visual review is open.
 
 ## Active review · Velen visual alignment
 
