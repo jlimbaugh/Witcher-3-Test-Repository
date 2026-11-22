@@ -1,5 +1,9 @@
 # Phoenix page templates
 
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
 The [Progress star chart decision report](PROGRESS-STAR-CHART-DECISIONS.md) records the new direction for whole-game Progress. Follow the [build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md) for the Velen pilot. The star chart becomes a reusable page standard after the owner accepts it.
 
 Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
