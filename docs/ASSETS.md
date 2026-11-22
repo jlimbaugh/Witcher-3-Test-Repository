@@ -1,4 +1,18 @@
-# Binary assets (art and fonts) in the v45 snapshot
+# Phoenix art asset catalog
+
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+| Asset family | Reference |
+| --- | --- |
+| Guide-wide material, typography, and art rules | [Art standard](../ART-STANDARD.md) |
+| Frames, side rails, flourishes and forged buttons | [Approved framing gallery](framing-review/README.md) |
+| Section dividers and heading ornaments | [Approved parchment and dark-stone sets](framing-review/dividers/README.md) |
+| Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
+| Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
+
+The catalog links to the approved reference for each family. Present proposed additions in sets of six per surface for owner review. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
+
+## Binary assets (art and fonts) in the v45 snapshot
 
 The v45 **code kit** never contained the site's binary art and fonts. To make the branch testable and renderable, the
 snapshot commit adds them alongside the kit:

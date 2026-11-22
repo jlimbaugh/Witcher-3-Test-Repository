@@ -1,5 +1,9 @@
 # Phoenix session calibration
 
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
 Owner passed hub batch 14 (b139a79), completing iPhone review of the 70 batched Velen hub progress entries. Next: reconcile regional progress totals with the existing quest and activity owners, then close the remaining regional coverage gaps.
 
 Owner passed hub batch 13 (7169c62). Hub batch 14 closes the 70-entry hub progress review with Tough Luck, Battlefield Loot, A Plea Ignored, Dowry and Scavenger Hunt: Griffin School Gear. Eleven required milestones. The four Griffin armor diagrams share one milestone.

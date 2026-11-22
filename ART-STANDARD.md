@@ -1,5 +1,9 @@
 # Operation Phoenix — approved illustration standard
 
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](docs/framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
 Approved by CaptDrunk, November 14, 2026. Supersedes the landscape-dominant A&D art direction. The six approved samples establish the visual baseline: ghoul, bandits, treasure chest, submerged cache, Igni stone and grindstone.
 
 ## Subject selection

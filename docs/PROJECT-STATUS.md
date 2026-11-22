@@ -1,5 +1,7 @@
 # Phoenix project status
 
+The owner approved the [12 divider and heading ornament designs](framing-review/dividers/README.md) as the exclusive guide-wide set. The approval covers the reference artwork. Runtime integration and iPhone review are pending.
+
 ## Active review · Velen polish
 
 The owner passed Velen map formatting. Velen polish connects all 185 walkthrough steps to the existing map shell and aligns primary actions on the arrival hubs and registry cards. Four stages use sourced anchors, two use a documented approximate roadside area, and the other 179 open the coverage overview with route notes. All 75 registered quest and activity images were checked for distinct paths and successful decoding. The next review compares Velen and White Orchard after Velen’s phone review, then selects and applies one template before guide-wide map work.
