@@ -36,7 +36,7 @@ a.nilf-map-seal { position: relative; }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  gap: .4rem;
+  gap: 8px;
   margin: 0 auto .65rem;
 }
 html body #velen-screen .nilf-area-map button.nilf-map-control {
@@ -87,11 +87,4 @@ html body #velen-screen .nilf-map-layers button {
   min-height: 44px;
   min-width: 44px;
   box-sizing: border-box;
-}
-html body #velen-screen .nilf-map-controls {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
 }

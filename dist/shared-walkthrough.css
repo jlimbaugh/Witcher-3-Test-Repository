@@ -246,7 +246,7 @@ html body .deck-jump-rail > button[aria-current="true"] {
   margin-inline-start: .75rem;
   vertical-align: middle;
 }
-#velen-screen .sw-rail button[aria-current="true"] {
+#velen-screen .sw-rail .sw-box[aria-selected="true"] {
   outline: 2px solid currentColor;
   outline-offset: -3px;
 }
