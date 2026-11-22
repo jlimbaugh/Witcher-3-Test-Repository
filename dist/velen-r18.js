@@ -509,7 +509,7 @@ function rememberReading(id,stage=state.stage[id]){
 }
 function showOnMap(stage){
   const href='#map/nilf/'+stage;
-  const action=link('Show on Map',href,'button-link nilf-show-on-map');
+  const action=link('Show on Map',href,'nilf-show-on-map');
   action.onclick=event=>{
     if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
     event.preventDefault();

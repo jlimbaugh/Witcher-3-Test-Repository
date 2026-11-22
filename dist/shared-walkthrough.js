@@ -278,10 +278,13 @@
    // reading
    if(sel){const r=a.reading(sel.stage),reading=make('section','sw-reading');reading.setAttribute('aria-label','Instructions for the selected objective');
     reading.append(make('h2','',r.title));if(r.place)reading.append(make('p','sw-place',r.place));reading.append(make('span','sw-ornament'));
-    // Move the route action out of the fallback stage panel, which shared walkthroughs hide.
     const showOnMap=host.querySelector('.nilf-show-on-map');
-    if(showOnMap)reading.append(showOnMap);
-    const fo=make('div','sw-for');fo.append(make('span','sw-label','SELECTED OBJECTIVE'),make('strong','',sel.label));if(!a.readOnly)reading.append(fo);
+    if(!a.readOnly){
+     const fo=make('div','sw-for'),text=showOnMap?make('div'):fo;
+     text.append(make('span','sw-label','SELECTED OBJECTIVE'),make('strong','',sel.label));
+     if(showOnMap){fo.classList.add('sw-for-with-map');fo.append(text,showOnMap);}
+     reading.append(fo);
+    }else if(showOnMap)reading.append(showOnMap);
     reading.append(make('h3','','WHAT TO DO'));const ol=make('ol','sw-actions');for(const x of r.actions)ol.append(make('li','',x));reading.append(ol);
     if(r.choices.length){reading.append(make('h3','','AVAILABLE CHOICES'));const ul=make('ul','sw-choices');for(const c of r.choices)ul.append(make('li','',c));reading.append(ul);}
     if(r.why.length){reading.append(make('h3','','WHY'));const ex=make('div','sw-explain');for(const x of r.why)ex.append(make('p','',x));reading.append(ex);}

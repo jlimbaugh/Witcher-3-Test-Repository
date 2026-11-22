@@ -91,7 +91,7 @@ body:has(#velen-screen > [data-velen-nilf="walk"]) {
   --nilf-button-cut: polygon(6px 0, calc(100% - 6px) 0, calc(100% - 6px) 17%, 100% 27%, 100% 73%, calc(100% - 6px) 83%, calc(100% - 6px) 100%, 6px 100%, 6px 83%, 0 73%, 0 27%, 6px 17%);
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a),
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map),
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]) {
   position: relative;
   isolation: isolate;
@@ -110,12 +110,12 @@ html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-
   filter: drop-shadow(0 1px 0 #fff3) drop-shadow(0 4px 2px #090d10c9) drop-shadow(0 7px 5px #090d106b);
 }
 
-html body #velen-screen [data-velen-nilf] :is(.quest-hub-tools, .quest-page-tools) > a {
+html body #velen-screen [data-velen-nilf] :is(.quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map) {
   display: grid;
   place-items: center;
 }
 
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a)::before,
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta, .rail-control, .visual-rail-arrow), .quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map)::before,
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm])::before {
   position: absolute;
   z-index: -1;
@@ -141,7 +141,7 @@ html body #velen-screen [data-velen-nilf] .phoenix-action[data-button-purpose]:n
 }
 
 /* Legacy illustrated plates use a separate pseudo-element behind the control. */
-html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta), .quest-hub-tools > a, .quest-page-tools > a)::after {
+html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .art-tile, .art-cta), .quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map)::after {
   content: none !important;
 }
 
@@ -155,20 +155,20 @@ html body #velen-screen [data-velen-nilf] :is(button:not(.sw-wolf, .sw-check, .a
   min-width: 0;
 }
 
-html body #velen-screen [data-velen-nilf] :is(button, .quest-hub-tools > a, .quest-page-tools > a):focus-visible,
+html body #velen-screen [data-velen-nilf] :is(button, .quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map):focus-visible,
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]):focus-visible {
   outline: 2px solid #76d4c6;
   outline-offset: 3px;
 }
 
-#velen-screen [data-velen-nilf] button:enabled:hover::before,
+#velen-screen [data-velen-nilf] :is(button:enabled, .nilf-show-on-map):hover::before,
 html body:has(#velen-screen > [data-velen-nilf]) :is([data-velen-cancel], [data-velen-confirm]):enabled:hover::before {
   filter: brightness(1.15);
 }
 
 #velen-screen [data-velen-nilf] button:disabled { opacity: .65; }
 
-#velen-screen [data-velen-nilf] :is(button:enabled, .quest-hub-tools > a, .quest-page-tools > a):active::before {
+#velen-screen [data-velen-nilf] :is(button:enabled, .quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map):active::before {
   filter: brightness(.85);
 }
 
@@ -177,7 +177,7 @@ html body:has(#velen-screen > [data-velen-nilf]) [data-velen-confirm]::before {
 }
 
 @media (forced-colors: active) {
-  #velen-screen [data-velen-nilf] :is(.quest-hub-tools, .quest-page-tools) > a {
+  #velen-screen [data-velen-nilf] :is(.quest-hub-tools > a, .quest-page-tools > a, .nilf-show-on-map) {
     border: 1px solid LinkText;
   }
   #velen-screen [data-velen-nilf] button,
