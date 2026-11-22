@@ -11,7 +11,7 @@
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
 
-The catalog links to the approved reference for each family. Present proposed additions in sets of six per surface for owner review. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
+The catalog links to the approved reference for each family. Present proposed additions in sets of six per background shade for owner review. When dark, parchment, and light are in scope, present six on each background for 18 options total. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
 
 ## Binary assets (art and fonts) in the v45 snapshot
 
