@@ -410,11 +410,12 @@
   updateTree();render();
 })();
 
-// Phase 3 · retire Constellation and standalone Progress; redirect old bookmarks to Main Map
+// Stage 3 · retire old destinations; preserve region context on deep links
 (function(){
-  const old = ['#whiteorchard-constellation','#progress','#star-chart'];
   function check(){
-    if(old.some(h => location.hash.startsWith(h))) location.replace('#whiteorchard-map');
+    const h = location.hash;
+    if(h.startsWith('#progress/velen') || h.startsWith('#constellation/velen')) location.replace('#map/nilf/1');
+    else if(h.startsWith('#whiteorchard-constellation') || h.startsWith('#progress') || h.startsWith('#star-chart')) location.replace('#whiteorchard-map');
   }
   window.addEventListener('hashchange', check);
   check();
