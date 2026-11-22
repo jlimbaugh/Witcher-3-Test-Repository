@@ -34,6 +34,7 @@
       return element;
     };
     const shell = node('section', '', 'nilf-area-map');
+    shell.dataset.velenNilf = 'map';
     const canvas = node('div', '', 'nilf-area-canvas');
     canvas.setAttribute('aria-label', 'Velen map');
     const credit = node('a', 'Map sources');
@@ -60,7 +61,14 @@
       layoutMarkers();
     };
     toolbar.append(control('Back', back), layers, control('Recenter', () => map.setView(...openingView())));
-    shell.append(toolbar, canvas, credit);
+    const legend = node('details', '', 'nilf-map-disclosure');
+    legend.append(node('summary', 'Map legend & coverage'),
+      node('p', 'The silver rim marks the current objective. A numbered seal groups nearby entries. Shaded areas mark approximate encounter locations.'),
+      node('p', 'This pilot covers the Nilfgaardian Connection and mapped stops around its route.'));
+    const list = node('details', '', 'nilf-map-disclosure');
+    const locations = node('ul');
+    list.append(node('summary', 'Accessible marker list'), locations);
+    shell.append(toolbar, canvas, legend, list, credit);
     parent.append(shell);
 
     const route = location.hash;
@@ -171,6 +179,11 @@
         icon: L.divIcon({ className: 'nilf-map-pin', html: button, iconSize: [tapSize, tapSize] })
       }).addTo(map);
       pins.set(id, { ...stop, pin, button, count, done, href, current, approximate, activity, group: [] });
+      const row = node('li');
+      const destination = node('a', stop.name + (approximate ? ' · approximate area' : ''));
+      destination.href = href;
+      row.append(destination);
+      locations.append(row);
     }
     function openingView() {
       const span = objective ? stampSize : 132;

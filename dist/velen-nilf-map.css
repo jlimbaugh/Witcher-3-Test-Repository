@@ -28,3 +28,17 @@ a.nilf-map-seal { position: relative; }
 .nilf-map-layers label { display: block; }
 .nilf-map-layers button { margin: .25rem; }
 .nilf-show-on-map { display: inline-flex; align-items: center; min-height: 44px; }
+
+.nilf-map-disclosure {
+  max-width: 520px;
+  margin: .75rem auto;
+  color: #f4ecda;
+  background: #363127;
+  border: 1px solid #b0a68e;
+  border-radius: 4px;
+}
+.nilf-map-disclosure summary { min-height: 44px; padding: .55rem .8rem; cursor: pointer; }
+.nilf-map-disclosure p { margin: .5rem .8rem; }
+.nilf-map-disclosure ul { margin: 0; padding: 0 .8rem .5rem 2rem; }
+.nilf-map-disclosure a { display: inline-flex; align-items: center; min-height: 44px; color: #f4ecda; }
+.nilf-area-map > a { display: block; max-width: 520px; margin-inline: auto; }

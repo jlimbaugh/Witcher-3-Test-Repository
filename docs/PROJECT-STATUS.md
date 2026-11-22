@@ -2,6 +2,8 @@
 
 ## Active review · Velen visual alignment
 
+Batch 1 brings the White Orchard visual reference to the Velen console, activity category carousel, Nilf hub actions, Nilf walkthrough and Velen map. The Region Tools front card is centered independently of its neighbors. Show on Map preserves the walkthrough origin for the map’s Back button. The map adds a legend and accessible marker list for the pilot’s existing coverage. iPhone visual approval is open before broader rollout.
+
 [Button and card menu audit](VELEN-VISUAL-AUDIT.md). White Orchard is the owner’s visual reference for the next Velen alignment pass. The audit inventories all registered Velen routes and recommends the first five surfaces for review. It records the intermittent blank Region Tools center and the map Back origin handoff as separate functional issues.
 
 ## Active work · Shared Velen map

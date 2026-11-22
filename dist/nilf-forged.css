@@ -86,7 +86,7 @@ body:has(#velen-screen > [data-velen-nilf="hub"]) {
   --nilf-button-cut: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
 }
 
-body:has(#velen-screen > [data-velen-nilf="walk"]) {
+body:has(#velen-screen > :is([data-velen-nilf="walk"], [data-velen-nilf="map"])) {
   --nilf-button-end: linear-gradient(90deg, #354247, #c7d3cf 28%, #536365 36% 62%, #bbc7c4 70%, #354247);
   --nilf-button-cut: polygon(6px 0, calc(100% - 6px) 0, calc(100% - 6px) 17%, 100% 27%, 100% 73%, calc(100% - 6px) 83%, calc(100% - 6px) 100%, 6px 100%, 6px 83%, 0 73%, 0 27%, 6px 17%);
 }
