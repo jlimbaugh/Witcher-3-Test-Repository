@@ -2,7 +2,7 @@
 
 ## Active review · Velen visual alignment
 
-The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map.
+The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map. [Private map format preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map) · application `bf1596623b4956949a11c9c82eb6e9f05ea0762d` · private deployment `appgdep_6b025689e6d4819194ac24592be01a8a`. The regression suite passed 341 tests with three skipped. Fifteen simulated Leaflet cases checked terrain coverage and controls.
 
 Batch 1 brings the White Orchard visual reference to the Velen console, activity category carousel, Nilf hub actions, Nilf walkthrough and Velen map. The Region Tools front card is centered independently of its neighbors. Show on Map preserves the walkthrough origin for the map’s Back button. The map adds a legend and accessible marker list for the pilot’s existing coverage. iPhone visual approval is open before broader rollout.
 
