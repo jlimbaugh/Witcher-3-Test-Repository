@@ -1,5 +1,11 @@
 # Phoenix project status
 
+## Active review · Velen polish
+
+The owner passed Velen map formatting. Velen polish connects all 185 walkthrough steps to the existing map shell and aligns primary actions on the arrival hubs and registry cards. Four stages use sourced anchors, two use a documented approximate roadside area, and the other 179 open the coverage overview with route notes. All 75 registered quest and activity images were checked for distinct paths and successful decoding. The next review compares Velen and White Orchard after Velen’s phone review, then selects and applies one template before guide-wide map work.
+
+[Art and map review](VELEN-POLISH-REVIEW.md)
+
 ## Active review · Velen visual alignment
 
 The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map. [Private map format preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map) · application `bf1596623b4956949a11c9c82eb6e9f05ea0762d` · private deployment `appgdep_6b025689e6d4819194ac24592be01a8a`. The regression suite passed 341 tests with three skipped. Fifteen simulated Leaflet cases checked terrain coverage and controls.

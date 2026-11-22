@@ -580,7 +580,9 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
     tools.setAttribute('aria-label', q.name + ' hub tools');
     const cards = link('', '#velen', 'home-action-tile');
     cards.append(picture('navigation-art-v26/action-quest-hub.webp'), make('span', '', 'Quest cards'));
-    tools.append(resume, cards);
+    const map = link('', '#map/nilf/' + stage, 'home-action-tile');
+    map.append(picture('velen-route-map-art.svg'), make('span', '', 'Show on Map'));
+    tools.append(resume, cards, map);
     const prepHost = make('div', 'quest-hub-preparation'),
       progressHost = make('div', 'quest-hub-progress'),
       prep = preparation(),

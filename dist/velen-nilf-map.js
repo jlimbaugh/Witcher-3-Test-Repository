@@ -26,7 +26,7 @@
   ];
   // A broad planning area between sourced landmarks, not a game quest boundary or NPC position.
   const approach = [[126, 99], [132, 116]];
-  function mount(parent, { stage, nearby, quests, open, complete, back }) {
+  function mount(parent, { stage, activity, mapContext, nearby, quests, open, complete, back }) {
     const node = (tag, name, className) => {
       const element = document.createElement(tag);
       if (name) element.textContent = name;
@@ -84,13 +84,20 @@
     const list = node('details', '', 'nilf-map-disclosure');
     const locations = node('ul');
     list.append(node('summary', 'Accessible marker list'), locations);
+    if (mapContext) {
+      const context = node('p', mapContext, 'nilf-map-context');
+      const coverage = node('p', 'Showing the mapped part of Velen. This step has no verified pin here. See the walkthrough route notes below.', 'nilf-map-coverage');
+      shell.append(context, coverage);
+    } else if (activity) {
+      shell.append(node('p', quests[activity].name + ' · Approximate encounter area', 'nilf-map-context'));
+    }
     shell.append(toolbar, layers, canvas, legend, list, credit);
     parent.append(shell);
 
     const route = location.hash;
     const prior = history.state?.nilfArea;
     let selected = prior?.selected ?? null;
-    const objective = stage ? stops[stage - 1] : null;
+    const objective = activity ? { point: L.latLngBounds(approach).getCenter() } : stage ? stops[stage - 1] : null;
     const map = L.map(canvas, {
       crs: L.CRS.Simple, zoomSnap: 0, zoomControl: false, trackResize: false,
       minZoom: 0, maxZoom: 5, scrollWheelZoom: false,
@@ -136,7 +143,7 @@
         button.setAttribute('aria-expanded', String(active));
       }
       const entry = pins.get(selected);
-      area.setStyle({ fillOpacity: entry?.group.some(item => item.approximate) ? .32 : 0 });
+      area.setStyle({ fillOpacity: activity||entry?.group.some(item => item.approximate) ? .32 : 0 });
       if (entry) {
         for (const item of entry.group) {
           const label = node('a', item.name + ' ›', 'nilf-map-label');
@@ -268,14 +275,14 @@
 
       stops.forEach((stop, index) => {
         const n = index + 1;
-        marker('stop-' + n, stop, { href: '#velen/quest/nilf/' + n, current: n === stage, landmark: !stop.icon, activity: 'nilf' });
+        marker('stop-' + n, stop, { href: '#velen/quest/nilf/' + n, current: !activity && n === stage, landmark: !stop.icon, activity: 'nilf' });
       });
       // Keep co-located encounters tied to their shared, approximate area.
       (nearby[2] || []).forEach((item, index) => marker(item.quest, {
         name: item.label || quests[item.quest].name,
         point: areaCenter,
         seal: index === 0 ? 'flame' : 'shackle'
-      }, { href: item.href, approximate: true, activity: item.quest }));
+      }, { href: activity===item.quest?'#velen/quest/'+activity+'/'+stage:item.href, approximate: true, current: activity===item.quest, activity: item.quest }));
       (nearby[3] || []).forEach(item => marker(item.kind, {
         name: item.label,
         point: stops[2].point,

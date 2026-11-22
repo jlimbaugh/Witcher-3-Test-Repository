@@ -77,3 +77,6 @@ html body #velen-screen .nilf-area-map button.nilf-map-control {
 .nilf-map-disclosure ul { margin: 0; padding: 0 .8rem .5rem 2rem; }
 .nilf-map-disclosure a { display: inline-flex; align-items: center; min-height: 44px; color: #f4ecda; }
 .nilf-area-map > a { display: block; max-width: 520px; margin-inline: auto; }
+
+.nilf-map-context { margin: 0 0 .3rem; font-size: 1.05rem; }
+.nilf-map-coverage { margin: 0 0 .65rem; font-size: .9rem; color: #ddd4bf; }
