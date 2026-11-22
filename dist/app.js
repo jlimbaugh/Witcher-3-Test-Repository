@@ -409,3 +409,13 @@
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
   updateTree();render();
 })();
+
+// Phase 3 · retire Constellation and standalone Progress; redirect old bookmarks to Main Map
+(function(){
+  const old = ['#whiteorchard-constellation','#progress','#star-chart'];
+  function check(){
+    if(old.some(h => location.hash.startsWith(h))) location.replace('#whiteorchard-map');
+  }
+  window.addEventListener('hashchange', check);
+  check();
+})();
