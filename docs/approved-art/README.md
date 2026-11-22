@@ -23,3 +23,5 @@ The [approved walkthrough mockup](mockups/nilf-inn-three-set.webp) pairs folded-
 Set 1 is locked. All [six parchment objective checkbox designs](objective-marks/set-01.webp) are approved, each with matching open and complete states. Use the ink check for completion. Design 02 is the candidate for the next combined page mockup.
 
 Set 2 is locked. Use the [six approved parchment disclosure tabs](parchment-tabs/set-02.webp) with a silver plus when collapsed and a minus when expanded. Keep the label, tab dimensions and marker position stable in both states.
+
+Set 3 is in review. The [six warning-mark pairs](warning-marks/set-03.webp) show quest risk and missable warnings at rest. The dark warning treatment retains its pulse in the live guide.
