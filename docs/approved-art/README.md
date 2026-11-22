@@ -17,3 +17,7 @@ After three assets are approved, mock them up together and apply them to the Nil
 ## Locked Nilf Inn page reference
 
 The [approved walkthrough mockup](mockups/nilf-inn-three-set.webp) pairs folded-leaf simple button 04, silver ivy inset frame 04, and inn interior scene 02. Use its hierarchy, relative scale and placement as the default for equivalent surfaces. Match each destination with its own approved scene. Live implementation and physical iPhone acceptance are pending.
+
+## Cycle 2 · Walkthrough controls
+
+Set 1 is locked. All [six parchment objective checkbox designs](objective-marks/set-01.webp) are approved, each with matching open and complete states. Use the ink check for completion. Design 02 is the candidate for the next combined page mockup.
