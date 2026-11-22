@@ -6,6 +6,8 @@ Batch 1 brings the White Orchard visual reference to the Velen console, activity
 
 [Button and card menu audit](VELEN-VISUAL-AUDIT.md). White Orchard is the owner’s visual reference for the next Velen alignment pass. The audit inventories all registered Velen routes and recommends the first five surfaces for review. It records the intermittent blank Region Tools center and the map Back origin handoff as separate functional issues.
 
+[Private Batch 1 preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `7ef1074f2543b8cb59f58d69d5a0a582a6298875` · private deployment `appgdep_6b024a5942d081918a69aec88a6d1806`. 341 regression tests passed, with three skipped. The isolated DOM exercise covered 524 route forms and checked the first five surfaces. Physical Safari visual and scroll verification is open.
+
 ## Active work · Shared Velen map
 
 [Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
