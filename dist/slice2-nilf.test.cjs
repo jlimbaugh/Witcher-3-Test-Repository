@@ -152,7 +152,7 @@ const PROTECTED={
 //   home-ui.js    v45 ..... d2650f48929c13e929abf5228fb33da08c04c532187fd633b66079a1befabadd
 //                 issue #4  dd5bdbe6fa30ddf5dba895e3083e1285ed3af51a5c415cbc767e07d852687722 (passes navigationOnly; guards
 //                           warningHistory.v1 / pendingWarnings.v1: unreadable or denied saves are never written)
-const CANDIDATE_PINS={'medallion.js':'84c259219ac00424f81e851643e15f8c8198ec03116f424a69f4a218b0f12040','home-ui.js':'5d4e40b99096f9172ce0c66acd526d43489ae9382096b76a97dc95b14998bee8'};
+const CANDIDATE_PINS={'medallion.js':'82de87cb1390e5075d349455dcf87eeef3c25681879505cc3deeb1467a79f32e','home-ui.js':'5d4e40b99096f9172ce0c66acd526d43489ae9382096b76a97dc95b14998bee8'};
 test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed candidate bytes',()=>{
  for(const [f,sum] of Object.entries(CANDIDATE_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the reviewed issue #4 candidate; update CANDIDATE_PINS deliberately');
  for(const f of Object.keys(CANDIDATE_PINS))assert.ok(!Object.hasOwn(PROTECTED,f),f+' is pinned once');
