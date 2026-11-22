@@ -105,6 +105,23 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
       const bar = document.createElement('div');
       bar.className = 'map-progress-summary';
       bar.setAttribute('aria-label', 'Regional progress filters');
+      function counts(){
+        const s = opts.state || {};
+        const prog = s.progress || {};
+        const tasks = opts.tasks || {};
+        let u=0,c=0,m=0;
+        for(const id of Object.keys(tasks)){
+          if(tasks[id].mapOnly) continue;
+          const done = prog.objectives && prog.objectives[id] === 'done' || s.completed && s.completed[id];
+          if(done) c++; else u++;
+        }
+        return {u,c,m};
+      }
+      function refresh(){
+        const {u,c,m} = counts();
+        const el = bar.querySelector('[data-region-count]');
+        if(el) el.textContent = `${u+c} activities · ${c} completed · ${u} unfinished`;
+      }
       bar.innerHTML = `
         <span class="map-progress-count" data-region-count>Region progress</span>
         <button type="button" data-filter="unfinished">Unfinished</button>
@@ -112,12 +129,19 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
         <button type="button" data-filter="missed">Missed</button>
       `;
       host.prepend(bar);
+      refresh();
       bar.addEventListener('click', e => {
         const btn = e.target.closest('[data-filter]');
         if(!btn) return;
         bar.querySelectorAll('[data-filter]').forEach(b => b.removeAttribute('aria-pressed'));
         btn.setAttribute('aria-pressed', 'true');
-        // Filter logic hooks into existing pin visibility; detailed wiring lands with full map shell
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.map-marker, .nilf-map-seal, [data-quest]').forEach(pin => {
+          const id = pin.dataset.quest || pin.dataset.id || '';
+          const done = (opts.state?.completed?.[id] || opts.state?.progress?.objectives?.[id] === 'done');
+          const show = filter === 'unfinished' ? !done : filter === 'completed' ? done : true;
+          pin.hidden = !show;
+        });
       });
     }
     return map;
