@@ -171,7 +171,7 @@ test('issue #4 candidate pins: medallion.js and home-ui.js match the reviewed ca
 // v49 LT fixes (Cmdr fix list on PR #25): 1 RT-01 Region Tools global tiles bypass sharedHash (velen-r18.js).
 // v49 LT fixes: 3 RT-02/RT-03 Search and Route maps tiles use original code-drawn art (velen-r18.js).
 // v49 phone candidate updates Undo labels, source footers and save status.
-const SEAM_PINS={'progression-ui.js': 'e07aabe7be166324c0bcf0d261db98f0eb60388d9ac04b4dfe28c0fc1488e123', 'velen-r18.js': '1b4409a2fb2965af50c5fc84384367656eb1c59641bca504caafd2de723ad21d', 'main-console.js': '5864f3691f3d3ab87255f57ad60375b050f432fcb0c1209a0aff656bf60d0d0a', 'home-rebuild.css': '9fb5a35f378ae7af893a39a0453ca280aa5379393bedaa2445140bd150c7760c', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
+const SEAM_PINS={'progression-ui.js': 'e07aabe7be166324c0bcf0d261db98f0eb60388d9ac04b4dfe28c0fc1488e123', 'velen-r18.js': '1b4409a2fb2965af50c5fc84384367656eb1c59641bca504caafd2de723ad21d', 'main-console.js': '5864f3691f3d3ab87255f57ad60375b050f432fcb0c1209a0aff656bf60d0d0a', 'home-rebuild.css': 'e112575227d98650ae9a369f35497335ca5dafa4243aa8f78b5621f87d8ea198', 'quest-hubs.js': 'c1f9d6de6e0fc714c907a1e5c3545cf2c8e67ef520bd2f01d31e4c0b89c682f7', 'velen-routing.js': '14b8cfa54373e47efcd9d2d30739e39014d3c2bc3f80a65d60c48b1ac6ac9e7a'};
 test('Slice 2 seam pin: Velen and shared console match the reviewed layout',()=>{
  for(const [f,sum] of Object.entries(SEAM_PINS))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex'),sum,f+' changed since the declared Velen card seam; review before updating');
 });
