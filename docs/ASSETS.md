@@ -24,6 +24,7 @@
 | Map Recenter | [Approved default variants](framing-review/map-recenter/README.md) |
 | Map Progress toggle | [Approved default variants](framing-review/map-progress-toggle/README.md) |
 | Map legend & coverage disclosure | [Approved default variants](framing-review/map-legend-coverage/README.md) |
+| Accessible marker list | [Approved default variants](framing-review/accessible-marker-list/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
