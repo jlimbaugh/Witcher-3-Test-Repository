@@ -13,6 +13,8 @@ Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary o
 3. Verify inputs by hash before using them (package sha256, `docs/*.sha256` manifests).
 
 ## 2. Roles
+
+**Current Progress star chart leg:** Jess and Capt are the two participants. Capt implements and verifies. Jess owns design, physical iPhone acceptance, and the release decision. This owner-approved workflow governs this leg and supersedes officer assignments and the two-report wait for it. See the [build plan](docs/PROGRESS-STAR-CHART-BUILD-PLAN.md).
 - **Author ≠ independent reviewer.** The officer who writes a change never counts as its independent reviewer.
 - Reviewers start from the commit and the acceptance checks, and read the author's evidence only afterwards.
 - Cmdr coordinates release; the owner does physical iPhone/Safari acceptance after deployment is verified.

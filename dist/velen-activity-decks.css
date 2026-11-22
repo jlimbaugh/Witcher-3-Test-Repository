@@ -1,13 +1,14 @@
 .velen-activities{margin-block:2rem 1rem}
 .velen-activities>h2{margin-block:0 .75rem;text-align:center}
-.velen-activity-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;margin:0 auto 1rem}
-.velen-activity-tabs button{min-height:44px;padding:.4rem .75rem;border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#e2e9ee;font:1rem/1.2 var(--body,Georgia);cursor:pointer}
-.velen-activity-tabs button[aria-selected=true]{border-color:#e4d4a8;background:#384745;color:#fff4da}
 .velen-activity-empty{text-align:center;padding:1rem}
-.velen-activities>summary{min-height:44px;padding:.65rem;cursor:pointer}
-.velen-activities>summary,.velen-activities-shortcut{border:2px solid #a4b0ba;border-radius:3px;background:#202b35 url(r10-metal.svg);color:#f4ecd9}
-.velen-activities[open]>summary{margin-bottom:1rem}
-.velen-activities-shortcut{min-height:44px;margin:.75rem auto 0;padding:.4rem .9rem;font:inherit;cursor:pointer}
+#velen .velen-quest-menu > .selected-panel { margin-block-start: .75rem; }
+#velen .velen-quest-menu .home-selected-actions,
+#velen .velen-activity-content .home-selected-actions { gap: 12px; }
+#velen .velen-activity-category-menu .deck { height: calc(296px * var(--guide-type-scale, 1) + 22px); }
+#velen .velen-activity-content { margin-block-start: 1rem; }
+#velen .velen-activity-content[hidden] { display: none; }
+#velen .velen-activity-content > h3 { text-align: center; }
+#velen .nilf-hub-actions { margin-block: .75rem 1rem; }
 #velen .page-warning-history{background:#222b2d;color:#f4ecd9}
 #velen .page-warning-history summary,#velen .page-warning-history a{color:inherit}
 
@@ -48,6 +49,17 @@
 .regional-warning-list[hidden]{display:none}
 .regional-warning-list button{display:block;min-height:44px;width:100%;margin:.35rem 0}
 .velen-view .console-r16 .velen-tools-section .deck{height:calc(296px * var(--guide-type-scale,1) + 22px)}
+/* Keep the front card centered in normal flow, independently of the translated side cards. */
+.velen-view .console-r16 .velen-tools-menu .deck > .quest-card.selected {
+  position: relative;
+  inset-inline: auto;
+  margin-inline: auto;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
 
 /* Frame the complete tools menu. Keep the forged work clear of the swipe surface. */
 .velen-tools-section {
@@ -89,3 +101,10 @@ html body [data-velen-deck] .deck .quest-card {
   touch-action: pinch-zoom !important;
   overscroll-behavior-y: auto;
 }
+
+#velen .velen-quest-menu > .desk-carousel {
+  padding-block: .25rem .55rem;
+  border: 3px double #9ca9a8;
+  background: linear-gradient(transparent 55%, #111b20df);
+}
+#velen .velen-quest-menu > .desk-carousel > .velen-deck-gutter { padding-block: .25rem; }

@@ -1,5 +1,45 @@
 # Phoenix project status
 
+## Active review · Velen polish
+
+The owner passed Velen map formatting. Velen polish connects all 185 walkthrough steps to the existing map shell and aligns primary actions on the arrival hubs and registry cards. Four stages use sourced anchors, two use a documented approximate roadside area, and the other 179 open the coverage overview with route notes. All 75 registered quest and activity images were checked for distinct paths and successful decoding. The next review compares Velen and White Orchard after Velen’s phone review, then selects and applies one template before guide-wide map work.
+
+[Art and map review](VELEN-POLISH-REVIEW.md) · [Private Velen polish preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `051116a2de75b0330badd6c85713952ea8e1eac3` · private deployment `appgdep_6b0258bd463c8191a2deff741ddfacce`. Regression checks passed 341 tests, with three skipped. Simulated DOM checks exercised all 185 walkthrough map links and 15 Leaflet geometry cases. iPhone visual review is open.
+
+## Active review · Velen visual alignment
+
+The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map. [Private map format preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map) · application `bf1596623b4956949a11c9c82eb6e9f05ea0762d` · private deployment `appgdep_6b025689e6d4819194ac24592be01a8a`. The regression suite passed 341 tests with three skipped. Fifteen simulated Leaflet cases checked terrain coverage and controls.
+
+Batch 1 brings the White Orchard visual reference to the Velen console, activity category carousel, Nilf hub actions, Nilf walkthrough and Velen map. The Region Tools front card is centered independently of its neighbors. Show on Map preserves the walkthrough origin for the map’s Back button. The map adds a legend and accessible marker list for the pilot’s existing coverage. iPhone visual approval is open before broader rollout.
+
+[Button and card menu audit](VELEN-VISUAL-AUDIT.md). White Orchard is the owner’s visual reference for the next Velen alignment pass. The audit inventories all registered Velen routes and recommends the first five surfaces for review. It records the intermittent blank Region Tools center and the map Back origin handoff as separate functional issues.
+
+[Private Batch 1 preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `7ef1074f2543b8cb59f58d69d5a0a582a6298875` · private deployment `appgdep_6b024a5942d081918a69aec88a6d1806`. 341 regression tests passed, with three skipped. The isolated DOM exercise covered 524 route forms and checked the first five surfaces. Physical Safari visual and scroll verification is open.
+
+## Active work · Shared Velen map
+
+[Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
+
+[Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `bb1f962de1d5696a3cced04e195d4b9a8324ed93` · private deployment `appgdep_6b024484d3cc81918abfea1ed0715a5a`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. The owner passed navigation and asked for the button in the visible walkthrough. Show on Map now uses the accepted forged walkthrough plate in the selected-objective block. The pilot remains limited to The Nilfgaardian Connection pending the owner’s visual review.
+
+## Previous iPhone review · Nilf quest-area map
+
+- [Private Inn at the Crossroads preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map/nilf/3) · application `c9b36cb3cd1c7f6779443273dbd190878c0feb4d` · private deployment `appgdep_6b01fc00cee08191b7c5751b5bedf63b`. Public v50 remains the release baseline.
+- The pilot uses assembled game-map tiles with a parchment tint, sourced location anchors and an approximate Mulbrydale approach area. See [map provenance](../dist/MAP-SOURCES.md#velen--nilfgaardian-connection-quest-area-pilot). The exact Funeral Pyres and At the Mercy of Strangers encounter positions await Xbox confirmation. World Map layer synchronization is future work.
+- Fixed stamp pilot: each walkthrough stop opens on a 56 × 56 map-unit square. Tap a seal to reveal one guide link, then tap the link to open its page. Safari Back should restore the label. The square keeps the same geographic extent across orientations. Check tap spacing, page scrolling over the stamp, and that swipe, pinch and double-tap leave its view fixed. The seals now keep their 44-pixel tap targets apart, and the selected label uses clear space in or immediately below the stamp. The objective, flame, broken shackle and signpost have distinct engraved silhouettes. Physical iPhone Safari acceptance is open.
+
+## Active work · Progress star chart
+
+- Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
+- Private reference: the 75-entry Velen ledger at `7d2a80f263e8228dd6d7c544319cf9ef12d10fb4`. [Private Progress preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress).
+- Current assignment: Jess reviews the first Velen star-chart pilot on physical iPhone Safari. [Private Progress pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress) · [Draft PR #27](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/27).
+- Pilot application `1d0bad1c8e614ace1e5082625455fb561d3f352f`, private deployment `appgdep_6affebef70bc8191962214887bac6bc1`. The prototype covers 3 quest planets and 4 linked moons. Current filter behavior withdraws unmatched bodies and keeps a parent visible when it has a matching moon. White Orchard opens the existing ledger.
+- Local checks: 341 Node passes, zero failures, three historical-baseline checks skipped. A simulated DOM exercise verified deck counts, card activation, map branches, moon routing, camera-state restore, and withdrawal. Chromium could not launch in the local execution environment. Physical pan, pinch, layout, and Back remain for iPhone field review.
+- iPhone review: Swipe to Velen, enter, pan and pinch, select Nilf, tap Funeral Pyres, and go Back. Confirm the same selection, moons, zoom and pan return. Repeat through Bloody Baron and Hunting a Witch, then use the map Back control to return to Velen’s centered system card.
+- [Owner decisions](PROGRESS-STAR-CHART-DECISIONS.md) · [Build stages and acceptance gates](PROGRESS-STAR-CHART-BUILD-PLAN.md).
+
+## Earlier Velen design and QA context
+
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
 
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
@@ -9,7 +49,7 @@ The owner approved two complete page templates on November 19, 2026, using QA bu
 
 The owner approved the Velen walkthrough Regional Tools deck. PR #26 now shares it on Home, Regions, regional consoles and walkthroughs. Home and Regions follow the selected region for local tools. Physical iPhone Safari acceptance remains open.
 
-## Current release and review
+## Historical v49 release and review
 
 | Item | Current state |
 |---|---|

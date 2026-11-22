@@ -1,5 +1,7 @@
 # Operation Phoenix — universal session start
 
+**Current Progress star chart leg:** Jess and Capt are the two participants. Use the [decision report](PROGRESS-STAR-CHART-DECISIONS.md) and [build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md). Capt supplies implementation and test evidence. Jess supplies design decisions, physical iPhone Safari acceptance, and release approval. Earlier officer reporting rules apply to their historical work. This leg has no LT or PFC reporting gate.
+
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 

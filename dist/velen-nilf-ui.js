@@ -4,7 +4,7 @@
    State: progress is read from and written to the canonical owner (PhoenixVelenNilfProgress) through the shared
    progression engine's plan(); reading position stays with velen-r18.js. Velen-specific data attributes
    (data-velen-*) keep WO's document-wide progress listeners from ever seeing these cards. */
-window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionTools, readingStage, hasReading, activityComplete, rerender }) {
+window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionTools, showOnMap, readingStage, hasReading, activityComplete, rerender }) {
   const owner = window.PhoenixVelenNilfProgress,
     data = owner.data,
     engine = owner.engine,
@@ -576,9 +576,13 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
     const label = make('span', '', hasReading() ? 'Continue walkthrough' : 'Start walkthrough');
     label.append(make('small', '', 'Step ' + stage + ' · ' + q.stages[stage - 1].title));
     resume.append(picture('navigation-art-v26/action-walkthrough.webp'), label);
-    const tools = make('nav', 'quest-hub-tools');
+    const tools = make('nav', 'home-selected-actions nilf-hub-actions');
     tools.setAttribute('aria-label', q.name + ' hub tools');
-    tools.append(link('Quest cards', '#velen'));
+    const cards = link('', '#velen', 'home-action-tile');
+    cards.append(picture('navigation-art-v26/action-quest-hub.webp'), make('span', '', 'Quest cards'));
+    const map = link('', '#map/nilf/' + stage, 'home-action-tile');
+    map.append(picture('velen-route-map-art.svg'), make('span', '', 'Show on Map'));
+    tools.append(resume, cards, map);
     const prepHost = make('div', 'quest-hub-preparation'),
       progressHost = make('div', 'quest-hub-progress'),
       prep = preparation(),
@@ -589,7 +593,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
       parts.deck.querySelector('summary').append(make('small', 'nilf-next-objective', next.label));
     }
     progressHost.append(parts.deck);
-    paper.append(make('p', 'quest-hub-description', q.intro), risk, resume, tools, progressHost, prepHost);
+    paper.append(make('p', 'quest-hub-description', q.intro), risk, tools, progressHost, prepHost);
     const nearby = make('section', 'quest-hub-nearby');
     nearby.append(make('h2', '', 'Nearby activities'));
     const rails = new Map();
@@ -645,7 +649,7 @@ window.createPhoenixVelenNilfUI = function ({ storage, quests, link, go, regionT
       else w.append(make('strong', '', 'Warning: '), document.createTextNode(st.warning));
       content.append(w);
     }
-    content.append(make('p', '', st.text));
+    content.append(showOnMap(index + 1), make('p', '', st.text));
     const detail = make('details', 'quest-step-detail');
     detail.append(make('summary', '', 'Preparation for this step'), make('p', '', st.prep));
     content.append(detail);
