@@ -15,6 +15,7 @@
 | Information disclosure | [Approved default disclosure variants](framing-review/information-disclosure/README.md) |
 | Consequences · Spoilers | [Approved default disclosure variants](framing-review/spoiler-disclosure/README.md) |
 | Story & correction controls | [Approved default disclosure variants](framing-review/story-correction-controls/README.md) |
+| Undo last progress change | [Approved default variants](framing-review/undo-progress/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
