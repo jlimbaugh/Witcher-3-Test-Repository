@@ -108,3 +108,32 @@ html body [data-velen-deck] .deck .quest-card {
   background: linear-gradient(transparent 55%, #111b20df);
 }
 #velen .velen-quest-menu > .desk-carousel > .velen-deck-gutter { padding-block: .25rem; }
+
+/* Phase 1 · Activities & Discoveries — align to approved Velen deck rules */
+#velen .velen-activity-category-menu .deck > .quest-card,
+#velen .velen-quest-menu .deck > .quest-card {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#velen .velen-activity-category-menu .deck > .quest-card.selected,
+#velen .velen-quest-menu .deck > .quest-card.selected {
+  position: relative;
+  inset-inline: auto;
+  margin-inline: auto;
+  transform: none !important;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+#velen .quest-card-art,
+#velen .deck .quest-card img {
+  object-fit: cover;
+  object-position: center 35%;
+  width: 100%;
+  height: 100%;
+}
+#velen .quest-card strong {
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
