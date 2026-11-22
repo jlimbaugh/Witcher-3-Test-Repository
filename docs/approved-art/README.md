@@ -24,4 +24,4 @@ Set 1 is locked. All [six parchment objective checkbox designs](objective-marks/
 
 Set 2 is locked. Use the [six approved parchment disclosure tabs](parchment-tabs/set-02.webp) with a silver plus when collapsed and a minus when expanded. Keep the label, tab dimensions and marker position stable in both states.
 
-Set 3 is in review. The [six warning-mark pairs](warning-marks/set-03.webp) show quest risk and missable warnings at rest. The dark warning treatment retains its pulse in the live guide.
+Set 3 is locked to [01 triangle, 02 oxblood wax seal and 04 shield](warning-marks/set-03.webp) for both quest-risk and missable states. Retire 03, 05 and 06. Keep the approved pulse for dark warnings. The [Cycle 2 Inn mockup](mockups/nilf-inn-cycle-02.webp) uses checkbox 02, Preparation tab 02 and warning seal 02 for page review.
