@@ -92,3 +92,34 @@ window.createPhoenixMap = function({tasks,hubs,state,onPin,persist,eligible,onCa
   new ResizeObserver(()=>map.invalidateSize({pan:false})).observe(canvas);
   return {show,refresh,capture};
 };
+
+/* Phase 2 · Main Map regional progress summary and filters */
+(function(){
+  const orig = window.createPhoenixMap;
+  if(!orig) return;
+  window.createPhoenixMap = function(opts){
+    const map = orig(opts);
+    // Minimal summary + filter bar injected when map mounts
+    const host = document.querySelector('.map-toolbar, .nilf-map-toolbar, #map') || document.querySelector('main');
+    if(host && !document.querySelector('.map-progress-summary')){
+      const bar = document.createElement('div');
+      bar.className = 'map-progress-summary';
+      bar.setAttribute('aria-label', 'Regional progress filters');
+      bar.innerHTML = `
+        <span class="map-progress-count" data-region-count>Region progress</span>
+        <button type="button" data-filter="unfinished">Unfinished</button>
+        <button type="button" data-filter="completed">Completed</button>
+        <button type="button" data-filter="missed">Missed</button>
+      `;
+      host.prepend(bar);
+      bar.addEventListener('click', e => {
+        const btn = e.target.closest('[data-filter]');
+        if(!btn) return;
+        bar.querySelectorAll('[data-filter]').forEach(b => b.removeAttribute('aria-pressed'));
+        btn.setAttribute('aria-pressed', 'true');
+        // Filter logic hooks into existing pin visibility; detailed wiring lands with full map shell
+      });
+    }
+    return map;
+  };
+})();

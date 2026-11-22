@@ -80,3 +80,29 @@ html body #velen-screen .nilf-area-map button.nilf-map-control {
 
 .nilf-map-context { margin: 0 0 .3rem; font-size: 1.05rem; }
 .nilf-map-coverage { margin: 0 0 .65rem; font-size: .9rem; color: #ddd4bf; }
+
+/* Phase 2 · Main Map regional progress summary */
+.map-progress-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: .5rem auto .75rem;
+  padding: .4rem;
+  background: #1c2428;
+  border: 1px solid #8f9b9e;
+  border-radius: 4px;
+  max-width: 520px;
+}
+.map-progress-summary button {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid #9ca9a8;
+  background: #252e34;
+  color: #f1f4ee;
+  cursor: pointer;
+}
+.map-progress-summary button[aria-pressed=true] {
+  outline: 2px solid #76d4c6;
+}
