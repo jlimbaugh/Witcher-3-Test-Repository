@@ -19,6 +19,8 @@
 | Return to hub | [Approved default variants](framing-review/return-to-hub/README.md) |
 | Quest cards control | [Approved default variants](framing-review/quest-cards-control/README.md) |
 | Sources link | [Approved default variants](framing-review/sources-link/README.md) |
+| Map Back | [Approved default variants](framing-review/map-back/README.md) |
+| Map Layers | [Approved default variants](framing-review/map-layers/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
