@@ -11,6 +11,7 @@
 | Numbered objective rail | [Approved default variants](framing-review/objective-rail/README.md) |
 | Next unfinished | [Approved default variants](framing-review/next-unfinished/README.md) |
 | Inline Show on Map | [Approved default variants](framing-review/show-on-map/README.md) |
+| Related optional tasks | [Approved default disclosure variants](framing-review/related-optional-tasks/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
