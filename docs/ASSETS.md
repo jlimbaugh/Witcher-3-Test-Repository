@@ -7,6 +7,7 @@
 | Guide-wide material, typography, and art rules | [Art standard](../ART-STANDARD.md) |
 | Frames, side rails, flourishes and forged buttons | [Approved framing gallery](framing-review/README.md) |
 | Section dividers and heading ornaments | [Approved parchment and dark-stone sets](framing-review/dividers/README.md) |
+| Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
 
