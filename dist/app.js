@@ -409,3 +409,14 @@
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
   updateTree();render();
 })();
+
+// Stage 3 · retire old destinations; preserve region context on deep links
+(function(){
+  function check(){
+    const h = location.hash;
+    if(h.startsWith('#progress/velen') || h.startsWith('#constellation/velen')) location.replace('#map/nilf/1');
+    else if(h.startsWith('#whiteorchard-constellation') || h.startsWith('#progress') || h.startsWith('#star-chart')) location.replace('#whiteorchard-map');
+  }
+  window.addEventListener('hashchange', check);
+  check();
+})();
