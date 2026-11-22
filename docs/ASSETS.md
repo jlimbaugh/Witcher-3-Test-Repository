@@ -9,6 +9,7 @@
 | Section dividers and heading ornaments | [Approved parchment and dark-stone sets](framing-review/dividers/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
+| Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
 | Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
 
 The catalog links to the approved reference for each family. Present proposed additions in sets of six per background shade for owner review. When dark, parchment, and light are in scope, present six on each background for 18 options total. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
