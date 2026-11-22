@@ -4,7 +4,7 @@
 
 [Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
 
-[Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `708732bddad26bb2588989924be2692c61f7f33b` · private deployment `appgdep_6b0203e4e5588191b697de257588d969`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. The owner passed navigation and asked for the button in the visible walkthrough. Show on Map now sits next to the step’s location and instructions. The owner’s placement check is open.
+[Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `bb1f962de1d5696a3cced04e195d4b9a8324ed93` · private deployment `appgdep_6b024484d3cc81918abfea1ed0715a5a`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. The owner passed navigation and asked for the button in the visible walkthrough. Show on Map now uses the accepted forged walkthrough plate in the selected-objective block. The pilot remains limited to The Nilfgaardian Connection pending the owner’s visual review.
 
 ## Previous iPhone review · Nilf quest-area map
 
