@@ -17,6 +17,7 @@
 | Story & correction controls | [Approved default disclosure variants](framing-review/story-correction-controls/README.md) |
 | Undo last progress change | [Approved default variants](framing-review/undo-progress/README.md) |
 | Return to hub | [Approved default variants](framing-review/return-to-hub/README.md) |
+| Quest cards control | [Approved default variants](framing-review/quest-cards-control/README.md) |
 | Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
 | Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
 | Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
