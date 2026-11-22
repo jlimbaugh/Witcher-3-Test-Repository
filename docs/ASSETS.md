@@ -2,6 +2,8 @@
 
 **Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
 
+[Phoenix default art](approved-art/README.md) tracks the new frame and inset review process and test-page defaults.
+
 | Asset family | Reference |
 | --- | --- |
 | Guide-wide material, typography, and art rules | [Art standard](../ART-STANDARD.md) |
