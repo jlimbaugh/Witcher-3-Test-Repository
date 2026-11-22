@@ -1,5 +1,15 @@
-.nilf-area-map { margin: 0 0 1rem; color: #eee5d5; }
-.nilf-area-canvas { width: 100%; max-width: 520px; aspect-ratio: 1; margin-inline: auto; outline: 2px solid #999ca4; border-radius: 5px; background: #403b33; z-index: 0; }
+.nilf-area-map {
+  width: 100%;
+  max-width: 544px;
+  margin: 0 auto 1rem;
+  padding: .55rem;
+  color: #eee5d5;
+  background: #192327;
+  border: 3px double #9ca9a8;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px #090d1073;
+}
+.nilf-area-canvas { width: 100%; max-width: 520px; aspect-ratio: 1; margin-inline: auto; outline: 1px solid #9ca9a8; border-radius: 2px; background: #192327; z-index: 0; }
 .nilf-area-terrain { filter: sepia(.42) saturate(.84) contrast(1.06); }
 a.nilf-map-seal { display: grid; place-items: center; width: 44px; height: 44px; min-height: 0; padding: 0; border: 0; background: transparent; box-shadow: none; pointer-events: auto; cursor: pointer; touch-action: manipulation; }
 .nilf-map-seal-art { width: 36px; height: 36px; display: grid; place-items: center; background: radial-gradient(circle at 35% 25%, #655b50, #252423 65%); border: 2px ridge #b5ada0; border-radius: 50%; box-sizing: border-box; filter: drop-shadow(0 2px 2px #171210); pointer-events: none; }
@@ -22,18 +32,43 @@ a.nilf-map-seal { position: relative; }
 .nilf-map-count, .nilf-map-check { position: absolute; top: 0; right: 0; min-width: 18px; padding: 1px 3px; border: 1px solid #b7ae9a; border-radius: 10px; color: #fff9ed; background: #252423; font: 700 12px/1.2 system-ui, sans-serif; }
 .nilf-map-check { top: auto; bottom: 0; }
 .nilf-map-label.is-done { color: #c7bbab; }
-.nilf-map-toolbar { display: flex; flex-wrap: wrap; justify-content: center; align-items: start; gap: .5rem; margin-block: .5rem; }
-.nilf-map-layers { color: #fff9ed; background: #22242b; border: 1px solid #a9abb0; border-radius: 8px; padding-inline: .65rem; }
-.nilf-map-layers summary, .nilf-map-layers label { min-height: 44px; padding-block: .55rem; }
-.nilf-map-layers label { display: block; }
-.nilf-map-layers button { margin: .25rem; }
+.nilf-map-toolbar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .4rem;
+  margin: 0 auto .65rem;
+}
+html body #velen-screen .nilf-area-map button.nilf-map-control {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  min-width: 0;
+  padding: 5px 8px !important;
+  font-size: .95rem;
+  line-height: 1.25;
+}
+.nilf-map-layers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto .65rem;
+  padding: .3rem .45rem;
+  color: #fff9ed;
+  background: #222a2e;
+  border: 1px solid #879498;
+}
+.nilf-map-layers[hidden] { display: none; }
+.nilf-map-layers label { display: inline-flex; align-items: center; min-height: 44px; gap: .35rem; }
 .nilf-show-on-map { display: inline-flex; align-items: center; min-height: 44px; }
 
-.nilf-map-disclosure {
+#velen-screen .nilf-area-map .nilf-map-disclosure {
   max-width: 520px;
   margin: .75rem auto;
   color: #f4ecda;
-  background: #363127;
+  background: #30342f !important;
   border: 1px solid #b0a68e;
   border-radius: 4px;
 }

@@ -2,6 +2,8 @@
 
 ## Active review · Velen visual alignment
 
+The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map.
+
 Batch 1 brings the White Orchard visual reference to the Velen console, activity category carousel, Nilf hub actions, Nilf walkthrough and Velen map. The Region Tools front card is centered independently of its neighbors. Show on Map preserves the walkthrough origin for the map’s Back button. The map adds a legend and accessible marker list for the pilot’s existing coverage. iPhone visual approval is open before broader rollout.
 
 [Button and card menu audit](VELEN-VISUAL-AUDIT.md). White Orchard is the owner’s visual reference for the next Velen alignment pass. The audit inventories all registered Velen routes and recommends the first five surfaces for review. It records the intermittent blank Region Tools center and the map Back origin handoff as separate functional issues.

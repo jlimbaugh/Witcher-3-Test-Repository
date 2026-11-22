@@ -37,6 +37,10 @@
     shell.dataset.velenNilf = 'map';
     const canvas = node('div', '', 'nilf-area-canvas');
     canvas.setAttribute('aria-label', 'Velen map');
+    const terrainBounds = L.latLngBounds(bounds);
+    const terrainWidth = terrainBounds.getEast() - terrainBounds.getWest();
+    const terrainHeight = terrainBounds.getNorth() - terrainBounds.getSouth();
+    if (!stage) canvas.style.aspectRatio = terrainWidth + ' / ' + terrainHeight;
     const credit = node('a', 'Map sources');
     credit.href = 'MAP-SOURCES.md';
     const toolbar = node('nav', '', 'nilf-map-toolbar');
@@ -47,20 +51,32 @@
       button.onclick = action;
       return button;
     };
-    const layers = node('details', '', 'nilf-map-layers');
+    const layers = node('section', '', 'nilf-map-layers');
+    layers.id = 'velen-map-layers';
+    layers.hidden = true;
+    const toggleLayers = control('Layers', () => {
+      layers.hidden = !layers.hidden;
+      toggleLayers.setAttribute('aria-expanded', String(!layers.hidden));
+    });
+    toggleLayers.setAttribute('aria-controls', layers.id);
+    toggleLayers.setAttribute('aria-expanded', 'false');
     const progress = node('input');
     progress.type = 'checkbox';
     const preference = 'phoenix.velen.map.progress';
     try { progress.checked = localStorage.getItem(preference) === 'true'; } catch {}
     const progressLabel = node('label');
     progressLabel.append(progress, document.createTextNode(' Progress'));
-    layers.append(node('summary', 'Layers'), progressLabel,
+    layers.append(progressLabel,
       control('Zoom in', () => map.zoomIn()), control('Zoom out', () => map.zoomOut()));
     progress.onchange = () => {
       try { localStorage.setItem(preference, String(progress.checked)); } catch {}
       layoutMarkers();
     };
-    toolbar.append(control('Back', back), layers, control('Recenter', () => map.setView(...openingView())));
+    const recenter = control('Recenter', () => {
+      const [center, zoom] = openingView();
+      map.setView(center, zoom, { animate: false });
+    });
+    toolbar.append(control('Back', back), toggleLayers, recenter);
     const legend = node('details', '', 'nilf-map-disclosure');
     legend.append(node('summary', 'Map legend & coverage'),
       node('p', 'The silver rim marks the current objective. A numbered seal groups nearby entries. Shaded areas mark approximate encounter locations.'),
@@ -68,7 +84,7 @@
     const list = node('details', '', 'nilf-map-disclosure');
     const locations = node('ul');
     list.append(node('summary', 'Accessible marker list'), locations);
-    shell.append(toolbar, canvas, legend, list, credit);
+    shell.append(toolbar, layers, canvas, legend, list, credit);
     parent.append(shell);
 
     const route = location.hash;
@@ -78,7 +94,7 @@
     const map = L.map(canvas, {
       crs: L.CRS.Simple, zoomSnap: 0, zoomControl: false, trackResize: false,
       minZoom: 0, maxZoom: 5, scrollWheelZoom: false,
-      maxBounds: L.latLngBounds(bounds).pad(.32), maxBoundsViscosity: 1
+      maxBounds: terrainBounds, maxBoundsViscosity: 1
     });
     L.imageOverlay('velen-nilf-map.webp', bounds, { className: 'nilf-area-terrain' }).addTo(map);
 
@@ -185,9 +201,12 @@
       row.append(destination);
       locations.append(row);
     }
+    function coverageZoom() {
+      return Math.log2(Math.max(canvas.clientWidth / terrainWidth, canvas.clientHeight / terrainHeight));
+    }
     function openingView() {
-      const span = objective ? stampSize : 132;
-      return [objective?.point || [132, 89.5], Math.log2(canvas.clientWidth / span)];
+      if (!objective) return [terrainBounds.getCenter(), coverageZoom()];
+      return [objective.point, Math.max(Math.log2(canvas.clientWidth / stampSize), coverageZoom())];
     }
     function layoutMarkers() {
       if (!pins.size || !canvas.clientWidth) return;
@@ -235,13 +254,17 @@
     const resize = new ResizeObserver(() => {
       if (!loaded) return;
       map.invalidateSize({ pan: false });
+      map.setMinZoom(coverageZoom());
+      map.panInsideBounds(terrainBounds, { animate: false });
       layoutMarkers();
     });
     const frame = requestAnimationFrame(() => {
       if (!canvas.isConnected || !canvas.clientWidth) return;
       const saved = Array.isArray(prior?.center) && prior.center.length === 2 &&
         prior.center.every(Number.isFinite) && Number.isFinite(prior.zoom);
-      map.setView(...(saved ? [prior.center, prior.zoom] : openingView()));
+      map.setMinZoom(coverageZoom());
+      const [center, zoom] = saved ? [prior.center, prior.zoom] : openingView();
+      map.setView(center, zoom, { animate: false });
 
       stops.forEach((stop, index) => {
         const n = index + 1;

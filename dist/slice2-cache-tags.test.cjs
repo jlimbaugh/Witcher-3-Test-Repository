@@ -165,7 +165,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
  for(const f of ['shared-walkthrough.js','shared-walkthrough.css'])assert.equal(tags[f],'velen-map-polish-1',f);
  for(const f of ['main-console.js','home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
- for(const f of ['velen-r18.js','velen-nilf-map.js','velen-nilf-map.css','velen-nilf-ui.js','velen-activity-decks.css','nilf-forged.css'])assert.equal(tags[f],'velen-visual-batch-1',f);
+ for(const f of ['velen-r18.js','velen-nilf-ui.js','velen-activity-decks.css','nilf-forged.css'])assert.equal(tags[f],'velen-visual-batch-1',f);
+ for(const f of ['velen-nilf-map.js','velen-nilf-map.css'])assert.equal(tags[f],'velen-map-format-1',f);
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');
  for(const f of ['search-model.js', 'search-ui.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
