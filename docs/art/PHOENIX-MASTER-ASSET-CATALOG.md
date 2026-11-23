@@ -50,6 +50,12 @@
 - Keep left/right rails paired per page, with staggered ornament heights and quiet steel stretches. Do not remove or regenerate either family as redundant.
 - This decision confirms the existing `ART-STANDARD.md` and `docs/framing-review/README.md` specifications. No runtime code changed during cataloging.
 
+## Overlap adjudication — Set 03 (owner locked, 2026-11-22)
+- **Bottom-frame flourishes A–J:** retain all ten original approved variants, with the existing **A → B → C → D → E → F → G → H → I → J → A** rotation.
+- Use one centered flourish per framed box, scaled to the lower rail and kept clear of reading content and controls. Do not stack competing ornaments in the same location.
+- A–C and D–J are complementary approved members of one family, **not redundant families to delete**.
+- This decision confirms `ART-STANDARD.md` and `docs/framing-review/README.md`. No runtime CSS or artwork changed.
+
 ## Related approvals to verify (not counted as certified production assets)
 - Prior sessions approved various button frames, inset artwork, vertical vine ornaments, and parchment-body flourishes. Exact variant-to-file mapping must be recovered before marking these cataloged as complete.
 - Latest Nilfgaardian combination recalled from prior work: checkbox 02, preparation tab 02, warning seal 02; verify source reference and placement before promotion to production baseline.
