@@ -49,3 +49,21 @@ Owner explicitly approved the following **existing designs for production use**:
 - **Map-layer Progress checkboxes:** 1–6, with checked/unchecked states — APPROVED.
 
 **Scope:** original session-created visual designs, not new or reconstructed art. Production-design approval does not imply standalone variant exports exist or have passed functional, mobile or Safari QA. Locate source review sheets and original member files before extraction. No creative changes, substitutions, deletions, runtime modifications, merges or deployments authorized.
+
+
+## Parchment review 02 · OWNER LOCK · 2026-11-23
+
+Owner response to the immediately preceding five-format blank parchment mockup: **“Perfect lock this in!!!!!!!!!”**
+
+**Approved visual authority:** the generated sheet titled **OPERATION PHOENIX — PARCHMENT REVIEW SHEET**, with five labeled empty parchment presentations:
+- **A — Parchment Asset:** tall vertical full-length rolled scroll, empty reading field.
+- **B — Quest / Reading Page:** broad horizontal rolled scroll.
+- **C — Region Tool / Hub:** compact horizontal rolled scroll.
+- **D — Map Tool Panel:** smaller utility scroll.
+- **E — Walkthrough / Step List:** broad low-profile horizontal scroll.
+
+**Shared locked appearance:** aged tan parchment, top/bottom rolled edges, distressed uneven outer edges, restrained botanical corner ornaments, warm natural weathering and stains, uncluttered blank writing field. Labels are review-sheet annotations, **not baked into production parchment**. The decorative dark sheet frame and title are presentation only, not automatically guide chrome.
+
+**Authority and limitation:** this is a **newly generated visual mockup approved by the owner**, NOT a verified extraction of original Velen/White Orchard or GitHub parchment. Do not misrepresent it as existing original source. The owner's explicit approval authorizes these five mockup treatments as the production visual reference and supersedes the prior general parchment HOLD **only for these five treatments**. It does not promote `dist/worn-vellum-r15.svg` (explicitly rejected) or certify `dist/curled-vellum-r16.webp` as a visual match.
+
+**Implementation gates:** preserve approved sheet/source image, obtain source-backed production-quality separate blank assets matching A–E, confirm fidelity and aspect ratios, map CSS selectors and usage roles, test responsive scaling and iPhone Safari. Do not invent a sixth family member, redraw or alter approved details, remove old assets, change runtime, merge or deploy without further direction.
