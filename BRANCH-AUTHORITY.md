@@ -36,6 +36,10 @@ See `CONTENT-STATUS.md`. White Orchard ledger is historical. Velen has dual laye
 
 See `NAVIGATION-STATUS.md`. Velen progress is split (canonical Nilf vs. legacy Pyres/Mercy). White Orchard and Velen maps are separate implementations. Navigation authority is distributed.
 
+## Consolidated Register (Stage 8)
+
+See `REMEDIATION-INDEX.md`. Stage 8 consolidated register has been independently reviewed and is the current planning baseline. No remediation is authorized until gates are explicitly approved.
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -53,3 +57,4 @@ See `NAVIGATION-STATUS.md`. Velen progress is split (canonical Nilf vs. legacy P
 - `stage-05-qa-safety` — Stage 5 baseline (to be created locally)
 - `stage-06-content-completeness` — Stage 6 baseline (to be created locally)
 - `stage-07-navigation-maps` — Stage 7 baseline (to be created locally)
+- `stage-08-consolidated-register` — Stage 8 baseline (to be created locally)
