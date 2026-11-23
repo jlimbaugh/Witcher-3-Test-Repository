@@ -40,6 +40,10 @@ See `NAVIGATION-STATUS.md`. Velen progress is split (canonical Nilf vs. legacy P
 
 See `REMEDIATION-INDEX.md`. Stage 8 consolidated register has been independently reviewed and is the current planning baseline. No remediation is authorized until gates are explicitly approved.
 
+## Gate A (Stage 9)
+
+See `docs/audits/PHOENIX-REPO-AUDIT-STAGE-09-GATE-A.md`. Gate A is **not passed**. Release provenance (exact deployed SHA and rollback target) remains unresolved. Catalog branch is the active working source, not proven deployed source.
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -58,3 +62,4 @@ See `REMEDIATION-INDEX.md`. Stage 8 consolidated register has been independently
 - `stage-06-content-completeness` — Stage 6 baseline (to be created locally)
 - `stage-07-navigation-maps` — Stage 7 baseline (to be created locally)
 - `stage-08-consolidated-register` — Stage 8 baseline (to be created locally)
+- `stage-09-gate-a` — Stage 9 Gate A baseline (to be created locally)
