@@ -44,6 +44,12 @@
 - Existing implementation is **not automatically changed** by this art decision. A future implementation pass must audit any raised treatment already applied and propose a scoped correction before altering runtime CSS.
 - This explicit owner decision supersedes contradictory raised-bevel language in older `ART-STANDARD.md` and framing review notes for the button family; those historical references remain preserved as evidence.
 
+## Overlap adjudication — Set 02 (owner locked, 2026-11-22)
+- **Vertical forged side rails V1–V9:** retain both the original V1–V3 and vine-inspired V4–V9 families.
+- Preserve the approved interleaved rotation exactly: **V1 → V4 → V5 → V2 → V6 → V7 → V3 → V8 → V9 → V1**.
+- Keep left/right rails paired per page, with staggered ornament heights and quiet steel stretches. Do not remove or regenerate either family as redundant.
+- This decision confirms the existing `ART-STANDARD.md` and `docs/framing-review/README.md` specifications. No runtime code changed during cataloging.
+
 ## Related approvals to verify (not counted as certified production assets)
 - Prior sessions approved various button frames, inset artwork, vertical vine ornaments, and parchment-body flourishes. Exact variant-to-file mapping must be recovered before marking these cataloged as complete.
 - Latest Nilfgaardian combination recalled from prior work: checkbox 02, preparation tab 02, warning seal 02; verify source reference and placement before promotion to production baseline.
