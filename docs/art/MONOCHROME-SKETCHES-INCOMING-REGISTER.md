@@ -74,3 +74,9 @@
 
 ## Release gate
 Upload actual binary WebPs and optionally the source ZIP to the intended directory, compare SHA-256 with the original archive, verify all 59 decode, then obtain owner approval before changing guide references.
+
+## Production conversion — 2026-11-23
+- Owner authorized use as production artwork.
+- **59 original WebP images verified**, each 600 × 894 px, and repackaged with an asset manifest containing paths, dimensions, byte lengths, and SHA-256 checksums.
+- Production ZIP prepared in the session: `Phoenix-Monochrome-Sketches-Production.zip`; contents target `dist/art-velen/monochrome-sketches/`.
+- **GitHub binary ingestion still pending**: this commit records the package readiness only. Existing repository placeholder images have NOT been replaced. Do not activate them until the real files are uploaded and checksums verified.
