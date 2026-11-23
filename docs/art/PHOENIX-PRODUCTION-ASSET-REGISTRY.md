@@ -67,3 +67,11 @@ Each exported asset should receive: `asset_id`, `family`, `variant`, `approval_s
 ## STOP / next gate
 
 This is **documentation only**. No assets were generated, moved, removed or deployed; no runtime code changed. Before exporting: identify source files for each approved sheet, audit parchment dependencies and resolve variant-to-export naming. Before integration: compare individual exports to owner-approved visuals, then test at phone size. Production and Safari acceptance require separate owner approval. V49/V50 remains frozen.
+
+
+## Owner lock and cleanup status · 2026-11-23
+
+- **Parchment A–E:** approved five-format blank parchment visual reference. Production exports and runtime integration **PENDING**. Legacy `dist/curled-vellum-r16.webp`, `dist/worn-vellum-r15.svg`, `dist/r10-paper.svg`, `dist/r10-haunted-scroll-concept.webp` are **RETIRED FOR NEW PRODUCTION / FILES RETAINED PENDING SAFE REPLACEMENT**.
+- **Typography A–E:** approved five-format typography visual reference (H1–H6/body/note; quest objectives; hub links; map controls; walkthrough text). **Visual lock only; exact source, typeface, size, selector mapping, exports and Safari acceptance pending.**
+- **Walkthrough step numerals:** **flat blue-gray serif + fine silver underline LOCKED**. Raised markers pictured in typography review sheet are a known mockup discrepancy; **RETIRED / NOT FOR PRODUCTION**.
+- **Historical design sheets, rejected variants and fonts:** retain as evidence or dependencies; do not delete until proven safe. No new runtime CSS, asset replacements, deletions, merges or deployments performed as part of this documentation cleanup.
