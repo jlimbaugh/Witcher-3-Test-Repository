@@ -61,6 +61,12 @@
 - **Skip** this family in the current overlap-elimination review. No preference hierarchy was chosen among the three image treatments.
 - Preserve existing assets, manifests, source credits and runtime bindings. No application files changed.
 
+## Overlap adjudication — Set 05 (owner correction, 2026-11-22)
+- **B: `dist/worn-vellum-r15.svg` is NOT ACCEPTED** as an approved parchment treatment. Do not present it as approved or as an equally valid alternative. Do not delete the historical file without a separate dependency audit.
+- **Parchment is an asset family**, not a two-file binary choice. Audit and display all existing parchment-family assets and their real page applications before asking for any further selection or retirement.
+- `ART-STANDARD.md` currently establishes `curled-vellum-r16.webp` as the default reading material. This does not automatically approve every other parchment asset or imply that there is only one approved member of the family.
+- Set 05 remains **OPEN — inventory / visual comparison pending**. No runtime code or artwork changed.
+
 ## Related approvals to verify (not counted as certified production assets)
 - Prior sessions approved various button frames, inset artwork, vertical vine ornaments, and parchment-body flourishes. Exact variant-to-file mapping must be recovered before marking these cataloged as complete.
 - Latest Nilfgaardian combination recalled from prior work: checkbox 02, preparation tab 02, warning seal 02; verify source reference and placement before promotion to production baseline.
