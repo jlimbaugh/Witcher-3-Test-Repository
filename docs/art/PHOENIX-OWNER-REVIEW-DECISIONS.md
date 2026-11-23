@@ -24,3 +24,14 @@ The owner explicitly confirmed: **“These are all approved for production use.�
 **Approval scope:** These are authorized *visual production standards*. The owner does not need to reapprove the designs merely because individual exports or integrations are pending. This does **not** certify that individual production files exist, pass QA, or are deployed. Exact source/variant extraction and physical Safari checks remain technical gates, not new creative-approval gates.
 
 **Exclusions:** Later raised/beveled redesign proofs are rejected; do not promote. No other previously held family is silently approved by this statement. No creative variants, substitutions, deletions, runtime edits, merges or deployments authorized.
+
+
+## Batch 03 · production approval · 2026-11-23
+
+Owner explicitly approved **all four** existing families/treatments for production use:
+- **Parchment dividers 1–12:** APPROVED — original 12 designs; preserve exact visuals.
+- **Walkthrough corners 1–12:** APPROVED — original 12 designs; preserve exact visuals.
+- **Warning stamps 1, 2, 4 only:** APPROVED — do not restore or infer approval for 3, 5 or 6.
+- **Walkthrough step numbers:** APPROVED — flat blue-gray serif with fine silver underline is the fixed production default; raised-marker study 1–6 is not promoted.
+
+This is production **design approval**, not evidence that standalone exports, runtime bindings, or physical Safari QA are complete. Source identification and technical preparation remain pending. No creative generation, deletion, runtime modification, merge or deployment authorized.
