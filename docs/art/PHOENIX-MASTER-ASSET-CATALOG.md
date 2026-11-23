@@ -56,6 +56,11 @@
 - A–C and D–J are complementary approved members of one family, **not redundant families to delete**.
 - This decision confirms `ART-STANDARD.md` and `docs/framing-review/README.md`. No runtime CSS or artwork changed.
 
+## Overlap adjudication — Set 04 (owner directive, 2026-11-22)
+- **White Orchard illustration / subject-variety / gameplay-sourced artwork:** **KEEP ALL** of this type of artwork. Do not treat overlapping subject matter as grounds for deletion, replacement, or consolidation.
+- **Skip** this family in the current overlap-elimination review. No preference hierarchy was chosen among the three image treatments.
+- Preserve existing assets, manifests, source credits and runtime bindings. No application files changed.
+
 ## Related approvals to verify (not counted as certified production assets)
 - Prior sessions approved various button frames, inset artwork, vertical vine ornaments, and parchment-body flourishes. Exact variant-to-file mapping must be recovered before marking these cataloged as complete.
 - Latest Nilfgaardian combination recalled from prior work: checkbox 02, preparation tab 02, warning seal 02; verify source reference and placement before promotion to production baseline.
