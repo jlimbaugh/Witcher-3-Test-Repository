@@ -103,3 +103,14 @@ Owner approved the immediately preceding five-panel **OPERATION PHOENIX — TYPO
 **Mandatory correction:** the mockup shows raised numbered step markers; these are NOT approved. The earlier owner-locked **flat blue-gray serif numbers with a fine silver underline** remain authoritative. Apply this correction to any production export or implementation. The sheet is an owner-approved *visual reference*, not proof of exact existing font identity, font sizes, CSS bindings, or source exports. Do not silently substitute typefaces, alter existing approved artwork, or infer production QA.
 
 **Cleanup order:** mark superseded typography proposals and raised step-marker proofs as historical/retired for new production. Preserve the source and audit trail. Do not delete font files, CSS, assets, or screenshots while they have runtime or evidentiary dependencies. Audit selector mapping and replace/test before any physical deletion. No runtime edits, merge or deployment authorized by this docs-only registry update.
+
+
+## Owner clarification · Velen canonical implementation · 2026-11-23
+
+Owner directive: **“Menu functionality of Velen is the standard. Basically Velens artwork is 95% complete I just want to standardize every element we can to make scaling simpler.”**
+
+**Authoritative implementation rule:** Use existing Velen menu behavior as the functional reference for guide-wide reuse: navigation, expanded/collapsed states, card selection, touch/vertical scrolling, and related menu interactions **as actually implemented and verified**. Do not replace functional Velen controls with newly invented menu behavior, static art, or alternate layouts. Velen artwork is considered **approximately 95% complete by owner assessment**; preserve and reuse it, and standardize its components rather than initiating a redesign.
+
+**Scope of standardization:** Identify shared component roles, source selectors, art assets, style tokens, page patterns, states, and dependencies; eliminate unintended style drift through fidelity-preserving consolidation. Preserve previously locked A–E parchment/typography visual standards, A–J flourishes, V1–V9 rails, B1–B10 original button artwork, and approved map controls, subject to verified compatibility with the actual Velen reference. Existing CSS-native controls should remain functional. Document any genuine conflicts before changes rather than overwriting Velen.
+
+**Priority change:** Audit and map reusable Velen implementations **before** treating missing individual decorative exports as blockers for all work. Recover individual exports only when actual reuse requires them. Do not reapprove already locked art or regenerate designs. No runtime change, merge, deletion or deployment is authorized by this record.
