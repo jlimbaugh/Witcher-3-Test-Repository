@@ -89,3 +89,17 @@ Owner chose **option 2**: retire all prior parchment designs from the authorized
 5. Only then remove the four retired production files in a reviewed deletion commit; preserve historical design documents and references. No automatic deployment.
 
 This decision authorizes the **safe retirement sequence**, not immediate removal, deployment or arbitrary creative changes.
+
+
+## Typography review 01 · OWNER LOCK · 2026-11-23
+
+Owner approved the immediately preceding five-panel **OPERATION PHOENIX — TYPOGRAPHY STANDARD SHEET**, saying **“Lock and clean up files accordingly.”** This is a locked visual composition for text on the five approved parchment roles:
+- **A Primary parchment:** H1–H6 hierarchy, long-form body, note treatment.
+- **B Quest / Reading:** quest heading, explanatory body and objective list.
+- **C Region Tool / Hub:** region heading and navigation rows.
+- **D Map Tool Panel:** map heading and layer checkbox labels.
+- **E Walkthrough / Step List:** walkthrough heading and numbered objectives.
+
+**Mandatory correction:** the mockup shows raised numbered step markers; these are NOT approved. The earlier owner-locked **flat blue-gray serif numbers with a fine silver underline** remain authoritative. Apply this correction to any production export or implementation. The sheet is an owner-approved *visual reference*, not proof of exact existing font identity, font sizes, CSS bindings, or source exports. Do not silently substitute typefaces, alter existing approved artwork, or infer production QA.
+
+**Cleanup order:** mark superseded typography proposals and raised step-marker proofs as historical/retired for new production. Preserve the source and audit trail. Do not delete font files, CSS, assets, or screenshots while they have runtime or evidentiary dependencies. Audit selector mapping and replace/test before any physical deletion. No runtime edits, merge or deployment authorized by this docs-only registry update.
