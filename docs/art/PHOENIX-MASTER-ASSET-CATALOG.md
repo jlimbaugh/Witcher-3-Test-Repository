@@ -38,6 +38,12 @@
 | Section/card titles | S1–S6 | UNAPPROVED | Current conversation | Presented only; do not treat as locked |
 | Nilfgaardian framing | Hub B1 / walkthrough B2 | PILOT IMPLEMENTED | GitHub review/nilf-forged-framing | Acceptance and reusable asset extraction unverified |
 
+## Overlap adjudication — Set 01 (owner locked, 2026-11-22)
+- **Standard text-only buttons B1–B10:** retain **original approved button treatment only**. The later raised / stronger-bevel treatment shown in `docs/framing-review/velen-buttons-batch-02/raised-*.jpg` is **not the production standard** and must not be promoted or propagated as a separate variant family.
+- Preserve B1–B10's approved per-page rotation, silhouettes and labels from `docs/framing-review/text-only-buttons.jpg` and `text-only-buttons-b7-b10.jpg`.
+- Existing implementation is **not automatically changed** by this art decision. A future implementation pass must audit any raised treatment already applied and propose a scoped correction before altering runtime CSS.
+- This explicit owner decision supersedes contradictory raised-bevel language in older `ART-STANDARD.md` and framing review notes for the button family; those historical references remain preserved as evidence.
+
 ## Related approvals to verify (not counted as certified production assets)
 - Prior sessions approved various button frames, inset artwork, vertical vine ornaments, and parchment-body flourishes. Exact variant-to-file mapping must be recovered before marking these cataloged as complete.
 - Latest Nilfgaardian combination recalled from prior work: checkbox 02, preparation tab 02, warning seal 02; verify source reference and placement before promotion to production baseline.
