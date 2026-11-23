@@ -28,6 +28,10 @@ See `SOURCE-INVENTORY.md` for the current entrypoint model:
 
 See `QA-STATUS.md`. Existing workflow is a pinned historical QA6 guard and does not automatically certify the current catalog branch. Recorded test totals are historical.
 
+## Content Completeness (Stage 6)
+
+See `CONTENT-STATUS.md`. White Orchard ledger is historical. Velen has dual layers (legacy activities + expanded cards). Other region cards exist without established full coverage.
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -43,3 +47,4 @@ See `QA-STATUS.md`. Existing workflow is a pinned historical QA6 guard and does 
 - `ancestor-r19` — merge base `de288fe9` (to be created locally)
 - `stage-03-source-inventory` — Stage 3 baseline (to be created locally)
 - `stage-05-qa-safety` — Stage 5 baseline (to be created locally)
+- `stage-06-content-completeness` — Stage 6 baseline (to be created locally)
