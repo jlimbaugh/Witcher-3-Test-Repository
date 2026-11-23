@@ -24,6 +24,10 @@ See `SOURCE-INVENTORY.md` for the current entrypoint model:
 - Character: separate page
 - Inventory preview: classification pending
 
+## QA & Release Safety (Stage 5)
+
+See `QA-STATUS.md`. Existing workflow is a pinned historical QA6 guard and does not automatically certify the current catalog branch. Recorded test totals are historical.
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -38,3 +42,4 @@ See `SOURCE-INVENTORY.md` for the current entrypoint model:
 - `baseline-main-2026-11-19` — main at audit start
 - `ancestor-r19` — merge base `de288fe9` (to be created locally)
 - `stage-03-source-inventory` — Stage 3 baseline (to be created locally)
+- `stage-05-qa-safety` — Stage 5 baseline (to be created locally)
