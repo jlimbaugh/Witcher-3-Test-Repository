@@ -1,0 +1,28 @@
+/* Stage 11.2 — Nilfgaardian Connection alignment (isolated)
+   Shorten illustration banner on Nilf hub for first-screen fit.
+   Does not alter artwork. Preserves original B1/B2 button treatments.
+   No progress schema or storage changes. */
+
+/* Target Nilf hub banner (shorter for iPhone first screen) */
+#velen .scene-banner[data-nilf-hub],
+.velen-view .scene-banner.nilf-hub-banner {
+  min-height: 180px;
+  padding-top: 90px;
+  height: clamp(160px, 22vw, 240px);
+}
+
+/* Ensure standard text buttons keep forged rim as outer silhouette;
+   no rectangular plate. Peer alignment preserved. */
+.velen-view .button-link,
+.velen-view .stage-controls button,
+.velen-view button[data-velen-quest],
+.velen-view button[data-velen-undo] {
+  box-shadow: inset 0 0 0 1px transparent; /* suppress any residual plate */
+}
+
+/* Collapsed Quest Progress summary note (visual only; JS owns content) */
+.velen-quest-progress > summary::after {
+  content: " (count + next objective)";
+  font-size: 0.85em;
+  opacity: 0.8;
+}
