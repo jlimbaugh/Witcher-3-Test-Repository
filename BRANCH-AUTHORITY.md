@@ -32,6 +32,10 @@ See `QA-STATUS.md`. Existing workflow is a pinned historical QA6 guard and does 
 
 See `CONTENT-STATUS.md`. White Orchard ledger is historical. Velen has dual layers (legacy activities + expanded cards). Other region cards exist without established full coverage.
 
+## Navigation & Maps (Stage 7)
+
+See `NAVIGATION-STATUS.md`. Velen progress is split (canonical Nilf vs. legacy Pyres/Mercy). White Orchard and Velen maps are separate implementations. Navigation authority is distributed.
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -48,3 +52,4 @@ See `CONTENT-STATUS.md`. White Orchard ledger is historical. Velen has dual laye
 - `stage-03-source-inventory` — Stage 3 baseline (to be created locally)
 - `stage-05-qa-safety` — Stage 5 baseline (to be created locally)
 - `stage-06-content-completeness` — Stage 6 baseline (to be created locally)
+- `stage-07-navigation-maps` — Stage 7 baseline (to be created locally)
