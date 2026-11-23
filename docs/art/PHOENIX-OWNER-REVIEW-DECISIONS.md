@@ -67,3 +67,25 @@ Owner response to the immediately preceding five-format blank parchment mockup: 
 **Authority and limitation:** this is a **newly generated visual mockup approved by the owner**, NOT a verified extraction of original Velen/White Orchard or GitHub parchment. Do not misrepresent it as existing original source. The owner's explicit approval authorizes these five mockup treatments as the production visual reference and supersedes the prior general parchment HOLD **only for these five treatments**. It does not promote `dist/worn-vellum-r15.svg` (explicitly rejected) or certify `dist/curled-vellum-r16.webp` as a visual match.
 
 **Implementation gates:** preserve approved sheet/source image, obtain source-backed production-quality separate blank assets matching A–E, confirm fidelity and aspect ratios, map CSS selectors and usage roles, test responsive scaling and iPhone Safari. Do not invent a sixth family member, redraw or alter approved details, remove old assets, change runtime, merge or deploy without further direction.
+
+
+## Parchment retirement and safe deletion order · 2026-11-23
+
+Owner chose **option 2**: retire all prior parchment designs from the authorized production standard **now**, but **physically delete old files only after the five approved replacement parchment formats A–E are installed and tested**. Avoid broken reading surfaces or UI.
+
+### Superseded files — RETIRE FROM FUTURE PRODUCTION, KEEP BYTES UNTIL SAFE
+- `dist/curled-vellum-r16.webp` — currently referenced by reading/quest styles.
+- `dist/worn-vellum-r15.svg` — previously rejected as visual standard; still referenced by multiple menus, warnings and controls.
+- `dist/r10-paper.svg` — historical quest styling references.
+- `dist/r10-haunted-scroll-concept.webp` — historical quest styling references.
+
+**No deletion now.** Existing references may remain temporarily to preserve current guide behavior. Do not treat the retired files as approved visual standards for new work.
+
+### Required deletion gates
+1. Preserve the owner-locked five-format mockup as immutable visual reference and prepare exact faithful separate production assets A–E.
+2. Install replacements with scoped CSS/runtime changes only under a separately approved implementation order; verify each existing dependency and fallback.
+3. Test relevant Velen/White Orchard/Nilf routes, map tools, quest panels, menus, warnings, mobile portrait/landscape and iPhone Safari.
+4. Confirm zero active references to the four retired paths across production entrypoints, CSS and manifests; review historical branches and source references separately.
+5. Only then remove the four retired production files in a reviewed deletion commit; preserve historical design documents and references. No automatic deployment.
+
+This decision authorizes the **safe retirement sequence**, not immediate removal, deployment or arbitrary creative changes.
