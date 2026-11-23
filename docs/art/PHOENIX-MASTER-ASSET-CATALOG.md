@@ -81,3 +81,12 @@
 
 ## Source record
 Original library file: `PHOENIX-Art-Creation-Session.md`, dated November 22, 2026. Its 15 entries include 13 family groups when map-control subfamilies are grouped differently; preserve its entry-level distinctions. The present register adds decisions from the current conversation and implementation context, not claims of production completeness.
+
+
+## Owner update · 2026-11-23 — five-format typography visual standard
+
+**LOCKED visual sheet:** five-panel typography reference for approved parchment roles A–E: primary long-form hierarchy/body/note; quest reading/objectives; region tools/navigation; map layers/checklists; walkthrough headings/steps. Existing Body #2, H1–H6, N1–N6 and O1–O6 approvals remain in force; exact font/CSS mapping remains unverified. Button labels preserve the existing approved treatment. This lock governs the presented five-format composition and does not independently certify previously unapproved section/card-title variants S1–S6.
+
+**Exception:** raised numbered walkthrough markers shown in the sheet are superseded by the previously locked **flat blue-gray serif number plus fine silver underline**. Do not use the raised markers.
+
+**Cleanup:** historical/rejected variants may be retired in registry but not physically deleted until dependency mapping, replacements and regression tests pass. Parchment A–E is also locked; four historical parchment material files are retired for future work, but retained until safe replacement. See Owner Review Decisions for detailed deletion gates.
