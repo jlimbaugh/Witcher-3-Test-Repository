@@ -16,6 +16,14 @@ Status: Active during staged repository audit
 - Catalog branch is ahead by ~138 commits and behind by 5 relative to main.
 - File trees are disjoint; this is expected after the catalog branch restructured into `dist/`.
 
+## Production Source (Stage 3)
+
+See `SOURCE-INVENTORY.md` for the current entrypoint model:
+- Primary shell: `dist/index.html`
+- Velen: redirect via `dist/velen.html`
+- Character: separate page
+- Inventory preview: classification pending
+
 ## Rules
 
 - No merges, deletions, or force-pushes until the staged audit is complete and an authoritative production branch is explicitly designated.
@@ -29,3 +37,4 @@ Status: Active during staged repository audit
 - `baseline-catalog-2026-11-23` — catalog branch at Stage 1
 - `baseline-main-2026-11-19` — main at audit start
 - `ancestor-r19` — merge base `de288fe9` (to be created locally)
+- `stage-03-source-inventory` — Stage 3 baseline (to be created locally)
