@@ -1,17 +1,22 @@
 # Remediation Index — Operation Phoenix
 
 Date: 2026-11-23
-Status: Planning baseline — Stage 8 independently reviewed
+Status: Planning baseline — Stage 8 independently reviewed; Gate A open
 Branch: docs/phoenix-art-master-catalog
 
 This is the living list of prioritized items from the Stage 8 consolidated register.  
 **No remediation is authorized until the relevant gate is explicitly approved.**
 
+## Gate Status
+
+- **Gate A**: Open — release provenance (deployed SHA + rollback target) unresolved. See Stage 9 report.
+- Gates B–F: Not started.
+
 ## Release Blockers (P0)
 
 | ID | Item | Current Disposition |
 |----|------|---------------------|
-| P0-01 | Production/deployment SHA and authoritative source not established | Open |
+| P0-01 | Production/deployment SHA and authoritative source not established | Open (Gate A blocker) |
 | P0-02 | Velen progress split (canonical Nilf vs. legacy Pyres/Mercy); rollback risk | Open |
 | P0-03 | 59 monochrome sketches not ingested as real GitHub binaries | Partially addressed — tiny placeholders deleted; real binaries still local only |
 | P0-04 | Current candidate independent QA, physical iPhone Safari, and served-asset integrity not certified | Open |
@@ -37,7 +42,7 @@ This is the living list of prioritized items from the Stage 8 consolidated regis
 
 ## Remediation Gates (proposed)
 
-- **Gate A**: Validate evidence, candidate SHA, and source/deployment/rollback provenance.
+- **Gate A**: Validate evidence, candidate SHA, and source/deployment/rollback provenance. **Status: Open.**
 - **Gate B**: Preserve and verify storage ownership and rollback safety.
 - **Gate C**: Inventory and ingest genuine approved binary assets.
 - **Gate D**: Validate route, quest, map, search, and region matrices.
