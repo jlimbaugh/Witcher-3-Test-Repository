@@ -35,3 +35,17 @@ Owner explicitly approved **all four** existing families/treatments for producti
 - **Walkthrough step numbers:** APPROVED — flat blue-gray serif with fine silver underline is the fixed production default; raised-marker study 1–6 is not promoted.
 
 This is production **design approval**, not evidence that standalone exports, runtime bindings, or physical Safari QA are complete. Source identification and technical preparation remain pending. No creative generation, deletion, runtime modification, merge or deployment authorized.
+
+
+## Batch 04 · map-control production approval · 2026-11-23
+
+Owner explicitly approved the following **existing designs for production use**:
+- **Map location-link rows:** 1–6 — APPROVED.
+- **Map legend headers:** 1–6 — APPROVED.
+- **Map Layers controls:** 1–6, with collapsed/expanded states — APPROVED.
+- **Map Recenter buttons:** 1–6 — APPROVED.
+- **Map Zoom in/out pairs:** **1, 2, 4, 6 only** — APPROVED; 3 and 5 remain discarded.
+- **Map toolbar Back buttons:** 1–6 — APPROVED.
+- **Map-layer Progress checkboxes:** 1–6, with checked/unchecked states — APPROVED.
+
+**Scope:** original session-created visual designs, not new or reconstructed art. Production-design approval does not imply standalone variant exports exist or have passed functional, mobile or Safari QA. Locate source review sheets and original member files before extraction. No creative changes, substitutions, deletions, runtime modifications, merges or deployments authorized.
