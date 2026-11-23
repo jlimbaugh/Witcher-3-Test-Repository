@@ -114,3 +114,12 @@ Owner directive: **“Menu functionality of Velen is the standard. Basically Vel
 **Scope of standardization:** Identify shared component roles, source selectors, art assets, style tokens, page patterns, states, and dependencies; eliminate unintended style drift through fidelity-preserving consolidation. Preserve previously locked A–E parchment/typography visual standards, A–J flourishes, V1–V9 rails, B1–B10 original button artwork, and approved map controls, subject to verified compatibility with the actual Velen reference. Existing CSS-native controls should remain functional. Document any genuine conflicts before changes rather than overwriting Velen.
 
 **Priority change:** Audit and map reusable Velen implementations **before** treating missing individual decorative exports as blockers for all work. Recover individual exports only when actual reuse requires them. Do not reapprove already locked art or regenerate designs. No runtime change, merge, deletion or deployment is authorized by this record.
+
+
+## Owner master objective · guide-wide standardization before expansion · 2026-11-23
+
+Owner directive: **“Our goal is to bring all pages to this art standard we are creating then create new regions.”**
+
+**Mandatory sequence:** (1) Finish and consolidate the owner-approved art/interaction standard, using existing Velen menu functionality and the current Velen visual implementation as the primary reference. (2) Bring **all existing guide pages and sections**, including White Orchard, Velen, quest hubs, walkthroughs, maps, and field-reference pages, into the same standard without changing their content or intended behavior. (3) Test visual fidelity, interactions, progress ownership, navigation, and physical iPhone Safari; correct discrepancies and lock the reusable templates. (4) **Only then** create additional regions from those reusable templates.
+
+**Implementation principles:** This is a guide-wide alignment and component-reuse program, not a Velen-only polish project or a new art-design campaign. Preserve existing owner-locked variants and page-specific subject illustrations. Where existing pages differ, document the actual source and proposed compatibility correction before implementing. Avoid repeated approvals, premature expansion, broad rewrites, or deletion of referenced assets. The present documentation branch does not authorize runtime changes, merge, deployment or file deletion.
