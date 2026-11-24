@@ -17,7 +17,7 @@
 
 *Historical (superseded):* a "Progress star chart leg" (Jess and Capt) governed the retired star-chart pilot. It no longer applies. Its build plan and decision report were removed in PR #34 and remain in git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 
-The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+The owner approved two representative page patterns on November 19, 2026, using QA build `1690b41`; they are inputs to, not substitutes for, the complete Velen master certification. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
@@ -89,12 +89,12 @@ When two reviews have been assigned, acknowledge individual reports and collect 
 |---|---|---|
 | AGENTS.md | Cmdr | Adopted changes to working instructions |
 | docs/PROJECT-STATUS.md | Cmdr | Same PR as candidate, scope, blocker, or release-state changes |
-| docs/ARCHITECTURE.md | Cmdr | Same PR as accepted structural changes |
-| docs/REGION-CONTRACT.md | Cmdr | Same PR as accepted behavior changes |
+| docs/ARCHITECTURE.md *(planned; not present in this candidate)* | Cmdr | Create only when authorized and needed for accepted structural changes |
+| docs/REGION-CONTRACT.md *(planned; not present in this candidate)* | Cmdr | Create only when authorized and needed for accepted behavior changes |
 | docs/TESTING.md | Implementer; reviewer checks | Setup, commands, dependencies, coverage changes |
 | Review report | Reviewer | Each reviewed revision; identify commit |
 | docs/RELEASING.md and release record | Cmdr | Candidate/deployment/recovery changes |
-| docs/DECISIONS.md | Cmdr | Accepted governing decisions |
+| docs/CANONICAL-TEMPLATE-DOCTRINE.md *(current governing record; docs/DECISIONS.md is not present)* | Cmdr | Accepted governing template, map and cleanup decisions |
 
 PROJECT-STATUS must identify accepted and deployed builds, candidate, active tasks and owners, blockers, and the next action. Generate hashes, asset URLs, and file counts in a manifest; validate them automatically instead of copying them across prose. Human review still checks explanatory accuracy.
 
@@ -179,7 +179,7 @@ GitHub Pages will not serve a second application build. Retire old entry points 
 - Cmdr owns the design conversation with the owner. LT brings technical gaps, options, and tradeoffs to Cmdr; they do not run separate design questionnaires with the owner.
 - Cmdr consolidates those inputs into batches of three clear questions using the multiple-choice UI with a free-text option. Explain the visible effect of each choice, ground recommendations in the accepted design, and continue batches until the needed information is available. Do not invent filler questions when no decision is needed.
 - Record only explicit selections or unambiguous written decisions as approved. Silence, empty answers, “no notes,” and unanswered questions do not approve a recommended default. If intent is ambiguous, leave the decision open and clarify through the question UI.
-- Velen is the canonical regional deck template. Preserve White Orchard’s existing implementation and consider individual White Orchard elements for incorporation with explicit owner approval. White Orchard remains the behavioral reference where the approved regional deck template does not govern. Distinguish proposals from locked decisions.
+- Velen is the Capt-approved master for the complete regional template, certified page pattern by page pattern. White Orchard supplies only explicitly approved elements and retains its existing content, behavior and saves until controlled migration after Velen lock. Older White Orchard-first instructions are historical, not competing authority. See CANONICAL-TEMPLATE-DOCTRINE.md.
 - Keep mockup source, exact revisions, and decisions in GitHub. Present images of the rendered prototype in chat for joint visual review. Ask the next three questions against what the owner can see; do not make the owner hunt through source files.
 - Mockups are for design review. Their isolated sample progress and acknowledgment state must not write to production browser storage. Visual acceptance precedes regional conversion and objective-marking field acceptance.
 
