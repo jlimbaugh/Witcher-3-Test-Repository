@@ -61,6 +61,5 @@
  document.querySelector('#tree-title').textContent='White Orchard · Quest journal';
  document.querySelector('.tree-hint').textContent='Choose a quest card, then open its hub for the briefing, walkthrough and nearby activities.';
  document.querySelectorAll('.hub-toggle').forEach(button=>{const hub=hubs.find(h=>h.id+'-toggle'===button.id);const primary=hub.items.map(id=>tasks[id]).find(t=>t.stages&&t.home===hub.id);button.classList.add('tarot-selected-header');const plate=make('span','selected-tarot-art');plate.setAttribute('aria-hidden','true');const img=make('img');const primaryId=Object.keys(tasks).find(id=>tasks[id]===primary);img.src=primaryId?'art-r13/'+primaryId+'-thumb.webp':'r10-map.svg';img.className='selected-quest-illustration';img.loading='lazy';img.decoding='async';img.alt='';plate.append(img);button.prepend(plate);});
- const overview=make('a','primary-action','Open the whole constellation →');overview.href='#whiteorchard-constellation';document.querySelector('#whiteorchard-tree .tree-heading').after(overview);
 
 })();

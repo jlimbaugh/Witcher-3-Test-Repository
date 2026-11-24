@@ -35,7 +35,8 @@
       "file": "constellation.webp",
       "bytes": 343912,
       "sha256": "07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe",
-      "approved_source_library_id": "libfile_dde681b9153c81919c1479a0af84b01b"
+      "approved_source_library_id": "libfile_dde681b9153c81919c1479a0af84b01b",
+      "status": "retired: Constellation retired by owner decision; file removed in PR #34 (9dec2cd). Historical record only."
     },
     {
       "key": "warnings",

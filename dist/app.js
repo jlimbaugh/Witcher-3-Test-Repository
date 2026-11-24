@@ -330,7 +330,7 @@
     reflect();persist();requestAnimationFrame(drawConnections);
     lastRenderedURL=location.href;
     dispatchEvent(new CustomEvent('phoenix:route-rendered',{detail:{root:currentRoot,hub:state.selectedHub,previousRoot:before,mode}}));
-    if (['home','whiteorchard-console','progress'].includes(currentRoot)) {
+    if (['home','whiteorchard-console'].includes(currentRoot)) {
       let notice=target.querySelector('[data-wo-save-notice]');
       if (!notice) {
         notice=document.createElement('p');

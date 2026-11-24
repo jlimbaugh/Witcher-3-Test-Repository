@@ -11,7 +11,8 @@ test('RT-01: Region Tools guide-wide tiles keep their own destinations instead o
  const tools=r18.slice(r18.indexOf('function regionTools('),r18.indexOf('function consoleView()'));
  assert.match(tools,/href:item\.href\?'index\.html'\+item\.href:null/,'navigation entries pass through the index.html# prefix');
  const hrefs=[...read('navigation-art.js').matchAll(/href:'(#[^']+)'/g)].map(m=>m[1]);
- assert.deepEqual(hrefs,['#home','#regions','#field-reference','#progress','#whiteorchard-constellation']);
+ // Order 017: retired #progress/#whiteorchard-constellation tiles replaced by the approved Main Map and Quests destinations.
+ assert.deepEqual(hrefs,['#home','#regions','#field-reference','#whiteorchard-map','#whiteorchard-tree']);
  for(const h of hrefs){assert.equal(model.sharedHash(h),'#velen','sharedHash alone would rewrite '+h);assert.equal(resolve('index.html'+h),h,h+' keeps its destination');}
  // Velen-local tools still route inside Velen.
  assert.equal(resolve('#map'),'#velen/map');assert.equal(resolve('#merchants'),'#velen/merchants');
