@@ -156,7 +156,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
  assert.deepEqual([...new Set(changed)],['app.js', 'character-entry.js', 'character-gear.js', 'character-ui.js', 'character-vault.js', 'character.css', 'console-r16.js', 'deck-jump.js', 'departure.js', 'desk-r11.js', 'diagrams-ui.js', 'exploration-ui.js', 'guide-art-r15.js', 'home-rebuild.css', 'home-ui.js', 'main-console.js', 'map-ui.js', 'medallion.js', 'navigation-art.css', 'navigation-art.js', 'nilf-forged.css', 'progression-ui.js', 'quest-hubs.js', 'search-model.js', 'search-ui.js', 'shared-walkthrough.css', 'shared-walkthrough.js', 'velen-activity-decks.css', 'velen-nilf-map.css', 'velen-nilf-map.js', 'velen-nilf-objectives.js', 'velen-nilf-ui.js', 'velen-quest-cards.js', 'velen-r18.js', 'velen-routing.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).map(r=>[r.file,r.tag]));
- for(const f of ['medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
+ // Order 017: medallion.js changed after V50 (#33 Main Map fallback card) without a new tag; re-tagged for returning V50 browsers.
+ for(const f of ['medallion.js'])assert.equal(tags[f],'o17-retire-1',f);
  // Order 017: the Constellation retirement repair re-tags every script it changed so returning V50 browsers fetch new bytes.
  for(const f of ['desk-r11.js','app.js','main-console.js','search-ui.js','guide-art-r15.js','console-r16.js'])assert.equal(tags[f],'o17-retire-1',f);
  assert.equal(tags['navigation-art.js'],'o17-nav-1');
