@@ -4,7 +4,8 @@
 
 ## Current (Order 020, November 24, 2026)
 
-- Public guide: **v50**, application source `e8b818492bbc71450453a69686bf1a7f0d3042ac` (tag `v50-public`). Deployment provenance is author-supplied in the [release record](RELEASE-VELEN-V50-CANDIDATE.md).
+- Public guide: **v50**, application source `e8b818492bbc71450453a69686bf1a7f0d3042ac` (tag `v50-public`).
+- **Public surfaces (two, separate):** (1) **Velen v50 on ChatGPT Sites.** Its publication and deployment provenance is author-supplied in the [V50 release record](RELEASE-VELEN-V50-CANDIDATE.md) (Sites source `bcc83936…`, deployment `appgdep_6affe300…`). The `v50-public` tag identifies the GitHub application source; it does not prove what Sites serves. (2) **GitHub Pages** still serves the older `main` branch (`2ed8b86`), not V50. `canonical/phoenix` does **not** auto-publish to either surface: a Sites release needs a separately authorized Sites push and deployment, and Pages is frozen.
 - Canonical development branch: `canonical/phoenix` = `2dbc0bcf88aa531957212c4ee7d19cfff9ad0e7d` (Order 019). Recovery tags: `v50-public`, `v50-release-record`, `v49-app`, `qa6`, `order017-candidate`, `archive/<branch>`.
 - Phase: doctrine Phase 1 audit delivered (Order 018, issue #37). Recovery tags and the canonical branch were created in Orders 019–020 (issues #38 and #39), pending Cmdr QA. Next: Capt-approved documentation and CI patches, then Velen pattern certification (Phase 2).
 - The Progress filter on the White Orchard map (Order 017) is **provisional**. It is a layer on the regional White Orchard map, not the future whole-game Main Map atlas, which is not built yet (doctrine decisions 4–6).

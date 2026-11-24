@@ -52,4 +52,6 @@ Known duplication, to be resolved through pattern certification and not ad hoc: 
 - Last-progress-change Undo is preserved.
 
 ## Lineage and recovery
-`canonical/phoenix` descends from V50 (`v50-public`). Checkpoints: `v50-release-record`, `v49-app`, `qa6`, `order017-candidate`, `archive/<branch>`. Deployment records are author-supplied ([V50 record](RELEASE-VELEN-V50-CANDIDATE.md)).
+`canonical/phoenix` descends from V50 (`v50-public`). Checkpoints: `v50-release-record`, `v49-app`, `qa6`, `order017-candidate`, `archive/<branch>`.
+
+**Public surfaces (two, separate):** (1) **Velen v50 on ChatGPT Sites.** Its publication and deployment provenance is author-supplied in the [V50 release record](RELEASE-VELEN-V50-CANDIDATE.md) (Sites source `bcc83936…`, deployment `appgdep_6affe300…`). The `v50-public` tag identifies the GitHub application source; it does not prove what Sites serves. (2) **GitHub Pages** still serves the older `main` branch (`2ed8b86`), not V50. `canonical/phoenix` does **not** auto-publish to either surface: a Sites release needs a separately authorized Sites push and deployment, and Pages is frozen.
