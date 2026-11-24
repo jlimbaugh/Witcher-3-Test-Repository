@@ -240,3 +240,13 @@ html body .deck-jump-rail > button {
 html body .deck-jump-rail > button[aria-current="true"] {
   color:#fff4dc; background:#495349; box-shadow:inset 0 -2px #c9d0c6;
 }
+
+/* Phase 3 · Nilf Inn walkthrough — keep Show on Map beside the relevant objective */
+#velen-screen .sw-walkthrough .nilf-show-on-map {
+  margin-inline-start: .75rem;
+  vertical-align: middle;
+}
+#velen-screen .sw-rail .sw-box[aria-selected="true"] {
+  outline: 2px solid currentColor;
+  outline-offset: -3px;
+}
