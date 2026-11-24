@@ -1,4 +1,4 @@
-name: Phoenix QA6 verification # access diagnostic
+name: Phoenix QA6 verification
 on:
   push:
     branches: [ci/qa6-independent-checks, fix/wo-save-preservation]
