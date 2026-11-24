@@ -1,7 +1,7 @@
 'use strict';
 window.createPhoenixSearch=function({tasks,state,engine,navigate}){
  const model=window.PhoenixSearchModel,context={tasks,state,engine},historyKey='phoenix.search.history.v1';
- const referenceIds=['home','regions','whiteorchard-console','whiteorchard-tree','whiteorchard-map','whiteorchard-constellation','field-reference','economy','economy-merchants','character','character-gear','gear-diagram-regions','gear-diagrams',...(window.PHOENIX_EXPLORATION?.categories||[]).map(c=>'exploration-'+c.id)];
+ const referenceIds=['home','regions','whiteorchard-console','whiteorchard-tree','whiteorchard-map','field-reference','economy','economy-merchants','character','character-gear','gear-diagram-regions','gear-diagrams',...(window.PHOENIX_EXPLORATION?.categories||[]).map(c=>'exploration-'+c.id)];
  const references=referenceIds.map(id=>{const view=document.getElementById(id),heading=view?.querySelector('h1');return heading?{id:'reference:'+id,title:heading.textContent,href:'#'+id,region:id.startsWith('whiteorchard')||id==='gear-diagrams'||id.startsWith('exploration-')?'White Orchard':'Guide-wide',keywords:view.querySelector('.lead,.main-console-intro')?.textContent||''}:null;}).filter(Boolean);
  const index=model.buildIndex({tasks,pins:window.PHOENIX_MAP.markers,references,velenCards:window.PhoenixVelenQuestCards,velenQuests:window.PHOENIX_VELEN?.quests}).filter(row=>row.region==='Velen'||document.getElementById(row.href.slice(1).split('/')[0]));
  const byId=new Map(index.map(row=>[row.id,row]));let recents;try{recents=model.readHistory(localStorage.getItem(historyKey),index);}catch{recents={queries:[],entries:[]};}

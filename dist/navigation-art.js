@@ -5,11 +5,11 @@
   {key:'home',label:'Home',href:'#home',src:'navigation-art-v26/home.webp',glow:'#a6bfd9'},
   {key:'regions',label:'Regions',href:'#regions',src:'navigation-art-v26/regions.webp',glow:'#97b77c'},
   {key:'reference',label:'Field Reference',href:'#field-reference',src:'navigation-art-v26/reference.webp',glow:'#ccd6df'},
-  {key:'progress',label:'Progress',href:'#progress',src:'navigation-art-v26/progress.webp',glow:'#c99c5f'},
-  {key:'constellation',label:'Constellation',href:'#whiteorchard-constellation',src:'navigation-art-v26/constellation.webp',glow:'#5fc7b4'},
+  {key:'map',label:'Main Map',href:'#whiteorchard-map',src:'navigation-art-v26/progress.webp',glow:'#c99c5f'},
+  {key:'quests',label:'Quests',href:'#whiteorchard-tree',src:'navigation-art-v26/action-quest-hub.webp',glow:'#5fc7b4'},
   {key:'warnings',label:'Warnings',src:'navigation-art-v26/warnings.webp',glow:'#9b3547'}
  ];
- function keyForRoute(hash){const root=String(hash||'#home').replace(/^#/,'').split('/')[0];if(root==='home')return 'home';if(root==='progress')return 'progress';if(root.includes('constellation'))return 'constellation';if(/^(field-reference|economy|character|gear|combat|alchemy|gwent)/.test(root))return 'reference';return 'regions';}
+ function keyForRoute(hash){const root=String(hash||'#home').replace(/^#/,'').split('/')[0];if(root==='home')return 'home';if(root==='whiteorchard-tree')return 'quests';if(root==='whiteorchard-map'||root==='map')return 'map';if(/^(field-reference|economy|character|gear|combat|alchemy|gwent)/.test(root))return 'reference';return 'regions';}
  function createSequence(items,{setTimer=window.setTimeout.bind(window),clearTimer=window.clearTimeout.bind(window),reduced=()=>false,onPlaying=()=>{}}={}){
   let opened=false,seen=false,timer=null,generation=0;
   function quiet(){generation++;if(timer!==null)clearTimer(timer);timer=null;items.forEach(item=>item.stop());onPlaying(-1);}

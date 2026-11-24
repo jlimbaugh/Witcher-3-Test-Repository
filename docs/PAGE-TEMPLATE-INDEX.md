@@ -1,6 +1,10 @@
 # Phoenix page templates
 
-The [Progress star chart decision report](PROGRESS-STAR-CHART-DECISIONS.md) records the new direction for whole-game Progress. Follow the [build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md) for the Velen pilot. The star chart becomes a reusable page standard after the owner accepts it.
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
+Progress is a layer of the geographical Main Map (owner decision; see [quest-area map owner decisions](QUEST-AREA-MAP-OWNER-DECISIONS.md)). There is no standalone Progress page. *Historical:* the retired star-chart decision report and build plan remain in git history at `a66e85e`.
 
 Keep the Velen quest and activity decks and the shared Regional Tools deck scrollable vertically through both sides. Horizontal browsing starts anywhere on the middle card or within 6 CSS px of its edges. Side cards can still be tapped to center them. Use the original deck margins. Vertical finger drags within the deck move the reader at 80% of the drag distance. Outside the deck, scrolling is native.
 
@@ -32,7 +36,7 @@ Use [session calibration](SESSION-CALIBRATION.md#template-decision-lookup) for t
 
 | Surface | Layout and data | Interaction and acceptance | Source |
 | --- | --- | --- | --- |
-| Main Home | Continue near the top, illustrated region choices, whole-game progress and field-reference shortcuts where available | Continue follows a valid saved destination. Empty or unsupported state has a safe fallback. Keep regional and activity totals honest | `main-console.js`, `home-ui.js` |
+| Main Home | Continue near the top, illustrated region choices, a "View Progress on Main Map" shortcut and field-reference shortcuts where available | Continue follows a valid saved destination. Empty or unsupported state has a safe fallback. Keep regional and activity totals honest | `main-console.js`, `home-ui.js` |
 | Region selector | Region choices with stable label, artwork and destination. Expansion entries remain distinct | Swiping or focusing a card never writes progress. Selecting an available region opens its own console. Incomplete regions are labeled | `index.html#regions`, `main-console.js` |
 | Region console | Region heading, Continue, illustrated deck, numbered strip below the deck, selected quest briefing and contextual actions | Number strip wraps both ways and selects on scroll settle or tap. Keep Walkthrough and Hub action art fixed and quest art distinct. Verify return to the same card | `velen-r18.js`, `desk-r11.js`, `deck-jump.js` |
 | Quest hub or card | Quest title, art, briefing, place, suggested level when sourced, progress ownership, completion rule, walkthrough, nearby or related content | Open the actual quest and its active stage. A tracked hub may change completion through its owner. An informational card exposes the guide and completion rule without granting a mark | `quest-hubs.js`, `velen-r18.js` |
@@ -48,7 +52,6 @@ Use [session calibration](SESSION-CALIBRATION.md#template-decision-lookup) for t
 | Contracts | Use quest card and walkthrough. Include notice or giver, suggested level, actual target, investigation clues, combat preparation, trophy and reward handoff | Card depicts the target. Cover optional tactics and payment choices separately from required objectives. Verify starting location, warning and endpoint | `velen-quest-cards.js` |
 | Regional map and cluster map | Legible markers with names, categories, owner, locations, zoom and list access. Browse mode first and temporary progress filtering where supported | Pins open corresponding guide entries. Check empty filtered state, mode reset, zoom, phone gestures and exact return. Unverified pins stay marked pending | `map-ui.js`, `map-data.js` |
 | Departure review | Current region and departure milestone, relevant misses, optional opportunities, warnings and next region | Present known cutoff conditions before departure. Separate completed, open and unavailable items. Preserve independent progress and allow review before confirming changes | `departure.js` |
-| Constellation | Region, quest and task nodes with readable edges, state and alternate access where available | Open node owner and return to selection. Verify incomplete and failed distinction and shared nodes. Visual experiments remain review-only until accepted | `index.html`, `app.js` |
 
 ## Field tools and Character
 
@@ -60,7 +63,7 @@ Use [session calibration](SESSION-CALIBRATION.md#template-decision-lookup) for t
 | Character and Build Vault | Equipment and skill planning panels where supported, stat previews with evidence labels, requirement details, named builds and save controls | Separate preview and saved build. Check reload and import/export where available, validation, mobile columns, and supported gear scope. The Inventory preview remains a separate QA item | `character.html`, `character-ui.js`, `character-vault.js`, `character-gear.js` |
 | Regional tools | Use the approved walkthrough component on Home, Regions, regional consoles and walkthroughs. Eight cards, matching action artwork, quiet search last. Wolf navigation is independent. | Local destinations follow the selected region. Search opens its own page. Section jumps focus the chosen section | `velen-r18.js`, `search-ui.js` |
 | Search | Dedicated results page from Regional Tools, compact overlay with results, query state, supported filters and clear empty result text | Escape or Back closes safely. Opening a result reaches its owner, and Return to Search restores query and filters where supported | `search-ui.js`, `search-model.js` |
-| Progress and recovery | Whole and regional activity summaries, explicit filtered lists, status controls, safe save feedback, journal and calibration where available | Protect existing saves, classify alternate branches correctly, keep Undo exact, preview consequential changes. Development fixtures use isolated storage | `progression-ui.js`, `progression-engine.js` |
+| Progress and recovery | Regional activity summaries shown in the Main Map Progress layer (no standalone Progress page), explicit filtered lists, status controls, safe save feedback, journal and calibration where available | Protect existing saves, classify alternate branches correctly, keep Undo exact, preview consequential changes. Development fixtures use isolated storage | `progression-ui.js`, `progression-engine.js` |
 | Warning and wolf overlays | Navigation deck, distinct contextual warning pointer, warning acknowledgement and history where available | Navigation stays distinct from progress. Test warning ordering, focus, dismiss, history, Undo behavior and vertical safe area | `medallion.js`, `warning-center.js`, `shared-walkthrough.js` |
 | Empty, error or unsupported view | Explain what is unavailable and present a safe return route | Never assert a feature or record exists based on missing data. Check invalid URLs, unknown IDs, denied storage and interrupted navigation | `index.html`, individual route modules |
 
@@ -78,3 +81,5 @@ Velen coverage, Gwent, advanced build simulation, crafting and other incomplete 
 On iPhone, fit the banner, short briefing and full Start/Continue action on the first screen at the approved reading size. Below Quest Cards, place Quest Progress before Preparation & Quest Details. When collapsed, progress shows the count and a short next-objective line. [Owner selections](SESSION-CALIBRATION.md#future-build-questions--round-1).
 
 The shared Regional Tools menu uses the Nilfgaardian forged silver perimeter, staggered side rails and centered lower brace around the card deck. The illustrated cards retain their individual frames. The wolf is independent.
+
+*Retired template (historical):* the Constellation page template (region, quest and task nodes) was retired by owner decision and removed in Order 017. Do not rebuild it.

@@ -23,7 +23,6 @@
  const nearby=tile(actions.grid,'Nearby opportunities','#whiteorchard-tree','white-orchard-map.webp');
  tile(explore.grid,'Quests','#whiteorchard-tree','art-r13/q-lilac-card.webp');
  tile(explore.grid,'Regional map','#whiteorchard-map','white-orchard-map.webp');
- tile(explore.grid,'Constellation','#whiteorchard-constellation','console-constellation-r16.svg');
  tile(explore.grid,'Merchants','#economy-merchants','gwent-r15/gabor.webp');
  cover.replaceChildren(banner,cont,deck);
  home.querySelector('.study-note').textContent='Unofficial Witcher field guide · Your progress, your path';

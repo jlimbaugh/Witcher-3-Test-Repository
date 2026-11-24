@@ -154,22 +154,30 @@ test('Combined release: changed app and Velen scripts leave the QA6 tag',()=>{
 test('combined release: every script/stylesheet changed or new since QA6 carries a tag distinct from QA6, QA5 and v45',()=>{
  assert.deepEqual(staleAgainst(refsOf(here),here),[]);
  const changed=refsOf(here).filter(r=>!(QA6_REFS[r.file]&&QA6_REFS[r.file][1]===sha(path.join(here,r.file)))).map(r=>r.file).sort();
- assert.deepEqual([...new Set(changed)],['app.js', 'character-entry.js', 'character-gear.js', 'character-ui.js', 'character-vault.js', 'character.css', 'deck-jump.js', 'departure.js', 'desk-r11.js', 'diagrams-ui.js', 'exploration-ui.js', 'home-rebuild.css', 'home-ui.js', 'main-console.js', 'map-ui.js', 'medallion.js', 'navigation-art.css', 'nilf-forged.css', 'progress-star-chart.css', 'progress-star-chart.js', 'progression-ui.js', 'quest-hubs.js', 'search-model.js', 'search-ui.js', 'shared-walkthrough.css', 'shared-walkthrough.js', 'velen-activity-decks.css', 'velen-nilf-map.css', 'velen-nilf-map.js', 'velen-nilf-objectives.js', 'velen-nilf-ui.js', 'velen-quest-cards.js', 'velen-r18.js', 'velen-routing.js'],'only the combined release assets changed');
+ assert.deepEqual([...new Set(changed)],['app.js', 'character-entry.js', 'character-gear.js', 'character-ui.js', 'character-vault.js', 'character.css', 'console-r16.js', 'deck-jump.js', 'departure.js', 'desk-r11.js', 'diagrams-ui.js', 'exploration-ui.js', 'guide-art-r15.js', 'home-rebuild.css', 'home-ui.js', 'main-console.js', 'map-ui.js', 'medallion.js', 'navigation-art.css', 'navigation-art.js', 'nilf-forged.css', 'progression-ui.js', 'quest-hubs.js', 'search-model.js', 'search-ui.js', 'shared-walkthrough.css', 'shared-walkthrough.js', 'velen-activity-decks.css', 'velen-nilf-map.css', 'velen-nilf-map.js', 'velen-nilf-objectives.js', 'velen-nilf-ui.js', 'velen-quest-cards.js', 'velen-r18.js', 'velen-routing.js'],'only the combined release assets changed');
  const tags=Object.fromEntries(refsOf(here).map(r=>[r.file,r.tag]));
- for(const f of ['medallion.js'])assert.equal(tags[f],'shared-walkthrough-v1',f);
- for(const f of ['desk-r11.js'])assert.equal(tags[f],'regional-wrap-catchup-16',f);
+ // Order 017: medallion.js changed after V50 (#33 Main Map fallback card) without a new tag; re-tagged for returning V50 browsers.
+ for(const f of ['medallion.js'])assert.equal(tags[f],'o17-retire-1',f);
+ // Order 017: the Constellation retirement repair re-tags every script it changed so returning V50 browsers fetch new bytes.
+ for(const f of ['desk-r11.js','app.js','main-console.js','search-ui.js','guide-art-r15.js','console-r16.js'])assert.equal(tags[f],'o17-retire-1',f);
+ assert.equal(tags['navigation-art.js'],'o17-nav-1');
  for(const f of ['quest-hubs.js'])assert.equal(tags[f],'illustrated-actions-34',f);
 
  for(const f of ['velen-routing.js'])assert.equal(tags[f],'quest-route-maps-35',f);
- for(const f of ['app.js', 'character-ui.js', 'departure.js', 'diagrams-ui.js', 'exploration-ui.js', 'map-ui.js', 'progression-ui.js', 'velen-nilf-objectives.js'])assert.equal(tags[f],'v49-phone-fixes-1',f);
- for(const f of ['home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
- for(const f of ['shared-walkthrough.js','shared-walkthrough.css'])assert.equal(tags[f],'velen-map-polish-1',f);
- for(const f of ['main-console.js','home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
- for(const f of ['velen-activity-decks.css','nilf-forged.css'])assert.equal(tags[f],'velen-visual-batch-1',f);
- for(const f of ['velen-r18.js','velen-nilf-map.js','velen-nilf-map.css','velen-nilf-ui.js'])assert.equal(tags[f],'velen-map-integration-1',f);
+ for(const f of ['character-ui.js', 'departure.js', 'diagrams-ui.js', 'exploration-ui.js', 'progression-ui.js', 'velen-nilf-objectives.js'])assert.equal(tags[f],'v49-phone-fixes-1',f);
+ // Order 017: Progress layer rebuilt inside the Main Map filter panel.
+ for(const f of ['map-ui.js'])assert.equal(tags[f],'o17-progress-1',f);
+ for(const f of ['home-rebuild.css'])assert.equal(tags[f],'velen-console-plates-2',f);
+ for(const f of ['shared-walkthrough.js'])assert.equal(tags[f],'velen-map-polish-1',f);
+ for(const f of ['shared-walkthrough.css'])assert.equal(tags[f],'velen-inn-walk-2',f);
+ for(const f of ['home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
+ for(const f of ['velen-activity-decks.css'])assert.equal(tags[f],'velen-ad-plates-1',f);
+ for(const f of ['nilf-forged.css'])assert.equal(tags[f],'velen-nilf-hub-1',f);
+ for(const f of ['velen-r18.js','velen-nilf-map.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-map-integration-1',f);
+ for(const f of ['velen-nilf-map.css'])assert.equal(tags[f],'velen-map-peers-2',f);
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');
- for(const f of ['search-model.js', 'search-ui.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
+ for(const f of ['search-model.js'])assert.equal(tags[f],'v49-tools-deck-1',f);
  for(const f of ['deck-jump.js'])assert.equal(tags[f],'velen-rail-tools-3',f);
  for(const f of ['velen-quest-cards.js'])assert.equal(tags[f],'velen-five-14',f);
 });

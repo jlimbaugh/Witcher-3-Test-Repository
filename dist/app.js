@@ -93,7 +93,7 @@
   if ('scrollRestoration'  in history) history.scrollRestoration = 'manual';
   function persist() {
     if (!saveBlocked) {
-      try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode')):null}));saveAvailable=true;}
+      try {localStorage.setItem(key,JSON.stringify({...state,mapContext:state.mapContext?Object.fromEntries(Object.entries(state.mapContext).filter(([k])=>k!=='clusterMode'&&k!=='progressFilter')):null}));saveAvailable=true;}
       catch {saveAvailable=false;}
     }
     showSaveStatus();
@@ -330,7 +330,7 @@
     reflect();persist();requestAnimationFrame(drawConnections);
     lastRenderedURL=location.href;
     dispatchEvent(new CustomEvent('phoenix:route-rendered',{detail:{root:currentRoot,hub:state.selectedHub,previousRoot:before,mode}}));
-    if (['home','whiteorchard-console','progress'].includes(currentRoot)) {
+    if (['home','whiteorchard-console'].includes(currentRoot)) {
       let notice=target.querySelector('[data-wo-save-notice]');
       if (!notice) {
         notice=document.createElement('p');
@@ -362,7 +362,7 @@
         const heading=target.querySelector('[data-stage="'+state.stageByView[staged.view]+'"] h2');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
         target.querySelector('.quest-step-nav,.stage-panel').scrollIntoView({block:'start',behavior:'auto'});
       } else {
-        if(currentRoot==='whiteorchard-map'){if(!nativeMap)nativeMap=window.createPhoenixMap({tasks,hubs,state,onPin:id=>navigate('#'+tasks[id].view),onCapture:context=>{if(currentRoot==='whiteorchard-map')history.replaceState({...history.state,map:context},'',location.href);},persist,eligible:hub=>progressEngine.eligible(hub,state.progress)});const entryMap=incomingMap;nativeMap.show(entryMap&&(mode==='pop'||mode==='initial'||suffix==='restore')?'restore':suffix,taskSuffix,entryMap,focusSuffix);nativeMap.capture();}
+        if(currentRoot==='whiteorchard-map'){if(!nativeMap)nativeMap=window.createPhoenixMap({tasks,hubs,state,progressStatus:id=>progressEngine.availability(id,state.progress),regionalProgress:()=>window.PhoenixVelen?.regionalProgress?.(),onPin:id=>navigate('#'+tasks[id].view),onCapture:context=>{if(currentRoot==='whiteorchard-map')history.replaceState({...history.state,map:context},'',location.href);},persist,eligible:hub=>progressEngine.eligible(hub,state.progress)});const entryMap=incomingMap;nativeMap.show(entryMap&&(mode==='pop'||mode==='initial'||suffix==='restore')?'restore':suffix,taskSuffix,entryMap,focusSuffix);nativeMap.capture();}
         (window.PhoenixViewport||window).scrollTo(0,mode==='pop'?Number(history.state?.pageY)||0:0);const heading=target.querySelector('h1');heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});
       }
     }));
@@ -408,4 +408,15 @@
   views=[...document.querySelectorAll('.view')];
   addEventListener('phoenix:views-ready',()=>render({mode:'initial'}));
   updateTree();render();
+})();
+
+// Stage 3 · retire old destinations; preserve region context on deep links
+(function(){
+  function check(){
+    const h = location.hash;
+    if(h.startsWith('#progress/velen') || h.startsWith('#constellation/velen')) location.replace('#velen/map');
+    else if(h.startsWith('#whiteorchard-constellation') || h.startsWith('#progress') || h.startsWith('#star-chart')) location.replace('#whiteorchard-map');
+  }
+  window.addEventListener('hashchange', check);
+  check();
 })();

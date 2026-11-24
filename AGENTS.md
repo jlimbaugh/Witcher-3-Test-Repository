@@ -1,6 +1,10 @@
 # AGENTS.md — PHOENIX session-start standard
 
-Applies to every PHOENIX officer and agent (LT, Cmdr, PFC, and any helper) at the start of every work session.
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](docs/framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
+Applies to every PHOENIX officer and agent (LT, Cmdr, and any helper; PFC is retired) at the start of every work session.
 Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary only; the owner's plan governs.
 
 ## 1. Start of session (in this order)
@@ -14,10 +18,18 @@ Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary o
 
 ## 2. Roles
 
-**Current Progress star chart leg:** Jess and Capt are the two participants. Capt implements and verifies. Jess owns design, physical iPhone acceptance, and the release decision. This owner-approved workflow governs this leg and supersedes officer assignments and the two-report wait for it. See the [build plan](docs/PROGRESS-STAR-CHART-BUILD-PLAN.md).
+**Permanent command authority (Order 017; do not alter):**
+- **Capt** = project owner and final approval. Capt alone authorizes corrections, field acceptance, merging and publication.
+- **Cmdr** = ChatGPT, coordination and independent QA.
+- **LT** = Grok, engineering and technical testing.
+- **PFC** = retired from all projects.
+
+**Permanent architecture (owner decision):** Constellation and Star Chart are retired. Progress belongs only to the geographical Main Map, as a layer. There is no standalone Progress destination and no replacement celestial visualization. Geographical quest maps stay. See [quest-area map owner decisions](docs/QUEST-AREA-MAP-OWNER-DECISIONS.md).
+
+*Historical (superseded):* a "Progress star chart leg" (Jess and Capt) governed the retired star-chart pilot. It no longer applies. Its build plan and decision report were removed in PR #34 and remain in git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 - **Author ≠ independent reviewer.** The officer who writes a change never counts as its independent reviewer.
 - Reviewers start from the commit and the acceptance checks, and read the author's evidence only afterwards.
-- Cmdr coordinates release; the owner does physical iPhone/Safari acceptance after deployment is verified.
+- Cmdr coordinates and performs independent QA; Capt (the owner) alone authorizes release and does physical iPhone/Safari acceptance after deployment is verified.
 
 ## 3. Evidence labels (every finding / result)
 - `independent` — run by the reviewer on their own environment;

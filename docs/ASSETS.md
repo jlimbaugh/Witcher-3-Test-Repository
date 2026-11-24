@@ -1,4 +1,45 @@
-# Binary assets (art and fonts) in the v45 snapshot
+# Phoenix art asset catalog
+
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+[Phoenix default art](approved-art/README.md) tracks the new frame and inset review process and test-page defaults.
+
+| Asset family | Reference |
+| --- | --- |
+| Guide-wide material, typography, and art rules | [Art standard](../ART-STANDARD.md) |
+| Frames, side rails, flourishes and forged buttons | [Approved framing gallery](framing-review/README.md) |
+| Section dividers and heading ornaments | [Approved parchment and dark-stone sets](framing-review/dividers/README.md) |
+| Objective warning wolf | [Approved default variants and pulse rule](framing-review/warning-wolf/README.md) |
+| Numbered objective rail | [Approved default variants](framing-review/objective-rail/README.md) |
+| Next unfinished | [Approved default variants](framing-review/next-unfinished/README.md) |
+| Inline Show on Map | [Approved default variants](framing-review/show-on-map/README.md) |
+| Related optional tasks | [Approved default disclosure variants](framing-review/related-optional-tasks/README.md) |
+| Information disclosure | [Approved default disclosure variants](framing-review/information-disclosure/README.md) |
+| Consequences · Spoilers | [Approved default disclosure variants](framing-review/spoiler-disclosure/README.md) |
+| Story & correction controls | [Approved default disclosure variants](framing-review/story-correction-controls/README.md) |
+| Undo last progress change | [Approved default variants](framing-review/undo-progress/README.md) |
+| Return to hub | [Approved default variants](framing-review/return-to-hub/README.md) |
+| Quest cards control | [Approved default variants](framing-review/quest-cards-control/README.md) |
+| Sources link | [Approved default variants](framing-review/sources-link/README.md) |
+| Map Back | [Approved default variants](framing-review/map-back/README.md) |
+| Map Layers | [Approved default variants](framing-review/map-layers/README.md) |
+| Map Recenter | [Approved default variants](framing-review/map-recenter/README.md) |
+| Map Progress toggle | [Approved default variants](framing-review/map-progress-toggle/README.md) |
+| Map legend & coverage disclosure | [Approved default variants](framing-review/map-legend-coverage/README.md) |
+| Accessible marker list | [Approved default variants](framing-review/accessible-marker-list/README.md) |
+| Map location link | [Approved default variants](framing-review/map-location-link/README.md) |
+| Status marks for risk, completion and missed outcomes | [Approved status marks](framing-review/status-marks/README.md) |
+| Runtime illustrations and asset provenance | [Art sources](../dist/ART-SOURCES.md) |
+| Map legend trim | [Approved legend treatments](framing-review/map-legends/README.md) |
+| Selected map marker surrounds | [Approved selection surrounds](framing-review/map-marker-surrounds/README.md) |
+| Map location card frames | [Approved location card frames](framing-review/map-location-cards/README.md) |
+| Map route lines | [Approved route line patterns](framing-review/map-route-lines/README.md) |
+| Map compass roses | [Approved compass rose designs](framing-review/map-compass-roses/README.md) |
+| Terrain and map symbols | [Map sources](../dist/MAP-SOURCES.md) |
+
+The catalog links to the approved reference for each family. Present proposed additions in sets of six per background shade for owner review. When dark, parchment, and light are in scope, present six on each background for 18 options total. Record approved designs by stable ID and retain the accepted reference sheets. Use the approved artwork on the matching surface. Treat older studies as historical references.
+
+## Binary assets (art and fonts) in the v45 snapshot
 
 The v45 **code kit** never contained the site's binary art and fonts. To make the branch testable and renderable, the
 snapshot commit adds them alongside the kit:

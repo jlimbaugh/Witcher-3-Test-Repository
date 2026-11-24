@@ -36,7 +36,7 @@ a.nilf-map-seal { position: relative; }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  gap: .4rem;
+  gap: 8px;
   margin: 0 auto .65rem;
 }
 html body #velen-screen .nilf-area-map button.nilf-map-control {
@@ -80,3 +80,11 @@ html body #velen-screen .nilf-area-map button.nilf-map-control {
 
 .nilf-map-context { margin: 0 0 .3rem; font-size: 1.05rem; }
 .nilf-map-coverage { margin: 0 0 .65rem; font-size: .9rem; color: #ddd4bf; }
+
+/* Phase 4 · Velen map — Back, Layers, Recenter as peers */
+html body #velen-screen .nilf-area-map button.nilf-map-control,
+html body #velen-screen .nilf-map-layers button {
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: border-box;
+}
