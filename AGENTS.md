@@ -1,5 +1,8 @@
 # AGENTS.md — PHOENIX session-start standard
 
+> **CAPT-APPROVED CANONICAL DOCTRINE (2026-11-23):** Read [Canonical Template and Repository Doctrine](docs/CANONICAL-TEMPLATE-DOCTRINE.md) before planning any regional template, map, Progress, art asset, branch or cleanup work. Its 21 adopted decisions supersede conflicting older design instructions. Velen is the master; White Orchard aligns after Velen lock; full geographical Main Map and its optional Progress layer come later. Order 017/PR #35 remains a development candidate; no cleanup, merge or publication is authorized by this note.
+
+
 **Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
 
 **Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](docs/framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
