@@ -1,5 +1,9 @@
 # AGENTS.md — PHOENIX session-start standard
 
+**Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
+
+**Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](docs/framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
 Applies to every PHOENIX officer and agent (LT, Cmdr, PFC, and any helper) at the start of every work session.
 Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary only; the owner's plan governs.
 

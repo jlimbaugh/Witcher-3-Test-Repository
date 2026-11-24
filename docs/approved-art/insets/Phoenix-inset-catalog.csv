@@ -1,0 +1,243 @@
+﻿Batch,ID,Region,Artwork,Path under dist,Source references at c87f1bc,SHA256
+1,1,White Orchard,Lilac and Gooseberries,art-r13/q-lilac-card.webp,guide-art-r15.js:12 | console-r16.js:24 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),4f4dac270d8850dbd118b860ccc5410947ea3289b5b01aa7c097076aee5f6bd2
+1,2,Velen,The Nilfgaardian Connection,art-velen/nilf.webp,velen-r18.js:17,4c0b5c2b028383991d44f8a0841307ee626d2c4868aaac8ff0db95098a185c09
+1,3,White Orchard,The Beast of White Orchard,art-r13/q-beast-card.webp,exploration-data.js:13 | main-console.js:47 | diagrams-ui.js:12 | diagrams-ui.js:36 | console-r16.js:22 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),6961bce68f9e03988df7b7a22afd60ae85bc04d48bcc3e8a5565f302dd948d95
+1,4,Velen,Bloody Baron,art-velen/baron.webp,velen-quest-cards.js:31,b864d0dd34da77753b78a3cd0c8a00ea5f4977847d33d2ba9081b4a669fd9109
+1,5,White Orchard,The Incident at White Orchard,art-r13/q-incident-card.webp,guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),d6df7f9caa52efe7b70289afcf4dfdc78ed31bef851f924db956faba65b11203
+1,6,Velen,Hunting a Witch,art-velen/witch.webp,velen-quest-cards.js:72,85eba1ab68cf3d625d4eca9292806aac82a48cf9f9931f69ee7f40645a0317f9
+1,7,White Orchard,Twisted Firestarter,art-r13/q-firestarter-card.webp,exploration-data.js:17 | guide-art-r15.js:13 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),1c85611948d9f123d324393ca2ce78d467386520673e635f8136bf646f7476c0
+1,8,Velen,Funeral Pyres,velen-pyres-r18.webp,velen-data-r18.js:11,d167e0193cc53a8bb4e5530b1d7684764c5fea499a250aa8a5a4c2a2f48a3021
+1,9,White Orchard,Devil by the Well,art-r13/q-devil-card.webp,guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),b80ee6c47083768ca354abf08ad1830abc89841befe6e8398db3f07ec5f7a423
+1,10,Velen,Shrieker,art-velen/shrieker.webp,velen-quest-cards.js:347 | velen-r18.js:49,374db8507e92b115e9c7a82b2a957775259d3766dd94940b4c45d3c03a37b739
+2,11,Shared,Alder Folk boots diagram,art-diagrams/diagram-alder-folk-boots.webp,diagrams-art.js:856,9c58d7cd6c8211cf33d95dac76b941967cf0ec44406ec981f375425e7ce3c9e2
+2,12,Shared,Amateur's armor repair kit diagram,art-diagrams/diagram-amateur-s-armor-repair-kit.webp,diagrams-art.js:28,8e8a0b9b0b6d340bdf1d62dbb45075e788a754c4a6be5456bc2ce4568f41113c
+2,13,Shared,Angrenian cuirass diagram,art-diagrams/diagram-angrenian-cuirass.webp,diagrams-art.js:616,333d16f9a3f6f5cf6325e7ff218a66cce458826f1e0a3564f7355af81e341445
+2,14,Shared,Ard Skellig aketon diagram,art-diagrams/diagram-ard-skellig-aketon.webp,diagrams-art.js:520,ac431d3e313456201114590a9d0fdf804b616207d7d6f90729249afe6fdcc16c
+2,15,Shared,Assassin's boots diagram,art-diagrams/diagram-assassin-s-boots.webp,diagrams-art.js:592,1c141fa64484ed5975789816f78ee1a85d1ba86bff11876622d64ead1d0e0068
+2,16,Shared,Assassin's gauntlets diagram,art-diagrams/diagram-assassin-s-gauntlets.webp,diagrams-art.js:604,a6291c61e9b8818de7aacf8d0c20c45323cdbf14e422f3cd6e2a014d71f60308
+2,17,Shared,Assassin's trousers diagram,art-diagrams/diagram-assassin-s-trousers.webp,diagrams-art.js:568,3ca35a3d0cd3b98ea91618fdabe3b1d681b171516e1d910cf3e8f7439c32f800
+2,18,Shared,Assault gauntlets diagram,art-diagrams/diagram-assault-gauntlets.webp,diagrams-art.js:724,42462d826c39152e474b78078ef45a3b22ff857b017922593908fa78f8f38c9d
+2,19,Shared,Axeman's boots diagram,art-diagrams/diagram-axeman-s-boots.webp,diagrams-art.js:796,cca9c9598cdaa973db1b43194074f09f52824cbc168cb3feed2a482659b5218c
+2,20,Shared,Axeman's gauntlets diagram,art-diagrams/diagram-axeman-s-gauntlets.webp,diagrams-art.js:700,0ee9b9d3d241f49058a7a67e2a7840e34f492833abae9b2477ee8b880d907bb9
+3,21,Shared,Axeman's trousers diagram,art-diagrams/diagram-axeman-s-trousers.webp,diagrams-art.js:580,9416779ce4323fe9e419c0eb91287dc7a8e36b3a20ffa50bacad7d35fa2952ec
+3,22,Shared,Ban Ard breastplate diagram,art-diagrams/diagram-ban-ard-breastplate.webp,diagrams-art.js:640,a4d3e53003260e6c80d281591879b2a6f25ea3a12b682ca6534d91877b5132f3
+3,23,Shared,Bounty hunter's gambeson diagram,art-diagrams/diagram-bounty-hunter-s-gambeson.webp,diagrams-art.js:160,856aa4d0404223e4b9f6c82e8f8bfa84e646b754f75f6959410cd842b2ec8902
+3,24,Shared,Cavalry boots diagram,art-diagrams/diagram-cavalry-boots.webp,diagrams-art.js:196,dc3d0ef72e66d7a73c804841de3c60a333233cfe3a1a5796c568499bf70b7d85
+3,25,Shared,Cavalry gauntlets diagram,art-diagrams/diagram-cavalry-gauntlets.webp,diagrams-art.js:220,b917f7aa9d53a36d3058f62c1d9ea5f14c7031b53b121dc8a8b4d38a4dcb7cf4
+3,26,Shared,Cavalry trousers diagram,art-diagrams/diagram-cavalry-trousers.webp,diagrams-art.js:172,421dc2f467b075582c06ddfb78b32efc42827950ac6fa826c501350dfb0e9682
+3,27,Shared,Cidarian cavalry armor diagram,art-diagrams/diagram-cidarian-cavalry-armor.webp,diagrams-art.js:544,69cff742b56401fe55020ebdd81dc24213705fbb7345552d4b69b20bb83ad99b
+3,28,Shared,Cidarian gambeson diagram,art-diagrams/diagram-cidarian-gambeson.webp,diagrams-art.js:52,807cb9798e492fee606032330fce027f039c75db5c1f0b2776b9dafef09cccff
+3,29,Shared,Condottiere's boots diagram,art-diagrams/diagram-condottiere-s-boots.webp,diagrams-art.js:844,bdbcb092a1435962c8f4ca983aad497dd6fe9e30210881f433475807b91c0c50
+3,30,Shared,Disglair diagram,art-diagrams/diagram-disglair.webp,diagrams-art.js:364,bef28dd4f4202552d71186b8be89d59fdf53d9481e638cc51a0878deb7bf2ff9
+4,31,Shared,Dorian sword diagram,art-diagrams/diagram-dorian-sword.webp,diagrams-art.js:352,6e8df5bc0fcb47896c13f861ead869bb8cb21dbd4396c2087f7d3144887d403e
+4,32,Shared,Executioner's boots diagram,art-diagrams/diagram-executioner-s-boots.webp,diagrams-art.js:832,2c7d33c3f741e563eedeb5bf8943c1d44511b0731282d14704150337c9537f7b
+4,33,Shared,Glyph of Aard diagram,art-diagrams/diagram-glyph-of-aard.webp,diagrams-art.js:868,61dbbe9d59a1d3dcab6417e8b5357f14f559990ea297bba0dd6d5a2a7a6ac91b
+4,34,Shared,Glyph of Axii diagram,art-diagrams/diagram-glyph-of-axii.webp,diagrams-art.js:880,2821117277856e1743b130519afe44122657aff17617d24cd13ca894f8e30d1a
+4,35,Shared,Glyph of Igni diagram,art-diagrams/diagram-glyph-of-igni.webp,diagrams-art.js:892,05dc37ef558a15ab5d278c89a9d46b211902cdb14b546565f8a4e82a6a4527cc
+4,36,Shared,Glyph of Quen diagram,art-diagrams/diagram-glyph-of-quen.webp,diagrams-art.js:904,32f66ce10332ceef65ca5f985bbf7ff94b2af074b50350c484ca528e52eadb13
+4,37,Shared,Glyph of Yrden diagram,art-diagrams/diagram-glyph-of-yrden.webp,diagrams-art.js:916,497c00e14b33eaa46291f222d2152b59e80d6b323eccceb612c03146d088ffca
+4,38,Shared,Greater Glyph of Aard diagram,art-diagrams/diagram-greater-glyph-of-aard.webp,diagrams-art.js:928,65052ef3885369780f5a87f7b4aa83d3eb5775fdd2f37e9b3a93ec551e14d87e
+4,39,Shared,Greater Glyph of Axii diagram,art-diagrams/diagram-greater-glyph-of-axii.webp,diagrams-art.js:940,c1e10a29e80c56f871ea47977e86e9095ac29675506d356f581d459b3c31e034
+4,40,Shared,Greater Glyph of Igni diagram,art-diagrams/diagram-greater-glyph-of-igni.webp,diagrams-art.js:952,04ef0de88ed535ddb6ca9b9f672e9857aa2e42c66f76f10a3b875c97a9cd103e
+5,41,Shared,Greater Glyph of Quen diagram,art-diagrams/diagram-greater-glyph-of-quen.webp,diagrams-art.js:964,2619df645d1ba09cbda90d8ddf2370fc1bb37e05d3982966aba2fb1e33b2fda3
+5,42,Shared,Greater Glyph of Yrden diagram,art-diagrams/diagram-greater-glyph-of-yrden.webp,diagrams-art.js:976,9ddceb2e977f95018214b81fa633ccb409b7e99894e3dc45fca08d7fb3588280
+5,43,Shared,Guardsman's boots diagram,art-diagrams/diagram-guardsman-s-boots.webp,diagrams-art.js:808,eb0379208565e111db3e61d2b2289918775ef2b1c2f524001c0044b4a346c729
+5,44,Shared,Hindarsfjall heavy armor diagram,art-diagrams/diagram-hindarsfjall-heavy-armor.webp,diagrams-art.js:676,b6c89db9aac45d1909c8b7ee6c2860433bd4f6f7db9b2c52e52bf1ecb3fe7a6a
+5,45,Shared,Hunter's boots diagram,art-diagrams/diagram-hunter-s-boots.webp,diagrams-art.js:100,0afd14896dfd1908815e1e1e4f3b0b246676c47ea1bc91e9b8e153c3ad8f97d4
+5,46,Shared,Hunter's gauntlets diagram,art-diagrams/diagram-hunter-s-gauntlets.webp,diagrams-art.js:112,158fc15c477834318b1a6725e803aec4c41a6b3057e38c8ba714bcfe65159e2f
+5,47,Shared,Hunter's trousers diagram,art-diagrams/diagram-hunter-s-trousers.webp,diagrams-art.js:88,1f88e5bd40f16d3947dae04324de2b3cff8ad7533e279e90cc86e56d7654e8c7
+5,48,Shared,Impera Brigade armor diagram,art-diagrams/diagram-impera-brigade-armor.webp,diagrams-art.js:664,96d88dc76aff7e752ad8067c55f9d1d18809f60473c4aca076e245dbdbcd5e1f
+5,49,Shared,Journeyman's armor repair kit diagram,art-diagrams/diagram-journeyman-s-armor-repair-kit.webp,diagrams-art.js:40,fd27a730bf8929ac22290ca22f78e8835329657cda3b1dfbc3b0f896bfe578fc
+5,50,Shared,Kaedweni gambeson diagram,art-diagrams/diagram-kaedweni-gambeson.webp,diagrams-art.js:76,c918a161fd38b302ae75d5772ddfd07b387d7fed90c5c9e5c830c3ac39944892
+6,51,Shared,Knight's gauntlets diagram,art-diagrams/diagram-knight-s-gauntlets.webp,diagrams-art.js:712,1c9b22867358993ba2f54433cfdb31bf73b5845d800376ccf23bf80ff3af1055
+6,52,Shared,Koviri cutlass diagram,art-diagrams/diagram-koviri-cutlass.webp,diagrams-art.js:316,8397c56a6e1028598ee0aae3ce6ca11a21c51201d34f1da51dd48527590c754a
+6,53,Shared,Lesser Chernobog runestone diagram,art-diagrams/diagram-lesser-chernobog-runestone.webp,diagrams-art.js:496,3811ef499235b1a19d76e0579e4c3826fddd24d23437a5adcfcf590b3d6b4b2a
+6,54,Shared,Lesser Dazhbog runestone diagram,art-diagrams/diagram-lesser-dazhbog-runestone.webp,diagrams-art.js:400,09ab62cebfedd718c0410866b78668147dbaf7552300648cca7c712eee1e4d91
+6,55,Shared,Lesser Devana runestone diagram,art-diagrams/diagram-lesser-devana-runestone.webp,diagrams-art.js:412,ca53c4aeb50063690a51cb63fc63286403d47a869c3de8d2f08680d84c60da74
+6,56,Shared,Lesser Glyph of Aard diagram,art-diagrams/diagram-lesser-glyph-of-aard.webp,diagrams-art.js:256,41d6b3434519d8c5437fb7ca20cb1cf84817fe71a27d84fb4a947dacfe37e94f
+6,57,Shared,Lesser Glyph of Axii diagram,art-diagrams/diagram-lesser-glyph-of-axii.webp,diagrams-art.js:268,f0bf122e2b59a9b558983f6574628fb0ebbf7bfe1f2a501d26825e9731512db3
+6,58,Shared,Lesser Glyph of Igni diagram,art-diagrams/diagram-lesser-glyph-of-igni.webp,diagrams-art.js:280,746037c9f551022001902c7f0246df90aa24124c8afa8b0fe548b534044faace
+6,59,Shared,Lesser Glyph of Infusion diagram,art-diagrams/diagram-lesser-glyph-of-infusion.webp,diagrams-art.js:244,c2a76251350665ce36bcb0967200ed93c974bc96200c5147afb523617f23e6a7
+6,60,Shared,Lesser Glyph of Quen diagram,art-diagrams/diagram-lesser-glyph-of-quen.webp,diagrams-art.js:292,9dfcda30d711c82651f365349dec5d2de864084d0cbeb4e63c2e94fd2716b8e5
+7,61,Shared,Lesser Glyph of Yrden diagram,art-diagrams/diagram-lesser-glyph-of-yrden.webp,diagrams-art.js:304,e2f79bf8acab1e378737516e3b331c9dbaf47da4bf629e6cb690272e3ae0c662
+7,62,Shared,Lesser Morana runestone diagram,art-diagrams/diagram-lesser-morana-runestone.webp,diagrams-art.js:436,cb12b7c220076c7421366f482bf2f8795bef620f623fb11980cdb9ab4a77d756
+7,63,Shared,Lesser Perun runestone diagram,art-diagrams/diagram-lesser-perun-runestone.webp,diagrams-art.js:484,496e88de2f6551199739c4ca5776d82220de7ee604da8f7fbb013987bb6fafbf
+7,64,Shared,Lesser runestone diagram,art-diagrams/diagram-lesser-runestone.webp,diagrams-art.js:376,e92942f74802c722bf7487065e9d724df40285d16a89825e2362577b6a0d5356
+7,65,Shared,Lesser Stribog runestone diagram,art-diagrams/diagram-lesser-stribog-runestone.webp,diagrams-art.js:388,e11494c29e3255445d7f1cb7306f8a5a5d095871a9aef41a2c35564cb1836553
+7,66,Shared,Lesser Svarog runestone diagram,art-diagrams/diagram-lesser-svarog-runestone.webp,diagrams-art.js:460,035c595901f6f052c8c880ebe6b240e5440c2edaa77fb996589da9702c10b377
+7,67,Shared,Lesser Triglav runestone diagram,art-diagrams/diagram-lesser-triglav-runestone.webp,diagrams-art.js:448,dedf4260f808e6b85da7c8d27a49f02268a13cff74fbde4ea0d3ece46b9fe119
+7,68,Shared,Lesser Veles runestone diagram,art-diagrams/diagram-lesser-veles-runestone.webp,diagrams-art.js:472,5e42fb2d72c133f8ea263922b5a2ee81e1620879502a65b9be8fdd91c264b839
+7,69,Shared,Lesser Zoria runestone diagram,art-diagrams/diagram-lesser-zoria-runestone.webp,diagrams-art.js:424,22137612e145f3d47b1c35aa8856aece34bb7d315b58a128f8e93fe44e8bf92b
+7,70,Shared,Lyrian hardened leather trousers diagram,art-diagrams/diagram-lyrian-hardened-leather-trousers.webp,diagrams-art.js:760,ee9873255f63796d628399732e3bd30d32b12b208853ca0f1ffde9a1db8c2835
+8,71,Shared,Mag Deira cuirass diagram,art-diagrams/diagram-mag-deira-cuirass.webp,diagrams-art.js:628,20ed3497a66deb4a36c23ce48bf03a8af530e7e3a68a327ecb9c7f5dcfee339c
+8,72,Shared,Mahakaman trousers diagram,art-diagrams/diagram-mahakaman-trousers.webp,diagrams-art.js:772,f3874a02d1f4460199c252fabe92e444879c96941a0f52d44bf4dee8c47ad545
+8,73,Shared,Master's armor repair kit diagram,art-diagrams/diagram-master-s-armor-repair-kit.webp,diagrams-art.js:508,3538cbc90716a30bc6813dd4643302177f4b593747178d6a944fe8bb398e031d
+8,74,Shared,Mountain Folk boots diagram,art-diagrams/diagram-mountain-folk-boots.webp,diagrams-art.js:784,3893efbb94b80b9c87ee466f84402232a9d4e2a0d6309027db208c10988afd30
+8,75,Shared,Nilfgaardian guardsman armor diagram,art-diagrams/diagram-nilfgaardian-guardsman-armor.webp,diagrams-art.js:652,48813b77ffdb04e767472254dbfc222bfb749ef767d27b0a35b44a873b8ff312
+8,76,Shared,Nilfgaardian guardsman's gauntlets diagram,art-diagrams/diagram-nilfgaardian-guardsman-s-gauntlets.webp,diagrams-art.js:736,19f8d3a457b205668fc1e32c328e311d84d9bc988faf7957e09b32b2e1355039
+8,77,Shared,Reaver's boots diagram,art-diagrams/diagram-reaver-s-boots.webp,diagrams-art.js:820,d02aa16cbbb1571c217d0691e0ea1c003af200557575b79cd84908f19940e99d
+8,78,Shared,Redanian halberdier's armor diagram,art-diagrams/diagram-redanian-halberdier-s-armor.webp,diagrams-art.js:556,8c38d3c9930d42a2f46fc9744fbc79dd5292367b61ca721bc169da3a1542a129
+8,79,Shared,Salmian brigandine diagram,art-diagrams/diagram-salmian-brigandine.webp,diagrams-art.js:532,12c72d985c7bc6fd2751bf61c3553eb8117d35f38bfbb5dd8b0d1af6b56e2144
+8,80,Shared,Sapper's trousers diagram,art-diagrams/diagram-sapper-s-trousers.webp,diagrams-art.js:748,497e0c2f38e65f60986d061184aa72812e8386e575b01928504729f04a9fa43e
+9,81,Shared,Shiadhal's armor diagram,art-diagrams/diagram-shiadhal-s-armor.webp,diagrams-art.js:136,8da61ceead074ad776afff3933d9590c7b7a825c7e38a76845112cb7f73db020
+9,82,Shared,Skellige gambeson diagram,art-diagrams/diagram-skellige-gambeson.webp,diagrams-art.js:64,830e1d2f856683b357cb8996eceaef949ae954f562f342d0680986ee84e2728f
+9,83,Shared,Spikeroog aketon diagram,art-diagrams/diagram-spikeroog-aketon.webp,diagrams-art.js:124,be8aed00b8d95c6475333caa799b499527d2d76a2b55ae27fc5f5016e741e482
+9,84,Shared,Temerian poniard diagram,art-diagrams/diagram-temerian-poniard.webp,diagrams-art.js:328,bb1076135ae47a1f70665fef565e2393a1693a326f665b399eccbc91ca1190dc
+9,85,Shared,Thyssen armor diagram,art-diagrams/diagram-thyssen-armor.webp,diagrams-art.js:688,39d8cdc22cf64ee64bb3c96a4c5769c7cb8ecaf29a59f794b604526f207ff717
+9,86,Shared,Tracker's boots diagram,art-diagrams/diagram-tracker-s-boots.webp,diagrams-art.js:208,23b6cdba598488a017d138ea17736b4336a05ec0b179a64ab339c525cd9b4ee4
+9,87,Shared,Tracker's gauntlets diagram,art-diagrams/diagram-tracker-s-gauntlets.webp,diagrams-art.js:232,73425920363d9704bab17c679f2a63f116a7f408c08b5b402efdc74ef11355c1
+9,88,Shared,Tracker's trousers diagram,art-diagrams/diagram-tracker-s-trousers.webp,diagrams-art.js:184,0535963729115ce6000ed0b0c602bf266a838eb690c5ac38c44adabc94edd61c
+9,89,Shared,Verden archer's gambeson diagram,art-diagrams/diagram-verden-archer-s-gambeson.webp,diagrams-art.js:148,f90b149bbfca837c86fc4711fc6cca090b074fa8aa6131907f7930e8e190a46a
+9,90,Shared,Viper silver sword diagram,art-diagrams/diagram-viper-silver.webp,diagrams-art.js:16,e0fedb613e319a9fd27b683a007740afdd981bed1f2de2594d2a4b9436d65551
+10,91,Shared,Viper steel sword diagram,art-diagrams/diagram-viper-steel.webp,diagrams-art.js:4,e54d18f451485e56261d71f474ea4ded1b76973c7c667a2082252e2c28cb072d
+10,92,Shared,Cackler Bridge nest entrance,art-diagrams/monsternest-2.webp,exploration-art.js:187 | exploration-art.js:191,1f7a59d6978c1574e77743caa5893c7ec0bddc9fd1449b80d81f0d5ba2b4b713
+10,93,Shared,Crossroads nest preparation,art-diagrams/monsternest-3.webp,exploration-art.js:170 | exploration-art.js:174,e6b6880f99a78e2537aa519bf285e12e27242ae007342234682aef3aa11459ae
+10,94,Shared,Cdpr Witcher3 Keyart,cdpr-witcher3-keyart.png,styles.css:1 | styles.css:3 | console-art.css:3 | console-art.css:7,e94d67744479cf67fb3b72cf64f725cc6c0258ed38eeb50f64b27bdd2c1bd8f7
+10,95,Shared,Cavalry,gwent-r15/cavalry.webp,guide-art-r15.js:12 | guide-art-r15.js:13 | guide-art-r15.js:15 | medallion.js:67 | main-console.js:12 | main-console.js:49 | progression-ui.js:91,d35b8a2ab4a552e00a9e57f7c4183b4646df6e2faa41f2bfd90ae75a5872a395
+10,96,Shared,Gabor,gwent-r15/gabor.webp,exploration-data.js:20 | home-rebuild.css:120 | guide-art-r15.js:12 | quest-hubs.js:15 | velen-r18.js:358 | main-console.js:13 | main-console.js:47 | main-console.js:49 | progression-ui.js:90 | progression-ui.js:94 | diagrams-ui.js:36 | velen-nilf-ui.js:622 | console-r16.js:27,8c906799776463ecdc6417860712c5ab443d11849d7a5e2be39885439c8931a1
+10,97,Shared,Isbel,gwent-r15/isbel.webp,guide-art-r15.js:12 | medallion.js:67 | main-console.js:17 | main-console.js:47,cd4ad14eb557f40c3cc890aff7d5ac343bf955d45feb77bc806a172159ed22a3
+10,98,Shared,Ivo,gwent-r15/ivo.webp,guide-art-r15.js:15 | medallion.js:67 | main-console.js:16 | main-console.js:47 | progression-ui.js:92 | home-ui.js:13 | diagrams-ui.js:35 | diagrams-ui.js:38,4abf793c6a5693a2a9b1b6496f3525d0515583821c4571e23dc7fccb3cc05d74
+10,99,Shared,Vysogota,gwent-r15/vysogota.webp,guide-art-r15.js:8 | guide-art-r15.js:15,25a16d44c98190c4043321b9efa3f058d5e4b007e3a23cc6ee6207ea852e006b
+10,100,Shared,Woodland,gwent-r15/woodland.webp,exploration-data.js:11 | guide-art-r15.js:12 | guide-art-r15.js:15 | main-console.js:14 | diagrams-ui.js:12,84a82e5c894bef4cf1bd5f681fe1e4911930a36b168c92ba65fb361316a2e15a
+11,101,Shared,Action Quest Hub,navigation-art-v26/action-quest-hub.webp,velen-r18.js:180 | velen-r18.js:345 | home-ui.js:7 | velen-nilf-ui.js:582,1896523f3a58792c7065845e14a400f3731d5830f3b05a93a8695da81124d74d
+11,102,Shared,Action Walkthrough,navigation-art-v26/action-walkthrough.webp,quest-hubs.js:21 | velen-r18.js:28 | home-ui.js:7 | velen-nilf-ui.js:578,6bf624a9b42cd25947d49774e4aa3cfcfbfe1d91ad6de13713bb040d09fe1666
+11,103,Shared,Constellation,navigation-art-v26/constellation.webp,navigation-art.js:9,07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe
+11,104,Shared,Home,navigation-art-v26/home.webp,navigation-art.js:5,b2a24aa8d59fafb8191c4aab8be4c7b5a78fd3ea7d0c792f8ced26eeb12cb38f
+11,105,Shared,Progress,navigation-art-v26/progress.webp,navigation-art.js:8,d3424addb93e1829c1e488e8b5dac98d8f84ccaa6bc6c161e8339a76025ac886
+11,106,Shared,Reference,navigation-art-v26/reference.webp,navigation-art.js:7,c680e0ffe64567642a081f9a31039ff983b0a8bc4362d5d388a624d7c3cf3528
+11,107,Shared,Regions,navigation-art-v26/regions.webp,navigation-art.js:6,b38c582080660131b557b4396cc919380de0c62b548d0e1cc0b3ca19cc0db1bb
+11,108,Shared,Warnings,navigation-art-v26/warnings.webp,navigation-art.js:10,bc91b0fff7db0a62cbf2737f3fbe488ecfe21f0b0e58e39927eb1d88e690722b
+11,109,Velen,Velen longsword diagram,art-diagrams/diagram-velen-longsword.webp,diagrams-art.js:340,c5acb7a916e5c9e634d65684b0fb6ccf6e5e6c6dfcdc4bfb377b7ede3691cf65
+11,110,Velen,A Costly Mistake,art-velen/a-costly-mistake.webp,velen-quest-cards.js:1081,cc15b45fb00030ef266eafcc4d6e7c5259223db14614e7c6b2db02a7804d3c43
+12,111,Velen,A Dogs Life,art-velen/a-dogs-life.webp,velen-quest-cards.js:681,3b1e97e28a17e101ad891e064e0548f4eb07b499840115f1b61ed3d2b4fe206e
+12,112,Velen,A Greedy God,art-velen/a-greedy-god.webp,velen-quest-cards.js:665,bca20d5d27275ab48f31a7515bcf9a21a20924115cc96a7d602ee36ffb5b5252
+12,113,Velen,A Plea Ignored,art-velen/a-plea-ignored.webp,velen-quest-cards.js:1129,b144faf7befdd5f298d2094f4fac35d34b311ff5b07445c834c43eb90f41817e
+12,114,Velen,Advancement Of Learning,art-velen/advancement-of-learning.webp,velen-quest-cards.js:324,36fd9dd3fb996b43b28e46546ee8edc87d411168483d64cfc752a036a7749963
+12,115,Velen,An Unfortunate Turn Of Events,art-velen/an-unfortunate-turn-of-events.webp,velen-quest-cards.js:937,2c904022bac42aaf0fa11f802eca0229b81cc64754c053918347d76b470da2e9
+12,116,Velen,Battlefield Loot,art-velen/battlefield-loot.webp,velen-quest-cards.js:1113,3337654921b54156ce8d277e1a5eb4d1f658c062eaaf692e42e9b871427d5b1c
+12,117,Velen,Beast Of Honorton,art-velen/beast-of-honorton.webp,velen-quest-cards.js:493,6c080f8edbdf532086851345bfc6274535f51227ac5d3b79d135875152b592ee
+12,118,Velen,Bitter Harvest,art-velen/bitter-harvest.webp,velen-quest-cards.js:633,65d57c52823531d3c051661fdb3c05477a957805c3c462cb77e0c3fb4ef513ca
+12,119,Velen,Blood Gold,art-velen/blood-gold.webp,velen-quest-cards.js:1065,eea5265e50fd784e0e3108929b543d5d710f4c7de576d15f29112749fe05b61f
+12,120,Velen,Blood Ties,art-velen/blood-ties.webp,velen-quest-cards.js:854,56f56db1fee74c610f1b0e8e0eafc0eb6ac41f52a818933abc615e7ff6e74a0b
+13,121,Velen,Byways Murders,art-velen/byways-murders.webp,velen-quest-cards.js:434,113f5db6ad14a07d95fc00eeaec3558b11f38e0504afaabe58aa1c705cbcc40e
+13,122,Velen,Ciris Race,art-velen/ciris-race.webp,velen-quest-cards.js:240,084be57af0dd03b9dad3978df8c7c6e074607ec6f8dd5e79493d99d4c4688638
+13,123,Velen,Ciris Room,art-velen/ciris-room.webp,velen-quest-cards.js:135,aa2d6533dac4bb8aa3c06ab2cc50e0c083aabaf06bce685b571e054ed7121f72
+13,124,Velen,Death By Fire,art-velen/death-by-fire.webp,velen-quest-cards.js:714,0f334270f040fff25768b9acb4ca0cded03f771b0d549b2ba9c7d2e2893ca625
+13,125,Velen,Defender Of The Faith,art-velen/defender-of-the-faith.webp,velen-quest-cards.js:744,e744b7684d1db9f800fcc090c929545c5402e04fb996c0525cdc398d73f9a115
+13,126,Velen,Dont Play With The Gods,art-velen/dont-play-with-the-gods.webp,velen-quest-cards.js:1049,412919726ea46663976a9cc0e2053f3382bb416d9fe5a66fb2aad9c254077fca
+13,127,Velen,Dowry,art-velen/dowry.webp,velen-quest-cards.js:1145,e318d87c236abaa458e852b2cc968d9e6d4221b76129ce28fb1557c65d850ee5
+13,128,Velen,Eternal Fires Shadow,art-velen/eternal-fires-shadow.webp,velen-quest-cards.js:593,124cd79a82905c684f7bff94e2515d44776c2032189b12b8337d5365c4ebfdd0
+13,129,Velen,Fake Papers,art-velen/fake-papers.webp,velen-quest-cards.js:621,5afcab734c7d1d63d81e17a24e3d21b42608503cb3aca8906d2f7c5d603dc510
+13,130,Velen,Fall Of The House Of Reardon,art-velen/fall-of-the-house-of-reardon.webp,velen-quest-cards.js:564,44fbed32451dbdcb43d94901bf3eb163988f18e670d6157ab8c31bff07bfd806
+14,131,Velen,Family Matters,art-velen/family-matters.webp,velen-quest-cards.js:225,cb72d07b7c0b6c76f8e1437e0d94e8df0965b88af936e043526736cdd3e0df74
+14,132,Velen,Favor For A Friend,art-velen/favor-for-a-friend.webp,velen-quest-cards.js:311,f8f075db8e46a9ce60d46751f9d0dabab99f2356cc0d94155942d56e2a47f3dd
+14,133,Velen,Fists Of Fury Velen,art-velen/fists-of-fury-velen.webp,velen-quest-cards.js:889,43ca099cdb96fc1f8aaa9391d57d3a857b99ef15ae30d971fe65a96dd044a468
+14,134,Velen,Fleeing The Bog,art-velen/fleeing-the-bog.webp,velen-quest-cards.js:277,86f9a4bcbabf47688668bbed82ea3724b5b7f6ba8a87bcf4dfdcd3b1c417fd06
+14,135,Velen,Fools Gold,art-velen/fools-gold.webp,velen-quest-cards.js:777,94fd84a896f80f80d70585e83560164b6b0245d0aa85e6f1881fb916e5bcc5ee
+14,136,Velen,Forefathers Eve,art-velen/forefathers-eve.webp,velen-quest-cards.js:696,8a0dbc844234d58386bfdc0c1c365c5a8aa0a1f2b1a5efc5975c14dd72761724
+14,137,Velen,Ghosts Of The Past,art-velen/ghosts-of-the-past.webp,velen-quest-cards.js:578,e48f087b10dfaeddb7a78ea64053591849c7ddda4570a8996b28ef2c35cf14a9
+14,138,Velen,Griffin From The Highlands,art-velen/griffin-from-the-highlands.webp,velen-quest-cards.js:478,6935e376bca3338e0c10993996ec0caaa8d3fa6207ce85433e8e25fea165f666
+14,139,Velen,Griffin School Gear,art-velen/griffin-school-gear.webp,velen-quest-cards.js:1161 | velen-r18.js:50,32e949663067cb2fde2e36e113a3851971f9c1e40b15dbf2874e1296ace75387
+14,140,Velen,Hazardous Goods,art-velen/hazardous-goods.webp,velen-quest-cards.js:808,64b16a097d8dd0bab4f7284f56a4cc7568bb3c531f1f6a300b6e3518c6fb3eee
+15,141,Velen,Hidden From The World,art-velen/hidden-from-the-world.webp,velen-quest-cards.js:1001,093b5461cc32d08e75453edfd7074209c06188482ae233eb1b1c6cce5af2d8ce
+15,142,Velen,Jenny O The Woods,art-velen/jenny-o-the-woods.webp,velen-quest-cards.js:361,1d60660d8a4c3735c363da6fc4ca8b75742b3bfdf12d79cfa066f0034dc96883
+15,143,Velen,Keira Invitation,art-velen/keira-invitation.webp,velen-quest-cards.js:287,2fbc6bde03668a9efdc2dc92fff27801fab3c8f632bc3c5e85683b9db7394bec
+15,144,Velen,King Of The Wolves,art-velen/king-of-the-wolves.webp,velen-quest-cards.js:211,35b5563e1a0f98ef496a02b56331579631015923c1c4ea180e89be1b559045be
+15,145,Velen,Ladies Of The Wood,art-velen/ladies-of-the-wood.webp,velen-quest-cards.js:177,56fd51dfeef63f37181d4a9ee24597ac0dc751cc9251484d70c0444643560889
+15,146,Velen,Last Rites,art-velen/last-rites.webp,velen-quest-cards.js:760,82f1fd5b6320c7c3f99db281e25cda63a1ab0ed29291bc8ee3545309454f63ea
+15,147,Velen,Lost Goods,art-velen/lost-goods.webp,velen-quest-cards.js:906,20a45c751fc218a745616fbd4715ace85a28ef648a95b9a0e00eca7d463fc81c
+15,148,Velen,Loves Cruel Snares,art-velen/loves-cruel-snares.webp,velen-quest-cards.js:839,a08a8e3645d4feb7e9915927d8c5b1002564a319034313d24072b0662b158957
+15,149,Velen,Lynch Mob,art-velen/lynch-mob.webp,velen-quest-cards.js:729,d8e9574339eb49b08d518029197e0cc992389c542094742f4b3e499e4b109628
+15,150,Velen,Magic Lamp,art-velen/magic-lamp.webp,velen-quest-cards.js:163,d17a2e384dc6190ab8fd580d650ddf2e051a336bec58ae26e6647b74c3d5f236
+16,151,Velen,Master Armorers,art-velen/master-armorers.webp,velen-quest-cards.js:521,3cbf1fdd76c1417a757c6c3c2735181bd616bcd2680653fec25f27d8648c17ed
+16,152,Velen,Merry Widow,art-velen/merry-widow.webp,velen-quest-cards.js:375,8ba19e38f30606b25f386f54ef3e95e63ed245e7652e0fb4dc8688471d998128
+16,153,Velen,Missing Brother,art-velen/missing-brother.webp,velen-quest-cards.js:507,53384926c9b3fefe689aaf544de4166ad59780041193356434391a789c9741f8
+16,154,Velen,Mysterious Tracks,art-velen/mysterious-tracks.webp,velen-quest-cards.js:419,0e253adad02e020416020a67cc8289453678180e0dc80f64a3c6995cfd42244e
+16,155,Velen,Out Of The Frying Pan Into The Fire,art-velen/out-of-the-frying-pan-into-the-fire.webp,velen-quest-cards.js:921,a1102c5dffdc860e72cf69977e68f3ad45356dcffdfc9d7da6650466bc8cb59b
+16,156,Velen,Out Of The Shadows,art-velen/out-of-the-shadows.webp,velen-quest-cards.js:250,d10f014c679f1ca635c48386c925f47108a947aea7030abab4e1e2d2efcc7645
+16,157,Velen,Patrol Gone Missing,art-velen/patrol-gone-missing.webp,velen-quest-cards.js:405,29494802f120871e8f183c38898fb446eae587cb8cd58d3b0be6f1b4e192fe1a
+16,158,Velen,Phantom Of The Trade Route,art-velen/phantom-of-the-trade-route.webp,velen-quest-cards.js:448,f5c0f88263e4f629684156e4e421e6a132312517856627f7458b144804be7934
+16,159,Velen,Princess,art-velen/princess.webp,velen-quest-cards.js:122,260fbe9098e06452141b19a7490a7bd224fad6e2f6ba16b567172999ee46f570
+16,160,Velen,Queen Zuleykas Treasure,art-velen/queen-zuleykas-treasure.webp,velen-quest-cards.js:953,b1779b41c38e3e4731633eb015e4d34bf382f780b44239e441e12e48be629246
+17,161,Velen,Races Crows Perch,art-velen/races-crows-perch.webp,velen-quest-cards.js:871 | velen-r18.js:52,f78e20d9693f5e66472bc1a3399cd43e2e879a7830ba62e182aba3b02623e402
+17,162,Velen,Return To Crookback Bog,art-velen/return-to-crookback-bog.webp,velen-quest-cards.js:263,56ef701ed417b137aea81be98bfa9a4b371759c6af3a2d2929bf8e7bd45dc01f
+17,163,Velen,Sunken Chest,art-velen/sunken-chest.webp,velen-quest-cards.js:969,f089bba789fd8fe350edbd7e3ea70a82b1ef5de216fc40853980912e5c5639ec
+17,164,Velen,Sunken Treasure,art-velen/sunken-treasure.webp,velen-quest-cards.js:985 | velen-r18.js:49,df83ca8dc52038e55b1992abd2a953e9c1f9a270926b705f1188d5e82137ee22
+17,165,Velen,Swamp Thing,art-velen/swamp-thing.webp,velen-quest-cards.js:389,b1c805476bcb6522f28b6d7aa648f1c0a621b7b1aed016783c2b4a7258b4a346
+17,166,Velen,Take What You Want,art-velen/take-what-you-want.webp,velen-quest-cards.js:551,0513bcf43124920ca2036dd3afeeb8cbb9782d4fdb0c0f1eda2a724846b5d992
+17,167,Velen,The Dead Have No Defense,art-velen/the-dead-have-no-defense.webp,velen-quest-cards.js:1017,62d530f386e47a3da8b64855a3f139f912cc48d070f4994ed9764c621fb43ee2
+17,168,Velen,The Things Men Do For Coin,art-velen/the-things-men-do-for-coin.webp,velen-quest-cards.js:1033,d3719c25b123efbdee8c688b784687cfe923e00b1eb0f0ff89cb090a41a12983
+17,169,Velen,Thou Shalt Not Pass,art-velen/thou-shalt-not-pass.webp,velen-quest-cards.js:608,58721cb7cafc693f26df50626e5312d739c67147597b8163a9dc029840587ef8
+17,170,Velen,Tough Luck,art-velen/tough-luck.webp,velen-quest-cards.js:1097,668dd552a0ec7990d13d461701cc283ce504d033c1534b292daa0a37910032c4
+18,171,Velen,Towerful Of Mice,art-velen/towerful-of-mice.webp,velen-quest-cards.js:297,3060780ac4019fd7211c941f3ee466c6b4ed6b95a3b1b6baaf7c78c95d84d6d6
+18,172,Velen,Truth Is In The Stars,art-velen/truth-is-in-the-stars.webp,velen-quest-cards.js:793,e2cef81e605375a8b115913aa788f9ae0913c9f8125cba79b81e67bd1732ae0c
+18,173,Velen,Wandering In The Dark,art-velen/wandering-in-the-dark.webp,velen-quest-cards.js:148,f6895fc9cb47286c1c29dfeea64173fdb964bf6681da2f533a7b44c30febf90f
+18,174,Velen,Where The Cat And Wolf Play,art-velen/where-the-cat-and-wolf-play.webp,velen-quest-cards.js:536,675bf2f9c4c007dcfedc131fa8f0462e8df86770682939ff9991eb139dadea28
+18,175,Velen,Whispering Hillock,art-velen/whispering-hillock.webp,velen-quest-cards.js:192,35d1d8d4907f7f54728a940f3d5ca5724217b18fc65fddb4a20d1f07f09399f3
+18,176,Velen,Wild At Heart,art-velen/wild-at-heart.webp,velen-quest-cards.js:648,1becce4b6918e183efd1374f6492b5dc88907a4be296ff88bdce7b81889a8bc6
+18,177,Velen,Witcher Wannabe,art-velen/witcher-wannabe.webp,velen-quest-cards.js:823,b934c4ab47a078babc4edf1016bca14abfa9b5c6832102af7548d23e5c4d5e02
+18,178,Velen,Woodland Beast,art-velen/woodland-beast.webp,velen-quest-cards.js:464,8713fe7fd15b20dac5f599f316c6d015f546fcbba786c8f9e9f1b90d48ac89f3
+18,179,Velen,Velen Landscape R18,velen-landscape-r18.webp,guide-art-r15.js:15 | velen-continuity-r19.css:6 | velen-r18.js:37 | velen-r18.js:68 | velen-r18.js:512 | velen-data-r18.js:5 | main-console.js:11 | velen-view.css:2 | velen-view.css:7 | velen-view.css:17 | velen-r18.css:2 | progress-star-chart.js:15 | velen-nilf-ui.js:623,45ab6b94871db22feb3a3d55513ca6b7d536dffc85d8dfb5bd7d1e047e936014
+18,180,Velen,Velen Mercy R18,velen-mercy-r18.webp,velen-data-r18.js:16,a354329568f1b6ecb4130bcb1ba4d131699447acb83ed2a18a24ed83d6f69a47
+19,181,White Orchard,Q Cargo Card,art-r13/q-cargo-card.webp,exploration-data.js:16 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),266906455d66f860aaa1857e342536642f8d5d66fc6efb22eb21b16d4003da46
+19,182,White Orchard,Q Death Card,art-r13/q-death-card.webp,main-console.js:47 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),6d44595a479d0fb2f8aa45839f475998233a5aeb2d058642a1936483ad0ad1dd
+19,183,White Orchard,Q Deserter Card,art-r13/q-deserter-card.webp,exploration-data.js:12 | main-console.js:49 | diagrams-ui.js:12 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),416732e5d37fe558d48aacc069434f2f4b11bc1f3b0a274dc49a676d838b20fb
+19,184,White Orchard,Q Dirty Card,art-r13/q-dirty-card.webp,exploration-data.js:15 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),0e5d3dc8b9ec1601345b5455561b7a449303cf4371e51c87da9999d1537c554b
+19,185,White Orchard,Q Missing Card,art-r13/q-missing-card.webp,exploration-data.js:18 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),168592db484ff138f5928a1d0422652fa3b62b933b8983ba19b7e9073f3e3d60
+19,186,White Orchard,Q Pan Card,art-r13/q-pan-card.webp,guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),52ab9bc32f2767f9d8ff1fa4e44a4224bcb25db46f85435da2da7a83ec38e9cd
+19,187,White Orchard,Q Temerian Card,art-r13/q-temerian-card.webp,exploration-data.js:14 | diagrams-ui.js:12 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),600fb1675e544bb1b3bb176c8d05434d5e285d00677fed903c4a0fb70ad0b313
+19,188,White Orchard,Q Viper Card,art-r13/q-viper-card.webp,main-console.js:15 | main-console.js:49 | home-ui.js:13 | diagrams-ui.js:12 | diagrams-ui.js:35 | diagrams-ui.js:36 | guide-art-r15.js:9 (quest ID lookup) | desk-r11.js:20 (quest ID lookup),d5ff4fd93c135655be7160896496ed98898fe3e5a7160c681c742b11a9b9fcd2
+19,189,White Orchard,Armorer’s table · Near Nilfgaardian Garrison,art-white-orchard-illustrated/armourerstable-1.webp,exploration-art.js:880 | exploration-art.js:884,310c9011431ce1b0be7cdf2dbb1655334b759bc886e1ac5f72968ae8802876fd
+19,190,White Orchard,Deserters at the Viper diagram ruins,art-white-orchard-illustrated/camp-viper-ruins.webp,exploration-art.js:120 | exploration-art.js:124,3eaf30c9953c830c03e438f042d4867cce174b7b33e7f17f526879a70d766908
+20,191,White Orchard,White Orchard countryside on the opening ride,art-white-orchard-illustrated/category-discoveries.webp,quest-hubs.js:15 | exploration-art.js:648 | exploration-art.js:652,80a5d51b21e5a96d487a6545126fb0ae8b843eaa77d47a9f6319d61b0b2a1948
+20,192,White Orchard,Cellar on the Mill treasure route,art-white-orchard-illustrated/category-hunts.webp,exploration-art.js:615 | exploration-art.js:619,c49b88030e211b57ea54b38b042cd6de0f8d8427df9326006f033ffe9aaec383
+20,193,White Orchard,Bear guarding the southern stone,art-white-orchard-illustrated/category-power.webp,exploration-art.js:549 | exploration-art.js:553,40e80711b6cbfaf278819a52463523eca43cfc8749b09c73bb9fea306677516b
+20,194,White Orchard,White Orchard bridge and ruins approach,art-white-orchard-illustrated/category-travel.webp,exploration-art.js:664 | exploration-art.js:668,a3c1fef34c25ba660e193309184b7d767924655fd7603a4dca5471a21e6e28ec
+20,195,White Orchard,Clearing gas around a treasure cache,art-white-orchard-illustrated/category-treasure.webp,exploration-art.js:599 | exploration-art.js:603,5700370e247c76f8669917eab10840dbd2fec435c17752ab7a69bca38651c88d
+20,196,White Orchard,Grindstone · West of Sawmill,art-white-orchard-illustrated/grindstone-3.webp,exploration-art.js:848 | exploration-art.js:852,a0836cb8194f0d0a870f41dea3d97d253bcbed250b03bb3c38a19dc48d4df29a
+20,197,White Orchard,Grindstone · Near Nilfgaardian Garrison,art-white-orchard-illustrated/grindstone-4.webp,exploration-art.js:864 | exploration-art.js:868,160b9d1fd7aea4ebf0ba92a4245e547911fd29e16efd14c5524ac262d368b764
+20,198,White Orchard,Gas-covered cache west of the garrison,art-white-orchard-illustrated/guarded-2.webp,exploration-art.js:238 | exploration-art.js:242,eca625b63c5c4aa92fd45cfda60adccad64f0909cbd60d686cf7a4977a1f01d4
+20,199,White Orchard,Temerian shield search on the battlefield,art-white-orchard-illustrated/poi-1.webp,exploration-art.js:389 | exploration-art.js:393,9a562e27e35eb83e7590ed285361a63f874b4c94e215179d2fc03b80d7f080b5
+20,200,White Orchard,Crystal skull at the opening campsite,art-white-orchard-illustrated/poi-4.webp,warning-center.js:12 | exploration-art.js:373 | exploration-art.js:377,301a4398ff1cec05c042e39f83a8f83215984e2d65bdeb9652fc413e020d9244
+21,201,White Orchard,Quen stone above Broken Bridge,art-white-orchard-illustrated/pop-bridge.webp,exploration-art.js:70 | exploration-art.js:74,9b551bd0fee45d92a1e9ae4b12a7d06e05d620c3e872077abe6e5f2c7a5d210e
+21,202,White Orchard,Quen stone northeast of Cackler Bridge,art-white-orchard-illustrated/pop-cackler.webp,exploration-art.js:4 | exploration-art.js:8,82d56409731ae247cce6e2aa365b8dcc7eca8a78f19f04787ed252e075efe7d8
+21,203,White Orchard,Northern stone and nearby ghoul encounter,art-white-orchard-illustrated/pop-north.webp,exploration-art.js:37 | exploration-art.js:41,4a9a5c0f26f5adc37e3d25d73a16754578cf100e0d87df5a65f57da88fb050ee
+21,204,White Orchard,Abandoned Village landmark near its signpost,art-white-orchard-illustrated/signpost-1.webp,exploration-art.js:405 | exploration-art.js:409,2c6d9aef39647f711ff3b38405792f96cc6c8a7515cbebefc4ccd616002d25a6
+21,205,White Orchard,Dune at the Ransacked Village landmark,art-white-orchard-illustrated/signpost-10.webp,exploration-art.js:533 | exploration-art.js:537,355de42a9b96221658e351faa10fd10376bee6d0eff45762c2e536cd322d9357
+21,206,White Orchard,Broken Bridge landmark,art-white-orchard-illustrated/signpost-2.webp,exploration-art.js:421 | exploration-art.js:425,b68d62e2757d042f8767ebd664ca2af2db54791081f104a1c3bd9e05d1b86ef5
+21,207,White Orchard,Woesong Bridge signpost,art-white-orchard-illustrated/signpost-3.webp,exploration-art.js:815 | exploration-art.js:819,6c78dcd16c8ecbe124d0684e2a3da8d98ad5b9de75d335d11e3e6b75a0b31955
+21,208,White Orchard,Restored Sawmill landmark,art-white-orchard-illustrated/signpost-4.webp,exploration-art.js:437 | exploration-art.js:441,7d9921e409ddea156333d0f65684bfee1b855dee04c15db4d70356aac34325ed
+21,209,White Orchard,Mill-area building landmark,art-white-orchard-illustrated/signpost-5.webp,exploration-art.js:453 | exploration-art.js:457,a7225c79d371d90f3883b506656a375735c73107e3bc4e65d40c51c36368df8d
+21,210,White Orchard,Nilfgaardian Garrison approach,art-white-orchard-illustrated/signpost-6.webp,exploration-art.js:469 | exploration-art.js:473,e01688a319dd315ad596496921f506989bc1895bf867d5626098a7b70db31c3f
+22,211,White Orchard,Cackler Bridge gate landmark,art-white-orchard-illustrated/signpost-7.webp,exploration-art.js:485 | exploration-art.js:489,f544ec9b0b3f64a9e09c947c714152c7be43ac52ae4f9110100e60190354c605
+22,212,White Orchard,Opening-camp encounter near Crossroads,art-white-orchard-illustrated/signpost-8.webp,exploration-art.js:501 | exploration-art.js:505,86f7dd17dbd42b98a228e9b9ce5f524875134e91af88cb75cc3c37456de42e57
+22,213,White Orchard,Ford encounter landmark,art-white-orchard-illustrated/signpost-9.webp,exploration-art.js:517 | exploration-art.js:521,15e521647992afe30e98be2b3af3f3a35b3d618661f93d31f62c5f46e12f0274
+22,214,White Orchard,Spoils of war · East of Nilfgaardian Garrison,art-white-orchard-illustrated/spoils-1.webp,exploration-art.js:782 | exploration-art.js:786,43d229f8a4046096f48ff8e57a9ee06ed175327c5cdc4c8d68f1255219d60fec
+22,215,White Orchard,Returning herbalist at the roadside shrine,art-white-orchard-variety/abandoned-1.webp,exploration-art.js:339 | exploration-art.js:343,7a69195945f396e4d290f88de6f032b0e4892140dca02230d09f57fe7c3c3992
+22,216,White Orchard,Returning merchant at the restored sawmill,art-white-orchard-variety/abandoned-2.webp,exploration-art.js:356 | exploration-art.js:360,641344ef0f9cf30a54d581312056280a9e084408299395e65696324db4c2f362
+22,217,White Orchard,Bandits southwest of Broken Bridge,art-white-orchard-variety/banditcamp-1.webp,exploration-art.js:731 | exploration-art.js:735,982efd7a10875407365c5048b55216d1bbba23031093c70132d826caa8ebb252
+22,218,White Orchard,Archer at the camp south of Ford,art-white-orchard-variety/banditcamp-2.webp,exploration-art.js:136 | exploration-art.js:140,41a77d79f5213a254ee330fbd0b67952b49d2ed5bc777630a48ee58af207bc26
+22,219,White Orchard,Deserter in the Sawmill marsh camp,art-white-orchard-variety/banditcamp-3.webp,exploration-art.js:748 | exploration-art.js:752,6cbfbf5c3183ed1a6c6b36c9d7350a1fe2fdf59b36d01795a240cbaf83a938d7
+22,220,White Orchard,Deserters at the Crossroads bridge camp,art-white-orchard-variety/banditcamp-6.webp,exploration-art.js:103 | exploration-art.js:107,e9f41f5fd6d1bbdd8dbd1a01925d5110b1bf657186ec26a8a958dfa977eb32a5
+23,221,White Orchard,Shielded leader of the Dirty Funds camp,art-white-orchard-variety/camp-dirty-funds.webp,exploration-art.js:153 | exploration-art.js:157,9c48336d390676a2b83a85906b81f2e8e8a9b12aed3623c54225b8d2a56cca4f
+23,222,White Orchard,White Orchard deserters,art-white-orchard-variety/category-camps.webp,exploration-art.js:565 | exploration-art.js:569,f0a9ba22cf304c845e12a80288a5fdd545197a0b7811bcfbc772ebb485119331
+23,223,White Orchard,Sword hilts and crafting parchment,art-white-orchard-variety/category-diagrams.webp,exploration-art.js:697 | exploration-art.js:701,7c7d8904e38aef7d062c34f621da66925654d8680576f3a9aed514105047e59a
+23,224,White Orchard,Ghoul above its nest,art-white-orchard-variety/category-nests.webp,velen-r18.js:51 | exploration-art.js:582 | exploration-art.js:586,b47bb6021fda075534bcd14435fed81c8038da8f6f555d281989ae1cb15a899d
+23,225,White Orchard,Tools for equipment preparation,art-white-orchard-variety/category-preparation.webp,quest-hubs.js:15 | exploration-art.js:680 | exploration-art.js:684,8a0806d5eb652655fe5b607e2017bfeafba359c3bf87921ea46cd4e0ea02e272
+23,226,White Orchard,Residents returning to White Orchard services,art-white-orchard-variety/category-sites.webp,exploration-art.js:631 | exploration-art.js:635,5a7c0afa0ceff111f1404ad1f7747b01db709e5284d0c02c1fabc145f0ca7e1d
+23,227,White Orchard,River wreck and submerged salvage,art-white-orchard-variety/category-water.webp,exploration-art.js:896 | exploration-art.js:900,c2d0ba8fe21140373a4a0df302fe50268fd3c06a8f9f1684d83e9d5f51018e3c
+23,228,White Orchard,Cattle in the Woesong Bridge pasture,art-white-orchard-variety/cow-pasture-warning.webp,exploration-art.js:798 | exploration-art.js:802,f24416e2bb70966a0817de5165b12addd7ac135dd9aba8c03145ddb1410c30ee
+23,229,White Orchard,Grindstone at the village forge,art-white-orchard-variety/grindstone-village.webp,exploration-art.js:831 | exploration-art.js:835,f05ecbb00b84dee279c4278af1834e5593025c37b465b1a42daa05a9d7a920f9
+23,230,White Orchard,Drowner beside the Woesong river wreck,art-white-orchard-variety/guarded-1.webp,exploration-art.js:221 | exploration-art.js:225,99dd58ced33330df7a3093987d66c396878973f3c570e08ab010f1f3bee0e486
+24,231,White Orchard,Wraith within the cemetery crypt,art-white-orchard-variety/guarded-3.webp,exploration-art.js:271 | exploration-art.js:275,8876a59f3de8600578ab19c132ff1a6ed9ae64863de79242f366f4d5db4b9639
+24,232,White Orchard,Wolves at the garrison-approach wagon,art-white-orchard-variety/guarded-4.webp,exploration-art.js:254 | exploration-art.js:258,43ce239344c79945875d70086e47f8543b6e1d7466d03777a84a7f9bfc4374d3
+24,233,White Orchard,Treasure south of Ransacked Village,art-white-orchard-variety/guarded-5.webp,exploration-art.js:204 | exploration-art.js:208,86571437c192f83c21be5eb99f6ae117859d625e998a7e5f4bb40aa40d70cedb
+24,234,White Orchard,Ghoul at the northern cemetery nest,art-white-orchard-variety/monsternest-1.webp,exploration-art.js:714 | exploration-art.js:718,8119a7169df454499ad399161c6f056ec040e9b417b35b9c06ebed9268e53b1c
+24,235,White Orchard,Bear beside the southern Yrden stone,art-white-orchard-variety/pop-bear.webp,exploration-art.js:86 | exploration-art.js:90,12e4d101ebce74c06bf6e65208e774f3605b186ee150a09b0ebb64b59f5c3ea1
+24,236,White Orchard,Igni stone before the cemetery chapel,art-white-orchard-variety/pop-cemetery.webp,exploration-art.js:20 | exploration-art.js:24,8b1ece01c94216f87d6acfc52f87c3d332275474509d5af02362c45274db9439
+24,237,White Orchard,Wraith at the Sawmill Axii stone,art-white-orchard-variety/pop-sawmill.webp,exploration-art.js:53 | exploration-art.js:57,3fe26b832509463e1528d010e06a08116a0ecb1c3e4bebdb2d23307b110042d9
+24,238,White Orchard,Spy notes at the Deserter Gold camp,art-white-orchard-variety/q-deserter.webp,exploration-art.js:305 | exploration-art.js:309,43b38f8a9ac3cd45739d33fcd34fa587bc0f36b03faeb3f3f4d7f25968d2dd4a
+24,239,White Orchard,Wolf at the Dirty Funds notes camp,art-white-orchard-variety/q-dirty.webp,exploration-art.js:322 | exploration-art.js:326,6708b480ebadf0b20c637161edc7054d755e4f66b9f61b1f701e9a280ef37a82
+24,240,White Orchard,Temerian key and recovered military orders,art-white-orchard-variety/q-temerian.webp,exploration-art.js:288 | exploration-art.js:292,ee57adbefee887715937ae4725f12eed0ad2911860c45535a73e99bdf7fecfb3
+25,241,White Orchard,Submerged cache south of Ford,art-white-orchard-variety/smugglers-1.webp,exploration-art.js:765 | exploration-art.js:769,eca0b964aab09d419e5d608037d45c39e083f42ab2b4b457c1f2836fe3ddf021
+25,242,White Orchard,White Orchard Scene,white-orchard-scene.webp,guide-art-r15.js:12 | weathered-r10.css:4 | console-r16.css:3 | console-r16.css:22 | styles.css:1 | medallion.js:67 | main-console.js:10 | main-console.js:19 | velen-view.css:16 | main-console.css:1 | phoenix-journal.css:5 | phoenix-journal.css:55 | progress-star-chart.js:15 | desk-r11.css:2 | index.html:4,07762224f497af8e7646b0b8ba02aaa42ad49abfda605d15bb66987fb9ddece2
