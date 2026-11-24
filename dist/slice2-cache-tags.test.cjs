@@ -164,7 +164,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
 
  for(const f of ['velen-routing.js'])assert.equal(tags[f],'quest-route-maps-35',f);
  for(const f of ['character-ui.js', 'departure.js', 'diagrams-ui.js', 'exploration-ui.js', 'progression-ui.js', 'velen-nilf-objectives.js'])assert.equal(tags[f],'v49-phone-fixes-1',f);
- for(const f of ['map-ui.js'])assert.equal(tags[f],'map-progress-wired-1',f);
+ // Order 017: Progress layer rebuilt inside the Main Map filter panel.
+ for(const f of ['map-ui.js'])assert.equal(tags[f],'o17-progress-1',f);
  for(const f of ['home-rebuild.css'])assert.equal(tags[f],'regional-tools-shared-1',f);
  for(const f of ['shared-walkthrough.js','shared-walkthrough.css'])assert.equal(tags[f],'velen-map-polish-1',f);
  for(const f of ['home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
