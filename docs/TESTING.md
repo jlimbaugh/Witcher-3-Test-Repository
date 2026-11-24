@@ -1,4 +1,9 @@
-# Testing (branch `fix/wo-save-preservation`, QA6)
+# Testing
+
+## Current (canonical/phoenix)
+Run `node --test *.test.cjs` from `dist/`. The suite has 356 tests (Order 017 measurement, 2026-11-23). Without baselines, 3 are skipped (`slice2-cache-tags.test.cjs` needs `PHOENIX_QA6_BASELINE`, `PHOENIX_QA5_BASELINE` and `PHOENIX_V45_BASELINE`). CI pins the candidate total in `.github/workflows/qa6-verification.yml` and requires zero skips with all three baselines supplied. The counts below (307, 271, 233 and others) are **historical** QA6-era expectations.
+
+# Historical: testing on branch `fix/wo-save-preservation` (QA6)
 
 Requirements: Node.js 24 (tested with v24.22.1). No npm install; tests use only `node:test` and the Node standard library.
 All commands run from `dist/`. Art and fonts are in the tree, so no extra downloads are needed.

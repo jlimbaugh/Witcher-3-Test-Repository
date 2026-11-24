@@ -32,7 +32,7 @@ Adopted by the owner on 2026-11-16 (operating plan + nine amendments). Summary o
 *Historical (superseded):* a "Progress star chart leg" (Jess and Capt) governed the retired star-chart pilot. It no longer applies. Its build plan and decision report were removed in PR #34 and remain in git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 - **Author ≠ independent reviewer.** The officer who writes a change never counts as its independent reviewer.
 - Reviewers start from the commit and the acceptance checks, and read the author's evidence only afterwards.
-- Cmdr coordinates and performs independent QA; Capt (the owner) alone authorizes release and does physical iPhone/Safari acceptance after deployment is verified.
+- Cmdr coordinates and performs independent QA; Capt (the owner) alone authorizes release and performs physical iPhone Safari acceptance: on a private preview for each Velen page pattern during certification, and again on the exact candidate before public release. Chrome or emulation results never count as Safari acceptance.
 
 ## 3. Evidence labels (every finding / result)
 - `independent` — run by the reviewer on their own environment;

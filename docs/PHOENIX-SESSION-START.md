@@ -20,7 +20,7 @@
 The owner approved two representative page patterns on November 19, 2026, using QA build `1690b41`; they are inputs to, not substitutes for, the complete Velen master certification. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
-**Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
+**Current QA priority** is physical Safari on iPhone, run by Capt on a **private preview for each Velen page pattern** and repeated on the exact candidate before any public release. Check portrait, landscape, touch and saved progress. Chrome or iPhone emulation supplements this check but never counts as Safari acceptance. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
 Version 1.1 · Adopted November 16, 2026; coordination updated November 17, 2026 (America/Chicago)
 Applies to Cmdr (ChatGPT) and LT (Grok). PFC (Claude) is retired from all projects (Order 017); earlier PFC records are historical.
@@ -49,6 +49,12 @@ Read [Project Status](PROJECT-STATUS.md) for the current release, active review 
 Do not call an old URL “latest,” assume a ZIP matches GitHub, infer runtime behavior from test counts, or rely on conversation memory over current files.
 
 ## 2. Source of truth and access
+
+**Canonical source and release gates (Orders 018–020).**
+- Canonical development branch: `canonical/phoenix` (created from PR #35 `19c4d3d`, fast-forwarded to PR #36 `2dbc0bc`). New work targets it through pull requests. Do not base work on `main` or `feature/progress-star-chart`.
+- Recovery tags: `v50-public` (V50 application source; deployment provenance is author-supplied), `v50-release-record`, `v49-app` (V49 GitHub application; the V49 Sites rollback source `02daa30…` is an external record), `qa6`, `order017-candidate`, and `archive/<branch>` checkpoints for unique branch work. Never move or overwrite a tag.
+- `main` and public GitHub Pages are frozen pending a separate publication decision. Character/Inventory work stays parked outside certification.
+- A change reaches the public site only after: Capt-approved patch → CI on `canonical/phoenix` → Cmdr independent QA → Capt physical Safari on a private preview → Capt release authorization (§9).
 
 GitHub is the intended shared source of truth after verified source recovery. Each officer uses their own authorized connection; never share account credentials.
 
@@ -208,7 +214,7 @@ At adoption on November 16, 2026:
 
 Verify current records before acting. Do not reuse this historical checkpoint as current status in later sessions.
 
-Priority order: finish/review cache correction → investigate/fix actual save-overwrite defects → establish deployment provenance and recovery → import verified source and checks into GitHub → release and Safari acceptance → shared template and remaining Velen conversions.
+*Historical priority order at adoption (November 16, 2026; superseded, not current instructions):* finish/review cache correction → investigate/fix actual save-overwrite defects → establish deployment provenance and recovery → import verified source and checks into GitHub → release and Safari acceptance → shared template and remaining Velen conversions. Current sequence: [doctrine](CANONICAL-TEMPLATE-DOCTRINE.md) Phases 1–5 and decision 21 (Velen → White Orchard → Main Map → future regions).
 
 ## Session opening response
 
