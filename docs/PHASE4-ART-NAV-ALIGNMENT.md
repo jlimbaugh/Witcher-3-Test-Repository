@@ -10,7 +10,7 @@
 - Existing regional and quest illustrations are unchanged.
 
 ## Retired artwork
-- Constellation / standalone Progress / star-chart exclusive rendering is no longer reachable from live menus.
+- Constellation / standalone Progress / star-chart exclusive rendering is no longer reachable from live menus. *(Correction: when this was written, two visible links remained, on the quest tree and the console. Order 017 Gate A removed them.)*
 - State marks, warnings, map pins, route lines and compass roses are retained.
 
 ## Next design review

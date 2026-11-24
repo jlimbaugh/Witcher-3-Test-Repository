@@ -4,7 +4,15 @@
 
 **Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
 
-**Current Progress star chart leg:** Jess and Capt are the two participants. Use the [decision report](PROGRESS-STAR-CHART-DECISIONS.md) and [build and acceptance plan](PROGRESS-STAR-CHART-BUILD-PLAN.md). Capt supplies implementation and test evidence. Jess supplies design decisions, physical iPhone Safari acceptance, and release approval. Earlier officer reporting rules apply to their historical work. This leg has no LT or PFC reporting gate.
+**Permanent command authority (Order 017; do not alter):**
+- **Capt** = project owner and final approval. Capt alone authorizes corrections, field acceptance, merging and publication.
+- **Cmdr** = ChatGPT, coordination and independent QA.
+- **LT** = Grok, engineering and technical testing.
+- **PFC** = retired from all projects.
+
+**Permanent architecture (owner decision):** Constellation and Star Chart are retired. Progress belongs only to the geographical Main Map, as a layer. There is no standalone Progress destination and no replacement celestial visualization. Geographical quest maps stay. See [quest-area map owner decisions](QUEST-AREA-MAP-OWNER-DECISIONS.md).
+
+*Historical (superseded):* a "Progress star chart leg" (Jess and Capt) governed the retired star-chart pilot. It no longer applies. Its build plan and decision report were removed in PR #34 and remain in git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 
 The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
@@ -12,7 +20,7 @@ The owner approved two complete page templates on November 19, 2026, using QA bu
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
 Version 1.1 · Adopted November 16, 2026; coordination updated November 17, 2026 (America/Chicago)
-Applies to Cmdr (ChatGPT), LT (Grok), and PFC (Claude).
+Applies to Cmdr (ChatGPT) and LT (Grok). PFC (Claude) is retired from all projects (Order 017); earlier PFC records are historical.
 Project owner and final field acceptance: CaptDrunk / Jess Limbaugh.
 
 ## Read this first
@@ -60,8 +68,8 @@ Private ChatGPT file links are not accessible to other officers. Never present o
 | Responsibility | Primary | Backup |
 |---|---|---|
 | Scope, priorities, acceptance, coordination | Cmdr | Available officer prepares recommendation |
-| Implementation | LT | Cmdr or PFC |
-| Independent review | PFC | Non-author Cmdr or LT |
+| Implementation | LT | Cmdr |
+| Independent review | Cmdr | Non-author LT |
 | Tests and implementation evidence | Author | Any available officer |
 | Deployment coordination and provenance | Cmdr | Available officer prepares release evidence |
 | Physical iPhone acceptance | Owner | Browser automation supplements only |
@@ -165,7 +173,7 @@ GitHub Pages will not serve a second application build. Retire old entry points 
 
 ### Owner questions and design coordination
 
-- Cmdr owns the design conversation with the owner. LT and PFC bring technical gaps, options, and tradeoffs to Cmdr; they do not run separate design questionnaires with the owner.
+- Cmdr owns the design conversation with the owner. LT brings technical gaps, options, and tradeoffs to Cmdr; they do not run separate design questionnaires with the owner.
 - Cmdr consolidates those inputs into batches of three clear questions using the multiple-choice UI with a free-text option. Explain the visible effect of each choice, ground recommendations in the accepted design, and continue batches until the needed information is available. Do not invent filler questions when no decision is needed.
 - Record only explicit selections or unambiguous written decisions as approved. Silence, empty answers, “no notes,” and unanswered questions do not approve a recommended default. If intent is ambiguous, leave the decision open and clarify through the question UI.
 - Velen is the canonical regional deck template. Preserve White Orchard’s existing implementation and consider individual White Orchard elements for incorporation with explicit owner approval. White Orchard remains the behavioral reference where the approved regional deck template does not govern. Distinguish proposals from locked decisions.

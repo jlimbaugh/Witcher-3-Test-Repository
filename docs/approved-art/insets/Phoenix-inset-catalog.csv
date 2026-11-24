@@ -101,7 +101,7 @@
 10,100,Shared,Woodland,gwent-r15/woodland.webp,exploration-data.js:11 | guide-art-r15.js:12 | guide-art-r15.js:15 | main-console.js:14 | diagrams-ui.js:12,84a82e5c894bef4cf1bd5f681fe1e4911930a36b168c92ba65fb361316a2e15a
 11,101,Shared,Action Quest Hub,navigation-art-v26/action-quest-hub.webp,velen-r18.js:180 | velen-r18.js:345 | home-ui.js:7 | velen-nilf-ui.js:582,1896523f3a58792c7065845e14a400f3731d5830f3b05a93a8695da81124d74d
 11,102,Shared,Action Walkthrough,navigation-art-v26/action-walkthrough.webp,quest-hubs.js:21 | velen-r18.js:28 | home-ui.js:7 | velen-nilf-ui.js:578,6bf624a9b42cd25947d49774e4aa3cfcfbfe1d91ad6de13713bb040d09fe1666
-11,103,Shared,Constellation,navigation-art-v26/constellation.webp,navigation-art.js:9,07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe
+11,103,Shared,Constellation (RETIRED - historical record; file removed in PR #34; do not restore),navigation-art-v26/constellation.webp,navigation-art.js:9,07612ae44376310e542708b4f6c06ecf2fd36c1f843fa0fead64dc8e751eaabe
 11,104,Shared,Home,navigation-art-v26/home.webp,navigation-art.js:5,b2a24aa8d59fafb8191c4aab8be4c7b5a78fd3ea7d0c792f8ced26eeb12cb38f
 11,105,Shared,Progress,navigation-art-v26/progress.webp,navigation-art.js:8,d3424addb93e1829c1e488e8b5dac98d8f84ccaa6bc6c161e8339a76025ac886
 11,106,Shared,Reference,navigation-art-v26/reference.webp,navigation-art.js:7,c680e0ffe64567642a081f9a31039ff983b0a8bc4362d5d388a624d7c3cf3528

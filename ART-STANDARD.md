@@ -43,7 +43,7 @@ Use the established White Orchard curled parchment (`curled-vellum-r16.webp`) as
 
 
 ### Shared parchment controls — approved site-wide
-`parchment-controls.css` is the canonical shared control treatment. Apply outlined parchment tabs with slate/silver embossed plus/minus markers to disclosures on paper surfaces; use framed stamp-box checkboxes and bordered paper selectors. Covers quest hubs and walkthroughs, Progress, diagram and exploration records, merchant/reference disclosures, map paper controls and parchment confirmation dialogs. Scope by material rather than route, so future paper sections inherit it automatically. Keep native controls, keyboard focus, disabled states and confirmation behavior. Dark chrome, the wolf overlay, illustrated card decks and Constellation controls retain their existing treatments. Reserve warning red for risks.
+`parchment-controls.css` is the canonical shared control treatment. Apply outlined parchment tabs with slate/silver embossed plus/minus markers to disclosures on paper surfaces; use framed stamp-box checkboxes and bordered paper selectors. Covers quest hubs and walkthroughs, the Main Map Progress layer, diagram and exploration records, merchant/reference disclosures, map paper controls and parchment confirmation dialogs. Scope by material rather than route, so future paper sections inherit it automatically. Keep native controls, keyboard focus, disabled states and confirmation behavior. Dark chrome, the wolf overlay, illustrated card decks and Constellation controls retain their existing treatments. Reserve warning red for risks.
 
 ## Primary quest and map actions
 

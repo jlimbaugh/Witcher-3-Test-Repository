@@ -30,7 +30,13 @@ Batch 1 brings the White Orchard visual reference to the Velen console, activity
 - The pilot uses assembled game-map tiles with a parchment tint, sourced location anchors and an approximate Mulbrydale approach area. See [map provenance](../dist/MAP-SOURCES.md#velen--nilfgaardian-connection-quest-area-pilot). The exact Funeral Pyres and At the Mercy of Strangers encounter positions await Xbox confirmation. World Map layer synchronization is future work.
 - Fixed stamp pilot: each walkthrough stop opens on a 56 × 56 map-unit square. Tap a seal to reveal one guide link, then tap the link to open its page. Safari Back should restore the label. The square keeps the same geographic extent across orientations. Check tap spacing, page scrolling over the stamp, and that swipe, pinch and double-tap leave its view fixed. The seals now keep their 44-pixel tap targets apart, and the selected label uses clear space in or immediately below the stamp. The objective, flame, broken shackle and signpost have distinct engraved silhouettes. Physical iPhone Safari acceptance is open.
 
-## Active work · Progress star chart
+## Active work · Main Map Progress repair (LT Engineering Order 017)
+
+- Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
+- Development branch `integration/order017-progress-repair` (from PR #34 `9dec2cd`; merges PR #30 `371de54` and PR #29 `0a01e5c`). The Constellation is retired, Field Reference is back in the wolf menu, and the Main Map Progress layer is repaired. **Development only; release authority withheld.** Cmdr performs independent QA; Capt alone authorizes acceptance, merging or publication.
+- Progress is a layer of the geographical Main Map. There is no standalone Progress page and no star chart.
+
+## Historical · retired Progress star chart pilot (superseded by owner decision; not current instructions)
 
 - Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
 - Private reference: the 75-entry Velen ledger at `7d2a80f263e8228dd6d7c544319cf9ef12d10fb4`. [Private Progress preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress).
@@ -38,7 +44,7 @@ Batch 1 brings the White Orchard visual reference to the Velen console, activity
 - Pilot application `1d0bad1c8e614ace1e5082625455fb561d3f352f`, private deployment `appgdep_6affebef70bc8191962214887bac6bc1`. The prototype covers 3 quest planets and 4 linked moons. Current filter behavior withdraws unmatched bodies and keeps a parent visible when it has a matching moon. White Orchard opens the existing ledger.
 - Local checks: 341 Node passes, zero failures, three historical-baseline checks skipped. A simulated DOM exercise verified deck counts, card activation, map branches, moon routing, camera-state restore, and withdrawal. Chromium could not launch in the local execution environment. Physical pan, pinch, layout, and Back remain for iPhone field review.
 - iPhone review: Swipe to Velen, enter, pan and pinch, select Nilf, tap Funeral Pyres, and go Back. Confirm the same selection, moons, zoom and pan return. Repeat through Bloody Baron and Hunting a Witch, then use the map Back control to return to Velen’s centered system card.
-- [Owner decisions](PROGRESS-STAR-CHART-DECISIONS.md) · [Build stages and acceptance gates](PROGRESS-STAR-CHART-BUILD-PLAN.md).
+- Former owner decisions and build plan: removed in PR #34; see git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 
 ## Earlier Velen design and QA context
 
