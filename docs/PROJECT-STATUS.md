@@ -1,3 +1,5 @@
+> **CAPT-APPROVED CANONICAL DOCTRINE (2026-11-23):** Read [Canonical Template and Repository Doctrine](CANONICAL-TEMPLATE-DOCTRINE.md) before planning any regional template, map, Progress, art asset, branch or cleanup work. Its 21 adopted decisions supersede conflicting older design instructions. Velen is the master; White Orchard aligns after Velen lock; full geographical Main Map and its optional Progress layer come later. Order 017/PR #35 remains a development candidate; no cleanup, merge or publication is authorized by this note.
+
 # Phoenix project status
 
 The owner approved the [12 divider and heading ornament designs](framing-review/dividers/README.md) as the exclusive guide-wide set. The approval covers the reference artwork. Runtime integration and iPhone review are pending.

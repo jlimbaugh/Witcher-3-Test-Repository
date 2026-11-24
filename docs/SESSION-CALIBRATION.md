@@ -1,11 +1,18 @@
 # Phoenix session calibration
 
+> **CAPT-APPROVED CANONICAL DOCTRINE (2026-11-23):** Read [Canonical Template and Repository Doctrine](CANONICAL-TEMPLATE-DOCTRINE.md) before planning any regional template, map, Progress, art asset, branch or cleanup work. Its 21 adopted decisions supersede conflicting older design instructions. Velen is the master; White Orchard aligns after Velen lock; full geographical Main Map and its optional Progress layer come later. Order 017/PR #35 remains a development candidate; no cleanup, merge or publication is authorized by this note.
+
+
 **Locked default for simple buttons.** Use the [six approved two-metal designs](approved-art/simple-buttons/set-01-two-metal-review.webp) as the guide-wide material reference. Use brushed blue-gray steel for faces and structural rails, polished silver for raised ornament, and centered ivory labels. Keep the two metals visually distinct at phone size. The [original dark sheet](approved-art/simple-buttons/set-01-review.webp) sets the darkest permitted treatment. Review placement on the Nilf Inn test page after the three asset sets are assembled.
 
 
 **Required guide-wide art standard.** All owner-approved Phoenix assets are required across all pages, regions, templates and overlays wherever their asset family applies. Use the approved defaults or variants for the surface and control, and follow the recorded placement, scale and rotation rules. Reuse the approved artwork for the same destination across menus. New or replacement designs require owner approval before use.
 
 **Approved divider and heading art.** Use only the [approved parchment and dark-stone ornaments](framing-review/dividers/README.md) for decorative section dividers and heading ornaments throughout the guide. Match the artwork to the surface. Owner approval is required before adding or replacing a design.
+
+## Historical Velen batch acceptance ledger — evidence only, not current work orders
+
+The following batch records preserve approved milestone counts, quest-specific completion semantics, and earlier acceptance evidence. Phrases such as “Next,” “pending,” “review,” and “current” inside this ledger describe their original historical context; they are **not live assignments**. Consult PROJECT-STATUS and the canonical doctrine for current priorities. Do not discard these useful quest-level decisions during template consolidation.
 
 Owner passed hub batch 14 (b139a79), completing iPhone review of the 70 batched Velen hub progress entries. Next: reconcile regional progress totals with the existing quest and activity owners, then close the remaining regional coverage gaps.
 
@@ -71,12 +78,16 @@ Owner approved the card-edge gesture build 03abe77. Keep the Velen quest and act
 
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
 
-The owner approved two complete page templates on November 19, 2026, using QA build `1690b41`. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
+The owner approved two representative page patterns on November 19, 2026, using QA build `1690b41`; integrated Velen master-template certification remains pending. Use the Velen region console for region pages and The Nilfgaardian Connection walkthrough for quest walkthroughs. Carry forward each page’s section order, card layout, spacing, framing, controls, navigation and interactions, including the shared Regional Tools deck. Supply the appropriate regional and quest content, artwork, destinations and objectives. Outstanding QA findings stay open.
 
 
 **Current QA priority** is Safari on iPhone. Check portrait, landscape, touch and saved progress. Other browsers are secondary. Xbox is for in-game verification and art references only. [Velen fixes and item-by-item evidence](qa/v49/phone/README.md).
 
-Read [Project Status](PROJECT-STATUS.md) first, then use this page alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For Velen v49, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.
+Read [Project Status](PROJECT-STATUS.md) first, then use this page alongside [PHOENIX-SESSION-START.md](PHOENIX-SESSION-START.md). For historical Velen v49 evidence, use the [release record](RELEASE-VELEN-V49.md) and [LT QA checklist](LT-QA-VELEN-V49.md) for the exact release, baseline and open work.
+
+## Current session rules — apply canonical doctrine first
+
+The 21 approved decisions in [Canonical Template Doctrine](CANONICAL-TEMPLATE-DOCTRINE.md) govern Velen certification, White Orchard migration, future Main Map and cleanup. Retain the art, quest milestone and interaction decisions above as acceptance evidence, not competing priorities. Order 017/PR #35 remains an unaccepted development candidate; physical Safari, cached V50 upgrades, real failed saves and rollback rehearsal remain open. Proposed Order 018 is a read-only audit until separately authorized.
 
 ## Carry decisions through the build
 
