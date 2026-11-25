@@ -82,3 +82,6 @@ Retain P01–P06 and D01–D06 in docs/framing-review/dividers/phoenix-parchment
 
 ## Ornament Family 02 — revision set 01 LOCKED by Capt
 All six dark bottom flourishes approved, generation 1d6b0bbd-5e2d-44f5-9f0c-ffcf8323ad84. Approved divider collections are the design influence. Retain original A–J pending final reconciliation; new binary capture pending. Next candidates emphasize downward triangular silhouettes.
+
+## Ornament Family 02 — revision set 02 LOCKED by Capt
+All six downward-pointing variants 07–12 approved, generation 84da025b-a123-43d3-9542-df78b424c7b6. Twelve revised dark designs approved in total. Binary capture and final reconciliation with A–J pending; no runtime changes.
