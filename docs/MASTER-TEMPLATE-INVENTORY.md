@@ -85,3 +85,6 @@ All six dark bottom flourishes approved, generation 1d6b0bbd-5e2d-44f5-9f0c-ffcf
 
 ## Ornament Family 02 — revision set 02 LOCKED by Capt
 All six downward-pointing variants 07–12 approved, generation 84da025b-a123-43d3-9542-df78b424c7b6. Twelve revised dark designs approved in total. Binary capture and final reconciliation with A–J pending; no runtime changes.
+
+## Ornament Family 02 — final reconciliation LOCKED by Capt
+Twelve revised metal flourishes 01–12 replace A–J for future implementation; preserve historical references. Universal across parchment and dark surfaces. Reject gold-toned parchment generation 8b3ffa2e-093a-40e2-bd3c-e3eab2f543b9. Reading surface does not change framing material: brushed blue-gray steel, polished silver, restrained blue/jade, no gold/brass. Stable rotation 01–12 proposed as successor to A–J, subject to placement verification. Binary capture and runtime implementation pending.
