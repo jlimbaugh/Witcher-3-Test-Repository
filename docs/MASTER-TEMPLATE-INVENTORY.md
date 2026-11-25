@@ -46,3 +46,6 @@ Source inspected: dist/appearance.js, dist/typography.css, dist/shared-walkthrou
 
 ## Button doctrine — Family 01 LOCKED by Capt
 Standard B1–B10 text buttons serve routine actions and secondary/local navigation (Back, Return to Hub), not major illustrated destinations, disclosures or progress marks. Retain separate warning/destructive semantic treatments and specialized controls. Use newer two-metal finish, stable page rotation, equal peer dimensions and transparent exterior. Runtime verification pending.
+
+## Family 02 — owner rejection of ornate frame
+Capt explicitly rejected docs/framing-review/primary-action.jpg as framing for buttons containing inset world art. Retire this reference from that application; preserve historical evidence, do not delete binary or change runtime. Existing B1–B10 and content-panel frame approvals unaffected. Proposed replacement direction: thin silver perimeter, restrained corners, artwork dominant, ivory label, subtle depth. Replacement frame requires owner visual approval; Family 02 remains open. No implementation authorized.
