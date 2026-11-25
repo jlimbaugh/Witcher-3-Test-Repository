@@ -91,3 +91,6 @@ Twelve revised metal flourishes 01–12 replace A–J for future implementation;
 
 ## Ornament Family 03 — revision set 01 LOCKED by Capt
 Six paired vertical rails 01–06 approved, generation b9fd14c6-bbcb-4a54-a216-f791f40ba961. Match revised bottom flourishes, universal steel/silver across surfaces. Next set emphasizes staggered ornament and exposed steel. Binary capture and final reconciliation pending; no runtime changes.
+
+## Ornament Family 03 — final reconciliation LOCKED by Capt
+All six pairs 07–12 approved, generation 79d68c9a-80fa-415e-9da5-445fea157dce. Revised pairs 01–12 supersede V1–V9 for future implementation, universal across surfaces. Preserve historical references. Stable paired assignment, independent of bottom flourish rotation. Binary capture and runtime verification pending.
