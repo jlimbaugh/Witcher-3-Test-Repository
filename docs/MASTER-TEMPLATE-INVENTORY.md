@@ -58,3 +58,6 @@ Capt rejected dist/visual-art/region-tools/search.svg as destination artwork. Re
 
 ## Family 04 — Search replacement selection
 Capt delegated final selection; Cmdr selected generated lighthouse option 2 (generation b875a6cf-ee7d-4efa-8943-20afa7f8cd32). Eldberg-inspired freestanding stone lighthouse, amber beacon, blue-gray coastal landscape. Permanent shared Search identity, no rotation. Supersedes magnifying lens concept. Artwork binary capture and production framing/integration remain pending; no runtime changes.
+
+## Family 05 — LOCKED by Capt
+Retain six variants in docs/framing-review/map-location-link/default.webp. Exclusive navigation from selected map marker to associated guide page. One consistent variant throughout Main Map; live wrapping location text, fixed trailing chevron, visible focus. No progress mutation. Understated link rather than raised button. Light/parchment adaptations and runtime implementation pending.
