@@ -1,7 +1,7 @@
 #velen .velen-activity-category-compact .deck {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+  align-items: center;
   gap: .25rem;
   height: auto;
   min-height: 0;
@@ -11,7 +11,7 @@
   width: 100%;
   height: auto;
   min-height: 44px;
-  padding: .35rem .2rem;
+  padding: .35rem .4rem;
   margin: 0;
   transform: none;
   visibility: visible;
@@ -21,15 +21,37 @@
   color: #f4ecd9;
   background: #263134;
   font: 600 .875rem/1.2 var(--body, Georgia, serif);
-  overflow-wrap: anywhere;
+  text-align: center;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
 }
-#velen .velen-activity-category-compact .deck > .velen-activity-category-label.left { grid-column: 1; grid-row: 1; }
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label:is(.left, .right) {
+  grid-row: 1;
+  min-width: 0;
+  opacity: .74;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.left {
+  grid-column: 1;
+  border-inline-start: 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.right {
+  grid-column: 3;
+  border-inline-end: 0;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
 #velen .velen-activity-category-compact .deck > .velen-activity-category-label.selected {
   grid-column: 2;
   grid-row: 1;
   position: static;
   border: 2px solid #d5dad5;
   background: #172124;
+  text-wrap: balance;
 }
-#velen .velen-activity-category-compact .deck > .velen-activity-category-label.right { grid-column: 3; grid-row: 1; }
 #velen .velen-activity-content .selected-panel > .eyebrow { color: #453823; text-shadow: none; }
