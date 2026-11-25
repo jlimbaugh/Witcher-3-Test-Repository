@@ -25,13 +25,13 @@
   height: auto;
   min-height: 44px;
   padding: .25rem .35rem !important;
-  border-width: 6px !important;
-  border-image-width: 6px !important;
+  border-width: 0 !important;
+  border-image-width: 0 !important;
   margin: 0;
   transform: none;
   visibility: visible;
   opacity: 1;
-  border: 1px solid #a4aeac;
+  border: 0;
   border-radius: 3px;
   color: #f4ecd9;
   background: #263134;
@@ -58,7 +58,7 @@
   justify-self: center;
   padding-inline: .55rem !important;
   position: static;
-  border: 2px solid #d5dad5;
+  border: 0;
   background: #172124;
   text-wrap: balance;
 }

@@ -61,7 +61,7 @@ function restoreHomeDeck(){
   activityTab=activityTabs.some(([id])=>id===saved?.activityTab)?saved.activityTab:activityTabs[0][0];
   activitySelected=decks[activityTab].includes(saved?.activitySelected)?saved.activitySelected:decks[activityTab][0];
   activityDetails=saved?.activityDetails===activitySelected?activitySelected:null;
-  activitiesOpen=saved?.activitiesOpen!==false;
+  activitiesOpen=true; // locked: always show activity deck on entry / restore
 }
 function recordDeckView(){
   history.replaceState({...history.state,velen:{...history.state?.velen,selected:deckSelected,activityTab,activitySelected,activityDetails,activitiesOpen}},'',location.href);
@@ -74,7 +74,8 @@ box.setAttribute('aria-label',tools?.label||(tools?'Choose a regional tool':cate
 const catalogue=tools?.catalogue||deckQuests;
 const ids=tools?Object.keys(catalogue):decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
 const select=(id,focus,showDetails=false)=>tools?tools.select(id):selectCard(category,id,focus,showDetails);
-for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){
+const offsets = (!tools && ids.length<=3) ? Array.from({length:ids.length},(_,i)=>i-idx) : (ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]);
+for(const offset of offsets){
   const i=(idx+offset+ids.length)%ids.length,id=ids[i],q=catalogue[id];
   const cardClass=tools?.compact?'velen-activity-category-label':'desk-card gwent-guide-card';
   const b=el('button','quest-card '+cardClass+' '+(offset===0?'selected':offset===1?'right':'left'));
@@ -228,7 +229,7 @@ function activities(){
   host.classList.toggle('velen-activity-category-compact',activitiesOpen);
   const rail=carousel('categories',activityTab,{catalogue,select,host,compact:activitiesOpen,itemLabel:'Select activity category: ',label:'Choose a Velen activity category'});
   const center=rail.querySelector('.quest-card.selected');
-  center.setAttribute('aria-label',(activitiesOpen?'Close ':'Open ')+catalogue[activityTab].name+' activity deck');
+  center.setAttribute('aria-label',(activitiesOpen?'Reset ':'Open ')+catalogue[activityTab].name+' activity deck');
   center.removeAttribute('aria-pressed');
   center.setAttribute('aria-expanded',String(activitiesOpen));
   center.setAttribute('aria-controls','velen-activity-panel');
