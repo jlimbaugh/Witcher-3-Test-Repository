@@ -97,3 +97,6 @@ All six pairs 07–12 approved, generation 79d68c9a-80fa-415e-9da5-445fea157dce.
 
 ## Ornament Family 04 — LOCKED by Capt
 Retain original six frames docs/approved-art/frames/quest-header.webp and add six approved designs 07–12 (generation b459c265-4ea2-46f3-a32e-a7102bce4180). No retirement. Narrow steel rails, silver ornament, unobstructed inset, independent frame and artwork, universal across surfaces. New binary capture and runtime verification pending.
+
+## Button Family 02 — replacement frame designs LOCKED by Capt
+Both six-design sheets approved, twelve total. Set A generation 092d5597-9bea-47c4-85ac-d55830fce682; Set B generation 6c439fb9-3312-4916-8216-9ad73a6ad8b4. Preserve steel/silver framing, independent inset destination artwork and live labels; sample scenic backgrounds and labels are review material, not approved replacement destination art. Supersede rejected historical primary-action frame for future implementation. Binary capture, frame extraction, compact-size review and runtime acceptance pending. No production changes.
