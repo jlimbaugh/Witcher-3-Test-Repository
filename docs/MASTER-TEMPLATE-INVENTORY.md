@@ -67,3 +67,6 @@ Retain six treatments in docs/framing-review/objective-rail/default.webp. Number
 
 ## Family 07 — LOCKED by Capt
 Retain approved objective-marks/set-01.webp and framing-review/status-marks/status-marks.webp designs. Interactive checkboxes exclusively control task/objective completion; status marks informational. Oxblood reserved for risk/warnings. Stable checkbox style per walkthrough; recognizable status symbols guide-wide; preserve three-second Undo. Failed, Missed and Unavailable distinct; final Missed mark deferred to Progress state-design gate. Runtime verification pending.
+
+## Family 08 — LOCKED by Capt
+Retain six warning-wolf/default.webp variants and warning-marks/set-03.webp 01,02,04 only. Silver wolf; unread badge alone pulses oxblood, stops on explicit acknowledgment; opening does not acknowledge and acknowledgment does not resolve risk. Static high contrast reduced-motion alternative; active warnings before history. Light/parchment adaptations and runtime verification pending.
