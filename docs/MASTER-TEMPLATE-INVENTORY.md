@@ -76,3 +76,6 @@ All six new matched plus/minus pairs approved (generation 3e90394f-dd8c-471a-932
 
 ## Family 09 — application doctrine LOCKED by Capt
 Back, Layers and Recenter match frame variation; one permanent Main Map decorative theme. Back restores exact walkthrough return state; Recenter restores opening view for entry context; Layers controls visibility; Progress toggles visibility only, never completion; Zoom matched pairs; Legend & Coverage disclosure in place. Silver icons, ivory labels, restrained steel frames, no inset world art. Binary capture of new Zoom sheet, light/parchment adaptations and runtime verification pending.
+
+## Ornament Family 01 — LOCKED by Capt
+Retain P01–P06 and D01–D06 in docs/framing-review/dividers/phoenix-parchment.webp and phoenix-dark-stone.webp. Major section boundaries only; stable rotation by section; match underlying surface; preserve proportions and fine detail; live headings; decorative only. Earlier studies and riveted crescent excluded. Production extraction and iPhone verification pending.
