@@ -2,15 +2,25 @@
 
 # Phoenix project status
 
+## Current (Order 020, November 24, 2026)
+
+- Public guide: **v50**, application source `e8b818492bbc71450453a69686bf1a7f0d3042ac` (tag `v50-public`).
+- **Public surfaces (two, separate):** (1) **Velen v50 on ChatGPT Sites.** Its publication and deployment provenance is author-supplied in the [V50 release record](RELEASE-VELEN-V50-CANDIDATE.md) (Sites source `bcc83936…`, deployment `appgdep_6affe300…`). The `v50-public` tag identifies the GitHub application source; it does not prove what Sites serves. (2) **GitHub Pages** still serves the older `main` branch (`2ed8b86`), not V50. `canonical/phoenix` does **not** auto-publish to either surface: a Sites release needs a separately authorized Sites push and deployment, and Pages is frozen.
+- Canonical development branch: `canonical/phoenix` = `2dbc0bcf88aa531957212c4ee7d19cfff9ad0e7d` (Order 019). Recovery tags: `v50-public`, `v50-release-record`, `v49-app`, `qa6`, `order017-candidate`, `archive/<branch>`.
+- Phase: doctrine Phase 1 audit delivered (Order 018, issue #37). Recovery tags and the canonical branch were created in Orders 019–020 (issues #38 and #39), pending Cmdr QA. Next: Capt-approved documentation and CI patches, then Velen pattern certification (Phase 2).
+- The Progress filter on the White Orchard map (Order 017) is **provisional**. It is a layer on the regional White Orchard map, not the future whole-game Main Map atlas, which is not built yet (doctrine decisions 4–6).
+- `Missed` stays distinct from `Failed` and `Unavailable`; its detection rules are deferred to the Progress state-design gate.
+- Sections below marked *Historical* are acceptance evidence for their dates and commits, not current instructions. Their private preview links point to superseded private deployments.
+
 The owner approved the [12 divider and heading ornament designs](framing-review/dividers/README.md) as the exclusive guide-wide set. The approval covers the reference artwork. Runtime integration and iPhone review are pending.
 
-## Active review · Velen polish
+## Historical acceptance evidence (private preview, before Order 017) · Velen polish
 
 The owner passed Velen map formatting. Velen polish connects all 185 walkthrough steps to the existing map shell and aligns primary actions on the arrival hubs and registry cards. Four stages use sourced anchors, two use a documented approximate roadside area, and the other 179 open the coverage overview with route notes. All 75 registered quest and activity images were checked for distinct paths and successful decoding. The next review compares Velen and White Orchard after Velen’s phone review, then selects and applies one template before guide-wide map work.
 
 [Art and map review](VELEN-POLISH-REVIEW.md) · [Private Velen polish preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `051116a2de75b0330badd6c85713952ea8e1eac3` · private deployment `appgdep_6b0258bd463c8191a2deff741ddfacce`. Regression checks passed 341 tests, with three skipped. Simulated DOM checks exercised all 185 walkthrough map links and 15 Leaflet geometry cases. iPhone visual review is open.
 
-## Active review · Velen visual alignment
+## Historical acceptance evidence (private preview, before Order 017) · Velen visual alignment
 
 The owner passed Batch 1 functionality and flagged Velen map formatting. The format pass matches the overview frame to the mapped terrain, constrains the camera to verified coverage, and uses a matching compact Back, Layers, and Recenter row. Focused quest entry retains the square close-up. Review the overview and Inn entry in Safari before using the same map shell for the guide-wide map. [Private map format preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map) · application `bf1596623b4956949a11c9c82eb6e9f05ea0762d` · private deployment `appgdep_6b025689e6d4819194ac24592be01a8a`. The regression suite passed 341 tests with three skipped. Fifteen simulated Leaflet cases checked terrain coverage and controls.
 
@@ -20,19 +30,19 @@ Batch 1 brings the White Orchard visual reference to the Velen console, activity
 
 [Private Batch 1 preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen) · application `7ef1074f2543b8cb59f58d69d5a0a582a6298875` · private deployment `appgdep_6b024a5942d081918a69aec88a6d1806`. 341 regression tests passed, with three skipped. The isolated DOM exercise covered 524 route forms and checked the first five surfaces. Physical Safari visual and scroll verification is open.
 
-## Active work · Shared Velen map
+## Historical acceptance evidence (private preview, before Order 017) · Shared Velen map
 
 [Approved map decisions](VELEN-SHARED-MAP-DECISIONS.md). The first pilot connects Show on Map on the Nilfgaardian Connection walkthrough to the same Velen Map used by Regional Tools. The entrance determines the initial camera. The map uses shared symbols, controls, grouped nearby seals, and the read-only Progress layer.
 
 [Private walkthrough pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/quest/nilf/3) · application `bb1f962de1d5696a3cced04e195d4b9a8324ed93` · private deployment `appgdep_6b024484d3cc81918abfea1ed0715a5a`. The regression suite passed 341 tests, with three historical checks skipped. Simulated map checks covered both entry cameras, detour grouping and return state. The owner passed navigation and asked for the button in the visible walkthrough. Show on Map now uses the accepted forged walkthrough plate in the selected-objective block. The pilot remains limited to The Nilfgaardian Connection pending the owner’s visual review.
 
-## Previous iPhone review · Nilf quest-area map
+## Historical acceptance evidence (private preview, before Order 017) · Nilf quest-area map iPhone review
 
 - [Private Inn at the Crossroads preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#velen/map/nilf/3) · application `c9b36cb3cd1c7f6779443273dbd190878c0feb4d` · private deployment `appgdep_6b01fc00cee08191b7c5751b5bedf63b`. Public v50 remains the release baseline.
 - The pilot uses assembled game-map tiles with a parchment tint, sourced location anchors and an approximate Mulbrydale approach area. See [map provenance](../dist/MAP-SOURCES.md#velen--nilfgaardian-connection-quest-area-pilot). The exact Funeral Pyres and At the Mercy of Strangers encounter positions await Xbox confirmation. World Map layer synchronization is future work.
 - Fixed stamp pilot: each walkthrough stop opens on a 56 × 56 map-unit square. Tap a seal to reveal one guide link, then tap the link to open its page. Safari Back should restore the label. The square keeps the same geographic extent across orientations. Check tap spacing, page scrolling over the stamp, and that swipe, pinch and double-tap leave its view fixed. The seals now keep their 44-pixel tap targets apart, and the selected label uses clear space in or immediately below the stamp. The objective, flame, broken shackle and signpost have distinct engraved silhouettes. Physical iPhone Safari acceptance is open.
 
-## Active work · Main Map Progress repair (LT Engineering Order 017)
+## Order 017 · Progress layer repair (provisional; on the White Orchard regional map, not the future Main Map atlas)
 
 - Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
 - Development branch `integration/order017-progress-repair` (from PR #34 `9dec2cd`; merges PR #30 `371de54` and PR #29 `0a01e5c`). The Constellation is retired, Field Reference is back in the wolf menu, and the Main Map Progress layer is repaired. **Development only; release authority withheld.** Cmdr performs independent QA; Capt alone authorizes acceptance, merging or publication.
@@ -42,13 +52,13 @@ Batch 1 brings the White Orchard visual reference to the Velen console, activity
 
 - Public guide: **v50**, frozen application `e8b818492bbc71450453a69686bf1a7f0d3042ac`. [Release and rollback record](RELEASE-VELEN-V50-CANDIDATE.md#public-release--november-20-2026-americachicago).
 - Private reference: the 75-entry Velen ledger at `7d2a80f263e8228dd6d7c544319cf9ef12d10fb4`. [Private Progress preview](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress).
-- Current assignment: Jess reviews the first Velen star-chart pilot on physical iPhone Safari. [Private Progress pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress) · [Draft PR #27](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/27).
+- Former assignment (closed): Jess reviewed the first Velen star-chart pilot on physical iPhone Safari. [Private Progress pilot](https://phoenix-nilf-framing-qa.krwpfbtbn8.chatgpt.site/#progress) · [Draft PR #27](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/27).
 - Pilot application `1d0bad1c8e614ace1e5082625455fb561d3f352f`, private deployment `appgdep_6affebef70bc8191962214887bac6bc1`. The prototype covers 3 quest planets and 4 linked moons. Current filter behavior withdraws unmatched bodies and keeps a parent visible when it has a matching moon. White Orchard opens the existing ledger.
 - Local checks: 341 Node passes, zero failures, three historical-baseline checks skipped. A simulated DOM exercise verified deck counts, card activation, map branches, moon routing, camera-state restore, and withdrawal. Chromium could not launch in the local execution environment. Physical pan, pinch, layout, and Back remain for iPhone field review.
 - iPhone review: Swipe to Velen, enter, pan and pinch, select Nilf, tap Funeral Pyres, and go Back. Confirm the same selection, moons, zoom and pan return. Repeat through Bloody Baron and Hunting a Witch, then use the map Back control to return to Velen’s centered system card.
 - Former owner decisions and build plan: removed in PR #34; see git history at `a66e85e6d7876f306dde2cf13a485caba59b622e` (`docs/PROGRESS-STAR-CHART-*.md`).
 
-## Earlier Velen design and QA context
+## Historical · Earlier Velen design and QA context
 
 Current Regional Tools interaction: swipe or tap a side card to browse, then tap the front card to open its tool. On quest walkthroughs the closing order is guide search, framed Regional Tools, quiet Sources link, then credits. The floating wolf operates independently.
 
@@ -94,9 +104,9 @@ plus the QA6 correction. Author self-review: `docs/QA6-REVIEW.md` (evidence: `au
 | ID | State | Also fails on baseline? | Evidence |
 |---|---|---|---|
 | D1 Velen unreadable save overwritten | Fixed since QA3/QA4 (`velen-r18.js` guard); re-confirmed on QA6 | yes | author-supplied (probe) |
-| D2 White Orchard unusable/unreadable save overwritten | **Corrected in QA6.** Cmdr's source inspection is recorded on PR #1; release decision pending | yes | author-supplied (probe 144 runs, unit tests); Cmdr source inspection; unit and rollback checks also run in GitHub Actions on PR #1 |
-| D3 GitHub Pages serves stale R19 `/velen.html` | Open. Belongs to the separate Pages-retirement work, not QA6 | n/a | audit |
-| D4 Blank start page when `localStorage` access is denied (QA5 regression) | **Corrected in QA6.** Cmdr's source inspection is recorded on PR #1; release decision pending | no | author-supplied (probe, returning-browser check); Cmdr source inspection |
+| D2 White Orchard unusable/unreadable save overwritten | **Corrected in QA6** (shipped; historical). Cmdr's source inspection is recorded on PR #1; release decision pending (historical: QA6 was published November 17, 2026) | yes | author-supplied (probe 144 runs, unit tests); Cmdr source inspection; unit and rollback checks also run in GitHub Actions on PR #1 |
+| D3 GitHub Pages serves stale R19 `/velen.html` | Open. `main` and Pages are frozen pending a separate Capt publication decision (Orders 019–020) | n/a | audit |
+| D4 Blank start page when `localStorage` access is denied (QA5 regression) | **Corrected in QA6** (shipped; historical). Cmdr's source inspection is recorded on PR #1; release decision pending (historical: QA6 was published November 17, 2026) | no | author-supplied (probe, returning-browser check); Cmdr source inspection |
 
 Cmdr's source inspection, as recorded on PR #1: D2 classifies the White Orchard record once, prevents writes while it is blocked,
 fills saved state only from accepted data, and keeps the unreadable, unsupported and unavailable states apart. D4 guards the
