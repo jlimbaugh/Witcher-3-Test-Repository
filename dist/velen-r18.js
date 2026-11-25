@@ -54,16 +54,17 @@ const activityTabs=[
 const decks=Object.fromEntries(['quests',...activityTabs.map(([id])=>id)].map(id=>[id,[]]));
 for(const [id,card] of Object.entries(deckQuests))decks[deckCategory(id,card)].push(id);
 let deckSelected=decks.quests.includes(state.selected)?state.selected:decks.quests[0];
-let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activitiesOpen=false;
+let activityTab=activityTabs[0][0],activitySelected=decks[activityTab][0],activityDetails=null,activitiesOpen=false;
 function restoreHomeDeck(){
   const saved=history.state?.velen;
   if(decks.quests.includes(saved?.selected))deckSelected=saved.selected;
   activityTab=activityTabs.some(([id])=>id===saved?.activityTab)?saved.activityTab:activityTabs[0][0];
   activitySelected=decks[activityTab].includes(saved?.activitySelected)?saved.activitySelected:decks[activityTab][0];
+  activityDetails=saved?.activityDetails===activitySelected?activitySelected:null;
   activitiesOpen=saved?.activitiesOpen===true;
 }
 function recordDeckView(){
-  history.replaceState({...history.state,velen:{...history.state?.velen,selected:deckSelected,activityTab,activitySelected,activitiesOpen}},'',location.href);
+  history.replaceState({...history.state,velen:{...history.state?.velen,selected:deckSelected,activityTab,activitySelected,activityDetails,activitiesOpen}},'',location.href);
 }
 function header(title,sub,art='velen-landscape-r18.webp'){const n=el('header','scene-banner');n.append(picture(art),el('p','eyebrow',sub),el('h1','',title));return n;}
 function carousel(category,selectedId,tools=null){
@@ -72,7 +73,7 @@ box.dataset.velenDeck=category;
 box.setAttribute('aria-label',tools?.label||(tools?'Choose a regional tool':category==='quests'?'Choose a Velen quest':'Choose a Velen activity'));
 const catalogue=tools?.catalogue||deckQuests;
 const ids=tools?Object.keys(catalogue):decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
-const select=(id,focus)=>tools?tools.select(id):selectCard(category,id,focus);
+const select=(id,focus,showDetails=false)=>tools?tools.select(id):selectCard(category,id,focus,showDetails);
 for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){
   const i=(idx+offset+ids.length)%ids.length,id=ids[i],q=catalogue[id];
   const cardClass=tools?.compact?'velen-activity-category-label':'desk-card gwent-guide-card';
@@ -80,7 +81,7 @@ for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){
   b.type='button';
   if(tools)b.dataset.tool=id;else b.dataset.quest=id;
   b.setAttribute('aria-label',(tools?.itemLabel||(tools?'Select tool: ':'Select quest: '))+q.name);
-  b.setAttribute('aria-pressed',String(i===idx));
+  b.setAttribute('aria-pressed',String(tools||category==='quests'?i===idx:activityDetails===id));
   b.tabIndex=i===idx?0:-1;
   if(tools?.compact){
     b.textContent=q.name;
@@ -92,7 +93,7 @@ for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){
     badge.setAttribute('aria-hidden','true');
     b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));
   }
-  b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};
+  b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id,false,true);};
   deck.append(b);
 }
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
@@ -133,16 +134,21 @@ deck.onpointerup=e=>{
 };
 deck.onpointercancel=()=>{start=null;};
 deck.ondragstart=e=>e.preventDefault();return box;}
-function selectCard(category,id,focusJump=false){
+function selectCard(category,id,focusJump=false,showDetails=false){
   if(!decks[category].includes(id))return;
   const y=viewport().scrollY;
   if(category==='quests'){
     deckSelected=id;
     if(Object.hasOwn(quests,id))state.selected=id;
-  }else activitySelected=id;
+  }else{
+    activitySelected=id;
+    if(showDetails)activityDetails=id;
+    else if(activityDetails!==id)activityDetails=null;
+  }
   recordDeckView();
   render({y,focus:false});
   if(focusJump)screen.querySelector('[data-velen-deck='+category+'] .deck-jump button[aria-current="true"]:not([aria-hidden])')?.focus({preventScroll:true});
+  if(category!=='quests'&&showDetails&&inputMode==='keyboard')screen.querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});
 }
 const hubProgressQuests=new Set(['princess','ciris-room','wandering-in-the-dark','magic-lamp','ladies-of-the-wood','whispering-hillock','king-of-the-wolves','family-matters','ciris-race','out-of-the-shadows','return-to-crookback-bog','fleeing-the-bog','keira-invitation','towerful-of-mice','favor-for-a-friend','advancement-of-learning','shrieker','jenny-o-the-woods','merry-widow','swamp-thing','patrol-gone-missing','mysterious-tracks','byways-murders','phantom-of-the-trade-route','woodland-beast','griffin-from-the-highlands','beast-of-honorton','missing-brother','master-armorers','where-the-cat-and-wolf-play','take-what-you-want','fall-of-the-house-of-reardon','ghosts-of-the-past','eternal-fires-shadow','thou-shalt-not-pass','fake-papers','bitter-harvest','wild-at-heart','a-greedy-god','a-dogs-life','forefathers-eve','death-by-fire','lynch-mob','defender-of-the-faith','last-rites','fools-gold','truth-is-in-the-stars','hazardous-goods','witcher-wannabe','loves-cruel-snares','blood-ties','races-crows-perch','fists-of-fury-velen','lost-goods','out-of-the-frying-pan-into-the-fire','an-unfortunate-turn-of-events','queen-zuleykas-treasure','sunken-chest','sunken-treasure','hidden-from-the-world','the-dead-have-no-defense','the-things-men-do-for-coin','dont-play-with-the-gods','blood-gold','a-costly-mistake','tough-luck','battlefield-loot','a-plea-ignored','dowry','griffin-school-gear']);
 function trackedQuestProgress(id,card){
@@ -214,6 +220,7 @@ function activities(){
     const y=viewport().scrollY;
     activityTab=id;
     activitySelected=decks[id][0];
+    activityDetails=null;
     recordDeckView();
     render({y,focus:false});
     if(focus)screen.querySelector('#velen-activities .quest-card.selected')?.focus({preventScroll:true});
@@ -240,7 +247,10 @@ function activities(){
   panel.hidden=!activitiesOpen;
   if(activitiesOpen){
     panel.setAttribute('aria-label',catalogue[activityTab].name+' activities');
-    if(activitySelected)panel.append(carousel(activityTab,activitySelected),selectedPanel(activitySelected));
+    if(activitySelected){
+      panel.append(carousel(activityTab,activitySelected));
+      if(activityDetails)panel.append(selectedPanel(activityDetails));
+    }
     else panel.append(el('p','velen-activity-empty','No Velen cards are available in this category yet.'));
   }
   section.append(host,panel);
