@@ -55,3 +55,6 @@ Retain all six designs in docs/approved-art/parchment-tabs/set-02.webp, matching
 
 ## Family 04 — Search artwork rejected
 Capt rejected dist/visual-art/region-tools/search.svg as destination artwork. Retain Search functionality and approved menu placement. Exclude this asset from future approved destination assignments; preserve historical file until authorized implementation. Replacement concept proposed: in-world investigation still life, lens and handwritten clues, restrained palette. No replacement approved or generated; WH/RT preview acceptance remains pending.
+
+## Family 04 — Search replacement selection
+Capt delegated final selection; Cmdr selected generated lighthouse option 2 (generation b875a6cf-ee7d-4efa-8943-20afa7f8cd32). Eldberg-inspired freestanding stone lighthouse, amber beacon, blue-gray coastal landscape. Permanent shared Search identity, no rotation. Supersedes magnifying lens concept. Artwork binary capture and production framing/integration remain pending; no runtime changes.
