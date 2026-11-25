@@ -73,7 +73,28 @@ box.setAttribute('aria-label',tools?.label||(tools?'Choose a regional tool':cate
 const catalogue=tools?.catalogue||deckQuests;
 const ids=tools?Object.keys(catalogue):decks[category],idx=ids.indexOf(selectedId),deck=el('div','deck');
 const select=(id,focus)=>tools?tools.select(id):selectCard(category,id,focus);
-for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){const i=(idx+offset+ids.length)%ids.length,id=ids[i];const q=catalogue[id],b=el('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset===1?'right':'left'));b.type='button';if(tools)b.dataset.tool=id;else b.dataset.quest=id;b.setAttribute('aria-label',(tools?.itemLabel||(tools?'Select tool: ':'Select quest: '))+q.name);b.setAttribute('aria-pressed',String(i===idx));b.tabIndex=i===idx?0:-1;const im=picture(q.art,'quest-card-art',q.position);im.loading=i===idx?'eager':'lazy';im.fetchPriority=i===idx?'high':'low';const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');badge.setAttribute('aria-hidden','true');b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};deck.append(b);}
+for(const offset of ids.length===1?[0]:ids.length===2?[-1,0]:[-1,0,1]){
+  const i=(idx+offset+ids.length)%ids.length,id=ids[i],q=catalogue[id];
+  const cardClass=tools?.compact?'velen-activity-category-label':'desk-card gwent-guide-card';
+  const b=el('button','quest-card '+cardClass+' '+(offset===0?'selected':offset===1?'right':'left'));
+  b.type='button';
+  if(tools)b.dataset.tool=id;else b.dataset.quest=id;
+  b.setAttribute('aria-label',(tools?.itemLabel||(tools?'Select tool: ':'Select quest: '))+q.name);
+  b.setAttribute('aria-pressed',String(i===idx));
+  b.tabIndex=i===idx?0:-1;
+  if(tools?.compact){
+    b.textContent=q.name;
+  }else{
+    const im=picture(q.art,'quest-card-art',q.position);
+    im.loading=i===idx?'eager':'lazy';
+    im.fetchPriority=i===idx?'high':'low';
+    const badge=el('span','gwent-guide-badge',q.kind==='Main quest'?'Ⅰ':q.kind==='Side quest'?'Ⅱ':'◇');
+    badge.setAttribute('aria-hidden','true');
+    b.append(im,badge,el('small','',q.dlc?'Free DLC':q.kind),el('strong','',q.name));
+  }
+  b.onclick=()=>{if(performance.now()<swipeClickUntil)return;select(id);};
+  deck.append(b);
+}
 const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(idx+1)+' / '+ids.length);
 count.setAttribute('aria-live','polite');
 footer.append(count);
@@ -197,17 +218,20 @@ function activities(){
     render({y,focus:false});
     if(focus)screen.querySelector('#velen-activities .quest-card.selected')?.focus({preventScroll:true});
   }
-  const rail=carousel('categories',activityTab,{catalogue,select,host,itemLabel:'Select activity category: ',label:'Choose a Velen activity category'});
+  host.classList.toggle('velen-activity-category-compact',activitiesOpen);
+  const rail=carousel('categories',activityTab,{catalogue,select,host,compact:activitiesOpen,itemLabel:'Select activity category: ',label:'Choose a Velen activity category'});
   const center=rail.querySelector('.quest-card.selected');
-  center.setAttribute('aria-label','Open '+catalogue[activityTab].name+' activity deck');
+  center.setAttribute('aria-label',(activitiesOpen?'Close ':'Open ')+catalogue[activityTab].name+' activity deck');
   center.removeAttribute('aria-pressed');
   center.setAttribute('aria-expanded',String(activitiesOpen));
   center.setAttribute('aria-controls','velen-activity-panel');
   center.onclick=()=>{
     if(performance.now()<swipeClickUntil)return;
+    const scrollY=viewport().scrollY;
+    const y=Math.max(0,Math.min(scrollY,scrollY+host.getBoundingClientRect().top));
     activitiesOpen=!activitiesOpen;
     recordDeckView();
-    render({y:viewport().scrollY,focus:false});
+    render({y,focus:false});
     if(inputMode==='keyboard')screen.querySelector('#velen-activities .quest-card.selected')?.focus({preventScroll:true});
   };
   host.append(rail);
@@ -215,7 +239,7 @@ function activities(){
   panel.id='velen-activity-panel';
   panel.hidden=!activitiesOpen;
   if(activitiesOpen){
-    panel.append(el('h3','',catalogue[activityTab].name));
+    panel.setAttribute('aria-label',catalogue[activityTab].name+' activities');
     if(activitySelected)panel.append(carousel(activityTab,activitySelected),selectedPanel(activitySelected));
     else panel.append(el('p','velen-activity-empty','No Velen cards are available in this category yet.'));
   }

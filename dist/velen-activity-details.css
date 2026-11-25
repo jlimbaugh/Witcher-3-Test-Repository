@@ -1,0 +1,35 @@
+#velen .velen-activity-category-compact .deck {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .25rem;
+  height: auto;
+  min-height: 0;
+}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label {
+  position: static;
+  width: 100%;
+  height: auto;
+  min-height: 44px;
+  padding: .35rem .2rem;
+  margin: 0;
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+  border: 1px solid #a4aeac;
+  border-radius: 3px;
+  color: #f4ecd9;
+  background: #263134;
+  font: 600 .875rem/1.2 var(--body, Georgia, serif);
+  overflow-wrap: anywhere;
+}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.left { grid-column: 1; grid-row: 1; }
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.selected {
+  grid-column: 2;
+  grid-row: 1;
+  position: static;
+  border: 2px solid #d5dad5;
+  background: #172124;
+}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.right { grid-column: 3; grid-row: 1; }
+#velen .velen-activity-content .selected-panel > .eyebrow { color: #453823; text-shadow: none; }
