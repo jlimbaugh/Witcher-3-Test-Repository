@@ -49,3 +49,20 @@
 5. **STOP 21-B** for Cmdr independent QA and Capt's separate merge decision. Do not merge or deploy without express approval.
 
 **Resume prompt:** “Resume Operation Phoenix Order 021 Stage 2 from the documented 2026-11-24 STOP in `docs/qa/order021/ACCESS-TOOLING-SESSION.md` on `diagnostics/order021-workflow-access`. Read issue #40. Verify remote state and continue only the approved CI-only transfer and draft PR. No merges or deployment.”
+
+## Resume and STOP 21-B — 2026-11-24 (America/Chicago)
+
+Capt authorized resumption. Before writes, verified canonical at `2dbc0bcf88aa531957212c4ee7d19cfff9ad0e7d`, main at `2ed8b866291dde2ca7758a64e3bf3091639ce63c`, the Cmdr CI branch at the canonical base, the diagnostic workflow restored to its original blob, and PR #41 open, draft and unmerged at `d7664085916755011801178354b8931a8d35f33d`.
+
+Applied both original LT patches with `git apply --check --index` and `git apply --index` in order to canonical blobs verified by `git hash-object`. `git diff --cached --check` passed. Published the resulting file contents as one new commit `83f3ccaec61b3aff0a64cf391b80d6c935231c6f` on `ci/order021-canonical-verification-cmdr`. The full Git tree `2142850efcd2e893cee2ce513d57da149ae4f4ee` matches LT commit `c5f0ab30737c4ac41c21dc09b1004f46b3a480fb` exactly. GitHub compare confirmed two changed paths:
+
+| Path | Blob SHA | Added / deleted |
+| --- | --- | --- |
+| `.github/workflows/qa6-verification.yml` | `0b199bea336273827b4d278a96df8f469d247cae` | 89 / 21 |
+| `docs/MANIFEST.sha256` | `1d0974d2c9822a30eacb7d5eb031b15637f57b85` | 378 / 49 |
+
+[Draft PR #42](https://github.com/jlimbaugh/Witcher-3-Test-Repository/pull/42) targets `canonical/phoenix`. [GitHub Actions run 45530565951](https://github.com/jlimbaugh/Witcher-3-Test-Repository/actions/runs/45530565951) completed successfully on this head. [Hosted job logs](https://github.com/jlimbaugh/Witcher-3-Test-Repository/actions/runs/45530565951/job/138924520196) show candidate **356/356**, V45 **233/233**, QA5 **271/271**, all with **0 skips and 0 failures**. The run passed the candidate and historical QA6 manifest checks, named save/storage guards, QA6 rollback to QA5 and V45 on disposable copies (including the wrong-source rejection), both negative checks, and V50 source-integrity verification of 588 files. The SHA-256 of the manifest derived from the V50 tag tree was `de4dd9ee7db99a12f4148b0992fb68cf85d1496ab5604a0fc2597c28db939fcf`.
+
+**STOP 21-B reached.** This is hosted execution evidence and the transfer handoff. Independent QA and Capt's separate decision remain pending. Physical iPhone Safari and deployment provenance were outside this CI run. No merge or deployment was performed. Main, canonical, and the Stage 1 documentation head were rechecked after CI.
+
+Order thread: [issue #40](https://github.com/jlimbaugh/Witcher-3-Test-Repository/issues/40).
