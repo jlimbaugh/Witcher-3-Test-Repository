@@ -79,3 +79,6 @@ Back, Layers and Recenter match frame variation; one permanent Main Map decorati
 
 ## Ornament Family 01 — LOCKED by Capt
 Retain P01–P06 and D01–D06 in docs/framing-review/dividers/phoenix-parchment.webp and phoenix-dark-stone.webp. Major section boundaries only; stable rotation by section; match underlying surface; preserve proportions and fine detail; live headings; decorative only. Earlier studies and riveted crescent excluded. Production extraction and iPhone verification pending.
+
+## Ornament Family 02 — revision set 01 LOCKED by Capt
+All six dark bottom flourishes approved, generation 1d6b0bbd-5e2d-44f5-9f0c-ffcf8323ad84. Approved divider collections are the design influence. Retain original A–J pending final reconciliation; new binary capture pending. Next candidates emphasize downward triangular silhouettes.
