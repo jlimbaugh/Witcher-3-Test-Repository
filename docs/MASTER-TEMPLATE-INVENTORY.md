@@ -100,3 +100,6 @@ Retain original six frames docs/approved-art/frames/quest-header.webp and add si
 
 ## Button Family 02 — replacement frame designs LOCKED by Capt
 Both six-design sheets approved, twelve total. Set A generation 092d5597-9bea-47c4-85ac-d55830fce682; Set B generation 6c439fb9-3312-4916-8216-9ad73a6ad8b4. Preserve steel/silver framing, independent inset destination artwork and live labels; sample scenic backgrounds and labels are review material, not approved replacement destination art. Supersede rejected historical primary-action frame for future implementation. Binary capture, frame extraction, compact-size review and runtime acceptance pending. No production changes.
+
+## Ornament Family 05 — LOCKED by Capt
+All six walkthrough corner designs 01–06 approved (generation c330b67b-767c-4271-afb6-8635055dac35). Universal steel/silver across reading surfaces; stable placement, no intrusion into reading area. Original standalone sheet not located; retain historical designs pending reconciliation. Binary capture, individual corner extraction and runtime verification pending. No production changes.
