@@ -43,3 +43,6 @@ Source inspected: dist/appearance.js, dist/typography.css, dist/shared-walkthrou
 - SURFACE-READING: curled-vellum-r16.webp is approved default; paper controls scoped by material via parchment-controls.css; retain one reading scroll, dark ink, restrained approved dividers. Map, cards and navigation chrome are exceptions; retired Constellation references in art standard are historical.
 - TYPE-CONTROLS: preserve wrapping, visible focus, accessible labels, minimum 44 CSS px where practical; navigation labels currently .75rem via typography.css. No new font or size decisions inferred.
 - Pending: exact font binary paths, approved typography review sheet IDs, computed Safari hierarchy, contrast and actual surface bindings. No visual certification claimed.
+
+## Button doctrine — Family 01 LOCKED by Capt
+Standard B1–B10 text buttons serve routine actions and secondary/local navigation (Back, Return to Hub), not major illustrated destinations, disclosures or progress marks. Retain separate warning/destructive semantic treatments and specialized controls. Use newer two-metal finish, stable page rotation, equal peer dimensions and transparent exterior. Runtime verification pending.
