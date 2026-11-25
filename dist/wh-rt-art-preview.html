@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Phoenix artwork review only</title><link rel="stylesheet" href="leaflet.css">
+<link rel="stylesheet" href="styles.css?v=type-v40">
+<link rel="stylesheet" href="phoenix-journal.css?v=type-v40">
+<link rel="stylesheet" href="velen-nilf-map.css?v=velen-map-peers-2">
+<link rel="stylesheet" href="weathered-r10.css?v=type-v40">
+<link rel="stylesheet" href="desk-r11.css?v=type-v40">
+<link rel="stylesheet" href="tarot-r12.css?v=type-v40">
+<link rel="stylesheet" href="art-r13.css?v=type-v40">
+<link rel="stylesheet" href="atlas-r14.css">
+<link rel="stylesheet" href="guide-art-r15.css?v=type-v40">
+<link rel="stylesheet" href="console-r16.css?v=type-v40">
+<link rel="stylesheet" href="home-rebuild.css?v=velen-console-plates-2">
+<link rel="stylesheet" href="main-console.css?v=type-v40">
+<link rel="stylesheet" href="diagrams.css?v=type-v40">
+<link rel="stylesheet" href="exploration.css?v=type-v40">
+<link rel="stylesheet" href="departure.css?v=paired-slices-1">
+<link rel="stylesheet" href="quest-pages.css?v=type-v40">
+<link rel="stylesheet" href="parchment-controls.css?v=type-v40">
+<link rel="stylesheet" href="guide-viewport.css?v=type-v40">
+<link rel="stylesheet" href="quest-deck-motion.css?v=swipe-calibration-v33">
+<link rel="stylesheet" href="warning-details.css?v=warning-overlay-1">
+<link rel="stylesheet" href="navigation-art.css?v=wolf-menu-resize-21">
+<link rel="stylesheet" href="objective-presentation.css?v=type-v40">
+<link rel="stylesheet" href="search-ui.css?v=type-v40">
+<link rel="stylesheet" href="visual-system.css?v=type-v40">
+<link rel="stylesheet" href="swipe-boxes.css?v=swipe-box-v38">
+<link rel="stylesheet" href="velen-view.css?v=nilf-slice2-v45">
+<link rel="stylesheet" href="velen-activity-decks.css?v=velen-ad-plates-1">
+<link rel="stylesheet" href="velen-activity-details.css?v=velen-ad-final-1">
+<link rel="stylesheet" href="typography.css?v=type-v40">
+<link rel="stylesheet" href="reading-pilot.css?v=reading-v42">
+<link rel="stylesheet" href="shared-walkthrough.css?v=velen-inn-walk-2">
+<link rel="stylesheet" href="nilf-forged.css?v=velen-nilf-hub-1"><body><main style="max-width:500px;margin:auto;padding:12px"><p>Artwork review only — no game progress or navigation writes.</p><button id="open" type="button">Open Wolf Head</button><div class="velen-view"><div class="console-r16 regional-tools-shell"><section class="velen-tools-section"><h2>Region Tools</h2><div class="velen-tools-menu" id="tools"></div></section></div></div></main><aside class="phoenix-medallion fan-open" id="wolf" hidden><nav class="medallion-fan command-layer art-navigation-layer"><div class="command-backdrop" id="backdrop"></div><div class="art-navigation-panel"><div class="art-navigation-heading"><h2>Navigate</h2><button id="close" type="button">Close ×</button></div><div class="art-navigation-row" id="grid"></div></div></nav><button class="medallion-core" id="core" type="button" aria-label="Close navigation"><span class="medallion-sigil"><img src="wolf-medallion-silver.png" alt=""><span class="medallion-eyes"></span></span></button></aside><script>
+const entries=[['Home','navigation-art-v26/home.webp'],['Resume','navigation-art-v26/action-walkthrough.webp'],['Quests','navigation-art-v26/action-quest-hub.webp'],['Map','visual-art/region-tools/route-maps.svg'],['Merchants','gwent-r15/gabor.webp'],['Field Reference','navigation-art-v26/reference.webp'],['Search','visual-art/region-tools/search.svg'],['Warnings','navigation-art-v26/warnings.webp']];
+const make=(tag,cls,txt)=>{let e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e;};const img=(src,cls)=>{let e=make('img',cls);e.src=src;e.alt='';e.draggable=false;return e;};
+let index=0;const tools=document.getElementById('tools'),grid=document.getElementById('grid'),wolf=document.getElementById('wolf');
+function show(open){wolf.hidden=!open;document.body.classList.toggle('command-open',open);}
+function render(){let box=make('section','quest-selector desk-carousel');box.dataset.velenDeck='tools';let deck=make('div','deck');for(let offset of [-1,0,1]){let i=(index+offset+8)%8,[name,src]=entries[i],b=make('button','quest-card desk-card gwent-guide-card '+(offset===0?'selected':offset<0?'left':'right'));b.type='button';b.append(img(src,'quest-card-art'),make('span','gwent-guide-badge','◇'),make('small','','Regional tool'),make('strong','',name));b.onclick=()=>{index=i;render();};deck.append(b);}let footer=make('div','orbit-controls velen-deck-gutter');footer.append(make('span','',(index+1)+' / 8'));box.append(deck,footer);tools.replaceChildren(box);let start;deck.onpointerdown=e=>start=[e.clientX,e.clientY];deck.onpointerup=e=>{if(start&&Math.abs(e.clientX-start[0])>35&&Math.abs(e.clientX-start[0])>Math.abs(e.clientY-start[1])*1.3){index=(index+(e.clientX<start[0]?1:7))%8;render();}start=null;};}
+entries.forEach(([name,src],i)=>{let item=make('div','art-navigation-item'),b=make('button','art-navigation-button'),pic=make('span','art-navigation-picture');b.type='button';pic.append(img(src));b.append(pic,make('span','art-navigation-label',name),make('span','art-navigation-marker','◆'));if(i===7)pic.append(make('span','art-warning-count','4'));b.onclick=()=>{index=i;render();show(false);};item.append(b);grid.append(item);});document.getElementById('open').onclick=()=>show(true);for(let id of ['close','core','backdrop'])document.getElementById(id).onclick=()=>show(false);render();
+</script></body></html>
