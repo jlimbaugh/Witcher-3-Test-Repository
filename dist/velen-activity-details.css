@@ -1,17 +1,32 @@
 #velen .velen-activity-category-compact .deck {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) fit-content(52%) minmax(0, 1fr);
   align-items: center;
-  gap: .25rem;
+  gap: .45rem;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
   height: auto;
   min-height: 0;
+}
+#velen .velen-activity-category-compact .scroll-wolf-cue {
+  margin: 38px 0 4px;
+  border: 0;
+}
+#velen .velen-activity-category-compact .scroll-wolf-cue::before { content: none; }
+#velen .velen-activity-category-compact .scroll-wolf-cue .wolf-pointer {
+  top: -35px;
+  width: 34px;
+  height: 38px;
 }
 #velen .velen-activity-category-compact .deck > .velen-activity-category-label {
   position: static;
   width: 100%;
   height: auto;
   min-height: 44px;
-  padding: .35rem .4rem;
+  padding: .25rem .35rem !important;
+  border-width: 6px !important;
+  border-image-width: 6px !important;
   margin: 0;
   transform: none;
   visibility: visible;
@@ -29,26 +44,19 @@
 #velen .velen-activity-category-compact .deck > .velen-activity-category-label:is(.left, .right) {
   grid-row: 1;
   min-width: 0;
-  opacity: .74;
+  opacity: .82;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: .78rem;
+  text-wrap: balance;
 }
-#velen .velen-activity-category-compact .deck > .velen-activity-category-label.left {
-  grid-column: 1;
-  border-inline-start: 0;
-  border-start-start-radius: 0;
-  border-end-start-radius: 0;
-}
-#velen .velen-activity-category-compact .deck > .velen-activity-category-label.right {
-  grid-column: 3;
-  border-inline-end: 0;
-  border-start-end-radius: 0;
-  border-end-end-radius: 0;
-}
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.left { grid-column: 1; }
+#velen .velen-activity-category-compact .deck > .velen-activity-category-label.right { grid-column: 3; }
 #velen .velen-activity-category-compact .deck > .velen-activity-category-label.selected {
   grid-column: 2;
   grid-row: 1;
+  width: auto;
+  justify-self: center;
+  padding-inline: .55rem !important;
   position: static;
   border: 2px solid #d5dad5;
   background: #172124;
