@@ -61,3 +61,6 @@ Capt delegated final selection; Cmdr selected generated lighthouse option 2 (gen
 
 ## Family 05 — LOCKED by Capt
 Retain six variants in docs/framing-review/map-location-link/default.webp. Exclusive navigation from selected map marker to associated guide page. One consistent variant throughout Main Map; live wrapping location text, fixed trailing chevron, visible focus. No progress mutation. Understated link rather than raised button. Light/parchment adaptations and runtime implementation pending.
+
+## Family 06 — LOCKED by Capt
+Retain six treatments in docs/framing-review/objective-rail/default.webp. Numbered objective/walkthrough navigation only; large touch targets, wolf pointer, horizontal snap scrolling and bidirectional wrapping. Selection and completion distinct; selection never mutates progress. Stable variant per walkthrough page; no redundant Previous/Next on rail. Light/parchment adaptation and runtime verification pending.
