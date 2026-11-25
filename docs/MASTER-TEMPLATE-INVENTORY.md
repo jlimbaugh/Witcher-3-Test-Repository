@@ -94,3 +94,6 @@ Six paired vertical rails 01–06 approved, generation b9fd14c6-bbcb-4a54-a216-f
 
 ## Ornament Family 03 — final reconciliation LOCKED by Capt
 All six pairs 07–12 approved, generation 79d68c9a-80fa-415e-9da5-445fea157dce. Revised pairs 01–12 supersede V1–V9 for future implementation, universal across surfaces. Preserve historical references. Stable paired assignment, independent of bottom flourish rotation. Binary capture and runtime verification pending.
+
+## Ornament Family 04 — LOCKED by Capt
+Retain original six frames docs/approved-art/frames/quest-header.webp and add six approved designs 07–12 (generation b459c265-4ea2-46f3-a32e-a7102bce4180). No retirement. Narrow steel rails, silver ornament, unobstructed inset, independent frame and artwork, universal across surfaces. New binary capture and runtime verification pending.
