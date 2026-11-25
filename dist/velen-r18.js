@@ -100,7 +100,7 @@ const footer=el('div','orbit-controls velen-deck-gutter'),count=el('span','',(id
 count.setAttribute('aria-live','polite');
 footer.append(count);
 box.append(deck);
-if(!tools){const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true),{selectOnSettle:true});
+if(!tools){const jump=window.createPhoenixDeckJump(ids.map(id=>deckQuests[id].name),idx,index=>select(ids[index],true,true),{selectOnSettle:true});
 box.append(jump.frame);}
 box.append(footer);
 deck.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?ids[0]:e.key==='End'?ids[ids.length-1]:ids[(idx+(e.key==='ArrowLeft'?ids.length-1:1))%ids.length]);(tools?.host?.isConnected?tools.host:screen).querySelector('[data-velen-deck='+category+'] .quest-card.selected')?.focus({preventScroll:true});}};
