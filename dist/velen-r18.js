@@ -193,7 +193,6 @@ function activities(){
     const y=viewport().scrollY;
     activityTab=id;
     activitySelected=decks[id][0];
-    activitiesOpen=false;
     recordDeckView();
     render({y,focus:false});
     if(focus)screen.querySelector('#velen-activities .quest-card.selected')?.focus({preventScroll:true});

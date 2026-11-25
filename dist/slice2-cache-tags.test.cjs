@@ -173,7 +173,8 @@ test('combined release: every script/stylesheet changed or new since QA6 carries
  for(const f of ['home-ui.js'])assert.equal(tags[f],'velen-progress-1',f);
  for(const f of ['velen-activity-decks.css'])assert.equal(tags[f],'velen-ad-plates-1',f);
  for(const f of ['nilf-forged.css'])assert.equal(tags[f],'velen-nilf-hub-1',f);
- for(const f of ['velen-r18.js','velen-nilf-map.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-map-integration-1',f);
+ assert.equal(tags['velen-r18.js'],'velen-ad-keep-open-1');
+ for(const f of ['velen-nilf-map.js','velen-nilf-ui.js'])assert.equal(tags[f],'velen-map-integration-1',f);
  for(const f of ['velen-nilf-map.css'])assert.equal(tags[f],'velen-map-peers-2',f);
  assert.equal(tags['navigation-art.css'],'wolf-menu-resize-21');
  assert.equal(tags['progression-ui.js'],'v49-phone-fixes-1');
