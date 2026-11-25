@@ -1,23 +1,28 @@
-name: Phoenix QA6 verification
+name: Phoenix canonical verification
 on:
   push:
-    branches: [ci/qa6-independent-checks, fix/wo-save-preservation]
+    branches: [canonical/phoenix]
   pull_request:
-    branches: [fix/wo-save-preservation, main]
+    branches: [canonical/phoenix]
   workflow_dispatch:
 concurrency:
-  group: qa6-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  group: canonical-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 permissions:
   contents: read
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       V45_COMMIT: d1df0e3e2c40cad172577f4725daa7233fc8c41e
-      QA6_COMMIT: 804a3a2c83529fdc707ca5278fb3bcf39d50d771
       QA5_COMMIT: 5ba73ace7d05551c877021de6e6fd0a2242a1e3a
+      QA6_COMMIT: 804a3a2c83529fdc707ca5278fb3bcf39d50d771
+      # Immutable V50 checkpoint (tag v50-public). Git object IDs are content hashes of the whole source.
+      V50_COMMIT: e8b818492bbc71450453a69686bf1a7f0d3042ac
+      V50_TREE: 81e930f15a8a4ef937a4f0904ff50e9fb189a208
+      V50_DIST_TREE: c176469c1c39d072a74b89aaf10e5763d0be5b1e
+      CANDIDATE_TESTS: '356'
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -30,49 +35,112 @@ jobs:
         run: |
           set -euo pipefail
           git rev-parse HEAD
-          git merge-base --is-ancestor "$QA6_COMMIT" HEAD
-          git diff --exit-code "$QA6_COMMIT" HEAD -- dist/ docs/rollback/ docs/RELEASE-FILES-QA6.sha256
-          for protected_path in dist docs/rollback docs/RELEASE-FILES-QA6.sha256; do
+          # Lineage guard: every canonical build descends from the frozen V50 source.
+          git merge-base --is-ancestor "$V50_COMMIT" HEAD
+          # Historical QA6 release evidence stays immutable (rollback kit and release manifest).
+          git diff --exit-code "$QA6_COMMIT" HEAD -- docs/rollback/ docs/RELEASE-FILES-QA6.sha256
+          for protected_path in docs/rollback docs/RELEASE-FILES-QA6.sha256; do
             test "$(git rev-parse "HEAD:$protected_path")" = "$(git rev-parse "$QA6_COMMIT:$protected_path")"
           done
           git worktree add --detach "$RUNNER_TEMP/v45-baseline" "$V45_COMMIT"
           git worktree add --detach "$RUNNER_TEMP/qa5-baseline" "$QA5_COMMIT"
+          git worktree add --detach "$RUNNER_TEMP/qa6-baseline" "$QA6_COMMIT"
+          git worktree add --detach "$RUNNER_TEMP/v50-baseline" "$V50_COMMIT"
+      - name: Verify V50 checkpoint integrity (source-based)
+        run: |
+          set -euo pipefail
+          # The tag must exist, be annotated and resolve to the exact V50 commit.
+          git fetch --no-tags --force origin '+refs/tags/v50-public:refs/tags/v50-public' || true
+          test "$(git cat-file -t refs/tags/v50-public)" = tag
+          test "$(git rev-parse 'refs/tags/v50-public^{commit}')" = "$V50_COMMIT"
+          # Content-addressed identity of the complete V50 source and of its dist/ tree.
+          test "$(git rev-parse "$V50_COMMIT^{tree}")" = "$V50_TREE"
+          test "$(git rev-parse "$V50_COMMIT:dist")" = "$V50_DIST_TREE"
+          # Derive a SHA-256 manifest from the tagged tree's blobs at runtime, then check the checked-out bytes.
+          manifest="$RUNNER_TEMP/v50-dist.sha256"
+          : > "$manifest"
+          while IFS=$'\t' read -r meta path; do
+            blob="${meta##* }"
+            printf '%s  %s\n' "$(git cat-file blob "$blob" | sha256sum | cut -d' ' -f1)" "$path" >> "$manifest"
+          done < <(git ls-tree -r --full-tree "refs/tags/v50-public^{commit}" -- dist)
+          test -s "$manifest"
+          (cd "$RUNNER_TEMP/v50-baseline" && sha256sum --quiet -c "$manifest")
+          # No extra, missing or modified files in the V50 worktree.
+          test -z "$(git -C "$RUNNER_TEMP/v50-baseline" status --porcelain --untracked-files=all -- dist)"
+          test "$(git -C "$RUNNER_TEMP/v50-baseline" ls-files dist | wc -l)" -eq "$(wc -l < "$manifest")"
+          echo "V50 dist verified from tag tree: $(wc -l < "$manifest") files, sha256 of manifest $(sha256sum "$manifest" | cut -d' ' -f1)"
+          echo "Note: Sites publication/deployment provenance for V50 is an author-supplied external record; CI verifies only the GitHub source checkpoint."
       - name: Verify CI guards and manifest coverage
         run: |
           node scripts/ci-verify.cjs selftest
           node scripts/ci-verify.cjs coverage
-      - name: Verify candidate manifests
+      - name: Verify candidate and historical manifests
         run: |
           set -euo pipefail
-          sha256sum -c docs/MANIFEST.sha256
-          sha256sum -c docs/RELEASE-FILES-QA6.sha256
-      - name: Test accepted baseline
+          sha256sum -c --quiet docs/MANIFEST.sha256
+          (cd "$RUNNER_TEMP/qa6-baseline" && sha256sum -c --quiet docs/RELEASE-FILES-QA6.sha256)
+      - name: Test accepted baseline (V45)
         run: node scripts/ci-verify.cjs test "$RUNNER_TEMP/v45-baseline/dist" 233
       - name: Test QA5 control
         env:
           PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
         run: node scripts/ci-verify.cjs test "$RUNNER_TEMP/qa5-baseline/dist" 271
-      - name: Test candidate with both baselines
+      - name: Storage-denied start and save-integrity guards (named, fail fast)
+        working-directory: dist
         env:
           PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
           PHOENIX_QA5_BASELINE: ${{ runner.temp }}/qa5-baseline/dist
-        run: node scripts/ci-verify.cjs test dist 307
-      - name: Verify rollback on disposable copies
+          PHOENIX_QA6_BASELINE: ${{ runner.temp }}/qa6-baseline/dist
+        run: node --test storage-denied-startup.test.cjs wo-save-guard.test.cjs slice2-save-guard.test.cjs order017-regression.test.cjs
+      - name: Test candidate with all baselines (strict, zero skips)
+        env:
+          PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
+          PHOENIX_QA5_BASELINE: ${{ runner.temp }}/qa5-baseline/dist
+          PHOENIX_QA6_BASELINE: ${{ runner.temp }}/qa6-baseline/dist
+        run: node scripts/ci-verify.cjs test dist "$CANDIDATE_TESTS"
+      - name: Negative check (a missing baseline must fail the strict gate)
+        env:
+          PHOENIX_V45_BASELINE: ${{ runner.temp }}/v45-baseline/dist
+          PHOENIX_QA5_BASELINE: ${{ runner.temp }}/qa5-baseline/dist
+        run: |
+          set -uo pipefail
+          set +e
+          node scripts/ci-verify.cjs test dist "$CANDIDATE_TESTS" > "$RUNNER_TEMP/negative.tap" 2>&1
+          result=$?
+          set -e
+          grep -E '^# (tests|pass|fail|skipped) ' "$RUNNER_TEMP/negative.tap" || true
+          test "$result" -ne 0
+          grep -qE '^# skipped [1-9]' "$RUNNER_TEMP/negative.tap"
+          echo "Negative check passed: missing PHOENIX_QA6_BASELINE produced a skip and the strict gate failed."
+      - name: Negative check (tampered file must fail manifest verification)
+        run: |
+          set -euo pipefail
+          copy="$RUNNER_TEMP/tamper"
+          git worktree add --detach "$copy" HEAD
+          printf '\n/* tamper */\n' >> "$copy/dist/app.js"
+          set +e
+          (cd "$copy" && sha256sum -c --quiet docs/MANIFEST.sha256) > /dev/null 2>&1
+          result=$?
+          set -e
+          test "$result" -ne 0
+          echo "Negative check passed: modified dist/app.js fails docs/MANIFEST.sha256."
+      - name: Verify historical QA6 rollback kit on disposable copies
         run: |
           set -euo pipefail
           script=docs/rollback/restore_and_verify.py
-          python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --self-check
+          kit=(--kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline")
+          python3 "$script" "${kit[@]}" --self-check
           for target in qa5 v45; do
             copy="$RUNNER_TEMP/rollback-$target"
-            cp -a dist "$copy"
-            python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to "$target" --dist "$copy" --dry-run
-            python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to "$target" --dist "$copy"
+            cp -a "$RUNNER_TEMP/qa6-baseline/dist" "$copy"
+            python3 "$script" "${kit[@]}" --from qa6 --to "$target" --dist "$copy" --dry-run
+            python3 "$script" "${kit[@]}" --from qa6 --to "$target" --dist "$copy"
             if [ "$target" = qa5 ]; then baseline="$RUNNER_TEMP/qa5-baseline/dist"; else baseline="$RUNNER_TEMP/v45-baseline/dist"; fi
             diff -r "$baseline" "$copy"
           done
           cp -a "$RUNNER_TEMP/qa5-baseline/dist" "$RUNNER_TEMP/wrong-source"
           set +e
-          python3 "$script" --kit "$RUNNER_TEMP/v45-baseline" --qa5-kit "$RUNNER_TEMP/qa5-baseline" --from qa6 --to v45 --dist "$RUNNER_TEMP/wrong-source"
+          python3 "$script" "${kit[@]}" --from qa6 --to v45 --dist "$RUNNER_TEMP/wrong-source"
           result=$?
           set -e
           test "$result" -eq 3
