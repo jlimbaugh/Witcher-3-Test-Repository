@@ -52,3 +52,6 @@ Capt explicitly rejected docs/framing-review/primary-action.jpg as framing for b
 
 ## Button doctrine — Family 03 LOCKED by Capt
 Retain all six designs in docs/approved-art/parchment-tabs/set-02.webp, matching collapsed plus and expanded minus states. One stable variation per page, independent of B1–B10. Exclusive use: expand/collapse information in place; never navigate, execute actions or modify progress. Preserve label and dimensions across states. Runtime verification pending.
+
+## Family 04 — Search artwork rejected
+Capt rejected dist/visual-art/region-tools/search.svg as destination artwork. Retain Search functionality and approved menu placement. Exclude this asset from future approved destination assignments; preserve historical file until authorized implementation. Replacement concept proposed: in-world investigation still life, lens and handwritten clues, restrained palette. No replacement approved or generated; WH/RT preview acceptance remains pending.
