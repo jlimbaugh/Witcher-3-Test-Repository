@@ -31,3 +31,6 @@ IDs above are proposed registry namespaces, not renamed files. Existing approval
 Read individual family README files, extract exact accepted variants and paths, then trace runtime bindings. Map, navigation, typography, dividers, warning and other controls remain to inventory. Existing catalog contains more families than this first batch. No claim of exhaustive inventory or visual inspection. Build component specifications only after registry reconciliation; Velen certification, WO migration and Main Map sequence remain unchanged.
 
 STOP: Capt review of registry conventions and unresolved conflicts before declaring complete master library. No production changes.
+
+## Button reconciliation — 2026-11-25
+Capt directed reconciliation and continuation. B1–B10 remain the standard text-button motif/shape rotation; six newer two-metal references govern finish and contrast, not a replacement rotation. Illustrated destination actions and parchment disclosure tabs remain separate semantic families. Preserve stable page assignment, equal peer dimensions, transparent exterior, restrained ornament, blue-gray steel, polished silver and ivory. Nilf Inn folded-leaf 04 remains a placement reference, not a global override of B1–B10. This is a documentation-level reconciliation; individual production assets and physical Safari acceptance remain pending. No runtime changes.
