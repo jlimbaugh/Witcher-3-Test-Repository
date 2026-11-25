@@ -49,3 +49,6 @@ Standard B1–B10 text buttons serve routine actions and secondary/local navigat
 
 ## Family 02 — owner rejection of ornate frame
 Capt explicitly rejected docs/framing-review/primary-action.jpg as framing for buttons containing inset world art. Retire this reference from that application; preserve historical evidence, do not delete binary or change runtime. Existing B1–B10 and content-panel frame approvals unaffected. Proposed replacement direction: thin silver perimeter, restrained corners, artwork dominant, ivory label, subtle depth. Replacement frame requires owner visual approval; Family 02 remains open. No implementation authorized.
+
+## Button doctrine — Family 03 LOCKED by Capt
+Retain all six designs in docs/approved-art/parchment-tabs/set-02.webp, matching collapsed plus and expanded minus states. One stable variation per page, independent of B1–B10. Exclusive use: expand/collapse information in place; never navigate, execute actions or modify progress. Preserve label and dimensions across states. Runtime verification pending.
