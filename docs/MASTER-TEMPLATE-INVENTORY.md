@@ -73,3 +73,6 @@ Retain six warning-wolf/default.webp variants and warning-marks/set-03.webp 01,0
 
 ## Family 09 — Zoom artwork LOCKED by Capt
 All six new matched plus/minus pairs approved (generation 3e90394f-dd8c-471a-932f-b5947b5fbb49): refined bevel, clipped corner, inset diamond, split leaf, interlaced end, stepped steel. Supersedes prior Zoom selection; original sheet not recovered. Match pair dimensions, frames and materials. Binary capture and runtime integration pending. Remaining Family 09 application rules await explicit approval.
+
+## Family 09 — application doctrine LOCKED by Capt
+Back, Layers and Recenter match frame variation; one permanent Main Map decorative theme. Back restores exact walkthrough return state; Recenter restores opening view for entry context; Layers controls visibility; Progress toggles visibility only, never completion; Zoom matched pairs; Legend & Coverage disclosure in place. Silver icons, ivory labels, restrained steel frames, no inset world art. Binary capture of new Zoom sheet, light/parchment adaptations and runtime verification pending.
