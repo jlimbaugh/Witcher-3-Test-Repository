@@ -88,3 +88,6 @@ All six downward-pointing variants 07–12 approved, generation 84da025b-a123-43
 
 ## Ornament Family 02 — final reconciliation LOCKED by Capt
 Twelve revised metal flourishes 01–12 replace A–J for future implementation; preserve historical references. Universal across parchment and dark surfaces. Reject gold-toned parchment generation 8b3ffa2e-093a-40e2-bd3c-e3eab2f543b9. Reading surface does not change framing material: brushed blue-gray steel, polished silver, restrained blue/jade, no gold/brass. Stable rotation 01–12 proposed as successor to A–J, subject to placement verification. Binary capture and runtime implementation pending.
+
+## Ornament Family 03 — revision set 01 LOCKED by Capt
+Six paired vertical rails 01–06 approved, generation b9fd14c6-bbcb-4a54-a216-f791f40ba961. Match revised bottom flourishes, universal steel/silver across surfaces. Next set emphasizes staggered ornament and exposed steel. Binary capture and final reconciliation pending; no runtime changes.
