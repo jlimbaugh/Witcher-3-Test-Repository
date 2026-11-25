@@ -70,3 +70,6 @@ Retain approved objective-marks/set-01.webp and framing-review/status-marks/stat
 
 ## Family 08 — LOCKED by Capt
 Retain six warning-wolf/default.webp variants and warning-marks/set-03.webp 01,02,04 only. Silver wolf; unread badge alone pulses oxblood, stops on explicit acknowledgment; opening does not acknowledge and acknowledgment does not resolve risk. Static high contrast reduced-motion alternative; active warnings before history. Light/parchment adaptations and runtime verification pending.
+
+## Family 09 — Zoom artwork LOCKED by Capt
+All six new matched plus/minus pairs approved (generation 3e90394f-dd8c-471a-932f-b5947b5fbb49): refined bevel, clipped corner, inset diamond, split leaf, interlaced end, stepped steel. Supersedes prior Zoom selection; original sheet not recovered. Match pair dimensions, frames and materials. Binary capture and runtime integration pending. Remaining Family 09 application rules await explicit approval.
