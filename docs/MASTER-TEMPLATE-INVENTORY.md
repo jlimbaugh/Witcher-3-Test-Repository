@@ -34,3 +34,12 @@ STOP: Capt review of registry conventions and unresolved conflicts before declar
 
 ## Button reconciliation — 2026-11-25
 Capt directed reconciliation and continuation. B1–B10 remain the standard text-button motif/shape rotation; six newer two-metal references govern finish and contrast, not a replacement rotation. Illustrated destination actions and parchment disclosure tabs remain separate semantic families. Preserve stable page assignment, equal peer dimensions, transparent exterior, restrained ornament, blue-gray steel, polished silver and ivory. Nilf Inn folded-leaf 04 remains a placement reference, not a global override of B1–B10. This is a documentation-level reconciliation; individual production assets and physical Safari acceptance remain pending. No runtime changes.
+
+## Batch 02 — typography and reading surfaces
+Source inspected: dist/appearance.js, dist/typography.css, dist/shared-walkthrough.css, dist/parchment-controls.css, dist/styles.css, ART-STANDARD.md.
+- TYPE-BODY: default Fondamento (Calligraphy), alternatives Fell and Alegreya; fallback stacks in appearance.js; preference key phoenix-appearance-v1. Preserve user selection. Current model fixes scale at 100%; typography.css retains enlarged-size selectors, not evidence of an active size control.
+- TYPE-THEME: follow device until manual day/night selection; persist manual selection. Preserve dark ink on reading parchment.
+- TYPE-HIERARCHY: shared typography.css plus local walkthrough rules. Observed walkthrough title 26px/1.15, eyebrow 12px, facts 15px, objective name 16.5px/1.28, status 13px, warning body 16px/1.4; shared reading paragraphs/list line height 1.65. These are observed declarations, not computed or newly locked global sizes. Audit cascade before standardizing.
+- SURFACE-READING: curled-vellum-r16.webp is approved default; paper controls scoped by material via parchment-controls.css; retain one reading scroll, dark ink, restrained approved dividers. Map, cards and navigation chrome are exceptions; retired Constellation references in art standard are historical.
+- TYPE-CONTROLS: preserve wrapping, visible focus, accessible labels, minimum 44 CSS px where practical; navigation labels currently .75rem via typography.css. No new font or size decisions inferred.
+- Pending: exact font binary paths, approved typography review sheet IDs, computed Safari hierarchy, contrast and actual surface bindings. No visual certification claimed.
