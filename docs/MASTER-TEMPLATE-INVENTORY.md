@@ -64,3 +64,6 @@ Retain six variants in docs/framing-review/map-location-link/default.webp. Exclu
 
 ## Family 06 — LOCKED by Capt
 Retain six treatments in docs/framing-review/objective-rail/default.webp. Numbered objective/walkthrough navigation only; large touch targets, wolf pointer, horizontal snap scrolling and bidirectional wrapping. Selection and completion distinct; selection never mutates progress. Stable variant per walkthrough page; no redundant Previous/Next on rail. Light/parchment adaptation and runtime verification pending.
+
+## Family 07 — LOCKED by Capt
+Retain approved objective-marks/set-01.webp and framing-review/status-marks/status-marks.webp designs. Interactive checkboxes exclusively control task/objective completion; status marks informational. Oxblood reserved for risk/warnings. Stable checkbox style per walkthrough; recognizable status symbols guide-wide; preserve three-second Undo. Failed, Missed and Unavailable distinct; final Missed mark deferred to Progress state-design gate. Runtime verification pending.
