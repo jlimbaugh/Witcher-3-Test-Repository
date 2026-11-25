@@ -103,3 +103,6 @@ Both six-design sheets approved, twelve total. Set A generation 092d5597-9bea-47
 
 ## Ornament Family 05 — LOCKED by Capt
 All six walkthrough corner designs 01–06 approved (generation c330b67b-767c-4271-afb6-8635055dac35). Universal steel/silver across reading surfaces; stable placement, no intrusion into reading area. Original standalone sheet not located; retain historical designs pending reconciliation. Binary capture, individual corner extraction and runtime verification pending. No production changes.
+
+## Map Art Family 01 — LOCKED by Capt
+Six universal steel/silver selected-marker surrounds approved (generation a5497ffb-0332-4973-b888-3f1cb900b60a). One consistent surround throughout Main Map; unselected markers retain original symbols without surrounds. Preserve original eighteen historical designs pending reconciliation. Binary capture, extraction and iPhone-size verification pending.
