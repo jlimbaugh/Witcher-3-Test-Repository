@@ -109,3 +109,6 @@ Six universal steel/silver selected-marker surrounds approved (generation a5497f
 
 ## Map Art Family 02 — LOCKED by Capt
 All six revised location card frames approved (generation c28dba35-fc34-4e7d-acef-b0a5b40e9145). Universal steel/silver framing; retain original eighteen as historical references pending reconciliation. Live location names, symbols, metadata and accessible close control independent of frame. Sample scenery is experimental, not a required feature; sample game data not authoritative. Binary capture, extraction and iPhone verification pending. No production changes.
+
+## Map Art Family 03 — LOCKED by Capt
+Retain eighteen route treatments in docs/framing-review/map-route-lines across three surfaces. 01 solid active quest; 02 dashed suggested alternative; 03 dotted optional detour; 04 dash-dot multi-stage; 05 chevrons directional guidance; 06 paired dashes return route. No decorative rotation. Surface-adjusted contrast, zoom legibility, relevant routes only, verified geometry. Runtime verification pending.
