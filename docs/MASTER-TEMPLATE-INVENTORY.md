@@ -115,3 +115,6 @@ Retain eighteen route treatments in docs/framing-review/map-route-lines across t
 
 ## Map Art Family 04 — LOCKED by Capt
 Six revised compass roses approved (generation cce7dbff-f03b-4ef8-ae4d-71af42638fad). Universal steel/silver design direction, one permanent Main Map variant, legible cardinal directions. Preserve original eighteen pending final reconciliation. Warm highlights in review sheet must not override no-gold/brass doctrine. Binary capture, extraction and iPhone verification pending.
+
+## Map Art Family 05 — LOCKED by Capt
+Retain eighteen existing legend treatments in docs/framing-review/map-legends across three surfaces. Owner lock interpreted as retaining originals without generating another six. Consistent Main Map design, restrained headers, clear category separation, live labels and original symbols. Universal steel/silver direction for future production trim; divider influence. Final variant selection, surface contrast and iPhone verification pending. No production changes.
