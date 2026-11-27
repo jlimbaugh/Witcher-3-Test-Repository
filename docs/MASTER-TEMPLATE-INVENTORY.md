@@ -106,3 +106,6 @@ All six walkthrough corner designs 01–06 approved (generation c330b67b-767c-42
 
 ## Map Art Family 01 — LOCKED by Capt
 Six universal steel/silver selected-marker surrounds approved (generation a5497ffb-0332-4973-b888-3f1cb900b60a). One consistent surround throughout Main Map; unselected markers retain original symbols without surrounds. Preserve original eighteen historical designs pending reconciliation. Binary capture, extraction and iPhone-size verification pending.
+
+## Map Art Family 02 — LOCKED by Capt
+All six revised location card frames approved (generation c28dba35-fc34-4e7d-acef-b0a5b40e9145). Universal steel/silver framing; retain original eighteen as historical references pending reconciliation. Live location names, symbols, metadata and accessible close control independent of frame. Sample scenery is experimental, not a required feature; sample game data not authoritative. Binary capture, extraction and iPhone verification pending. No production changes.
