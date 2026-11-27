@@ -112,3 +112,6 @@ All six revised location card frames approved (generation c28dba35-fc34-4e7d-ace
 
 ## Map Art Family 03 — LOCKED by Capt
 Retain eighteen route treatments in docs/framing-review/map-route-lines across three surfaces. 01 solid active quest; 02 dashed suggested alternative; 03 dotted optional detour; 04 dash-dot multi-stage; 05 chevrons directional guidance; 06 paired dashes return route. No decorative rotation. Surface-adjusted contrast, zoom legibility, relevant routes only, verified geometry. Runtime verification pending.
+
+## Map Art Family 04 — LOCKED by Capt
+Six revised compass roses approved (generation cce7dbff-f03b-4ef8-ae4d-71af42638fad). Universal steel/silver design direction, one permanent Main Map variant, legible cardinal directions. Preserve original eighteen pending final reconciliation. Warm highlights in review sheet must not override no-gold/brass doctrine. Binary capture, extraction and iPhone verification pending.
